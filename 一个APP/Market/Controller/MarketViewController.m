@@ -7,16 +7,134 @@
 //
 
 #import "MarketViewController.h"
+#import "PersonalCenterViewController.h"
+#import "MarketCell.h"
+#import "MarketModel.h"
+#import "ScrollTool.h"
+#import "DropdownMenu.h"
 
-@interface MarketViewController ()
+@interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate,dropdownDelegate>
+@property (nonatomic, strong)NSMutableArray *MarkeArr;
+@property (nonatomic, strong)PersonalCenterViewController *personalVC;
+@property (nonatomic, strong)UITableView *tableView;
+@property (nonatomic, assign)BOOL result;
+
 
 @end
 
 @implementation MarketViewController
-
+-(NSMutableArray *)MarkeArr
+{
+    if (!_MarkeArr) {
+        self.MarkeArr = [[NSMutableArray alloc]init];
+    }
+    return _MarkeArr;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self addTableViewAndHeaderView];
+    // 添加刷新
+    [self MJrefreshLoadData];
+
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [_tableView.mj_header beginRefreshing];
+    [super viewWillAppear:animated];
+}
+#pragma mark - MJ刷新
+- (void)MJrefreshLoadData
+{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    [header setTitle:@"正在刷新数据中..." forState:MJRefreshStateRefreshing];
+    [header setTitle:@"下拉刷新数据" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    _tableView.mj_header = header;
+    
+    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    // 设置文字
+    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
+    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
+    self.tableView.mj_footer = footer;
+    
+}
+// 下拉刷新的方法
+- (void)loadNewData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView.mj_header endRefreshing];
+        NSString *url = @"user/ceshi.action?name=aaa&password=123";
+        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSLog(@"responseObject----%@",responseObject);
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"error-----%@",error);
+        }];
+
+        NSLog(@"MJ-下拉刷新");
+    });
+}
+// 上拉加载的方法
+- (void)loadMoreData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView.mj_footer endRefreshing];
+        NSLog(@"MJ-上啦加载");
+    });
+}
+
+#pragma mark - 添加tableview和headerView
+- (void)addTableViewAndHeaderView
+{
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 113) style:UITableViewStylePlain];
+    
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    _tableView.showsVerticalScrollIndicator = NO;
+    [self.view addSubview:_tableView];
+    
+    
+    // tabelViewheaderView  设置
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 180)];
+    _tableView.tableHeaderView = headerView;
+    // 轮播图
+    NSArray *img = @[@"xinwen_tup",@"xinwen_tou" , @"zhaopin2_tou",@"caomei"];
+    
+    ScrollTool *scrollView = [[ScrollTool alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 180 - 40)];
+    [scrollView imageArray:img];
+    [headerView addSubview:scrollView];
+    
+    NSArray *titleArray = @[@"全部分类",@"附近",@"智能",];
+    
+    DropdownMenu *dropdown = [[DropdownMenu alloc] initDropdownWithButtonTitles:titleArray andLeftListArray:nil andRightListArray:nil];
+    dropdown.view.frame = CGRectMake(0, scrollView.frame.size.height-60, WIDTH, 40);
+    dropdown.delegate = self;   //此句的代理方法可返回选中下标值
+    [headerView addSubview:dropdown.view];
+    
+    UILabel *lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 179, WIDTH, 1)];
+    lineLabel.backgroundColor = BGcolor(206, 205, 205);
+    [headerView addSubview:lineLabel];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 120;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *marketCellID = @"marketCellID";
+    MarketCell *cell = [tableView dequeueReusableCellWithIdentifier:marketCellID];
+    if (cell == nil) {
+        cell = [MarketCell cellCreaterNibLoad];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%ld , %ld" , (long)indexPath.row , (long)indexPath.section);
 }
 
 - (void)didReceiveMemoryWarning {

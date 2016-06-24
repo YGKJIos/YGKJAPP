@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MessageModel.h"
+
 @interface MessageTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLab;
+@property (weak, nonatomic) IBOutlet UILabel *messagesLab;
+
+- (void)messageModel:(MessageModel *)model;
 
 @end

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol pushViewControllerDelegate <NSObject>
+
+- (void)pushViewController;
+
+@end
+
+
 @interface FirstTableViewCell : UITableViewCell
+
+@property (nonatomic, assign)id<pushViewControllerDelegate>delegate;
+- (void)setFirstCellImage:(NSArray *)images;
 
 @end

@@ -8,7 +8,9 @@
 
 #import "DiscoverViewController.h"
 
-@interface DiscoverViewController ()
+@interface DiscoverViewController ()<UITableViewDataSource , UITableViewDelegate>
+// 功能数组
+@property (nonatomic, strong)NSMutableArray *functionArr;
 
 @end
 
@@ -16,8 +18,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
+- (void)addTabelView
+{
+    UITableView *tabelView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT -113) style:UITableViewStylePlain];
+    tabelView.delegate = self;
+    tabelView.dataSource = self;
+    [self.view addSubview:tabelView];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *discoverID = @"discoverID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:discoverID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:discoverID];
+    }
+    
+    return cell;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

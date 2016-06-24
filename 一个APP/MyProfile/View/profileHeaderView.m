@@ -10,6 +10,21 @@
 
 @implementation profileHeaderView
 
+
++ (profileHeaderView *)CreateProfileHeaderView{
+    profileHeaderView *view = [[NSBundle mainBundle]loadNibNamed:@"profileHeaderView" owner:nil options:nil].lastObject;
+    view.headImage.layer.masksToBounds = YES;
+    view.headImage.layer.cornerRadius = view.headImage.width/2;
+    return view;
+}
+
+- (void)setHeadImage:(NSString *)image name:(NSString *)name{
+    
+    self.headImage.image = [UIImage imageNamed:image];
+    self.nameLab.text = name;
+    
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

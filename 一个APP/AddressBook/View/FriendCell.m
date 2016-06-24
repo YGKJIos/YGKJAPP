@@ -10,6 +10,18 @@
 
 @implementation FriendCell
 
++(id)createFriendCell
+{
+    FriendCell *cell = [[NSBundle mainBundle]loadNibNamed:@"FriendCell" owner:nil options:nil].lastObject;
+    return cell;
+}
+
+-(void)setFriendModel:(FriendModel *)model
+{
+//    self.headImage.image = [UIImage imageNamed:model.image];
+//    self.nameLab.text = model.name;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

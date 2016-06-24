@@ -43,13 +43,12 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     [self addTimer];
 }
 -(void)addTimer{
-    _moveTime = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(imageRollTimer) userInfo:nil repeats:YES];
+    _moveTime = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(imageRollTimer) userInfo:nil repeats:YES];
     _isTimeUp = NO;
     
 }
 - (void)imageRollTimer
 {
-    NSLog(@"111111");
     [self.scrollView setContentOffset:CGPointMake(Width *2, 0) animated:YES];
     _isTimeUp = YES;
     [NSTimer scheduledTimerWithTimeInterval:0.4f target:self selector:@selector(scrollViewDidEndDecelerating:) userInfo:nil repeats:NO];
@@ -91,11 +90,6 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     
 }
 
-- (void)pageAction:(UIPageControl *)pageCon
-{
-//    CGFloat contenX = self.pageCon.currentPage * Width;
-//    self.scrollView.contentOffset = CGPointMake(contenX, 0);
-}
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     
@@ -107,13 +101,16 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     else if(_scrollView.contentOffset.x == Width * 2)
     {
         currentImage = (currentImage+1)%_imageNameArray.count;
-        _pageCon.currentPage = (_pageCon.currentPage + 1)%_imageNameArray.count;
+        _pageCon.currentPage = (_pageCon.currentPage +1)%_imageNameArray.count;
     }
     else
     {
         self.pageCon.currentPage = currentImage;
         return;
     }
+//    NSLog(@"%ld",(currentImage-1)%_imageNameArray.count);
+//    
+//    NSLog(@"%ld",(currentImage+1)%_imageNameArray.count);
     _leftImageView.image = [UIImage imageNamed:_imageNameArray[(currentImage-1)%_imageNameArray.count]];
     
     
@@ -125,7 +122,7 @@ static NSUInteger currentImage = 1;//记录中间图片的下标,开始总是为
     _scrollView.contentOffset = CGPointMake(Width, 0);
     
     if (!_isTimeUp) {
-        [_moveTime setFireDate:[NSDate dateWithTimeIntervalSinceNow:2]];
+        [_moveTime setFireDate:[NSDate dateWithTimeIntervalSinceNow:3]];
     }
     _isTimeUp = NO;
 }

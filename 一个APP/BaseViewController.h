@@ -10,4 +10,7 @@
 
 @interface BaseViewController : UIViewController
 
+- (void)rightAction;
+- (void)leftAction;
+
 @end

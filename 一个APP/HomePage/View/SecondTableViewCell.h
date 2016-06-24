@@ -10,4 +10,7 @@
 
 @interface SecondTableViewCell : UITableViewCell
 
+- (void)setSecondCellImage:(NSArray *)images;
+
+
 @end

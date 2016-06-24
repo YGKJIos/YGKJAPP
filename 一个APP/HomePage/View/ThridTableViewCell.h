@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+typedef  enum{
+    lifeServeCellStyle,
+    newCellStyle,
+    hotJobCellStyle,
+    travelCellStyle,
+    secondCellStyle
+}HomeTaleViewCellStyle;
+
 @interface ThridTableViewCell : UITableViewCell
+
+
+- (void)setThridCellImage:(NSArray *)images titles:(NSArray *)titles;
+- (void)cellStyle:(HomeTaleViewCellStyle)Style;
+
 
 @end

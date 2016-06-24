@@ -10,4 +10,11 @@
 
 @interface profileHeaderView : UIView
 
+@property (weak, nonatomic) IBOutlet UIImageView *headImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLab;
+
++ (profileHeaderView *)CreateProfileHeaderView;
+
+- (void)setHeadImage:(NSString *)image name:(NSString *)name;
+
 @end

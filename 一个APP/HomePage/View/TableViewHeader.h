@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+// tableViewScetion 的View
 @interface TableViewHeader : UIView
+
+@property (nonatomic, strong)UILabel *titleLab;
+- (void)setTitleLabText:(NSString *)text;
 
 @end

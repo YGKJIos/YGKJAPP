@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface MarketViewController : UIViewController
+@interface MarketViewController : BaseViewController
 
 @end

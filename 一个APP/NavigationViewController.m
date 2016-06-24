@@ -14,10 +14,19 @@
 
 @implementation NavigationViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationBar.translucent = NO;
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    // 导航栏 标题颜色
+    self.navigationBar.titleTextAttributes = dic;
+    // 导航栏 背景色
+    self.navigationBar.barTintColor = BGcolor(34, 198, 220);
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

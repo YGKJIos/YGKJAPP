@@ -10,6 +10,12 @@
 
 @implementation MessageTableViewCell
 
+
+-(void)messageModel:(MessageModel *)model
+{
+    
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

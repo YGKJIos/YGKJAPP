@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendGroupView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEj-cz-fpg">
+                    <rect key="frame" x="8" y="14" width="359" height="38"/>
+                    <color key="backgroundColor" red="0.43137254899999999" green="0.43137254899999999" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiangyou" translatesAutoresizingMaskIntoConstraints="NO" id="1Hh-K5-OGU">
+                    <rect key="frame" x="38" y="25" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="60u-LX-24f"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uJ-N5-KJm">
+                    <rect key="frame" x="61" y="22" width="164" height="21"/>
+                    <color key="backgroundColor" red="1" green="0.1123688051" blue="0.1955693526" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="164" id="3Vi-qB-UXS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1Hh-K5-OGU" firstAttribute="centerY" secondItem="8uJ-N5-KJm" secondAttribute="centerY" id="1uh-4c-Q5w"/>
+                <constraint firstItem="8uJ-N5-KJm" firstAttribute="leading" secondItem="1Hh-K5-OGU" secondAttribute="trailing" constant="8" id="8xg-Hk-u75"/>
+                <constraint firstItem="eEj-cz-fpg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="BWV-gp-NuO"/>
+                <constraint firstItem="1Hh-K5-OGU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="Efe-XJ-jAQ"/>
+                <constraint firstItem="eEj-cz-fpg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="JVg-hu-eTB"/>
+                <constraint firstItem="1Hh-K5-OGU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="KIr-Ec-vCU"/>
+                <constraint firstItem="1Hh-K5-OGU" firstAttribute="centerY" secondItem="eEj-cz-fpg" secondAttribute="centerY" id="WG6-cW-6zT"/>
+                <constraint firstItem="8uJ-N5-KJm" firstAttribute="baseline" secondItem="eEj-cz-fpg" secondAttribute="firstBaseline" id="ZTz-TK-5do"/>
+                <constraint firstItem="eEj-cz-fpg" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottomMargin" id="c18-NF-kUH"/>
+                <constraint firstItem="eEj-cz-fpg" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="fBn-QT-JBZ"/>
+                <constraint firstItem="eEj-cz-fpg" firstAttribute="baseline" secondItem="8uJ-N5-KJm" secondAttribute="baseline" id="qOA-43-eW4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="310.5" y="243"/>
         </view>
     </objects>
+    <resources>
+        <image name="xiangyou" width="32" height="32"/>
+    </resources>
 </document>

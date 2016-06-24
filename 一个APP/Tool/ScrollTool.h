@@ -10,5 +10,5 @@
 
 @interface ScrollTool : UIView
 
-- (void)imageArray:(NSMutableArray *)imagesArr;
+- (void)imageArray:(NSArray *)imagesArr;
 @end

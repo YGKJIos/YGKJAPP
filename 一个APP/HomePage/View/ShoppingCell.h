@@ -10,4 +10,6 @@
 
 @interface ShoppingCell : UITableViewCell
 
+- (void)setShoppingCellImage:(NSArray *)images;
+
 @end
