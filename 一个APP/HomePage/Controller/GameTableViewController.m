@@ -30,12 +30,28 @@
     scroll.frame = CGRectMake(0, 0, WIDTH, 150);
     [headerView addSubview:scroll];
     
+    //图片数组
+    NSArray *images = @[@"xiuxian_zhuoyou",@"xiuxian_kafei",@"xiuxian_anmo",@"xiuxian_ktv",@"xiuxian_yundong",@"xiuxian_dianying",@"xiuxian_xiyu",@"xiuxian_quanbu"];
+    NSArray *titles = @[@"桌游电玩",@"酒吧咖啡",@"足疗按摩",@"KTV",@"运动健身",@"4D/5D电影",@"沐浴汗蒸",@"其他娱乐"];
+    NSInteger num = 0;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 2; j++) {
+            
+            ImageAndLabView *view = [ImageAndLabView createViewNib];
+            view.frame = CGRectMake(30+(40+WIDTH/
+                                        4-40)*i,scroll.height+ 10+(40+40)*j, 40, 40);
+            [view setImages:images[num] names:titles[num]];
+            num++;
+            [headerView addSubview:view];
+        }
+
+    }
+    
+    
+    
     self.tableView.tableHeaderView = headerView;
 }
 
-
-
-    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
