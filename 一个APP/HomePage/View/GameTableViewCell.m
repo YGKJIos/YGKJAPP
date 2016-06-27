@@ -1,23 +1,25 @@
 //
-//  MoiveTableViewCell.m
+//  GameTableViewCell.m
 //  一个APP
 //
-//  Created by 梁立彬 on 16/6/25.
+//  Created by 远古科技 on 16/6/27.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "MoiveTableViewCell.h"
+#import "GameTableViewCell.h"
 
-@implementation MoiveTableViewCell
+@implementation GameTableViewCell
 
-+ (MoiveTableViewCell *)createMoiveCell
+
++ (GameTableViewCell *) createGameCell
 {
-    MoiveTableViewCell *cell = [[NSBundle mainBundle]loadNibNamed:@"MoiveTableViewCell" owner:nil options:nil].lastObject;
+    GameTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"GameTableViewCell" owner:nil options:nil] lastObject];
     return cell;
 }
 
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

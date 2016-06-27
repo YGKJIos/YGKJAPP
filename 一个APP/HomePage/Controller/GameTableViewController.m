@@ -1,32 +1,31 @@
 //
-//  MovieTableViewController.m
+//  GameTableViewController.m
 //  一个APP
 //
-//  Created by 梁立彬 on 16/6/25.
+//  Created by 远古科技 on 16/6/27.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "MovieTableViewController.h"
-#import "MoiveTableViewCell.h"
-@interface MovieTableViewController ()
+#import "GameTableViewController.h"
+#import "GameTableViewCell.h"
+
+
+@interface GameTableViewController ()
 
 @end
 
-@implementation MovieTableViewController
+@implementation GameTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addTableHeaderView];
-    
-   
+    [self addHeaderView];
+
 }
 
-- (void)addTableHeaderView
+- (void)addHeaderView
 {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
-    headerView.backgroundColor = [UIColor orangeColor];
-    
-    NSArray *arr = @[@"sanjiao_02",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 400)];
+    NSArray *arr = @[@"waimai_tu",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
     ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
     scroll.frame = CGRectMake(0, 0, WIDTH, 150);
     [headerView addSubview:scroll];
@@ -34,6 +33,9 @@
     self.tableView.tableHeaderView = headerView;
 }
 
+
+
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -43,24 +45,22 @@
 #pragma mark - Table view data source
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//
 //    return 0;
 //}
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+
     return 10;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *str = @"reues";
-    MoiveTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+    static NSString *str = @"reuse";
+    GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if (cell == nil) {
-    
-        cell = [MoiveTableViewCell createMoiveCell];
-        
+        cell = [GameTableViewCell createGameCell];
     }
     
     cell.selectionStyle = UITableViewScrollPositionNone;
@@ -70,8 +70,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 151;
+    return 110;
 }
+
+
+
 
 
 /*

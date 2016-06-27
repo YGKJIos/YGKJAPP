@@ -62,9 +62,6 @@
 		59F284A71D1E5BE900C815D1 /* TheHotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284A51D1E5BE900C815D1 /* TheHotelTableViewCell.m */; };
 		59F284A81D1E5BE900C815D1 /* TheHotelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F284A61D1E5BE900C815D1 /* TheHotelTableViewCell.xib */; };
 		59F284AB1D1E618600C815D1 /* TheHotelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284AA1D1E618600C815D1 /* TheHotelTableViewController.m */; };
-		59F284AF1D1E6EDF00C815D1 /* MovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284AE1D1E6EDF00C815D1 /* MovieTableViewController.m */; };
-		59F284B41D1E708900C815D1 /* MoiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284B21D1E708900C815D1 /* MoiveTableViewCell.m */; };
-		59F284B51D1E708900C815D1 /* MoiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F284B31D1E708900C815D1 /* MoiveTableViewCell.xib */; };
 		59F6A89F1D15100300CFD28F /* FirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A89E1D15100300CFD28F /* FirstTableViewCell.m */; };
 		59F6A8A41D1529CA00CFD28F /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A8A31D1529CA00CFD28F /* SecondTableViewCell.m */; };
 		59F6A8A71D15362F00CFD28F /* ThridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A8A61D15362F00CFD28F /* ThridTableViewCell.m */; };
@@ -91,6 +88,12 @@
 		59FFB7081D05369D00071E0E /* MarketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FFB7061D05369D00071E0E /* MarketCell.xib */; };
 		59FFB70B1D053FF600071E0E /* MarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FFB70A1D053FF600071E0E /* MarketModel.m */; };
 		7FE543E11CE4C2BEAB34EAE2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7014F046F0ED2BE18E38917F /* libPods.a */; };
+		D8247FA51D212CBC007C573F /* MovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FA41D212CBC007C573F /* MovieTableViewController.m */; };
+		D8247FA91D212CDB007C573F /* MoiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FA71D212CDB007C573F /* MoiveTableViewCell.m */; };
+		D8247FAA1D212CDB007C573F /* MoiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8247FA81D212CDB007C573F /* MoiveTableViewCell.xib */; };
+		D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FAD1D212D05007C573F /* GameTableViewController.m */; };
+		D8247FB31D212D48007C573F /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FB11D212D48007C573F /* GameTableViewCell.m */; };
+		D8247FB41D212D48007C573F /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8247FB21D212D48007C573F /* GameTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,11 +211,6 @@
 		59F284A61D1E5BE900C815D1 /* TheHotelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TheHotelTableViewCell.xib; sourceTree = "<group>"; };
 		59F284A91D1E618600C815D1 /* TheHotelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheHotelTableViewController.h; sourceTree = "<group>"; };
 		59F284AA1D1E618600C815D1 /* TheHotelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheHotelTableViewController.m; sourceTree = "<group>"; };
-		59F284AD1D1E6EDF00C815D1 /* MovieTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewController.h; sourceTree = "<group>"; };
-		59F284AE1D1E6EDF00C815D1 /* MovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewController.m; sourceTree = "<group>"; };
-		59F284B11D1E708900C815D1 /* MoiveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoiveTableViewCell.h; sourceTree = "<group>"; };
-		59F284B21D1E708900C815D1 /* MoiveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoiveTableViewCell.m; sourceTree = "<group>"; };
-		59F284B31D1E708900C815D1 /* MoiveTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoiveTableViewCell.xib; sourceTree = "<group>"; };
 		59F6A89D1D15100300CFD28F /* FirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTableViewCell.h; sourceTree = "<group>"; };
 		59F6A89E1D15100300CFD28F /* FirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTableViewCell.m; sourceTree = "<group>"; };
 		59F6A8A21D1529CA00CFD28F /* SecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTableViewCell.h; sourceTree = "<group>"; };
@@ -264,6 +262,16 @@
 		59FFB70A1D053FF600071E0E /* MarketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketModel.m; sourceTree = "<group>"; };
 		638B33530F40AC5959554B95 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7014F046F0ED2BE18E38917F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8247FA31D212CBC007C573F /* MovieTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewController.h; sourceTree = "<group>"; };
+		D8247FA41D212CBC007C573F /* MovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewController.m; sourceTree = "<group>"; };
+		D8247FA61D212CDB007C573F /* MoiveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoiveTableViewCell.h; sourceTree = "<group>"; };
+		D8247FA71D212CDB007C573F /* MoiveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoiveTableViewCell.m; sourceTree = "<group>"; };
+		D8247FA81D212CDB007C573F /* MoiveTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoiveTableViewCell.xib; sourceTree = "<group>"; };
+		D8247FAC1D212D05007C573F /* GameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewController.h; sourceTree = "<group>"; };
+		D8247FAD1D212D05007C573F /* GameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewController.m; sourceTree = "<group>"; };
+		D8247FB01D212D48007C573F /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
+		D8247FB11D212D48007C573F /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
+		D8247FB21D212D48007C573F /* GameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +313,7 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D8247FAB1D212CEA007C573F /* 休闲娱乐 */,
 				59EAD9751D20F1F0003DF636 /* 超市 */,
 				59F284AC1D1E6E9100C815D1 /* 电影 */,
 				59F284971D1E5B3800C815D1 /* 宾馆 */,
@@ -330,6 +339,7 @@
 		5910B88F1D1234D700BA1C16 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8247FAF1D212D12007C573F /* GameCell(休闲娱乐) */,
 				59F284B01D1E6EFA00C815D1 /* MovieCell(电影) */,
 				59F284A31D1E5BA900C815D1 /* TheHotel(宾馆) */,
 				5925B8621D1CB9A6006734FA /* TakeCell(外卖) */,
@@ -532,8 +542,8 @@
 		59F284AC1D1E6E9100C815D1 /* 电影 */ = {
 			isa = PBXGroup;
 			children = (
-				59F284AD1D1E6EDF00C815D1 /* MovieTableViewController.h */,
-				59F284AE1D1E6EDF00C815D1 /* MovieTableViewController.m */,
+				D8247FA31D212CBC007C573F /* MovieTableViewController.h */,
+				D8247FA41D212CBC007C573F /* MovieTableViewController.m */,
 			);
 			name = "电影";
 			sourceTree = "<group>";
@@ -541,9 +551,9 @@
 		59F284B01D1E6EFA00C815D1 /* MovieCell(电影) */ = {
 			isa = PBXGroup;
 			children = (
-				59F284B11D1E708900C815D1 /* MoiveTableViewCell.h */,
-				59F284B21D1E708900C815D1 /* MoiveTableViewCell.m */,
-				59F284B31D1E708900C815D1 /* MoiveTableViewCell.xib */,
+				D8247FA61D212CDB007C573F /* MoiveTableViewCell.h */,
+				D8247FA71D212CDB007C573F /* MoiveTableViewCell.m */,
+				D8247FA81D212CDB007C573F /* MoiveTableViewCell.xib */,
 			);
 			name = "MovieCell(电影)";
 			sourceTree = "<group>";
@@ -835,6 +845,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D8247FAB1D212CEA007C573F /* 休闲娱乐 */ = {
+			isa = PBXGroup;
+			children = (
+				D8247FAC1D212D05007C573F /* GameTableViewController.h */,
+				D8247FAD1D212D05007C573F /* GameTableViewController.m */,
+			);
+			name = "休闲娱乐";
+			sourceTree = "<group>";
+		};
+		D8247FAF1D212D12007C573F /* GameCell(休闲娱乐) */ = {
+			isa = PBXGroup;
+			children = (
+				D8247FB01D212D48007C573F /* GameTableViewCell.h */,
+				D8247FB11D212D48007C573F /* GameTableViewCell.m */,
+				D8247FB21D212D48007C573F /* GameTableViewCell.xib */,
+			);
+			name = "GameCell(休闲娱乐)";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -952,13 +981,14 @@
 				5940BC2D1D1A556400982820 /* FictionView.xib in Resources */,
 				59EAD9731D20C302003DF636 /* ImageAndLabView.xib in Resources */,
 				59D096F41D139E6C00039C87 /* h2.jpg in Resources */,
+				D8247FAA1D212CDB007C573F /* MoiveTableViewCell.xib in Resources */,
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
 				59F786091D0BD793005A39FB /* FriendGroupView.xib in Resources */,
 				59EE6D961D17BE3D00DAB8B2 /* HomeModelView.xib in Resources */,
 				59E4EA501D193B08000083B8 /* profileHeaderView.xib in Resources */,
 				59D096F31D139E6C00039C87 /* h1.jpg in Resources */,
+				D8247FB41D212D48007C573F /* GameTableViewCell.xib in Resources */,
 				59F284961D1E4ECA00C815D1 /* TakeTableViewCell.xib in Resources */,
-				59F284B51D1E708900C815D1 /* MoiveTableViewCell.xib in Resources */,
 				5940BC321D1A8F6900982820 /* MenuTableViewCell.xib in Resources */,
 				59F284A81D1E5BE900C815D1 /* TheHotelTableViewCell.xib in Resources */,
 				59366BBC1D0672A500BB445A /* PerTableViewCell.xib in Resources */,
@@ -1041,7 +1071,6 @@
 				59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */,
 				59D096FD1D139E6C00039C87 /* SDCycleScrollView.m in Sources */,
 				59F2848E1D1E1A9B00C815D1 /* TakeOutTableViewController.m in Sources */,
-				59F284B41D1E708900C815D1 /* MoiveTableViewCell.m in Sources */,
 				59EAD9711D20C2E4003DF636 /* ImageAndLabView.m in Sources */,
 				5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */,
 				5910B8AF1D1238F300BA1C16 /* DropdownButton.m in Sources */,
@@ -1057,6 +1086,7 @@
 				59D096FB1D139E6C00039C87 /* TAPageControl.m in Sources */,
 				5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */,
 				59E4EA4E1D193AFE000083B8 /* profileHeaderView.m in Sources */,
+				D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */,
 				59366BB71D066E5600BB445A /* PersonalCenterViewController.m in Sources */,
 				59FFB7071D05369D00071E0E /* MarketCell.m in Sources */,
 				5910B8B01D1238F300BA1C16 /* DropdownMenu.m in Sources */,
@@ -1066,8 +1096,11 @@
 				59E013121D1BBBC5008C8553 /* CateViewController.m in Sources */,
 				5940BC2B1D1A552900982820 /* FictionTableViewCell.m in Sources */,
 				59FFB6EB1D05074300071E0E /* AddressBookController.m in Sources */,
+				D8247FA51D212CBC007C573F /* MovieTableViewController.m in Sources */,
 				59F061D91D0E409C006BEF9F /* AFNetWorting.m in Sources */,
 				59D096F71D139E6C00039C87 /* NSData+SDDataCache.m in Sources */,
+				D8247FB31D212D48007C573F /* GameTableViewCell.m in Sources */,
+				D8247FA91D212CDB007C573F /* MoiveTableViewCell.m in Sources */,
 				59366BBF1D06872300BB445A /* BaseViewController.m in Sources */,
 				59D096FE1D139E6C00039C87 /* UIView+SDExtension.m in Sources */,
 				59D096DC1D139A4F00039C87 /* HomePageTableViewController.m in Sources */,
@@ -1090,7 +1123,6 @@
 				59FFB6FB1D050F9500071E0E /* NavigationViewController.m in Sources */,
 				59FFB6EE1D05076200071E0E /* DiscoverViewController.m in Sources */,
 				59ED1C131D05B5E100405D17 /* UIBarButtonItem+Extension.m in Sources */,
-				59F284AF1D1E6EDF00C815D1 /* MovieTableViewController.m in Sources */,
 				59FFB6A91D0501F000071E0E /* AppDelegate.m in Sources */,
 				59D097071D13DB2C00039C87 /* TableViewHeader.m in Sources */,
 				59FFB6A61D0501F000071E0E /* main.m in Sources */,
@@ -1226,8 +1258,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Weilong Shan (4G4NB5G22B)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/lianglibin/Desktop/一个APP/一个APP/Tool/PrefixHeader.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "/Users/yg/Desktop/YGApp/一个APP/Tool/PrefixHeader.pch";
 				INFOPLIST_FILE = "一个APP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.yuanguApp;
@@ -1241,8 +1273,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Weilong Shan (4G4NB5G22B)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/lianglibin/Desktop/一个APP/一个APP/Tool/PrefixHeader.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "/Users/yg/Desktop/YGApp/一个APP/Tool/PrefixHeader.pch";
 				INFOPLIST_FILE = "一个APP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.yuanguApp;

@@ -19,6 +19,8 @@
 #import "TakeOutTableViewController.h" //外卖
 #import "TheHotelTableViewController.h" // 宾馆
 #import "SupermarketViewController.h" //超市
+#import "MovieTableViewController.h"
+#import "GameTableViewController.h"
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate>
 
@@ -290,6 +292,16 @@
     if (num == 1003) {
         SupermarketViewController *supermarketVC = [[SupermarketViewController alloc]init];
         [self.navigationController pushViewController:supermarketVC animated:YES];
+    }
+    // 电影
+    if (num == 1005) {
+        MovieTableViewController *movieVC = [[MovieTableViewController alloc]init];
+        [self.navigationController pushViewController:movieVC animated:YES];
+    }
+    // 休闲娱乐
+    if (num == 1006) {
+        GameTableViewController *gameVC = [[GameTableViewController alloc]init];
+        [self.navigationController pushViewController:gameVC animated:YES];
     }
 }
 
