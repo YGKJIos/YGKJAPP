@@ -26,7 +26,30 @@
     self.navigationBar.barTintColor = BGcolor(34, 198, 220);
     
 }
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if (self.viewControllers.count > 0) {
+        
+        /* 自动显示和隐藏tabbar */
+        viewController.hidesBottomBarWhenPushed = YES;
+        
+        // 设置按钮
+        UIBarButtonItem *leftItme = [UIBarButtonItem itemWithTarget:self action:@selector(leftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
+        UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBtnAction) image:@"meishi_sousuo" highImage:@"meishi_sousuo"];
+        viewController.navigationItem.rightBarButtonItem = rightItme;
+        viewController.navigationItem.leftBarButtonItem = leftItme;
+    }
+    [super pushViewController:viewController animated:animated];
+}
 
+- (void)leftBtnAction
+{
+    [self popViewControllerAnimated:YES];
+}
+- (void)rightBtnAction
+{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

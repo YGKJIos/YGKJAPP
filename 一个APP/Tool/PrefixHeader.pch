@@ -10,6 +10,8 @@
 #define PrefixHeader_pch
 
 #import "AFNetWorting.h"
+#import "ScrollView.h"  //轮播图
+#import "ImageAndLabView.h"
 #import <MJRefresh.h>
 #import <MBProgressHUD.h>
 #import <PureLayout.h>

@@ -16,6 +16,7 @@
 #import "ThridTableViewCell.h"
 #import "FoodHomeCell.h"
 #import "ShoppingCell.h"
+#import "TakeOutTableViewController.h" //外卖
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate>
 
@@ -266,10 +267,18 @@
     
     return cell;
 }
-- (void)pushViewController
+- (void)pushViewControllerNum:(NSInteger)num
 {
-    CateViewController *cateVC = [[CateViewController alloc]init];
-    [self.navigationController pushViewController:cateVC animated:YES];
+    // 美食 页面
+    if (num == 1000) {
+        CateViewController *cateVC = [[CateViewController alloc]init];
+        [self.navigationController pushViewController:cateVC animated:YES];
+    }
+    // 外卖
+    if (num == 1001) {
+        TakeOutTableViewController *takeVC = [[TakeOutTableViewController alloc]init];
+        [self.navigationController pushViewController:takeVC animated:YES];
+    }
 }
 
 

@@ -14,7 +14,7 @@
 @implementation DropdownButton
 
 - (id)initDropdownButtonWithTitles:(NSArray*)titles{
-    self = [super initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, SCREEN_WIDTH, BUTTON_HEIGHT)];
+    self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, BUTTON_HEIGHT)];
     if (self) {
         _isButtion = NO;
         _count = titles.count;
@@ -63,7 +63,9 @@
 }
 
 - (void)showMenuAction:(id)sender {
+    
     NSInteger i = [sender tag];
+    NSLog(@"%ld" , i);
     [self openMenuBtnAnimation:i];
 }
 

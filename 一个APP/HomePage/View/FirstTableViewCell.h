@@ -10,7 +10,7 @@
 
 @protocol pushViewControllerDelegate <NSObject>
 
-- (void)pushViewController;
+- (void)pushViewControllerNum:(NSInteger)num;
 
 @end
 

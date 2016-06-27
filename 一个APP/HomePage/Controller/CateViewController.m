@@ -9,6 +9,7 @@
 #import "CateViewController.h"
 #import "SDCycleScrollView.h"
 #import "DropdownMenu.h"
+#import "MarketCell.h"
 
 @interface CateViewController ()<SDCycleScrollViewDelegate,dropdownDelegate>
 
@@ -22,15 +23,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.backgroundColor = [UIColor whiteColor];
-    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationLeftBtnAction) image:nil highImage:nil];
+    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationLeftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
     self.navigationItem.leftBarButtonItem = leftItem;
     
-    self.bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 350)];
+    UIBarButtonItem *rightItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationRigthBtnAction) image:@"meishi_sousuo" highImage:@"meishi_sousuo"];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
+    self.bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 370)];
     
     [self addHeaderView];
     [self addMenuBtn];
     self.tableView.tableHeaderView = self.bgView;
+}
+- (void)navigationRigthBtnAction
+{
+    NSLog(@"navigationRigthBtnAction");
+}
+- (void)navigationLeftBtnAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)addHeaderView
 {
@@ -62,22 +77,28 @@
 }
 - (void)addMenuBtn
 {
-    NSArray *arr = @[@"zizhucan",@"huoguo",@"kuaican",@"xican",@"zhongcan",@"kaorou",@"dangao",@"quanbu"];
+    NSArray *arr = @[@"meishi_zizhu",@"meishi_huoguo",@"meishi_kuaican",@"meishi_xican",@"meishi_zhongcan",@"meishi_shaokao",@"meishi_dangao",@"meishi_quanbu"];
+    
+    NSArray *titles = @[@"自助餐",@"自助餐",@"自助餐",@"自助餐",@"自助餐",@"自助餐",@"自助餐",@"自助餐",];
     
     int num = 0;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 4; j++) {
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame = CGRectMake(25+j*(50+40), 170+i*(67+20), 54, 67);
-            [btn setBackgroundImage:[UIImage imageNamed:arr[num++]] forState:UIControlStateNormal];
-            [self.bgView addSubview:btn];
+//            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//            btn.frame = CGRectMake(35+j*(40+50), 170+i*(67+20), 40, 40);
+//            [btn setBackgroundImage:[UIImage imageNamed:arr[num++]] forState:UIControlStateNormal];
+//            [self.bgView addSubview:btn];
+            ImageAndLabView *view = [ImageAndLabView createViewNibWithImageArr:arr nameArr:titles];
+            [view setImages:arr names:titles];
+            view.frame = CGRectMake(35+j*(40+50), 170+i*(67+20), 40, 54);
+            [self.bgView addSubview:view];
         }
     }
-    NSArray *titleArray = @[@"全部分类",@"附近",@"智能"];
-    DropdownMenu *dropdown = [[DropdownMenu alloc] initDropdownWithButtonTitles:titleArray andLeftListArray:nil andRightListArray:nil];
-    dropdown.view.frame = CGRectMake(0, 200, WIDTH, 40);
-    dropdown.delegate = self;   //此句的代理方法可返回选中下标值
-    [self.bgView addSubview:dropdown.view];
+//    NSArray *titleArray = @[@"全部分类",@"附近",@"智能"];
+//    DropdownMenu *dropdown = [[DropdownMenu alloc] initDropdownWithButtonTitles:titleArray andLeftListArray:nil andRightListArray:nil];
+////    dropdown.view.frame = CGRectMake(0, 200, WIDTH, 40);
+//    dropdown.delegate = self;   //此句的代理方法可返回选中下标值
+//    [self.bgView addSubview:dropdown.view];
     
 }
 // 下拉菜单
@@ -98,22 +119,25 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cateCell = @"cateID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cateCell];
+    MarketCell *cell = [tableView dequeueReusableCellWithIdentifier:cateCell];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cateCell];
+        cell = [[NSBundle mainBundle]loadNibNamed:@"MarketCell" owner:nil options:nil].lastObject;
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 108;
+}
+
 //- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 //{
 //    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 0)];
@@ -128,8 +152,6 @@
 //{
 //    return 40;
 //}
-
-
 
 
 @end

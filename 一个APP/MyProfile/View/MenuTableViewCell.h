@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *balanceLab;
 
-- (void)setMenuNotHaveSubLab;
+//- (void)setMenuNotHaveSubLab;
 
 @end

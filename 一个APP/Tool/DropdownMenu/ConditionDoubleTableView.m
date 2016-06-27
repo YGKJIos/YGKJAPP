@@ -43,7 +43,8 @@
 - (void)initFirstTableViewWithFrame:(CGRect)frame {
     _firstTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width / 2, frame.size.height / 2) style:UITableViewStylePlain];
     _firstTableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    _firstTableView.backgroundColor = [self colorWithRGB:0xFAFAFA];
+//    _firstTableView.backgroundColor = [self colorWithRGB:0xFAFAFA];
+    _firstTableView.backgroundColor = [UIColor blueColor];
     _firstTableView.delegate = self;
     _firstTableView.dataSource = self;
     [_rootView addSubview:_firstTableView];
@@ -170,7 +171,7 @@
         [self showLastSelectedLeft:left Right:right];
         _rootView.center = CGPointMake(self.view.frame.size.width / 2, 0 - _rootView.bounds.size.height / 2);
         [UIView animateWithDuration:0.5 animations:^{
-            _rootView.center = CGPointMake(self.view.frame.size.width / 2, _rootView.bounds.size.height / 2);
+            _rootView.frame = CGRectMake(0, 60, WIDTH, HEIGHT);
         }];
     } else {
         [self hideTableView];

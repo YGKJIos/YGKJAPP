@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootTabBarController.h"
-#import "CateViewController.h"
+#import "TheHotelTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,9 +25,9 @@
     RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
     self.window.rootViewController = rootTabBar;
     rootTabBar.tabBar.translucent = NO;
-//    CateViewController *vc = [[CateViewController alloc]init];
-    self.window.rootViewController = rootTabBar;
     
+//    TheHotelTableViewController *vc = [[TheHotelTableViewController alloc]init];
+//    self.window.rootViewController = vc;
     
     [self.window makeKeyAndVisible];
     

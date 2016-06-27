@@ -10,7 +10,6 @@
 #import "PersonalCenterViewController.h"
 #import "MarketCell.h"
 #import "MarketModel.h"
-#import "ScrollTool.h"
 #import "DropdownMenu.h"
 
 @interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate,dropdownDelegate>
@@ -97,22 +96,11 @@
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 180)];
     _tableView.tableHeaderView = headerView;
     // 轮播图
-    NSArray *img = @[@"xinwen_tup",@"xinwen_tou" , @"zhaopin2_tou",@"caomei"];
+    NSArray *img = @[@"shouye_guangg",@"shouye_haigou" , @"shouye_meishitou",@"shouye_xinwen"];
     
-    ScrollTool *scrollView = [[ScrollTool alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 180 - 40)];
-    [scrollView imageArray:img];
+    ScrollView *scrollView = [ScrollView CreateScrollViewImages:img];
     [headerView addSubview:scrollView];
-    
-    NSArray *titleArray = @[@"全部分类",@"附近",@"智能",];
-    
-    DropdownMenu *dropdown = [[DropdownMenu alloc] initDropdownWithButtonTitles:titleArray andLeftListArray:nil andRightListArray:nil];
-    dropdown.view.frame = CGRectMake(0, scrollView.frame.size.height-60, WIDTH, 40);
-    dropdown.delegate = self;   //此句的代理方法可返回选中下标值
-    [headerView addSubview:dropdown.view];
-    
-    UILabel *lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 179, WIDTH, 1)];
-    lineLabel.backgroundColor = BGcolor(206, 205, 205);
-    [headerView addSubview:lineLabel];
+        
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

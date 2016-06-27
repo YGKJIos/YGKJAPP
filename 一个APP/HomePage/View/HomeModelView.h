@@ -30,7 +30,7 @@ typedef enum
 
 + (HomeModelView *)secondHandModelStyle; //二手置换
 
-- (void)setModelViewStyle:(ViewStyle)style; // 页面的风格
+//- (void)setModelViewStyle:(ViewStyle)style; // 页面的风格
 - (void)setModelImageViewName:(NSString *)image title:(NSString *)title;
 
 @end

@@ -14,7 +14,7 @@
 - (id)initDropdownWithButtonTitles:(NSArray*)titles andLeftListArray:(NSArray*)leftArray andRightListArray:(NSArray *)rightArray {
     self = [super init];
     if (self) {
-        self.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, 104);
+        self.view.frame = CGRectMake(0, 330, WIDTH, 40);
         _button = [[DropdownButton alloc] initDropdownButtonWithTitles:titles];
         _button.delegate = self;
         _tableView = [[ConditionDoubleTableView alloc] initWithFrame:self.view.bounds andLeftItems:leftArray andRightItems:rightArray];
@@ -37,7 +37,7 @@
 //button点击代理
 - (void)showMenu:(NSInteger)index {
     _lastIndex = index;
-    [self.view setFrame:SCREEN_RECT];
+    [self.view setFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
     _buttonSelectedIndex = index - 10000;
     NSString *selected = @"0-0";
     if (_buttonIndexArray.count > _buttonSelectedIndex){
@@ -56,7 +56,7 @@
 }
 
 - (void)reduceBackgroundSize {
-    [self.view setFrame:CGRectMake(0, 0, SCREEN_WIDTH, 104)];
+    [self.view setFrame:CGRectMake(0, 330, SCREEN_WIDTH, 40)];
 }
 
 - (void)selectedFirstValue:(NSString *)first SecondValue:(NSString *)second{
