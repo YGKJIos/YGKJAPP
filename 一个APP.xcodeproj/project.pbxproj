@@ -46,6 +46,9 @@
 		59E4EA501D193B08000083B8 /* profileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59E4EA4F1D193B08000083B8 /* profileHeaderView.xib */; };
 		59EAD9711D20C2E4003DF636 /* ImageAndLabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAD9701D20C2E4003DF636 /* ImageAndLabView.m */; };
 		59EAD9731D20C302003DF636 /* ImageAndLabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59EAD9721D20C302003DF636 /* ImageAndLabView.xib */; };
+		59EAD9781D20F645003DF636 /* SupermarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAD9771D20F645003DF636 /* SupermarketViewController.m */; };
+		59EAD97C1D210A66003DF636 /* SupermarketCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAD97A1D210A66003DF636 /* SupermarketCollectionViewCell.m */; };
+		59EAD97D1D210A66003DF636 /* SupermarketCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59EAD97B1D210A66003DF636 /* SupermarketCollectionViewCell.xib */; };
 		59EC739F1D0946F6009062D9 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EC739E1D0946F6009062D9 /* MessageModel.m */; };
 		59EC73A21D0947EA009062D9 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EC73A11D0947EA009062D9 /* SearchView.m */; };
 		59ED1C131D05B5E100405D17 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED1C121D05B5E100405D17 /* UIBarButtonItem+Extension.m */; };
@@ -177,6 +180,11 @@
 		59EAD96F1D20C2E4003DF636 /* ImageAndLabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndLabView.h; sourceTree = "<group>"; };
 		59EAD9701D20C2E4003DF636 /* ImageAndLabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndLabView.m; sourceTree = "<group>"; };
 		59EAD9721D20C302003DF636 /* ImageAndLabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAndLabView.xib; sourceTree = "<group>"; };
+		59EAD9761D20F645003DF636 /* SupermarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupermarketViewController.h; sourceTree = "<group>"; };
+		59EAD9771D20F645003DF636 /* SupermarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupermarketViewController.m; sourceTree = "<group>"; };
+		59EAD9791D210A66003DF636 /* SupermarketCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupermarketCollectionViewCell.h; sourceTree = "<group>"; };
+		59EAD97A1D210A66003DF636 /* SupermarketCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupermarketCollectionViewCell.m; sourceTree = "<group>"; };
+		59EAD97B1D210A66003DF636 /* SupermarketCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupermarketCollectionViewCell.xib; sourceTree = "<group>"; };
 		59EC739D1D0946F6009062D9 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		59EC739E1D0946F6009062D9 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		59EC73A01D0947EA009062D9 /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
@@ -287,7 +295,7 @@
 		5910B88A1D1234D700BA1C16 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				5910B88B1D1234D700BA1C16 /* Controller */,
+				59EAD9741D20F01D003DF636 /* New Group */,
 				5910B88E1D1234D700BA1C16 /* Model */,
 				5910B88F1D1234D700BA1C16 /* View */,
 			);
@@ -297,6 +305,7 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				59EAD9751D20F1F0003DF636 /* 超市 */,
 				59F284AC1D1E6E9100C815D1 /* 电影 */,
 				59F284971D1E5B3800C815D1 /* 宾馆 */,
 				59F2848B1D1E1A6000C815D1 /* 外卖 */,
@@ -470,6 +479,26 @@
 				59F061D81D0E409C006BEF9F /* AFNetWorting.m */,
 			);
 			name = OtherTool;
+			sourceTree = "<group>";
+		};
+		59EAD9741D20F01D003DF636 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				5910B88B1D1234D700BA1C16 /* Controller */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		59EAD9751D20F1F0003DF636 /* 超市 */ = {
+			isa = PBXGroup;
+			children = (
+				59EAD9761D20F645003DF636 /* SupermarketViewController.h */,
+				59EAD9771D20F645003DF636 /* SupermarketViewController.m */,
+				59EAD9791D210A66003DF636 /* SupermarketCollectionViewCell.h */,
+				59EAD97A1D210A66003DF636 /* SupermarketCollectionViewCell.m */,
+				59EAD97B1D210A66003DF636 /* SupermarketCollectionViewCell.xib */,
+			);
+			name = "超市";
 			sourceTree = "<group>";
 		};
 		59F2848B1D1E1A6000C815D1 /* 外卖 */ = {
@@ -915,6 +944,7 @@
 				59FFB7081D05369D00071E0E /* MarketCell.xib in Resources */,
 				59D096F61D139E6C00039C87 /* h4.jpg in Resources */,
 				59FFB6FD1D05187D00071E0E /* Assets.xcassets in Resources */,
+				59EAD97D1D210A66003DF636 /* SupermarketCollectionViewCell.xib in Resources */,
 				59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */,
 				59F7860E1D0BD9A1005A39FB /* FriendCell.xib in Resources */,
 				5910B8B11D1238F300BA1C16 /* expandableImage@2x.png in Resources */,
@@ -1030,6 +1060,7 @@
 				59366BB71D066E5600BB445A /* PersonalCenterViewController.m in Sources */,
 				59FFB7071D05369D00071E0E /* MarketCell.m in Sources */,
 				5910B8B01D1238F300BA1C16 /* DropdownMenu.m in Sources */,
+				59EAD9781D20F645003DF636 /* SupermarketViewController.m in Sources */,
 				59FFB6F41D0507E900071E0E /* MessageViewController.m in Sources */,
 				59EC739F1D0946F6009062D9 /* MessageModel.m in Sources */,
 				59E013121D1BBBC5008C8553 /* CateViewController.m in Sources */,
@@ -1047,6 +1078,7 @@
 				59EE6D991D17D48B00DAB8B2 /* FoodHomeCell.m in Sources */,
 				59F786111D0BDE19005A39FB /* FriendModel.m in Sources */,
 				59E4EA4B1D18E47D000083B8 /* ShoppingCell.m in Sources */,
+				59EAD97C1D210A66003DF636 /* SupermarketCollectionViewCell.m in Sources */,
 				59F284911D1E1B3400C815D1 /* ScrollView.m in Sources */,
 				5910B8AE1D1238F300BA1C16 /* ConditionDoubleTableView.m in Sources */,
 				59F284AB1D1E618600C815D1 /* TheHotelTableViewController.m in Sources */,

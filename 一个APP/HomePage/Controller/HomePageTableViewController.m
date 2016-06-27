@@ -17,6 +17,8 @@
 #import "FoodHomeCell.h"
 #import "ShoppingCell.h"
 #import "TakeOutTableViewController.h" //外卖
+#import "TheHotelTableViewController.h" // 宾馆
+#import "SupermarketViewController.h" //超市
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate>
 
@@ -52,7 +54,6 @@
     // pageControl样式
     self.scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
     self.scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    
     // 轮播图上的文字
 //    scrollView.titlesGroup = titles;
     // 分页控件图标
@@ -267,6 +268,7 @@
     
     return cell;
 }
+#pragma mark - tableView 第一个模块跳转
 - (void)pushViewControllerNum:(NSInteger)num
 {
     // 美食 页面
@@ -278,6 +280,16 @@
     if (num == 1001) {
         TakeOutTableViewController *takeVC = [[TakeOutTableViewController alloc]init];
         [self.navigationController pushViewController:takeVC animated:YES];
+    }
+    // 宾馆
+    if (num == 1002) {
+        TheHotelTableViewController *hotelVc = [[TheHotelTableViewController alloc]init];
+        [self.navigationController pushViewController:hotelVc animated:YES];
+    }
+    // 超市
+    if (num == 1003) {
+        SupermarketViewController *supermarketVC = [[SupermarketViewController alloc]init];
+        [self.navigationController pushViewController:supermarketVC animated:YES];
     }
 }
 

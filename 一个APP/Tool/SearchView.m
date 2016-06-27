@@ -44,7 +44,7 @@
 //        textField.leftViewMode = UITextFieldViewModeAlways;
         [textField addSubview:searchImageView];
         _searchImageView = searchImageView;
-        
+        _placeholder.text = @"搜索";
         _placeholder = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width / 2 -20, 0, 120, 40)];
         _placeholder.font = [UIFont systemFontOfSize:15];
         _placeholder.textColor = BGcolor(86, 86, 91);
@@ -53,11 +53,6 @@
     return self;
 }
 
-- (void)setPlaceholderText:(NSString *)placeholder
-{
-    
-    _placeholder.text = placeholder;
-}
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     [UIView animateWithDuration:0.1 animations:^{

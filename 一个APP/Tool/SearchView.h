@@ -11,6 +11,4 @@
 @interface SearchView : UIView
 
 
-- (void)setPlaceholderText:(NSString *)placeholder;
-
 @end

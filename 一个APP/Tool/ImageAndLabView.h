@@ -14,8 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *imageBtn;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 
-+ (ImageAndLabView *)createViewNibWithImageArr:(NSArray *)images nameArr:(NSArray *)names;
++ (ImageAndLabView *)createViewNib;
 
-- (void)setImages:(NSArray *)images names:(NSArray *)names;
+- (void)setImages:(NSString *)image names:(NSString *)name;
 
 @end

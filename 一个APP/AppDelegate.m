@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootTabBarController.h"
-#import "TheHotelTableViewController.h"
+#import "SupermarketViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,12 +22,12 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-    self.window.rootViewController = rootTabBar;
-    rootTabBar.tabBar.translucent = NO;
+//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+//    self.window.rootViewController = rootTabBar;
+//    rootTabBar.tabBar.translucent = NO;
     
-//    TheHotelTableViewController *vc = [[TheHotelTableViewController alloc]init];
-//    self.window.rootViewController = vc;
+    SupermarketViewController *vc = [[SupermarketViewController alloc]init];
+    self.window.rootViewController = vc;
     
     [self.window makeKeyAndVisible];
     

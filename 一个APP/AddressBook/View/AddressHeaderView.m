@@ -30,7 +30,7 @@
     NSArray *arr = @[@"zuijin_lianxi",@"qunzu",@"xin_pengyou"];
 //    NSArray *textArr = @[@"最近联系",@"群组" , @"新朋友"];
     self.searchView = [[SearchView alloc]initWithFrame:CGRectMake(15, 10, self.frame.size.width-30, 40)];
-    [self.searchView setPlaceholderText:@"搜索"];
+//    [self.searchView setPlaceholderText:@"搜索"];
     [self addSubview:self.searchView];
     
     for (int i = 0; i < 3; i++) {

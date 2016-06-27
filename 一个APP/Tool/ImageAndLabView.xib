@@ -8,32 +8,34 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ImageAndLabView">
-            <rect key="frame" x="0.0" y="0.0" width="40" height="54"/>
+            <rect key="frame" x="0.0" y="0.0" width="40" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymt-se-ulp">
-                    <rect key="frame" x="0.0" y="39" width="40" height="14"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-J6-f9g">
+                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="1FU-2W-Yfd"/>
+                        <constraint firstAttribute="width" constant="40" id="7j6-Fw-0Xu"/>
+                        <constraint firstAttribute="height" constant="40" id="gsL-Mr-tm4"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="meishi_xican"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymt-se-ulp">
+                    <rect key="frame" x="-20" y="45" width="80" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="1FU-2W-Yfd"/>
                         <constraint firstAttribute="height" constant="14" id="dVw-kk-kx6"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.3529411764705882" green="0.3529411764705882" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-J6-f9g">
-                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="7j6-Fw-0Xu"/>
-                        <constraint firstAttribute="height" constant="40" id="gsL-Mr-tm4"/>
-                    </constraints>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Jg3-J6-f9g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1ew-Ho-2Lv"/>
-                <constraint firstItem="ymt-se-ulp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CYg-eh-BTk"/>
-                <constraint firstItem="ymt-se-ulp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="39" id="etC-qx-fT4"/>
+                <constraint firstItem="ymt-se-ulp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-20" id="CYg-eh-BTk"/>
+                <constraint firstItem="ymt-se-ulp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="etC-qx-fT4"/>
                 <constraint firstItem="Jg3-J6-f9g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="u7M-iT-2CM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -41,7 +43,10 @@
                 <outlet property="imageBtn" destination="Jg3-J6-f9g" id="9PU-6x-Lmv"/>
                 <outlet property="nameLab" destination="ymt-se-ulp" id="r7H-Hk-xHl"/>
             </connections>
-            <point key="canvasLocation" x="309" y="98"/>
+            <point key="canvasLocation" x="309" y="100.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="meishi_xican" width="40" height="40"/>
+    </resources>
 </document>

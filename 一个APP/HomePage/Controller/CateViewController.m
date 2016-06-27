@@ -79,18 +79,16 @@
 {
     NSArray *arr = @[@"meishi_zizhu",@"meishi_huoguo",@"meishi_kuaican",@"meishi_xican",@"meishi_zhongcan",@"meishi_shaokao",@"meishi_dangao",@"meishi_quanbu"];
     
-    NSArray *titles = @[@"自助餐",@"自助餐",@"自助餐",@"自助餐",@"自助餐",@"自助餐",@"自助餐",@"自助餐",];
+    NSArray *titles = @[@"自助餐",@"火锅",@"快餐小吃",@"西餐",@"中餐",@"烤肉/烧烤",@"蛋糕",@"全部分类",];
     
     int num = 0;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 4; j++) {
-//            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//            btn.frame = CGRectMake(35+j*(40+50), 170+i*(67+20), 40, 40);
-//            [btn setBackgroundImage:[UIImage imageNamed:arr[num++]] forState:UIControlStateNormal];
-//            [self.bgView addSubview:btn];
-            ImageAndLabView *view = [ImageAndLabView createViewNibWithImageArr:arr nameArr:titles];
-            [view setImages:arr names:titles];
-            view.frame = CGRectMake(35+j*(40+50), 170+i*(67+20), 40, 54);
+
+            ImageAndLabView *view = [ImageAndLabView createViewNib];
+            [view setImages:arr[num] names:titles[num]];
+            num++;
+            view.frame = CGRectMake(35+j*(40+50), 170+i*(67+20), 40, 60);
             [self.bgView addSubview:view];
         }
     }

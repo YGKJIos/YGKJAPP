@@ -28,12 +28,17 @@
     ScrollView *scrollView = [ScrollView CreateScrollViewImages:arr];
     [tableHeaderView addSubview:scrollView];
     NSArray *btnImage = @[@"waimai_meishi",@"waimei_xianhua",@"waimai_dangao",@"waimai_yaopin"];
+    NSArray *titles = @[@"美食",@"鲜花",@"蛋糕",@"药品"];
     for (int i = 0; i < 4; i++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(30+(40+WIDTH/4-40)*i,scrollView.height+ 10, 40, 40);
-        [btn setBackgroundImage:[UIImage imageNamed:btnImage[i]] forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(clickBtnImage:) forControlEvents:UIControlEventTouchUpInside];
-        [tableHeaderView addSubview:btn];
+//        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        btn.frame = CGRectMake(30+(40+WIDTH/4-40)*i,scrollView.height+ 10, 40, 40);
+//        [btn setBackgroundImage:[UIImage imageNamed:btnImage[i]] forState:UIControlStateNormal];
+//        [btn addTarget:self action:@selector(clickBtnImage:) forControlEvents:UIControlEventTouchUpInside];
+//        [tableHeaderView addSubview:btn];
+        ImageAndLabView *view = [ImageAndLabView createViewNib];
+        view.frame = CGRectMake(30+(40+WIDTH/4-40)*i,scrollView.height+ 10, 40, 40);
+        [view setImages:btnImage[i] names:titles[i]];
+        [tableHeaderView addSubview:view];
     }
     
     

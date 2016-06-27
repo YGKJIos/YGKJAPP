@@ -11,20 +11,19 @@
 @implementation ImageAndLabView
 
 
-+ (ImageAndLabView *)createViewNibWithImageArr:(NSArray *)images nameArr:(NSArray *)names
++ (ImageAndLabView *)createViewNib
 {
     ImageAndLabView *view = [[NSBundle mainBundle]loadNibNamed:@"ImageAndLabView" owner:nil options:nil].lastObject;
     
     
     return view;
 }
-- (void)setImages:(NSArray *)images names:(NSArray *)names
+- (void)setImages:(NSString *)image names:(NSString *)name
 {
-    for (int i = 0; i < images.count; i++) {
-        [self.imageBtn setBackgroundImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
-        [self.imageBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
-        self.nameLab.text = names[i];
-    }
+    [self.imageBtn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+    [self.imageBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.nameLab.text = name;
+    
 }
 
 - (void)clickAction:(UIButton *)btn

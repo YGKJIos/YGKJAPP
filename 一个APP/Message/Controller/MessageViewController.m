@@ -26,7 +26,7 @@
 
 - (void)addSearchView{
     SearchView *searchView = [[SearchView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 70)];
-    [searchView setPlaceholderText:@"搜索"];
+//    [searchView setPlaceholderText:@"搜索"];
     self.tableView.tableHeaderView = searchView;
 }
 
