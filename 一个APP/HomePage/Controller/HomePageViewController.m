@@ -20,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 我特么真是醉了！！！！！！！！
+    
+    
     // 设置navigation 的样式
     [self addNavigationView];
     HomePageTableViewController *homeTabVC = [[HomePageTableViewController alloc]init];
