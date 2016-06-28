@@ -94,6 +94,10 @@
 		D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FAD1D212D05007C573F /* GameTableViewController.m */; };
 		D8247FB31D212D48007C573F /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FB11D212D48007C573F /* GameTableViewCell.m */; };
 		D8247FB41D212D48007C573F /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8247FB21D212D48007C573F /* GameTableViewCell.xib */; };
+		D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */; };
+		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
+		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
+		D842DF321D224642008A54B7 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +276,11 @@
 		D8247FB01D212D48007C573F /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
 		D8247FB11D212D48007C573F /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
 		D8247FB21D212D48007C573F /* GameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
+		D842DF2A1D224642008A54B7 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
+		D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
+		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
+		D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
+		D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -805,6 +814,7 @@
 		59FFB6E71D0506A200071E0E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				D842DF291D224642008A54B7 /* DOPDropDownMenu - Enhanced */,
 				59EAD96E1D20C2A3003DF636 /* OtherTool */,
 				59EAD96D1D20C27D003DF636 /* ViewTool */,
 				59D096DD1D139E6C00039C87 /* SDCycleScrollView */,
@@ -862,6 +872,19 @@
 				D8247FB21D212D48007C573F /* GameTableViewCell.xib */,
 			);
 			name = "GameCell(休闲娱乐)";
+			sourceTree = "<group>";
+		};
+		D842DF291D224642008A54B7 /* DOPDropDownMenu - Enhanced */ = {
+			isa = PBXGroup;
+			children = (
+				D842DF2A1D224642008A54B7 /* DOPDropDownMenu.h */,
+				D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */,
+				D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */,
+				D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */,
+				D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */,
+			);
+			name = "DOPDropDownMenu - Enhanced";
+			path = "DropdownMenu/DOPDropDownMenu - Enhanced";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -970,6 +993,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D842DF321D224642008A54B7 /* icon_chose_bottom@2x.png in Resources */,
 				59FFB7081D05369D00071E0E /* MarketCell.xib in Resources */,
 				59D096F61D139E6C00039C87 /* h4.jpg in Resources */,
 				59FFB6FD1D05187D00071E0E /* Assets.xcassets in Resources */,
@@ -977,6 +1001,7 @@
 				59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */,
 				59F7860E1D0BD9A1005A39FB /* FriendCell.xib in Resources */,
 				5910B8B11D1238F300BA1C16 /* expandableImage@2x.png in Resources */,
+				D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */,
 				59D096F51D139E6C00039C87 /* h3.jpg in Resources */,
 				5940BC2D1D1A556400982820 /* FictionView.xib in Resources */,
 				59EAD9731D20C302003DF636 /* ImageAndLabView.xib in Resources */,
@@ -985,6 +1010,7 @@
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
 				59F786091D0BD793005A39FB /* FriendGroupView.xib in Resources */,
 				59EE6D961D17BE3D00DAB8B2 /* HomeModelView.xib in Resources */,
+				D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */,
 				59E4EA501D193B08000083B8 /* profileHeaderView.xib in Resources */,
 				59D096F31D139E6C00039C87 /* h1.jpg in Resources */,
 				D8247FB41D212D48007C573F /* GameTableViewCell.xib in Resources */,
@@ -1066,6 +1092,7 @@
 			files = (
 				59F786071D0BD541005A39FB /* FriendGroupView.m in Sources */,
 				59D096FA1D139E6C00039C87 /* TADotView.m in Sources */,
+				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,
 				59FFB7031D051EA800071E0E /* UIView+Extension.m in Sources */,
 				59F6A8A71D15362F00CFD28F /* ThridTableViewCell.m in Sources */,
 				59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */,
@@ -1259,7 +1286,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Weilong Shan (4G4NB5G22B)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "/Users/yg/Desktop/YGApp/一个APP/Tool/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/lianglibin/Desktop/YGApp/一个APP/Tool/PrefixHeader.pch";
 				INFOPLIST_FILE = "一个APP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.yuanguApp;
@@ -1274,7 +1301,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Weilong Shan (4G4NB5G22B)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "/Users/yg/Desktop/YGApp/一个APP/Tool/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/lianglibin/Desktop/YGApp/一个APP/Tool/PrefixHeader.pch";
 				INFOPLIST_FILE = "一个APP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.yuanguApp;
