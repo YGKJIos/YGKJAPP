@@ -98,6 +98,10 @@
 		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
 		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
 		D842DF321D224642008A54B7 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */; };
+		D8AAD0551D236218005915D1 /* AllStylViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAD0541D236218005915D1 /* AllStylViewController.m */; };
+		D8AAD0591D23957A005915D1 /* AllStylCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAD0581D23957A005915D1 /* AllStylCollectionViewCell.m */; };
+		D8AAD05C1D23969E005915D1 /* AllStylCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAD05B1D23969E005915D1 /* AllStylCollectionReusableView.m */; };
+		D8FD1E9E1D23B9460059719B /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FD1E9D1D23B9460059719B /* CarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -281,6 +285,14 @@
 		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
 		D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
 		D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
+		D8AAD0531D236218005915D1 /* AllStylViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllStylViewController.h; sourceTree = "<group>"; };
+		D8AAD0541D236218005915D1 /* AllStylViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllStylViewController.m; sourceTree = "<group>"; };
+		D8AAD0571D23957A005915D1 /* AllStylCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllStylCollectionViewCell.h; sourceTree = "<group>"; };
+		D8AAD0581D23957A005915D1 /* AllStylCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllStylCollectionViewCell.m; sourceTree = "<group>"; };
+		D8AAD05A1D23969E005915D1 /* AllStylCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllStylCollectionReusableView.h; sourceTree = "<group>"; };
+		D8AAD05B1D23969E005915D1 /* AllStylCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllStylCollectionReusableView.m; sourceTree = "<group>"; };
+		D8FD1E9C1D23B9460059719B /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
+		D8FD1E9D1D23B9460059719B /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,18 +334,15 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D8FD1E9B1D23B9000059719B /* 拼车 */,
+				D8FD1E9A1D23B7330059719B /* 首页 */,
+				D8AAD0521D236174005915D1 /* 全部分类 */,
 				D8247FAB1D212CEA007C573F /* 休闲娱乐 */,
 				59EAD9751D20F1F0003DF636 /* 超市 */,
 				59F284AC1D1E6E9100C815D1 /* 电影 */,
 				59F284971D1E5B3800C815D1 /* 宾馆 */,
 				59F2848B1D1E1A6000C815D1 /* 外卖 */,
 				5925B8611D1CB680006734FA /* 美食 */,
-				5910B88C1D1234D700BA1C16 /* HomePageViewController.h */,
-				5910B88D1D1234D700BA1C16 /* HomePageViewController.m */,
-				59D096DA1D139A4F00039C87 /* HomePageTableViewController.h */,
-				59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */,
-				5910B8F61D12975300BA1C16 /* SearchViewController.h */,
-				5910B8F71D12975300BA1C16 /* SearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 		5910B88F1D1234D700BA1C16 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8AAD0561D23946C005915D1 /* AllStylCell(全部分类) */,
 				D8247FAF1D212D12007C573F /* GameCell(休闲娱乐) */,
 				59F284B01D1E6EFA00C815D1 /* MovieCell(电影) */,
 				59F284A31D1E5BA900C815D1 /* TheHotel(宾馆) */,
@@ -887,6 +897,48 @@
 			path = "DropdownMenu/DOPDropDownMenu - Enhanced";
 			sourceTree = "<group>";
 		};
+		D8AAD0521D236174005915D1 /* 全部分类 */ = {
+			isa = PBXGroup;
+			children = (
+				D8AAD0531D236218005915D1 /* AllStylViewController.h */,
+				D8AAD0541D236218005915D1 /* AllStylViewController.m */,
+			);
+			name = "全部分类";
+			sourceTree = "<group>";
+		};
+		D8AAD0561D23946C005915D1 /* AllStylCell(全部分类) */ = {
+			isa = PBXGroup;
+			children = (
+				D8AAD0571D23957A005915D1 /* AllStylCollectionViewCell.h */,
+				D8AAD0581D23957A005915D1 /* AllStylCollectionViewCell.m */,
+				D8AAD05A1D23969E005915D1 /* AllStylCollectionReusableView.h */,
+				D8AAD05B1D23969E005915D1 /* AllStylCollectionReusableView.m */,
+			);
+			name = "AllStylCell(全部分类)";
+			sourceTree = "<group>";
+		};
+		D8FD1E9A1D23B7330059719B /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				5910B88C1D1234D700BA1C16 /* HomePageViewController.h */,
+				5910B88D1D1234D700BA1C16 /* HomePageViewController.m */,
+				59D096DA1D139A4F00039C87 /* HomePageTableViewController.h */,
+				59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */,
+				5910B8F61D12975300BA1C16 /* SearchViewController.h */,
+				5910B8F71D12975300BA1C16 /* SearchViewController.m */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
+		D8FD1E9B1D23B9000059719B /* 拼车 */ = {
+			isa = PBXGroup;
+			children = (
+				D8FD1E9C1D23B9460059719B /* CarViewController.h */,
+				D8FD1E9D1D23B9460059719B /* CarViewController.m */,
+			);
+			name = "拼车";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1107,6 +1159,7 @@
 				59F284951D1E4ECA00C815D1 /* TakeTableViewCell.m in Sources */,
 				5910B8961D1234D700BA1C16 /* HomePageViewController.m in Sources */,
 				59D096FC1D139E6C00039C87 /* SDCollectionViewCell.m in Sources */,
+				D8FD1E9E1D23B9460059719B /* CarViewController.m in Sources */,
 				59D097011D13C32F00039C87 /* HomeModelView.m in Sources */,
 				59D096F91D139E6C00039C87 /* TAAnimatedDotView.m in Sources */,
 				59EC73A21D0947EA009062D9 /* SearchView.m in Sources */,
@@ -1127,6 +1180,7 @@
 				59F061D91D0E409C006BEF9F /* AFNetWorting.m in Sources */,
 				59D096F71D139E6C00039C87 /* NSData+SDDataCache.m in Sources */,
 				D8247FB31D212D48007C573F /* GameTableViewCell.m in Sources */,
+				D8AAD05C1D23969E005915D1 /* AllStylCollectionReusableView.m in Sources */,
 				D8247FA91D212CDB007C573F /* MoiveTableViewCell.m in Sources */,
 				59366BBF1D06872300BB445A /* BaseViewController.m in Sources */,
 				59D096FE1D139E6C00039C87 /* UIView+SDExtension.m in Sources */,
@@ -1144,12 +1198,14 @@
 				59F284AB1D1E618600C815D1 /* TheHotelTableViewController.m in Sources */,
 				59D097041D13C74A00039C87 /* HomeTableViewCell.m in Sources */,
 				59D096F81D139E6C00039C87 /* TAAbstractDotView.m in Sources */,
+				D8AAD0551D236218005915D1 /* AllStylViewController.m in Sources */,
 				59F7860D1D0BD9A1005A39FB /* FriendCell.m in Sources */,
 				59F6A8A41D1529CA00CFD28F /* SecondTableViewCell.m in Sources */,
 				59F786041D0BAAC4005A39FB /* AddressHeaderView.m in Sources */,
 				59FFB6FB1D050F9500071E0E /* NavigationViewController.m in Sources */,
 				59FFB6EE1D05076200071E0E /* DiscoverViewController.m in Sources */,
 				59ED1C131D05B5E100405D17 /* UIBarButtonItem+Extension.m in Sources */,
+				D8AAD0591D23957A005915D1 /* AllStylCollectionViewCell.m in Sources */,
 				59FFB6A91D0501F000071E0E /* AppDelegate.m in Sources */,
 				59D097071D13DB2C00039C87 /* TableViewHeader.m in Sources */,
 				59FFB6A61D0501F000071E0E /* main.m in Sources */,
