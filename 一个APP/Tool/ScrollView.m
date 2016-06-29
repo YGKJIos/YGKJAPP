@@ -41,6 +41,10 @@
     [view addSubview:view.scrollView];
     return view;
 }
+- (void)setScrollImage:(NSArray *)images
+{
+    
+}
 
 
 @end
