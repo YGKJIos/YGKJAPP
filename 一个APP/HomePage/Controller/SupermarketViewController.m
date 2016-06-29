@@ -8,6 +8,7 @@
 
 #import "SupermarketViewController.h"
 #import "SupermarketCollectionViewCell.h"
+#import "HeaderCollectionReusableView.h"
 #import "SearchView.h"
 
 @interface SupermarketViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -21,7 +22,8 @@
     [self setNavigationStyle];
   
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(180, 150);
+    flowLayout.itemSize = CGSizeMake(180*(WIDTH/375), 150);
+    flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 190);
     flowLayout.sectionInset = UIEdgeInsetsMake(8, 3, 8, 3);
     flowLayout.minimumInteritemSpacing = 8;
     flowLayout.minimumLineSpacing = 8;
@@ -36,6 +38,7 @@
     
     UINib *nib = [UINib nibWithNibName:@"SupermarketCollectionViewCell" bundle:[NSBundle mainBundle]];
     [collection registerNib:nib forCellWithReuseIdentifier:@"reportFilterCell"];
+    [collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
     
 }
 
@@ -69,11 +72,19 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    SupermarketCollectionViewCell *cell = [[SupermarketCollectionViewCell alloc]init];
+    SupermarketCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reportFilterCell" forIndexPath:indexPath];
     
     cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"reportFilterCell" forIndexPath:indexPath];
     
     return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *arr = @[@"chaoshi_tu",@"chaoshi_tu",@"chaoshi_tu",@"chaoshi_tu",];
+    HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headID" forIndexPath:indexPath];
+    [headerView setScrollViewImage:arr];
+    return headerView;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
