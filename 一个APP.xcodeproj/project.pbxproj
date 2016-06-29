@@ -189,7 +189,7 @@
 		59EAD9721D20C302003DF636 /* ImageAndLabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageAndLabView.xib; sourceTree = "<group>"; };
 		59EAD9761D20F645003DF636 /* SupermarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupermarketViewController.h; sourceTree = "<group>"; };
 		59EAD9771D20F645003DF636 /* SupermarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupermarketViewController.m; sourceTree = "<group>"; };
-		59EAD9791D210A66003DF636 /* SupermarketCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SupermarketCollectionViewCell.h; sourceTree = "<group>"; };
+		59EAD9791D210A66003DF636 /* SupermarketCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SupermarketCollectionViewCell.h; path = HomePage/Controller/SupermarketCollectionViewCell.h; sourceTree = "<group>"; };
 		59EAD97A1D210A66003DF636 /* SupermarketCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SupermarketCollectionViewCell.m; sourceTree = "<group>"; };
 		59EAD97B1D210A66003DF636 /* SupermarketCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupermarketCollectionViewCell.xib; sourceTree = "<group>"; };
 		59EC739D1D0946F6009062D9 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
@@ -513,7 +513,6 @@
 			children = (
 				59EAD9761D20F645003DF636 /* SupermarketViewController.h */,
 				59EAD9771D20F645003DF636 /* SupermarketViewController.m */,
-				59EAD9791D210A66003DF636 /* SupermarketCollectionViewCell.h */,
 				59EAD97A1D210A66003DF636 /* SupermarketCollectionViewCell.m */,
 				59EAD97B1D210A66003DF636 /* SupermarketCollectionViewCell.xib */,
 			);
@@ -826,6 +825,7 @@
 		59FFB6F51D0507F600071E0E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				59EAD9791D210A66003DF636 /* SupermarketCollectionViewCell.h */,
 				59FFB6A71D0501F000071E0E /* AppDelegate.h */,
 				59FFB6A81D0501F000071E0E /* AppDelegate.m */,
 				59FFB6F61D050A0C00071E0E /* RootTabBarController.h */,
