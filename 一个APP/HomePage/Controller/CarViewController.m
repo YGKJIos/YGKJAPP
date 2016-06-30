@@ -19,15 +19,17 @@
 
 @property (nonatomic, retain) UIView *carView; // 车label
 
-@property (nonatomic, retain) UILabel *addressLabel; // 当前地址label
+@property (nonatomic, retain) UITextField *addressField; // 当前地址label
 
 @property (nonatomic, retain) UILabel *lineLabel;   // 线 label
 
 @property (nonatomic, retain) UIImageView *destinatioImage; // 目的地图片
 
-@property (nonatomic, retain) UILabel *destinatioLabel; // 目的地label
+@property (nonatomic, retain) UITextField *destinatioField; // 目的地label
 
+//@property (nonatomic, retain) UIButton *carButton; // 拼车按钮
 
+@property (nonatomic, retain) UILabel *carPoolingLabel; // 拼车label
 
 
 @end
@@ -59,10 +61,10 @@
     [self.carView addSubview:self.addressImage];
     
     
-    self.addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 30, WIDTH - 80, 30)];
-    self.addressLabel.backgroundColor = [UIColor whiteColor];
-    self.addressLabel.text = @"花园商住";
-    [self.carView addSubview:self.addressLabel];
+    self.addressField = [[UITextField alloc] initWithFrame:CGRectMake(70, 30, WIDTH - 80, 30)];
+    self.addressField.backgroundColor = [UIColor whiteColor];
+    self.addressField.placeholder = @"花园商网";
+    [self.carView addSubview:self.addressField];
     
     
     self.lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 70, WIDTH - 85, 1)];
@@ -76,11 +78,37 @@
     [self.carView addSubview:self.destinatioImage];
     
     
-    self.destinatioLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 85, WIDTH - 80, 30)];
-    self.destinatioLabel.text = @"在这里输入您的目的地";
+    self.destinatioField = [[UITextField alloc] initWithFrame:CGRectMake(70, 85, WIDTH - 80, 30)];
+    self.destinatioField.placeholder = @"在这里输入您的目的地";
     
-    [self.carView addSubview:self.destinatioLabel];
+    [self.carView addSubview:self.destinatioField];
     
+    
+    
+    self.carPoolingLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 150, 200, 50)];
+    
+    self.carPoolingLabel.backgroundColor = BGcolor(85, 198, 216);
+    self.carPoolingLabel.text = @"开始拼车";
+    self.carPoolingLabel.textAlignment = NSTextAlignmentCenter;
+    self.carPoolingLabel.textColor = [UIColor whiteColor];
+    self.carPoolingLabel.font = [UIFont systemFontOfSize:25];
+    self.carPoolingLabel.userInteractionEnabled = YES;// 用户交互打开
+    [self.carView addSubview:self.carPoolingLabel];
+    
+    
+    // 给拼车label添加点击手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.carPoolingLabel addGestureRecognizer:tap];
+    
+    
+}
+
+
+// 手势点击方法
+
+- (void)tap:(UITapGestureRecognizer *)tap
+{
+    NSLog(@"开始拼车");
 }
 
 
