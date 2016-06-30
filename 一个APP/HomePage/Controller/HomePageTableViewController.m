@@ -19,8 +19,13 @@
 #import "TakeOutTableViewController.h" //外卖
 #import "TheHotelTableViewController.h" // 宾馆
 #import "SupermarketViewController.h" //超市
-#import "MovieTableViewController.h"
-#import "GameTableViewController.h"
+#import "MovieTableViewController.h" // 电影
+#import "GameTableViewController.h" // 休闲娱乐
+#import "AllStylViewController.h" // 全部分类
+#import "CarViewController.h" // 拼车
+
+
+
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate>
 
@@ -293,6 +298,11 @@
         SupermarketViewController *supermarketVC = [[SupermarketViewController alloc]init];
         [self.navigationController pushViewController:supermarketVC animated:YES];
     }
+    // 拼车
+    if (num == 1004) {
+        CarViewController *carVC = [[CarViewController alloc] init];
+        [self.navigationController pushViewController:carVC animated:YES];
+    }
     // 电影
     if (num == 1005) {
         MovieTableViewController *movieVC = [[MovieTableViewController alloc]init];
@@ -303,6 +313,12 @@
         GameTableViewController *gameVC = [[GameTableViewController alloc]init];
         [self.navigationController pushViewController:gameVC animated:YES];
     }
+    // 全部分类
+    if (num == 1007) {
+        AllStylViewController *allVc = [[AllStylViewController alloc] init];
+        [self.navigationController pushViewController:allVc animated:YES];
+    }
+    
 }
 
 
