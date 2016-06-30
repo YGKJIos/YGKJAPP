@@ -7,6 +7,8 @@
 //
 
 #import "HouseTableViewController.h"
+#import "HouseTableViewCell.h"
+
 
 @interface HouseTableViewController ()
 
@@ -16,12 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self addTableHeaderView];
+ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,25 +29,57 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
+
+
+
+
+- (void)addTableHeaderView
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
+    headerView.backgroundColor = [UIColor orangeColor];
+    
+    NSArray *arr = @[@"guanggao",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
+    ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
+    scroll.frame = CGRectMake(0, 0, WIDTH, 150);
+    [headerView addSubview:scroll];
+    
+    self.tableView.tableHeaderView = headerView;
 }
+
+
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return 10;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *str = @"reuse";
+    HouseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     
-    // Configure the cell...
+    if (!cell) {
+        cell = [HouseTableViewCell createHouseCell];
+    }
+    
     
     return cell;
 }
-*/
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+
+
+
 
 /*
 // Override to support conditional editing of the table view.
