@@ -25,8 +25,8 @@
     // 设置navigation 的样式
     [self addNavigationView];
     HomePageTableViewController *homeTabVC = [[HomePageTableViewController alloc]init];
-    homeTabVC.tableView.y = self.view.y;
-//    homeTabVC.tableView.height = self.view.height;
+    homeTabVC.tableView.y = 0;
+    homeTabVC.tableView.height = HEIGHT;
     [self addChildViewController:homeTabVC];
     [self.view addSubview:homeTabVC.tableView];
 }

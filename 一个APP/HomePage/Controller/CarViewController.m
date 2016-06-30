@@ -49,12 +49,9 @@
     self.mapImage.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:self.mapImage];
     
-    
-    
     self.carView = [[UIView alloc] initWithFrame:CGRectMake(0, HEIGHT - 300, WIDTH, 300)];
     self.carView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.carView];
-    
     
     self.addressImage = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 17, 17)];
     self.addressImage.image = [UIImage imageNamed:@"pc_chufa_tus"];
@@ -85,7 +82,7 @@
     
     
     
-    self.carPoolingLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 150, 200, 50)];
+    self.carPoolingLabel = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH/2-100, 150, 200, 50)];
     
     self.carPoolingLabel.backgroundColor = BGcolor(85, 198, 216);
     self.carPoolingLabel.text = @"开始拼车";

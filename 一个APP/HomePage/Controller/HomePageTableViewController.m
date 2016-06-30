@@ -23,11 +23,12 @@
 #import "GameTableViewController.h" // 休闲娱乐
 #import "AllStylViewController.h" // 全部分类
 #import "CarViewController.h" // 拼车
+#import "SecondHandViewController.h"
 
 
 
 
-@interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate>
+@interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate>
 
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
 
@@ -179,7 +180,8 @@
     // 同城服务
     if (indexPath.section == 2) {
         SecondTableViewCell *cell = [[SecondTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        NSArray *arr = @[@"shouye_bdgw",@"shouye_shjf",@"shouye_jzfw",@"shouye_essc",@"shouye_zpqz",@"shouye_xggl"];
+        cell.delegate = self;
+        NSArray *arr = @[@"shouye_bdgw",@"shouye_shjf",@"shouye_jzfw",@"shouye_eszh",@"shouye_zpqz",@"shouye_xggl"];
         [cell setSecondCellImage:arr];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -268,7 +270,6 @@
         cell = [[FirstTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:fristId];
         cell.delegate = self;
     }
-    
     NSArray *arr = @[@"shouye_meishi",@"shouye_waimai",@"shouye_binguan",@"shouye_chaoshi",@"shouye_pinche",@"shouye_dianying",@"shouye_xxyl",@"shouye_qbfl"];
     [cell setFirstCellImage:arr];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -317,6 +318,15 @@
     if (num == 1007) {
         AllStylViewController *allVc = [[AllStylViewController alloc] init];
         [self.navigationController pushViewController:allVc animated:YES];
+    }
+    
+}
+#pragma mark - 同城服务
+- (void)SecondPushViewControllerNum:(NSInteger)num
+{
+    if (num == 1003) {
+        SecondHandViewController *secondVC = [[SecondHandViewController alloc]init];
+        [self.navigationController pushViewController:secondVC animated:YES];
     }
     
 }

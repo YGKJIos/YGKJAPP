@@ -10,7 +10,7 @@
 #import <AFNetworking.h>
 
 
-static NSString *headerUrl = @"http://192.168.1.66:8080/shangcheng/";  //测试服务器 IP地址
+static NSString *headerUrl = @"http://192.168.1.121:8080/shangcheng/";  //测试服务器 IP地址
 
 
 @implementation AFNetWorting
@@ -20,7 +20,7 @@ static NSString *headerUrl = @"http://192.168.1.66:8080/shangcheng/";  //测试�
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     // 超时时间
-    manager.requestSerializer.timeoutInterval = 30;
+    manager.requestSerializer.timeoutInterval = 10;
     
     // 声明上传的是json格式的参数，需要你和后台约定好，不然会出现后台无法获取到你上传的参数问题
     manager.requestSerializer = [AFHTTPRequestSerializer serializer]; // 上传普通格式
