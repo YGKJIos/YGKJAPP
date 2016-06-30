@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol pushViewControllerSecondDelegate <NSObject>
+
+- (void)SecondPushViewControllerNum:(NSInteger)num;
+
+@end
+
+
 @interface SecondTableViewCell : UITableViewCell
 
+@property (nonatomic, weak)id<pushViewControllerSecondDelegate>delegate;
 - (void)setSecondCellImage:(NSArray *)images;
+
 
 
 @end

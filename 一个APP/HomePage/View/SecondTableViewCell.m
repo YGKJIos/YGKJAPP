@@ -36,6 +36,8 @@
 
 - (void)tapImageViewAction:(UITapGestureRecognizer *)tap
 {
+    UIImageView *image = (UIImageView *)tap.view;
+    [self.delegate SecondPushViewControllerNum:image.tag];
     NSLog(@"222");
 }
 
