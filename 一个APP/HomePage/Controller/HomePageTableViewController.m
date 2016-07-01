@@ -23,8 +23,9 @@
 #import "GameTableViewController.h" // 休闲娱乐
 #import "AllStylViewController.h" // 全部分类
 #import "CarViewController.h" // 拼车
-#import "SecondHandViewController.h"
 #import "PleaseJobTableViewController.h" //求职招聘
+#import "SecondHandTableViewController.h"// 二手置换
+#import "HouseTableViewController.h" // 家政服务
 
 
 
@@ -325,8 +326,15 @@
 #pragma mark - 同城服务
 - (void)SecondPushViewControllerNum:(NSInteger)num
 {
+    
+    // 家政服务
+    if (num == 1002) {
+        HouseTableViewController *houseVC = [[HouseTableViewController alloc] init];
+        [self.navigationController pushViewController:houseVC animated:YES];
+    }
+    // 二手置换
     if (num == 1003) {
-        SecondHandViewController *secondVC = [[SecondHandViewController alloc]init];
+        SecondHandTableViewController *secondVC = [[SecondHandTableViewController alloc]init];
         [self.navigationController pushViewController:secondVC animated:YES];
     }
     // 求职招聘

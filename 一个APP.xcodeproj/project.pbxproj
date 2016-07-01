@@ -109,6 +109,9 @@
 		D8AF29881D24EC6F00166DC5 /* HouseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AF29871D24EC6F00166DC5 /* HouseTableViewController.m */; };
 		D8AF298C1D24ECB800166DC5 /* HouseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AF298A1D24ECB800166DC5 /* HouseTableViewCell.m */; };
 		D8AF298D1D24ECB800166DC5 /* HouseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8AF298B1D24ECB800166DC5 /* HouseTableViewCell.xib */; };
+		D8AF29921D25097900166DC5 /* SecondHandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AF29901D25097900166DC5 /* SecondHandTableViewCell.m */; };
+		D8AF29931D25097900166DC5 /* SecondHandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8AF29911D25097900166DC5 /* SecondHandTableViewCell.xib */; };
+		D8AF29961D25167B00166DC5 /* SecondHandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AF29951D25167B00166DC5 /* SecondHandTableViewController.m */; };
 		D8FD1E9E1D23B9460059719B /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FD1E9D1D23B9460059719B /* CarViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -313,6 +316,11 @@
 		D8AF29891D24ECB800166DC5 /* HouseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseTableViewCell.h; sourceTree = "<group>"; };
 		D8AF298A1D24ECB800166DC5 /* HouseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseTableViewCell.m; sourceTree = "<group>"; };
 		D8AF298B1D24ECB800166DC5 /* HouseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseTableViewCell.xib; sourceTree = "<group>"; };
+		D8AF298F1D25097900166DC5 /* SecondHandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondHandTableViewCell.h; sourceTree = "<group>"; };
+		D8AF29901D25097900166DC5 /* SecondHandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondHandTableViewCell.m; sourceTree = "<group>"; };
+		D8AF29911D25097900166DC5 /* SecondHandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondHandTableViewCell.xib; sourceTree = "<group>"; };
+		D8AF29941D25167B00166DC5 /* SecondHandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondHandTableViewController.h; sourceTree = "<group>"; };
+		D8AF29951D25167B00166DC5 /* SecondHandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondHandTableViewController.m; sourceTree = "<group>"; };
 		D8FD1E9C1D23B9460059719B /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
 		D8FD1E9D1D23B9460059719B /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -382,6 +390,7 @@
 		5910B88F1D1234D700BA1C16 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8AF298E1D25091400166DC5 /* SecondHandCell(二手置换) */,
 				D8AF29851D24EC0500166DC5 /* HouseKeepCell(家政服务) */,
 				D8AAD0561D23946C005915D1 /* AllStylCell(全部分类) */,
 				D8247FAF1D212D12007C573F /* GameCell(休闲娱乐) */,
@@ -476,8 +485,8 @@
 		593ADDBE1D24ED49008D1777 /* 二手置换 */ = {
 			isa = PBXGroup;
 			children = (
-				593ADDBF1D24EE5F008D1777 /* SecondHandViewController.h */,
-				593ADDC01D24EE5F008D1777 /* SecondHandViewController.m */,
+				D8AF29941D25167B00166DC5 /* SecondHandTableViewController.h */,
+				D8AF29951D25167B00166DC5 /* SecondHandTableViewController.m */,
 			);
 			name = "二手置换";
 			sourceTree = "<group>";
@@ -985,6 +994,16 @@
 			name = "HouseKeepCell(家政服务)";
 			sourceTree = "<group>";
 		};
+		D8AF298E1D25091400166DC5 /* SecondHandCell(二手置换) */ = {
+			isa = PBXGroup;
+			children = (
+				D8AF298F1D25097900166DC5 /* SecondHandTableViewCell.h */,
+				D8AF29901D25097900166DC5 /* SecondHandTableViewCell.m */,
+				D8AF29911D25097900166DC5 /* SecondHandTableViewCell.xib */,
+			);
+			name = "SecondHandCell(二手置换)";
+			sourceTree = "<group>";
+		};
 		D8FD1E9A1D23B7330059719B /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1133,6 +1152,7 @@
 				D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */,
 				D8AF298D1D24ECB800166DC5 /* HouseTableViewCell.xib in Resources */,
 				59E4EA501D193B08000083B8 /* profileHeaderView.xib in Resources */,
+				D8AF29931D25097900166DC5 /* SecondHandTableViewCell.xib in Resources */,
 				59D096F31D139E6C00039C87 /* h1.jpg in Resources */,
 				D8247FB41D212D48007C573F /* GameTableViewCell.xib in Resources */,
 				59F284961D1E4ECA00C815D1 /* TakeTableViewCell.xib in Resources */,
@@ -1226,11 +1246,11 @@
 				5910B8AF1D1238F300BA1C16 /* DropdownButton.m in Sources */,
 				59FFB70B1D053FF600071E0E /* MarketModel.m in Sources */,
 				5910B8F81D12975300BA1C16 /* SearchViewController.m in Sources */,
-				593ADDC11D24EE5F008D1777 /* SecondHandViewController.m in Sources */,
 				59F284A71D1E5BE900C815D1 /* TheHotelTableViewCell.m in Sources */,
 				59F284951D1E4ECA00C815D1 /* TakeTableViewCell.m in Sources */,
 				5910B8961D1234D700BA1C16 /* HomePageViewController.m in Sources */,
 				599ECDD31D25F70E009E636A /* PleaseJobTableViewCell.m in Sources */,
+				D8AF29961D25167B00166DC5 /* SecondHandTableViewController.m in Sources */,
 				59D096FC1D139E6C00039C87 /* SDCollectionViewCell.m in Sources */,
 				D8FD1E9E1D23B9460059719B /* CarViewController.m in Sources */,
 				59D097011D13C32F00039C87 /* HomeModelView.m in Sources */,
@@ -1260,6 +1280,7 @@
 				59D096FE1D139E6C00039C87 /* UIView+SDExtension.m in Sources */,
 				59D096DC1D139A4F00039C87 /* HomePageTableViewController.m in Sources */,
 				59F6A89F1D15100300CFD28F /* FirstTableViewCell.m in Sources */,
+				D8AF29921D25097900166DC5 /* SecondHandTableViewCell.m in Sources */,
 				59366BBB1D0672A500BB445A /* PerTableViewCell.m in Sources */,
 				59FFB6F81D050A0C00071E0E /* RootTabBarController.m in Sources */,
 				59FFB6F11D05077000071E0E /* MarketViewController.m in Sources */,

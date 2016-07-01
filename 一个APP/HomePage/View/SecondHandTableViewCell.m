@@ -1,21 +1,21 @@
 //
-//  HouseTableViewCell.m
+//  SecondHandTableViewCell.m
 //  一个APP
 //
 //  Created by 远古科技 on 16/6/30.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "HouseTableViewCell.h"
+#import "SecondHandTableViewCell.h"
 
-@implementation HouseTableViewCell
+@implementation SecondHandTableViewCell
 
-+ (HouseTableViewCell *) createHouseCell
+
++ (SecondHandTableViewCell *) createSecondHandCell
 {
-    HouseTableViewCell *houseCell = [[[NSBundle mainBundle]loadNibNamed:@"HouseTableViewCell" owner:nil options:nil]lastObject];
-    return houseCell;
+    SecondHandTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"SecondHandTableViewCell" owner:nil options:nil]lastObject];
+    return cell;
 }
-
 
 - (void)awakeFromNib {
     [super awakeFromNib];
