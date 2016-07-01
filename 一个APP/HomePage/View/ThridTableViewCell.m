@@ -124,6 +124,8 @@
 
 - (void)tapImageViewAction:(UITapGestureRecognizer *)tap
 {
+    UIImageView *image = (UIImageView *)tap.view;
+    [self.delegte ThridPushViewControllerNum:image.tag];
     NSLog(@"222");
 }
 

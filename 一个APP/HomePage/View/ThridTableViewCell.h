@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol pushviewcontrollerThridDelegate <NSObject>
+
+- (void)ThridPushViewControllerNum:(NSInteger)num;
+
+@end
+
 typedef  enum{
     lifeServeCellStyle,
     newCellStyle,
@@ -18,6 +24,8 @@ typedef  enum{
 
 @interface ThridTableViewCell : UITableViewCell
 
+
+@property (nonatomic, weak) id<pushviewcontrollerThridDelegate> delegte;
 
 - (void)setThridCellImage:(NSArray *)images titles:(NSArray *)titles;
 - (void)cellStyle:(HomeTaleViewCellStyle)Style;
