@@ -28,24 +28,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务范围: 哈尔滨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3R-Z7-9cb">
-                        <rect key="frame" x="129" y="39" width="198" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="198" id="4Sg-mp-HM3"/>
-                            <constraint firstAttribute="height" constant="15" id="4zl-QS-iaH"/>
-                            <constraint firstAttribute="height" constant="15" id="Bbp-dc-dge"/>
-                            <constraint firstAttribute="width" constant="49" id="odp-S7-gP7"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Bbp-dc-dge"/>
-                                <exclude reference="odp-S7-gP7"/>
-                            </mask>
-                        </variation>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务项目: 搬家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMP-q8-tOY">
                         <rect key="frame" x="129" y="56" width="193" height="14"/>
                         <constraints>
@@ -73,6 +55,24 @@
                             <constraint firstAttribute="width" constant="64" id="yxi-tQ-xWX"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务范围: 哈尔滨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3R-Z7-9cb">
+                        <rect key="frame" x="129" y="39" width="198" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="198" id="4Sg-mp-HM3"/>
+                            <constraint firstAttribute="height" constant="15" id="4zl-QS-iaH"/>
+                            <constraint firstAttribute="height" constant="15" id="Bbp-dc-dge"/>
+                            <constraint firstAttribute="width" constant="49" id="odp-S7-gP7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Bbp-dc-dge"/>
+                                <exclude reference="odp-S7-gP7"/>
+                            </mask>
+                        </variation>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="iqN-eM-GW3" firstAttribute="leading" secondItem="Y8y-Zd-fbk" secondAttribute="trailing" constant="8" id="81p-sM-q92"/>

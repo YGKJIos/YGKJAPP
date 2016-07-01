@@ -23,7 +23,7 @@
 #import "GameTableViewController.h" // 休闲娱乐
 #import "AllStylViewController.h" // 全部分类
 #import "CarViewController.h" // 拼车
-#import "SecondHandViewController.h"// 二手置换
+#import "SecondHandTableViewController.h"// 二手置换
 #import "HouseTableViewController.h" // 家政服务
 
 
@@ -333,7 +333,7 @@
     }
     // 二手置换
     if (num == 1003) {
-        SecondHandViewController *secondVC = [[SecondHandViewController alloc]init];
+        SecondHandTableViewController *secondVC = [[SecondHandTableViewController alloc]init];
         [self.navigationController pushViewController:secondVC animated:YES];
     }
     
