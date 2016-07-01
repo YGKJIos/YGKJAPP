@@ -24,6 +24,7 @@
 #import "AllStylViewController.h" // 全部分类
 #import "CarViewController.h" // 拼车
 #import "SecondHandViewController.h"
+#import "PleaseJobTableViewController.h" //求职招聘
 
 
 
@@ -327,6 +328,11 @@
     if (num == 1003) {
         SecondHandViewController *secondVC = [[SecondHandViewController alloc]init];
         [self.navigationController pushViewController:secondVC animated:YES];
+    }
+    // 求职招聘
+    if (num == 1004) {
+        PleaseJobTableViewController *pleaseVC = [[PleaseJobTableViewController alloc]init];
+        [self.navigationController pushViewController:pleaseVC animated:YES];
     }
     
 }
