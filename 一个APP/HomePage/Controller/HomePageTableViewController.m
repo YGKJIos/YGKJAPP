@@ -23,6 +23,7 @@
 #import "GameTableViewController.h" // 休闲娱乐
 #import "AllStylViewController.h" // 全部分类
 #import "CarViewController.h" // 拼车
+#import "PleaseJobTableViewController.h" //求职招聘
 #import "SecondHandTableViewController.h"// 二手置换
 #import "HouseTableViewController.h" // 家政服务
 #import "NewsTableViewController.h" // 新闻
@@ -337,6 +338,11 @@
     if (num == 1003) {
         SecondHandTableViewController *secondVC = [[SecondHandTableViewController alloc]init];
         [self.navigationController pushViewController:secondVC animated:YES];
+    }
+    // 求职招聘
+    if (num == 1004) {
+        PleaseJobTableViewController *pleaseVC = [[PleaseJobTableViewController alloc]init];
+        [self.navigationController pushViewController:pleaseVC animated:YES];
     }
     
 }

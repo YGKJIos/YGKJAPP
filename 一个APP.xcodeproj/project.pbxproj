@@ -20,11 +20,15 @@
 		59366BBF1D06872300BB445A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BBE1D06872300BB445A /* BaseViewController.m */; };
 		59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BC41D06CB8B00BB445A /* MessageTableViewCell.m */; };
 		59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59366BC51D06CB8B00BB445A /* MessageTableViewCell.xib */; };
+		593ADDC11D24EE5F008D1777 /* SecondHandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593ADDC01D24EE5F008D1777 /* SecondHandViewController.m */; };
+		593ADDC61D2500CB008D1777 /* PleaseJobTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593ADDC51D2500CB008D1777 /* PleaseJobTableViewController.m */; };
 		5940BC2B1D1A552900982820 /* FictionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940BC2A1D1A552900982820 /* FictionTableViewCell.m */; };
 		5940BC2D1D1A556400982820 /* FictionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5940BC2C1D1A556400982820 /* FictionView.xib */; };
 		5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940BC2F1D1A8F6900982820 /* MenuTableViewCell.m */; };
 		5940BC321D1A8F6900982820 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5940BC301D1A8F6900982820 /* MenuTableViewCell.xib */; };
 		594707611D236292000C4871 /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 594707601D236292000C4871 /* HeaderCollectionReusableView.m */; };
+		599ECDD31D25F70E009E636A /* PleaseJobTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */; };
+		599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */; };
 		59D096DC1D139A4F00039C87 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */; };
 		59D096F31D139E6C00039C87 /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D096DE1D139E6C00039C87 /* h1.jpg */; };
 		59D096F41D139E6C00039C87 /* h2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D096DF1D139E6C00039C87 /* h2.jpg */; };
@@ -157,6 +161,10 @@
 		59366BC31D06CB8B00BB445A /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		59366BC41D06CB8B00BB445A /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
 		59366BC51D06CB8B00BB445A /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		593ADDBF1D24EE5F008D1777 /* SecondHandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondHandViewController.h; sourceTree = "<group>"; };
+		593ADDC01D24EE5F008D1777 /* SecondHandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondHandViewController.m; sourceTree = "<group>"; };
+		593ADDC41D2500CB008D1777 /* PleaseJobTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PleaseJobTableViewController.h; sourceTree = "<group>"; };
+		593ADDC51D2500CB008D1777 /* PleaseJobTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PleaseJobTableViewController.m; sourceTree = "<group>"; };
 		5940BC291D1A552900982820 /* FictionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FictionTableViewCell.h; sourceTree = "<group>"; };
 		5940BC2A1D1A552900982820 /* FictionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FictionTableViewCell.m; sourceTree = "<group>"; };
 		5940BC2C1D1A556400982820 /* FictionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FictionView.xib; sourceTree = "<group>"; };
@@ -165,6 +173,9 @@
 		5940BC301D1A8F6900982820 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		5947075F1D236292000C4871 /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		594707601D236292000C4871 /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		599ECDD01D25F70E009E636A /* PleaseJobTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PleaseJobTableViewCell.h; sourceTree = "<group>"; };
+		599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PleaseJobTableViewCell.m; sourceTree = "<group>"; };
+		599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PleaseJobTableViewCell.xib; sourceTree = "<group>"; };
 		59D096DA1D139A4F00039C87 /* HomePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewController.h; sourceTree = "<group>"; };
 		59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewController.m; sourceTree = "<group>"; };
 		59D096DE1D139E6C00039C87 /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
@@ -361,7 +372,11 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+
 				D804B9991D263C2E00DB283D /* 新闻 */,
+
+				593ADDC31D25005C008D1777 /* 求职招聘 */,
+
 				D8AF29811D24EB5E00166DC5 /* 家政服务 */,
 				593ADDBE1D24ED49008D1777 /* 二手置换 */,
 				D8FD1E9B1D23B9000059719B /* 拼车 */,
@@ -486,6 +501,18 @@
 				D8AF29951D25167B00166DC5 /* SecondHandTableViewController.m */,
 			);
 			name = "二手置换";
+			sourceTree = "<group>";
+		};
+		593ADDC31D25005C008D1777 /* 求职招聘 */ = {
+			isa = PBXGroup;
+			children = (
+				593ADDC41D2500CB008D1777 /* PleaseJobTableViewController.h */,
+				593ADDC51D2500CB008D1777 /* PleaseJobTableViewController.m */,
+				599ECDD01D25F70E009E636A /* PleaseJobTableViewCell.h */,
+				599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */,
+				599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */,
+			);
+			name = "求职招聘";
 			sourceTree = "<group>";
 		};
 		59D096DD1D139E6C00039C87 /* SDCycleScrollView */ = {
@@ -1163,6 +1190,7 @@
 				D8247FB41D212D48007C573F /* GameTableViewCell.xib in Resources */,
 				59F284961D1E4ECA00C815D1 /* TakeTableViewCell.xib in Resources */,
 				5940BC321D1A8F6900982820 /* MenuTableViewCell.xib in Resources */,
+				599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */,
 				59F284A81D1E5BE900C815D1 /* TheHotelTableViewCell.xib in Resources */,
 				59366BBC1D0672A500BB445A /* PerTableViewCell.xib in Resources */,
 			);
@@ -1242,6 +1270,7 @@
 				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,
 				59FFB7031D051EA800071E0E /* UIView+Extension.m in Sources */,
 				59F6A8A71D15362F00CFD28F /* ThridTableViewCell.m in Sources */,
+				593ADDC61D2500CB008D1777 /* PleaseJobTableViewController.m in Sources */,
 				59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */,
 				59D096FD1D139E6C00039C87 /* SDCycleScrollView.m in Sources */,
 				59F2848E1D1E1A9B00C815D1 /* TakeOutTableViewController.m in Sources */,
@@ -1254,6 +1283,7 @@
 				59F284A71D1E5BE900C815D1 /* TheHotelTableViewCell.m in Sources */,
 				59F284951D1E4ECA00C815D1 /* TakeTableViewCell.m in Sources */,
 				5910B8961D1234D700BA1C16 /* HomePageViewController.m in Sources */,
+				599ECDD31D25F70E009E636A /* PleaseJobTableViewCell.m in Sources */,
 				D8AF29961D25167B00166DC5 /* SecondHandTableViewController.m in Sources */,
 				59D096FC1D139E6C00039C87 /* SDCollectionViewCell.m in Sources */,
 				D8FD1E9E1D23B9460059719B /* CarViewController.m in Sources */,

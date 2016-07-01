@@ -30,13 +30,9 @@
 #pragma mark - Table view data source
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
+//    
 //    return 0;
 //}
-
-
-
-
 - (void)addTableHeaderView
 {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
@@ -53,18 +49,16 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *str = @"reuse";
     HouseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
-    
     if (!cell) {
         cell = [HouseTableViewCell createHouseCell];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

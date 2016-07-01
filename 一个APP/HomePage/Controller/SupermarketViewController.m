@@ -12,6 +12,7 @@
 #import "SearchView.h"
 
 @interface SupermarketViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@property (nonatomic, strong)UIButton *searchBtn;
 
 @end
 
@@ -35,25 +36,23 @@
     collection.showsVerticalScrollIndicator = NO;
     [self.view addSubview:collection];
     
-    
     UINib *nib = [UINib nibWithNibName:@"SupermarketCollectionViewCell" bundle:[NSBundle mainBundle]];
     [collection registerNib:nib forCellWithReuseIdentifier:@"reportFilterCell"];
     [collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
-    
 }
-
 - (void)setNavigationStyle
 {
     /* 设置 navigation 样式*/
     UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightItmeAction) image:@"chaoshi_gouwuche" highImage:@"chaoshi_ggouwuche"];
     self.navigationItem.rightBarButtonItem = rightItme;
     
-    UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    searchBtn.frame = CGRectMake(WIDTH/2-103, 8, 206, 26);
-    [searchBtn setBackgroundImage:[UIImage imageNamed:@"chaoshi_sousuo"] forState:UIControlStateNormal];
-    [searchBtn addTarget:self action:@selector(searchClickAction) forControlEvents:UIControlEventTouchUpInside];
-    searchBtn.adjustsImageWhenHighlighted = NO;
-    [self.navigationController.navigationBar addSubview:searchBtn];
+    self.searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.searchBtn.width = 205;
+    self.searchBtn.height = 26;
+    [self.searchBtn addTarget:self action:@selector(searchClickAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.searchBtn setBackgroundImage:[UIImage imageNamed:@"chaoshi_sousuo"] forState:UIControlStateNormal];
+    self.searchBtn.adjustsImageWhenHighlighted = NO;
+    self.navigationItem.titleView = self.searchBtn;
 }
 // navigation 购物车
 - (void)rightItmeAction

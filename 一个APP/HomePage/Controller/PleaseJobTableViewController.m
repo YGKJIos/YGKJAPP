@@ -1,86 +1,97 @@
 //
-//  SecondHandTableViewController.m
+//  PleaseJobTableViewController.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/6/30.
+//  Created by 梁立彬 on 16/6/30.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "SecondHandTableViewController.h"
-#import "SecondHandTableViewCell.h"
+#import "PleaseJobTableViewController.h"
+#import "PleaseJobTableViewCell.h"
 
-
-@interface SecondHandTableViewController ()
+@interface PleaseJobTableViewController ()<SDCycleScrollViewDelegate>
 
 @end
 
-@implementation SecondHandTableViewController
+@implementation PleaseJobTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addTableHeaderView];
+    [self setNavigationStyle];
+    [self addTableViewHeaderView];
+   
+
+}
+#pragma mark - 设置标题栏的样式
+- (void)setNavigationStyle
+{
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 250, 25)];
+    [imageView setUserInteractionEnabled:YES];
+    imageView.image = [UIImage imageNamed:@"zc_navigationBar"];
+    self.navigationItem.titleView = imageView;
     
+    UIButton *leftBut = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftBut.backgroundColor = [UIColor clearColor];
+    leftBut.frame = CGRectMake(0, 0, 125, 25);
+    [leftBut addTarget:self action:@selector(leftClickAction) forControlEvents:UIControlEventTouchUpInside];
+    [imageView addSubview:leftBut];
+    
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.backgroundColor = [UIColor clearColor];
+    rightBtn.frame = CGRectMake(127, 0, 125, 25);
+    [rightBtn addTarget:self action:@selector(rightClickAction) forControlEvents:UIControlEventTouchUpInside];
+    [imageView addSubview:rightBtn];
+}
+- (void)leftClickAction
+{
+    NSLog(@"全职");
+}
+- (void)rightClickAction
+{
+    NSLog(@"兼职");
 }
 
+- (void)addTableViewHeaderView
+{
+    NSArray *arr = @[@"zc_lunbo",@"zc_lunbo",@"zc_lunbo",@"zc_lunbo",];
+    ScrollView *view = [ScrollView CreateScrollViewImages:arr];
+    view.scrollView.delegate = self;
+    self.tableView.tableHeaderView = view;
+}
+-(void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    NSLog(@"%ld",index);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
+    // Dispose of any resources that can be recreated.
 }
-
-// 轮播图
-- (void)addTableHeaderView
-{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
-    headerView.backgroundColor = [UIColor orangeColor];
-    
-    NSArray *arr = @[@"secondHand",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
-    ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
-    scroll.frame = CGRectMake(0, 0, WIDTH, 150);
-    [headerView addSubview:scroll];
-    
-    self.tableView.tableHeaderView = headerView;
-}
-
-
-
-
-
-
-
-
 
 #pragma mark - Table view data source
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
+//    
 //    return 0;
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 12;
+    
+    return 10;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *str = @"reuse";
-    
-    SecondHandTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];;
-    
-    if (!cell) {
-        cell = [SecondHandTableViewCell createSecondHandCell];
+    static NSString *jobId = @"jobId";
+    PleaseJobTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:jobId];
+    if (cell == nil) {
+        cell = [[NSBundle mainBundle]loadNibNamed:@"PleaseJobTableViewCell" owner:nil options:nil].lastObject;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    
     return cell;
 }
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110;
+    return 113;
 }
 
 
