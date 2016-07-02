@@ -19,7 +19,7 @@
         int num = 0;
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 4; j++) {
-                UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(25+j*(50+40), 25+i*(67+20), 50, 67)];
+                UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(25+j*(50+52), 25+i*(67+20), 50, 67)];
                 imageView.tag = 1000+(num++);
                 [imageView setUserInteractionEnabled:YES];
                 
