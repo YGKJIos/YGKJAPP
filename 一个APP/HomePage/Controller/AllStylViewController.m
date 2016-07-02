@@ -157,7 +157,7 @@
     cell.nanmeLabel.textAlignment = NSTextAlignmentCenter;
     [cell setImages:nil titles:self.arr1[indexPath.row]];
 
-    
+    cell.foodImage.image = [UIImage imageNamed:@"qbfl_ms_hg"];
     
     return cell;
     

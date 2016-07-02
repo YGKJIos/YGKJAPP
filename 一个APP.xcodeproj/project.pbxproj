@@ -94,6 +94,12 @@
 		59FFB7081D05369D00071E0E /* MarketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FFB7061D05369D00071E0E /* MarketCell.xib */; };
 		59FFB70B1D053FF600071E0E /* MarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FFB70A1D053FF600071E0E /* MarketModel.m */; };
 		7FE543E11CE4C2BEAB34EAE2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7014F046F0ED2BE18E38917F /* libPods.a */; };
+		D804B99C1D263CBB00DB283D /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D804B99B1D263CBB00DB283D /* NewsTableViewController.m */; };
+		D804B9A11D263D6700DB283D /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D804B99F1D263D6700DB283D /* NewsTableViewCell.m */; };
+		D804B9A21D263D6700DB283D /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804B9A01D263D6700DB283D /* NewsTableViewCell.xib */; };
+		D8071D7B1D265E1C00A2A403 /* WeddingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8071D7A1D265E1C00A2A403 /* WeddingTableViewController.m */; };
+		D8071D7F1D265ED000A2A403 /* WeddingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8071D7D1D265ED000A2A403 /* WeddingTableViewCell.m */; };
+		D8071D801D265ED000A2A403 /* WeddingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8071D7E1D265ED000A2A403 /* WeddingTableViewCell.xib */; };
 		D8247FA51D212CBC007C573F /* MovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FA41D212CBC007C573F /* MovieTableViewController.m */; };
 		D8247FA91D212CDB007C573F /* MoiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FA71D212CDB007C573F /* MoiveTableViewCell.m */; };
 		D8247FAA1D212CDB007C573F /* MoiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8247FA81D212CDB007C573F /* MoiveTableViewCell.xib */; };
@@ -292,6 +298,16 @@
 		59FFB70A1D053FF600071E0E /* MarketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarketModel.m; sourceTree = "<group>"; };
 		638B33530F40AC5959554B95 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7014F046F0ED2BE18E38917F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D804B99A1D263CBB00DB283D /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
+		D804B99B1D263CBB00DB283D /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		D804B99E1D263D6700DB283D /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		D804B99F1D263D6700DB283D /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		D804B9A01D263D6700DB283D /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		D8071D791D265E1C00A2A403 /* WeddingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingTableViewController.h; sourceTree = "<group>"; };
+		D8071D7A1D265E1C00A2A403 /* WeddingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingTableViewController.m; sourceTree = "<group>"; };
+		D8071D7C1D265ED000A2A403 /* WeddingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingTableViewCell.h; sourceTree = "<group>"; };
+		D8071D7D1D265ED000A2A403 /* WeddingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingTableViewCell.m; sourceTree = "<group>"; };
+		D8071D7E1D265ED000A2A403 /* WeddingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeddingTableViewCell.xib; sourceTree = "<group>"; };
 		D8247FA31D212CBC007C573F /* MovieTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewController.h; sourceTree = "<group>"; };
 		D8247FA41D212CBC007C573F /* MovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewController.m; sourceTree = "<group>"; };
 		D8247FA61D212CDB007C573F /* MoiveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoiveTableViewCell.h; sourceTree = "<group>"; };
@@ -366,6 +382,8 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D8071D781D265CE100A2A403 /* 生活服务(婚庆) */,
+				D804B9991D263C2E00DB283D /* 新闻 */,
 				593ADDC31D25005C008D1777 /* 求职招聘 */,
 				D8AF29811D24EB5E00166DC5 /* 家政服务 */,
 				593ADDBE1D24ED49008D1777 /* 二手置换 */,
@@ -928,6 +946,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D804B9991D263C2E00DB283D /* 新闻 */ = {
+			isa = PBXGroup;
+			children = (
+				D804B99A1D263CBB00DB283D /* NewsTableViewController.h */,
+				D804B99B1D263CBB00DB283D /* NewsTableViewController.m */,
+				D804B99D1D263D1200DB283D /* NewsTableCell(新闻) */,
+			);
+			name = "新闻";
+			sourceTree = "<group>";
+		};
+		D804B99D1D263D1200DB283D /* NewsTableCell(新闻) */ = {
+			isa = PBXGroup;
+			children = (
+				D804B99E1D263D6700DB283D /* NewsTableViewCell.h */,
+				D804B99F1D263D6700DB283D /* NewsTableViewCell.m */,
+				D804B9A01D263D6700DB283D /* NewsTableViewCell.xib */,
+			);
+			name = "NewsTableCell(新闻)";
+			sourceTree = "<group>";
+		};
+		D8071D781D265CE100A2A403 /* 生活服务(婚庆) */ = {
+			isa = PBXGroup;
+			children = (
+				D8071D791D265E1C00A2A403 /* WeddingTableViewController.h */,
+				D8071D7A1D265E1C00A2A403 /* WeddingTableViewController.m */,
+				D8071D7C1D265ED000A2A403 /* WeddingTableViewCell.h */,
+				D8071D7D1D265ED000A2A403 /* WeddingTableViewCell.m */,
+				D8071D7E1D265ED000A2A403 /* WeddingTableViewCell.xib */,
+			);
+			name = "生活服务(婚庆)";
+			sourceTree = "<group>";
+		};
 		D8247FAB1D212CEA007C573F /* 休闲娱乐 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,11 +1198,13 @@
 				599ECDD91D263A8F009E636A /* LogInViewController.xib in Resources */,
 				D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */,
 				59D096F51D139E6C00039C87 /* h3.jpg in Resources */,
+				D804B9A21D263D6700DB283D /* NewsTableViewCell.xib in Resources */,
 				5940BC2D1D1A556400982820 /* FictionView.xib in Resources */,
 				59EAD9731D20C302003DF636 /* ImageAndLabView.xib in Resources */,
 				59D096F41D139E6C00039C87 /* h2.jpg in Resources */,
 				D8247FAA1D212CDB007C573F /* MoiveTableViewCell.xib in Resources */,
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
+				D8071D801D265ED000A2A403 /* WeddingTableViewCell.xib in Resources */,
 				59F786091D0BD793005A39FB /* FriendGroupView.xib in Resources */,
 				59EE6D961D17BE3D00DAB8B2 /* HomeModelView.xib in Resources */,
 				D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */,
@@ -1249,9 +1301,11 @@
 				59D096FD1D139E6C00039C87 /* SDCycleScrollView.m in Sources */,
 				59F2848E1D1E1A9B00C815D1 /* TakeOutTableViewController.m in Sources */,
 				59EAD9711D20C2E4003DF636 /* ImageAndLabView.m in Sources */,
+				D8071D7B1D265E1C00A2A403 /* WeddingTableViewController.m in Sources */,
 				5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */,
 				5910B8AF1D1238F300BA1C16 /* DropdownButton.m in Sources */,
 				59FFB70B1D053FF600071E0E /* MarketModel.m in Sources */,
+				D804B9A11D263D6700DB283D /* NewsTableViewCell.m in Sources */,
 				5910B8F81D12975300BA1C16 /* SearchViewController.m in Sources */,
 				59F284A71D1E5BE900C815D1 /* TheHotelTableViewCell.m in Sources */,
 				59F284951D1E4ECA00C815D1 /* TakeTableViewCell.m in Sources */,
@@ -1266,6 +1320,7 @@
 				59D096FB1D139E6C00039C87 /* TAPageControl.m in Sources */,
 				5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */,
 				59E4EA4E1D193AFE000083B8 /* profileHeaderView.m in Sources */,
+				D804B99C1D263CBB00DB283D /* NewsTableViewController.m in Sources */,
 				D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */,
 				59366BB71D066E5600BB445A /* PersonalCenterViewController.m in Sources */,
 				59FFB7071D05369D00071E0E /* MarketCell.m in Sources */,
@@ -1274,6 +1329,7 @@
 				594707611D236292000C4871 /* HeaderCollectionReusableView.m in Sources */,
 				59FFB6F41D0507E900071E0E /* MessageViewController.m in Sources */,
 				59EC739F1D0946F6009062D9 /* MessageModel.m in Sources */,
+				D8071D7F1D265ED000A2A403 /* WeddingTableViewCell.m in Sources */,
 				59E013121D1BBBC5008C8553 /* CateViewController.m in Sources */,
 				5940BC2B1D1A552900982820 /* FictionTableViewCell.m in Sources */,
 				59FFB6EB1D05074300071E0E /* AddressBookController.m in Sources */,

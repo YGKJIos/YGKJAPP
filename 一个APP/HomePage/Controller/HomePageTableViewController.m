@@ -26,11 +26,11 @@
 #import "PleaseJobTableViewController.h" //求职招聘
 #import "SecondHandTableViewController.h"// 二手置换
 #import "HouseTableViewController.h" // 家政服务
+#import "NewsTableViewController.h" // 新闻
 
 
 
-
-@interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate>
+@interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate>
 
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
 
@@ -210,6 +210,8 @@
             cell = [[ThridTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fourthID"];
             [cell cellStyle:newCellStyle];
         }
+        cell.delegte = self;
+        
         NSArray *arr = @[@"shouye_xwbt",@"shouye_xwbt",@"shouye_meishitou"];
         NSArray *titles = @[@"新闻标题",@"新闻标题"];
         [cell setThridCellImage:arr titles:titles];
@@ -343,6 +345,25 @@
         [self.navigationController pushViewController:pleaseVC animated:YES];
     }
     
+}
+
+#pragma mark - 生活服务
+
+
+
+
+
+
+#pragma mark - 时事新闻
+
+- (void)ThridPushViewControllerNum:(NSInteger)num
+{
+    // 时事新闻
+    if (num == 1000) {
+//        NSLog(@"cnm");
+        NewsTableViewController *newsVC = [[NewsTableViewController alloc] init];
+        [self.navigationController pushViewController:newsVC animated:YES];
+    }
 }
 
 

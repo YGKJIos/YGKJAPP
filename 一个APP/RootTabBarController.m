@@ -43,8 +43,9 @@
     
 //    DiscoverViewController *discoverVC = [[DiscoverViewController alloc]init];
 //    [self addChildVC:discoverVC originalImage:@"faxianhui" selectImage:@"faxian" title:@"发现"];
-    
 }
+
+
 - (void)addChildVC:(UIViewController *)childVC originalImage:(NSString *)originalImage selectImage:(NSString *)selectImage title:(NSString *)title
 {
     childVC.tabBarItem.image = [[UIImage imageNamed:originalImage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
