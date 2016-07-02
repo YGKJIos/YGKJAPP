@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootTabBarController.h"
 #import "SupermarketViewController.h"
+#import "LogInViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,19 +21,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // 我试试推送
-    // 我第二次推送
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-    self.window.rootViewController = rootTabBar;
-    rootTabBar.tabBar.translucent = NO;
+//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+//    self.window.rootViewController = rootTabBar;
+//    rootTabBar.tabBar.translucent = NO;
     
-//    SupermarketViewController *vc = [[SupermarketViewController alloc]init];
-//    self.window.rootViewController = vc;
-//    
+    LogInViewController *vc = [[LogInViewController alloc]init];
+    self.window.rootViewController = vc;
+//
     [self.window makeKeyAndVisible];
     
     return YES;
