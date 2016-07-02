@@ -28,6 +28,8 @@
 		594707611D236292000C4871 /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 594707601D236292000C4871 /* HeaderCollectionReusableView.m */; };
 		599ECDD31D25F70E009E636A /* PleaseJobTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */; };
 		599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */; };
+		599ECDD81D263A8F009E636A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD61D263A8F009E636A /* LogInViewController.m */; };
+		599ECDD91D263A8F009E636A /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599ECDD71D263A8F009E636A /* LogInViewController.xib */; };
 		59D096DC1D139A4F00039C87 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */; };
 		59D096F31D139E6C00039C87 /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D096DE1D139E6C00039C87 /* h1.jpg */; };
 		59D096F41D139E6C00039C87 /* h2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D096DF1D139E6C00039C87 /* h2.jpg */; };
@@ -179,6 +181,9 @@
 		599ECDD01D25F70E009E636A /* PleaseJobTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PleaseJobTableViewCell.h; sourceTree = "<group>"; };
 		599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PleaseJobTableViewCell.m; sourceTree = "<group>"; };
 		599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PleaseJobTableViewCell.xib; sourceTree = "<group>"; };
+		599ECDD51D263A8F009E636A /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		599ECDD61D263A8F009E636A /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		599ECDD71D263A8F009E636A /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 		59D096DA1D139A4F00039C87 /* HomePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewController.h; sourceTree = "<group>"; };
 		59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewController.m; sourceTree = "<group>"; };
 		59D096DE1D139E6C00039C87 /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
@@ -926,6 +931,9 @@
 				59FFB6FA1D050F9500071E0E /* NavigationViewController.m */,
 				59366BBD1D06872300BB445A /* BaseViewController.h */,
 				59366BBE1D06872300BB445A /* BaseViewController.m */,
+				599ECDD51D263A8F009E636A /* LogInViewController.h */,
+				599ECDD61D263A8F009E636A /* LogInViewController.m */,
+				599ECDD71D263A8F009E636A /* LogInViewController.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1208,6 +1216,7 @@
 				59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */,
 				59F7860E1D0BD9A1005A39FB /* FriendCell.xib in Resources */,
 				5910B8B11D1238F300BA1C16 /* expandableImage@2x.png in Resources */,
+				599ECDD91D263A8F009E636A /* LogInViewController.xib in Resources */,
 				D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */,
 				59D096F51D139E6C00039C87 /* h3.jpg in Resources */,
 				D804B9A21D263D6700DB283D /* NewsTableViewCell.xib in Resources */,
@@ -1305,6 +1314,7 @@
 			files = (
 				59F786071D0BD541005A39FB /* FriendGroupView.m in Sources */,
 				59D096FA1D139E6C00039C87 /* TADotView.m in Sources */,
+				599ECDD81D263A8F009E636A /* LogInViewController.m in Sources */,
 				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,
 				59FFB7031D051EA800071E0E /* UIView+Extension.m in Sources */,
 				59F6A8A71D15362F00CFD28F /* ThridTableViewCell.m in Sources */,

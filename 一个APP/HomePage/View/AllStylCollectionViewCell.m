@@ -29,7 +29,6 @@
     
 }
 
-
 - (void)setImages:(NSString *)image titles:(NSString *)title
 {
     self.nanmeLabel.text = title;
