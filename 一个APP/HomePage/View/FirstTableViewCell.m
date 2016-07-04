@@ -27,7 +27,6 @@
                 [imageView autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:(30*width/365+(width/4+20*width/365)*j)*width/365];
                 [imageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:(25+i*(67+20))];
                 [imageView autoSetDimensionsToSize:CGSizeMake(50, 67)];
-//                imageView.frame = CGRectMake(30*width/375+(width/4+20*width/375)*j, 25+i*(67+20), 50*width/375, 67*width/375);
                 imageView.tag = 1000+(num++);
                 [imageView setUserInteractionEnabled:YES];
 
