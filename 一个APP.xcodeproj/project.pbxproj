@@ -26,6 +26,9 @@
 		5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940BC2F1D1A8F6900982820 /* MenuTableViewCell.m */; };
 		5940BC321D1A8F6900982820 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5940BC301D1A8F6900982820 /* MenuTableViewCell.xib */; };
 		594707611D236292000C4871 /* HeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 594707601D236292000C4871 /* HeaderCollectionReusableView.m */; };
+		5983FD041D2A2DB900FCC9C9 /* LearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983FD031D2A2DB900FCC9C9 /* LearnViewController.m */; };
+		5983FD091D2A301100FCC9C9 /* LearnCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983FD071D2A301100FCC9C9 /* LearnCollectionViewCell.m */; };
+		5983FD0A1D2A301100FCC9C9 /* LearnCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5983FD081D2A301100FCC9C9 /* LearnCollectionViewCell.xib */; };
 		599ECDD31D25F70E009E636A /* PleaseJobTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */; };
 		599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */; };
 		599ECDD81D263A8F009E636A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD61D263A8F009E636A /* LogInViewController.m */; };
@@ -178,6 +181,11 @@
 		5940BC301D1A8F6900982820 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
 		5947075F1D236292000C4871 /* HeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		594707601D236292000C4871 /* HeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		5983FD021D2A2DB900FCC9C9 /* LearnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnViewController.h; sourceTree = "<group>"; };
+		5983FD031D2A2DB900FCC9C9 /* LearnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnViewController.m; sourceTree = "<group>"; };
+		5983FD061D2A301100FCC9C9 /* LearnCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnCollectionViewCell.h; sourceTree = "<group>"; };
+		5983FD071D2A301100FCC9C9 /* LearnCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnCollectionViewCell.m; sourceTree = "<group>"; };
+		5983FD081D2A301100FCC9C9 /* LearnCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LearnCollectionViewCell.xib; sourceTree = "<group>"; };
 		599ECDD01D25F70E009E636A /* PleaseJobTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PleaseJobTableViewCell.h; sourceTree = "<group>"; };
 		599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PleaseJobTableViewCell.m; sourceTree = "<group>"; };
 		599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PleaseJobTableViewCell.xib; sourceTree = "<group>"; };
@@ -390,6 +398,7 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5983FD051D2A2DC000FCC9C9 /* 生活服务(学习) */,
 				D8B71AC41D27902F00F0DBC8 /* 生活服务(汽车) */,
 				D8071D781D265CE100A2A403 /* 生活服务(婚庆) */,
 				D804B9991D263C2E00DB283D /* 新闻 */,
@@ -530,6 +539,18 @@
 				599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */,
 			);
 			name = "求职招聘";
+			sourceTree = "<group>";
+		};
+		5983FD051D2A2DC000FCC9C9 /* 生活服务(学习) */ = {
+			isa = PBXGroup;
+			children = (
+				5983FD021D2A2DB900FCC9C9 /* LearnViewController.h */,
+				5983FD031D2A2DB900FCC9C9 /* LearnViewController.m */,
+				5983FD061D2A301100FCC9C9 /* LearnCollectionViewCell.h */,
+				5983FD071D2A301100FCC9C9 /* LearnCollectionViewCell.m */,
+				5983FD081D2A301100FCC9C9 /* LearnCollectionViewCell.xib */,
+			);
+			name = "生活服务(学习)";
 			sourceTree = "<group>";
 		};
 		59D096DD1D139E6C00039C87 /* SDCycleScrollView */ = {
@@ -1226,6 +1247,7 @@
 				D8247FAA1D212CDB007C573F /* MoiveTableViewCell.xib in Resources */,
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
 				D8071D801D265ED000A2A403 /* WeddingTableViewCell.xib in Resources */,
+				5983FD0A1D2A301100FCC9C9 /* LearnCollectionViewCell.xib in Resources */,
 				59F786091D0BD793005A39FB /* FriendGroupView.xib in Resources */,
 				59EE6D961D17BE3D00DAB8B2 /* HomeModelView.xib in Resources */,
 				D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */,
@@ -1323,6 +1345,7 @@
 				D8B71AD11D27929600F0DBC8 /* sevCarTableViewCell.m in Sources */,
 				59D096FD1D139E6C00039C87 /* SDCycleScrollView.m in Sources */,
 				59F2848E1D1E1A9B00C815D1 /* TakeOutTableViewController.m in Sources */,
+				5983FD041D2A2DB900FCC9C9 /* LearnViewController.m in Sources */,
 				59EAD9711D20C2E4003DF636 /* ImageAndLabView.m in Sources */,
 				D8B71AC71D27909B00F0DBC8 /* sevCarTableViewController.m in Sources */,
 				D8071D7B1D265E1C00A2A403 /* WeddingTableViewController.m in Sources */,
@@ -1387,6 +1410,7 @@
 				59F786041D0BAAC4005A39FB /* AddressHeaderView.m in Sources */,
 				59FFB6FB1D050F9500071E0E /* NavigationViewController.m in Sources */,
 				59FFB6EE1D05076200071E0E /* DiscoverViewController.m in Sources */,
+				5983FD091D2A301100FCC9C9 /* LearnCollectionViewCell.m in Sources */,
 				59ED1C131D05B5E100405D17 /* UIBarButtonItem+Extension.m in Sources */,
 				D8AAD0591D23957A005915D1 /* AllStylCollectionViewCell.m in Sources */,
 				D8AF298C1D24ECB800166DC5 /* HouseTableViewCell.m in Sources */,

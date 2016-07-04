@@ -27,6 +27,7 @@
 #import "SecondHandTableViewController.h"// 二手置换
 #import "HouseTableViewController.h" // 家政服务
 #import "NewsTableViewController.h" // 新闻
+#import "LearnViewController.h" // 学习培训
 
 
 
@@ -193,10 +194,11 @@
     if (indexPath.section == 3) {
         ThridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ThridID"];
         if (cell == nil) {
-            
             cell = [[ThridTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ThridID"];
             [cell cellStyle:lifeServeCellStyle];
+            cell.delegte = self;
         }
+        
         NSArray *arr = @[@"shouye_qcfw",@"shouye_tcly",@"shouye_syxz",@"shouye_hqff",@"shouye_xxpx",@"shouye_yhfw",@"shouye_xinwen"];
         NSArray *titles = @[@"",@"",@"",@"",@"",@""];
         [cell setThridCellImage:arr titles:titles];
@@ -354,31 +356,33 @@
 - (void)ThridPushViewControllerNum:(NSInteger)num
 {
 #pragma mark - 生活服务
+    NSLog(@"%ld", num);
     // 汽车服务
     if (num == 1000) {
         
     }
     // 同程旅游
-    if (num == 1002) {
+    if (num == 1001) {
         
     }
 
     // 摄影写真
-    if (num == 1003) {
+    if (num == 1002) {
         
     }
     
     // 婚庆服务
-    if (num == 1004) {
+    if (num == 1003) {
         
     }
     
     // 学习培训
-    if (num == 1005) {
-        
+    if (num == 1004) {
+        LearnViewController *learnVc = [[LearnViewController alloc]init];
+        [self.navigationController pushViewController:learnVc animated:YES];
     }
     // 宴会服务
-    if (num == 1006) {
+    if (num == 1005) {
         
     }
 #pragma mark - 实事新闻
