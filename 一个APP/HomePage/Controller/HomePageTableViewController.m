@@ -28,6 +28,11 @@
 #import "HouseTableViewController.h" // 家政服务
 #import "NewsTableViewController.h" // 新闻
 #import "LearnViewController.h" // 学习培训
+#import "sevCarTableViewController.h" // 生活服务(汽车)
+#import "TravelTableViewController.h" // 生活服务(旅游)
+#import "TakePhotoTableViewController.h" //生活服务(摄影)
+#import "WeddingTableViewController.h" // 生活服务(婚庆)
+
 
 
 
@@ -360,20 +365,26 @@
     // 汽车服务
     if (num == 1000) {
         
+        sevCarTableViewController *sevCarVC = [[sevCarTableViewController alloc] init];
+        [self.navigationController pushViewController:sevCarVC animated:YES];
     }
     // 同程旅游
     if (num == 1001) {
-        
+        TravelTableViewController *travelVC = [[TravelTableViewController alloc] init];
+        [self.navigationController pushViewController:travelVC animated:YES];
     }
 
     // 摄影写真
     if (num == 1002) {
-        
+        TakePhotoTableViewController *takePhotoVC = [[TakePhotoTableViewController alloc]init];
+        [self.navigationController pushViewController:takePhotoVC animated:YES];
     }
     
     // 婚庆服务
     if (num == 1003) {
         
+        WeddingTableViewController *weddingVC = [[WeddingTableViewController alloc] init];
+        [self.navigationController pushViewController:weddingVC animated:YES];
     }
     
     // 学习培训

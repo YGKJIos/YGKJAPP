@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="TravelTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="旅游_26" translatesAutoresizingMaskIntoConstraints="NO" id="hby-d7-bZv">
+                        <rect key="frame" x="21" y="15" width="95" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="95" id="ClL-iD-CZ4"/>
+                            <constraint firstAttribute="height" constant="70" id="y06-eu-H1b"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xing" translatesAutoresizingMaskIntoConstraints="NO" id="aIv-Zt-aEh">
+                        <rect key="frame" x="129" y="47" width="63" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="QC4-lQ-aKP"/>
+                            <constraint firstAttribute="height" constant="10" id="wYM-Ca-uiF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.8分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xA-jw-C05">
+                        <rect key="frame" x="195" y="41" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="AF7-kw-f3i"/>
+                            <constraint firstAttribute="height" constant="21" id="nfK-kt-Jzt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.95294117647058818" green="0.68627450980392157" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="需提前一天预订" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWd-Pp-hZm">
+                        <rect key="frame" x="129" y="70" width="96" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="kv9-wh-s9l"/>
+                            <constraint firstAttribute="width" constant="96" id="wsq-Ki-MgW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥48起" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIF-WK-ux8">
+                        <rect key="frame" x="299" y="42" width="59" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="59" id="1DJ-A9-TWx"/>
+                            <constraint firstAttribute="height" constant="20" id="ahv-ns-h5a"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="1" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="旅游_31" translatesAutoresizingMaskIntoConstraints="NO" id="NHh-Vr-dVe">
+                        <rect key="frame" x="299" y="73" width="13" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="13" id="Cwd-0h-F6c"/>
+                            <constraint firstAttribute="height" constant="14" id="dUm-yI-Tfi"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开发区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZr-H6-Ovj">
+                        <rect key="frame" x="321" y="75" width="36" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="WeM-l6-4eN"/>
+                            <constraint firstAttribute="width" constant="36" id="XAF-4n-xSg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帽儿山风景区(3A)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCM-vx-Aow">
+                        <rect key="frame" x="129" y="13" width="135" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="135" id="10t-hI-qrW"/>
+                            <constraint firstAttribute="height" constant="21" id="ysB-s4-kLX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hby-d7-bZv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="13" id="4st-fd-L2J"/>
+                    <constraint firstItem="jWd-Pp-hZm" firstAttribute="leading" secondItem="hby-d7-bZv" secondAttribute="trailing" constant="13" id="AR4-r1-BsR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="DZr-H6-Ovj" secondAttribute="trailing" constant="10" id="FDf-dS-Rfv"/>
+                    <constraint firstItem="vCM-vx-Aow" firstAttribute="leading" secondItem="hby-d7-bZv" secondAttribute="trailing" constant="13" id="TN3-Wk-4zf"/>
+                    <constraint firstItem="NHh-Vr-dVe" firstAttribute="top" secondItem="gIF-WK-ux8" secondAttribute="bottom" constant="11" id="URo-BD-8ny"/>
+                    <constraint firstItem="aIv-Zt-aEh" firstAttribute="leading" secondItem="hby-d7-bZv" secondAttribute="trailing" constant="13" id="ZFR-P3-wpm"/>
+                    <constraint firstItem="5xA-jw-C05" firstAttribute="leading" secondItem="aIv-Zt-aEh" secondAttribute="trailing" constant="3" id="ad2-7o-vzj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gIF-WK-ux8" secondAttribute="trailing" constant="9" id="b7O-6U-Bzj"/>
+                    <constraint firstItem="aIv-Zt-aEh" firstAttribute="top" secondItem="vCM-vx-Aow" secondAttribute="bottom" constant="13" id="cS2-0f-uDk"/>
+                    <constraint firstItem="vCM-vx-Aow" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="dLA-fB-GvD"/>
+                    <constraint firstItem="hby-d7-bZv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="fxS-MC-ehL"/>
+                    <constraint firstItem="jWd-Pp-hZm" firstAttribute="top" secondItem="aIv-Zt-aEh" secondAttribute="bottom" constant="13" id="mEy-dq-job"/>
+                    <constraint firstItem="DZr-H6-Ovj" firstAttribute="leading" secondItem="NHh-Vr-dVe" secondAttribute="trailing" constant="9" id="mhd-Jb-KxU"/>
+                    <constraint firstItem="DZr-H6-Ovj" firstAttribute="top" secondItem="gIF-WK-ux8" secondAttribute="bottom" constant="13" id="nHh-4J-Xqd"/>
+                    <constraint firstItem="5xA-jw-C05" firstAttribute="top" secondItem="vCM-vx-Aow" secondAttribute="bottom" constant="7" id="tHw-tM-jzB"/>
+                    <constraint firstItem="gIF-WK-ux8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="34" id="xCd-uO-gj2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="introduceLabel" destination="jWd-Pp-hZm" id="IYI-zK-pid"/>
+                <outlet property="nameLabel" destination="vCM-vx-Aow" id="qbM-kX-NWO"/>
+                <outlet property="numLabel" destination="5xA-jw-C05" id="lB7-4x-VwC"/>
+                <outlet property="placeImage" destination="NHh-Vr-dVe" id="2Gr-F6-7VJ"/>
+                <outlet property="placeLabel" destination="DZr-H6-Ovj" id="oQo-6D-SSO"/>
+                <outlet property="priceLabel" destination="gIF-WK-ux8" id="zZG-xb-W37"/>
+                <outlet property="starImage" destination="aIv-Zt-aEh" id="EoO-J0-7aW"/>
+                <outlet property="travelImage" destination="hby-d7-bZv" id="gdN-7J-PwK"/>
+            </connections>
+            <point key="canvasLocation" x="329.5" y="269.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="xing" width="62" height="9"/>
+        <image name="旅游_26" width="94" height="69"/>
+        <image name="旅游_31" width="13" height="14"/>
+    </resources>
+</document>
