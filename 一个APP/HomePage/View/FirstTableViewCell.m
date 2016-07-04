@@ -8,22 +8,29 @@
 
 #import "FirstTableViewCell.h"
 
-#define width self.width /375
+#define width self.width
+#define height self.height
 
 @implementation FirstTableViewCell
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
+    // CGRectMake(width/4-50, 25+i*(67+20), 50, 67)
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         int num = 0;
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 4; j++) {
-                UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(25+j*(50+40), 25+i*(67+20), 50, 67)];
+                UIImageView *imageView = [UIImageView newAutoLayoutView];
+                [self.contentView addSubview:imageView];
+                
+                [imageView autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:(30*width/365+(width/4+20*width/365)*j)*width/365];
+                [imageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:(25+i*(67+20))];
+                [imageView autoSetDimensionsToSize:CGSizeMake(50, 67)];
+//                imageView.frame = CGRectMake(30*width/375+(width/4+20*width/375)*j, 25+i*(67+20), 50*width/375, 67*width/375);
                 imageView.tag = 1000+(num++);
                 [imageView setUserInteractionEnabled:YES];
-                
-                [self.contentView addSubview:imageView];
+
                 
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageViewAction:)];
                 [imageView addGestureRecognizer:tap];

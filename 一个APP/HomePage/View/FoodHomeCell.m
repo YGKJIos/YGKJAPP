@@ -18,8 +18,6 @@
         for (int i = 0; i < 4; i++) {
             HomeModelView *view = [HomeModelView foodModelStyleView];
             view.frame = CGRectMake(20+i*(71+17), 17, 0, 0);
-//            view.backgroundColor = [UIColor redColor];
-//            [[HomeModelView alloc]initWithFrame:CGRectMake(27.5+i*(70+17), 17, 70, 70)];
             [self.contentView addSubview:view];
         }
         

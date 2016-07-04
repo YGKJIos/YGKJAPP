@@ -31,8 +31,6 @@
     [self addTableHeaderView];
     self.tableView.showsVerticalScrollIndicator = NO;
     self.title = @"外卖";
-    
-    
     // 数据
     self.classifys = @[@"美食",@"今日新单",@"电影",@"酒店"];
     self.cates = @[@"自助餐",@"快餐",@"火锅",@"日韩料理",@"西餐",@"烧烤小吃"];
@@ -47,10 +45,6 @@
     menu.delegate = self;
     menu.dataSource = self;
     [self.view addSubview:menu];
-    
-    
-    
-    
 }
 
 - (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
@@ -116,7 +110,6 @@
         NSLog(@"点击了 %ld - %ld 项目",indexPath.column,indexPath.row);
     }
 }
-
 
 - (void)addTableHeaderView
 {

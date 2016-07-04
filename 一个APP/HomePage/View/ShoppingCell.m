@@ -42,9 +42,7 @@
             view.tag = 1000+i;
             [self.contentView addSubview:view];
         }
-        
     }
-    
     self.imgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.imgBtn.backgroundColor = arcColor;
     self.imgBtn.frame = CGRectMake(0, 200, WIDTH, 120);
@@ -64,7 +62,6 @@
     [self.imgBtn setBackgroundImage:[UIImage imageNamed:[images lastObject]] forState:UIControlStateNormal];
     
 }
-
 
 - (void)awakeFromNib {
     // Initialization code

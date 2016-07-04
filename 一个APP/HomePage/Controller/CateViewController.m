@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
 @property (nonatomic, strong)UIView *bgView;// tableViewHeaderView
+@property (nonatomic, strong)DropdownMenu *menu;
 
 @end
 
@@ -23,8 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
+    
+    
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationLeftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
@@ -92,11 +93,30 @@
             [self.bgView addSubview:view];
         }
     }
-//    NSArray *titleArray = @[@"全部分类",@"附近",@"智能"];
+    
+    NSArray *titleArray = @[@"全部分类",@"附近",@"智能"];
+    for (int i = 0; i < 3; i++) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(WIDTH/3*i, 320, WIDTH/3, 40);
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, 80, 0, 0);
+        button.titleLabel.textColor = BGcolor(198, 198, 198);
+        [button setTitleColor:[UIColor colorWithRed:198/255. green:198/255. blue:198/255. alpha:1] forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:13];
+        [button setTitle:titleArray[i] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(downMeunClick) forControlEvents:UIControlEventTouchUpInside];
+        [self.bgView addSubview:button];
+    }
+
 //    DropdownMenu *dropdown = [[DropdownMenu alloc] initDropdownWithButtonTitles:titleArray andLeftListArray:nil andRightListArray:nil];
 ////    dropdown.view.frame = CGRectMake(0, 200, WIDTH, 40);
 //    dropdown.delegate = self;   //此句的代理方法可返回选中下标值
 //    [self.bgView addSubview:dropdown.view];
+    
+}
+- (void)downMeunClick
+{
     
 }
 // 下拉菜单

@@ -97,7 +97,8 @@
     }
     return 1;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (indexPath.section == 3) {
         return 385;
     }
@@ -126,7 +127,8 @@
         TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
         [view setTitleLabText:@"同城服务"];
         return view;
-    } if (section == 3) {
+    }
+    if (section == 3) {
         TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
         [view setTitleLabText:@"生活服务"];
         return view;
@@ -172,7 +174,6 @@
     if (section == 1) {
         return 0;
     }
-    
     return 40;
 }
 
@@ -190,7 +191,6 @@
     }
     // 生活服务
     if (indexPath.section == 3) {
-        
         ThridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ThridID"];
         if (cell == nil) {
             
@@ -228,6 +228,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
+    // 嗨购专场
     if (indexPath.section == 6) {
         ShoppingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shopId"];
         if (cell == nil) {
@@ -238,6 +239,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
+    // 周边畅游
     if (indexPath.section == 7) {
         ThridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"traveId"];
         if (cell == nil) {
@@ -258,6 +260,7 @@
         
         return cell;
     }
+    // 二手置换
     if (indexPath.section == 9) {
         ThridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"secondId"];
         if (!cell) {
@@ -347,23 +350,44 @@
     
 }
 
-#pragma mark - 生活服务
-
-
-
-
-
-
-#pragma mark - 时事新闻
-
+#pragma mark - 生活服务 || 实事新闻
 - (void)ThridPushViewControllerNum:(NSInteger)num
 {
-    // 时事新闻
+#pragma mark - 生活服务
+    // 汽车服务
     if (num == 1000) {
-//        NSLog(@"cnm");
+        
+    }
+    // 同程旅游
+    if (num == 1002) {
+        
+    }
+
+    // 摄影写真
+    if (num == 1003) {
+        
+    }
+    
+    // 婚庆服务
+    if (num == 1004) {
+        
+    }
+    
+    // 学习培训
+    if (num == 1005) {
+        
+    }
+    // 宴会服务
+    if (num == 1006) {
+        
+    }
+#pragma mark - 实事新闻
+    // 时事新闻
+    if (num == 2000 || num == 2001) {
         NewsTableViewController *newsVC = [[NewsTableViewController alloc] init];
         [self.navigationController pushViewController:newsVC animated:YES];
     }
+    
 }
 
 
