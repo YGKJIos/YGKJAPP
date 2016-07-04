@@ -32,7 +32,7 @@
 #import "TravelTableViewController.h" // 生活服务(旅游)
 #import "TakePhotoTableViewController.h" //生活服务(摄影)
 #import "WeddingTableViewController.h" // 生活服务(婚庆)
-
+#import "FeastTableViewController.h" // 生活服务(宴会)
 
 
 
@@ -394,6 +394,8 @@
     }
     // 宴会服务
     if (num == 1005) {
+        FeastTableViewController *feastVC = [[FeastTableViewController alloc] init];
+        [self.navigationController pushViewController:feastVC animated:YES];
         
     }
 #pragma mark - 实事新闻

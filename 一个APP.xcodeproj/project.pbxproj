@@ -109,6 +109,9 @@
 		D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FAD1D212D05007C573F /* GameTableViewController.m */; };
 		D8247FB31D212D48007C573F /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FB11D212D48007C573F /* GameTableViewCell.m */; };
 		D8247FB41D212D48007C573F /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8247FB21D212D48007C573F /* GameTableViewCell.xib */; };
+		D82B04461D2A4EE80086A108 /* FeastTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B04451D2A4EE80086A108 /* FeastTableViewController.m */; };
+		D82B044A1D2A4F0F0086A108 /* FeastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B04481D2A4F0F0086A108 /* FeastTableViewCell.m */; };
+		D82B044B1D2A4F0F0086A108 /* FeastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82B04491D2A4F0F0086A108 /* FeastTableViewCell.xib */; };
 		D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */; };
 		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
 		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
@@ -337,6 +340,11 @@
 		D8247FB01D212D48007C573F /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
 		D8247FB11D212D48007C573F /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
 		D8247FB21D212D48007C573F /* GameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
+		D82B04441D2A4EE80086A108 /* FeastTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeastTableViewController.h; sourceTree = "<group>"; };
+		D82B04451D2A4EE80086A108 /* FeastTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeastTableViewController.m; sourceTree = "<group>"; };
+		D82B04471D2A4F0F0086A108 /* FeastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeastTableViewCell.h; sourceTree = "<group>"; };
+		D82B04481D2A4F0F0086A108 /* FeastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeastTableViewCell.m; sourceTree = "<group>"; };
+		D82B04491D2A4F0F0086A108 /* FeastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeastTableViewCell.xib; sourceTree = "<group>"; };
 		D842DF2A1D224642008A54B7 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
 		D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
 		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
@@ -419,12 +427,10 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-
+				D82B044C1D2A504A0086A108 /* 生活服务(宴会) */,
 				D86C09981D29ECA80016C1A9 /* 生活服务(旅游) */,
 				D8AF72141D27AB0000C40F7E /* 生活服务(摄影) */,
-
 				5983FD051D2A2DC000FCC9C9 /* 生活服务(学习) */,
-
 				D8B71AC41D27902F00F0DBC8 /* 生活服务(汽车) */,
 				D8071D781D265CE100A2A403 /* 生活服务(婚庆) */,
 				D804B9991D263C2E00DB283D /* 新闻 */,
@@ -1053,6 +1059,18 @@
 			name = "GameCell(休闲娱乐)";
 			sourceTree = "<group>";
 		};
+		D82B044C1D2A504A0086A108 /* 生活服务(宴会) */ = {
+			isa = PBXGroup;
+			children = (
+				D82B04441D2A4EE80086A108 /* FeastTableViewController.h */,
+				D82B04451D2A4EE80086A108 /* FeastTableViewController.m */,
+				D82B04471D2A4F0F0086A108 /* FeastTableViewCell.h */,
+				D82B04481D2A4F0F0086A108 /* FeastTableViewCell.m */,
+				D82B04491D2A4F0F0086A108 /* FeastTableViewCell.xib */,
+			);
+			name = "生活服务(宴会)";
+			sourceTree = "<group>";
+		};
 		D842DF291D224642008A54B7 /* DOPDropDownMenu - Enhanced */ = {
 			isa = PBXGroup;
 			children = (
@@ -1298,6 +1316,7 @@
 				59EAD9731D20C302003DF636 /* ImageAndLabView.xib in Resources */,
 				59D096F41D139E6C00039C87 /* h2.jpg in Resources */,
 				D8247FAA1D212CDB007C573F /* MoiveTableViewCell.xib in Resources */,
+				D82B044B1D2A4F0F0086A108 /* FeastTableViewCell.xib in Resources */,
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
 				D8AF721C1D27ABD600C40F7E /* TakePhotoTableViewCell.xib in Resources */,
 				D8071D801D265ED000A2A403 /* WeddingTableViewCell.xib in Resources */,
@@ -1427,6 +1446,7 @@
 				5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */,
 				59E4EA4E1D193AFE000083B8 /* profileHeaderView.m in Sources */,
 				D804B99C1D263CBB00DB283D /* NewsTableViewController.m in Sources */,
+				D82B04461D2A4EE80086A108 /* FeastTableViewController.m in Sources */,
 				D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */,
 				59366BB71D066E5600BB445A /* PersonalCenterViewController.m in Sources */,
 				59FFB7071D05369D00071E0E /* MarketCell.m in Sources */,
@@ -1436,6 +1456,7 @@
 				594707611D236292000C4871 /* HeaderCollectionReusableView.m in Sources */,
 				59FFB6F41D0507E900071E0E /* MessageViewController.m in Sources */,
 				59EC739F1D0946F6009062D9 /* MessageModel.m in Sources */,
+				D82B044A1D2A4F0F0086A108 /* FeastTableViewCell.m in Sources */,
 				D8071D7F1D265ED000A2A403 /* WeddingTableViewCell.m in Sources */,
 				59E013121D1BBBC5008C8553 /* CateViewController.m in Sources */,
 				5940BC2B1D1A552900982820 /* FictionTableViewCell.m in Sources */,
