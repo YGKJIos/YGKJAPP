@@ -20,7 +20,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.8分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmf-7A-Y9c">
-                        <rect key="frame" x="71" y="122" width="35" height="17"/>
+                        <rect key="frame" x="69" y="123" width="35" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.95686274509803915" green="0.63529411764705879" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -29,27 +29,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="165" height="100"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xx_dingwei" translatesAutoresizingMaskIntoConstraints="NO" id="MCT-wm-RNw">
-                        <rect key="frame" x="90" y="172" width="9" height="10"/>
+                        <rect key="frame" x="93" y="171" width="9" height="10"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xing" translatesAutoresizingMaskIntoConstraints="NO" id="cmt-6M-boy">
-                        <rect key="frame" x="2" y="123" width="63" height="15"/>
+                        <rect key="frame" x="0.0" y="125" width="63" height="15"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="侵入式英语教育模式，能够轻松的掌握要领，愉快......." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-Hc-RkA">
-                        <rect key="frame" x="0.0" y="135" width="165" height="34"/>
+                        <rect key="frame" x="2" y="138" width="165" height="34"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="果戈里/革新街" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQp-Fw-wXs">
-                        <rect key="frame" x="105" y="169" width="60" height="16"/>
+                        <rect key="frame" x="107" y="169" width="60" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                         <color key="textColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wj-V3-NBP">
+                        <rect key="frame" x="0.0" y="184" width="175" height="1"/>
+                        <color key="backgroundColor" red="0.82352941176470584" green="0.82352941176470584" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIa-l3-rvQ">
+                        <rect key="frame" x="174" y="-15" width="1" height="200"/>
+                        <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <point key="canvasLocation" x="303.5" y="314.5"/>
+            <size key="customSize" width="165" height="185"/>
+            <point key="canvasLocation" x="304.5" y="338.5"/>
         </collectionViewCell>
     </objects>
     <resources>
