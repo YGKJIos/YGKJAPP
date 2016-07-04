@@ -21,14 +21,13 @@
     // Do any additional setup after loading the view.
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(180*(WIDTH/375), 150);
-    flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 190);
-    flowLayout.sectionInset = UIEdgeInsetsMake(8, 3, 8, 3);
-    flowLayout.minimumInteritemSpacing = 8;
-    flowLayout.minimumLineSpacing = 8;
+    flowLayout.itemSize = CGSizeMake(165*(WIDTH/375), 185);
+    flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 150);
+    flowLayout.sectionInset = UIEdgeInsetsMake(20, 15, 20, 15);
+    flowLayout.minimumLineSpacing = 10;
     
-    UICollectionView *collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) collectionViewLayout:flowLayout];
-    collection.backgroundColor = BGcolor(226, 226, 226);
+    UICollectionView *collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64) collectionViewLayout:flowLayout];
+    collection.backgroundColor = [UIColor whiteColor];
     collection.delegate = self;
     collection.dataSource = self;
     collection.showsVerticalScrollIndicator = NO;
@@ -47,6 +46,14 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     LearnCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"learnCell" forIndexPath:indexPath];
+    
+//    UIView *line1 = [[UIView alloc]initWithFrame:CGRectMake(0, 199, 200, 1)];
+//    line1.backgroundColor = BGcolor(210, 210, 210);
+//    [cell addSubview:line1];
+//    
+//    UIView *line2 = [[UIView alloc]initWithFrame:CGRectMake(174, 0, 1, 200)];
+//    line2.backgroundColor = BGcolor(210, 210, 210);
+//    [cell addSubview:line2];
     
     return cell;
 }

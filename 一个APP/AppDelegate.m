@@ -10,7 +10,6 @@
 #import "RootTabBarController.h"
 #import "SupermarketViewController.h"
 #import "LogInViewController.h"
-#import "TravelTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -30,13 +29,10 @@
     self.window.rootViewController = rootTabBar;
     rootTabBar.tabBar.translucent = NO;
     
-    LogInViewController *vc = [[LogInViewController alloc]init];
-    self.window.rootViewController = vc;
-
-    
-//    TravelTableViewController *vc = [[TravelTableViewController alloc] init];
+//    LogInViewController *vc = [[LogInViewController alloc]init];
 //    self.window.rootViewController = vc;
-    
+
+
 
 
     [self.window makeKeyAndVisible];
