@@ -16,19 +16,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qiche" translatesAutoresizingMaskIntoConstraints="NO" id="Y8y-Zd-fbk">
-                        <rect key="frame" x="26" y="18" width="95" height="67"/>
+                        <rect key="frame" x="26" y="18.5" width="95" height="66"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="95" id="Bjl-LT-tbR"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="居民公企搬家,  长途大件搬运" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqN-eM-GW3">
-                        <rect key="frame" x="129" y="18" width="193" height="18"/>
+                        <rect key="frame" x="129" y="18.5" width="192.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务项目: 搬家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMP-q8-tOY">
-                        <rect key="frame" x="129" y="56" width="193" height="14"/>
+                        <rect key="frame" x="129" y="56.5" width="193" height="13.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="193" id="ZeK-nB-ic2"/>
                         </constraints>
@@ -37,16 +37,20 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="详情介绍: 收费标准/联系商家/了解更多..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-cV-UJ0">
-                        <rect key="frame" x="129" y="71" width="193" height="14"/>
+                        <rect key="frame" x="129" y="71" width="193" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lianxiren" translatesAutoresizingMaskIntoConstraints="NO" id="qbG-v7-eOv">
-                        <rect key="frame" x="324" y="39" width="63" height="25"/>
+                        <rect key="frame" x="327" y="39" width="63" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="CbN-Nc-VtX"/>
+                            <constraint firstAttribute="height" constant="25" id="vFE-t4-DcZ"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务范围: 哈尔滨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3R-Z7-9cb">
-                        <rect key="frame" x="129" y="40" width="84" height="14"/>
+                        <rect key="frame" x="129" y="41" width="83.5" height="13.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="Bbp-dc-dge"/>
                             <constraint firstAttribute="width" constant="49" id="odp-S7-gP7"/>
@@ -68,6 +72,7 @@
                     <constraint firstItem="Y8y-Zd-fbk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="13" id="Jnz-oa-0SE"/>
                     <constraint firstItem="6l8-cV-UJ0" firstAttribute="leading" secondItem="Y8y-Zd-fbk" secondAttribute="trailing" constant="8" symbolic="YES" id="L4q-8G-p4r"/>
                     <constraint firstItem="Y8y-Zd-fbk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="18" id="LI7-ss-OCt"/>
+                    <constraint firstItem="qbG-v7-eOv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="31" id="NhZ-uC-XR5"/>
                     <constraint firstItem="iqN-eM-GW3" firstAttribute="leading" secondItem="Y8y-Zd-fbk" secondAttribute="trailing" constant="8" symbolic="YES" id="VTO-Ni-bT2"/>
                     <constraint firstItem="CMP-q8-tOY" firstAttribute="leading" secondItem="Y8y-Zd-fbk" secondAttribute="trailing" constant="8" symbolic="YES" id="dYJ-B3-1OL"/>
                     <constraint firstAttribute="bottom" secondItem="CMP-q8-tOY" secondAttribute="bottom" constant="34" id="eV0-sd-Brx"/>
@@ -80,11 +85,14 @@
                     <constraint firstItem="Y8y-Zd-fbk" firstAttribute="top" secondItem="iqN-eM-GW3" secondAttribute="top" id="txB-ej-pbv"/>
                     <constraint firstItem="Y8y-Zd-fbk" firstAttribute="centerY" secondItem="qbG-v7-eOv" secondAttribute="centerY" id="yY6-od-d6a"/>
                     <constraint firstItem="CMP-q8-tOY" firstAttribute="trailing" secondItem="6l8-cV-UJ0" secondAttribute="trailing" id="zS0-Rd-Rqs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qbG-v7-eOv" secondAttribute="trailing" constant="10" id="zpy-eB-xCZ"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="Jnz-oa-0SE"/>
                         <exclude reference="LI7-ss-OCt"/>
+                        <exclude reference="yY6-od-d6a"/>
+                        <exclude reference="4Th-P9-3GE"/>
                         <exclude reference="nZ6-PG-bAB"/>
                     </mask>
                 </variation>

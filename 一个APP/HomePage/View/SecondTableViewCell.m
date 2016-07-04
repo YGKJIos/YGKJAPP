@@ -20,11 +20,8 @@
                 UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(58+j*(51+55), 25+i*(58+20), 51, 58)];
                 imageView.tag = 1000+(num++);
                 [imageView setUserInteractionEnabled:YES];
-                //                imageView.backgroundColor = [UIColor redColor];
                 [self.contentView addSubview:imageView];
-                
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageViewAction:)];
-                //                tap.numberOfTapsRequired = 1;
                 [imageView addGestureRecognizer:tap];
             }
         }
@@ -32,13 +29,10 @@
     return self;
 }
 
-
-
 - (void)tapImageViewAction:(UITapGestureRecognizer *)tap
 {
     UIImageView *image = (UIImageView *)tap.view;
     [self.delegate SecondPushViewControllerNum:image.tag];
-    NSLog(@"222");
 }
 
 -(void)setSecondCellImage:(NSArray *)images

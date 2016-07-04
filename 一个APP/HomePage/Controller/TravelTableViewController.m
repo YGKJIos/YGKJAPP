@@ -8,6 +8,7 @@
 
 #import "TravelTableViewController.h"
 #import "TravelView.h"
+#import "TravelTableViewCell.h"
 
 @interface TravelTableViewController ()
 
@@ -81,14 +82,18 @@
     
     static NSString *str = @"reuse";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+    TravelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:str];
+        cell = [TravelTableViewCell createTravelCell];
     }
 
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
 
 /*
 // Override to support conditional editing of the table view.

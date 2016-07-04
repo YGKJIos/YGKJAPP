@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface TravelTableViewCell : UITableViewCell
-
-
-
-
-
-
+@property (weak, nonatomic) IBOutlet UIImageView *travelImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *starImage;
+@property (weak, nonatomic) IBOutlet UILabel *numLabel;
+@property (weak, nonatomic) IBOutlet UILabel *introduceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *placeImage;
+@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 
 
 
