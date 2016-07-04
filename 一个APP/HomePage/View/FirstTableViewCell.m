@@ -30,7 +30,6 @@
                 imageView.tag = 1000+(num++);
                 [imageView setUserInteractionEnabled:YES];
 
-                
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageViewAction:)];
                 [imageView addGestureRecognizer:tap];
             }

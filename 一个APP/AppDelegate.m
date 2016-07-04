@@ -30,12 +30,12 @@
     self.window.rootViewController = rootTabBar;
     rootTabBar.tabBar.translucent = NO;
     
-//    LogInViewController *vc = [[LogInViewController alloc]init];
-//    self.window.rootViewController = vc;
+    LogInViewController *vc = [[LogInViewController alloc]init];
+    self.window.rootViewController = vc;
 
     
-    TravelTableViewController *vc = [[TravelTableViewController alloc] init];
-    self.window.rootViewController = vc;
+//    TravelTableViewController *vc = [[TravelTableViewController alloc] init];
+//    self.window.rootViewController = vc;
     
 
 

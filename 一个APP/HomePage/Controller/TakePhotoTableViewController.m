@@ -16,9 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self addTableHeaderView];
  
 }
+
+- (void)addTableHeaderView
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
+    headerView.backgroundColor = [UIColor orangeColor];
+    
+    NSArray *arr = @[@"xinwen",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
+    ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
+    scroll.frame = CGRectMake(0, 0, WIDTH, 150);
+    [headerView addSubview:scroll];
+    
+    self.tableView.tableHeaderView = headerView;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -46,6 +60,12 @@
     }
     
     return cell;
+}
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 
 

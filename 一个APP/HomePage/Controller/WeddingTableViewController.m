@@ -17,12 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self addTableHeaderView];
 }
+
+
+- (void)addTableHeaderView
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
+    headerView.backgroundColor = [UIColor orangeColor];
+    
+    NSArray *arr = @[@"xinwen",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
+    ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
+    scroll.frame = CGRectMake(0, 0, WIDTH, 150);
+    [headerView addSubview:scroll];
+    
+    self.tableView.tableHeaderView = headerView;
+}
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -38,7 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 0;
+    return 12;
 }
 
 

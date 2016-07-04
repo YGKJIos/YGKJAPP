@@ -61,6 +61,10 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weizhi" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-Tk-2xa">
                         <rect key="frame" x="281" y="77" width="9" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="9" id="6ok-uU-VYj"/>
+                            <constraint firstAttribute="height" constant="10" id="GoL-rh-10m"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="道里区友谊路" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CaB-hR-cfP">
                         <rect key="frame" x="292" y="69" width="80" height="26"/>
@@ -105,6 +109,7 @@
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="NWY-a3-xeW"/>
+                        <exclude reference="idf-6r-nwD"/>
                         <exclude reference="umM-0J-8yo"/>
                     </mask>
                 </variation>

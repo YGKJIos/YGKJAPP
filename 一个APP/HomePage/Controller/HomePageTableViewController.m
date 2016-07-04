@@ -27,6 +27,12 @@
 #import "SecondHandTableViewController.h"// 二手置换
 #import "HouseTableViewController.h" // 家政服务
 #import "NewsTableViewController.h" // 新闻
+#import "LearnViewController.h" // 学习培训
+#import "sevCarTableViewController.h" // 生活服务(汽车)
+#import "TravelTableViewController.h" // 生活服务(旅游)
+#import "TakePhotoTableViewController.h" //生活服务(摄影)
+#import "WeddingTableViewController.h" // 生活服务(婚庆)
+
 
 
 
@@ -193,10 +199,11 @@
     if (indexPath.section == 3) {
         ThridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ThridID"];
         if (cell == nil) {
-            
             cell = [[ThridTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ThridID"];
             [cell cellStyle:lifeServeCellStyle];
+            cell.delegte = self;
         }
+        
         NSArray *arr = @[@"shouye_qcfw",@"shouye_tcly",@"shouye_syxz",@"shouye_hqff",@"shouye_xxpx",@"shouye_yhfw",@"shouye_xinwen"];
         NSArray *titles = @[@"",@"",@"",@"",@"",@""];
         [cell setThridCellImage:arr titles:titles];
@@ -354,31 +361,39 @@
 - (void)ThridPushViewControllerNum:(NSInteger)num
 {
 #pragma mark - 生活服务
+    NSLog(@"%ld", num);
     // 汽车服务
     if (num == 1000) {
         
+        sevCarTableViewController *sevCarVC = [[sevCarTableViewController alloc] init];
+        [self.navigationController pushViewController:sevCarVC animated:YES];
     }
     // 同程旅游
-    if (num == 1002) {
-        
+    if (num == 1001) {
+        TravelTableViewController *travelVC = [[TravelTableViewController alloc] init];
+        [self.navigationController pushViewController:travelVC animated:YES];
     }
 
     // 摄影写真
-    if (num == 1003) {
-        
+    if (num == 1002) {
+        TakePhotoTableViewController *takePhotoVC = [[TakePhotoTableViewController alloc]init];
+        [self.navigationController pushViewController:takePhotoVC animated:YES];
     }
     
     // 婚庆服务
-    if (num == 1004) {
+    if (num == 1003) {
         
+        WeddingTableViewController *weddingVC = [[WeddingTableViewController alloc] init];
+        [self.navigationController pushViewController:weddingVC animated:YES];
     }
     
     // 学习培训
-    if (num == 1005) {
-        
+    if (num == 1004) {
+        LearnViewController *learnVc = [[LearnViewController alloc]init];
+        [self.navigationController pushViewController:learnVc animated:YES];
     }
     // 宴会服务
-    if (num == 1006) {
+    if (num == 1005) {
         
     }
 #pragma mark - 实事新闻
