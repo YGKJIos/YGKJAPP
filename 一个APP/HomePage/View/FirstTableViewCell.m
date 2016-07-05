@@ -51,7 +51,6 @@
     for (int i = 0; i < images.count; i++) {
         UIImageView *image = [self.contentView viewWithTag:1000+i];
         image.image = [UIImage imageNamed:images[i]];
-        
     }
 }
 
