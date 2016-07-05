@@ -47,7 +47,6 @@
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 12;
 }
 
@@ -58,7 +57,7 @@
     if (!cell) {
         cell = [TakePhotoTableViewCell createTakePhotoCell];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
