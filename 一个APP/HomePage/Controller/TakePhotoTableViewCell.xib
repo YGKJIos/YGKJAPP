@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="387" height="109"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="387" height="108"/>
+                <rect key="frame" x="0.0" y="0.0" width="387" height="108.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ertong" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-2D-8Zi">
@@ -29,7 +29,7 @@
                             <constraint firstAttribute="height" constant="21" id="joY-fl-Afj"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xing" translatesAutoresizingMaskIntoConstraints="NO" id="yqP-G7-omp">
@@ -59,7 +59,7 @@
                         <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weizhi" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-Tk-2xa">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sy_weizhi" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-Tk-2xa">
                         <rect key="frame" x="281" y="77" width="9" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="9" id="6ok-uU-VYj"/>
@@ -124,13 +124,13 @@
                 <outlet property="starImage" destination="yqP-G7-omp" id="Fcj-Rd-57B"/>
                 <outlet property="writingLabel" destination="b1Z-J8-2Bq" id="21s-sn-oQc"/>
             </connections>
-            <point key="canvasLocation" x="321.5" y="399.5"/>
+            <point key="canvasLocation" x="283.5" y="275.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="ertong" width="95" height="70"/>
         <image name="lijiyuyue" width="74" height="29"/>
-        <image name="weizhi" width="8" height="9"/>
+        <image name="sy_weizhi" width="8" height="9"/>
         <image name="xing" width="62" height="9"/>
     </resources>
 </document>
