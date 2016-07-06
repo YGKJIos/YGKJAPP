@@ -31,10 +31,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self addTableViewAndHeaderView];
     // 添加刷新
     [self MJrefreshLoadData];
-
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -44,7 +44,8 @@
 #pragma mark - MJ刷新
 - (void)MJrefreshLoadData
 {
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
     [header setTitle:@"正在刷新数据中..." forState:MJRefreshStateRefreshing];
     [header setTitle:@"下拉刷新数据" forState:MJRefreshStateIdle];
     [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
@@ -66,12 +67,22 @@
         NSString *url = @"meishi/shangjia.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSLog(@"responseObject----%@",responseObject);
+            NSArray *arr = responseObject;
+            for (NSDictionary *dic in arr) {
+                MarketModel *model = [[MarketModel alloc] init];
+                [model setValuesForKeysWithDictionary:dic];
+                [self.MarkeArr addObject:model];
+            }
+            [self.tableView reloadData];
+            
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"error-----%@",error);
         }];
 
         NSLog(@"MJ-下拉刷新");
+        
     });
+    
 }
 // 上拉加载的方法
 - (void)loadMoreData{
@@ -109,7 +120,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.MarkeArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *marketCellID = @"marketCellID";
@@ -117,7 +128,11 @@
     if (cell == nil) {
         cell = [MarketCell cellCreaterNibLoad];
     }
+    [cell marketModel:self.MarkeArr[indexPath.row]];
+    MarketModel *model = self.MarkeArr[indexPath.row];
+    NSLog(@"=========%@",model);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

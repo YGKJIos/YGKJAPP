@@ -9,6 +9,7 @@
 #import "MarketCell.h"
 #define Xwidth self.shopNameLab.frame.origin.x + self.shopNameLab.frame.size.width
 #define Xheight (self.shopNameLab.frame.origin.y + self.shopNameLab.frame.size.height ) /2
+static NSString *yuming = @"http://192.168.1.121:8080/shangcheng/";
 
 @implementation MarketCell
 +(MarketCell *)cellCreaterNibLoad
@@ -24,6 +25,14 @@
         imageView.image = [UIImage imageNamed:@"xinghuang"];
         [self.contentView addSubview:imageView];
     }
+    self.shopNameLab.text = model.shangjiaName;
+    self.favorableLab.text = model.shangjiaTongzhi;
+    NSString *priceStr = [NSString stringWithFormat:@"%@¥", model.shangjiaJiage];
+    self.priceLab.text = priceStr;
+    NSString *distanceStr = [NSString stringWithFormat:@"%@m",model.shangjiaJuli];
+    self.distanceLab.text = distanceStr;
+    NSString *str = [NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang];
+    [self.shopImage sd_setImageWithURL:[NSURL URLWithString:str]];
 }
 
 - (void)awakeFromNib {
