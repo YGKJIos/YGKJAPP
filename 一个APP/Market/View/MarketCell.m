@@ -9,7 +9,7 @@
 #import "MarketCell.h"
 #define Xwidth self.shopNameLab.frame.origin.x + self.shopNameLab.frame.size.width
 #define Xheight (self.shopNameLab.frame.origin.y + self.shopNameLab.frame.size.height ) /2
-static NSString *yuming = @"http://192.168.1.121:8080/shangcheng/";
+static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
 
 @implementation MarketCell
 +(MarketCell *)cellCreaterNibLoad

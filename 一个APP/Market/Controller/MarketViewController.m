@@ -64,7 +64,7 @@
 - (void)loadNewData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
-        NSString *url = @"meishi/shangjia.action";
+        NSString *url = @"meishi/querymeishi1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
@@ -129,8 +129,8 @@
         cell = [MarketCell cellCreaterNibLoad];
     }
     [cell marketModel:self.MarkeArr[indexPath.row]];
-    MarketModel *model = self.MarkeArr[indexPath.row];
-    NSLog(@"=========%@",model);
+//    MarketModel *model = self.MarkeArr[indexPath.row];
+//    NSLog(@"=========%@",model);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;

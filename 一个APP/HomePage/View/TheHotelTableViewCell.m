@@ -8,6 +8,8 @@
 
 #import "TheHotelTableViewCell.h"
 
+static NSString *hotel = @"http://192.168.1.121:8080/shangcheng/";
+
 @implementation TheHotelTableViewCell
 
 + (TheHotelTableViewCell *)createTheHotelCell
@@ -15,6 +17,15 @@
     TheHotelTableViewCell *cell = [[NSBundle mainBundle]loadNibNamed:@"TheHotelTableViewCell" owner:nil options:nil].lastObject;
     return cell;
 }
+
+- (void)TheHotelModel:(TheHotelModel *) model
+{
+   
+    
+    
+    
+}
+
 
 - (void)awakeFromNib {
     // Initialization code

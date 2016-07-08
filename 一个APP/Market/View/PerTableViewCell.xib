@@ -49,6 +49,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="huiyan" width="25" height="22"/>
+        <image name="huiyan" width="70" height="70"/>
     </resources>
 </document>
