@@ -43,15 +43,15 @@
     profileHeaderView *view = [profileHeaderView CreateProfileHeaderView];
 
     tableView.tableHeaderView = view;
-    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 250)];
+    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 220)];
     colorView.backgroundColor = [UIColor whiteColor];
     tableView.tableFooterView = colorView;
 
 }
 - (void)data
 {
-    self.images = @[@"wode_youhui",@"wode_kefu",@"wode_kaidian"];
-    self.titles = @[@"优惠劵",@"联系客服",@"我要开店"];
+    self.images = @[@"wode_youhui",@"wode_kefu",@"wode_kaidian",@"wode_tuijian"];
+    self.titles = @[@"优惠劵",@"联系客服",@"我要开店", @"推荐码"];
 }
 // section
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -75,7 +75,7 @@
         return 1;
     }
     
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

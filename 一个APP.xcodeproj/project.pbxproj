@@ -14,9 +14,6 @@
 		5910B8B01D1238F300BA1C16 /* DropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8AC1D1238F300BA1C16 /* DropdownMenu.m */; };
 		5910B8B11D1238F300BA1C16 /* expandableImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5910B8AD1D1238F300BA1C16 /* expandableImage@2x.png */; };
 		5910B8F81D12975300BA1C16 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8F71D12975300BA1C16 /* SearchViewController.m */; };
-		59366BB71D066E5600BB445A /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BB61D066E5600BB445A /* PersonalCenterViewController.m */; };
-		59366BBB1D0672A500BB445A /* PerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BB91D0672A500BB445A /* PerTableViewCell.m */; };
-		59366BBC1D0672A500BB445A /* PerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59366BBA1D0672A500BB445A /* PerTableViewCell.xib */; };
 		59366BBF1D06872300BB445A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BBE1D06872300BB445A /* BaseViewController.m */; };
 		59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BC41D06CB8B00BB445A /* MessageTableViewCell.m */; };
 		59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59366BC51D06CB8B00BB445A /* MessageTableViewCell.xib */; };
@@ -174,11 +171,6 @@
 		5910B8AD1D1238F300BA1C16 /* expandableImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expandableImage@2x.png"; sourceTree = "<group>"; };
 		5910B8F61D12975300BA1C16 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		5910B8F71D12975300BA1C16 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		59366BB51D066E5600BB445A /* PersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterViewController.h; sourceTree = "<group>"; };
-		59366BB61D066E5600BB445A /* PersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterViewController.m; sourceTree = "<group>"; };
-		59366BB81D0672A500BB445A /* PerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerTableViewCell.h; sourceTree = "<group>"; };
-		59366BB91D0672A500BB445A /* PerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerTableViewCell.m; sourceTree = "<group>"; };
-		59366BBA1D0672A500BB445A /* PerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerTableViewCell.xib; sourceTree = "<group>"; };
 		59366BBD1D06872300BB445A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		59366BBE1D06872300BB445A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		59366BC31D06CB8B00BB445A /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
@@ -905,8 +897,6 @@
 			children = (
 				59FFB6EF1D05077000071E0E /* MarketViewController.h */,
 				59FFB6F01D05077000071E0E /* MarketViewController.m */,
-				59366BB51D066E5600BB445A /* PersonalCenterViewController.h */,
-				59366BB61D066E5600BB445A /* PersonalCenterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -926,9 +916,6 @@
 				59FFB7041D05369D00071E0E /* MarketCell.h */,
 				59FFB7051D05369D00071E0E /* MarketCell.m */,
 				59FFB7061D05369D00071E0E /* MarketCell.xib */,
-				59366BB81D0672A500BB445A /* PerTableViewCell.h */,
-				59366BB91D0672A500BB445A /* PerTableViewCell.m */,
-				59366BBA1D0672A500BB445A /* PerTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1363,7 +1350,6 @@
 				599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */,
 				D8B71AD21D27929600F0DBC8 /* sevCarTableViewCell.xib in Resources */,
 				59F284A81D1E5BE900C815D1 /* TheHotelTableViewCell.xib in Resources */,
-				59366BBC1D0672A500BB445A /* PerTableViewCell.xib in Resources */,
 				D86C09A01D29EE1B0016C1A9 /* TravelTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1476,7 +1462,6 @@
 				D804B99C1D263CBB00DB283D /* NewsTableViewController.m in Sources */,
 				D82B04461D2A4EE80086A108 /* FeastTableViewController.m in Sources */,
 				D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */,
-				59366BB71D066E5600BB445A /* PersonalCenterViewController.m in Sources */,
 				59FFB7071D05369D00071E0E /* MarketCell.m in Sources */,
 				5910B8B01D1238F300BA1C16 /* DropdownMenu.m in Sources */,
 				59EAD9781D20F645003DF636 /* SupermarketViewController.m in Sources */,
@@ -1501,7 +1486,6 @@
 				59D096DC1D139A4F00039C87 /* HomePageTableViewController.m in Sources */,
 				59F6A89F1D15100300CFD28F /* FirstTableViewCell.m in Sources */,
 				D8AF29921D25097900166DC5 /* SecondHandTableViewCell.m in Sources */,
-				59366BBB1D0672A500BB445A /* PerTableViewCell.m in Sources */,
 				D81D73861D2DE93A00998605 /* MovieModel.m in Sources */,
 				59FFB6F81D050A0C00071E0E /* RootTabBarController.m in Sources */,
 				59FFB6F11D05077000071E0E /* MarketViewController.m in Sources */,

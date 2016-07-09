@@ -7,14 +7,14 @@
 //
 
 #import "MarketViewController.h"
-#import "PersonalCenterViewController.h"
+//#import "PersonalCenterViewController.h"
 #import "MarketCell.h"
 #import "MarketModel.h"
 #import "DropdownMenu.h"
 
 @interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate,dropdownDelegate>
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
-@property (nonatomic, strong)PersonalCenterViewController *personalVC;
+//@property (nonatomic, strong)PersonalCenterViewController *personalVC;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, assign)BOOL result;
 

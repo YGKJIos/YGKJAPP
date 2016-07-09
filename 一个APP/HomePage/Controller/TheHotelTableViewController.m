@@ -58,7 +58,7 @@
 - (void)loadNewData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
-        NSString *url = @"dianying/querydianying.action";
+        NSString *url = @"binguan/querybinguan1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;

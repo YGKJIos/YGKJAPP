@@ -30,7 +30,12 @@ static NSString *movie = @"http://192.168.1.88:8080/shangcheng/";
     NSString *tuijianStr= [NSString stringWithFormat:@"%@%@", movie, model.dianyingRebo];
     [self.tuijianImage sd_setImageWithURL:[NSURL URLWithString:tuijianStr]];
     self.rmbshuLabel.text = [NSString stringWithFormat:@"¥%@", model.dianyingTejia];
-    self.yjrmbLabel.text = [NSString stringWithFormat:@"¥%@", model.dianyingYuanjia];
+    self.yjrmbLabel
+    
+    
+    
+    
+    .text = [NSString stringWithFormat:@"¥%@", model.dianyingYuanjia];
 }
 
 

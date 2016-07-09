@@ -33,8 +33,8 @@
 {
     self.nanmeLabel.text = title;
     if (image == nil) {
-        return;
         self.foodImage.image = [UIImage imageNamed:image];
+        return;
     }
 }
 

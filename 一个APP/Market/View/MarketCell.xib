@@ -157,7 +157,7 @@
                 <outlet property="singleLab" destination="zW2-Qu-41n" id="cmE-4r-64V"/>
                 <outlet property="upPriceLab" destination="1Un-Qe-2SD" id="LaE-2B-1kl"/>
             </connections>
-            <point key="canvasLocation" x="409.5" y="256"/>
+            <point key="canvasLocation" x="306.5" y="256"/>
         </tableViewCell>
     </objects>
     <resources>

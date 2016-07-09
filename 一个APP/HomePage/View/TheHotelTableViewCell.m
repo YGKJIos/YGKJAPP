@@ -8,7 +8,7 @@
 
 #import "TheHotelTableViewCell.h"
 
-static NSString *hotel = @"http://192.168.1.121:8080/shangcheng/";
+static NSString *hotel = @"http://192.168.1.88:8080/shangcheng/";
 
 @implementation TheHotelTableViewCell
 
