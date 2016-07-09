@@ -33,6 +33,7 @@ static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
     self.distanceLab.text = distanceStr;
     NSString *str = [NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang];
     [self.shopImage sd_setImageWithURL:[NSURL URLWithString:str]];
+    self.gradeLab.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
 }
 
 - (void)awakeFromNib {

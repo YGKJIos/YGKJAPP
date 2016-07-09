@@ -10,7 +10,6 @@
 
 @interface MarketModel : NSObject
 
-
 @property (nonatomic, retain) NSString *meishiId;
 @property (nonatomic, retain) NSString *shangjiaJiage;
 @property (nonatomic, retain) NSString *shangjiaJuli;

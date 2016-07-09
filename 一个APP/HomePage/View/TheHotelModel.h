@@ -10,14 +10,15 @@
 
 @interface TheHotelModel : NSObject
 
-@property (nonatomic, retain) NSString *binguanId;
-@property (nonatomic, retain) NSString *binguanName;
-@property (nonatomic, retain) NSString *binguanJiage;
-@property (nonatomic, retain) NSString *binguanJuli;
-@property (nonatomic, retain) NSString *binguanTupian;
+@property (nonatomic, retain) NSString *shangjiaId;
+@property (nonatomic, retain) NSString *shangjiaName;
+@property (nonatomic, retain) NSString *shangjiaJiage;
+@property (nonatomic, retain) NSString *shangjiaJuli;
+@property (nonatomic, retain) NSString *shangjiaTouxiang;
 @property (nonatomic, retain) NSString *binguanTehui;
-@property (nonatomic, retain) NSString *binguanPingfen;
-
+@property (nonatomic, retain) NSString *shangjiaPingfen;
+@property (nonatomic, retain) NSString *shangjiabinguanId;
+@property (nonatomic, retain) NSString *shangjiaWeizhi;
 
 
 

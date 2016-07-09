@@ -7,18 +7,14 @@
 //
 
 #import "MarketViewController.h"
-//#import "PersonalCenterViewController.h"
-#import "MarketCell.h"
-#import "MarketModel.h"
+#import "ShopTableViewCell.h"
+#import "ShopModel.h"
 #import "DropdownMenu.h"
 
 @interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate,dropdownDelegate>
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
-//@property (nonatomic, strong)PersonalCenterViewController *personalVC;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, assign)BOOL result;
-
-
 @end
 
 @implementation MarketViewController
@@ -64,12 +60,12 @@
 - (void)loadNewData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
-        NSString *url = @"meishi/querymeishi1.action";
+        NSString *url = @"waimai/querywaimai1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
-                MarketModel *model = [[MarketModel alloc] init];
+                ShopModel *model = [[ShopModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
@@ -124,15 +120,13 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *marketCellID = @"marketCellID";
-    MarketCell *cell = [tableView dequeueReusableCellWithIdentifier:marketCellID];
+    ShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:marketCellID];
     if (cell == nil) {
-        cell = [MarketCell cellCreaterNibLoad];
+        cell = [ShopTableViewCell createShopCell];
     }
-    [cell marketModel:self.MarkeArr[indexPath.row]];
-//    MarketModel *model = self.MarkeArr[indexPath.row];
-//    NSLog(@"=========%@",model);
+    [cell ShopModel:self.MarkeArr[indexPath.row]];
+   
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

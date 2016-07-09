@@ -20,10 +20,13 @@ static NSString *hotel = @"http://192.168.1.88:8080/shangcheng/";
 
 - (void)TheHotelModel:(TheHotelModel *) model
 {
-   
-    
-    
-    
+    NSString *imageStr = [NSString stringWithFormat:@"%@%@", hotel, model.shangjiaTouxiang];
+    [self.hotelImage sd_setImageWithURL:[NSURL URLWithString:imageStr]];
+    self.nameLabel.text = model.shangjiaName;
+    self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
+    self.priceLabel.text = [NSString stringWithFormat:@"¥%@", model.shangjiaJiage];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%@m", model.shangjiaJuli];
+
 }
 
 
