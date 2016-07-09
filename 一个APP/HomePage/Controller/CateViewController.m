@@ -13,8 +13,6 @@
 #import "MarketModel.h"
 
 @interface CateViewController ()<SDCycleScrollViewDelegate,dropdownDelegate>
-
-
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
 @property (nonatomic, strong)UIView *bgView;// tableViewHeaderView
 @property (nonatomic, strong)DropdownMenu *menu;

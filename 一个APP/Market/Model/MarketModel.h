@@ -18,7 +18,8 @@
 @property (nonatomic, retain) NSString *shangjiaTongzhi;
 @property (nonatomic, retain) NSString *shangjiaTouxiang;
 @property (nonatomic, retain) NSString *shangjiaLijian;
-
+@property (nonatomic, retain) NSString *meishiTejia;
+@property (nonatomic, retain) NSString *meishiYuanjia;
 
 
 

@@ -114,6 +114,9 @@
 		D836C8891D308EC50043D730 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C8871D308EC50043D730 /* ShopTableViewCell.m */; };
 		D836C88A1D308EC50043D730 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D836C8881D308EC50043D730 /* ShopTableViewCell.xib */; };
 		D836C88D1D309D030043D730 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C88C1D309D030043D730 /* ShopModel.m */; };
+		D836C8901D30CA810043D730 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C88F1D30CA810043D730 /* GameModel.m */; };
+		D836C8931D30D47E0043D730 /* HouseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C8921D30D47E0043D730 /* HouseModel.m */; };
+		D836C8961D30DF430043D730 /* SecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C8951D30DF430043D730 /* SecondModel.m */; };
 		D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */; };
 		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
 		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
@@ -351,6 +354,12 @@
 		D836C8881D308EC50043D730 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
 		D836C88B1D309D030043D730 /* ShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopModel.h; sourceTree = "<group>"; };
 		D836C88C1D309D030043D730 /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
+		D836C88E1D30CA810043D730 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		D836C88F1D30CA810043D730 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		D836C8911D30D47E0043D730 /* HouseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseModel.h; sourceTree = "<group>"; };
+		D836C8921D30D47E0043D730 /* HouseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseModel.m; sourceTree = "<group>"; };
+		D836C8941D30DF430043D730 /* SecondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondModel.h; sourceTree = "<group>"; };
+		D836C8951D30DF430043D730 /* SecondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondModel.m; sourceTree = "<group>"; };
 		D842DF2A1D224642008A54B7 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
 		D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
 		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
@@ -1079,6 +1088,8 @@
 				D8247FB01D212D48007C573F /* GameTableViewCell.h */,
 				D8247FB11D212D48007C573F /* GameTableViewCell.m */,
 				D8247FB21D212D48007C573F /* GameTableViewCell.xib */,
+				D836C88E1D30CA810043D730 /* GameModel.h */,
+				D836C88F1D30CA810043D730 /* GameModel.m */,
 			);
 			name = "GameCell(休闲娱乐)";
 			path = ../View;
@@ -1162,6 +1173,8 @@
 				D8AF29891D24ECB800166DC5 /* HouseTableViewCell.h */,
 				D8AF298A1D24ECB800166DC5 /* HouseTableViewCell.m */,
 				D8AF298B1D24ECB800166DC5 /* HouseTableViewCell.xib */,
+				D836C8911D30D47E0043D730 /* HouseModel.h */,
+				D836C8921D30D47E0043D730 /* HouseModel.m */,
 			);
 			name = "HouseKeepCell(家政服务)";
 			path = ../View;
@@ -1173,6 +1186,8 @@
 				D8AF298F1D25097900166DC5 /* SecondHandTableViewCell.h */,
 				D8AF29901D25097900166DC5 /* SecondHandTableViewCell.m */,
 				D8AF29911D25097900166DC5 /* SecondHandTableViewCell.xib */,
+				D836C8941D30DF430043D730 /* SecondModel.h */,
+				D836C8951D30DF430043D730 /* SecondModel.m */,
 			);
 			name = "SecondHandCell(二手置换)";
 			path = ../View;
@@ -1447,6 +1462,7 @@
 				599ECDD81D263A8F009E636A /* LogInViewController.m in Sources */,
 				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,
 				59FFB7031D051EA800071E0E /* UIView+Extension.m in Sources */,
+				D836C8931D30D47E0043D730 /* HouseModel.m in Sources */,
 				D86C099F1D29EE1B0016C1A9 /* TravelTableViewCell.m in Sources */,
 				59F6A8A71D15362F00CFD28F /* ThridTableViewCell.m in Sources */,
 				593ADDC61D2500CB008D1777 /* PleaseJobTableViewController.m in Sources */,
@@ -1480,6 +1496,7 @@
 				5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */,
 				59E4EA4E1D193AFE000083B8 /* profileHeaderView.m in Sources */,
 				D804B99C1D263CBB00DB283D /* NewsTableViewController.m in Sources */,
+				D836C8961D30DF430043D730 /* SecondModel.m in Sources */,
 				D82B04461D2A4EE80086A108 /* FeastTableViewController.m in Sources */,
 				D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */,
 				59FFB7071D05369D00071E0E /* MarketCell.m in Sources */,
@@ -1532,6 +1549,7 @@
 				D8AF298C1D24ECB800166DC5 /* HouseTableViewCell.m in Sources */,
 				59FFB6A91D0501F000071E0E /* AppDelegate.m in Sources */,
 				59D097071D13DB2C00039C87 /* TableViewHeader.m in Sources */,
+				D836C8901D30CA810043D730 /* GameModel.m in Sources */,
 				59FFB6A61D0501F000071E0E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
