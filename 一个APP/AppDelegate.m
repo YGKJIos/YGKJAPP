@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import "RootTabBarController.h"
-#import "SupermarketViewController.h"
 #import "LogInViewController.h"
+#import "TakeOutInformationController.h"
+#import "SubmitOrderViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,16 +25,13 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+//
+//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+//    self.window.rootViewController = rootTabBar;
+//    rootTabBar.tabBar.translucent = NO;
     
-    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-    self.window.rootViewController = rootTabBar;
-    rootTabBar.tabBar.translucent = NO;
-    
-//    LogInViewController *vc = [[LogInViewController alloc]init];
-//    self.window.rootViewController = vc;
-
-
-
+    SubmitOrderViewController *vc = [[SubmitOrderViewController alloc]init];
+    self.window.rootViewController = vc;
 
     [self.window makeKeyAndVisible];
     
