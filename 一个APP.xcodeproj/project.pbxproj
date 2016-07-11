@@ -115,6 +115,8 @@
 		D8071D7B1D265E1C00A2A403 /* WeddingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8071D7A1D265E1C00A2A403 /* WeddingTableViewController.m */; };
 		D8071D7F1D265ED000A2A403 /* WeddingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8071D7D1D265ED000A2A403 /* WeddingTableViewCell.m */; };
 		D8071D801D265ED000A2A403 /* WeddingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8071D7E1D265ED000A2A403 /* WeddingTableViewCell.xib */; };
+		D807DE561D2E1EE700A5EECF /* TheHotelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D807DE551D2E1EE700A5EECF /* TheHotelModel.m */; };
+		D81D73861D2DE93A00998605 /* MovieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D73851D2DE93A00998605 /* MovieModel.m */; };
 		D8247FA51D212CBC007C573F /* MovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FA41D212CBC007C573F /* MovieTableViewController.m */; };
 		D8247FA91D212CDB007C573F /* MoiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8247FA71D212CDB007C573F /* MoiveTableViewCell.m */; };
 		D8247FAA1D212CDB007C573F /* MoiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8247FA81D212CDB007C573F /* MoiveTableViewCell.xib */; };
@@ -124,6 +126,12 @@
 		D82B04461D2A4EE80086A108 /* FeastTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B04451D2A4EE80086A108 /* FeastTableViewController.m */; };
 		D82B044A1D2A4F0F0086A108 /* FeastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B04481D2A4F0F0086A108 /* FeastTableViewCell.m */; };
 		D82B044B1D2A4F0F0086A108 /* FeastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D82B04491D2A4F0F0086A108 /* FeastTableViewCell.xib */; };
+		D836C8891D308EC50043D730 /* ShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C8871D308EC50043D730 /* ShopTableViewCell.m */; };
+		D836C88A1D308EC50043D730 /* ShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D836C8881D308EC50043D730 /* ShopTableViewCell.xib */; };
+		D836C88D1D309D030043D730 /* ShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C88C1D309D030043D730 /* ShopModel.m */; };
+		D836C8901D30CA810043D730 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C88F1D30CA810043D730 /* GameModel.m */; };
+		D836C8931D30D47E0043D730 /* HouseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C8921D30D47E0043D730 /* HouseModel.m */; };
+		D836C8961D30DF430043D730 /* SecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D836C8951D30DF430043D730 /* SecondModel.m */; };
 		D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */; };
 		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
 		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
@@ -363,6 +371,10 @@
 		D8071D7C1D265ED000A2A403 /* WeddingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeddingTableViewCell.h; sourceTree = "<group>"; };
 		D8071D7D1D265ED000A2A403 /* WeddingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeddingTableViewCell.m; sourceTree = "<group>"; };
 		D8071D7E1D265ED000A2A403 /* WeddingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeddingTableViewCell.xib; sourceTree = "<group>"; };
+		D807DE541D2E1EE700A5EECF /* TheHotelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheHotelModel.h; sourceTree = "<group>"; };
+		D807DE551D2E1EE700A5EECF /* TheHotelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheHotelModel.m; sourceTree = "<group>"; };
+		D81D73841D2DE93A00998605 /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieModel.h; path = "一个APP/Market/Controller/MovieModel.h"; sourceTree = SOURCE_ROOT; };
+		D81D73851D2DE93A00998605 /* MovieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieModel.m; path = "一个APP/Market/Controller/MovieModel.m"; sourceTree = SOURCE_ROOT; };
 		D8247FA31D212CBC007C573F /* MovieTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewController.h; sourceTree = "<group>"; };
 		D8247FA41D212CBC007C573F /* MovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewController.m; sourceTree = "<group>"; };
 		D8247FA61D212CDB007C573F /* MoiveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoiveTableViewCell.h; sourceTree = "<group>"; };
@@ -378,6 +390,17 @@
 		D82B04471D2A4F0F0086A108 /* FeastTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeastTableViewCell.h; sourceTree = "<group>"; };
 		D82B04481D2A4F0F0086A108 /* FeastTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeastTableViewCell.m; sourceTree = "<group>"; };
 		D82B04491D2A4F0F0086A108 /* FeastTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeastTableViewCell.xib; sourceTree = "<group>"; };
+		D836C8861D308EC50043D730 /* ShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopTableViewCell.h; sourceTree = "<group>"; };
+		D836C8871D308EC50043D730 /* ShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopTableViewCell.m; sourceTree = "<group>"; };
+		D836C8881D308EC50043D730 /* ShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopTableViewCell.xib; sourceTree = "<group>"; };
+		D836C88B1D309D030043D730 /* ShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopModel.h; sourceTree = "<group>"; };
+		D836C88C1D309D030043D730 /* ShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.m; sourceTree = "<group>"; };
+		D836C88E1D30CA810043D730 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		D836C88F1D30CA810043D730 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		D836C8911D30D47E0043D730 /* HouseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseModel.h; sourceTree = "<group>"; };
+		D836C8921D30D47E0043D730 /* HouseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseModel.m; sourceTree = "<group>"; };
+		D836C8941D30DF430043D730 /* SecondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondModel.h; sourceTree = "<group>"; };
+		D836C8951D30DF430043D730 /* SecondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondModel.m; sourceTree = "<group>"; };
 		D842DF2A1D224642008A54B7 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
 		D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
 		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
@@ -451,8 +474,6 @@
 			isa = PBXGroup;
 			children = (
 				59EAD9741D20F01D003DF636 /* New Group */,
-				5910B88E1D1234D700BA1C16 /* Model */,
-				5910B88F1D1234D700BA1C16 /* View */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -460,6 +481,14 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D8FD1E9A1D23B7330059719B /* 首页 */,
+				5925B8611D1CB680006734FA /* 美食 */,
+				59FFB6DF1D05066F00071E0E /* 商家 */,
+				59F284971D1E5B3800C815D1 /* 宾馆 */,
+				59F2848B1D1E1A6000C815D1 /* 外卖 */,
+				59F284AC1D1E6E9100C815D1 /* 电影 */,
+				59EAD9751D20F1F0003DF636 /* 超市 */,
+				5910B8901D1234D700BA1C16 /* 我的 */,
 				D82B044C1D2A504A0086A108 /* 生活服务(宴会) */,
 				D86C09981D29ECA80016C1A9 /* 生活服务(旅游) */,
 				D8AF72141D27AB0000C40F7E /* 生活服务(摄影) */,
@@ -471,14 +500,8 @@
 				D8AF29811D24EB5E00166DC5 /* 家政服务 */,
 				593ADDBE1D24ED49008D1777 /* 二手置换 */,
 				D8FD1E9B1D23B9000059719B /* 拼车 */,
-				D8FD1E9A1D23B7330059719B /* 首页 */,
 				D8AAD0521D236174005915D1 /* 全部分类 */,
 				D8247FAB1D212CEA007C573F /* 休闲娱乐 */,
-				59EAD9751D20F1F0003DF636 /* 超市 */,
-				59F284AC1D1E6E9100C815D1 /* 电影 */,
-				59F284971D1E5B3800C815D1 /* 宾馆 */,
-				59F2848B1D1E1A6000C815D1 /* 外卖 */,
-				5925B8611D1CB680006734FA /* 美食 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,37 +511,34 @@
 			children = (
 				5918702C1D2CFE4700D54040 /* TakeOutModel.h */,
 				5918702D1D2CFE4700D54040 /* TakeOutModel.m */,
+				D81D73841D2DE93A00998605 /* MovieModel.h */,
+				D81D73851D2DE93A00998605 /* MovieModel.m */,
 			);
-			path = Model;
+			name = Model;
+			path = ../Model;
 			sourceTree = "<group>";
 		};
 		5910B88F1D1234D700BA1C16 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D8AF298E1D25091400166DC5 /* SecondHandCell(二手置换) */,
-				D8AF29851D24EC0500166DC5 /* HouseKeepCell(家政服务) */,
-				D8AAD0561D23946C005915D1 /* AllStylCell(全部分类) */,
-				D8247FAF1D212D12007C573F /* GameCell(休闲娱乐) */,
-				59F284B01D1E6EFA00C815D1 /* MovieCell(电影) */,
-				59F284A31D1E5BA900C815D1 /* TheHotel(宾馆) */,
-				5925B8621D1CB9A6006734FA /* TakeCell(外卖) */,
-				59F6A89C1D150E8400CFD28F /* HomeCell */,
 				59D097021D13C74A00039C87 /* HomeTableViewCell.h */,
 				59D097031D13C74A00039C87 /* HomeTableViewCell.m */,
 				59D097051D13DB2C00039C87 /* TableViewHeader.h */,
 				59D097061D13DB2C00039C87 /* TableViewHeader.m */,
 			);
-			path = View;
+			name = View;
+			path = ../View;
 			sourceTree = "<group>";
 		};
-		5910B8901D1234D700BA1C16 /* MyProfile */ = {
+		5910B8901D1234D700BA1C16 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
 				5910B8911D1234D700BA1C16 /* Controller */,
 				5910B8941D1234D700BA1C16 /* Model */,
 				5910B8951D1234D700BA1C16 /* View */,
 			);
-			path = MyProfile;
+			name = "我的";
+			path = ../../MyProfile;
 			sourceTree = "<group>";
 		};
 		5910B8911D1234D700BA1C16 /* Controller */ = {
@@ -573,6 +593,8 @@
 			children = (
 				59E013101D1BBBC5008C8553 /* CateViewController.h */,
 				59E013111D1BBBC5008C8553 /* CateViewController.m */,
+				59FFB6E21D05066F00071E0E /* View */,
+				59FFB6E11D05066F00071E0E /* Model */,
 			);
 			name = "美食";
 			sourceTree = "<group>";
@@ -585,6 +607,7 @@
 				59F284941D1E4ECA00C815D1 /* TakeTableViewCell.xib */,
 			);
 			name = "TakeCell(外卖)";
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		593ADDBE1D24ED49008D1777 /* 二手置换 */ = {
@@ -592,6 +615,7 @@
 			children = (
 				D8AF29941D25167B00166DC5 /* SecondHandTableViewController.h */,
 				D8AF29951D25167B00166DC5 /* SecondHandTableViewController.m */,
+				D8AF298E1D25091400166DC5 /* SecondHandCell(二手置换) */,
 			);
 			name = "二手置换";
 			sourceTree = "<group>";
@@ -753,6 +777,7 @@
 				59D6F4421D2B800B00D16D85 /* TakeOutInformation */,
 				59F2848C1D1E1A9B00C815D1 /* TakeOutTableViewController.h */,
 				59F2848D1D1E1A9B00C815D1 /* TakeOutTableViewController.m */,
+				5925B8621D1CB9A6006734FA /* TakeCell(外卖) */,
 			);
 			name = "外卖";
 			sourceTree = "<group>";
@@ -762,6 +787,7 @@
 			children = (
 				59F284A91D1E618600C815D1 /* TheHotelTableViewController.h */,
 				59F284AA1D1E618600C815D1 /* TheHotelTableViewController.m */,
+				59F284A31D1E5BA900C815D1 /* TheHotel(宾馆) */,
 			);
 			name = "宾馆";
 			sourceTree = "<group>";
@@ -772,8 +798,10 @@
 				59F284A41D1E5BE900C815D1 /* TheHotelTableViewCell.h */,
 				59F284A51D1E5BE900C815D1 /* TheHotelTableViewCell.m */,
 				59F284A61D1E5BE900C815D1 /* TheHotelTableViewCell.xib */,
+				D807DE531D2E1EC700A5EECF /* Model */,
 			);
 			name = "TheHotel(宾馆)";
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		59F284AC1D1E6E9100C815D1 /* 电影 */ = {
@@ -781,6 +809,8 @@
 			children = (
 				D8247FA31D212CBC007C573F /* MovieTableViewController.h */,
 				D8247FA41D212CBC007C573F /* MovieTableViewController.m */,
+				59F284B01D1E6EFA00C815D1 /* MovieCell(电影) */,
+				5910B88E1D1234D700BA1C16 /* Model */,
 			);
 			name = "电影";
 			sourceTree = "<group>";
@@ -793,6 +823,7 @@
 				D8247FA81D212CDB007C573F /* MoiveTableViewCell.xib */,
 			);
 			name = "MovieCell(电影)";
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		59F6A89C1D150E8400CFD28F /* HomeCell */ = {
@@ -813,6 +844,7 @@
 				59E4EA4A1D18E47D000083B8 /* ShoppingCell.m */,
 			);
 			name = HomeCell;
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		59FFB6981D0501F000071E0E = {
@@ -842,11 +874,9 @@
 			children = (
 				59FFB6F51D0507F600071E0E /* Main */,
 				5910B88A1D1234D700BA1C16 /* HomePage */,
-				5910B8901D1234D700BA1C16 /* MyProfile */,
 				59FFB6E71D0506A200071E0E /* Tool */,
 				59FFB6D71D05066F00071E0E /* AddressBook */,
 				59FFB6DB1D05066F00071E0E /* Discover */,
-				59FFB6DF1D05066F00071E0E /* Market */,
 				59FFB6E31D05066F00071E0E /* Message */,
 				59FFB6B21D0501F000071E0E /* LaunchScreen.storyboard */,
 				59FFB6B51D0501F000071E0E /* Info.plist */,
@@ -958,14 +988,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		59FFB6DF1D05066F00071E0E /* Market */ = {
+		59FFB6DF1D05066F00071E0E /* 商家 */ = {
 			isa = PBXGroup;
 			children = (
 				59FFB6E01D05066F00071E0E /* Controller */,
-				59FFB6E11D05066F00071E0E /* Model */,
-				59FFB6E21D05066F00071E0E /* View */,
 			);
-			path = Market;
+			name = "商家";
+			path = ../../Market;
 			sourceTree = "<group>";
 		};
 		59FFB6E01D05066F00071E0E /* Controller */ = {
@@ -973,8 +1002,11 @@
 			children = (
 				59FFB6EF1D05077000071E0E /* MarketViewController.h */,
 				59FFB6F01D05077000071E0E /* MarketViewController.m */,
-				59366BB51D066E5600BB445A /* PersonalCenterViewController.h */,
-				59366BB61D066E5600BB445A /* PersonalCenterViewController.m */,
+				D836C8861D308EC50043D730 /* ShopTableViewCell.h */,
+				D836C8871D308EC50043D730 /* ShopTableViewCell.m */,
+				D836C8881D308EC50043D730 /* ShopTableViewCell.xib */,
+				D836C88B1D309D030043D730 /* ShopModel.h */,
+				D836C88C1D309D030043D730 /* ShopModel.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -985,7 +1017,8 @@
 				59FFB7091D053FF600071E0E /* MarketModel.h */,
 				59FFB70A1D053FF600071E0E /* MarketModel.m */,
 			);
-			path = Model;
+			name = Model;
+			path = ../../Market/Model;
 			sourceTree = "<group>";
 		};
 		59FFB6E21D05066F00071E0E /* View */ = {
@@ -994,11 +1027,9 @@
 				59FFB7041D05369D00071E0E /* MarketCell.h */,
 				59FFB7051D05369D00071E0E /* MarketCell.m */,
 				59FFB7061D05369D00071E0E /* MarketCell.xib */,
-				59366BB81D0672A500BB445A /* PerTableViewCell.h */,
-				59366BB91D0672A500BB445A /* PerTableViewCell.m */,
-				59366BBA1D0672A500BB445A /* PerTableViewCell.xib */,
 			);
-			path = View;
+			name = View;
+			path = ../../Market/View;
 			sourceTree = "<group>";
 		};
 		59FFB6E31D05066F00071E0E /* Message */ = {
@@ -1118,11 +1149,21 @@
 			name = "生活服务(婚庆)";
 			sourceTree = "<group>";
 		};
+		D807DE531D2E1EC700A5EECF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D807DE541D2E1EE700A5EECF /* TheHotelModel.h */,
+				D807DE551D2E1EE700A5EECF /* TheHotelModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		D8247FAB1D212CEA007C573F /* 休闲娱乐 */ = {
 			isa = PBXGroup;
 			children = (
 				D8247FAC1D212D05007C573F /* GameTableViewController.h */,
 				D8247FAD1D212D05007C573F /* GameTableViewController.m */,
+				D8247FAF1D212D12007C573F /* GameCell(休闲娱乐) */,
 			);
 			name = "休闲娱乐";
 			sourceTree = "<group>";
@@ -1133,8 +1174,11 @@
 				D8247FB01D212D48007C573F /* GameTableViewCell.h */,
 				D8247FB11D212D48007C573F /* GameTableViewCell.m */,
 				D8247FB21D212D48007C573F /* GameTableViewCell.xib */,
+				D836C88E1D30CA810043D730 /* GameModel.h */,
+				D836C88F1D30CA810043D730 /* GameModel.m */,
 			);
 			name = "GameCell(休闲娱乐)";
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		D82B044C1D2A504A0086A108 /* 生活服务(宴会) */ = {
@@ -1182,6 +1226,7 @@
 			children = (
 				D8AAD0531D236218005915D1 /* AllStylViewController.h */,
 				D8AAD0541D236218005915D1 /* AllStylViewController.m */,
+				D8AAD0561D23946C005915D1 /* AllStylCell(全部分类) */,
 			);
 			name = "全部分类";
 			sourceTree = "<group>";
@@ -1195,6 +1240,7 @@
 				D8AAD05B1D23969E005915D1 /* AllStylCollectionReusableView.m */,
 			);
 			name = "AllStylCell(全部分类)";
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		D8AF29811D24EB5E00166DC5 /* 家政服务 */ = {
@@ -1202,6 +1248,7 @@
 			children = (
 				D8AF29861D24EC6F00166DC5 /* HouseTableViewController.h */,
 				D8AF29871D24EC6F00166DC5 /* HouseTableViewController.m */,
+				D8AF29851D24EC0500166DC5 /* HouseKeepCell(家政服务) */,
 			);
 			name = "家政服务";
 			sourceTree = "<group>";
@@ -1212,8 +1259,11 @@
 				D8AF29891D24ECB800166DC5 /* HouseTableViewCell.h */,
 				D8AF298A1D24ECB800166DC5 /* HouseTableViewCell.m */,
 				D8AF298B1D24ECB800166DC5 /* HouseTableViewCell.xib */,
+				D836C8911D30D47E0043D730 /* HouseModel.h */,
+				D836C8921D30D47E0043D730 /* HouseModel.m */,
 			);
 			name = "HouseKeepCell(家政服务)";
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		D8AF298E1D25091400166DC5 /* SecondHandCell(二手置换) */ = {
@@ -1222,8 +1272,11 @@
 				D8AF298F1D25097900166DC5 /* SecondHandTableViewCell.h */,
 				D8AF29901D25097900166DC5 /* SecondHandTableViewCell.m */,
 				D8AF29911D25097900166DC5 /* SecondHandTableViewCell.xib */,
+				D836C8941D30DF430043D730 /* SecondModel.h */,
+				D836C8951D30DF430043D730 /* SecondModel.m */,
 			);
 			name = "SecondHandCell(二手置换)";
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		D8AF72141D27AB0000C40F7E /* 生活服务(摄影) */ = {
@@ -1259,6 +1312,8 @@
 				59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */,
 				5910B8F61D12975300BA1C16 /* SearchViewController.h */,
 				5910B8F71D12975300BA1C16 /* SearchViewController.m */,
+				59F6A89C1D150E8400CFD28F /* HomeCell */,
+				5910B88F1D1234D700BA1C16 /* View */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -1397,6 +1452,7 @@
 				D8247FAA1D212CDB007C573F /* MoiveTableViewCell.xib in Resources */,
 				D82B044B1D2A4F0F0086A108 /* FeastTableViewCell.xib in Resources */,
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
+				D836C88A1D308EC50043D730 /* ShopTableViewCell.xib in Resources */,
 				D8AF721C1D27ABD600C40F7E /* TakePhotoTableViewCell.xib in Resources */,
 				D8071D801D265ED000A2A403 /* WeddingTableViewCell.xib in Resources */,
 				5918702B1D2CEC0500D54040 /* TakeOutRightTableCell.xib in Resources */,
@@ -1416,7 +1472,6 @@
 				599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */,
 				D8B71AD21D27929600F0DBC8 /* sevCarTableViewCell.xib in Resources */,
 				59F284A81D1E5BE900C815D1 /* TheHotelTableViewCell.xib in Resources */,
-				59366BBC1D0672A500BB445A /* PerTableViewCell.xib in Resources */,
 				D86C09A01D29EE1B0016C1A9 /* TravelTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1496,6 +1551,7 @@
 				599ECDD81D263A8F009E636A /* LogInViewController.m in Sources */,
 				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,
 				59FFB7031D051EA800071E0E /* UIView+Extension.m in Sources */,
+				D836C8931D30D47E0043D730 /* HouseModel.m in Sources */,
 				D86C099F1D29EE1B0016C1A9 /* TravelTableViewCell.m in Sources */,
 				59F6A8A71D15362F00CFD28F /* ThridTableViewCell.m in Sources */,
 				593ADDC61D2500CB008D1777 /* PleaseJobTableViewController.m in Sources */,
@@ -1509,6 +1565,7 @@
 				D8B71AC71D27909B00F0DBC8 /* sevCarTableViewController.m in Sources */,
 				D8071D7B1D265E1C00A2A403 /* WeddingTableViewController.m in Sources */,
 				5918702E1D2CFE4700D54040 /* TakeOutModel.m in Sources */,
+				D836C88D1D309D030043D730 /* ShopModel.m in Sources */,
 				5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */,
 				D8AF72171D27AB7200C40F7E /* TakePhotoTableViewController.m in Sources */,
 				5910B8AF1D1238F300BA1C16 /* DropdownButton.m in Sources */,
@@ -1516,6 +1573,7 @@
 				D804B9A11D263D6700DB283D /* NewsTableViewCell.m in Sources */,
 				5910B8F81D12975300BA1C16 /* SearchViewController.m in Sources */,
 				59F284A71D1E5BE900C815D1 /* TheHotelTableViewCell.m in Sources */,
+				D836C8891D308EC50043D730 /* ShopTableViewCell.m in Sources */,
 				59F284951D1E4ECA00C815D1 /* TakeTableViewCell.m in Sources */,
 				5910B8961D1234D700BA1C16 /* HomePageViewController.m in Sources */,
 				599ECDD31D25F70E009E636A /* PleaseJobTableViewCell.m in Sources */,
@@ -1530,9 +1588,9 @@
 				5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */,
 				59E4EA4E1D193AFE000083B8 /* profileHeaderView.m in Sources */,
 				D804B99C1D263CBB00DB283D /* NewsTableViewController.m in Sources */,
+				D836C8961D30DF430043D730 /* SecondModel.m in Sources */,
 				D82B04461D2A4EE80086A108 /* FeastTableViewController.m in Sources */,
 				D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */,
-				59366BB71D066E5600BB445A /* PersonalCenterViewController.m in Sources */,
 				59FFB7071D05369D00071E0E /* MarketCell.m in Sources */,
 				5910B8B01D1238F300BA1C16 /* DropdownMenu.m in Sources */,
 				59EAD9781D20F645003DF636 /* SupermarketViewController.m in Sources */,
@@ -1560,9 +1618,10 @@
 				59D096DC1D139A4F00039C87 /* HomePageTableViewController.m in Sources */,
 				59F6A89F1D15100300CFD28F /* FirstTableViewCell.m in Sources */,
 				D8AF29921D25097900166DC5 /* SecondHandTableViewCell.m in Sources */,
-				59366BBB1D0672A500BB445A /* PerTableViewCell.m in Sources */,
+				D81D73861D2DE93A00998605 /* MovieModel.m in Sources */,
 				59FFB6F81D050A0C00071E0E /* RootTabBarController.m in Sources */,
 				59FFB6F11D05077000071E0E /* MarketViewController.m in Sources */,
+				D807DE561D2E1EE700A5EECF /* TheHotelModel.m in Sources */,
 				59EE6D991D17D48B00DAB8B2 /* FoodHomeCell.m in Sources */,
 				59465DA51D30805000908C08 /* ShoppingCartViewController.m in Sources */,
 				59F786111D0BDE19005A39FB /* FriendModel.m in Sources */,
@@ -1588,6 +1647,7 @@
 				D8AF298C1D24ECB800166DC5 /* HouseTableViewCell.m in Sources */,
 				59FFB6A91D0501F000071E0E /* AppDelegate.m in Sources */,
 				59D097071D13DB2C00039C87 /* TableViewHeader.m in Sources */,
+				D836C8901D30CA810043D730 /* GameModel.m in Sources */,
 				59FFB6A61D0501F000071E0E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

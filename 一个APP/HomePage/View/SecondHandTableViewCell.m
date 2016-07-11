@@ -7,7 +7,7 @@
 //
 
 #import "SecondHandTableViewCell.h"
-
+static NSString *Second = @"http://192.168.1.88:8080/shangcheng/";
 @implementation SecondHandTableViewCell
 
 
@@ -16,6 +16,16 @@
     SecondHandTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"SecondHandTableViewCell" owner:nil options:nil]lastObject];
     return cell;
 }
+
+- (void) SecondModel:(SecondModel *)model
+{
+    self.nameLabel.text = model.shangjiaName;
+    self.introduceLabel.text = model.shangjiaTongzhi;
+    self.priceLabel.text = [NSString stringWithFormat:@"¥%@", model.ershouJiage];
+    
+}
+
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];

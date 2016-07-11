@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="374" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="374" height="113.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="374" height="113"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eszh_tupian" translatesAutoresizingMaskIntoConstraints="NO" id="Dgq-Vr-F7N">
@@ -29,7 +29,7 @@
                             <constraint firstAttribute="height" constant="24" id="OCX-ec-qIC"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xin" translatesAutoresizingMaskIntoConstraints="NO" id="CXj-8f-8nd">
@@ -53,10 +53,10 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥2999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lci-Wr-Xen">
-                        <rect key="frame" x="299" y="70" width="50" height="21"/>
+                        <rect key="frame" x="295" y="70" width="71" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="fEe-3I-lxH"/>
-                            <constraint firstAttribute="width" constant="50" id="ymH-hY-k1P"/>
+                            <constraint firstAttribute="width" constant="71" id="9ti-VF-SlQ"/>
+                            <constraint firstAttribute="height" constant="21" id="cg4-8W-hWN"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="1" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,18 +75,18 @@
                     <constraint firstItem="CXj-8f-8nd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="3FK-VS-6rk"/>
                     <constraint firstItem="Dgq-Vr-F7N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="4Qt-oN-7Zx"/>
                     <constraint firstItem="VRd-ar-Af5" firstAttribute="leading" secondItem="Dgq-Vr-F7N" secondAttribute="trailing" constant="8" id="5cE-Nh-O3g"/>
+                    <constraint firstItem="Lci-Wr-Xen" firstAttribute="leading" secondItem="rCQ-ZS-8MR" secondAttribute="trailing" constant="-41" id="5d8-fC-JlP"/>
+                    <constraint firstItem="Lci-Wr-Xen" firstAttribute="leading" secondItem="Diy-eb-Pmu" secondAttribute="trailing" constant="106" id="FhJ-gf-m5O"/>
                     <constraint firstItem="Dgq-Vr-F7N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="17" id="GJ0-69-IIG"/>
                     <constraint firstItem="Diy-eb-Pmu" firstAttribute="top" secondItem="VRd-ar-Af5" secondAttribute="bottom" id="GVg-BC-Ueb"/>
                     <constraint firstItem="rCQ-ZS-8MR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="34" id="IOU-Kr-I9O"/>
+                    <constraint firstItem="Lci-Wr-Xen" firstAttribute="bottom" secondItem="Diy-eb-Pmu" secondAttribute="bottom" id="P01-dW-xxx"/>
                     <constraint firstItem="Diy-eb-Pmu" firstAttribute="top" secondItem="VRd-ar-Af5" secondAttribute="bottom" constant="4" id="Pgm-Ao-Ipz"/>
                     <constraint firstItem="VRd-ar-Af5" firstAttribute="top" secondItem="m4N-oh-yT8" secondAttribute="bottom" constant="1" id="cIT-pl-pfV"/>
-                    <constraint firstItem="Lci-Wr-Xen" firstAttribute="leading" secondItem="Diy-eb-Pmu" secondAttribute="trailing" constant="110" id="dUF-vc-xjN"/>
                     <constraint firstItem="m4N-oh-yT8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="mIx-eR-A5U"/>
                     <constraint firstAttribute="trailingMargin" secondItem="rCQ-ZS-8MR" secondAttribute="trailing" constant="30" id="mbP-BM-I7a"/>
                     <constraint firstItem="Diy-eb-Pmu" firstAttribute="leading" secondItem="Dgq-Vr-F7N" secondAttribute="trailing" constant="8" id="mgt-4T-AqE"/>
                     <constraint firstItem="CXj-8f-8nd" firstAttribute="leading" secondItem="m4N-oh-yT8" secondAttribute="trailing" constant="-1" id="reV-lc-npi"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Lci-Wr-Xen" secondAttribute="trailing" constant="17" id="wMl-0V-wux"/>
-                    <constraint firstItem="Lci-Wr-Xen" firstAttribute="top" secondItem="rCQ-ZS-8MR" secondAttribute="bottom" id="yF3-Yh-Dmt"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

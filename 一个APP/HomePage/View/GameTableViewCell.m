@@ -8,6 +8,7 @@
 
 #import "GameTableViewCell.h"
 
+static NSString *game = @"http://192.168.1.88:8080/shangcheng/";
 @implementation GameTableViewCell
 
 
@@ -16,6 +17,20 @@
     GameTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"GameTableViewCell" owner:nil options:nil] lastObject];
     return cell;
 }
+
+
+- (void) GameModel:(GameModel *)model
+{
+    [self.placeImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", game, model.shangjiaTouxiang]]];
+    self.nameLabel.text = model.shangjiaName;
+    self.piceLabel.text = [NSString stringWithFormat:@"¥%@", model.shangjiaJiage];
+    self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
+    self.jsLabel.text = model.shangjiaTongzhi;
+    self.adressLabel.text = [NSString stringWithFormat:@"%@m", model.shangjiaJuli];
+    
+}
+
+
 
 
 - (void)awakeFromNib {

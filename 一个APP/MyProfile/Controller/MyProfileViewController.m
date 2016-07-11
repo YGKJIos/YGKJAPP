@@ -41,27 +41,32 @@
     tableView.separatorInset = UIEdgeInsetsMake(0, 30, 0, 30);
     
     profileHeaderView *view = [profileHeaderView CreateProfileHeaderView];
-//    [view setHeadImage:@"wode_huiyuan" name:@"哈哈哈"];
+
     tableView.tableHeaderView = view;
-    
-    UIView *footView = [[UIView alloc]init];
-    tableView.tableFooterView = footView;
-    
-    
+    UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 220)];
+    colorView.backgroundColor = [UIColor whiteColor];
+    tableView.tableFooterView = colorView;
+
 }
 - (void)data
 {
-    self.images = @[@"wode_qianbao",@"wode_youhui",@"wode_huiyuan",@"wode_jifen",@"wode_kefu",@"wode_kaidian"];
-    self.titles = @[@"钱包",@"优惠劵",@"会员卡",@"积分商城",@"联系客服",@"我要开店"];
+    self.images = @[@"wode_youhui",@"wode_kefu",@"wode_kaidian",@"wode_tuijian"];
+    self.titles = @[@"优惠劵",@"联系客服",@"我要开店", @"推荐码"];
 }
 // section
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 5;
+    if (section == 0) {
+        return 0;
+    } else {
+        
+        return 5;
+    }
+    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 // rows
@@ -70,7 +75,7 @@
         return 1;
     }
     
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

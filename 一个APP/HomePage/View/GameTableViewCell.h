@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GameModel.h"
 @interface GameTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *placeImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -22,5 +22,6 @@
 
 + (GameTableViewCell *) createGameCell;
 
+- (void)GameModel: (GameModel *) model;
 
 @end

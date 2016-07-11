@@ -7,11 +7,7 @@
 //
 
 #import "BaseViewController.h"
-#import "PersonalCenterViewController.h"
-
 @interface BaseViewController ()
-
-@property (nonatomic, strong)PersonalCenterViewController *personalVC;
 @property (nonatomic, assign)BOOL result;
 
 @end
@@ -26,10 +22,6 @@
     _result = YES;
     [self addNavigationLeftAndRightBarButtonItme];
     
-    _personalVC = [[PersonalCenterViewController alloc]init];
-    _personalVC.view.frame = CGRectMake(-(self.view.width-80), 0, self.view.width-80, HEIGHT);
-    [self addChildViewController:_personalVC];
-    [self.view addSubview:_personalVC.view];
 }
 
 - (void)addNavigationLeftAndRightBarButtonItme
@@ -43,23 +35,8 @@
 }
 - (void)leftAction
 {
-    if (_result) {
-        
-        [UIView animateWithDuration:0.25 animations:^{
-            self.view.frame = CGRectMake(self.view.width - 80, 64, self.view.width, self.view.height);
-            _personalVC.view.frame = CGRectMake(-(self.view.width - 80), 0, self.view.width-80, self.view.height-64);
-        }];
-        _result = !_result;
-    }else
-    {
-        [UIView animateWithDuration:0.25 animations:^{
-            self.view.frame = CGRectMake(0, 64, self.view.width, self.view.height);
-            _personalVC.view.frame = CGRectMake(-(self.view.width - 80), 0, self.view.width-80, HEIGHT-64);
-        }];
-        _result = !_result;
-    }
-    [self.navigationController popViewControllerAnimated:YES];
-    NSLog(@"我是左边按钮");
+
+
 }
 
 

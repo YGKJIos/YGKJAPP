@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieModel.h"
+
 
 @interface MoiveTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *movieImage;
@@ -21,9 +23,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *yuanjiaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yjrmbLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *dgImage;
+@property (weak, nonatomic) IBOutlet UIImageView *stylImage;
+
+
 
 + (MoiveTableViewCell *) createMoiveCell;
 
-
+- (void)MovieModel:(MovieModel *) model;
 
 @end

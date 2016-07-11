@@ -10,4 +10,18 @@
 
 @interface MarketModel : NSObject
 
+@property (nonatomic, retain) NSString *meishiId;
+@property (nonatomic, retain) NSString *shangjiaJiage;
+@property (nonatomic, retain) NSString *shangjiaJuli;
+@property (nonatomic, retain) NSString *shangjiaName;
+@property (nonatomic, retain) NSString *shangjiaPingfen;
+@property (nonatomic, retain) NSString *shangjiaTongzhi;
+@property (nonatomic, retain) NSString *shangjiaTouxiang;
+@property (nonatomic, retain) NSString *shangjiaLijian;
+@property (nonatomic, retain) NSString *meishiTejia;
+@property (nonatomic, retain) NSString *meishiYuanjia;
+
+
+
+
 @end
