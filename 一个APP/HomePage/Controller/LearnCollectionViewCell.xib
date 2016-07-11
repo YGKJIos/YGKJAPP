@@ -105,6 +105,15 @@
                 <constraint firstItem="Umr-vd-0Hb" firstAttribute="top" secondItem="dkQ-5Q-NQt" secondAttribute="bottom" constant="2" id="vag-NU-obA"/>
             </constraints>
             <size key="customSize" width="165" height="185"/>
+            <connections>
+                <outlet property="TongzhiLabel" destination="KLu-Hc-RkA" id="5x6-K2-HmF"/>
+                <outlet property="learnImage" destination="dkQ-5Q-NQt" id="cdM-ht-Bcj"/>
+                <outlet property="nameLabel" destination="Umr-vd-0Hb" id="Dc2-Qz-SfA"/>
+                <outlet property="numLabel" destination="Zmf-7A-Y9c" id="Pk1-y7-6dI"/>
+                <outlet property="placeImage" destination="MCT-wm-RNw" id="KmW-42-Q2v"/>
+                <outlet property="placeLabel" destination="GQp-Fw-wXs" id="ava-ME-UCE"/>
+                <outlet property="starImage" destination="cmt-6M-boy" id="1bQ-OT-I8x"/>
+            </connections>
             <point key="canvasLocation" x="304.5" y="338.5"/>
         </collectionViewCell>
     </objects>

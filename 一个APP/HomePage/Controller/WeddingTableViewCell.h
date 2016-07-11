@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "weddingModel.h"
 @interface WeddingTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *weddingImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -20,5 +20,9 @@
 
 
 + (WeddingTableViewCell *) createWeddingCell;
+
+- (void)weddingModel:(weddingModel *)model;
+
+
 
 @end

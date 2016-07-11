@@ -7,7 +7,7 @@
 //
 
 #import "TravelTableViewCell.h"
-
+static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
 @implementation TravelTableViewCell
 
 
@@ -16,6 +16,17 @@
     TravelTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"TravelTableViewCell" owner:nil options:nil] lastObject];
     return cell;
 }
+
+- (void)TravelModel:(TravelModel *)model
+{
+    self.nameLabel.text = model.shangjiaName;
+    [self.travelImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang]]];
+    self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
+    self.placeLabel.text = model.shangjiaWeizhi;
+    self.priceLabel.text = [NSString stringWithFormat:@"¥%@", model.shangjiaJiage];
+    self.introduceLabel.text = model.shangjiaTongzhi;
+}
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];

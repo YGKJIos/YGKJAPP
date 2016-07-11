@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TravelModel.h"
 @interface TravelTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *travelImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *placeImage;
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 
-
+- (void)TravelModel:(TravelModel *)model;
 
 + (TravelTableViewCell *) createTravelCell;
 @end
