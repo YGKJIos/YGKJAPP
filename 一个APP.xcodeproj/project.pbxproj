@@ -141,6 +141,7 @@
 		D8B71AC71D27909B00F0DBC8 /* sevCarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B71AC61D27909B00F0DBC8 /* sevCarTableViewController.m */; };
 		D8B71AD11D27929600F0DBC8 /* sevCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B71ACF1D27929600F0DBC8 /* sevCarTableViewCell.m */; };
 		D8B71AD21D27929600F0DBC8 /* sevCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B71AD01D27929600F0DBC8 /* sevCarTableViewCell.xib */; };
+		D8F8AD1D1D33595F002104ED /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F8AD1C1D33595F002104ED /* CarModel.m */; };
 		D8FD1E9E1D23B9460059719B /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FD1E9D1D23B9460059719B /* CarViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -399,6 +400,8 @@
 		D8B71ACE1D27929600F0DBC8 /* sevCarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sevCarTableViewCell.h; sourceTree = "<group>"; };
 		D8B71ACF1D27929600F0DBC8 /* sevCarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sevCarTableViewCell.m; sourceTree = "<group>"; };
 		D8B71AD01D27929600F0DBC8 /* sevCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sevCarTableViewCell.xib; sourceTree = "<group>"; };
+		D8F8AD1B1D33595F002104ED /* CarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
+		D8F8AD1C1D33595F002104ED /* CarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
 		D8FD1E9C1D23B9460059719B /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
 		D8FD1E9D1D23B9460059719B /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1213,6 +1216,8 @@
 				D8B71ACE1D27929600F0DBC8 /* sevCarTableViewCell.h */,
 				D8B71ACF1D27929600F0DBC8 /* sevCarTableViewCell.m */,
 				D8B71AD01D27929600F0DBC8 /* sevCarTableViewCell.xib */,
+				D8F8AD1B1D33595F002104ED /* CarModel.h */,
+				D8F8AD1C1D33595F002104ED /* CarModel.m */,
 			);
 			name = "生活服务(汽车)";
 			sourceTree = "<group>";
@@ -1500,6 +1505,7 @@
 				D82B04461D2A4EE80086A108 /* FeastTableViewController.m in Sources */,
 				D8247FAE1D212D05007C573F /* GameTableViewController.m in Sources */,
 				59FFB7071D05369D00071E0E /* MarketCell.m in Sources */,
+				D8F8AD1D1D33595F002104ED /* CarModel.m in Sources */,
 				5910B8B01D1238F300BA1C16 /* DropdownMenu.m in Sources */,
 				59EAD9781D20F645003DF636 /* SupermarketViewController.m in Sources */,
 				D86C099B1D29EDEB0016C1A9 /* TravelTableViewController.m in Sources */,

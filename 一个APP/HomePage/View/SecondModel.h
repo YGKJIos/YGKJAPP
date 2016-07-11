@@ -17,4 +17,5 @@
 @property (nonatomic, retain) NSString *ershouShijian;
 @property (nonatomic, retain) NSString *ershouDianhua;
 @property (nonatomic, retain) NSString *ershouJiage;
+@property (nonatomic, retain) NSString *shangjiaTouxiang;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "sevCarTableViewCell.h"
-
+static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
 @implementation sevCarTableViewCell
 
 + (sevCarTableViewCell *) createSevCarCell
@@ -16,7 +16,14 @@
     return cell;
 }
 
-
+- (void)CarModel:(CarModel *)model
+{
+    self.nameLabel.text = model.shangjiaName;
+    self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
+    self.placeLabel.text = model.shangjiaWeizhi;
+    [self.sevCarImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang]]];
+    self.stylLabel.text = model.shangjiaTongzhi;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
