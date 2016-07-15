@@ -7,7 +7,7 @@
 //
 
 #import "succeedViewController.h"
-
+#import "LoginViewController.h"
 @interface succeedViewController ()
 
 @end
@@ -18,6 +18,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+
+// 重新登录按钮
+- (IBAction)returnBtn:(id)sender {
+    
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    loginVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:loginVC animated:YES completion:^{
+        
+    }];
+    
+}
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

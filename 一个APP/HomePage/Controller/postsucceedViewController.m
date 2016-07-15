@@ -7,7 +7,7 @@
 //
 
 #import "postsucceedViewController.h"
-
+#import "LoginViewController.h"
 @interface postsucceedViewController ()
 
 @end
@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+// 确认按钮
+- (IBAction)querenBtn:(id)sender {
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    loginVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:loginVC animated:YES completion:^{
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
