@@ -7,7 +7,7 @@
 //
 
 #import "WeddingTableViewCell.h"
-
+static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
 @implementation WeddingTableViewCell
 
 
@@ -15,6 +15,15 @@
 {
     WeddingTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"WeddingTableViewCell" owner:nil options:nil] lastObject];
     return cell;
+}
+
+- (void)weddingModel:(weddingModel *)model
+{
+    self.nameLabel.text = model.shangjiaName;
+    self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
+    self.placeLabel.text = model.shangjiaWeizhi;
+    [self.weddingImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang]]];
+    self.piceLabel.text = [NSString stringWithFormat:@"%@折起", model.shangjiaZhekou];
 }
 
 

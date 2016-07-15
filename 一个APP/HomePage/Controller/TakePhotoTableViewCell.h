@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PhotoModel.h"
 @interface TakePhotoTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *childImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 
 + (TakePhotoTableViewCell *) createTakePhotoCell;
+
+- (void)PhotoModel:(PhotoModel *) model;
 
 @end

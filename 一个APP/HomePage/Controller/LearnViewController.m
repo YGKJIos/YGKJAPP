@@ -9,8 +9,10 @@
 #import "LearnViewController.h"
 #import "HeaderCollectionReusableView.h"
 #import "LearnCollectionViewCell.h"
-
+#import "LearnModel.h"
 @interface LearnViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@property (nonatomic, strong)NSMutableArray *MarkeArr;
+@property (nonatomic, strong) UICollectionView *collection;
 
 @end
 
@@ -26,35 +28,91 @@
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 15, 20, 15);
     flowLayout.minimumLineSpacing = 10;
     
-    UICollectionView *collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64) collectionViewLayout:flowLayout];
-    collection.backgroundColor = [UIColor whiteColor];
-    collection.delegate = self;
-    collection.dataSource = self;
-    collection.showsVerticalScrollIndicator = NO;
-    [self.view addSubview:collection];
+    self.collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64) collectionViewLayout:flowLayout];
+    self.collection.backgroundColor = [UIColor whiteColor];
+    self.collection.delegate = self;
+    self.collection.dataSource = self;
+    self.collection.showsVerticalScrollIndicator = NO;
+    [self.view addSubview:self.collection];
     
     UINib *nib = [UINib nibWithNibName:@"LearnCollectionViewCell" bundle:[NSBundle mainBundle]];
-    [collection registerNib:nib forCellWithReuseIdentifier:@"learnCell"];
-    [collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
+    [self.collection registerNib:nib forCellWithReuseIdentifier:@"learnCell"];
+    [self.collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
+    self.MarkeArr = [[NSMutableArray alloc] init];
+    [self MJrefreshLoadData];
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.collection.mj_header beginRefreshing];
+    [super viewWillAppear:animated];
+}
+
+#pragma mark - MJ刷新
+- (void)MJrefreshLoadData
+{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.collection.mj_header.automaticallyChangeAlpha = YES;
+    [header setTitle:@"正在刷新数据中..." forState:MJRefreshStateRefreshing];
+    [header setTitle:@"下拉刷新数据" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.collection.mj_header = header;
+    
+    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    // 设置文字
+    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
+    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
+    self.collection.mj_footer = footer;
+    
+}
+
+// 下拉刷新的方法
+- (void)loadNewData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.collection.mj_header endRefreshing];
+        NSString *url = @"sheying/querysheying1.action";
+        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSLog(@"responseObject----%@",responseObject);
+            NSArray *arr = responseObject;
+            for (NSDictionary *dic in arr) {
+                LearnModel *model = [[LearnModel alloc] init];
+                [model setValuesForKeysWithDictionary:dic];
+                [self.MarkeArr addObject:model];
+            }
+            [self.collection reloadData];
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"error-----%@",error);
+        }];
+        
+        NSLog(@"MJ-下拉刷新");
+        
+    });
+    
+}
+// 上拉加载的方法
+- (void)loadMoreData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.collection.mj_footer endRefreshing];
+        NSLog(@"MJ-上啦加载");
+    });
+}
+
+
+
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return self.MarkeArr.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     LearnCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"learnCell" forIndexPath:indexPath];
-    
-//    UIView *line1 = [[UIView alloc]initWithFrame:CGRectMake(0, 199, 200, 1)];
-//    line1.backgroundColor = BGcolor(210, 210, 210);
-//    [cell addSubview:line1];
-//    
-//    UIView *line2 = [[UIView alloc]initWithFrame:CGRectMake(174, 0, 1, 200)];
-//    line2.backgroundColor = BGcolor(210, 210, 210);
-//    [cell addSubview:line2];
-    
+    [cell LearnModel:self.MarkeArr[indexPath.row]];
+
     return cell;
 }
 

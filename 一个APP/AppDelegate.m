@@ -8,10 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RootTabBarController.h"
-#import "LogInViewController.h"
-#import "TakeOutInformationController.h"
-#import "EditingAddressViewController.h"
 
+#import "LoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -25,13 +23,14 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-//
-    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-    self.window.rootViewController = rootTabBar;
-    rootTabBar.tabBar.translucent = NO;
     
-//    EditingAddressViewController *vc = [[EditingAddressViewController alloc]init];
-//    self.window.rootViewController = vc;
+//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+//    self.window.rootViewController = rootTabBar;
+//    rootTabBar.tabBar.translucent = NO;
+    
+    LoginViewController *LoginVC = [[LoginViewController alloc] init];
+    self.window.rootViewController = LoginVC;
+
 
     [self.window makeKeyAndVisible];
     

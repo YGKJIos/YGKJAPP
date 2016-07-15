@@ -22,7 +22,9 @@ static NSString *Second = @"http://192.168.1.88:8080/shangcheng/";
     self.nameLabel.text = model.shangjiaName;
     self.introduceLabel.text = model.shangjiaTongzhi;
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@", model.ershouJiage];
-    
+    self.juliLabel.text = [NSString stringWithFormat:@"/  %@m", model.shangjiaJuli];
+    self.dayLabel.text = model.ershouShijian;
+    [self.SecondHandImage sd_setImageWithURL:[NSURL  URLWithString:[NSString stringWithFormat:@"%@%@", Second, model.shangjiaTouxiang]]];
 }
 
 
