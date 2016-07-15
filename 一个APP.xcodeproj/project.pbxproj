@@ -37,6 +37,9 @@
 		5983FD0A1D2A301100FCC9C9 /* LearnCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5983FD081D2A301100FCC9C9 /* LearnCollectionViewCell.xib */; };
 		599ECDD31D25F70E009E636A /* PleaseJobTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */; };
 		599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */; };
+		599ECDD81D263A8F009E636A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD61D263A8F009E636A /* LogInViewController.m */; };
+		599ECDD91D263A8F009E636A /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599ECDD71D263A8F009E636A /* LogInViewController.xib */; };
+		59B695B01D338F000012DF2B /* MenuOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B695AF1D338F000012DF2B /* MenuOrderTableViewCell.m */; };
 		59D096DC1D139A4F00039C87 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */; };
 		59D096F31D139E6C00039C87 /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D096DE1D139E6C00039C87 /* h1.jpg */; };
 		59D096F41D139E6C00039C87 /* h2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D096DF1D139E6C00039C87 /* h2.jpg */; };
@@ -78,6 +81,11 @@
 		59F284A71D1E5BE900C815D1 /* TheHotelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284A51D1E5BE900C815D1 /* TheHotelTableViewCell.m */; };
 		59F284A81D1E5BE900C815D1 /* TheHotelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F284A61D1E5BE900C815D1 /* TheHotelTableViewCell.xib */; };
 		59F284AB1D1E618600C815D1 /* TheHotelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284AA1D1E618600C815D1 /* TheHotelTableViewController.m */; };
+		59F2A76C1D35DD800037ABBA /* RemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2A76B1D35DD800037ABBA /* RemarkViewController.m */; };
+		59F2A76F1D3608EA0037ABBA /* EditingAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2A76E1D3608EA0037ABBA /* EditingAddressViewController.m */; };
+		59F2A7721D360E610037ABBA /* DeliverAdressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2A7711D360E610037ABBA /* DeliverAdressTableViewCell.m */; };
+		59F470101D372209006F7E0B /* AddressAndMOdificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F4700E1D372209006F7E0B /* AddressAndMOdificationViewController.m */; };
+		59F470111D372209006F7E0B /* AddressAndMOdificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F4700F1D372209006F7E0B /* AddressAndMOdificationViewController.xib */; };
 		59F6A89F1D15100300CFD28F /* FirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A89E1D15100300CFD28F /* FirstTableViewCell.m */; };
 		59F6A8A41D1529CA00CFD28F /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A8A31D1529CA00CFD28F /* SecondTableViewCell.m */; };
 		59F6A8A71D15362F00CFD28F /* ThridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6A8A61D15362F00CFD28F /* ThridTableViewCell.m */; };
@@ -241,6 +249,11 @@
 		599ECDD01D25F70E009E636A /* PleaseJobTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PleaseJobTableViewCell.h; sourceTree = "<group>"; };
 		599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PleaseJobTableViewCell.m; sourceTree = "<group>"; };
 		599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PleaseJobTableViewCell.xib; sourceTree = "<group>"; };
+		599ECDD51D263A8F009E636A /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		599ECDD61D263A8F009E636A /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		599ECDD71D263A8F009E636A /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
+		59B695AE1D338F000012DF2B /* MenuOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOrderTableViewCell.h; sourceTree = "<group>"; };
+		59B695AF1D338F000012DF2B /* MenuOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOrderTableViewCell.m; sourceTree = "<group>"; };
 		59D096DA1D139A4F00039C87 /* HomePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewController.h; sourceTree = "<group>"; };
 		59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewController.m; sourceTree = "<group>"; };
 		59D096DE1D139E6C00039C87 /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
@@ -312,6 +325,15 @@
 		59F284A61D1E5BE900C815D1 /* TheHotelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TheHotelTableViewCell.xib; sourceTree = "<group>"; };
 		59F284A91D1E618600C815D1 /* TheHotelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheHotelTableViewController.h; sourceTree = "<group>"; };
 		59F284AA1D1E618600C815D1 /* TheHotelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheHotelTableViewController.m; sourceTree = "<group>"; };
+		59F2A76A1D35DD800037ABBA /* RemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemarkViewController.h; sourceTree = "<group>"; };
+		59F2A76B1D35DD800037ABBA /* RemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemarkViewController.m; sourceTree = "<group>"; };
+		59F2A76D1D3608EA0037ABBA /* EditingAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingAddressViewController.h; sourceTree = "<group>"; };
+		59F2A76E1D3608EA0037ABBA /* EditingAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingAddressViewController.m; sourceTree = "<group>"; };
+		59F2A7701D360E610037ABBA /* DeliverAdressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeliverAdressTableViewCell.h; sourceTree = "<group>"; };
+		59F2A7711D360E610037ABBA /* DeliverAdressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeliverAdressTableViewCell.m; sourceTree = "<group>"; };
+		59F4700D1D372209006F7E0B /* AddressAndMOdificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressAndMOdificationViewController.h; sourceTree = "<group>"; };
+		59F4700E1D372209006F7E0B /* AddressAndMOdificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAndMOdificationViewController.m; sourceTree = "<group>"; };
+		59F4700F1D372209006F7E0B /* AddressAndMOdificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressAndMOdificationViewController.xib; sourceTree = "<group>"; };
 		59F6A89D1D15100300CFD28F /* FirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTableViewCell.h; sourceTree = "<group>"; };
 		59F6A89E1D15100300CFD28F /* FirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTableViewCell.m; sourceTree = "<group>"; };
 		59F6A8A21D1529CA00CFD28F /* SecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTableViewCell.h; sourceTree = "<group>"; };
@@ -516,7 +538,6 @@
 				59F2848B1D1E1A6000C815D1 /* 外卖 */,
 				59F284AC1D1E6E9100C815D1 /* 电影 */,
 				59EAD9751D20F1F0003DF636 /* 超市 */,
-				5910B8901D1234D700BA1C16 /* 我的 */,
 				D82B044C1D2A504A0086A108 /* 生活服务(宴会) */,
 				D86C09981D29ECA80016C1A9 /* 生活服务(旅游) */,
 				D8AF72141D27AB0000C40F7E /* 生活服务(摄影) */,
@@ -558,15 +579,14 @@
 			path = ../View;
 			sourceTree = "<group>";
 		};
-		5910B8901D1234D700BA1C16 /* 我的 */ = {
+		5910B8901D1234D700BA1C16 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
 				5910B8911D1234D700BA1C16 /* Controller */,
 				5910B8941D1234D700BA1C16 /* Model */,
 				5910B8951D1234D700BA1C16 /* View */,
 			);
-			name = "我的";
-			path = ../../MyProfile;
+			path = MyProfile;
 			sourceTree = "<group>";
 		};
 		5910B8911D1234D700BA1C16 /* Controller */ = {
@@ -665,6 +685,10 @@
 			children = (
 				59465DAC1D30DBBB00908C08 /* OrderPersonTableViewCell.h */,
 				59465DAD1D30DBBB00908C08 /* OrderPersonTableViewCell.m */,
+				59B695AE1D338F000012DF2B /* MenuOrderTableViewCell.h */,
+				59B695AF1D338F000012DF2B /* MenuOrderTableViewCell.m */,
+				59F2A7701D360E610037ABBA /* DeliverAdressTableViewCell.h */,
+				59F2A7711D360E610037ABBA /* DeliverAdressTableViewCell.m */,
 			);
 			name = "提交订单cell";
 			sourceTree = "<group>";
@@ -727,6 +751,13 @@
 				59465DA41D30805000908C08 /* ShoppingCartViewController.m */,
 				59465DA91D30C24F00908C08 /* SubmitOrderViewController.h */,
 				59465DAA1D30C24F00908C08 /* SubmitOrderViewController.m */,
+				59F2A76A1D35DD800037ABBA /* RemarkViewController.h */,
+				59F2A76B1D35DD800037ABBA /* RemarkViewController.m */,
+				59F2A76D1D3608EA0037ABBA /* EditingAddressViewController.h */,
+				59F2A76E1D3608EA0037ABBA /* EditingAddressViewController.m */,
+				59F4700D1D372209006F7E0B /* AddressAndMOdificationViewController.h */,
+				59F4700E1D372209006F7E0B /* AddressAndMOdificationViewController.m */,
+				59F4700F1D372209006F7E0B /* AddressAndMOdificationViewController.xib */,
 				59D6F4461D2B83A800D16D85 /* InformationView */,
 			);
 			name = TakeOutInformation;
@@ -904,6 +935,7 @@
 			children = (
 				59FFB6F51D0507F600071E0E /* Main */,
 				5910B88A1D1234D700BA1C16 /* HomePage */,
+				5910B8901D1234D700BA1C16 /* MyProfile */,
 				59FFB6E71D0506A200071E0E /* Tool */,
 				59FFB6D71D05066F00071E0E /* AddressBook */,
 				59FFB6DB1D05066F00071E0E /* Discover */,
@@ -1528,6 +1560,7 @@
 				59D096F31D139E6C00039C87 /* h1.jpg in Resources */,
 				59D6F44B1D2B83EC00D16D85 /* TakeOutInformationView.xib in Resources */,
 				D8247FB41D212D48007C573F /* GameTableViewCell.xib in Resources */,
+				59F470111D372209006F7E0B /* AddressAndMOdificationViewController.xib in Resources */,
 				59F284961D1E4ECA00C815D1 /* TakeTableViewCell.xib in Resources */,
 				5940BC321D1A8F6900982820 /* MenuTableViewCell.xib in Resources */,
 				599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */,
@@ -1614,6 +1647,7 @@
 				D8FF7D8C1D34D42300F69830 /* LoginViewController.m in Sources */,
 				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,
 				59FFB7031D051EA800071E0E /* UIView+Extension.m in Sources */,
+				59F470101D372209006F7E0B /* AddressAndMOdificationViewController.m in Sources */,
 				D836C8931D30D47E0043D730 /* HouseModel.m in Sources */,
 				D86C099F1D29EE1B0016C1A9 /* TravelTableViewCell.m in Sources */,
 				59F6A8A71D15362F00CFD28F /* ThridTableViewCell.m in Sources */,
@@ -1665,7 +1699,9 @@
 				D86C099B1D29EDEB0016C1A9 /* TravelTableViewController.m in Sources */,
 				594707611D236292000C4871 /* HeaderCollectionReusableView.m in Sources */,
 				591870241D2C901700D54040 /* AddFoodView.m in Sources */,
+				59B695B01D338F000012DF2B /* MenuOrderTableViewCell.m in Sources */,
 				5918702A1D2CEC0500D54040 /* TakeOutRightTableCell.m in Sources */,
+				59F2A76F1D3608EA0037ABBA /* EditingAddressViewController.m in Sources */,
 				59FFB6F41D0507E900071E0E /* MessageViewController.m in Sources */,
 				59EC739F1D0946F6009062D9 /* MessageModel.m in Sources */,
 				D82B044A1D2A4F0F0086A108 /* FeastTableViewCell.m in Sources */,
@@ -1674,6 +1710,7 @@
 				5940BC2B1D1A552900982820 /* FictionTableViewCell.m in Sources */,
 				59FFB6EB1D05074300071E0E /* AddressBookController.m in Sources */,
 				D8247FA51D212CBC007C573F /* MovieTableViewController.m in Sources */,
+				59F2A76C1D35DD800037ABBA /* RemarkViewController.m in Sources */,
 				59F061D91D0E409C006BEF9F /* AFNetWorting.m in Sources */,
 				59D096F71D139E6C00039C87 /* NSData+SDDataCache.m in Sources */,
 				D8247FB31D212D48007C573F /* GameTableViewCell.m in Sources */,
@@ -1703,6 +1740,7 @@
 				D8AF29881D24EC6F00166DC5 /* HouseTableViewController.m in Sources */,
 				59D097041D13C74A00039C87 /* HomeTableViewCell.m in Sources */,
 				59D096F81D139E6C00039C87 /* TAAbstractDotView.m in Sources */,
+				59F2A7721D360E610037ABBA /* DeliverAdressTableViewCell.m in Sources */,
 				D8AAD0551D236218005915D1 /* AllStylViewController.m in Sources */,
 				59F7860D1D0BD9A1005A39FB /* FriendCell.m in Sources */,
 				59F6A8A41D1529CA00CFD28F /* SecondTableViewCell.m in Sources */,

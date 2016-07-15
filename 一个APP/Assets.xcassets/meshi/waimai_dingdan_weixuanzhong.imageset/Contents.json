@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "waimai_dingdan_weixuanzhong.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "waimai_dingdan_weixuanzhong.png",
       "scale" : "2x"
     },
     {

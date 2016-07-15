@@ -8,8 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootTabBarController.h"
-#import "TakeOutInformationController.h"
-#import "SubmitOrderViewController.h"
+
 #import "LoginViewController.h"
 @interface AppDelegate ()
 
@@ -29,11 +28,9 @@
 //    self.window.rootViewController = rootTabBar;
 //    rootTabBar.tabBar.translucent = NO;
     
-//    SubmitOrderViewController *vc = [[SubmitOrderViewController alloc]init];
-//    self.window.rootViewController = vc;
-    
     LoginViewController *LoginVC = [[LoginViewController alloc] init];
     self.window.rootViewController = LoginVC;
+
 
     [self.window makeKeyAndVisible];
     

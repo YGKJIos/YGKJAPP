@@ -40,6 +40,7 @@
     [self addMenuBtn];
     self.tableView.tableHeaderView = self.bgView;
     
+#pragma mark - 数据请求
     self.MarkeArr = [[NSMutableArray alloc]init];
     [self MJrefreshLoadData];
     

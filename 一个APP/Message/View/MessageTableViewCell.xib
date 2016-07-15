@@ -63,7 +63,7 @@
                 <outlet property="messagesLab" destination="CLC-Of-2Zt" id="Npf-ng-jhr"/>
                 <outlet property="nameLab" destination="Gu0-5q-Ve1" id="Sz8-gH-11N"/>
             </connections>
-            <point key="canvasLocation" x="364" y="178"/>
+            <point key="canvasLocation" x="287" y="178"/>
         </tableViewCell>
     </objects>
     <resources>
