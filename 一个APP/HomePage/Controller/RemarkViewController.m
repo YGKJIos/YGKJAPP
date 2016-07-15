@@ -6,9 +6,10 @@
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
+// 备注页面
 #import "RemarkViewController.h"
 
-@interface RemarkViewController ()
+@interface RemarkViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -16,7 +17,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UITextField *remarkText = [UITextField newAutoLayoutView];
+    [self.view addSubview:remarkText];
+    remarkText.placeholder = @"请写下自己的口味，需求等要求，已便商家备餐";
+    [remarkText autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
+    [remarkText autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
+    [remarkText autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+    [remarkText autoSetDimension:ALDimensionHeight toSize:160];
+    
+    [remarkText drawPlaceholderInRect:CGRectMake(0, 0, remarkText.width, 20)];
+    remarkText.backgroundColor = BGcolor(235, 235, 235);
+    remarkText.layer.masksToBounds = YES;
+    remarkText.layer.cornerRadius = 5;
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

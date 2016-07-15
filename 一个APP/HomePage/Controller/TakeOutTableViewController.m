@@ -47,6 +47,59 @@
     menu.dataSource = self;
     [self.view addSubview:menu];
 }
+//#pragma mark - MJ刷新
+//- (void)MJrefreshLoadData
+//{
+//    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+//    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+//    [header setTitle:@"正在刷新数据中..." forState:MJRefreshStateRefreshing];
+//    [header setTitle:@"下拉刷新数据" forState:MJRefreshStateIdle];
+//    [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
+//    header.lastUpdatedTimeLabel.hidden = YES;
+//    self.tableView.mj_header = header;
+//    
+//    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+//    // 设置文字
+//    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
+//    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
+//    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
+//    self.tableView.mj_footer = footer;
+//    
+//}
+//
+//// 下拉刷新的方法
+//- (void)loadNewData{
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.tableView.mj_header endRefreshing];
+//        NSString *url = @"meishi/querymeishi1.action";
+//        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+//            NSLog(@"responseObject----%@",responseObject);
+//            NSArray *arr = responseObject;
+//            for (NSDictionary *dic in arr) {
+//                MarketModel *model = [[MarketModel alloc] init];
+//                [model setValuesForKeysWithDictionary:dic];
+//                [self.MarkeArr addObject:model];
+//            }
+//            [self.tableView reloadData];
+//            
+//        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//            NSLog(@"error-----%@",error);
+//        }];
+//        
+//        NSLog(@"MJ-下拉刷新");
+//        
+//    });
+//    
+//}
+//// 上拉加载的方法
+//- (void)loadMoreData{
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.tableView.mj_footer endRefreshing];
+//        NSLog(@"MJ-上啦加载");
+//    });
+//}
+
+
 
 - (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
 {

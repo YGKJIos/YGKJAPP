@@ -24,20 +24,24 @@
     for (int i = 0; i < arr.count; i++) {
         self.foodName = [UILabel newAutoLayoutView];
         [self.contentView addSubview:self.foodName];
-        self.foodName.text = @"香葱牛肉";
+        self.foodName.text = arr[i];
         self.foodName.textColor = BGcolor(88, 88, 88);
         self.foodName.font = [UIFont systemFontOfSize:15];
         [self.foodName autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
-        [self.foodName autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+//        [self.foodName autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        [self.foodName autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10+(20+5)*i];
         [self.foodName autoSetDimensionsToSize:CGSizeMake(120, 20)];
         
         self.numLab = [UILabel newAutoLayoutView];
         [self.contentView addSubview:self.numLab];
-        self.numLab.text = @"香葱牛肉";
+        self.numLab.text = @"2份";
         self.numLab.textColor = BGcolor(88, 88, 88);
         self.numLab.font = [UIFont systemFontOfSize:15];
-        [self.numLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
-        [self.numLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        self.numLab.textAlignment = NSTextAlignmentCenter;
+//        [self.numLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
+        [self.numLab autoAlignAxisToSuperviewAxis:ALAxisVertical];
+//        [self.numLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        [self.numLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10+(20+5)*i];
         [self.numLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
         
         self.moneyLab = [UILabel newAutoLayoutView];
@@ -46,8 +50,9 @@
         self.moneyLab.textAlignment = NSTextAlignmentRight;
         self.moneyLab.textColor = BGcolor(88, 88, 88);
         self.moneyLab.font = [UIFont systemFontOfSize:15];
-        [self.moneyLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
-        [self.moneyLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        [self.moneyLab autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
+//        [self.moneyLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+        [self.moneyLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10+(20+5)*i];
         [self.moneyLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
     }
 }

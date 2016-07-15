@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-56) style:UITableViewStylePlain];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-57) style:UITableViewStylePlain];
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -74,7 +74,7 @@
 #pragma mark - 添加bottom view
 - (void)addBottomView
 {
-    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT - 57, WIDTH, 57)];
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, HEIGHT-64-57, WIDTH, 57)];
     [self.view addSubview:bgView];
     
     UIView *bottomLine = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 1)];

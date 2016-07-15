@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MenuOrderTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MenuTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -68,11 +68,11 @@
             </tableViewCellContentView>
             <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
             <connections>
-                <outlet property="MenuImage" destination="Ui0-uZ-3hq" id="FOd-QJ-rx1"/>
-                <outlet property="balanceLab" destination="BXm-aQ-UFd" id="in3-Bo-PE1"/>
-                <outlet property="nameLab" destination="7yI-Nk-Wua" id="E0X-Ur-tna"/>
+                <outlet property="MenuImage" destination="Ui0-uZ-3hq" id="lsQ-75-t5e"/>
+                <outlet property="balanceLab" destination="BXm-aQ-UFd" id="tFJ-Vf-qcx"/>
+                <outlet property="nameLab" destination="7yI-Nk-Wua" id="UCh-fe-NSY"/>
             </connections>
-            <point key="canvasLocation" x="241" y="238"/>
+            <point key="canvasLocation" x="340" y="197"/>
         </tableViewCell>
     </objects>
     <resources>

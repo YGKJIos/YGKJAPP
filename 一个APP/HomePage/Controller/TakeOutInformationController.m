@@ -52,13 +52,15 @@
     [self addTableView];
     [self addFoodView];
 }
+#pragma mark - 网络请求
+
+
 #pragma mark - 添加店铺的菜品
 - (void)addTableView
 {
     self.leftTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, 114*WIDTH/375, HEIGHT-220-113) style:UITableViewStylePlain];
     self.leftTableView.delegate = self;
     self.leftTableView.dataSource = self;
-//    self.leftTableView.backgroundColor = [UIColor redColor];
     self.leftTableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.leftTableView];
     
@@ -68,7 +70,6 @@
     self.rightTableView = [[UITableView alloc]initWithFrame:CGRectMake(114*WIDTH/375, 220, WIDTH -114*WIDTH/375 , HEIGHT-220-113) style:UITableViewStylePlain];
     self.rightTableView.delegate = self;
     self.rightTableView.dataSource = self;
-//    self.rightTableView.backgroundColor = [UIColor yellowColor];
     self.rightTableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.rightTableView];
     
