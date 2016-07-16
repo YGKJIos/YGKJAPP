@@ -33,7 +33,7 @@
 #import "TakePhotoTableViewController.h" //生活服务(摄影)
 #import "WeddingTableViewController.h" // 生活服务(婚庆)
 #import "FeastTableViewController.h" // 生活服务(宴会)
-
+#import "shopViewController.h" // 本地购物
 
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate>
@@ -337,7 +337,11 @@
 }
 #pragma mark - 同城服务
 - (void)SecondPushViewControllerNum:(NSInteger)num
-{
+{   // 本地购物
+    if (num == 1000) {
+        shopViewController *shopVC = [[shopViewController alloc] init];
+        [self.navigationController pushViewController:shopVC animated:YES];
+    }
     
     // 家政服务
     if (num == 1002) {
