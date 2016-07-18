@@ -9,8 +9,6 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
-
-//#import "LoginViewController.h"
 @interface AppDelegate ()
 
 @end
