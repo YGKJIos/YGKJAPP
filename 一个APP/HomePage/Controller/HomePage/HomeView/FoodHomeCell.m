@@ -20,11 +20,19 @@
             HomeModelView *view = [HomeModelView foodModelStyleView];
             view.frame = CGRectMake(20+i*(71+17), 17, 0, 0);
             [self.contentView addSubview:view];
+            
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction:)];
+            [view addGestureRecognizer:tap];
+            
         }
     }
     return self;
 }
 
+- (void)tapClickAction:(UITapGestureRecognizer *)tap
+{
+    
+}
 - (void)awakeFromNib {
     // Initialization code
 }
