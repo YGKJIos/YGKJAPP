@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
 #import "RootTabBarController.h"
 
 //#import "LoginViewController.h"
@@ -24,12 +25,12 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-    self.window.rootViewController = rootTabBar;
-    rootTabBar.tabBar.translucent = NO;
+//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+//    self.window.rootViewController = rootTabBar;
+//    rootTabBar.tabBar.translucent = NO;
     
-//    LoginViewController *LoginVC = [[LoginViewController alloc] init];
-//    self.window.rootViewController = LoginVC;
+    LoginViewController *LoginVC = [[LoginViewController alloc] init];
+    self.window.rootViewController = LoginVC;
 
 
     [self.window makeKeyAndVisible];
