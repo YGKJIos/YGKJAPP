@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ImageLabViewPushVCDelegate <NSObject>
+
+- (void)imageAndLableViewPush;
+
+@end
+
 @interface ImageAndLabView : UIView
 
 
 @property (weak, nonatomic) IBOutlet UIButton *imageBtn;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
+@property (nonatomic, assign)id<ImageLabViewPushVCDelegate>delegate;
 
 + (ImageAndLabView *)createViewNib;
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590E437A1D38A21500F49F2E /* TakeOutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 590E43791D38A21500F49F2E /* TakeOutModel.m */; };
 		5910B8961D1234D700BA1C16 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B88D1D1234D700BA1C16 /* HomePageViewController.m */; };
 		5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8931D1234D700BA1C16 /* MyProfileViewController.m */; };
 		5910B8AE1D1238F300BA1C16 /* ConditionDoubleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8A81D1238F300BA1C16 /* ConditionDoubleTableView.m */; };
@@ -18,7 +19,6 @@
 		591870261D2C903000D54040 /* AddFoodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591870251D2C903000D54040 /* AddFoodView.xib */; };
 		5918702A1D2CEC0500D54040 /* TakeOutRightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 591870281D2CEC0500D54040 /* TakeOutRightTableCell.m */; };
 		5918702B1D2CEC0500D54040 /* TakeOutRightTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 591870291D2CEC0500D54040 /* TakeOutRightTableCell.xib */; };
-		5918702E1D2CFE4700D54040 /* TakeOutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918702D1D2CFE4700D54040 /* TakeOutModel.m */; };
 		59366BBF1D06872300BB445A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BBE1D06872300BB445A /* BaseViewController.m */; };
 		59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BC41D06CB8B00BB445A /* MessageTableViewCell.m */; };
 		59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59366BC51D06CB8B00BB445A /* MessageTableViewCell.xib */; };
@@ -37,8 +37,6 @@
 		5983FD0A1D2A301100FCC9C9 /* LearnCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5983FD081D2A301100FCC9C9 /* LearnCollectionViewCell.xib */; };
 		599ECDD31D25F70E009E636A /* PleaseJobTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */; };
 		599ECDD41D25F70E009E636A /* PleaseJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */; };
-		599ECDD81D263A8F009E636A /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599ECDD61D263A8F009E636A /* LogInViewController.m */; };
-		599ECDD91D263A8F009E636A /* LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599ECDD71D263A8F009E636A /* LogInViewController.xib */; };
 		59B695B01D338F000012DF2B /* MenuOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B695AF1D338F000012DF2B /* MenuOrderTableViewCell.m */; };
 		59D096DC1D139A4F00039C87 /* HomePageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D096DB1D139A4F00039C87 /* HomePageTableViewController.m */; };
 		59D096F31D139E6C00039C87 /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59D096DE1D139E6C00039C87 /* h1.jpg */; };
@@ -73,6 +71,10 @@
 		59ED1C131D05B5E100405D17 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED1C121D05B5E100405D17 /* UIBarButtonItem+Extension.m */; };
 		59EE6D961D17BE3D00DAB8B2 /* HomeModelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59EE6D951D17BE3D00DAB8B2 /* HomeModelView.xib */; };
 		59EE6D991D17D48B00DAB8B2 /* FoodHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE6D981D17D48B00DAB8B2 /* FoodHomeCell.m */; };
+		59EE7BF81D39C696009692CF /* TypeTakeOutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7BF71D39C696009692CF /* TypeTakeOutTableViewController.m */; };
+		59EE7BFF1D3A0B1D009692CF /* SmallAdvertisingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7BFE1D3A0B1D009692CF /* SmallAdvertisingTableViewController.m */; };
+		59EE7C021D3A0E97009692CF /* SmallAdvertisingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7C011D3A0E97009692CF /* SmallAdvertisingCell.m */; };
+		59EE7C051D3A1433009692CF /* SmallAdvertisingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE7C041D3A1433009692CF /* SmallAdvertisingModel.m */; };
 		59F061D91D0E409C006BEF9F /* AFNetWorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F061D81D0E409C006BEF9F /* AFNetWorting.m */; };
 		59F2848E1D1E1A9B00C815D1 /* TakeOutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2848D1D1E1A9B00C815D1 /* TakeOutTableViewController.m */; };
 		59F284911D1E1B3400C815D1 /* ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284901D1E1B3400C815D1 /* ScrollView.m */; };
@@ -188,6 +190,8 @@
 
 /* Begin PBXFileReference section */
 		4E62CC2486B501E4D98D1BA0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		590E43781D38A21500F49F2E /* TakeOutModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutModel.h; sourceTree = "<group>"; };
+		590E43791D38A21500F49F2E /* TakeOutModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutModel.m; sourceTree = "<group>"; };
 		5910B88C1D1234D700BA1C16 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
 		5910B88D1D1234D700BA1C16 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		5910B8921D1234D700BA1C16 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
@@ -208,8 +212,6 @@
 		591870271D2CEC0500D54040 /* TakeOutRightTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutRightTableCell.h; sourceTree = "<group>"; };
 		591870281D2CEC0500D54040 /* TakeOutRightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutRightTableCell.m; sourceTree = "<group>"; };
 		591870291D2CEC0500D54040 /* TakeOutRightTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakeOutRightTableCell.xib; sourceTree = "<group>"; };
-		5918702C1D2CFE4700D54040 /* TakeOutModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakeOutModel.h; path = "一个APP/HomePage/Controller/TakeOutModel.h"; sourceTree = SOURCE_ROOT; };
-		5918702D1D2CFE4700D54040 /* TakeOutModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakeOutModel.m; path = "一个APP/HomePage/Controller/TakeOutModel.m"; sourceTree = SOURCE_ROOT; };
 		59366BBD1D06872300BB445A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		59366BBE1D06872300BB445A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		59366BC31D06CB8B00BB445A /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
@@ -241,9 +243,6 @@
 		599ECDD01D25F70E009E636A /* PleaseJobTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PleaseJobTableViewCell.h; sourceTree = "<group>"; };
 		599ECDD11D25F70E009E636A /* PleaseJobTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PleaseJobTableViewCell.m; sourceTree = "<group>"; };
 		599ECDD21D25F70E009E636A /* PleaseJobTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PleaseJobTableViewCell.xib; sourceTree = "<group>"; };
-		599ECDD51D263A8F009E636A /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
-		599ECDD61D263A8F009E636A /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
-		599ECDD71D263A8F009E636A /* LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogInViewController.xib; sourceTree = "<group>"; };
 		59B695AE1D338F000012DF2B /* MenuOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOrderTableViewCell.h; sourceTree = "<group>"; };
 		59B695AF1D338F000012DF2B /* MenuOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOrderTableViewCell.m; sourceTree = "<group>"; };
 		59D096DA1D139A4F00039C87 /* HomePageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewController.h; sourceTree = "<group>"; };
@@ -303,6 +302,14 @@
 		59EE6D951D17BE3D00DAB8B2 /* HomeModelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeModelView.xib; sourceTree = "<group>"; };
 		59EE6D971D17D48B00DAB8B2 /* FoodHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodHomeCell.h; sourceTree = "<group>"; };
 		59EE6D981D17D48B00DAB8B2 /* FoodHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodHomeCell.m; sourceTree = "<group>"; };
+		59EE7BF61D39C696009692CF /* TypeTakeOutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeTakeOutTableViewController.h; sourceTree = "<group>"; };
+		59EE7BF71D39C696009692CF /* TypeTakeOutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeTakeOutTableViewController.m; sourceTree = "<group>"; };
+		59EE7BFD1D3A0B1D009692CF /* SmallAdvertisingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallAdvertisingTableViewController.h; sourceTree = "<group>"; };
+		59EE7BFE1D3A0B1D009692CF /* SmallAdvertisingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallAdvertisingTableViewController.m; sourceTree = "<group>"; };
+		59EE7C001D3A0E97009692CF /* SmallAdvertisingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallAdvertisingCell.h; sourceTree = "<group>"; };
+		59EE7C011D3A0E97009692CF /* SmallAdvertisingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallAdvertisingCell.m; sourceTree = "<group>"; };
+		59EE7C031D3A1433009692CF /* SmallAdvertisingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallAdvertisingModel.h; sourceTree = "<group>"; };
+		59EE7C041D3A1433009692CF /* SmallAdvertisingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallAdvertisingModel.m; sourceTree = "<group>"; };
 		59F061D71D0E409C006BEF9F /* AFNetWorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetWorting.h; sourceTree = "<group>"; };
 		59F061D81D0E409C006BEF9F /* AFNetWorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetWorting.m; sourceTree = "<group>"; };
 		59F2848C1D1E1A9B00C815D1 /* TakeOutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutTableViewController.h; sourceTree = "<group>"; };
@@ -499,10 +506,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		590E43741D38A0CE00F49F2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				590E43781D38A21500F49F2E /* TakeOutModel.h */,
+				590E43791D38A21500F49F2E /* TakeOutModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		590E437B1D38DA8100F49F2E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				59F2848C1D1E1A9B00C815D1 /* TakeOutTableViewController.h */,
+				59F2848D1D1E1A9B00C815D1 /* TakeOutTableViewController.m */,
+				59D6F4421D2B800B00D16D85 /* TakeOutInformation */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		5910B88A1D1234D700BA1C16 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				59EAD9741D20F01D003DF636 /* New Group */,
+				5910B88B1D1234D700BA1C16 /* Controller */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -510,27 +536,12 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D85BEFAD1D347BBA0059260F /* 登录 */,
 				D8FD1E9A1D23B7330059719B /* 首页 */,
-				5925B8611D1CB680006734FA /* 美食 */,
-				59FFB6DF1D05066F00071E0E /* 商家 */,
-				59F284971D1E5B3800C815D1 /* 宾馆 */,
-				59F2848B1D1E1A6000C815D1 /* 外卖 */,
-				59F284AC1D1E6E9100C815D1 /* 电影 */,
-				59EAD9751D20F1F0003DF636 /* 超市 */,
-				D82B044C1D2A504A0086A108 /* 生活服务(宴会) */,
-				D86C09981D29ECA80016C1A9 /* 生活服务(旅游) */,
-				D8AF72141D27AB0000C40F7E /* 生活服务(摄影) */,
-				5983FD051D2A2DC000FCC9C9 /* 生活服务(学习) */,
-				D8B71AC41D27902F00F0DBC8 /* 生活服务(汽车) */,
-				D8071D781D265CE100A2A403 /* 生活服务(婚庆) */,
+				59EE7BFB1D39DFF7009692CF /* 美食外卖controller */,
+				59EE7BFA1D39DFAE009692CF /* 同城服务Controller */,
+				59EE7BF91D39DEE8009692CF /* 生活服务Controller */,
+				59FFB6DF1D05066F00071E0E /* Market */,
 				D804B9991D263C2E00DB283D /* 新闻 */,
-				593ADDC31D25005C008D1777 /* 求职招聘 */,
-				D8AF29811D24EB5E00166DC5 /* 家政服务 */,
-				593ADDBE1D24ED49008D1777 /* 二手置换 */,
-				D8FD1E9B1D23B9000059719B /* 拼车 */,
-				D8AAD0521D236174005915D1 /* 全部分类 */,
-				D8247FAB1D212CEA007C573F /* 休闲娱乐 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -538,8 +549,6 @@
 		5910B88E1D1234D700BA1C16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5918702C1D2CFE4700D54040 /* TakeOutModel.h */,
-				5918702D1D2CFE4700D54040 /* TakeOutModel.m */,
 				D81D73841D2DE93A00998605 /* MovieModel.h */,
 				D81D73851D2DE93A00998605 /* MovieModel.m */,
 			);
@@ -725,6 +734,8 @@
 		59D6F4421D2B800B00D16D85 /* TakeOutInformation */ = {
 			isa = PBXGroup;
 			children = (
+				59EE7BF61D39C696009692CF /* TypeTakeOutTableViewController.h */,
+				59EE7BF71D39C696009692CF /* TypeTakeOutTableViewController.m */,
 				59D6F4431D2B806F00D16D85 /* TakeOutInformationController.h */,
 				59D6F4441D2B806F00D16D85 /* TakeOutInformationController.m */,
 				59465DA31D30805000908C08 /* ShoppingCartViewController.h */,
@@ -790,14 +801,6 @@
 			name = OtherTool;
 			sourceTree = "<group>";
 		};
-		59EAD9741D20F01D003DF636 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				5910B88B1D1234D700BA1C16 /* Controller */,
-			);
-			name = "New Group";
-			sourceTree = "<group>";
-		};
 		59EAD9751D20F1F0003DF636 /* 超市 */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,12 +815,63 @@
 			name = "超市";
 			sourceTree = "<group>";
 		};
+		59EE7BF91D39DEE8009692CF /* 生活服务Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D82B044C1D2A504A0086A108 /* 生活服务(宴会) */,
+				D86C09981D29ECA80016C1A9 /* 生活服务(旅游) */,
+				D8AF72141D27AB0000C40F7E /* 生活服务(摄影) */,
+				5983FD051D2A2DC000FCC9C9 /* 生活服务(学习) */,
+				D8B71AC41D27902F00F0DBC8 /* 生活服务(汽车) */,
+				D8071D781D265CE100A2A403 /* 生活服务(婚庆) */,
+			);
+			name = "生活服务Controller";
+			sourceTree = "<group>";
+		};
+		59EE7BFA1D39DFAE009692CF /* 同城服务Controller */ = {
+			isa = PBXGroup;
+			children = (
+				59EE7BFC1D3A0A9F009692CF /* 小广告 */,
+				593ADDC31D25005C008D1777 /* 求职招聘 */,
+				D8AF29811D24EB5E00166DC5 /* 家政服务 */,
+				593ADDBE1D24ED49008D1777 /* 二手置换 */,
+			);
+			name = "同城服务Controller";
+			sourceTree = "<group>";
+		};
+		59EE7BFB1D39DFF7009692CF /* 美食外卖controller */ = {
+			isa = PBXGroup;
+			children = (
+				5925B8611D1CB680006734FA /* 美食 */,
+				59F284971D1E5B3800C815D1 /* 宾馆 */,
+				59F2848B1D1E1A6000C815D1 /* 外卖 */,
+				59F284AC1D1E6E9100C815D1 /* 电影 */,
+				59EAD9751D20F1F0003DF636 /* 超市 */,
+				D8FD1E9B1D23B9000059719B /* 拼车 */,
+				D8AAD0521D236174005915D1 /* 全部分类 */,
+				D8247FAB1D212CEA007C573F /* 休闲娱乐 */,
+			);
+			name = "美食外卖controller";
+			sourceTree = "<group>";
+		};
+		59EE7BFC1D3A0A9F009692CF /* 小广告 */ = {
+			isa = PBXGroup;
+			children = (
+				59EE7BFD1D3A0B1D009692CF /* SmallAdvertisingTableViewController.h */,
+				59EE7BFE1D3A0B1D009692CF /* SmallAdvertisingTableViewController.m */,
+				59EE7C001D3A0E97009692CF /* SmallAdvertisingCell.h */,
+				59EE7C011D3A0E97009692CF /* SmallAdvertisingCell.m */,
+				59EE7C031D3A1433009692CF /* SmallAdvertisingModel.h */,
+				59EE7C041D3A1433009692CF /* SmallAdvertisingModel.m */,
+			);
+			name = "小广告";
+			sourceTree = "<group>";
+		};
 		59F2848B1D1E1A6000C815D1 /* 外卖 */ = {
 			isa = PBXGroup;
 			children = (
-				59D6F4421D2B800B00D16D85 /* TakeOutInformation */,
-				59F2848C1D1E1A9B00C815D1 /* TakeOutTableViewController.h */,
-				59F2848D1D1E1A9B00C815D1 /* TakeOutTableViewController.m */,
+				590E437B1D38DA8100F49F2E /* ViewController */,
+				590E43741D38A0CE00F49F2E /* Model */,
 				5925B8621D1CB9A6006734FA /* TakeCell(外卖) */,
 			);
 			name = "外卖";
@@ -829,6 +883,7 @@
 				59F284A91D1E618600C815D1 /* TheHotelTableViewController.h */,
 				59F284AA1D1E618600C815D1 /* TheHotelTableViewController.m */,
 				59F284A31D1E5BA900C815D1 /* TheHotel(宾馆) */,
+				D807DE531D2E1EC700A5EECF /* Model */,
 			);
 			name = "宾馆";
 			sourceTree = "<group>";
@@ -839,7 +894,6 @@
 				59F284A41D1E5BE900C815D1 /* TheHotelTableViewCell.h */,
 				59F284A51D1E5BE900C815D1 /* TheHotelTableViewCell.m */,
 				59F284A61D1E5BE900C815D1 /* TheHotelTableViewCell.xib */,
-				D807DE531D2E1EC700A5EECF /* Model */,
 			);
 			name = "TheHotel(宾馆)";
 			path = ../View;
@@ -1030,12 +1084,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		59FFB6DF1D05066F00071E0E /* 商家 */ = {
+		59FFB6DF1D05066F00071E0E /* Market */ = {
 			isa = PBXGroup;
 			children = (
 				59FFB6E01D05066F00071E0E /* Controller */,
 			);
-			name = "商家";
+			name = Market;
 			path = ../../Market;
 			sourceTree = "<group>";
 		};
@@ -1135,6 +1189,7 @@
 				59FFB6FA1D050F9500071E0E /* NavigationViewController.m */,
 				59366BBD1D06872300BB445A /* BaseViewController.h */,
 				59366BBE1D06872300BB445A /* BaseViewController.m */,
+				D85BEFAD1D347BBA0059260F /* 登录 */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1197,6 +1252,7 @@
 				D807DE551D2E1EE700A5EECF /* TheHotelModel.m */,
 			);
 			name = Model;
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		D8247FAB1D212CEA007C573F /* 休闲娱乐 */ = {
@@ -1255,6 +1311,7 @@
 				D8FF7D8B1D34D42300F69830 /* LoginViewController.xib */,
 			);
 			name = "登录";
+			path = HomePage/Controller;
 			sourceTree = "<group>";
 		};
 		D86C09981D29ECA80016C1A9 /* 生活服务(旅游) */ = {
@@ -1611,6 +1668,7 @@
 				D8FF7D8C1D34D42300F69830 /* LoginViewController.m in Sources */,
 				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,
 				59FFB7031D051EA800071E0E /* UIView+Extension.m in Sources */,
+				59EE7BF81D39C696009692CF /* TypeTakeOutTableViewController.m in Sources */,
 				59F470101D372209006F7E0B /* AddressAndMOdificationViewController.m in Sources */,
 				D836C8931D30D47E0043D730 /* HouseModel.m in Sources */,
 				D86C099F1D29EE1B0016C1A9 /* TravelTableViewCell.m in Sources */,
@@ -1618,6 +1676,7 @@
 				593ADDC61D2500CB008D1777 /* PleaseJobTableViewController.m in Sources */,
 				D8CB6E341D338E24005F5A2A /* LearnModel.m in Sources */,
 				59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */,
+				59EE7BFF1D3A0B1D009692CF /* SmallAdvertisingTableViewController.m in Sources */,
 				D8B71AD11D27929600F0DBC8 /* sevCarTableViewCell.m in Sources */,
 				59D096FD1D139E6C00039C87 /* SDCycleScrollView.m in Sources */,
 				59F2848E1D1E1A9B00C815D1 /* TakeOutTableViewController.m in Sources */,
@@ -1626,7 +1685,6 @@
 				59EAD9711D20C2E4003DF636 /* ImageAndLabView.m in Sources */,
 				D8B71AC71D27909B00F0DBC8 /* sevCarTableViewController.m in Sources */,
 				D8071D7B1D265E1C00A2A403 /* WeddingTableViewController.m in Sources */,
-				5918702E1D2CFE4700D54040 /* TakeOutModel.m in Sources */,
 				D836C88D1D309D030043D730 /* ShopModel.m in Sources */,
 				5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */,
 				D8AF72171D27AB7200C40F7E /* TakePhotoTableViewController.m in Sources */,
@@ -1645,6 +1703,7 @@
 				D8FD1E9E1D23B9460059719B /* CarViewController.m in Sources */,
 				59D097011D13C32F00039C87 /* HomeModelView.m in Sources */,
 				59465DAB1D30C24F00908C08 /* SubmitOrderViewController.m in Sources */,
+				59EE7C051D3A1433009692CF /* SmallAdvertisingModel.m in Sources */,
 				59D096F91D139E6C00039C87 /* TAAnimatedDotView.m in Sources */,
 				59EC73A21D0947EA009062D9 /* SearchView.m in Sources */,
 				59D096FB1D139E6C00039C87 /* TAPageControl.m in Sources */,
@@ -1697,6 +1756,7 @@
 				59F284911D1E1B3400C815D1 /* ScrollView.m in Sources */,
 				5910B8AE1D1238F300BA1C16 /* ConditionDoubleTableView.m in Sources */,
 				59F284AB1D1E618600C815D1 /* TheHotelTableViewController.m in Sources */,
+				59EE7C021D3A0E97009692CF /* SmallAdvertisingCell.m in Sources */,
 				D8AF29881D24EC6F00166DC5 /* HouseTableViewController.m in Sources */,
 				59D097041D13C74A00039C87 /* HomeTableViewCell.m in Sources */,
 				59D096F81D139E6C00039C87 /* TAAbstractDotView.m in Sources */,
@@ -1717,6 +1777,7 @@
 				59D097071D13DB2C00039C87 /* TableViewHeader.m in Sources */,
 				D836C8901D30CA810043D730 /* GameModel.m in Sources */,
 				59FFB6A61D0501F000071E0E /* main.m in Sources */,
+				590E437A1D38A21500F49F2E /* TakeOutModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

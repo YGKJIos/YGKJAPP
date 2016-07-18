@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"提交订单";
+    
     self.arr = @[@"鱼丸粗面",@"墨鱼丸粗面",@"鱼丸油面"];
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];

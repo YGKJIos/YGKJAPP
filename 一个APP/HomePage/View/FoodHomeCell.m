@@ -6,6 +6,7 @@
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
+// 美食精选
 #import "FoodHomeCell.h"
 #import "HomeModelView.h"
 
@@ -20,7 +21,6 @@
             view.frame = CGRectMake(20+i*(71+17), 17, 0, 0);
             [self.contentView addSubview:view];
         }
-        
     }
     return self;
 }

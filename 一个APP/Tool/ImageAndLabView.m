@@ -28,7 +28,7 @@
 
 - (void)clickAction:(UIButton *)btn
 {
-    NSLog(@"你点击了---- ImageAndLabView");
+    [self.delegate imageAndLableViewPush];
 }
 
 
