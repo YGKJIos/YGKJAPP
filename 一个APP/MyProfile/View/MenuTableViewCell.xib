@@ -18,6 +18,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wode_qianbao" translatesAutoresizingMaskIntoConstraints="NO" id="Ui0-uZ-3hq">
                         <rect key="frame" x="23" y="11" width="20" height="21"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="21" id="3JV-cz-6xS"/>
                             <constraint firstAttribute="width" constant="20" id="Mp8-OG-seI"/>
                         </constraints>
                     </imageView>

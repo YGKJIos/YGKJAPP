@@ -66,7 +66,6 @@
     return self;
 }
 
-
 + (HomeModelView *)foodModelStyleView
 {
     HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil].firstObject;
@@ -90,8 +89,6 @@
     HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil][2];
         return view;
 }
-
-
 - (void)ordinaryModelStyle
 {
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height-20)];
@@ -117,13 +114,5 @@
     return view;
 }
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
