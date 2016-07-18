@@ -6,6 +6,7 @@
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
+// 嗨购专场 的cell
 #import "ShoppingCell.h"
 #import "HomeModelView.h"
 

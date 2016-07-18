@@ -39,7 +39,7 @@
     tableView.dataSource = self;
     tableView.backgroundColor = BGcolor(222, 222, 222);
     [self.view addSubview:tableView];
-    tableView.showsVerticalScrollIndicator = YES;
+    tableView.showsVerticalScrollIndicator = NO;
     tableView.separatorInset = UIEdgeInsetsMake(0, 30, 0, 30);
     
     profileHeaderView *view = [profileHeaderView CreateProfileHeaderView];

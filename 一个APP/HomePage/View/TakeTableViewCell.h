@@ -7,17 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TakeOutModel.h"
 
 @interface TakeTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *foodImageView; // 店铺图片
 @property (weak, nonatomic) IBOutlet UILabel *shopName; //店铺名称
-@property (weak, nonatomic) IBOutlet UILabel *jianLab; // 减
-@property (weak, nonatomic) IBOutlet UILabel *xinLab; // 新
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab; //起送价
 @property (weak, nonatomic) IBOutlet UILabel *sendLab; // 配送费
-@property (weak, nonatomic) IBOutlet UILabel *salesLab; // 销售
+@property (weak, nonatomic) IBOutlet UILabel *salesLab; // 商家通知
+@property (weak, nonatomic) IBOutlet UILabel *gradeLab;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 
 + (TakeTableViewCell *)CreateTakeOutCell;
+- (void)setTakeOutModel:(TakeOutModel *)model;
 
 
 @end

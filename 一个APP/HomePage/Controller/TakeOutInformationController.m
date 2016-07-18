@@ -37,6 +37,10 @@
     self.result = YES;
     self.num = 0;
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBarButtonItemClickItme) image:@"wode_sctb" highImage:@"wode_sctb"];
+    self.navigationItem.rightBarButtonItem = rightItme;
+
     self.listArr = [NSMutableArray arrayWithObjects:@"热销菜品",@"套餐",@"盖饭",@"炒菜",@"凉菜",@"饮品", nil];
     
     TakeOutInformationView *headView = [TakeOutInformationView CreateInformationNib];
@@ -51,6 +55,10 @@
     [self.view addSubview:headView];
     [self addTableView];
     [self addFoodView];
+}
+- (void)rightBarButtonItemClickItme
+{
+    NSLog(@"点击收藏");
 }
 #pragma mark - 网络请求
 
@@ -153,7 +161,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (tableView == self.rightTableView) {
-        
         UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH -114*WIDTH/375, 40)];
         headView.backgroundColor = [UIColor whiteColor];
         
@@ -206,7 +213,6 @@
     self.foodView.tag = 5000;
     self.foodView.width = WIDTH;
     self.foodView.height = 450;
-//    foodView.backgroundColor = [UIColor blueColor];
     [self.foodView.orderMoneyBtn addTarget:self action:@selector(orderMoneyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.foodView];
     
@@ -246,7 +252,7 @@
     NSLog(@"123");
 }
 
-// 店内餐品点击方法
+// 店内餐品 下划线 滑动的效果
 - (void)cateBtnClick
 {
     [UIView animateWithDuration:0.2 animations:^{

@@ -78,7 +78,6 @@
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"meishi/querymeishi1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 MarketModel *model = [[MarketModel alloc] init];

@@ -30,17 +30,8 @@
     [self.view addSubview:homeTabVC.tableView];
 }
 
-//-(UIView *)navigationView
-//{
-//    if (!_navigationView) {
-//        self.navigationView = [[UIView alloc]init];
-//    }
-//    return _navigationView;
-//}
 - (void)addNavigationView
 {
-//    self.navigationView.frame = self.navigationController.navigationBar.bounds;
-//    [self.navigationController.navigationBar addSubview:self.navigationView];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 60, 40);
@@ -49,8 +40,6 @@
     button.titleLabel.font = [UIFont systemFontOfSize:13];
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = item;
-    
-
     
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.width = 205;
@@ -62,19 +51,12 @@
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
-    
-//    [self.navigationView setHidden:YES];
-}
 - (void)searchClickAction
 {
     SearchViewController *searchVC = [[SearchViewController alloc]init];
     [self.navigationController pushViewController:searchVC animated:YES];
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-//    [self.navigationView setHidden:NO];
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

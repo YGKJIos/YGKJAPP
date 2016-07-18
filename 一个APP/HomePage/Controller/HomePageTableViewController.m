@@ -7,7 +7,6 @@
 //
 
 #import "HomePageTableViewController.h"
-#import "CateViewController.h" // 美食controller
 #import "SDCycleScrollView.h"  //轮播图
 #import "HomeTableViewCell.h"
 #import "TableViewHeader.h"  //table section 视图
@@ -16,6 +15,7 @@
 #import "ThridTableViewCell.h"
 #import "FoodHomeCell.h"
 #import "ShoppingCell.h"
+#import "CateViewController.h" // 美食controller
 #import "TakeOutTableViewController.h" //外卖
 #import "TheHotelTableViewController.h" // 宾馆
 #import "SupermarketViewController.h" //超市
@@ -23,18 +23,20 @@
 #import "GameTableViewController.h" // 休闲娱乐
 #import "AllStylViewController.h" // 全部分类
 #import "CarViewController.h" // 拼车
-#import "PleaseJobTableViewController.h" //求职招聘
-#import "SecondHandTableViewController.h"// 二手置换
-#import "HouseTableViewController.h" // 家政服务
-#import "NewsTableViewController.h" // 新闻
-#import "LearnViewController.h" // 学习培训
+#import "LearnViewController.h" // 生活服务（学习培训）
 #import "sevCarTableViewController.h" // 生活服务(汽车)
 #import "TravelTableViewController.h" // 生活服务(旅游)
 #import "TakePhotoTableViewController.h" //生活服务(摄影)
 #import "WeddingTableViewController.h" // 生活服务(婚庆)
 #import "FeastTableViewController.h" // 生活服务(宴会)
-#import "shopViewController.h" // 本地购物
 
+#import "PleaseJobTableViewController.h" //同城服务（求职招聘）
+#import "SecondHandTableViewController.h"//同城服务 （二手置换）
+#import "HouseTableViewController.h" // 同城服务（家政服务）
+#import "SmallAdvertisingTableViewController.h" //同城服务（小广告）
+#import "NewsTableViewController.h" // 新闻
+
+#import "shopViewController.h" // 本地购物
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate>
 
@@ -49,9 +51,7 @@
     [self.tableView setShowsHorizontalScrollIndicator:NO];
     [self.tableView setShowsVerticalScrollIndicator:NO];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    
-//    NSLog(@"w === %f,h === %f",WIDTH,HEIGHT);
-    
+
 }
 - (void)addHeaderView
 {
@@ -70,14 +70,11 @@
     // pageControl样式
     self.scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
     self.scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    // 轮播图上的文字
-//    scrollView.titlesGroup = titles;
     // 分页控件图标
     self.scrollView.dotColor = [UIColor cyanColor];
     
     // 循环时间间隔,默认2.0s
     self.scrollView.autoScrollTimeInterval = 2.0;
-//    self.tableView.tableHeaderView = self.scrollView;
 }
 // 点击轮播图的方法
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
@@ -93,7 +90,6 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 10;
 }
 
@@ -184,7 +180,8 @@
 }
 
 #pragma mark - tableViewCell
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     // 同城服务
     if (indexPath.section == 2) {
@@ -342,7 +339,11 @@
         shopViewController *shopVC = [[shopViewController alloc] init];
         [self.navigationController pushViewController:shopVC animated:YES];
     }
-    
+    // 生活缴费
+    if (num == 1001) {
+        HouseTableViewController *houseVC = [[HouseTableViewController alloc] init];
+        [self.navigationController pushViewController:houseVC animated:YES];
+    }
     // 家政服务
     if (num == 1002) {
         HouseTableViewController *houseVC = [[HouseTableViewController alloc] init];
@@ -358,6 +359,11 @@
         PleaseJobTableViewController *pleaseVC = [[PleaseJobTableViewController alloc]init];
         [self.navigationController pushViewController:pleaseVC animated:YES];
     }
+    // 小广告栏
+    if (num == 1005) {
+        SmallAdvertisingTableViewController *houseVC = [[SmallAdvertisingTableViewController alloc] init];
+        [self.navigationController pushViewController:houseVC animated:YES];
+    }
     
 }
 
@@ -365,10 +371,8 @@
 - (void)ThridPushViewControllerNum:(NSInteger)num
 {
 #pragma mark - 生活服务
-    NSLog(@"%ld", num);
     // 汽车服务
     if (num == 1000) {
-        
         sevCarTableViewController *sevCarVC = [[sevCarTableViewController alloc] init];
         [self.navigationController pushViewController:sevCarVC animated:YES];
     }
@@ -386,7 +390,6 @@
     
     // 婚庆服务
     if (num == 1003) {
-        
         WeddingTableViewController *weddingVC = [[WeddingTableViewController alloc] init];
         [self.navigationController pushViewController:weddingVC animated:YES];
     }
@@ -400,7 +403,6 @@
     if (num == 1005) {
         FeastTableViewController *feastVC = [[FeastTableViewController alloc] init];
         [self.navigationController pushViewController:feastVC animated:YES];
-        
     }
 #pragma mark - 实事新闻
     // 时事新闻
