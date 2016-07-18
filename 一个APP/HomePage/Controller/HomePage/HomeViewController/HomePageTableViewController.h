@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol HomePagePush <NSObject>
 
-<#methods#>
-
-@end
 
 @interface HomePageTableViewController : UITableViewController
 
