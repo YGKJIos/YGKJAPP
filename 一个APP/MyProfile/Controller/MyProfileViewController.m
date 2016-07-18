@@ -10,7 +10,7 @@
 #import "FictionTableViewCell.h"
 #import "profileHeaderView.h"
 #import "MenuTableViewCell.h"
-
+#import "SetTableViewController.h"
 @interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)NSArray *images;
 @property (nonatomic, strong)NSArray *titles;
@@ -22,13 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self data];
-    // Do any additional setup after loading the view.
+    
     UIBarButtonItem *barBtn = [UIBarButtonItem itemWithTarget:self action:@selector(RightAction) image:@"wode_shezhi" highImage:@""];
     self.navigationItem.rightBarButtonItem = barBtn;
     [self addTableView];
 }
 - (void)RightAction
 {
+    
+    NSLog(@"daksjhdkajshdkjashdlkashdlkashdklahdkl");
     NSLog(@"wode_rightBarButtonItem");
 }
 - (void)addTableView{
