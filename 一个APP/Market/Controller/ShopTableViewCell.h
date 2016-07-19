@@ -19,7 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *juliLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *tehuiImage;
 
-+ (ShopTableViewCell *) createShopCell;
++ (ShopTableViewCell *) createShopCell; // 商家的cell
++ (ShopTableViewCell *) createCateTableViewCellNib;// 美食的cell
 
 - (void) ShopModel:(ShopModel *)model;
 @end

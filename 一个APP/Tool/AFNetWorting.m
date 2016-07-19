@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 
 static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
+static NSString *bendiUrl = @"http://192.168.1.88:8080/shangcheng/"; // 本地服务器
 @implementation AFNetWorting
 
 #pragma mark - 创建请求者
@@ -37,7 +38,7 @@ static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测�
     progress.backgroundColor = [UIColor grayColor];
     progress.alpha = 0.5;
     // 拼接url
-    NSString *addressUrl = [NSString stringWithFormat:@"%@%@",headerUrl,urlString];
+    NSString *addressUrl = [NSString stringWithFormat:@"%@%@",bendiUrl,urlString];
     
     // AFN网络请求
     AFHTTPSessionManager *manager = [self manager];
