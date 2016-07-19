@@ -8,8 +8,8 @@
 
 #import "FirstTableViewCell.h"
 
-#define width self.width
-#define height self.height
+//#define width self.width
+//#define height self.height
 
 @implementation FirstTableViewCell
 
@@ -19,14 +19,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         int num = 0;
+        CGFloat wid = (WIDTH -220) / 4;
+        CGFloat boundsWid = 30 * WIDTH/375;
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 4; j++) {
-                UIImageView *imageView = [UIImageView newAutoLayoutView];
+                UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake((boundsWid+j*(50+wid)), (25+i*(67+20)), 50*WIDTH/375, 67*[UIScreen mainScreen].bounds.size.height/667) ];
+
                 [self.contentView addSubview:imageView];
-                
-                [imageView autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:(30*width/365+(width/4+20*width/365)*j)*width/365];
-                [imageView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:(25+i*(67+20))];
-                [imageView autoSetDimensionsToSize:CGSizeMake(50, 67)];
+
                 imageView.tag = 1000+(num++);
                 [imageView setUserInteractionEnabled:YES];
 
@@ -43,7 +43,6 @@
     UIImageView *imageView = (UIImageView *)tap.view;
     [self.delegate pushViewControllerNum:imageView.tag];
 
-    NSLog(@"111");
 }
 
 -(void)setFirstCellImage:(NSArray *)images

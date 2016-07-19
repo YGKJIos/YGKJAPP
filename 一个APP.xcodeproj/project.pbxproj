@@ -776,8 +776,8 @@
 		594590441D3CA1D400FAF565 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				594590451D3CA1D400FAF565 /* HomeView */,
 				594590571D3CA1D400FAF565 /* HomeViewController */,
+				594590451D3CA1D400FAF565 /* HomeView */,
 				5945905C1D3CA1D400FAF565 /* SearchViewController.h */,
 				5945905D1D3CA1D400FAF565 /* SearchViewController.m */,
 			);

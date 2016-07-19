@@ -38,7 +38,7 @@
 
 #import "shopViewController.h" // 本地购物
 
-@interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate>
+@interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate,FoodHomePushDelegate,ShopingPushDelegate>
 
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
 
@@ -182,7 +182,6 @@
 #pragma mark - tableViewCell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     // 同城服务
     if (indexPath.section == 2) {
         SecondTableViewCell *cell = [[SecondTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -228,6 +227,7 @@
         FoodHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"foodId"];
         if (!cell) {
             cell = [[FoodHomeCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"foodId"];
+            cell.delegate = self;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -237,6 +237,7 @@
         ShoppingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shopId"];
         if (cell == nil) {
             cell = [[ShoppingCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"shopId"];
+            cell.delegate = self;
         }
         NSArray *arr = @[@"shouye_xpfs",@"shouye_ppmz",@"shouye_xbwb",@"shouye_bgjj",@"shouye_kjxp",@"shouye_ydhw",@"shouye_haigou",];
         [cell setShoppingCellImage:arr];
@@ -248,6 +249,7 @@
         ThridTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"traveId"];
         if (cell == nil) {
             cell = [[ThridTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"traveId"];
+            cell.delegte = self;
             [cell cellStyle:travelCellStyle];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
@@ -259,6 +261,7 @@
         if (cell == nil) {
             cell = [[ThridTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"hotJobId"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.delegte =self;
             [cell cellStyle:hotJobCellStyle];
         }
         
@@ -270,8 +273,10 @@
         if (!cell) {
             cell = [[ThridTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"secondId"];
             [cell cellStyle:secondCellStyle];
+            cell.delegte = self;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         return cell;
     }
     
@@ -366,7 +371,6 @@
     }
     
 }
-
 #pragma mark - 生活服务 || 实事新闻
 - (void)ThridPushViewControllerNum:(NSInteger)num
 {
@@ -410,9 +414,33 @@
         NewsTableViewController *newsVC = [[NewsTableViewController alloc] init];
         [self.navigationController pushViewController:newsVC animated:YES];
     }
+#pragma mard - 周边畅游
+    if (num == 3000 || num ==3001 || num == 3002 ) {
+        TravelTableViewController *travelVC = [[TravelTableViewController alloc] init];
+        [self.navigationController pushViewController:travelVC animated:YES];
+    }
+    if (num == 4000 || num == 4001) {
+        PleaseJobTableViewController *pleaseVC = [[PleaseJobTableViewController alloc]init];
+        [self.navigationController pushViewController:pleaseVC animated:YES];
+    }
+    if (num == 5000 || num == 5001) {
+        SecondHandTableViewController *secondVC = [[SecondHandTableViewController alloc]init];
+        [self.navigationController pushViewController:secondVC animated:YES];
+    }
     
 }
-
+#pragma mark - 美食精选
+- (void)foodHomePushDelegateMethod
+{
+    CateViewController *cateVC = [[CateViewController alloc]init];
+    [self.navigationController pushViewController:cateVC animated:YES];
+}
+#pragma mark - 嗨购专场
+- (void)shopingPushDelegateMethod
+{
+    shopViewController *shopVC = [[shopViewController alloc] init];
+    [self.navigationController pushViewController:shopVC animated:YES];
+}
 
 
 @end

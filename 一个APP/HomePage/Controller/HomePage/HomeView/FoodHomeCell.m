@@ -16,9 +16,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        CGFloat wid = (WIDTH -345) / 3;
+        CGFloat boundsWid = 30 * WIDTH/375;
         for (int i = 0; i < 4; i++) {
             HomeModelView *view = [HomeModelView foodModelStyleView];
-            view.frame = CGRectMake(20+i*(71+17), 17, 0, 0);
+            view.frame = CGRectMake(boundsWid+i*(71+wid), 17, 0, 0);
             [self.contentView addSubview:view];
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction:)];
@@ -31,7 +33,7 @@
 
 - (void)tapClickAction:(UITapGestureRecognizer *)tap
 {
-    
+    [self.delegate foodHomePushDelegateMethod];
 }
 - (void)awakeFromNib {
     // Initialization code

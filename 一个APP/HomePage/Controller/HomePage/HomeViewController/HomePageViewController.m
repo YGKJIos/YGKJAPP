@@ -12,7 +12,6 @@
 
 @interface HomePageViewController ()
 
-//@property (nonatomic, strong)UIView *navigationView;
 
 @end
 

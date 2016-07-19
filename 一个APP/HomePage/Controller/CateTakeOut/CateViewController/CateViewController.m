@@ -24,8 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationLeftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
@@ -33,8 +31,6 @@
     
     UIBarButtonItem *rightItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationRigthBtnAction) image:@"meishi_sousuo" highImage:@"meishi_sousuo"];
     self.navigationItem.rightBarButtonItem = rightItem;
-    
-    self.bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 370)];
     
     [self addHeaderView];
     [self addMenuBtn];
@@ -115,6 +111,7 @@
 }
 - (void)addHeaderView
 {
+    self.bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 330)];
     UIImage *image1 = [UIImage imageNamed:@"shouye_guangg"];
         
         UIImage *image2 = [UIImage imageNamed:@"shouye_haigou"];
@@ -159,20 +156,20 @@
         }
     }
     
-    NSArray *titleArray = @[@"全部分类",@"附近",@"智能"];
-    for (int i = 0; i < 3; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(WIDTH/3*i, 320, WIDTH/3, 40);
-        button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
-        button.imageEdgeInsets = UIEdgeInsetsMake(0, 80, 0, 0);
-        button.titleLabel.textColor = BGcolor(198, 198, 198);
-        [button setTitleColor:[UIColor colorWithRed:198/255. green:198/255. blue:198/255. alpha:1] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:13];
-        [button setTitle:titleArray[i] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(downMeunClick) forControlEvents:UIControlEventTouchUpInside];
-        [self.bgView addSubview:button];
-    }
+//    NSArray *titleArray = @[@"全部分类",@"附近",@"智能"];
+//    for (int i = 0; i < 3; i++) {
+//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        button.frame = CGRectMake(WIDTH/3*i, 320, WIDTH/3, 40);
+//        button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
+//        button.imageEdgeInsets = UIEdgeInsetsMake(0, 80, 0, 0);
+//        button.titleLabel.textColor = BGcolor(198, 198, 198);
+//        [button setTitleColor:[UIColor colorWithRed:198/255. green:198/255. blue:198/255. alpha:1] forState:UIControlStateNormal];
+//        button.titleLabel.font = [UIFont systemFontOfSize:13];
+//        [button setTitle:titleArray[i] forState:UIControlStateNormal];
+//        [button setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
+//        [button addTarget:self action:@selector(downMeunClick) forControlEvents:UIControlEventTouchUpInside];
+//        [self.bgView addSubview:button];
+//    }
 
 //    DropdownMenu *dropdown = [[DropdownMenu alloc] initDropdownWithButtonTitles:titleArray andLeftListArray:nil andRightListArray:nil];
 ////    dropdown.view.frame = CGRectMake(0, 200, WIDTH, 40);
@@ -180,14 +177,14 @@
 //    [self.bgView addSubview:dropdown.view];
     
 }
-- (void)downMeunClick
-{
-    
-}
-// 下拉菜单
-- (void)dropdownSelectedButtonIndex:(NSString *)index LeftIndex:(NSString *)left RightIndex:(NSString *)right {
-    NSLog(@"%s : You choice button %@, left %@ and right %@", __FUNCTION__, index, left, right);
-}
+//- (void)downMeunClick
+//{
+//    
+//}
+//// 下拉菜单
+//- (void)dropdownSelectedButtonIndex:(NSString *)index LeftIndex:(NSString *)left RightIndex:(NSString *)right {
+//    NSLog(@"%s : You choice button %@, left %@ and right %@", __FUNCTION__, index, left, right);
+//}
 
 //轮播图 点击代理方法
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
@@ -195,13 +192,7 @@
     NSLog(@"%ld",index);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.MarkeArr.count;
@@ -223,20 +214,6 @@
     return 108;
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 0)];
-//    view.backgroundColor = [UIColor redColor];
-//    NSArray *titleArray = @[@"全部分类",@"附近",@"智能"];
-//    DropdownMenu *dropdown = [[DropdownMenu alloc] initDropdownWithButtonTitles:titleArray andLeftListArray:nil andRightListArray:nil];
-//    dropdown.delegate = self;   //此句的代理方法可返回选中下标值
-//    [view addSubview:dropdown.view];
-//    return view;
-//}
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    return 40;
-//}
 
 
 @end
