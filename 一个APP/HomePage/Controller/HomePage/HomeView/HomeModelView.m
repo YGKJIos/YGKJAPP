@@ -79,6 +79,7 @@
     
     return view;
 }
+// 畅游周边 view
 + (HomeModelView *)travelModelStyleView
 {
     HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil][1];
@@ -108,6 +109,7 @@
     self.titleLab.text = title;
 }
 
+// 二手置换
 + (HomeModelView *)secondHandModelStyle
 {
     HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil][3];

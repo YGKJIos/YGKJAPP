@@ -30,18 +30,29 @@
         [self.contentView addSubview:bgView];
         
         self.leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH/2-161, 10, 121, 51)];
+        [self.leftImage setUserInteractionEnabled:YES];
         self.leftImage.image = [UIImage imageNamed:@"shouye_xpfs"];
         [bgView addSubview:self.leftImage];
+        UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
+        [self.leftImage addGestureRecognizer:leftTap];
         
         self.rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(self.leftImage.x+self.leftImage.width+35, 10, 121, 51)];
+        [self.rightImage setUserInteractionEnabled:YES];
         self.rightImage.image = [UIImage imageNamed:@"shouye_ppmz"];
         [bgView addSubview:self.rightImage];
+        UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
+        [self.rightImage addGestureRecognizer:rightTap];
         
+        CGFloat wid = (WIDTH -330) / 3;
+        CGFloat boundsWid = 25 * WIDTH/375;
         for (int i = 0; i < 4; i++) {
-            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(25+(70+15)*i, bgView.y+bgView.height+10, 70, 110)];
+            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(boundsWid+(70+wid)*i, bgView.y+bgView.height+10, 70, 110)];
             [view ordinaryModelStyle];
             view.tag = 1000+i;
             [self.contentView addSubview:view];
+            
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
+            [view addGestureRecognizer:tap];
         }
     }
     self.imgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -62,6 +73,10 @@
     }
     [self.imgBtn setBackgroundImage:[UIImage imageNamed:[images lastObject]] forState:UIControlStateNormal];
     
+}
+- (void)tapClickAction
+{
+    [self.delegate shopingPushDelegateMethod];
 }
 
 - (void)awakeFromNib {

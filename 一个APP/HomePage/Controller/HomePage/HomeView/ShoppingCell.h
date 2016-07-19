@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ShopingPushDelegate <NSObject>
+
+- (void)shopingPushDelegateMethod;
+
+@end
+
 @interface ShoppingCell : UITableViewCell
 
+@property (nonatomic, assign)id<ShopingPushDelegate>delegate;
 - (void)setShoppingCellImage:(NSArray *)images;
 
 @end
