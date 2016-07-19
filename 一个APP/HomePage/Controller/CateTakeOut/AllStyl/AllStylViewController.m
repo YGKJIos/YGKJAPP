@@ -14,10 +14,13 @@
 
 
 @interface AllStylViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
-@property(nonatomic, retain) NSMutableArray *arr;
-
+@property (nonatomic, retain) NSMutableArray *arr;
+// 美食
 @property (nonatomic, retain) NSMutableArray *arr1;
-
+@property (nonatomic, retain) NSMutableArray *imageArr;
+// 摄影
+@property (nonatomic, retain) NSMutableArray *photoArr;
+@property (nonatomic, retain) NSMutableArray *photoImageArr;
 @end
 
 @implementation AllStylViewController
@@ -26,21 +29,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     self.arr = [NSMutableArray arrayWithObjects:@"美食", @"摄影写真", @"本地购物", @"宴会", @"周边游", @"休闲娱乐", @"酒店宾馆", @"学习培训", @"生活服务", @"其他", nil];
-    
-    self.arr1 = [NSMutableArray arrayWithObjects:@"火锅", @"烧烤烤肉", @"西餐", @"日本料理", @"韩餐", @"中餐", @"蛋糕甜点", @"自助餐", @"小吃", @"聚会宴请", @"冷饮", @"咖啡酒吧", @"十大回家", @"大大", @"是我打完",@"个人负担", @"二测完成", @"而反侧", @"管发放", nil];
-    
+    // 美食
+    self.arr1 = [NSMutableArray arrayWithObjects:@"火锅", @"烧烤烤肉", @"西餐", @"日本料理", @"韩餐", @"中餐", @"蛋糕甜点", @"自助餐", @"小吃", @"聚会宴请", @"冷饮", @"咖啡酒吧",  nil];
+    self.imageArr = [NSMutableArray arrayWithObjects:@"meishi_06", @"meishi_08", @"meishi_10", @"meishi_15", @"meishi_16", @"meishi_17", @"meishi_21" , @"meishi_22", @"meishi_23", @"meishi_27", @"meishi_29", @"meishi_30", nil];
+    // 摄影
     
     return self;
 }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self creatLeftTableView];
     [self creatRightCollecTionView];
-    
-    
 }
 
 
@@ -101,9 +101,9 @@
     // 创建官方的瀑布流
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     // 设置item尺寸
-    flowLayout.itemSize = CGSizeMake(88, 60);
+    flowLayout.itemSize = CGSizeMake(75, 60);
     
-    flowLayout.minimumLineSpacing = 70;
+    flowLayout.minimumLineSpacing = 60;
     
     flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 130, 20);
     // headerView高度
@@ -117,11 +117,10 @@
     
     collectionView.delegate = self;
     collectionView.dataSource = self;
-    
-    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"reuse"];
+
     
     // cell注册
-    [collectionView registerClass:[AllStylCollectionViewCell class] forCellWithReuseIdentifier:@"reuse"];
+    [collectionView registerClass:[AllStylCollectionViewCell class] forCellWithReuseIdentifier:@"collectionCellID"];
     
     
     // headerView注册
@@ -150,14 +149,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    AllStylCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reuse" forIndexPath:indexPath];
+    AllStylCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCellID" forIndexPath:indexPath];
     
-    cell.foodImage.backgroundColor = [UIColor orangeColor];
-    cell.nanmeLabel.backgroundColor = [UIColor whiteColor];
-    cell.nanmeLabel.textAlignment = NSTextAlignmentCenter;
-    [cell setImages:nil titles:self.arr1[indexPath.row]];
-
-    cell.foodImage.image = [UIImage imageNamed:@"qbfl_ms_hg"];
+    [cell setImages:self.imageArr[indexPath.row] titles:self.arr1[indexPath.row]];
     
     return cell;
     

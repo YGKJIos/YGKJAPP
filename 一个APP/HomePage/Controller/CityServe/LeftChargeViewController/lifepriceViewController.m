@@ -1,30 +1,22 @@
 //
-//  priceViewController.m
+//  lifepriceViewController.m
 //  一个APP
 //
 //  Created by 远古科技 on 16/7/18.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "priceViewController.h"
 #import "lifepriceViewController.h"
-@interface priceViewController ()
+
+@interface lifepriceViewController ()
 
 @end
 
-@implementation priceViewController
+@implementation lifepriceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-}
-// 生活缴费 跳转放法
-- (IBAction)lifePriceBtn:(id)sender {
-    lifepriceViewController *lifeVC = [[lifepriceViewController alloc] init];
-    [self presentViewController:lifeVC animated:YES completion:^{
-        
-    }];
-    
 }
 
 - (void)didReceiveMemoryWarning {

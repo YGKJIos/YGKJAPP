@@ -54,6 +54,9 @@
                         <constraint firstAttribute="height" constant="99" id="bWY-rc-Kqj"/>
                     </constraints>
                     <state key="normal" title="Button" image="shenghuojiaofei-kuandai"/>
+                    <connections>
+                        <action selector="lifePriceBtn:" destination="-1" eventType="touchUpInside" id="Zgh-WD-6Q4"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shenghuojiaofei-beijing" translatesAutoresizingMaskIntoConstraints="NO" id="MjE-Fm-aGg">
                     <rect key="frame" x="0.0" y="396" width="375" height="271"/>
