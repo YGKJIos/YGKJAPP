@@ -35,7 +35,7 @@
 #import "HouseTableViewController.h" // 同城服务（家政服务）
 #import "SmallAdvertisingTableViewController.h" //同城服务（小广告）
 #import "NewsTableViewController.h" // 新闻
-
+#import "priceViewController.h" // 生活缴费
 #import "shopViewController.h" // 本地购物
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate,FoodHomePushDelegate,ShopingPushDelegate>
@@ -346,8 +346,8 @@
     }
     // 生活缴费
     if (num == 1001) {
-        HouseTableViewController *houseVC = [[HouseTableViewController alloc] init];
-        [self.navigationController pushViewController:houseVC animated:YES];
+        priceViewController *priceVC = [[priceViewController alloc] init];
+        [self.navigationController pushViewController:priceVC animated:YES];
     }
     // 家政服务
     if (num == 1002) {

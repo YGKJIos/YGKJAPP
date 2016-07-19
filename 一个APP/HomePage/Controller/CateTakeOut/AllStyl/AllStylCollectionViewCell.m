@@ -27,12 +27,18 @@
     self.foodImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 60)];
     [self addSubview:self.foodImage];
     
+    self.foodImage.backgroundColor = [UIColor orangeColor];
+    self.nanmeLabel.textColor = BGcolor(97, 97, 97);
+    self.nanmeLabel.textAlignment = NSTextAlignmentCenter;
+    self.nanmeLabel.font = [UIFont systemFontOfSize:16];
+    
+    
 }
 
 - (void)setImages:(NSString *)image titles:(NSString *)title
 {
     self.nanmeLabel.text = title;
-    if (image == nil) {
+    if (image) {
         self.foodImage.image = [UIImage imageNamed:image];
         return;
     }

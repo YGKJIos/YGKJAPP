@@ -17,7 +17,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *yearLab;
 @property (weak, nonatomic) IBOutlet UILabel *moenyLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
-@property (weak, nonatomic) IBOutlet UILabel *filiLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *fuliImage;
+@property (weak, nonatomic) IBOutlet UIImageView *fuliImage2;
+@property (weak, nonatomic) IBOutlet UIImageView *fuliImage3;
+
 
 
 + (PleaseJobTableViewCell *)createJobCell;

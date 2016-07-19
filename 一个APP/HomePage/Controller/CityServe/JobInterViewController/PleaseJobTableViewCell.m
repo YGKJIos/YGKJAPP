@@ -24,7 +24,7 @@ static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng/";
     self.locationLab.text = model.shangjiaWeizhi;
     self.degreeLab.text = model.qiuzhiXueli;
     self.yearLab.text = model.qiuzhiNianxian;
-    self.filiLabel.text = model.qiuzhiFuli;
+    
 }
 
 
