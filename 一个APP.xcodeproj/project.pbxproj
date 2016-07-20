@@ -12,6 +12,7 @@
 		5910B8AF1D1238F300BA1C16 /* DropdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8AA1D1238F300BA1C16 /* DropdownButton.m */; };
 		5910B8B01D1238F300BA1C16 /* DropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8AC1D1238F300BA1C16 /* DropdownMenu.m */; };
 		5910B8B11D1238F300BA1C16 /* expandableImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5910B8AD1D1238F300BA1C16 /* expandableImage@2x.png */; };
+		592F298B1D3DC20A0016A550 /* CateTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F298A1D3DC20A0016A550 /* CateTypeTableViewController.m */; };
 		59366BBF1D06872300BB445A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BBE1D06872300BB445A /* BaseViewController.m */; };
 		59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BC41D06CB8B00BB445A /* MessageTableViewCell.m */; };
 		59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59366BC51D06CB8B00BB445A /* MessageTableViewCell.xib */; };
@@ -168,11 +169,11 @@
 		D80148FB1D3CD79C00334EDB /* payViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80148F91D3CD79C00334EDB /* payViewController.xib */; };
 		D80148FF1D3CEB9B00334EDB /* lifepriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80148FD1D3CEB9B00334EDB /* lifepriceViewController.m */; };
 		D80149001D3CEB9B00334EDB /* lifepriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80148FE1D3CEB9B00334EDB /* lifepriceViewController.xib */; };
+		D807A9B21D3F67FB00BC2801 /* JobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D807A9B11D3F67FB00BC2801 /* JobModel.m */; };
 		D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */; };
 		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
 		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
 		D842DF321D224642008A54B7 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */; };
-		D84CC9DC1D3DED9B00B615AF /* JobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CC9DB1D3DED9B00B615AF /* JobModel.m */; };
 		D84CC9E01D3DF06B00B615AF /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CC9DF1D3DF06B00B615AF /* HomeModel.m */; };
 		D84FB6A41D39D6BA008B22E5 /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84FB6A31D39D6BA008B22E5 /* SetTableViewController.m */; };
 		D853E4721D3C853400C1FF9D /* fotgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D853E4641D3C853400C1FF9D /* fotgetViewController.m */; };
@@ -216,6 +217,8 @@
 		5910B8AB1D1238F300BA1C16 /* DropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropdownMenu.h; sourceTree = "<group>"; };
 		5910B8AC1D1238F300BA1C16 /* DropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropdownMenu.m; sourceTree = "<group>"; };
 		5910B8AD1D1238F300BA1C16 /* expandableImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "expandableImage@2x.png"; sourceTree = "<group>"; };
+		592F29891D3DC20A0016A550 /* CateTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateTypeTableViewController.h; sourceTree = "<group>"; };
+		592F298A1D3DC20A0016A550 /* CateTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateTypeTableViewController.m; sourceTree = "<group>"; };
 		59366BBD1D06872300BB445A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		59366BBE1D06872300BB445A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		59366BC31D06CB8B00BB445A /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
@@ -497,13 +500,13 @@
 		D80148FC1D3CEB9B00334EDB /* lifepriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lifepriceViewController.h; sourceTree = "<group>"; };
 		D80148FD1D3CEB9B00334EDB /* lifepriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lifepriceViewController.m; sourceTree = "<group>"; };
 		D80148FE1D3CEB9B00334EDB /* lifepriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = lifepriceViewController.xib; sourceTree = "<group>"; };
+		D807A9B01D3F67FB00BC2801 /* JobModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobModel.h; sourceTree = "<group>"; };
+		D807A9B11D3F67FB00BC2801 /* JobModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobModel.m; sourceTree = "<group>"; };
 		D842DF2A1D224642008A54B7 /* DOPDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOPDropDownMenu.h; sourceTree = "<group>"; };
 		D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOPDropDownMenu.m; sourceTree = "<group>"; };
 		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
 		D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
 		D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
-		D84CC9DA1D3DED9B00B615AF /* JobModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobModel.h; sourceTree = "<group>"; };
-		D84CC9DB1D3DED9B00B615AF /* JobModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobModel.m; sourceTree = "<group>"; };
 		D84CC9DE1D3DF06B00B615AF /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		D84CC9DF1D3DF06B00B615AF /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		D84FB6A21D39D6BA008B22E5 /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
@@ -747,10 +750,10 @@
 				594590131D3C9FAD00FAF565 /* PleaseJobTableViewCell.h */,
 				594590141D3C9FAD00FAF565 /* PleaseJobTableViewCell.m */,
 				594590151D3C9FAD00FAF565 /* PleaseJobTableViewCell.xib */,
-				D84CC9DA1D3DED9B00B615AF /* JobModel.h */,
-				D84CC9DB1D3DED9B00B615AF /* JobModel.m */,
 				594590161D3C9FAD00FAF565 /* PleaseJobTableViewController.h */,
 				594590171D3C9FAD00FAF565 /* PleaseJobTableViewController.m */,
+				D807A9B01D3F67FB00BC2801 /* JobModel.h */,
+				D807A9B11D3F67FB00BC2801 /* JobModel.m */,
 			);
 			path = JobInterViewController;
 			sourceTree = "<group>";
@@ -944,6 +947,8 @@
 			children = (
 				594590A41D3CAA5D00FAF565 /* CateViewController.h */,
 				594590A51D3CAA5D00FAF565 /* CateViewController.m */,
+				592F29891D3DC20A0016A550 /* CateTypeTableViewController.h */,
+				592F298A1D3DC20A0016A550 /* CateTypeTableViewController.m */,
 			);
 			path = CateViewController;
 			sourceTree = "<group>";
@@ -1698,7 +1703,6 @@
 				594591051D3CAA5D00FAF565 /* AddFoodView.m in Sources */,
 				59D096F91D139E6C00039C87 /* TAAnimatedDotView.m in Sources */,
 				59EC73A21D0947EA009062D9 /* SearchView.m in Sources */,
-				D84CC9DC1D3DED9B00B615AF /* JobModel.m in Sources */,
 				59D096FB1D139E6C00039C87 /* TAPageControl.m in Sources */,
 				5945903A1D3C9FAD00FAF565 /* SecondHandTableViewCell.m in Sources */,
 				594591131D3CAA5D00FAF565 /* TakeOutInformationView.m in Sources */,
@@ -1741,8 +1745,10 @@
 				594590351D3C9FAD00FAF565 /* PleaseJobTableViewCell.m in Sources */,
 				594590311D3C9FAD00FAF565 /* HouseModel.m in Sources */,
 				D853E4781D3C853400C1FF9D /* postViewController.m in Sources */,
+				D807A9B21D3F67FB00BC2801 /* JobModel.m in Sources */,
 				59366BBF1D06872300BB445A /* BaseViewController.m in Sources */,
 				59458FFB1D3C8A1C00FAF565 /* CarModel.m in Sources */,
+				592F298B1D3DC20A0016A550 /* CateTypeTableViewController.m in Sources */,
 				5945910F1D3CAA5D00FAF565 /* ShoppingCartTableViewCell.m in Sources */,
 				59D096FE1D139E6C00039C87 /* UIView+SDExtension.m in Sources */,
 				594590F61D3CAA5D00FAF565 /* AllStylViewController.m in Sources */,

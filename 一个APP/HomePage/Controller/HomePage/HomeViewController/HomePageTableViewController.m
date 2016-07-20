@@ -55,7 +55,6 @@
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.homeArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -105,7 +104,6 @@
             NSLog(@"error-----%@",error);
         }];
         
-        NSLog(@"MJ-下拉刷新");
         
     });
     
@@ -114,7 +112,6 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
     });
 }
 

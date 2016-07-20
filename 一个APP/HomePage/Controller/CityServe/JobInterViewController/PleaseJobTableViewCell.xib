@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="112.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zc_touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="aFn-dU-RBo">
@@ -157,6 +157,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="degreeLab" destination="NTX-CH-XWU" id="ali-wX-4G3"/>
+                <outlet property="fuliImage" destination="789-3h-njT" id="Lod-kG-sAe"/>
+                <outlet property="fuliImage2" destination="mGs-nJ-upe" id="XmJ-P9-f3o"/>
+                <outlet property="fuliImage3" destination="xzO-rk-gCK" id="bQL-rr-Q30"/>
                 <outlet property="headImage" destination="aFn-dU-RBo" id="z5C-ce-KZQ"/>
                 <outlet property="informationLab" destination="PsP-zr-Mcb" id="AAi-Dg-ruG"/>
                 <outlet property="locationLab" destination="N5b-nk-TCE" id="81Y-xD-Cnt"/>
@@ -165,7 +168,7 @@
                 <outlet property="timeLab" destination="h8i-rB-9gD" id="Ex2-ZK-Bde"/>
                 <outlet property="yearLab" destination="8cc-cn-D0E" id="NWP-xm-OM4"/>
             </connections>
-            <point key="canvasLocation" x="215.5" y="310.5"/>
+            <point key="canvasLocation" x="323" y="280.5"/>
         </tableViewCell>
     </objects>
     <resources>

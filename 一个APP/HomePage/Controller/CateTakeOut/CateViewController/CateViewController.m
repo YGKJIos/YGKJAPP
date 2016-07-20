@@ -7,12 +7,13 @@
 //
 
 #import "CateViewController.h"
+#import "CateTypeTableViewController.h"// 自助餐，火锅。。。
 #import "SDCycleScrollView.h"
 #import "DropdownMenu.h"
 #import "MarketCell.h"
 #import "MarketModel.h"
 
-@interface CateViewController ()<SDCycleScrollViewDelegate,dropdownDelegate>
+@interface CateViewController ()<SDCycleScrollViewDelegate,dropdownDelegate,ImageLabViewPushVCDelegate>
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
 @property (nonatomic, strong)UIView *bgView;// tableViewHeaderView
 @property (nonatomic, strong)DropdownMenu *menu;
@@ -109,6 +110,7 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+#pragma mark - 轮播图
 - (void)addHeaderView
 {
     self.bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 330)];
@@ -143,13 +145,13 @@
     NSArray *arr = @[@"meishi_zizhu",@"meishi_huoguo",@"meishi_kuaican",@"meishi_xican",@"meishi_zhongcan",@"meishi_shaokao",@"meishi_dangao",@"meishi_quanbu"];
     
     NSArray *titles = @[@"自助餐",@"火锅",@"快餐小吃",@"西餐",@"中餐",@"烤肉/烧烤",@"蛋糕",@"全部分类",];
-    
     int num = 0;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 4; j++) {
-
             ImageAndLabView *view = [ImageAndLabView createViewNib];
+            [view setUserInteractionEnabled:YES];
             [view setImages:arr[num] names:titles[num]];
+            view.delegate = self;
             num++;
             view.frame = CGRectMake(35+j*(40+50), 170+i*(67+20), 40, 60);
             [self.bgView addSubview:view];
@@ -175,7 +177,11 @@
 ////    dropdown.view.frame = CGRectMake(0, 200, WIDTH, 40);
 //    dropdown.delegate = self;   //此句的代理方法可返回选中下标值
 //    [self.bgView addSubview:dropdown.view];
-    
+}
+- (void)imageAndLableViewPush
+{
+    CateTypeTableViewController *cateTypeVC = [[CateTypeTableViewController alloc]init];
+    [self.navigationController pushViewController:cateTypeVC animated:YES];
 }
 //- (void)downMeunClick
 //{

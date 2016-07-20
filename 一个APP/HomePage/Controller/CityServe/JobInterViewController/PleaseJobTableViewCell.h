@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "JobModel.h"
 @interface PleaseJobTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
@@ -17,5 +17,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *yearLab;
 @property (weak, nonatomic) IBOutlet UILabel *moenyLab;
 @property (weak, nonatomic) IBOutlet UILabel *timeLab;
+@property (weak, nonatomic) IBOutlet UIImageView *fuliImage;
+@property (weak, nonatomic) IBOutlet UIImageView *fuliImage2;
+@property (weak, nonatomic) IBOutlet UIImageView *fuliImage3;
+
+
+
++ (PleaseJobTableViewCell *)createJobCell;
+
+- (void) JobModel:(JobModel *)model;
 
 @end
