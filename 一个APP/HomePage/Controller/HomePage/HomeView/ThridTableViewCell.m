@@ -8,9 +8,8 @@
 
 #import "ThridTableViewCell.h"
 #import "HomeModelView.h"
-
+static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
 @interface ThridTableViewCell ()
-
 @property (nonatomic, strong)UIImageView *posterImage;
 
 @end
@@ -54,9 +53,9 @@
     CGFloat boundsWid = 35 * WIDTH/375;
     for (int i = 0; i < 3; i++) {
         HomeModelView *view = [HomeModelView travelModelStyleView];
+        view.frame = CGRectMake(boundsWid+i*(90+wid), 10,90, 102);
         [view setUserInteractionEnabled:YES];
         view.tag = 3000+i;
-        view.origin = CGPointMake(boundsWid+i*(90+wid), 10);
         [self.contentView addSubview:view];
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
@@ -140,7 +139,7 @@
     [self.contentView addSubview:leftView];
     
     HomeModelView *rightView = [HomeModelView secondHandModelStyle];
-    leftView.tag = 5001;
+    rightView.tag = 5001;
     rightView.origin = CGPointMake(leftView.x+leftView.width+20, 10);
     
     UITapGestureRecognizer *liftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
@@ -156,33 +155,77 @@
 {
     UIImageView *image = (UIImageView *)tap.view;
     [self.delegte ThridPushViewControllerNum:image.tag];
-    NSLog(@"%ld",image.tag);
 }
 
--(void)setThridCellImage:(NSArray *)images titles:(NSArray *)titles
+-(void)setThridCellHomeModel:(HomeModel *)model
 {
     // 生活服务
     if (self.style == lifeServeCellStyle) {
-        for (int i = 0; i < images.count-1; i++) {
-            HomeModelView *view = [self.contentView viewWithTag:1000+i];
-            [view setModelImageViewName:images[i] title:titles[i]];
+        NSArray *arr = @[@"shouye_qcfw",@"shouye_tcly",@"shouye_syxz",@"shouye_hqff",@"shouye_xxpx",@"shouye_yhfw",@"shouye_xinwen"];
+        for (int i = 0; i < arr.count-1; i++) {
+            HomeModelView *view = (HomeModelView *)[self.contentView viewWithTag:1000+i];
+            view.imageV.image = [UIImage imageNamed:arr[i]];
         }
-        self.posterImage.image = [UIImage imageNamed:[images lastObject]];
+        self.posterImage.image = [UIImage imageNamed:[arr lastObject]];
     }
     // 新闻添加图片
     if (self.style == newCellStyle) {
-        for (int i = 0; i < images.count-1; i++) {
+        NSArray *arr = @[model.xinwenTupian1,model.xinwenTupian2,@"shouye_meishitou"];
+        NSArray *titles = @[model.xinwenName1, model.xinwenName2];
+        for (int i = 0; i < titles.count; i++) {
             HomeModelView *view = [self.contentView viewWithTag:2000+i];
-            [view setModelImageViewName:images[i] title:titles[i]];
+            NSString *url = [NSString stringWithFormat:@"%@%@",headUrl,arr[i]];
+            [view.imageV sd_setImageWithURL:[NSURL URLWithString:url]];
+            view.titleLab.text = titles[i];
         }
-        self.posterImage.image = [UIImage imageNamed:[images lastObject]];
+        self.posterImage.image = [UIImage imageNamed:[arr lastObject]];
     }
     // 周边畅游
     if (self.style == travelCellStyle) {
-        for (int i = 0; i < images.count-1; i++) {
-            HomeModelView *view = [self.contentView viewWithTag:3000+i];
-            [view setModelImageViewName:images[i] title:titles[i]];
+        NSArray *jiage = @[model.zhoubianJiage1,model.zhoubianJiage2,model.zhoubianJiage3];
+        NSArray *names = @[model.zhoubianName1,model.zhoubianName2,model.zhoubianName3];
+        NSArray *juli = @[model.zhoubianJuli1,model.zhoubianJuli2,model.zhoubianJuli3];
+        NSArray *images = @[model.zhoubianTupian1,model.zhoubianTupian2,model.zhoubianTupian3];
+        
+        for (int i = 0; i < images.count; i++) {
+            HomeModelView *view = (HomeModelView *)[self.contentView viewWithTag:3000+i];
+            NSString *urlStr = [NSString stringWithFormat:@"%@%@",headUrl,images[i]];
+            [view.travelImage sd_setImageWithURL:[NSURL URLWithString:urlStr]];
+            view.travelImage.opaque = YES;
+            view.travelNameLab.text = names[i];
+            view.travelMoneyLab.text = [NSString stringWithFormat:@"¥%@",jiage[i]];
+            view.distanceLab.text = juli[i];
         }
+    }
+    // 热门招聘
+    if (self.style == hotJobCellStyle) {
+        HomeModelView *liftView = (HomeModelView *)[self.contentView viewWithTag:4000];
+        liftView.invitePost.text = model.zhaopinZhiwei1;
+        liftView.companyName.text = model.zhaopinGongsi1;
+        liftView.inviteLocation.text = model.zhaopinWeizhi1;
+        liftView.inviteMoneyLab.text = model.zhaopinJiage1;
+        
+        HomeModelView *rightView = (HomeModelView *)[self.contentView viewWithTag:4001];
+        rightView.invitePost.text = model.zhaopinZhiwei2;
+        rightView.companyName.text = model.zhaopinGongsi2;
+        rightView.inviteLocation.text = model.zhaopinWeizhi2;
+        rightView.inviteMoneyLab.text = model.zhaopinJiage2;
+        
+    }
+    // 二手置换
+    if (self.style == secondCellStyle) {
+        
+        HomeModelView *liftView = (HomeModelView *)[self.contentView viewWithTag:5000];
+        NSString *leftUrl = [NSString stringWithFormat:@"%@%@", headUrl,model.ershouTupian1];
+        [liftView.secondImage sd_setImageWithURL:[NSURL URLWithString:leftUrl]];
+        liftView.secondName.text = model.ershouName1;
+        liftView.secondMoney.text = model.ershouJiage1;
+        
+        HomeModelView *rightView = (HomeModelView *)[self.contentView viewWithTag:5001];
+        NSString *rightUrl = [NSString stringWithFormat:@"%@%@",headUrl,model.ershouTupian2];
+        [rightView.secondImage sd_setImageWithURL:[NSURL URLWithString:rightUrl]];
+        rightView.secondName.text = model.ershouName2;
+        rightView.secondMoney.text = model.ershouJiage2;
     }
 }
 

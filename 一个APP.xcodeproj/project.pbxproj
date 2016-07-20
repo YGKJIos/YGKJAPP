@@ -172,6 +172,8 @@
 		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
 		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
 		D842DF321D224642008A54B7 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */; };
+		D84CC9DC1D3DED9B00B615AF /* JobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CC9DB1D3DED9B00B615AF /* JobModel.m */; };
+		D84CC9E01D3DF06B00B615AF /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CC9DF1D3DF06B00B615AF /* HomeModel.m */; };
 		D84FB6A41D39D6BA008B22E5 /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84FB6A31D39D6BA008B22E5 /* SetTableViewController.m */; };
 		D853E4721D3C853400C1FF9D /* fotgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D853E4641D3C853400C1FF9D /* fotgetViewController.m */; };
 		D853E4731D3C853400C1FF9D /* fotgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D853E4651D3C853400C1FF9D /* fotgetViewController.xib */; };
@@ -500,6 +502,10 @@
 		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
 		D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
 		D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
+		D84CC9DA1D3DED9B00B615AF /* JobModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobModel.h; sourceTree = "<group>"; };
+		D84CC9DB1D3DED9B00B615AF /* JobModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobModel.m; sourceTree = "<group>"; };
+		D84CC9DE1D3DF06B00B615AF /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		D84CC9DF1D3DF06B00B615AF /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		D84FB6A21D39D6BA008B22E5 /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
 		D84FB6A31D39D6BA008B22E5 /* SetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewController.m; sourceTree = "<group>"; };
 		D853E4631D3C853400C1FF9D /* fotgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fotgetViewController.h; sourceTree = "<group>"; };
@@ -741,6 +747,8 @@
 				594590131D3C9FAD00FAF565 /* PleaseJobTableViewCell.h */,
 				594590141D3C9FAD00FAF565 /* PleaseJobTableViewCell.m */,
 				594590151D3C9FAD00FAF565 /* PleaseJobTableViewCell.xib */,
+				D84CC9DA1D3DED9B00B615AF /* JobModel.h */,
+				D84CC9DB1D3DED9B00B615AF /* JobModel.m */,
 				594590161D3C9FAD00FAF565 /* PleaseJobTableViewController.h */,
 				594590171D3C9FAD00FAF565 /* PleaseJobTableViewController.m */,
 			);
@@ -789,6 +797,7 @@
 		594590441D3CA1D400FAF565 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				D84CC9DD1D3DF04D00B615AF /* HomeMdel */,
 				594590571D3CA1D400FAF565 /* HomeViewController */,
 				594590451D3CA1D400FAF565 /* HomeView */,
 				5945905C1D3CA1D400FAF565 /* SearchViewController.h */,
@@ -1380,6 +1389,15 @@
 			path = "DropdownMenu/DOPDropDownMenu - Enhanced";
 			sourceTree = "<group>";
 		};
+		D84CC9DD1D3DF04D00B615AF /* HomeMdel */ = {
+			isa = PBXGroup;
+			children = (
+				D84CC9DE1D3DF06B00B615AF /* HomeModel.h */,
+				D84CC9DF1D3DF06B00B615AF /* HomeModel.m */,
+			);
+			name = HomeMdel;
+			sourceTree = "<group>";
+		};
 		D853E4611D3C853400C1FF9D /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -1653,6 +1671,7 @@
 				594590061D3C8A1C00FAF565 /* TravelTableViewController.m in Sources */,
 				594591181D3CAA5D00FAF565 /* TypeTakeOutTableViewController.m in Sources */,
 				594590FF1D3CAA5D00FAF565 /* MovieTableViewController.m in Sources */,
+				D84CC9E01D3DF06B00B615AF /* HomeModel.m in Sources */,
 				D853E4761D3C853400C1FF9D /* postsucceedViewController.m in Sources */,
 				59EAD9711D20C2E4003DF636 /* ImageAndLabView.m in Sources */,
 				5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */,
@@ -1679,6 +1698,7 @@
 				594591051D3CAA5D00FAF565 /* AddFoodView.m in Sources */,
 				59D096F91D139E6C00039C87 /* TAAnimatedDotView.m in Sources */,
 				59EC73A21D0947EA009062D9 /* SearchView.m in Sources */,
+				D84CC9DC1D3DED9B00B615AF /* JobModel.m in Sources */,
 				59D096FB1D139E6C00039C87 /* TAPageControl.m in Sources */,
 				5945903A1D3C9FAD00FAF565 /* SecondHandTableViewCell.m in Sources */,
 				594591131D3CAA5D00FAF565 /* TakeOutInformationView.m in Sources */,
