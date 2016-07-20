@@ -11,6 +11,7 @@ static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng/";
 
 @implementation PleaseJobTableViewCell
 
+
 + (PleaseJobTableViewCell *)createJobCell
 {
     PleaseJobTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"PleaseJobTableViewCell" owner:nil options:nil] lastObject];

@@ -146,6 +146,14 @@
 		59EC73A21D0947EA009062D9 /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EC73A11D0947EA009062D9 /* SearchView.m */; };
 		59ED1C131D05B5E100405D17 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ED1C121D05B5E100405D17 /* UIBarButtonItem+Extension.m */; };
 		59F061D91D0E409C006BEF9F /* AFNetWorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F061D81D0E409C006BEF9F /* AFNetWorting.m */; };
+		59F2650B1D3F07BC002F9D56 /* gasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F265091D3F07BC002F9D56 /* gasViewController.m */; };
+		59F2650C1D3F07BC002F9D56 /* gasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F2650A1D3F07BC002F9D56 /* gasViewController.xib */; };
+		59F265151D3F0F9D002F9D56 /* powerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F265131D3F0F9D002F9D56 /* powerViewController.m */; };
+		59F265161D3F0F9D002F9D56 /* powerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F265141D3F0F9D002F9D56 /* powerViewController.xib */; };
+		59F2651A1D3F1276002F9D56 /* waterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F265181D3F1276002F9D56 /* waterViewController.m */; };
+		59F2651B1D3F1276002F9D56 /* waterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F265191D3F1276002F9D56 /* waterViewController.xib */; };
+		59F2651F1D3F14CE002F9D56 /* carViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2651D1D3F14CE002F9D56 /* carViewController.m */; };
+		59F265201D3F14CE002F9D56 /* carViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F2651E1D3F14CE002F9D56 /* carViewController.xib */; };
 		59F284911D1E1B3400C815D1 /* ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284901D1E1B3400C815D1 /* ScrollView.m */; };
 		59F786041D0BAAC4005A39FB /* AddressHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F786031D0BAAC4005A39FB /* AddressHeaderView.m */; };
 		59F786071D0BD541005A39FB /* FriendGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F786061D0BD541005A39FB /* FriendGroupView.m */; };
@@ -455,6 +463,18 @@
 		59ED1C121D05B5E100405D17 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		59F061D71D0E409C006BEF9F /* AFNetWorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetWorting.h; sourceTree = "<group>"; };
 		59F061D81D0E409C006BEF9F /* AFNetWorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetWorting.m; sourceTree = "<group>"; };
+		59F265081D3F07BC002F9D56 /* gasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gasViewController.h; sourceTree = "<group>"; };
+		59F265091D3F07BC002F9D56 /* gasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gasViewController.m; sourceTree = "<group>"; };
+		59F2650A1D3F07BC002F9D56 /* gasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = gasViewController.xib; sourceTree = "<group>"; };
+		59F265121D3F0F9D002F9D56 /* powerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = powerViewController.h; sourceTree = "<group>"; };
+		59F265131D3F0F9D002F9D56 /* powerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = powerViewController.m; sourceTree = "<group>"; };
+		59F265141D3F0F9D002F9D56 /* powerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = powerViewController.xib; sourceTree = "<group>"; };
+		59F265171D3F1276002F9D56 /* waterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = waterViewController.h; sourceTree = "<group>"; };
+		59F265181D3F1276002F9D56 /* waterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = waterViewController.m; sourceTree = "<group>"; };
+		59F265191D3F1276002F9D56 /* waterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = waterViewController.xib; sourceTree = "<group>"; };
+		59F2651C1D3F14CE002F9D56 /* carViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carViewController.h; sourceTree = "<group>"; };
+		59F2651D1D3F14CE002F9D56 /* carViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carViewController.m; sourceTree = "<group>"; };
+		59F2651E1D3F14CE002F9D56 /* carViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = carViewController.xib; sourceTree = "<group>"; };
 		59F2848F1D1E1B3400C815D1 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
 		59F284901D1E1B3400C815D1 /* ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollView.m; sourceTree = "<group>"; };
 		59F786021D0BAAC4005A39FB /* AddressHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressHeaderView.h; sourceTree = "<group>"; };
@@ -764,6 +784,18 @@
 				D80148FC1D3CEB9B00334EDB /* lifepriceViewController.h */,
 				D80148FD1D3CEB9B00334EDB /* lifepriceViewController.m */,
 				D80148FE1D3CEB9B00334EDB /* lifepriceViewController.xib */,
+				59F265081D3F07BC002F9D56 /* gasViewController.h */,
+				59F265091D3F07BC002F9D56 /* gasViewController.m */,
+				59F2650A1D3F07BC002F9D56 /* gasViewController.xib */,
+				59F265121D3F0F9D002F9D56 /* powerViewController.h */,
+				59F265131D3F0F9D002F9D56 /* powerViewController.m */,
+				59F265141D3F0F9D002F9D56 /* powerViewController.xib */,
+				59F265171D3F1276002F9D56 /* waterViewController.h */,
+				59F265181D3F1276002F9D56 /* waterViewController.m */,
+				59F265191D3F1276002F9D56 /* waterViewController.xib */,
+				59F2651C1D3F14CE002F9D56 /* carViewController.h */,
+				59F2651D1D3F14CE002F9D56 /* carViewController.m */,
+				59F2651E1D3F14CE002F9D56 /* carViewController.xib */,
 			);
 			path = LeftChargeViewController;
 			sourceTree = "<group>";
@@ -1544,13 +1576,16 @@
 				594591081D3CAA5D00FAF565 /* AddressAndMOdificationViewController.xib in Resources */,
 				594590051D3C8A1C00FAF565 /* TravelTableViewCell.xib in Resources */,
 				594591161D3CAA5D00FAF565 /* TakeOutRightTableCell.xib in Resources */,
+				59F265161D3F0F9D002F9D56 /* powerViewController.xib in Resources */,
 				59458FF51D3C8A1C00FAF565 /* FeastTableViewCell.xib in Resources */,
 				59EAD9731D20C302003DF636 /* ImageAndLabView.xib in Resources */,
 				594590331D3C9FAD00FAF565 /* HouseTableViewCell.xib in Resources */,
 				594590361D3C9FAD00FAF565 /* PleaseJobTableViewCell.xib in Resources */,
+				59F265201D3F14CE002F9D56 /* carViewController.xib in Resources */,
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
 				5945907F1D3CA34F00FAF565 /* WeddingTableViewCell.xib in Resources */,
 				594590FD1D3CAA5D00FAF565 /* MoiveTableViewCell.xib in Resources */,
+				59F2651B1D3F1276002F9D56 /* waterViewController.xib in Resources */,
 				59F786091D0BD793005A39FB /* FriendGroupView.xib in Resources */,
 				59458FFD1D3C8A1C00FAF565 /* sevCarTableViewCell.xib in Resources */,
 				594590FA1D3CAA5D00FAF565 /* GameTableViewCell.xib in Resources */,
@@ -1558,6 +1593,7 @@
 				594590081D3C8A1C00FAF565 /* TravelView.xib in Resources */,
 				594591141D3CAA5D00FAF565 /* TakeOutInformationView.xib in Resources */,
 				5945911A1D3CAA5D00FAF565 /* TakeTableViewCell.xib in Resources */,
+				59F2650C1D3F07BC002F9D56 /* gasViewController.xib in Resources */,
 				594591261D3CAC2500FAF565 /* NewsTableViewCell.xib in Resources */,
 				594590611D3CA1D400FAF565 /* HomeModelView.xib in Resources */,
 				D80149001D3CEB9B00334EDB /* lifepriceViewController.xib in Resources */,
@@ -1671,7 +1707,9 @@
 				594590381D3C9FAD00FAF565 /* priceViewController.m in Sources */,
 				5945905F1D3CA1D400FAF565 /* FoodHomeCell.m in Sources */,
 				5945910D1D3CAA5D00FAF565 /* OrderPersonTableViewCell.m in Sources */,
+				59F265151D3F0F9D002F9D56 /* powerViewController.m in Sources */,
 				594591001D3CAA5D00FAF565 /* CarViewController.m in Sources */,
+				59F2651A1D3F1276002F9D56 /* waterViewController.m in Sources */,
 				594591111D3CAA5D00FAF565 /* SubmitOrderViewController.m in Sources */,
 				594591271D3CAC2500FAF565 /* NewsTableViewController.m in Sources */,
 				594590011D3C8A1C00FAF565 /* LearnModel.m in Sources */,
@@ -1760,6 +1798,8 @@
 				59F7860D1D0BD9A1005A39FB /* FriendCell.m in Sources */,
 				5945903E1D3C9FAD00FAF565 /* shopCollectionViewCell.m in Sources */,
 				594591011D3CAA5D00FAF565 /* HeaderCollectionReusableView.m in Sources */,
+				59F2651F1D3F14CE002F9D56 /* carViewController.m in Sources */,
+				59F2650B1D3F07BC002F9D56 /* gasViewController.m in Sources */,
 				59F786041D0BAAC4005A39FB /* AddressHeaderView.m in Sources */,
 				594591151D3CAA5D00FAF565 /* TakeOutRightTableCell.m in Sources */,
 				59FFB6FB1D050F9500071E0E /* NavigationViewController.m in Sources */,

@@ -8,6 +8,10 @@
 
 #import "priceViewController.h"
 #import "lifepriceViewController.h"
+#import "gasViewController.h"
+#import "powerViewController.h"
+#import "waterViewController.h"
+#import "carViewController.h"
 @interface priceViewController ()
 
 @end
@@ -18,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
-// 生活缴费 跳转放法
+// 固话缴费 跳转放法
 - (IBAction)lifePriceBtn:(id)sender {
     lifepriceViewController *lifeVC = [[lifepriceViewController alloc] init];
     [self presentViewController:lifeVC animated:YES completion:^{
@@ -26,6 +30,39 @@
     }];
     
 }
+
+// 燃气缴费跳转方法
+- (IBAction)gasBtn:(id)sender {
+    gasViewController *gasVC = [[gasViewController alloc] init];
+    [self presentViewController:gasVC animated:YES completion:^{
+        
+    }];
+}
+// 电费跳转方法
+- (IBAction)powerBtn:(id)sender {
+    powerViewController *powerVC = [[powerViewController alloc] init];
+    [self presentViewController:powerVC animated:YES completion:^{
+        
+    }];
+}
+// 水费跳转放法
+- (IBAction)waterBtn:(id)sender {
+    waterViewController *waterVC = [[waterViewController alloc] init];
+    [self presentViewController:waterVC animated:YES completion:^{
+        
+    }];
+}
+// 违章费跳转
+- (IBAction)carBtn:(id)sender {
+    carViewController *carVC = [[carViewController alloc] init];
+    [self presentViewController:carVC animated:YES completion:^{
+        
+    }];
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
