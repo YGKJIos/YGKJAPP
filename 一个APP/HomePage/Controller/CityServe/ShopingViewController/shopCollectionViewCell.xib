@@ -13,17 +13,17 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="162" height="256"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gouwu_05" translatesAutoresizingMaskIntoConstraints="NO" id="aVr-zO-Hyd">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="gouwu_05" translatesAutoresizingMaskIntoConstraints="NO" id="aVr-zO-Hyd">
                         <rect key="frame" x="0.0" y="0.0" width="162" height="171"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="运动服饰夏季促销" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc9-Aj-tqh">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="运动服饰夏季促销" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc9-Aj-tqh">
                         <rect key="frame" x="0.0" y="173" width="162" height="27"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="夏季商品全部五折，购物满500，立减50满1000立减120......" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvG-Va-tb9">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="夏季商品全部五折，购物满500，立减50满1000立减120......" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvG-Va-tb9">
                         <rect key="frame" x="0.0" y="197" width="162" height="32"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -36,14 +36,14 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gouwu_08" translatesAutoresizingMaskIntoConstraints="NO" id="BPd-3I-t2A">
                         <rect key="frame" x="0.0" y="0.0" width="48" height="15"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="gouwu_13" translatesAutoresizingMaskIntoConstraints="NO" id="Ivc-fE-2et">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" misplaced="YES" image="gouwu_13" translatesAutoresizingMaskIntoConstraints="NO" id="Ivc-fE-2et">
                         <rect key="frame" x="70" y="236" width="9" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="KXD-L6-aQm"/>
                             <constraint firstAttribute="width" constant="9" id="PcJ-Wr-qoe"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太平桥百盛三楼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-a5-ISS">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="太平桥百盛三楼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-a5-ISS">
                         <rect key="frame" x="81" y="236" width="81" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="81" id="V2L-I3-SLJ"/>

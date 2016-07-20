@@ -25,9 +25,7 @@
 // 固话缴费 跳转放法
 - (IBAction)lifePriceBtn:(id)sender {
     lifepriceViewController *lifeVC = [[lifepriceViewController alloc] init];
-    [self presentViewController:lifeVC animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:lifeVC animated:YES];
     
 }
 

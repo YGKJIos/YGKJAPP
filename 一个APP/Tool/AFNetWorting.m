@@ -10,7 +10,8 @@
 #import <AFNetworking.h>
 
 static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
-static NSString *bendiUrl = @"http://192.168.1.88:8080/shangcheng/"; // 本地服务器
+static NSString *bendiUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地服务器
+
 @implementation AFNetWorting
 
 #pragma mark - 创建请求者

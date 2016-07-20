@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *tehuiImage;
 
 + (ShopTableViewCell *) createShopCell; // 商家的cell
-+ (ShopTableViewCell *) createCateTableViewCellNib;// 美食的cell
 
 - (void) ShopModel:(ShopModel *)model;
 @end

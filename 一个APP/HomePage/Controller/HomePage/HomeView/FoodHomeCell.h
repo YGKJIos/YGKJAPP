@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HomeModel.h"
 @protocol FoodHomePushDelegate <NSObject>
 
 - (void)foodHomePushDelegateMethod;
@@ -16,5 +16,8 @@
 
 @interface FoodHomeCell : UITableViewCell
 @property (nonatomic, assign)id<FoodHomePushDelegate>delegate;
+- (void)setFoodCellModel:(HomeModel *)model;
+
+
 
 @end

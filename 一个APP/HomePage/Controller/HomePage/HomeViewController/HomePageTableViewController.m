@@ -29,7 +29,6 @@
 #import "TakePhotoTableViewController.h" //生活服务(摄影)
 #import "WeddingTableViewController.h" // 生活服务(婚庆)
 #import "FeastTableViewController.h" // 生活服务(宴会)
-
 #import "PleaseJobTableViewController.h" //同城服务（求职招聘）
 #import "SecondHandTableViewController.h"//同城服务 （二手置换）
 #import "HouseTableViewController.h" // 同城服务（家政服务）
@@ -38,9 +37,12 @@
 #import "priceViewController.h" // 生活缴费
 #import "shopViewController.h" // 本地购物
 
+#import "HomeModel.h" // 首页model
+
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate,FoodHomePushDelegate,ShopingPushDelegate>
 
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
+@property (nonatomic, retain) NSMutableArray *homeArr; // 首页model数组
 
 @end
 
@@ -51,16 +53,73 @@
     [self.tableView setShowsHorizontalScrollIndicator:NO];
     [self.tableView setShowsVerticalScrollIndicator:NO];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-
+    self.homeArr = [[NSMutableArray alloc] init];
+    [self MJrefreshLoadData];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView.mj_header beginRefreshing];
+    [super viewWillAppear:animated];
+}
+
+#pragma mark - MJ刷新
+- (void)MJrefreshLoadData
+{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    [header setTitle:@"正在刷新数据中..." forState:MJRefreshStateRefreshing];
+    [header setTitle:@"下拉刷新数据" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
+    
+    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    // 设置文字
+    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
+    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
+    self.tableView.mj_footer = footer;
+    
+}
+
+// 下拉刷新的方法
+- (void)loadNewData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView.mj_header endRefreshing];
+        NSString *url = @"zhuye/queryzhuye.action";
+        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+            NSArray *arr = @[@"zhaopin",@"ershou",@"zhoubian",@"meishi",@"xinwen"];
+            NSDictionary *rootDic = responseObject;
+            for (int i= 0 ; i < arr.count; i++) {
+                NSDictionary *dic = rootDic[arr[i]];
+                HomeModel *model = [[HomeModel alloc] init];
+                [model setValuesForKeysWithDictionary:dic];
+                [self.homeArr addObject:model];
+            }
+            [self.tableView reloadData];
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"error-----%@",error);
+        }];
+        
+        
+    });
+    
+}
+// 上拉加载的方法
+- (void)loadMoreData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView.mj_footer endRefreshing];
+    });
+}
+
 - (void)addHeaderView
 {
     UIImage *image1 = [UIImage imageNamed:@"shouye_guangg"];
-    
     UIImage *image2 = [UIImage imageNamed:@"shouye_haigou"];
-    
     UIImage *image3 = [UIImage imageNamed:@"shouye_meishitou"];
-    
     UIImage *image4 = [UIImage imageNamed:@"shouye_xinwen"];
     NSArray *images = @[image1,image2,image3,image4];
     self.scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 150) imagesGroup:images];
@@ -72,7 +131,6 @@
     self.scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
     // 分页控件图标
     self.scrollView.dotColor = [UIColor cyanColor];
-    
     // 循环时间间隔,默认2.0s
     self.scrollView.autoScrollTimeInterval = 2.0;
 }
@@ -200,9 +258,7 @@
             cell.delegte = self;
         }
         
-        NSArray *arr = @[@"shouye_qcfw",@"shouye_tcly",@"shouye_syxz",@"shouye_hqff",@"shouye_xxpx",@"shouye_yhfw",@"shouye_xinwen"];
-        NSArray *titles = @[@"",@"",@"",@"",@"",@""];
-        [cell setThridCellImage:arr titles:titles];
+        [cell setThridCellHomeModel:nil];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -212,12 +268,10 @@
         if (!cell) {
             cell = [[ThridTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fourthID"];
             [cell cellStyle:newCellStyle];
+            cell.delegte = self;
         }
-        cell.delegte = self;
-        
-        NSArray *arr = @[@"shouye_xwbt",@"shouye_xwbt",@"shouye_meishitou"];
-        NSArray *titles = @[@"新闻标题",@"新闻标题"];
-        [cell setThridCellImage:arr titles:titles];
+        HomeModel *model = self.homeArr[4];
+        [cell setThridCellHomeModel:model];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -229,6 +283,8 @@
             cell = [[FoodHomeCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"foodId"];
             cell.delegate = self;
         }
+        HomeModel *model = self.homeArr[3];
+        [cell setFoodCellModel:model];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -253,6 +309,8 @@
             [cell cellStyle:travelCellStyle];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+        HomeModel *model = self.homeArr[2];
+        [cell setThridCellHomeModel:model];
         return cell;
     }
     // 热门招聘
@@ -264,7 +322,8 @@
             cell.delegte =self;
             [cell cellStyle:hotJobCellStyle];
         }
-        
+        HomeModel *model = self.homeArr[0];
+        [cell setThridCellHomeModel:model];
         return cell;
     }
     // 二手置换
@@ -275,8 +334,9 @@
             [cell cellStyle:secondCellStyle];
             cell.delegte = self;
         }
+        HomeModel *model = self.homeArr[1];
+        [cell setThridCellHomeModel:model];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
         return cell;
     }
     

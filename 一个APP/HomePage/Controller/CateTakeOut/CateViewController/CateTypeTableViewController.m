@@ -42,7 +42,7 @@
     static NSString *cateID = @"cateID";
     ShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cateID];
     if (cell == nil) {
-        cell = [ShopTableViewCell createCateTableViewCellNib];
+        cell = [ShopTableViewCell createShopCell];
     }
     
     

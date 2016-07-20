@@ -7,51 +7,9 @@
 //
 
 #import "HomeModelView.h"
+static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng/";
 
 @interface HomeModelView ()
-
-/**
- *  普通
- */
-@property (nonatomic, strong)UIImageView *imageV;
-@property (nonatomic, strong)UILabel *titleLab;
-/**
- *  美食
- */
-@property (weak, nonatomic) IBOutlet UILabel *foodTitleLab;
-@property (weak, nonatomic) IBOutlet UIImageView *foodImage;
-@property (weak, nonatomic) IBOutlet UILabel *foodName;
-@property (weak, nonatomic) IBOutlet UILabel *moneyLab;
-@property (weak, nonatomic) IBOutlet UILabel *textLab;
-@property (weak, nonatomic) IBOutlet UILabel *costLab; // 原价钱
-
-
-/**
- *旅游
- */
-@property (weak, nonatomic) IBOutlet UIImageView *travelImage;
-@property (weak, nonatomic) IBOutlet UIImageView *travelType;
-@property (weak, nonatomic) IBOutlet UILabel *travelNameLab;  //景点名称
-@property (weak, nonatomic) IBOutlet UILabel *travelMoneyLab;
-@property (weak, nonatomic) IBOutlet UIImageView *travelLocation;
-@property (weak, nonatomic) IBOutlet UILabel *distanceLab;
-
-/**
- *  热门招聘
- */
-@property (weak, nonatomic) IBOutlet UILabel *invitePost; //邀请岗位
-@property (weak, nonatomic) IBOutlet UILabel *companyName; // 公司名称
-@property (weak, nonatomic) IBOutlet UILabel *inviteLocation;//地理位子
-@property (weak, nonatomic) IBOutlet UILabel *inviteMoneyLab; //工资
-@property (weak, nonatomic) IBOutlet UIImageView *locationImage; //定位图片
-@property (weak, nonatomic) IBOutlet UIImageView *agreeimage; //已认证图片
-
-// 二手置换
-@property (weak, nonatomic) IBOutlet UIImageView *secondImage;
-@property (weak, nonatomic) IBOutlet UILabel *secondName;
-@property (weak, nonatomic) IBOutlet UILabel *secondMoney;
-
-
 @end
 
 @implementation HomeModelView
@@ -66,12 +24,15 @@
     return self;
 }
 
+// 美食精选
 + (HomeModelView *)foodModelStyleView
 {
     HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil].firstObject;
+//    view.size = CGSizeMake(70, 124);
     UILabel *lineLab = [[UILabel alloc]init];
-    lineLab.frame = view.costLab.frame;
+    lineLab.x = 40;
     lineLab.height = 1;
+    lineLab.width = 8;
     lineLab.y = view.costLab.y+4;
     lineLab.backgroundColor = BGcolor(180, 180, 180);
     lineLab.transform = CGAffineTransformMakeRotation(M_PI_4/2);
@@ -79,17 +40,20 @@
     
     return view;
 }
+
 // 畅游周边 view
 + (HomeModelView *)travelModelStyleView
 {
     HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil][1];
     return view;
 }
+// 招聘
 + (HomeModelView *)inviteModelStyleView
 {
     HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil][2];
         return view;
 }
+// 普通样式
 - (void)ordinaryModelStyle
 {
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height-20)];
@@ -105,7 +69,9 @@
 }
 - (void)setModelImageViewName:(NSString *)image title:(NSString *)title
 {
-    self.imageV.image = [UIImage imageNamed:image];
+//    self.imageV.image = [UIImage imageNamed:image];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",headUrl,image];
+    [self.imageV sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
     self.titleLab.text = title;
 }
 

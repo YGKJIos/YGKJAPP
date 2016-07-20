@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeModel.h"
 
 @protocol pushviewcontrollerThridDelegate <NSObject>
 
@@ -27,8 +28,8 @@ typedef  enum{
 
 @property (nonatomic, weak) id<pushviewcontrollerThridDelegate> delegte;
 @property (nonatomic, assign)HomeTaleViewCellStyle style;
-- (void)setThridCellImage:(NSArray *)images titles:(NSArray *)titles;
-- (void)cellStyle:(HomeTaleViewCellStyle)Style;
 
+- (void)setThridCellHomeModel:(HomeModel *)model;
+- (void)cellStyle:(HomeTaleViewCellStyle)Style;
 
 @end

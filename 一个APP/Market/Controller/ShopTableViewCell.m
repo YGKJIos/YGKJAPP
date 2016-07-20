@@ -17,11 +17,7 @@ static NSString *shangcheng = @"http://192.168.1.88:8080/shangcheng/";
     ShopTableViewCell *cell = [[NSBundle mainBundle] loadNibNamed:@"ShopTableViewCell" owner:nil options:nil][0];
     return cell;
 }
-+ (ShopTableViewCell *)createCateTableViewCellNib
-{
-    ShopTableViewCell *cell = [[NSBundle mainBundle]loadNibNamed:@"ShopTableViewCell" owner:nil options:nil][1];
-    return cell;
-}
+
 
 - (void) ShopModel:(ShopModel *)model
 {

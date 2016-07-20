@@ -10,9 +10,6 @@
 #import "AllStylCollectionReusableView.h" // headerView设置
 #import "AllStylCollectionViewCell.h" // 自定义cell
 
-
-
-
 @interface AllStylViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *arr;

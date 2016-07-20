@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MarketModel.h"
 
 typedef enum
 {
@@ -18,6 +19,46 @@ typedef enum
 }ViewStyle;
 
 @interface HomeModelView : UIView
+/**
+ *  普通
+ */
+@property (nonatomic, strong)UIImageView *imageV;
+@property (nonatomic, strong)UILabel *titleLab;
+/**
+ *  美食
+ */
+@property (weak, nonatomic) IBOutlet UILabel *foodTitleLab;
+@property (weak, nonatomic) IBOutlet UIImageView *foodImage;
+@property (weak, nonatomic) IBOutlet UILabel *foodName;
+@property (weak, nonatomic) IBOutlet UILabel *moneyLab;
+@property (weak, nonatomic) IBOutlet UILabel *textLab;
+@property (weak, nonatomic) IBOutlet UILabel *costLab; // 原价钱
+
+
+/**
+ *旅游
+ */
+@property (weak, nonatomic) IBOutlet UIImageView *travelImage;
+@property (weak, nonatomic) IBOutlet UIImageView *travelType;
+@property (weak, nonatomic) IBOutlet UILabel *travelNameLab;  //景点名称
+@property (weak, nonatomic) IBOutlet UILabel *travelMoneyLab;
+@property (weak, nonatomic) IBOutlet UIImageView *travelLocation;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLab;
+
+/**
+ *  热门招聘
+ */
+@property (weak, nonatomic) IBOutlet UILabel *invitePost; //邀请岗位
+@property (weak, nonatomic) IBOutlet UILabel *companyName; // 公司名称
+@property (weak, nonatomic) IBOutlet UILabel *inviteLocation;//地理位子
+@property (weak, nonatomic) IBOutlet UILabel *inviteMoneyLab; //工资
+@property (weak, nonatomic) IBOutlet UIImageView *locationImage; //定位图片
+@property (weak, nonatomic) IBOutlet UIImageView *agreeimage; //已认证图片
+
+// 二手置换
+@property (weak, nonatomic) IBOutlet UIImageView *secondImage;
+@property (weak, nonatomic) IBOutlet UILabel *secondName;
+@property (weak, nonatomic) IBOutlet UILabel *secondMoney;
 
 
 + (HomeModelView *)foodModelStyleView;  //美食View
@@ -32,5 +73,6 @@ typedef enum
 
 //- (void)setModelViewStyle:(ViewStyle)style; // 页面的风格
 - (void)setModelImageViewName:(NSString *)image title:(NSString *)title;
+
 
 @end

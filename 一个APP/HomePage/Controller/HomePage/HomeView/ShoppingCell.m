@@ -68,7 +68,7 @@
     self.rightImage.image = [UIImage imageNamed:images[1]];
     for (int i = 2; i < 6; i++) {
         HomeModelView *view = [self.contentView viewWithTag:1000+i-2];
-        [view setModelImageViewName:images[i] title:@""];
+        view.imageV.image = [UIImage imageNamed:images[i]];
         
     }
     [self.imgBtn setBackgroundImage:[UIImage imageNamed:[images lastObject]] forState:UIControlStateNormal];
