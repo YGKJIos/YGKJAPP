@@ -11,6 +11,7 @@
 #import "JobModel.h"
 @interface PleaseJobTableViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic, retain) NSMutableArray *jobArr;
+
 @end
 
 @implementation PleaseJobTableViewController

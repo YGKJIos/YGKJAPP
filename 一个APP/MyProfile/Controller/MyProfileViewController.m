@@ -11,7 +11,9 @@
 #import "profileHeaderView.h"
 #import "MenuTableViewCell.h"
 #import "SetTableViewController.h"
-@interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "orderViewController.h"
+
+@interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate,orderDelegate>
 @property (nonatomic, strong)NSArray *images;
 @property (nonatomic, strong)NSArray *titles;
 
@@ -86,6 +88,7 @@
         FictionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"fictionID"];
         if (cell==nil) {
             cell = [[FictionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fictionID"];
+            cell.delegate = self;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -120,6 +123,12 @@
     return 67;
 }
 
+- (void) orderDelegate
+{
+    orderViewController *orderVC = [[orderViewController alloc] init];
+    
+    [self.navigationController pushViewController:orderVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

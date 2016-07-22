@@ -8,16 +8,39 @@
 
 #import "lifepriceViewController.h"
 
-@interface lifepriceViewController ()
+@interface lifepriceViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *priceField;
 
 @end
-
 @implementation lifepriceViewController
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.priceField.delegate = self;
+    
+    // 手势
+    // 点击
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+    [self.view addGestureRecognizer:tap];
 }
+
+// 点击 空白回收键盘方法
+- (void)tapAction:(UITapGestureRecognizer *)tap
+{
+    [self.priceField resignFirstResponder];
+}
+
+// 点击return回收键盘
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.priceField resignFirstResponder];
+    return YES;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

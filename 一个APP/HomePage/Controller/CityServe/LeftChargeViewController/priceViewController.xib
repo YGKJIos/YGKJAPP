@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="priceViewController">
@@ -22,6 +22,9 @@
                         <constraint firstAttribute="width" constant="76" id="YdB-Hb-RRc"/>
                     </constraints>
                     <state key="normal" title="Button" image="shenghuojiaofei-meiqifei"/>
+                    <connections>
+                        <action selector="gasBtn:" destination="-1" eventType="touchUpInside" id="GCI-vG-h72"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUf-C6-tjF">
                     <rect key="frame" x="149" y="69" width="76" height="98"/>
@@ -30,6 +33,9 @@
                         <constraint firstAttribute="width" constant="76" id="PxS-bx-fG4"/>
                     </constraints>
                     <state key="normal" title="Button" image="shenghuojiaofei-dianfei"/>
+                    <connections>
+                        <action selector="powerBtn:" destination="-1" eventType="touchUpInside" id="IFI-hM-Pxd"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-U8-8Jf">
                     <rect key="frame" x="269" y="69" width="76" height="99"/>
@@ -38,6 +44,9 @@
                         <constraint firstAttribute="height" constant="99" id="HT8-Cl-IIg"/>
                     </constraints>
                     <state key="normal" title="Button" image="shenghuojiaofei-shuifei"/>
+                    <connections>
+                        <action selector="waterBtn:" destination="-1" eventType="touchUpInside" id="Urf-fy-e7K"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kd-ky-KJ3">
                     <rect key="frame" x="30" y="188" width="76" height="99"/>
@@ -46,6 +55,9 @@
                         <constraint firstAttribute="height" constant="99" id="km0-9s-lbK"/>
                     </constraints>
                     <state key="normal" title="Button" image="shenghuojiaofei-weizhangfei"/>
+                    <connections>
+                        <action selector="carBtn:" destination="-1" eventType="touchUpInside" id="UGc-iJ-rRA"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-MC-f6z">
                     <rect key="frame" x="149" y="188" width="76" height="99"/>

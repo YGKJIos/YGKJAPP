@@ -11,7 +11,7 @@
 @interface AllStylCollectionReusableView : UICollectionReusableView
 
 // header厨师的小帽子
-@property(nonatomic, retain) UIImageView *cookImage;
+@property(nonatomic, retain) UIImageView *headImage;
 // 美食label
 @property(nonatomic, retain) UILabel *foodLabel;
 // 长条label
