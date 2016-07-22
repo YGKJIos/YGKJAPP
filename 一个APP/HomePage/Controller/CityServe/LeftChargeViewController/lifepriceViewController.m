@@ -31,6 +31,7 @@
 - (void)tapAction:(UITapGestureRecognizer *)tap
 {
     [self.priceField resignFirstResponder];
+
 }
 
 // 点击return回收键盘
@@ -39,7 +40,6 @@
     [self.priceField resignFirstResponder];
     return YES;
 }
-
 
 
 - (void)didReceiveMemoryWarning {
