@@ -9,7 +9,7 @@
 #import "sevCarTableViewController.h"
 #import "sevCarTableViewCell.h"
 #import "CarModel.h"
-
+#import "cardetailTableViewController.h"
 @interface sevCarTableViewController ()
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
 @end
@@ -98,6 +98,7 @@
 
 
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -130,6 +131,12 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cardetailTableViewController *carVC = [[cardetailTableViewController alloc] init];
+    [self.navigationController pushViewController:carVC animated:YES];
 }
 
 
