@@ -8,6 +8,7 @@
 
 #import "CateViewController.h"
 #import "CateTypeTableViewController.h"// 自助餐，火锅。。。
+#import "MerchantFoodTableViewController.h" // 商家美食
 #import "SDCycleScrollView.h"
 #import "DropdownMenu.h"
 #import "MarketCell.h"
@@ -219,7 +220,11 @@
 {
     return 108;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MerchantFoodTableViewController *merchantVC = [[MerchantFoodTableViewController alloc]init];
+    [self.navigationController pushViewController:merchantVC animated:YES];
+}
 
 
 @end
