@@ -7,7 +7,7 @@
 //
 
 #import "FictionTableViewCell.h"
-
+#import "orderViewController.h"
 @implementation FictionTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -75,7 +75,9 @@
 
 - (void)btnAction:(UIButton *)btn
 {
+    [self.delegate orderDelegate];
     
+    NSLog(@"dadadada");
 }
 
 - (void)awakeFromNib {

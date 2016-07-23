@@ -9,6 +9,7 @@
 #import "shopViewController.h"
 #import "shopCollectionViewCell.h"
 #import "HeaderCollectionReusableView.h"
+#import "detailTableViewController.h"
 @interface shopViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic, strong) UICollectionView *collection;
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
@@ -63,7 +64,12 @@
     return headerView;
 }
 
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    detailTableViewController *detailVC = [[detailTableViewController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    
     NSLog(@"row = %ld, section= %ld",indexPath.row,indexPath.section);
 }
 
