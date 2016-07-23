@@ -33,6 +33,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="2aJ-f8-Zs3"/>
                             <constraint firstAttribute="width" constant="62" id="rS3-zs-80z"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="62" id="wiE-Tw-onS"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.33725490196078434" green="0.77647058823529413" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>

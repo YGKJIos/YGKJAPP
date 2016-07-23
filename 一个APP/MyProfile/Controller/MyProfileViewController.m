@@ -25,7 +25,7 @@
     [super viewDidLoad];
     [self data];
     
-    UIBarButtonItem *barBtn = [UIBarButtonItem itemWithTarget:self action:@selector(RightAction) image:@"wode_shezhi" highImage:@""];
+    UIBarButtonItem *barBtn = [UIBarButtonItem itemWithTarget:self action:@selector(RightAction) image:@"shezhi" highImage:@""];
     self.navigationItem.rightBarButtonItem = barBtn;
     [self addTableView];
 }

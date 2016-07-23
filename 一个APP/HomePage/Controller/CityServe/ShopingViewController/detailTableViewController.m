@@ -10,6 +10,7 @@
 #import "headerView.h"
 #import "shopPeoleTableViewCell.h"
 #import "activeTableViewCell.h"
+#import "recommendTableViewCell.h"
 @interface detailTableViewController ()
 
 @end
@@ -57,6 +58,15 @@
         }
         return cell;
     }
+    if (indexPath.section == 2) {
+        static NSString *reuse = @"reuse";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+        if (!cell) {
+            cell = [recommendTableViewCell greateCell];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
+        return cell;
+    }
     
     return nil;
 }
@@ -69,12 +79,15 @@
     if (indexPath.section == 1) {
         return 140;
     }
-    return 130;
+    if (indexPath.section == 2) {
+        return 240;
+    }
+    return 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

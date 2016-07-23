@@ -32,30 +32,22 @@
 // 燃气缴费跳转方法
 - (IBAction)gasBtn:(id)sender {
     gasViewController *gasVC = [[gasViewController alloc] init];
-    [self presentViewController:gasVC animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:gasVC animated:YES];
 }
 // 电费跳转方法
 - (IBAction)powerBtn:(id)sender {
     powerViewController *powerVC = [[powerViewController alloc] init];
-    [self presentViewController:powerVC animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:powerVC animated:YES];
 }
 // 水费跳转放法
 - (IBAction)waterBtn:(id)sender {
     waterViewController *waterVC = [[waterViewController alloc] init];
-    [self presentViewController:waterVC animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:waterVC animated:YES];
 }
 // 违章费跳转
 - (IBAction)carBtn:(id)sender {
     carViewController *carVC = [[carViewController alloc] init];
-    [self presentViewController:carVC animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:carVC animated:YES];
 }
 
 

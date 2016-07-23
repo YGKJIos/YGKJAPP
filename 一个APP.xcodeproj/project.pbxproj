@@ -184,6 +184,8 @@
 		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
 		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
 		D842DF321D224642008A54B7 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */; };
+		D846CE561D42FC1F00104971 /* recommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE541D42FC1F00104971 /* recommendTableViewCell.m */; };
+		D846CE571D42FC1F00104971 /* recommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */; };
 		D84CC9E01D3DF06B00B615AF /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CC9DF1D3DF06B00B615AF /* HomeModel.m */; };
 		D84FB6A41D39D6BA008B22E5 /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84FB6A31D39D6BA008B22E5 /* SetTableViewController.m */; };
 		D853E4721D3C853400C1FF9D /* fotgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D853E4641D3C853400C1FF9D /* fotgetViewController.m */; };
@@ -539,6 +541,9 @@
 		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
 		D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
 		D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
+		D846CE531D42FC1F00104971 /* recommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recommendTableViewCell.h; sourceTree = "<group>"; };
+		D846CE541D42FC1F00104971 /* recommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recommendTableViewCell.m; sourceTree = "<group>"; };
+		D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recommendTableViewCell.xib; sourceTree = "<group>"; };
 		D84CC9DE1D3DF06B00B615AF /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		D84CC9DF1D3DF06B00B615AF /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		D84FB6A21D39D6BA008B22E5 /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
@@ -862,6 +867,9 @@
 				D8FE2E531D422FC4003B2C52 /* activeTableViewCell.h */,
 				D8FE2E541D422FC4003B2C52 /* activeTableViewCell.m */,
 				D8FE2E551D422FC4003B2C52 /* activeTableViewCell.xib */,
+				D846CE531D42FC1F00104971 /* recommendTableViewCell.h */,
+				D846CE541D42FC1F00104971 /* recommendTableViewCell.m */,
+				D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */,
 			);
 			path = ShopingViewController;
 			sourceTree = "<group>";
@@ -1652,6 +1660,7 @@
 				D80149001D3CEB9B00334EDB /* lifepriceViewController.xib in Resources */,
 				D853E47B1D3C853400C1FF9D /* succeedViewController.xib in Resources */,
 				D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */,
+				D846CE571D42FC1F00104971 /* recommendTableViewCell.xib in Resources */,
 				D8FE2E571D422FC4003B2C52 /* activeTableViewCell.xib in Resources */,
 				594590001D3C8A1C00FAF565 /* LearnCollectionViewCell.xib in Resources */,
 				59458FF91D3C8A1C00FAF565 /* TakePhotoTableViewCell.xib in Resources */,
@@ -1859,6 +1868,7 @@
 				5945903E1D3C9FAD00FAF565 /* shopCollectionViewCell.m in Sources */,
 				594591011D3CAA5D00FAF565 /* HeaderCollectionReusableView.m in Sources */,
 				59F2651F1D3F14CE002F9D56 /* carViewController.m in Sources */,
+				D846CE561D42FC1F00104971 /* recommendTableViewCell.m in Sources */,
 				59F2650B1D3F07BC002F9D56 /* gasViewController.m in Sources */,
 				59F786041D0BAAC4005A39FB /* AddressHeaderView.m in Sources */,
 				594591151D3CAA5D00FAF565 /* TakeOutRightTableCell.m in Sources */,
