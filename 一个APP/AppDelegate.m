@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "RootTabBarController.h"	
+#import "RootTabBarController.h"
+#import "MerchantFoodTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -27,6 +28,8 @@
     self.window.rootViewController = rootTabBar;
     rootTabBar.tabBar.translucent = NO;
     
+//    MerchantFoodTableViewController *vc = [[MerchantFoodTableViewController alloc]init];
+//    self.window.rootViewController = vc;
 
 
     [self.window makeKeyAndVisible];

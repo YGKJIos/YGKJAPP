@@ -138,6 +138,7 @@
 		59CAF4011D43196F00F1A576 /* VoucherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF4001D43196F00F1A576 /* VoucherTableViewController.m */; };
 		59CAF4071D433D5200F1A576 /* StarEvaluateTotalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF4061D433D5200F1A576 /* StarEvaluateTotalTableViewCell.m */; };
 		59CAF40A1D4340F900F1A576 /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF4091D4340F900F1A576 /* EvaluateTableViewCell.m */; };
+		59CAF40D1D4363F400F1A576 /* ErrorInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF40C1D4363F400F1A576 /* ErrorInformationView.m */; };
 		59D096F71D139E6C00039C87 /* NSData+SDDataCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D096E31D139E6C00039C87 /* NSData+SDDataCache.m */; };
 		59D096F81D139E6C00039C87 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D096E61D139E6C00039C87 /* TAAbstractDotView.m */; };
 		59D096F91D139E6C00039C87 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D096E81D139E6C00039C87 /* TAAnimatedDotView.m */; };
@@ -476,6 +477,8 @@
 		59CAF4061D433D5200F1A576 /* StarEvaluateTotalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarEvaluateTotalTableViewCell.m; sourceTree = "<group>"; };
 		59CAF4081D4340F900F1A576 /* EvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateTableViewCell.h; sourceTree = "<group>"; };
 		59CAF4091D4340F900F1A576 /* EvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateTableViewCell.m; sourceTree = "<group>"; };
+		59CAF40B1D4363F400F1A576 /* ErrorInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorInformationView.h; sourceTree = "<group>"; };
+		59CAF40C1D4363F400F1A576 /* ErrorInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorInformationView.m; sourceTree = "<group>"; };
 		59D096E21D139E6C00039C87 /* NSData+SDDataCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SDDataCache.h"; sourceTree = "<group>"; };
 		59D096E31D139E6C00039C87 /* NSData+SDDataCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SDDataCache.m"; sourceTree = "<group>"; };
 		59D096E51D139E6C00039C87 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
@@ -1312,6 +1315,8 @@
 				59CAF3FC1D4310B200F1A576 /* FoodIntroduceTableViewCell.xib */,
 				59CAF4051D433D5200F1A576 /* StarEvaluateTotalTableViewCell.h */,
 				59CAF4061D433D5200F1A576 /* StarEvaluateTotalTableViewCell.m */,
+				59CAF40B1D4363F400F1A576 /* ErrorInformationView.h */,
+				59CAF40C1D4363F400F1A576 /* ErrorInformationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1914,6 +1919,7 @@
 				59CAF4011D43196F00F1A576 /* VoucherTableViewController.m in Sources */,
 				59458FF81D3C8A1C00FAF565 /* TakePhotoTableViewCell.m in Sources */,
 				594590671D3CA1D400FAF565 /* HomePageTableViewController.m in Sources */,
+				59CAF40D1D4363F400F1A576 /* ErrorInformationView.m in Sources */,
 				594591121D3CAA5D00FAF565 /* TakeOutInformationController.m in Sources */,
 				594590621D3CA1D400FAF565 /* HomeTableViewCell.m in Sources */,
 				594590F51D3CAA5D00FAF565 /* AllStylCollectionViewCell.m in Sources */,
