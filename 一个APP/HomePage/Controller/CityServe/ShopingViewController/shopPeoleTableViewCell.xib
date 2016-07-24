@@ -40,9 +40,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欧时力" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK3-ic-DBy">
-                        <rect key="frame" x="31" y="52" width="51" height="21"/>
+                        <rect key="frame" x="31" y="52" width="214" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="51" id="NUi-U2-rCw"/>
+                            <constraint firstAttribute="width" constant="214" id="NUi-U2-rCw"/>
                             <constraint firstAttribute="height" constant="21" id="ifp-J6-ROG"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>

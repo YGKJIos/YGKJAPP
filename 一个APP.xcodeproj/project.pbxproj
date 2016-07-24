@@ -219,8 +219,15 @@
 		D853E4791D3C853400C1FF9D /* postViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D853E46E1D3C853400C1FF9D /* postViewController.xib */; };
 		D853E47A1D3C853400C1FF9D /* succeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D853E4701D3C853400C1FF9D /* succeedViewController.m */; };
 		D853E47B1D3C853400C1FF9D /* succeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D853E4711D3C853400C1FF9D /* succeedViewController.xib */; };
+		D8552ABE1D444EB100C74C49 /* carWashTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8552ABC1D444EB100C74C49 /* carWashTableViewController.m */; };
+		D8552AC81D449B3300C74C49 /* carNumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8552AC61D449B3300C74C49 /* carNumTableViewCell.m */; };
+		D8552AC91D449B3300C74C49 /* carNumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8552AC71D449B3300C74C49 /* carNumTableViewCell.xib */; };
+		D8552ACD1D44A71A00C74C49 /* carConsumeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8552ACB1D44A71A00C74C49 /* carConsumeTableViewCell.m */; };
+		D8552ACE1D44A71A00C74C49 /* carConsumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8552ACC1D44A71A00C74C49 /* carConsumeTableViewCell.xib */; };
 		D85E795C1D43464F00E7775D /* groupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E795A1D43464F00E7775D /* groupTableViewCell.m */; };
 		D85E795D1D43464F00E7775D /* groupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E795B1D43464F00E7775D /* groupTableViewCell.xib */; };
+		D85E79661D4361B600E7775D /* evaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E79641D4361B600E7775D /* evaluateTableViewCell.m */; };
+		D85E79671D4361B600E7775D /* evaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E79651D4361B600E7775D /* evaluateTableViewCell.xib */; };
 		D8F8A5811D41F3A800CAFB5B /* detailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F8A5801D41F3A800CAFB5B /* detailTableViewController.m */; };
 		D8F8A5841D41F41B00CAFB5B /* headerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F8A5831D41F41B00CAFB5B /* headerView.m */; };
 		D8F8A5861D41F43200CAFB5B /* headerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F8A5851D41F43200CAFB5B /* headerView.xib */; };
@@ -620,9 +627,20 @@
 		D853E46F1D3C853400C1FF9D /* succeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = succeedViewController.h; sourceTree = "<group>"; };
 		D853E4701D3C853400C1FF9D /* succeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = succeedViewController.m; sourceTree = "<group>"; };
 		D853E4711D3C853400C1FF9D /* succeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = succeedViewController.xib; sourceTree = "<group>"; };
+		D8552ABB1D444EB100C74C49 /* carWashTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carWashTableViewController.h; sourceTree = "<group>"; };
+		D8552ABC1D444EB100C74C49 /* carWashTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carWashTableViewController.m; sourceTree = "<group>"; };
+		D8552AC51D449B3300C74C49 /* carNumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carNumTableViewCell.h; sourceTree = "<group>"; };
+		D8552AC61D449B3300C74C49 /* carNumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carNumTableViewCell.m; sourceTree = "<group>"; };
+		D8552AC71D449B3300C74C49 /* carNumTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = carNumTableViewCell.xib; sourceTree = "<group>"; };
+		D8552ACA1D44A71A00C74C49 /* carConsumeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carConsumeTableViewCell.h; sourceTree = "<group>"; };
+		D8552ACB1D44A71A00C74C49 /* carConsumeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carConsumeTableViewCell.m; sourceTree = "<group>"; };
+		D8552ACC1D44A71A00C74C49 /* carConsumeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = carConsumeTableViewCell.xib; sourceTree = "<group>"; };
 		D85E79591D43464F00E7775D /* groupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupTableViewCell.h; sourceTree = "<group>"; };
 		D85E795A1D43464F00E7775D /* groupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupTableViewCell.m; sourceTree = "<group>"; };
 		D85E795B1D43464F00E7775D /* groupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = groupTableViewCell.xib; sourceTree = "<group>"; };
+		D85E79631D4361B600E7775D /* evaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = evaluateTableViewCell.h; sourceTree = "<group>"; };
+		D85E79641D4361B600E7775D /* evaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = evaluateTableViewCell.m; sourceTree = "<group>"; };
+		D85E79651D4361B600E7775D /* evaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = evaluateTableViewCell.xib; sourceTree = "<group>"; };
 		D8F8A57F1D41F3A800CAFB5B /* detailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailTableViewController.h; sourceTree = "<group>"; };
 		D8F8A5801D41F3A800CAFB5B /* detailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailTableViewController.m; sourceTree = "<group>"; };
 		D8F8A5821D41F41B00CAFB5B /* headerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerView.h; sourceTree = "<group>"; };
@@ -801,6 +819,17 @@
 				D85E79591D43464F00E7775D /* groupTableViewCell.h */,
 				D85E795A1D43464F00E7775D /* groupTableViewCell.m */,
 				D85E795B1D43464F00E7775D /* groupTableViewCell.xib */,
+				D85E79631D4361B600E7775D /* evaluateTableViewCell.h */,
+				D85E79641D4361B600E7775D /* evaluateTableViewCell.m */,
+				D85E79651D4361B600E7775D /* evaluateTableViewCell.xib */,
+				D8552ABB1D444EB100C74C49 /* carWashTableViewController.h */,
+				D8552ABC1D444EB100C74C49 /* carWashTableViewController.m */,
+				D8552AC51D449B3300C74C49 /* carNumTableViewCell.h */,
+				D8552AC61D449B3300C74C49 /* carNumTableViewCell.m */,
+				D8552AC71D449B3300C74C49 /* carNumTableViewCell.xib */,
+				D8552ACA1D44A71A00C74C49 /* carConsumeTableViewCell.h */,
+				D8552ACB1D44A71A00C74C49 /* carConsumeTableViewCell.m */,
+				D8552ACC1D44A71A00C74C49 /* carConsumeTableViewCell.xib */,
 			);
 			path = CarViewController;
 			sourceTree = "<group>";
@@ -1757,8 +1786,10 @@
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
 				5945907F1D3CA34F00FAF565 /* WeddingTableViewCell.xib in Resources */,
 				59E1224A1D41F557002EF204 /* EvaluateTableViewCell.xib in Resources */,
+				D85E79671D4361B600E7775D /* evaluateTableViewCell.xib in Resources */,
 				594590FD1D3CAA5D00FAF565 /* MoiveTableViewCell.xib in Resources */,
 				59F2651B1D3F1276002F9D56 /* waterViewController.xib in Resources */,
+				D8552AC91D449B3300C74C49 /* carNumTableViewCell.xib in Resources */,
 				59F786091D0BD793005A39FB /* FriendGroupView.xib in Resources */,
 				59458FFD1D3C8A1C00FAF565 /* sevCarTableViewCell.xib in Resources */,
 				59CAF3F91D4307F300F1A576 /* ShopIntroduceTableViewCell.xib in Resources */,
@@ -1778,6 +1809,7 @@
 				594590001D3C8A1C00FAF565 /* LearnCollectionViewCell.xib in Resources */,
 				59458FF91D3C8A1C00FAF565 /* TakePhotoTableViewCell.xib in Resources */,
 				59E4EA501D193B08000083B8 /* profileHeaderView.xib in Resources */,
+				D8552ACE1D44A71A00C74C49 /* carConsumeTableViewCell.xib in Resources */,
 				594590391D3C9FAD00FAF565 /* priceViewController.xib in Resources */,
 				5945903B1D3C9FAD00FAF565 /* SecondHandTableViewCell.xib in Resources */,
 				5940BC321D1A8F6900982820 /* MenuTableViewCell.xib in Resources */,
@@ -1876,6 +1908,7 @@
 				594590981D3CA75D00FAF565 /* MarketModel.m in Sources */,
 				594590061D3C8A1C00FAF565 /* TravelTableViewController.m in Sources */,
 				594591181D3CAA5D00FAF565 /* TypeTakeOutTableViewController.m in Sources */,
+				D85E79661D4361B600E7775D /* evaluateTableViewCell.m in Sources */,
 				594590FF1D3CAA5D00FAF565 /* MovieTableViewController.m in Sources */,
 				D84CC9E01D3DF06B00B615AF /* HomeModel.m in Sources */,
 				59E1224D1D421F43002EF204 /* GroupPurchaseView.m in Sources */,
@@ -1897,6 +1930,7 @@
 				594590011D3C8A1C00FAF565 /* LearnModel.m in Sources */,
 				D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */,
 				D81103541D40A1EE00C659DA /* orderViewController.m in Sources */,
+				D8552ABE1D444EB100C74C49 /* carWashTableViewController.m in Sources */,
 				594590031D3C8A1C00FAF565 /* TravelModel.m in Sources */,
 				594590F41D3CAA5D00FAF565 /* AllStylCollectionReusableView.m in Sources */,
 				594590931D3CA75D00FAF565 /* MarketViewController.m in Sources */,
@@ -1948,6 +1982,7 @@
 				59FFB6F41D0507E900071E0E /* MessageViewController.m in Sources */,
 				594590801D3CA34F00FAF565 /* WeddingTableViewController.m in Sources */,
 				59FE11011D40678900E8257B /* MerchantFoodTableViewController.m in Sources */,
+				D8552ACD1D44A71A00C74C49 /* carConsumeTableViewCell.m in Sources */,
 				59EC739F1D0946F6009062D9 /* MessageModel.m in Sources */,
 				594590961D3CA75D00FAF565 /* ShopTableViewCell.m in Sources */,
 				5940BC2B1D1A552900982820 /* FictionTableViewCell.m in Sources */,
@@ -1975,6 +2010,7 @@
 				594590321D3C9FAD00FAF565 /* HouseTableViewCell.m in Sources */,
 				59FFB6F81D050A0C00071E0E /* RootTabBarController.m in Sources */,
 				5945903D1D3C9FAD00FAF565 /* SecondModel.m in Sources */,
+				D8552AC81D449B3300C74C49 /* carNumTableViewCell.m in Sources */,
 				5945910C1D3CAA5D00FAF565 /* TakeOutModel.m in Sources */,
 				5945911E1D3CAA5D00FAF565 /* TheHotelTableViewController.m in Sources */,
 				D85E795C1D43464F00E7775D /* groupTableViewCell.m in Sources */,
