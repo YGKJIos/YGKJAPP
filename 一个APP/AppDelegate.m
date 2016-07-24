@@ -8,8 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "RootTabBarController.h"
-#import "MerchantFoodTableViewController.h"
+#import "RootTabBarController.h"	
 @interface AppDelegate ()
 
 @end

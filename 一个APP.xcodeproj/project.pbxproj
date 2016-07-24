@@ -205,6 +205,9 @@
 		D842DF321D224642008A54B7 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */; };
 		D846CE561D42FC1F00104971 /* recommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE541D42FC1F00104971 /* recommendTableViewCell.m */; };
 		D846CE571D42FC1F00104971 /* recommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */; };
+		D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE591D4318AE00104971 /* cardetailTableViewController.m */; };
+		D846CE5D1D43199200104971 /* carDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE5C1D43199200104971 /* carDetailHeaderView.m */; };
+		D846CE5F1D4319DF00104971 /* carDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846CE5E1D4319DF00104971 /* carDetailHeaderView.xib */; };
 		D84CC9E01D3DF06B00B615AF /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CC9DF1D3DF06B00B615AF /* HomeModel.m */; };
 		D84FB6A41D39D6BA008B22E5 /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84FB6A31D39D6BA008B22E5 /* SetTableViewController.m */; };
 		D853E4721D3C853400C1FF9D /* fotgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D853E4641D3C853400C1FF9D /* fotgetViewController.m */; };
@@ -217,6 +220,8 @@
 		D853E4791D3C853400C1FF9D /* postViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D853E46E1D3C853400C1FF9D /* postViewController.xib */; };
 		D853E47A1D3C853400C1FF9D /* succeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D853E4701D3C853400C1FF9D /* succeedViewController.m */; };
 		D853E47B1D3C853400C1FF9D /* succeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D853E4711D3C853400C1FF9D /* succeedViewController.xib */; };
+		D85E795C1D43464F00E7775D /* groupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E795A1D43464F00E7775D /* groupTableViewCell.m */; };
+		D85E795D1D43464F00E7775D /* groupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E795B1D43464F00E7775D /* groupTableViewCell.xib */; };
 		D8F8A5811D41F3A800CAFB5B /* detailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F8A5801D41F3A800CAFB5B /* detailTableViewController.m */; };
 		D8F8A5841D41F41B00CAFB5B /* headerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F8A5831D41F41B00CAFB5B /* headerView.m */; };
 		D8F8A5861D41F43200CAFB5B /* headerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F8A5851D41F43200CAFB5B /* headerView.xib */; };
@@ -594,6 +599,11 @@
 		D846CE531D42FC1F00104971 /* recommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recommendTableViewCell.h; sourceTree = "<group>"; };
 		D846CE541D42FC1F00104971 /* recommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recommendTableViewCell.m; sourceTree = "<group>"; };
 		D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recommendTableViewCell.xib; sourceTree = "<group>"; };
+		D846CE581D4318AE00104971 /* cardetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cardetailTableViewController.h; sourceTree = "<group>"; };
+		D846CE591D4318AE00104971 /* cardetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cardetailTableViewController.m; sourceTree = "<group>"; };
+		D846CE5B1D43199200104971 /* carDetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = carDetailHeaderView.h; sourceTree = "<group>"; };
+		D846CE5C1D43199200104971 /* carDetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carDetailHeaderView.m; sourceTree = "<group>"; };
+		D846CE5E1D4319DF00104971 /* carDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = carDetailHeaderView.xib; sourceTree = "<group>"; };
 		D84CC9DE1D3DF06B00B615AF /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		D84CC9DF1D3DF06B00B615AF /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		D84FB6A21D39D6BA008B22E5 /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
@@ -613,6 +623,9 @@
 		D853E46F1D3C853400C1FF9D /* succeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = succeedViewController.h; sourceTree = "<group>"; };
 		D853E4701D3C853400C1FF9D /* succeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = succeedViewController.m; sourceTree = "<group>"; };
 		D853E4711D3C853400C1FF9D /* succeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = succeedViewController.xib; sourceTree = "<group>"; };
+		D85E79591D43464F00E7775D /* groupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupTableViewCell.h; sourceTree = "<group>"; };
+		D85E795A1D43464F00E7775D /* groupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupTableViewCell.m; sourceTree = "<group>"; };
+		D85E795B1D43464F00E7775D /* groupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = groupTableViewCell.xib; sourceTree = "<group>"; };
 		D8F8A57F1D41F3A800CAFB5B /* detailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailTableViewController.h; sourceTree = "<group>"; };
 		D8F8A5801D41F3A800CAFB5B /* detailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailTableViewController.m; sourceTree = "<group>"; };
 		D8F8A5821D41F41B00CAFB5B /* headerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerView.h; sourceTree = "<group>"; };
@@ -783,6 +796,14 @@
 				59458FDD1D3C8A1C00FAF565 /* sevCarTableViewCell.xib */,
 				59458FDE1D3C8A1C00FAF565 /* sevCarTableViewController.h */,
 				59458FDF1D3C8A1C00FAF565 /* sevCarTableViewController.m */,
+				D846CE581D4318AE00104971 /* cardetailTableViewController.h */,
+				D846CE591D4318AE00104971 /* cardetailTableViewController.m */,
+				D846CE5B1D43199200104971 /* carDetailHeaderView.h */,
+				D846CE5C1D43199200104971 /* carDetailHeaderView.m */,
+				D846CE5E1D4319DF00104971 /* carDetailHeaderView.xib */,
+				D85E79591D43464F00E7775D /* groupTableViewCell.h */,
+				D85E795A1D43464F00E7775D /* groupTableViewCell.m */,
+				D85E795B1D43464F00E7775D /* groupTableViewCell.xib */,
 			);
 			path = CarViewController;
 			sourceTree = "<group>";
@@ -1717,6 +1738,7 @@
 				59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */,
 				59FE110F1D40B08600E8257B /* MerchantFoodTableViewCell.xib in Resources */,
 				D8F8A58B1D41FEFC00CAFB5B /* shopPeoleTableViewCell.xib in Resources */,
+				D846CE5F1D4319DF00104971 /* carDetailHeaderView.xib in Resources */,
 				D81103551D40A1EE00C659DA /* orderViewController.xib in Resources */,
 				59F7860E1D0BD9A1005A39FB /* FriendCell.xib in Resources */,
 				59CAF3F41D42FDAB00F1A576 /* ConsumePromptTableViewCell.xib in Resources */,
@@ -1731,6 +1753,7 @@
 				594590051D3C8A1C00FAF565 /* TravelTableViewCell.xib in Resources */,
 				594591161D3CAA5D00FAF565 /* TakeOutRightTableCell.xib in Resources */,
 				59F265161D3F0F9D002F9D56 /* powerViewController.xib in Resources */,
+				D85E795D1D43464F00E7775D /* groupTableViewCell.xib in Resources */,
 				59458FF51D3C8A1C00FAF565 /* FeastTableViewCell.xib in Resources */,
 				59EAD9731D20C302003DF636 /* ImageAndLabView.xib in Resources */,
 				594590331D3C9FAD00FAF565 /* HouseTableViewCell.xib in Resources */,
@@ -1877,6 +1900,7 @@
 				594591111D3CAA5D00FAF565 /* SubmitOrderViewController.m in Sources */,
 				594591271D3CAC2500FAF565 /* NewsTableViewController.m in Sources */,
 				594590011D3C8A1C00FAF565 /* LearnModel.m in Sources */,
+				D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */,
 				D81103541D40A1EE00C659DA /* orderViewController.m in Sources */,
 				594590031D3C8A1C00FAF565 /* TravelModel.m in Sources */,
 				594590F41D3CAA5D00FAF565 /* AllStylCollectionReusableView.m in Sources */,
@@ -1937,6 +1961,7 @@
 				59FFB6EB1D05074300071E0E /* AddressBookController.m in Sources */,
 				59F061D91D0E409C006BEF9F /* AFNetWorting.m in Sources */,
 				5945911C1D3CAA5D00FAF565 /* TheHotelTableViewCell.m in Sources */,
+				D846CE5D1D43199200104971 /* carDetailHeaderView.m in Sources */,
 				59D096F71D139E6C00039C87 /* NSData+SDDataCache.m in Sources */,
 				594590691D3CA1D400FAF565 /* SearchViewController.m in Sources */,
 				594590351D3C9FAD00FAF565 /* PleaseJobTableViewCell.m in Sources */,
@@ -1958,6 +1983,7 @@
 				5945903D1D3C9FAD00FAF565 /* SecondModel.m in Sources */,
 				5945910C1D3CAA5D00FAF565 /* TakeOutModel.m in Sources */,
 				5945911E1D3CAA5D00FAF565 /* TheHotelTableViewController.m in Sources */,
+				D85E795C1D43464F00E7775D /* groupTableViewCell.m in Sources */,
 				59458FF71D3C8A1C00FAF565 /* PhotoModel.m in Sources */,
 				5945903C1D3C9FAD00FAF565 /* SecondHandTableViewController.m in Sources */,
 				594590021D3C8A1C00FAF565 /* LearnViewController.m in Sources */,

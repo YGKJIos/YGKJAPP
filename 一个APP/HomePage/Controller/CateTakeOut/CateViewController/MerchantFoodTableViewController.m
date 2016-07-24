@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = nil;
+    
     self.tableView.backgroundColor = BGcolor(194, 194, 194);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
@@ -124,6 +126,7 @@
 
     }
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(WIDTH/2 - 115, 30, 230, 30);
     [button setBackgroundImage:[UIImage imageNamed:@"ms_baocuo"] forState:UIControlStateNormal];
