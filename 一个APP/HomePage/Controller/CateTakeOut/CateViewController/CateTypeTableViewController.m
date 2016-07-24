@@ -42,7 +42,7 @@
         cell = [ShopTableViewCell createShopCell];
     }
     
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -52,6 +52,7 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     MerchantFoodTableViewController *merchantVC = [[MerchantFoodTableViewController alloc]init];
     [self.navigationController pushViewController:merchantVC animated:YES];
 }
