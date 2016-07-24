@@ -25,8 +25,8 @@
     
     self.tableView.backgroundColor = BGcolor(198, 198, 198);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.showsVerticalScrollIndicator = NO;
+     self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -25,6 +25,7 @@
     self.navigationItem.rightBarButtonItem = nil;
     
     self.tableView.backgroundColor = BGcolor(194, 194, 194);
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
