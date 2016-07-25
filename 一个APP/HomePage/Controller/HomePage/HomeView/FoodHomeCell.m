@@ -46,7 +46,7 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
         NSString *url = [NSString stringWithFormat:@"%@%@",headUrl,tupianArr[i]];
         [view.foodImage sd_setImageWithURL:[NSURL URLWithString:url]];
         view.foodName.text = jieshaoArr[i];
-        view.moneyLab.text = [NSString stringWithFormat:@"¥%@",tejiaArr[i]];
+        view.moneyLab.text = [NSString stringWithFormat:@"%@",tejiaArr[i]];
         view.costLab.text = yuanjiaArr[i];
     }
 }

@@ -193,7 +193,7 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
             [view.travelImage sd_setImageWithURL:[NSURL URLWithString:urlStr]];
             view.travelImage.opaque = YES;
             view.travelNameLab.text = names[i];
-            view.travelMoneyLab.text = [NSString stringWithFormat:@"¥%@",jiage[i]];
+            view.travelMoneyLab.text = [NSString stringWithFormat:@"%@",jiage[i]];
             view.distanceLab.text = juli[i];
         }
     }

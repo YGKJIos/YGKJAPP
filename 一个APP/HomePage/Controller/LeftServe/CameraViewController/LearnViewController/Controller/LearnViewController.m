@@ -7,6 +7,7 @@
 //
 
 #import "LearnViewController.h"
+#import "LearnDetailsTableViewController.h" // 学习详情
 #import "HeaderCollectionReusableView.h"
 #import "LearnCollectionViewCell.h"
 #import "LearnModel.h"
@@ -71,11 +72,11 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collection.mj_header endRefreshing];
         NSString *url = @"sheying/querysheying1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 LearnModel *model = [[LearnModel alloc] init];
@@ -88,8 +89,6 @@
             NSLog(@"error-----%@",error);
         }];
         
-        NSLog(@"MJ-下拉刷新");
-        
     });
     
 }
@@ -97,11 +96,8 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collection.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
     });
 }
-
-
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -125,7 +121,8 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"row = %ld, section= %ld",indexPath.row,indexPath.section);
+    LearnDetailsTableViewController *learnDetailVC = [[LearnDetailsTableViewController alloc]init];
+    [self.navigationController pushViewController:learnDetailVC animated:YES];
 }
 
 
@@ -134,14 +131,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

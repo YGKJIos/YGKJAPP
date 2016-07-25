@@ -7,6 +7,7 @@
 //
 
 #import "CateTypeTableViewController.h"
+#import "MerchantFoodTableViewController.h"
 #import "ShopTableViewCell.h"
 
 @interface CateTypeTableViewController ()
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"美食";
+    self.navigationItem.rightBarButtonItem = nil;
     
 }
 
@@ -27,11 +29,6 @@
 }
 
 #pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -45,13 +42,19 @@
         cell = [ShopTableViewCell createShopCell];
     }
     
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 115;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    MerchantFoodTableViewController *merchantVC = [[MerchantFoodTableViewController alloc]init];
+    [self.navigationController pushViewController:merchantVC animated:YES];
 }
 
 

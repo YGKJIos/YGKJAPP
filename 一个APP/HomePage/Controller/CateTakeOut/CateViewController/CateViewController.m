@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"美食";
+    
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationLeftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
@@ -100,8 +102,6 @@
         NSLog(@"MJ-上啦加载");
     });
 }
-
-
 
 - (void)navigationRigthBtnAction
 {

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface evaluateTableViewCell : UITableViewCell
+@interface CarEvaluateTableViewCell : UITableViewCell
 
-+ (evaluateTableViewCell *)greateEvaluateCell;
++ (CarEvaluateTableViewCell *)greateEvaluateCell;
 
 @end

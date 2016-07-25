@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
 #import "carWashTableViewController.h"
+#import "LearnDetailsTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -24,13 +25,12 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-//    self.window.rootViewController = rootTabBar;
-//    rootTabBar.tabBar.translucent = NO;
-//    
-    carWashTableViewController *rootVC = [[carWashTableViewController alloc] init];
-    self.window.rootViewController = rootVC;
+    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+    self.window.rootViewController = rootTabBar;
+    rootTabBar.tabBar.translucent = NO;
+//
     
+
     [self.window makeKeyAndVisible];
     
     return YES;

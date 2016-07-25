@@ -12,6 +12,7 @@
 #import "FavorableWayTableViewCell.h" // 标签cell
 #import "MerchantFoodTableViewCell.h" // 美食cell
 #import "EvaluateTableViewCell.h" // 评价cell
+#import "ErrorInformationView.h"
 
 @interface MerchantFoodTableViewController ()
 
@@ -21,7 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = nil;
+    
     self.tableView.backgroundColor = BGcolor(194, 194, 194);
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -123,10 +127,11 @@
 
     }
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(WIDTH/2 - 115, 30, 230, 30);
     [button setBackgroundImage:[UIImage imageNamed:@"ms_baocuo"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(evaluateBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(errorBtnAction) forControlEvents:UIControlEventTouchUpInside];
     [cell.contentView addSubview:button];
     return cell;
 
@@ -153,6 +158,13 @@
 {
     NSLog(@"评论");
 }
+- (void)errorBtnAction
+{
+    ErrorInformationView *errorView = [[ErrorInformationView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [errorView showErrorView];
+    
+}
+#pragma mark - tableView点击事件
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {

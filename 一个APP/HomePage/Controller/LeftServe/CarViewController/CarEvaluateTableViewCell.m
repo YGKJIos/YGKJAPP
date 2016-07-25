@@ -6,13 +6,13 @@
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "evaluateTableViewCell.h"
+#import "CarEvaluateTableViewCell.h"
 
-@implementation evaluateTableViewCell
+@implementation CarEvaluateTableViewCell
 
-+ (evaluateTableViewCell *)greateEvaluateCell
++ (CarEvaluateTableViewCell *)greateEvaluateCell
 {
-    evaluateTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"evaluateTableViewCell" owner:nil options:nil]lastObject];
+    CarEvaluateTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"CarEvaluateTableViewCell" owner:nil options:nil]lastObject];
     return cell;
 }
 
