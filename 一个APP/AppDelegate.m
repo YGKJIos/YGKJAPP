@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
-#import "carWashTableViewController.h"
-#import "LearnDetailsTableViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -28,8 +27,10 @@
     RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
     self.window.rootViewController = rootTabBar;
     rootTabBar.tabBar.translucent = NO;
-//
     
+//    ProgramVoteViewController *vc = [[ProgramVoteViewController alloc]init];
+//    self.window.rootViewController = vc;
+
 
     [self.window makeKeyAndVisible];
     
