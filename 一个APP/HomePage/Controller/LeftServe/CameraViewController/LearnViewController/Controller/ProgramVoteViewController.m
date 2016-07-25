@@ -17,6 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"节目投票";
+    self.navigationItem.rightBarButtonItem = nil;
+    
     UITableView *table = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
     table.delegate = self;
     table.dataSource = self;

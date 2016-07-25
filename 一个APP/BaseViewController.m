@@ -21,7 +21,6 @@
     
     _result = YES;
     [self addNavigationLeftAndRightBarButtonItme];
-    
 }
 
 - (void)addNavigationLeftAndRightBarButtonItme
@@ -38,8 +37,6 @@
 
 
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

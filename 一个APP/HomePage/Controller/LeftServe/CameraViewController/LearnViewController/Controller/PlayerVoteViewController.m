@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"选手投票";
+    self.navigationItem.rightBarButtonItem = nil;
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake(131*(WIDTH/375), 231);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 50);

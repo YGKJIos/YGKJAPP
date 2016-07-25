@@ -142,6 +142,7 @@
 		59C781B11D4597A400BA18CA /* PlayerGroupCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C781B01D4597A400BA18CA /* PlayerGroupCollectionReusableView.m */; };
 		59C781B51D459E9200BA18CA /* ProgramTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C781B31D459E9200BA18CA /* ProgramTableViewCell.m */; };
 		59C781B61D459E9200BA18CA /* ProgramTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C781B41D459E9200BA18CA /* ProgramTableViewCell.xib */; };
+		59C781BD1D45FAEF00BA18CA /* MerchantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C781BC1D45FAEF00BA18CA /* MerchantModel.m */; };
 		59CAF3F31D42FDAB00F1A576 /* ConsumePromptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF3F11D42FDAB00F1A576 /* ConsumePromptTableViewCell.m */; };
 		59CAF3F41D42FDAB00F1A576 /* ConsumePromptTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CAF3F21D42FDAB00F1A576 /* ConsumePromptTableViewCell.xib */; };
 		59CAF3F81D4307F300F1A576 /* ShopIntroduceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF3F61D4307F300F1A576 /* ShopIntroduceTableViewCell.m */; };
@@ -509,6 +510,8 @@
 		59C781B21D459E9200BA18CA /* ProgramTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramTableViewCell.h; sourceTree = "<group>"; };
 		59C781B31D459E9200BA18CA /* ProgramTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramTableViewCell.m; sourceTree = "<group>"; };
 		59C781B41D459E9200BA18CA /* ProgramTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramTableViewCell.xib; sourceTree = "<group>"; };
+		59C781BB1D45FAEF00BA18CA /* MerchantModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantModel.h; sourceTree = "<group>"; };
+		59C781BC1D45FAEF00BA18CA /* MerchantModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantModel.m; sourceTree = "<group>"; };
 		59CAF3F01D42FDAB00F1A576 /* ConsumePromptTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumePromptTableViewCell.h; sourceTree = "<group>"; };
 		59CAF3F11D42FDAB00F1A576 /* ConsumePromptTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumePromptTableViewCell.m; sourceTree = "<group>"; };
 		59CAF3F21D42FDAB00F1A576 /* ConsumePromptTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumePromptTableViewCell.xib; sourceTree = "<group>"; };
@@ -1212,6 +1215,7 @@
 				59FE11001D40678900E8257B /* MerchantFoodTableViewController.m */,
 				59CAF3FF1D43196F00F1A576 /* VoucherTableViewController.h */,
 				59CAF4001D43196F00F1A576 /* VoucherTableViewController.m */,
+				59C781BA1D45FAD300BA18CA /* Model */,
 				59FE11021D4068E700E8257B /* View */,
 			);
 			path = CateViewController;
@@ -1358,6 +1362,15 @@
 				594591241D3CAC2500FAF565 /* NewsTableViewController.m */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		59C781BA1D45FAD300BA18CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59C781BB1D45FAEF00BA18CA /* MerchantModel.h */,
+				59C781BC1D45FAEF00BA18CA /* MerchantModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		59D096DD1D139E6C00039C87 /* SDCycleScrollView */ = {
@@ -2022,6 +2035,7 @@
 				594591271D3CAC2500FAF565 /* NewsTableViewController.m in Sources */,
 				D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */,
 				D81103541D40A1EE00C659DA /* orderViewController.m in Sources */,
+				59C781BD1D45FAEF00BA18CA /* MerchantModel.m in Sources */,
 				59C781B11D4597A400BA18CA /* PlayerGroupCollectionReusableView.m in Sources */,
 				D8552ABE1D444EB100C74C49 /* carWashTableViewController.m in Sources */,
 				594590031D3C8A1C00FAF565 /* TravelModel.m in Sources */,

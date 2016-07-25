@@ -14,6 +14,8 @@
 #import "ShowAllAndErorrCell.h"
 #import "PlayerVoteViewController.h" // 选手选票
 #import "ProgramVoteViewController.h" // 节目选票
+#import "VoucherTableViewController.h"
+#import "ErrorInformationView.h"
 
 @interface LearnDetailsTableViewController ()
 @property (nonatomic, strong)NSArray *voteArr;
@@ -144,6 +146,16 @@
             ProgramVoteViewController *programVC = [[ProgramVoteViewController alloc]init];
             [self.navigationController pushViewController:programVC animated:YES];
         }
+    }
+    if (indexPath.section == 1) {
+        if (indexPath.row >0 && indexPath.row < 4) {
+            VoucherTableViewController *voucher = [[VoucherTableViewController alloc]init];
+            [self.navigationController pushViewController:voucher animated:YES];
+        }
+    }
+    if (indexPath.section == 3) {
+        ErrorInformationView *errorView = [[ErrorInformationView alloc]initWithFrame:self.view.frame];
+        [errorView showErrorView];
     }
 }
 

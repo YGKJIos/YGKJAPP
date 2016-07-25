@@ -90,43 +90,13 @@
     NSLog(@"注册账户");
 }
 
-
-
 // 点击 键盘回弹
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
     [self.peopleTextField resignFirstResponder];
     [self.mimaField resignFirstResponder];
-    
     return YES;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

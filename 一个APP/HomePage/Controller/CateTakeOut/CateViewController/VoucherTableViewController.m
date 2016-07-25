@@ -13,8 +13,10 @@
 #import "ShopIntroduceTableViewCell.h" // 商家介绍
 #import "FoodIntroduceTableViewCell.h" // 套餐介绍
 #import "StarEvaluateTotalTableViewCell.h" // 评价cell
+#import "TitleCellTableViewCell.h"
 
 @interface VoucherTableViewController ()
+@property (nonatomic, strong)NSMutableArray *foodArr;
 
 @end
 
@@ -22,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.foodArr = [NSMutableArray arrayWithObjects:@"鱼丸",@"粗面",@"油面",@"鱼丸",@"鱼丸", nil];
     
     self.tableView.backgroundColor = BGcolor(198, 198, 198);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -47,7 +51,7 @@
         return 0;
     }
     if (section == 3) {
-        return 2;
+        return self.foodArr.count+2;
     }
     
     return 1;
@@ -66,10 +70,10 @@
     }
     if (indexPath.section == 3) {
         if (indexPath.row == 0) {
-            FoodIntroduceTableViewCell *foodCell = [[NSBundle mainBundle]loadNibNamed:@"FoodIntroduceTableViewCell" owner:nil options:nil].lastObject;
-            foodCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            return foodCell;
-        }else{
+            TitleCellTableViewCell *titleCell = [TitleCellTableViewCell createSectionTitleCellNib];
+            [titleCell setTitleImage:@"djq_taocanjieshao2" titleLab:@"套餐介绍"];
+            return titleCell;
+        }else if(self.foodArr.count+1 == indexPath.row){
             UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
@@ -81,13 +85,19 @@
             imageView.image = [UIImage imageNamed:@"djq_jiantoulan"];
             [cell.contentView addSubview:imageView];
             return cell;
+        }else
+        {
+            FoodIntroduceTableViewCell *foodCell = [[NSBundle mainBundle]loadNibNamed:@"FoodIntroduceTableViewCell" owner:nil options:nil].lastObject;
+            foodCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            foodCell.typeName.text = self.foodArr[indexPath.row-1];
+            return foodCell;
         }
-    }else
-    {
-        ConsumePromptTableViewCell *consumeCell = [[NSBundle mainBundle]loadNibNamed:@"ConsumePromptTableViewCell" owner:nil options:nil].lastObject;
-        consumeCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return consumeCell;
     }
+    
+    ConsumePromptTableViewCell *consumeCell = [[NSBundle mainBundle]loadNibNamed:@"ConsumePromptTableViewCell" owner:nil options:nil].lastObject;
+    consumeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return consumeCell;
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,10 +108,13 @@
         return 132;
     }else if (indexPath.section == 3)
     {
-        if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
+            return 44;
+        }
+        if (indexPath.row == self.foodArr.count +1) {
             return 50;
         }
-        return 81;
+        return 37;
     }else
     {
         return 536;
@@ -111,7 +124,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        
         GroupPurchaseView *groupView = [[NSBundle mainBundle]loadNibNamed:@"GroupPurchaseView" owner:nil options:nil].lastObject;
         groupView.frame = CGRectMake(0, 0, WIDTH, 0);
         groupView.backgroundColor = [UIColor whiteColor];

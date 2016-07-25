@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FoodIntroduceTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *typeName;
+@property (weak, nonatomic) IBOutlet UILabel *numLab;
+@property (weak, nonatomic) IBOutlet UILabel *moneyLab;
 
 @end
