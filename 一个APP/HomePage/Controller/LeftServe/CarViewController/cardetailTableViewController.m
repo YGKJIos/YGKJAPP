@@ -10,6 +10,8 @@
 #import "carDetailHeaderView.h"
 #import "groupTableViewCell.h"
 #import "CarEvaluateTableViewCell.h"
+#import "ShowAllAndErorrCell.h"
+#import "carWashTableViewController.h"
 @interface cardetailTableViewController ()
 
 @end
@@ -38,7 +40,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -66,6 +68,11 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
+    if (indexPath.section == 2) {
+        ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        [erorrCell setShowAllAndErorrCellStyle:erorrCellStyle];
+        return erorrCell;
+    }
     return nil;
 }
 
@@ -76,6 +83,9 @@
     }
     if (indexPath.section == 1) {
         return 220;
+    }
+    if (indexPath.section == 2) {
+        return 50;
     }
     return 0;
 }
@@ -93,6 +103,12 @@
     return 5;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        carWashTableViewController *washVC = [[carWashTableViewController alloc] init];
+        [self.navigationController pushViewController:washVC animated:YES];
+    }
+}
 
 @end

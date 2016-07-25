@@ -10,6 +10,13 @@
 
 @implementation carConsumeTableViewCell
 
++ (carConsumeTableViewCell *)greateCell
+{
+    carConsumeTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"carConsumeTableViewCell" owner:nil options:nil]lastObject];
+    return cell;
+}
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
