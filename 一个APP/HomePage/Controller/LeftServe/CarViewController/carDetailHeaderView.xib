@@ -102,7 +102,7 @@
                 <constraint firstItem="FSA-b2-i9d" firstAttribute="top" secondItem="Stm-HO-xCC" secondAttribute="bottom" constant="15" id="rfU-zC-Tcn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="262" y="326"/>
+            <point key="canvasLocation" x="354" y="315"/>
         </view>
     </objects>
     <resources>

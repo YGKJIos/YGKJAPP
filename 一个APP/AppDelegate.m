@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "RootTabBarController.h"	
-#import "ProgramVoteViewController.h"
+#import "RootTabBarController.h"
+
 @interface AppDelegate ()
 
 @end
