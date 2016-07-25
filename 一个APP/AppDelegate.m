@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "RootTabBarController.h"	
-#import "LearnDetailsTableViewController.h"
+#import "ProgramVoteViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -24,12 +24,12 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-//    self.window.rootViewController = rootTabBar;
-//    rootTabBar.tabBar.translucent = NO;
+    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+    self.window.rootViewController = rootTabBar;
+    rootTabBar.tabBar.translucent = NO;
     
-    LearnDetailsTableViewController *vc = [[LearnDetailsTableViewController alloc]init];
-    self.window.rootViewController = vc;
+//    ProgramVoteViewController *vc = [[ProgramVoteViewController alloc]init];
+//    self.window.rootViewController = vc;
 
 
     [self.window makeKeyAndVisible];

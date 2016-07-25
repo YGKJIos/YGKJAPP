@@ -12,6 +12,8 @@
 #import "TitleCellTableViewCell.h"
 #import "LearnGroupPurchaseTableViewCell.h"
 #import "ShowAllAndErorrCell.h"
+#import "PlayerVoteViewController.h" // 选手选票
+#import "ProgramVoteViewController.h" // 节目选票
 
 @interface LearnDetailsTableViewController ()
 @property (nonatomic, strong)NSArray *voteArr;
@@ -133,6 +135,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        if (indexPath.row == 1) {
+            PlayerVoteViewController *playerVC = [[PlayerVoteViewController alloc]init];
+            [self.navigationController pushViewController:playerVC animated:YES];
+        }
+        if (indexPath.row == 2) {
+            ProgramVoteViewController *programVC = [[ProgramVoteViewController alloc]init];
+            [self.navigationController pushViewController:programVC animated:YES];
+        }
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section

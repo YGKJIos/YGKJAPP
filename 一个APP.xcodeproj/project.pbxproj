@@ -17,6 +17,10 @@
 		590573EB1D449A7E0033175B /* LearnGroupPurchaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590573E91D449A7E0033175B /* LearnGroupPurchaseTableViewCell.m */; };
 		590573EC1D449A7E0033175B /* LearnGroupPurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590573EA1D449A7E0033175B /* LearnGroupPurchaseTableViewCell.xib */; };
 		590573EF1D44A9130033175B /* ShowAllAndErorrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590573EE1D44A9130033175B /* ShowAllAndErorrCell.m */; };
+		590573F21D44B6470033175B /* PlayerVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590573F11D44B6470033175B /* PlayerVoteViewController.m */; };
+		590573F51D44B72C0033175B /* ProgramVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590573F41D44B72C0033175B /* ProgramVoteViewController.m */; };
+		590573F91D44B9C00033175B /* PlayerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590573F71D44B9C00033175B /* PlayerCollectionViewCell.m */; };
+		590573FA1D44B9C00033175B /* PlayerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590573F81D44B9C00033175B /* PlayerCollectionViewCell.xib */; };
 		5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8931D1234D700BA1C16 /* MyProfileViewController.m */; };
 		5910B8AE1D1238F300BA1C16 /* ConditionDoubleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8A81D1238F300BA1C16 /* ConditionDoubleTableView.m */; };
 		5910B8AF1D1238F300BA1C16 /* DropdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8AA1D1238F300BA1C16 /* DropdownButton.m */; };
@@ -135,6 +139,9 @@
 		594591251D3CAC2500FAF565 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594591211D3CAC2500FAF565 /* NewsTableViewCell.m */; };
 		594591261D3CAC2500FAF565 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594591221D3CAC2500FAF565 /* NewsTableViewCell.xib */; };
 		594591271D3CAC2500FAF565 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594591241D3CAC2500FAF565 /* NewsTableViewController.m */; };
+		59C781B11D4597A400BA18CA /* PlayerGroupCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C781B01D4597A400BA18CA /* PlayerGroupCollectionReusableView.m */; };
+		59C781B51D459E9200BA18CA /* ProgramTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C781B31D459E9200BA18CA /* ProgramTableViewCell.m */; };
+		59C781B61D459E9200BA18CA /* ProgramTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C781B41D459E9200BA18CA /* ProgramTableViewCell.xib */; };
 		59CAF3F31D42FDAB00F1A576 /* ConsumePromptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF3F11D42FDAB00F1A576 /* ConsumePromptTableViewCell.m */; };
 		59CAF3F41D42FDAB00F1A576 /* ConsumePromptTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CAF3F21D42FDAB00F1A576 /* ConsumePromptTableViewCell.xib */; };
 		59CAF3F81D4307F300F1A576 /* ShopIntroduceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF3F61D4307F300F1A576 /* ShopIntroduceTableViewCell.m */; };
@@ -273,6 +280,13 @@
 		590573EA1D449A7E0033175B /* LearnGroupPurchaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LearnGroupPurchaseTableViewCell.xib; sourceTree = "<group>"; };
 		590573ED1D44A9130033175B /* ShowAllAndErorrCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAllAndErorrCell.h; sourceTree = "<group>"; };
 		590573EE1D44A9130033175B /* ShowAllAndErorrCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAllAndErorrCell.m; sourceTree = "<group>"; };
+		590573F01D44B6470033175B /* PlayerVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerVoteViewController.h; sourceTree = "<group>"; };
+		590573F11D44B6470033175B /* PlayerVoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerVoteViewController.m; sourceTree = "<group>"; };
+		590573F31D44B72C0033175B /* ProgramVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramVoteViewController.h; sourceTree = "<group>"; };
+		590573F41D44B72C0033175B /* ProgramVoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramVoteViewController.m; sourceTree = "<group>"; };
+		590573F61D44B9C00033175B /* PlayerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCollectionViewCell.h; sourceTree = "<group>"; };
+		590573F71D44B9C00033175B /* PlayerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCollectionViewCell.m; sourceTree = "<group>"; };
+		590573F81D44B9C00033175B /* PlayerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerCollectionViewCell.xib; sourceTree = "<group>"; };
 		5910B8921D1234D700BA1C16 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		5910B8931D1234D700BA1C16 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		5910B8A61D1238F300BA1C16 /* CommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
@@ -483,6 +497,11 @@
 		594591221D3CAC2500FAF565 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		594591231D3CAC2500FAF565 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
 		594591241D3CAC2500FAF565 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		59C781AF1D4597A400BA18CA /* PlayerGroupCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerGroupCollectionReusableView.h; sourceTree = "<group>"; };
+		59C781B01D4597A400BA18CA /* PlayerGroupCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerGroupCollectionReusableView.m; sourceTree = "<group>"; };
+		59C781B21D459E9200BA18CA /* ProgramTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramTableViewCell.h; sourceTree = "<group>"; };
+		59C781B31D459E9200BA18CA /* ProgramTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramTableViewCell.m; sourceTree = "<group>"; };
+		59C781B41D459E9200BA18CA /* ProgramTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgramTableViewCell.xib; sourceTree = "<group>"; };
 		59CAF3F01D42FDAB00F1A576 /* ConsumePromptTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumePromptTableViewCell.h; sourceTree = "<group>"; };
 		59CAF3F11D42FDAB00F1A576 /* ConsumePromptTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumePromptTableViewCell.m; sourceTree = "<group>"; };
 		59CAF3F21D42FDAB00F1A576 /* ConsumePromptTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsumePromptTableViewCell.xib; sourceTree = "<group>"; };
@@ -699,6 +718,10 @@
 				590573D11D4469050033175B /* LearnViewController.m */,
 				590573E01D446E6B0033175B /* LearnDetailsTableViewController.h */,
 				590573E11D446E6B0033175B /* LearnDetailsTableViewController.m */,
+				590573F01D44B6470033175B /* PlayerVoteViewController.h */,
+				590573F11D44B6470033175B /* PlayerVoteViewController.m */,
+				590573F31D44B72C0033175B /* ProgramVoteViewController.h */,
+				590573F41D44B72C0033175B /* ProgramVoteViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -726,6 +749,14 @@
 				590573EA1D449A7E0033175B /* LearnGroupPurchaseTableViewCell.xib */,
 				590573ED1D44A9130033175B /* ShowAllAndErorrCell.h */,
 				590573EE1D44A9130033175B /* ShowAllAndErorrCell.m */,
+				590573F61D44B9C00033175B /* PlayerCollectionViewCell.h */,
+				590573F71D44B9C00033175B /* PlayerCollectionViewCell.m */,
+				590573F81D44B9C00033175B /* PlayerCollectionViewCell.xib */,
+				59C781AF1D4597A400BA18CA /* PlayerGroupCollectionReusableView.h */,
+				59C781B01D4597A400BA18CA /* PlayerGroupCollectionReusableView.m */,
+				59C781B21D459E9200BA18CA /* ProgramTableViewCell.h */,
+				59C781B31D459E9200BA18CA /* ProgramTableViewCell.m */,
+				59C781B41D459E9200BA18CA /* ProgramTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1794,6 +1825,7 @@
 				59F7860E1D0BD9A1005A39FB /* FriendCell.xib in Resources */,
 				59CAF3F41D42FDAB00F1A576 /* ConsumePromptTableViewCell.xib in Resources */,
 				5910B8B11D1238F300BA1C16 /* expandableImage@2x.png in Resources */,
+				590573FA1D44B9C00033175B /* PlayerCollectionViewCell.xib in Resources */,
 				594591061D3CAA5D00FAF565 /* AddFoodView.xib in Resources */,
 				59E1224F1D421F6D002EF204 /* GroupPurchaseView.xib in Resources */,
 				D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */,
@@ -1838,6 +1870,7 @@
 				594590391D3C9FAD00FAF565 /* priceViewController.xib in Resources */,
 				5945903B1D3C9FAD00FAF565 /* SecondHandTableViewCell.xib in Resources */,
 				5940BC321D1A8F6900982820 /* MenuTableViewCell.xib in Resources */,
+				59C781B61D459E9200BA18CA /* ProgramTableViewCell.xib in Resources */,
 				594590971D3CA75D00FAF565 /* ShopTableViewCell.xib in Resources */,
 				590573DC1D4469050033175B /* LearnCollectionViewCell.xib in Resources */,
 				D80148FB1D3CD79C00334EDB /* payViewController.xib in Resources */,
@@ -1916,6 +1949,7 @@
 			files = (
 				594590FE1D3CAA5D00FAF565 /* MovieModel.m in Sources */,
 				594590951D3CA75D00FAF565 /* ShopModel.m in Sources */,
+				590573F21D44B6470033175B /* PlayerVoteViewController.m in Sources */,
 				59F786071D0BD541005A39FB /* FriendGroupView.m in Sources */,
 				594590041D3C8A1C00FAF565 /* TravelTableViewCell.m in Sources */,
 				59458FF61D3C8A1C00FAF565 /* FeastTableViewController.m in Sources */,
@@ -1946,6 +1980,7 @@
 				5910B8AF1D1238F300BA1C16 /* DropdownButton.m in Sources */,
 				594590381D3C9FAD00FAF565 /* priceViewController.m in Sources */,
 				5945905F1D3CA1D400FAF565 /* FoodHomeCell.m in Sources */,
+				59C781B51D459E9200BA18CA /* ProgramTableViewCell.m in Sources */,
 				D8F8A5841D41F41B00CAFB5B /* headerView.m in Sources */,
 				5945910D1D3CAA5D00FAF565 /* OrderPersonTableViewCell.m in Sources */,
 				59F265151D3F0F9D002F9D56 /* powerViewController.m in Sources */,
@@ -1955,6 +1990,7 @@
 				594591271D3CAC2500FAF565 /* NewsTableViewController.m in Sources */,
 				D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */,
 				D81103541D40A1EE00C659DA /* orderViewController.m in Sources */,
+				59C781B11D4597A400BA18CA /* PlayerGroupCollectionReusableView.m in Sources */,
 				594590031D3C8A1C00FAF565 /* TravelModel.m in Sources */,
 				594590F41D3CAA5D00FAF565 /* AllStylCollectionReusableView.m in Sources */,
 				594590931D3CA75D00FAF565 /* MarketViewController.m in Sources */,
@@ -1985,6 +2021,7 @@
 				59CAF3FD1D4310B200F1A576 /* FoodIntroduceTableViewCell.m in Sources */,
 				594591171D3CAA5D00FAF565 /* TakeOutTableViewController.m in Sources */,
 				5945907D1D3CA34F00FAF565 /* weddingModel.m in Sources */,
+				590573F91D44B9C00033175B /* PlayerCollectionViewCell.m in Sources */,
 				59E4EA4E1D193AFE000083B8 /* profileHeaderView.m in Sources */,
 				594590651D3CA1D400FAF565 /* TableViewHeader.m in Sources */,
 				5945907E1D3CA34F00FAF565 /* WeddingTableViewCell.m in Sources */,
@@ -2000,6 +2037,7 @@
 				59CAF40D1D4363F400F1A576 /* ErrorInformationView.m in Sources */,
 				594591121D3CAA5D00FAF565 /* TakeOutInformationController.m in Sources */,
 				594590621D3CA1D400FAF565 /* HomeTableViewCell.m in Sources */,
+				590573F51D44B72C0033175B /* ProgramVoteViewController.m in Sources */,
 				594590F51D3CAA5D00FAF565 /* AllStylCollectionViewCell.m in Sources */,
 				D84FB6A41D39D6BA008B22E5 /* SetTableViewController.m in Sources */,
 				59458FFE1D3C8A1C00FAF565 /* sevCarTableViewController.m in Sources */,
