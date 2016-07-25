@@ -85,7 +85,7 @@
             cell.selectionStyle = UITableViewCellStyleDefault;
             return cell;
         }
-        
+
     }
     if (indexPath.section == 3) {
         ConsumePromptTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"ConsumePromptTableViewCell" owner:nil options:nil]lastObject];

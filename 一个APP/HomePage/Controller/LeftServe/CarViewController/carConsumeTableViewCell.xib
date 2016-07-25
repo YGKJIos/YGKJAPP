@@ -109,6 +109,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="xiaofeitishi" width="81" height="14"/>
+        <image name="xiaofeitishi" width="400" height="140"/>
     </resources>
 </document>
