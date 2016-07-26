@@ -12,6 +12,8 @@
 #import "CarEvaluateTableViewCell.h"
 #import "ShowAllAndErorrCell.h"
 #import "carWashTableViewController.h"
+#import "voucherTableViewCell.h"
+#import "TitleCellTableViewCell.h"
 @interface cardetailTableViewController ()
 
 @end
@@ -39,6 +41,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 5;
+    }
+    if (section == 1) {
+        return 3;
+    }
 
     return 1;
 }
@@ -46,38 +54,73 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        static NSString *reuse = @"reuse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
-        if (!cell) {
-            cell = [groupTableViewCell greateView];
+        if (indexPath.row == 0) {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            cell = [TitleCellTableViewCell createSectionTitleCellNib];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        } else if (indexPath.row == 4)
+        {
+            ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            [erorrCell setShowAllAndErorrCellStyle:showAllCellStyle];
+            return erorrCell;
+        } else
+        {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            cell = [voucherTableViewCell greateCell];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
     }
     if (indexPath.section == 1) {
-        static NSString *reuse = @"reuse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
-        if (!cell) {
-            cell = [CarEvaluateTableViewCell greateEvaluateCell];
+        if (indexPath.row == 0) {
+            TitleCellTableViewCell *cell = [TitleCellTableViewCell createSectionTitleCellNib];
+            [cell setTitleImage:@"ms_pingjia" titleLab:@"评价 (1480)"];
+            return cell;
+        }if (indexPath.row == 1) {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            if (!cell) {
+                cell = [CarEvaluateTableViewCell greateEvaluateCell];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }if (indexPath.row == 2) {
+            ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            [erorrCell setShowAllAndErorrCellStyle:showAllCellStyle];
+            return erorrCell;
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
     }
-    if (indexPath.section == 2) {
-        ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        [erorrCell setShowAllAndErorrCellStyle:erorrCellStyle];
-        return erorrCell;
-    }
-    return nil;
+    ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    [erorrCell setShowAllAndErorrCellStyle:erorrCellStyle];
+    return erorrCell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 220;
+        if (indexPath.row == 0) {
+            return 40;
+        }
+        if (indexPath.row == 4) {
+            return 40;
+        }else
+        {
+            return 100;
+        }
     }
     if (indexPath.section == 1) {
-        return 220;
+        if (indexPath.row == 0) {
+            return 40;
+        }
+        if (indexPath.row == 1) {
+            return 160;
+        }
+        if (indexPath.row == 2) {
+            return 40;
+        }
     }
     if (indexPath.section == 2) {
         return 50;
