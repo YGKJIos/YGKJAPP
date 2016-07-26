@@ -58,9 +58,8 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        StarEvaluateTotalTableViewCell *cell = [[StarEvaluateTotalTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+        StarEvaluateTotalTableViewCell *cell = [StarEvaluateTotalTableViewCell greateCell];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         return cell;
     }
     if (indexPath.section == 2) {

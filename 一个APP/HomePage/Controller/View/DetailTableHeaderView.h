@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface carDetailHeaderView : UIView
+@interface DetailTableHeaderView : UIView
 
 
-+ (carDetailHeaderView *)greateHeaderView;
++ (DetailTableHeaderView *)greateHeaderView;
 
 
 @end

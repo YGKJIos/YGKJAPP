@@ -1,22 +1,27 @@
 //
-//  cardetailTableViewController.m
+//  CateDetailsTableViewController.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/7/23.
+//  Created by 梁立彬 on 16/7/25.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "cardetailTableViewController.h"
+#import "CateDetailsTableViewController.h"
+#import "carWashTableViewController.h"
+#import "VoucherTableViewController.h"
 #import "DetailTableHeaderView.h"
 #import "groupTableViewCell.h"
 #import "CarEvaluateTableViewCell.h"
 #import "ShowAllAndErorrCell.h"
-#import "carWashTableViewController.h"
-@interface cardetailTableViewController ()
+#import "voucherTableViewCell.h"
+#import "TitleCellTableViewCell.h"
+#import "ErrorInformationView.h" //报错页面
+
+@interface CateDetailsTableViewController ()
 
 @end
 
-@implementation cardetailTableViewController
+@implementation CateDetailsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,25 +39,40 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+    
     return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    if (section == 0) {
+        return 5;
+    }
+    
     return 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        static NSString *reuse = @"reuse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
-        if (!cell) {
-            cell = [groupTableViewCell greateView];
+        if (indexPath.row == 0) {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            cell = [TitleCellTableViewCell createSectionTitleCellNib];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        } else if (indexPath.row == 4)
+        {
+            ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            [erorrCell setShowAllAndErorrCellStyle:showAllCellStyle];
+            return erorrCell;
+        } else
+        {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            cell = [voucherTableViewCell greateCell];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
     }
     if (indexPath.section == 1) {
         static NSString *reuse = @"reuse";
@@ -62,19 +82,25 @@
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
+        
     }
-    if (indexPath.section == 2) {
-        ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        [erorrCell setShowAllAndErorrCellStyle:erorrCellStyle];
-        return erorrCell;
-    }
-    return nil;
+    ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    [erorrCell setShowAllAndErorrCellStyle:erorrCellStyle];
+    return erorrCell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        return 220;
+        if (indexPath.row == 0) {
+            return 40;
+        }
+        if (indexPath.row == 4) {
+            return 40;
+        }else
+        {
+            return 100;
+        }
     }
     if (indexPath.section == 1) {
         return 220;
@@ -98,11 +124,17 @@
     return 5;
 }
 
+#pragma mark - table点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        carWashTableViewController *washVC = [[carWashTableViewController alloc] init];
+        VoucherTableViewController *washVC = [[VoucherTableViewController alloc] init];
         [self.navigationController pushViewController:washVC animated:YES];
+    }
+    if (indexPath.section == 2)
+    {
+        ErrorInformationView *errorView = [[ErrorInformationView alloc]initWithFrame:self.view.frame];
+        [errorView showErrorView];
     }
 }
 

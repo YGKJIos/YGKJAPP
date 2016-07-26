@@ -10,4 +10,7 @@
 
 @interface carConsumeTableViewCell : UITableViewCell
 
+
++ (carConsumeTableViewCell *)greateCell;
+
 @end

@@ -6,14 +6,14 @@
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "carDetailHeaderView.h"
+#import "DetailTableHeaderView.h"
 
-@implementation carDetailHeaderView
+@implementation DetailTableHeaderView
 
 
-+ (carDetailHeaderView *)greateHeaderView
++ (DetailTableHeaderView *)greateHeaderView
 {
-    carDetailHeaderView *cell = [[[NSBundle mainBundle] loadNibNamed:@"carDetailHeaderView" owner:nil options:nil]lastObject];
+    DetailTableHeaderView *cell = [[[NSBundle mainBundle] loadNibNamed:@"DetailTableHeaderView" owner:nil options:nil]lastObject];
     return cell;
 }
 

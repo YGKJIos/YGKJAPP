@@ -1,21 +1,20 @@
 //
-//  carConsumeTableViewCell.m
+//  voucherTableViewCell.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/7/24.
+//  Created by 远古科技 on 16/7/25.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "carConsumeTableViewCell.h"
+#import "voucherTableViewCell.h"
 
-@implementation carConsumeTableViewCell
+@implementation voucherTableViewCell
 
-+ (carConsumeTableViewCell *)greateCell
++ (voucherTableViewCell *)greateCell
 {
-    carConsumeTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"carConsumeTableViewCell" owner:nil options:nil]lastObject];
+    voucherTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"voucherTableViewCell" owner:nil options:nil]lastObject];
     return cell;
 }
-
 
 - (void)awakeFromNib {
     [super awakeFromNib];

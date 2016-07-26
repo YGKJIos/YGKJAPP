@@ -7,7 +7,8 @@
 //
 
 #import "CateTypeTableViewController.h"
-#import "MerchantFoodTableViewController.h"
+//#import "MerchantFoodTableViewController.h"
+#import "CateDetailsTableViewController.h"
 #import "ShopTableViewCell.h"
 
 @interface CateTypeTableViewController ()
@@ -41,8 +42,6 @@
     if (cell == nil) {
         cell = [ShopTableViewCell createShopCell];
     }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -52,8 +51,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    MerchantFoodTableViewController *merchantVC = [[MerchantFoodTableViewController alloc]init];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
     [self.navigationController pushViewController:merchantVC animated:YES];
 }
 

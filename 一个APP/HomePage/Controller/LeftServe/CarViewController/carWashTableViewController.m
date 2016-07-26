@@ -9,7 +9,11 @@
 #import "carWashTableViewController.h"
 #import "GroupPurchaseView.h"
 #import "shopPeoleTableViewCell.h"
-#import "carNumTableViewCell.h"
+#import "StarEvaluateTotalTableViewCell.h"
+#import "EvaluateTableViewCell.h"
+#import "carConsumeTableViewCell.h"
+#import "ShowAllAndErorrCell.h"
+#import "ConsumePromptTableViewCell.h"
 @interface carWashTableViewController ()
 
 @end
@@ -35,11 +39,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 2;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
+    if (section == 2) {
+        return 2;
+    }
     return 1;
 }
 
@@ -50,8 +57,9 @@
         static NSString *reuse = @"reuse";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
         if (!cell) {
-            cell = [carNumTableViewCell greateCell];
+            cell = [StarEvaluateTotalTableViewCell greateCell];
         }
+        cell.selectionStyle = UITableViewCellStyleDefault;
         return cell;
     }
     if (indexPath.section == 1) {
@@ -60,6 +68,28 @@
         if (!cell) {
             cell = [shopPeoleTableViewCell greateCell];
         }
+        cell.selectionStyle = UITableViewCellStyleDefault;
+        return cell;
+    }
+    if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            cell = [carConsumeTableViewCell greateCell];
+            cell.selectionStyle = UITableViewCellStyleDefault;
+            return cell;
+        }
+        if (indexPath.row == 1) {
+            ShowAllAndErorrCell *cell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            [cell setShowAllAndErorrCellStyle:showAllCellStyle];
+            cell.selectionStyle = UITableViewCellStyleDefault;
+            return cell;
+        }
+
+    }
+    if (indexPath.section == 3) {
+        ConsumePromptTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"ConsumePromptTableViewCell" owner:nil options:nil]lastObject];
+        cell.selectionStyle = UITableViewCellStyleDefault;
         return cell;
     }
     return nil;
@@ -74,8 +104,15 @@
         return 135;
     }
     if (indexPath.section == 2) {
-        return 50;
+        if (indexPath.row == 1) {
+            return 40;
+        }
+        return 350;
     }
+    if (indexPath.section == 3) {
+        return 530;
+    }
+    
     return 0;
 }
 

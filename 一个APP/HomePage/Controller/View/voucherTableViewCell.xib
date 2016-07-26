@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="voucherTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="398" height="105"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="398" height="104.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="huichangbai" translatesAutoresizingMaskIntoConstraints="NO" id="ntp-UP-bz6">
+                        <rect key="frame" x="20" y="17" width="95" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="95" id="OBo-Ch-uu1"/>
+                            <constraint firstAttribute="height" constant="70" id="whq-xt-phI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="超炫婚礼服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7c-6B-ot6">
+                        <rect key="frame" x="123" y="17" width="145" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="ItO-um-s93"/>
+                            <constraint firstAttribute="width" constant="145" id="pUD-um-Qbq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥1399" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWt-tn-1Ur">
+                        <rect key="frame" x="123" y="70" width="67" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="67" id="DcA-bt-iyC"/>
+                            <constraint firstAttribute="height" constant="18" id="WQ0-Iu-QTq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <color key="textColor" red="0.33725490200000002" green="0.77647058820000003" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="门市价: ¥1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC6-ZR-TRh">
+                        <rect key="frame" x="198" y="72" width="99" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="99" id="XWM-5X-CUb"/>
+                            <constraint firstAttribute="height" constant="16" id="paE-Mi-zQ5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjE-sC-yjf">
+                        <rect key="frame" x="311" y="40" width="70" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="Cd7-x8-oaa"/>
+                            <constraint firstAttribute="height" constant="24" id="HEj-rM-Yzu"/>
+                        </constraints>
+                        <state key="normal" image="qcsj_lijigoumai"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sjE-sC-yjf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="32" id="1Fa-4y-RWe"/>
+                    <constraint firstItem="F7c-6B-ot6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="2lN-vV-d9u"/>
+                    <constraint firstItem="F7c-6B-ot6" firstAttribute="leading" secondItem="ntp-UP-bz6" secondAttribute="trailing" constant="8" id="Ccs-ld-Qkt"/>
+                    <constraint firstItem="ntp-UP-bz6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="L9K-ld-vSU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="sjE-sC-yjf" secondAttribute="trailing" constant="9" id="Qbl-Gr-35y"/>
+                    <constraint firstItem="cC6-ZR-TRh" firstAttribute="top" secondItem="F7c-6B-ot6" secondAttribute="bottom" constant="37" id="aGl-XT-WX0"/>
+                    <constraint firstItem="HWt-tn-1Ur" firstAttribute="leading" secondItem="ntp-UP-bz6" secondAttribute="trailing" constant="8" id="dsd-Q0-w0i"/>
+                    <constraint firstItem="HWt-tn-1Ur" firstAttribute="top" secondItem="F7c-6B-ot6" secondAttribute="bottom" constant="35" id="n47-yz-mwV"/>
+                    <constraint firstItem="ntp-UP-bz6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="neU-Aa-YNu"/>
+                    <constraint firstItem="cC6-ZR-TRh" firstAttribute="leading" secondItem="HWt-tn-1Ur" secondAttribute="trailing" constant="8" id="qhp-BT-DgG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="341" y="306.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="huichangbai" width="95" height="69"/>
+        <image name="qcsj_lijigoumai" width="70" height="24"/>
+    </resources>
+</document>

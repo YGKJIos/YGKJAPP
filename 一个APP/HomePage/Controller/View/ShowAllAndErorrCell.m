@@ -26,7 +26,7 @@
         [self.contentView addSubview:imageView];
         [imageView autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
         [imageView autoAlignAxisToSuperviewAxis:ALAxisVertical];
-        [imageView autoSetDimensionsToSize:CGSizeMake(70, 17)];
+        [imageView autoSetDimensionsToSize:CGSizeMake(51, 13)];
         imageView.image = [UIImage imageNamed:@"showAll"];
     }else if (style == erorrCellStyle)
     {

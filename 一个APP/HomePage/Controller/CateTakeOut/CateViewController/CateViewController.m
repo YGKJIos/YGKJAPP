@@ -8,7 +8,8 @@
 
 #import "CateViewController.h"
 #import "CateTypeTableViewController.h"// 自助餐，火锅。。。
-#import "MerchantFoodTableViewController.h" // 商家美食
+//#import "MerchantFoodTableViewController.h" // 商家美食
+#import "CateDetailsTableViewController.h"
 #import "SDCycleScrollView.h"
 #import "DropdownMenu.h"
 #import "MarketCell.h"
@@ -220,8 +221,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MerchantFoodTableViewController *merchantVC = [[MerchantFoodTableViewController alloc]init];
-    merchantVC.shopID = [self.MarkeArr[indexPath.row] objectForKey:@"shangjiaId"];
+    CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
+//    merchantVC.shopID = [self.MarkeArr[indexPath.row] objectForKey:@"shangjiaId"];
     [self.navigationController pushViewController:merchantVC animated:YES];
 }
 
