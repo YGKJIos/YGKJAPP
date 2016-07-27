@@ -105,7 +105,7 @@
                     <constraint firstItem="4oF-lL-KtD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="pu0-nO-TP8"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="238.5" y="436"/>
+            <point key="canvasLocation" x="353.5" y="427"/>
         </tableViewCell>
     </objects>
     <resources>

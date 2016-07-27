@@ -1,22 +1,22 @@
 //
-//  weddingDetailTableViewController.m
+//  banquetDetailTableViewController.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/7/25.
+//  Created by 远古科技 on 16/7/26.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "weddingDetailTableViewController.h"
+#import "banquetDetailTableViewController.h"
 #import "carDetailHeaderView.h"
 #import "voucherTableViewCell.h"
 #import "TitleCellTableViewCell.h"
 #import "ShowAllAndErorrCell.h"
 #import "CarEvaluateTableViewCell.h"
-@interface weddingDetailTableViewController ()
+@interface banquetDetailTableViewController ()
 
 @end
 
-@implementation weddingDetailTableViewController
+@implementation banquetDetailTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,7 +39,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+    
     return 3;
 }
 
@@ -62,20 +62,20 @@
             cell = [TitleCellTableViewCell createSectionTitleCellNib];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
-         } else if (indexPath.row == 4)
-         {
-             ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-             [erorrCell setShowAllAndErorrCellStyle:showAllCellStyle];
-             return erorrCell;
-         } else
-         {
-             static NSString *reuse = @"reuse";
-             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
-             cell = [voucherTableViewCell greateCell];
-             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-             return cell;
-         }
+        } else if (indexPath.row == 4)
+        {
+            ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            [erorrCell setShowAllAndErorrCellStyle:showAllCellStyle];
+            return erorrCell;
+        } else
+        {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            cell = [voucherTableViewCell greateCell];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
         }
+    }
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             TitleCellTableViewCell *cell = [TitleCellTableViewCell createSectionTitleCellNib];
@@ -143,5 +143,4 @@
     }
     return 0;
 }
-
 @end
