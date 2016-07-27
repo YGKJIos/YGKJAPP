@@ -7,6 +7,7 @@
 //
 
 #import "TheHotelTableViewController.h"
+#import "cardetailTableViewController.h"
 #import "TheHotelTableViewCell.h"
 #import "TheHotelModel.h"
 
@@ -27,7 +28,6 @@
     [self MJrefreshLoadData];
     
 }
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -86,7 +86,6 @@
     });
 }
 
-
 - (void)addTableHeaderView
 {
 
@@ -143,12 +142,6 @@
 }
 
 #pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.HotelArr.count;
@@ -167,6 +160,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 107;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    cardetailTableViewController *detailVC = [[cardetailTableViewController alloc]init];
+    detailVC.navigationItem.title = @"宾馆详情";
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

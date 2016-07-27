@@ -7,7 +7,7 @@
 //
 
 #import "cardetailTableViewController.h"
-#import "carDetailHeaderView.h"
+#import "DetailTableHeaderView.h"
 #import "groupTableViewCell.h"
 #import "CarEvaluateTableViewCell.h"
 #import "ShowAllAndErorrCell.h"
@@ -26,11 +26,6 @@
     self.tableView.backgroundColor = BGcolor(205, 205, 205);
     self.navigationItem.rightBarButtonItem = nil;
     [self.tableView setShowsVerticalScrollIndicator:NO];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,7 +131,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        carDetailHeaderView *header = [carDetailHeaderView greateHeaderView];
+        DetailTableHeaderView *header = [DetailTableHeaderView greateHeaderView];
         tableView.tableHeaderView = header;
     }
     return nil;

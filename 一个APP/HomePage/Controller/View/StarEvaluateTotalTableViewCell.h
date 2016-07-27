@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface carNumTableViewCell : UITableViewCell
+@interface StarEvaluateTotalTableViewCell : UITableViewCell
 
 
-+ (carNumTableViewCell *)greateCell;
++ (StarEvaluateTotalTableViewCell *)greateCell;
 
 @end

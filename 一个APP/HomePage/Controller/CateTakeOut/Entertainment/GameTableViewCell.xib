@@ -133,7 +133,8 @@
                 <outlet property="placeImage" destination="KpJ-V6-nHG" id="EGP-O6-9FG"/>
                 <outlet property="xingImage" destination="MfX-bd-98J" id="c6k-d0-5cY"/>
             </connections>
-            <point key="canvasLocation" x="319.5" y="357.5"/>
+
+            <point key="canvasLocation" x="326.5" y="293.5"/>
         </tableViewCell>
     </objects>
     <resources>

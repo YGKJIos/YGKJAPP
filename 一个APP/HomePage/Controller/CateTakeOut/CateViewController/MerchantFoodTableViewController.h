@@ -10,4 +10,6 @@
 
 @interface MerchantFoodTableViewController : UITableViewController
 
+@property (nonatomic, copy)NSString *shopID;
+
 @end

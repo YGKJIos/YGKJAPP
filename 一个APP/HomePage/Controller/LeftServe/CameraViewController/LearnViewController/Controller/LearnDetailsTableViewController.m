@@ -7,13 +7,17 @@
 //
 
 #import "LearnDetailsTableViewController.h"
-#import "EvaluateTableViewCell.h" // 评论cell
-#import "carDetailHeaderView.h"
+#import "PlayerVoteViewController.h" // 选手选票
+#import "ProgramVoteViewController.h" // 节目选票
+#import "VoucherTableViewController.h"
+#import "voucherTableViewCell.h"  // 团购cell
+//#import "EvaluateTableViewCell.h" // 评论cell
+#import "DetailTableHeaderView.h"
+#import "CarEvaluateTableViewCell.h"
 #import "TitleCellTableViewCell.h"
 #import "LearnGroupPurchaseTableViewCell.h"
 #import "ShowAllAndErorrCell.h"
-#import "PlayerVoteViewController.h" // 选手选票
-#import "ProgramVoteViewController.h" // 节目选票
+#import "ErrorInformationView.h"
 
 @interface LearnDetailsTableViewController ()
 @property (nonatomic, strong)NSArray *voteArr;
@@ -51,12 +55,13 @@
         return 5;
     }
     if (section == 2) {
-        return 3;
+        return 1;
     }
     return 1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // 团购券
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             return 44;
@@ -64,16 +69,10 @@
         if (indexPath.row == 4) {
             return 32;
         }
-        return 63;
+        return 105;
     }
     if (indexPath.section == 2) {
-        if (indexPath.row == 0) {
-            return 44;
-        }
-        if (indexPath.row == 2) {
-            return 32;
-        }
-        return 117;
+        return 220;
     }
     if (indexPath.section == 3) {
         return 72;
@@ -108,22 +107,22 @@
         }
         else
         {
-            LearnGroupPurchaseTableViewCell *learnCell = [LearnGroupPurchaseTableViewCell createLearnGroupPurchaseCellNib];
+            voucherTableViewCell *learnCell = [voucherTableViewCell greateCell];
             return learnCell;
         }
     }
     if (indexPath.section == 2) {
-        if (indexPath.row == 0) {
-            TitleCellTableViewCell *titleCell = [TitleCellTableViewCell createSectionTitleCellNib];
-            [titleCell setTitleImage:@"learn_pinglun" titleLab:@"用户评价"];
-            return titleCell;
-        }else if (indexPath.row == 2)
-        {
-            ShowAllAndErorrCell *showCell = [[ShowAllAndErorrCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            [showCell setShowAllAndErorrCellStyle:showAllCellStyle];
-            return showCell;
-        }
-        EvaluateTableViewCell *evaCell = [[NSBundle mainBundle]loadNibNamed:@"EvaluateTableViewCell" owner:nil options:nil].lastObject;
+//        if (indexPath.row == 0) {
+//            TitleCellTableViewCell *titleCell = [TitleCellTableViewCell createSectionTitleCellNib];
+//            [titleCell setTitleImage:@"learn_pinglun" titleLab:@"用户评价"];
+//            return titleCell;
+//        }else if (indexPath.row == 2)
+//        {
+//            ShowAllAndErorrCell *showCell = [[ShowAllAndErorrCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+//            [showCell setShowAllAndErorrCellStyle:showAllCellStyle];
+//            return showCell;
+//        }
+        CarEvaluateTableViewCell *evaCell = [CarEvaluateTableViewCell greateEvaluateCell];
         return evaCell;
     }
     
@@ -145,12 +144,22 @@
             [self.navigationController pushViewController:programVC animated:YES];
         }
     }
+    if (indexPath.section == 1) {
+        if (indexPath.row >0 && indexPath.row < 4) {
+            VoucherTableViewController *voucher = [[VoucherTableViewController alloc]init];
+            [self.navigationController pushViewController:voucher animated:YES];
+        }
+    }
+    if (indexPath.section == 3) {
+        ErrorInformationView *errorView = [[ErrorInformationView alloc]initWithFrame:self.view.frame];
+        [errorView showErrorView];
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        carDetailHeaderView *headerView = [carDetailHeaderView greateHeaderView];
+        DetailTableHeaderView *headerView = [DetailTableHeaderView greateHeaderView];
         
         tableView.tableHeaderView = headerView;
     }

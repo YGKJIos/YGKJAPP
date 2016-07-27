@@ -7,7 +7,7 @@
 //
 
 #import "weddingDetailTableViewController.h"
-#import "carDetailHeaderView.h"
+#import "DetailTableHeaderView.h"
 #import "voucherTableViewCell.h"
 #import "TitleCellTableViewCell.h"
 #import "ShowAllAndErorrCell.h"
@@ -103,7 +103,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        carDetailHeaderView *header = [carDetailHeaderView greateHeaderView];
+        DetailTableHeaderView *header = [DetailTableHeaderView greateHeaderView];
         tableView.tableHeaderView = header;
     }
     return nil;

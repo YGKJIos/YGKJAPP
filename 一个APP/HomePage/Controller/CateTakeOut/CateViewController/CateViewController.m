@@ -8,7 +8,8 @@
 
 #import "CateViewController.h"
 #import "CateTypeTableViewController.h"// 自助餐，火锅。。。
-#import "MerchantFoodTableViewController.h" // 商家美食
+//#import "MerchantFoodTableViewController.h" // 商家美食
+#import "CateDetailsTableViewController.h"
 #import "SDCycleScrollView.h"
 #import "DropdownMenu.h"
 #import "MarketCell.h"
@@ -74,7 +75,7 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"meishi/querymeishi1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -90,14 +91,12 @@
             NSLog(@"error-----%@",error);
         }];
         
-        NSLog(@"MJ-下拉刷新");
-        
     });
     
 }
 // 上拉加载的方法
 - (void)loadMoreData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
         NSLog(@"MJ-上啦加载");
     });
@@ -222,7 +221,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MerchantFoodTableViewController *merchantVC = [[MerchantFoodTableViewController alloc]init];
+    CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
+//    merchantVC.shopID = [self.MarkeArr[indexPath.row] objectForKey:@"shangjiaId"];
     [self.navigationController pushViewController:merchantVC animated:YES];
 }
 

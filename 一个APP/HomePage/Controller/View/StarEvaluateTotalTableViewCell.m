@@ -6,14 +6,14 @@
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "carNumTableViewCell.h"
+#import "StarEvaluateTotalTableViewCell.h"
 
-@implementation carNumTableViewCell
+@implementation StarEvaluateTotalTableViewCell
 
 
-+ (carNumTableViewCell *)greateCell
++ (StarEvaluateTotalTableViewCell *)greateCell
 {
-    carNumTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"carNumTableViewCell" owner:nil options:nil]lastObject];
+    StarEvaluateTotalTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"StarEvaluateTotalTableViewCell" owner:nil options:nil]lastObject];
     return cell;
 }
 
