@@ -223,6 +223,17 @@
 		D842DF301D224642008A54B7 /* icon_chose_arrow_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */; };
 		D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */; };
 		D842DF321D224642008A54B7 /* icon_chose_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */; };
+		D845EAE51D484573009B3B52 /* SecondHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D845EAE41D484573009B3B52 /* SecondHeaderView.m */; };
+		D845EAE71D484590009B3B52 /* SecondHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D845EAE61D484590009B3B52 /* SecondHeaderView.xib */; };
+		D845EAEA1D485216009B3B52 /* SecondDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D845EAE91D485216009B3B52 /* SecondDetailTableViewController.m */; };
+		D845EAF31D488545009B3B52 /* SecondDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D845EAF11D488545009B3B52 /* SecondDetailTableViewCell.m */; };
+		D845EAF41D488545009B3B52 /* SecondDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D845EAF21D488545009B3B52 /* SecondDetailTableViewCell.xib */; };
+		D845EAF71D4891BC009B3B52 /* SecondFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D845EAF61D4891BC009B3B52 /* SecondFooterView.m */; };
+		D845EAF91D4891E5009B3B52 /* SecondFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D845EAF81D4891E5009B3B52 /* SecondFooterView.xib */; };
+		D846966F1D470E4E004C0DE4 /* GameDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D846966E1D470E4E004C0DE4 /* GameDetailTableViewController.m */; };
+		D84696721D471D2B004C0DE4 /* banquetDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84696711D471D2B004C0DE4 /* banquetDetailTableViewController.m */; };
+		D84696751D471F71004C0DE4 /* TravelDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84696741D471F71004C0DE4 /* TravelDetailTableViewController.m */; };
+		D84696781D472EFD004C0DE4 /* MoviewDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84696771D472EFD004C0DE4 /* MoviewDetailTableViewController.m */; };
 		D846CE561D42FC1F00104971 /* recommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE541D42FC1F00104971 /* recommendTableViewCell.m */; };
 		D846CE571D42FC1F00104971 /* recommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */; };
 		D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE591D4318AE00104971 /* cardetailTableViewController.m */; };
@@ -653,6 +664,25 @@
 		D842DF2C1D224642008A54B7 /* icon_chose_arrow_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_nor@2x.png"; sourceTree = "<group>"; };
 		D842DF2D1D224642008A54B7 /* icon_chose_arrow_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_arrow_sel@2x.png"; sourceTree = "<group>"; };
 		D842DF2E1D224642008A54B7 /* icon_chose_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_chose_bottom@2x.png"; sourceTree = "<group>"; };
+		D845EAE31D484573009B3B52 /* SecondHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondHeaderView.h; sourceTree = "<group>"; };
+		D845EAE41D484573009B3B52 /* SecondHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondHeaderView.m; sourceTree = "<group>"; };
+		D845EAE61D484590009B3B52 /* SecondHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondHeaderView.xib; sourceTree = "<group>"; };
+		D845EAE81D485216009B3B52 /* SecondDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondDetailTableViewController.h; sourceTree = "<group>"; };
+		D845EAE91D485216009B3B52 /* SecondDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondDetailTableViewController.m; sourceTree = "<group>"; };
+		D845EAF01D488545009B3B52 /* SecondDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondDetailTableViewCell.h; sourceTree = "<group>"; };
+		D845EAF11D488545009B3B52 /* SecondDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondDetailTableViewCell.m; sourceTree = "<group>"; };
+		D845EAF21D488545009B3B52 /* SecondDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondDetailTableViewCell.xib; sourceTree = "<group>"; };
+		D845EAF51D4891BC009B3B52 /* SecondFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondFooterView.h; sourceTree = "<group>"; };
+		D845EAF61D4891BC009B3B52 /* SecondFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondFooterView.m; sourceTree = "<group>"; };
+		D845EAF81D4891E5009B3B52 /* SecondFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondFooterView.xib; sourceTree = "<group>"; };
+		D846966D1D470E4E004C0DE4 /* GameDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDetailTableViewController.h; sourceTree = "<group>"; };
+		D846966E1D470E4E004C0DE4 /* GameDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDetailTableViewController.m; sourceTree = "<group>"; };
+		D84696701D471D2B004C0DE4 /* banquetDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = banquetDetailTableViewController.h; sourceTree = "<group>"; };
+		D84696711D471D2B004C0DE4 /* banquetDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = banquetDetailTableViewController.m; sourceTree = "<group>"; };
+		D84696731D471F70004C0DE4 /* TravelDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelDetailTableViewController.h; sourceTree = "<group>"; };
+		D84696741D471F71004C0DE4 /* TravelDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelDetailTableViewController.m; sourceTree = "<group>"; };
+		D84696761D472EFD004C0DE4 /* MoviewDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviewDetailTableViewController.h; sourceTree = "<group>"; };
+		D84696771D472EFD004C0DE4 /* MoviewDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviewDetailTableViewController.m; sourceTree = "<group>"; };
 		D846CE531D42FC1F00104971 /* recommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recommendTableViewCell.h; sourceTree = "<group>"; };
 		D846CE541D42FC1F00104971 /* recommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recommendTableViewCell.m; sourceTree = "<group>"; };
 		D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recommendTableViewCell.xib; sourceTree = "<group>"; };
@@ -889,6 +919,8 @@
 				59458FCD1D3C8A1C00FAF565 /* FeastTableViewCell.xib */,
 				59458FCE1D3C8A1C00FAF565 /* FeastTableViewController.h */,
 				59458FCF1D3C8A1C00FAF565 /* FeastTableViewController.m */,
+				D84696701D471D2B004C0DE4 /* banquetDetailTableViewController.h */,
+				D84696711D471D2B004C0DE4 /* banquetDetailTableViewController.m */,
 			);
 			path = BanquetViewController;
 			sourceTree = "<group>";
@@ -944,6 +976,8 @@
 				59458FED1D3C8A1C00FAF565 /* TravelTableViewCell.xib */,
 				59458FEE1D3C8A1C00FAF565 /* TravelTableViewController.h */,
 				59458FEF1D3C8A1C00FAF565 /* TravelTableViewController.m */,
+				D84696731D471F70004C0DE4 /* TravelDetailTableViewController.h */,
+				D84696741D471F71004C0DE4 /* TravelDetailTableViewController.m */,
 				59458FF01D3C8A1C00FAF565 /* TravelView.h */,
 				59458FF11D3C8A1C00FAF565 /* TravelView.m */,
 				59458FF21D3C8A1C00FAF565 /* TravelView.xib */,
@@ -1025,6 +1059,17 @@
 				5945901F1D3C9FAD00FAF565 /* SecondHandTableViewCell.xib */,
 				594590201D3C9FAD00FAF565 /* SecondHandTableViewController.h */,
 				594590211D3C9FAD00FAF565 /* SecondHandTableViewController.m */,
+				D845EAE81D485216009B3B52 /* SecondDetailTableViewController.h */,
+				D845EAE91D485216009B3B52 /* SecondDetailTableViewController.m */,
+				D845EAE31D484573009B3B52 /* SecondHeaderView.h */,
+				D845EAE41D484573009B3B52 /* SecondHeaderView.m */,
+				D845EAE61D484590009B3B52 /* SecondHeaderView.xib */,
+				D845EAF51D4891BC009B3B52 /* SecondFooterView.h */,
+				D845EAF61D4891BC009B3B52 /* SecondFooterView.m */,
+				D845EAF81D4891E5009B3B52 /* SecondFooterView.xib */,
+				D845EAF01D488545009B3B52 /* SecondDetailTableViewCell.h */,
+				D845EAF11D488545009B3B52 /* SecondDetailTableViewCell.m */,
+				D845EAF21D488545009B3B52 /* SecondDetailTableViewCell.xib */,
 				594590221D3C9FAD00FAF565 /* SecondModel.h */,
 				594590231D3C9FAD00FAF565 /* SecondModel.m */,
 			);
@@ -1233,6 +1278,8 @@
 				594590AB1D3CAA5D00FAF565 /* GameTableViewCell.xib */,
 				594590AC1D3CAA5D00FAF565 /* GameTableViewController.h */,
 				594590AD1D3CAA5D00FAF565 /* GameTableViewController.m */,
+				D846966D1D470E4E004C0DE4 /* GameDetailTableViewController.h */,
+				D846966E1D470E4E004C0DE4 /* GameDetailTableViewController.m */,
 			);
 			path = Entertainment;
 			sourceTree = "<group>";
@@ -1247,6 +1294,8 @@
 				594590B31D3CAA5D00FAF565 /* MovieModel.m */,
 				594590B41D3CAA5D00FAF565 /* MovieTableViewController.h */,
 				594590B51D3CAA5D00FAF565 /* MovieTableViewController.m */,
+				D84696761D472EFD004C0DE4 /* MoviewDetailTableViewController.h */,
+				D84696771D472EFD004C0DE4 /* MoviewDetailTableViewController.m */,
 			);
 			path = Moview;
 			sourceTree = "<group>";
@@ -1911,6 +1960,7 @@
 				59FFB6B41D0501F000071E0E /* LaunchScreen.storyboard in Resources */,
 				5945907F1D3CA34F00FAF565 /* WeddingTableViewCell.xib in Resources */,
 				59E1224A1D41F557002EF204 /* EvaluateTableViewCell.xib in Resources */,
+				D845EAF91D4891E5009B3B52 /* SecondFooterView.xib in Resources */,
 				D85E79671D4361B600E7775D /* CarEvaluateTableViewCell.xib in Resources */,
 				594590FD1D3CAA5D00FAF565 /* MoiveTableViewCell.xib in Resources */,
 				59F2651B1D3F1276002F9D56 /* waterViewController.xib in Resources */,
@@ -1919,6 +1969,7 @@
 				59EEFC291D46FB55009DAFB5 /* DetailTableHeaderView.xib in Resources */,
 				594590FA1D3CAA5D00FAF565 /* GameTableViewCell.xib in Resources */,
 				D853E4731D3C853400C1FF9D /* fotgetViewController.xib in Resources */,
+				D845EAF41D488545009B3B52 /* SecondDetailTableViewCell.xib in Resources */,
 				594590081D3C8A1C00FAF565 /* TravelView.xib in Resources */,
 				594591141D3CAA5D00FAF565 /* TakeOutInformationView.xib in Resources */,
 				5945911A1D3CAA5D00FAF565 /* TakeTableViewCell.xib in Resources */,
@@ -1931,6 +1982,7 @@
 				D846CE571D42FC1F00104971 /* recommendTableViewCell.xib in Resources */,
 				D8FE2E571D422FC4003B2C52 /* activeTableViewCell.xib in Resources */,
 				59458FF91D3C8A1C00FAF565 /* TakePhotoTableViewCell.xib in Resources */,
+				D845EAE71D484590009B3B52 /* SecondHeaderView.xib in Resources */,
 				59E4EA501D193B08000083B8 /* profileHeaderView.xib in Resources */,
 				D8552ACE1D44A71A00C74C49 /* carConsumeTableViewCell.xib in Resources */,
 				594590391D3C9FAD00FAF565 /* priceViewController.xib in Resources */,
@@ -2022,6 +2074,7 @@
 				59458FF61D3C8A1C00FAF565 /* FeastTableViewController.m in Sources */,
 				59D096FA1D139E6C00039C87 /* TADotView.m in Sources */,
 				59458FFC1D3C8A1C00FAF565 /* sevCarTableViewCell.m in Sources */,
+				D84696781D472EFD004C0DE4 /* MoviewDetailTableViewController.m in Sources */,
 				594591091D3CAA5D00FAF565 /* DeliverAdressTableViewCell.m in Sources */,
 				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,
 				59FFB7031D051EA800071E0E /* UIView+Extension.m in Sources */,
@@ -2035,6 +2088,7 @@
 				590573D91D4469050033175B /* LearnViewController.m in Sources */,
 				594590061D3C8A1C00FAF565 /* TravelTableViewController.m in Sources */,
 				594591181D3CAA5D00FAF565 /* TypeTakeOutTableViewController.m in Sources */,
+				D845EAF71D4891BC009B3B52 /* SecondFooterView.m in Sources */,
 				594590FF1D3CAA5D00FAF565 /* MovieTableViewController.m in Sources */,
 				D84CC9E01D3DF06B00B615AF /* HomeModel.m in Sources */,
 				D853E4761D3C853400C1FF9D /* postsucceedViewController.m in Sources */,
@@ -2047,9 +2101,11 @@
 				5945905F1D3CA1D400FAF565 /* FoodHomeCell.m in Sources */,
 				59EEFC2A1D46FB55009DAFB5 /* GroupPurchaseView.m in Sources */,
 				59C781B51D459E9200BA18CA /* ProgramTableViewCell.m in Sources */,
+				D846966F1D470E4E004C0DE4 /* GameDetailTableViewController.m in Sources */,
 				D8F8A5841D41F41B00CAFB5B /* headerView.m in Sources */,
 				5945910D1D3CAA5D00FAF565 /* OrderPersonTableViewCell.m in Sources */,
 				59F265151D3F0F9D002F9D56 /* powerViewController.m in Sources */,
+				D84696751D471F71004C0DE4 /* TravelDetailTableViewController.m in Sources */,
 				594591001D3CAA5D00FAF565 /* CarViewController.m in Sources */,
 				59F2651A1D3F1276002F9D56 /* waterViewController.m in Sources */,
 				594591111D3CAA5D00FAF565 /* SubmitOrderViewController.m in Sources */,
@@ -2068,6 +2124,7 @@
 				D80148FF1D3CEB9B00334EDB /* lifepriceViewController.m in Sources */,
 				594590641D3CA1D400FAF565 /* ShoppingCell.m in Sources */,
 				D853E4721D3C853400C1FF9D /* fotgetViewController.m in Sources */,
+				D845EAEA1D485216009B3B52 /* SecondDetailTableViewController.m in Sources */,
 				594590341D3C9FAD00FAF565 /* HouseTableViewController.m in Sources */,
 				59D096FC1D139E6C00039C87 /* SDCollectionViewCell.m in Sources */,
 				594591051D3CAA5D00FAF565 /* AddFoodView.m in Sources */,
@@ -2080,6 +2137,7 @@
 				594591251D3CAC2500FAF565 /* NewsTableViewCell.m in Sources */,
 				594590741D3CA2F500FAF565 /* SmallAdvertisingTableViewController.m in Sources */,
 				594591041D3CAA5D00FAF565 /* SupermarketViewController.m in Sources */,
+				D845EAF31D488545009B3B52 /* SecondDetailTableViewCell.m in Sources */,
 				5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */,
 				D8FE2E561D422FC4003B2C52 /* activeTableViewCell.m in Sources */,
 				594591021D3CAA5D00FAF565 /* SupermarketCollectionViewCell.m in Sources */,
@@ -2106,6 +2164,7 @@
 				594591121D3CAA5D00FAF565 /* TakeOutInformationController.m in Sources */,
 				594590621D3CA1D400FAF565 /* HomeTableViewCell.m in Sources */,
 				590573F51D44B72C0033175B /* ProgramVoteViewController.m in Sources */,
+				D84696721D471D2B004C0DE4 /* banquetDetailTableViewController.m in Sources */,
 				594590F51D3CAA5D00FAF565 /* AllStylCollectionViewCell.m in Sources */,
 				D84FB6A41D39D6BA008B22E5 /* SetTableViewController.m in Sources */,
 				59458FFE1D3C8A1C00FAF565 /* sevCarTableViewController.m in Sources */,
@@ -2168,6 +2227,7 @@
 				5945903E1D3C9FAD00FAF565 /* shopCollectionViewCell.m in Sources */,
 				594591011D3CAA5D00FAF565 /* HeaderCollectionReusableView.m in Sources */,
 				D860860A1D45E15E002DD5DB /* weddingDetailTableViewController.m in Sources */,
+				D845EAE51D484573009B3B52 /* SecondHeaderView.m in Sources */,
 				59F2651F1D3F14CE002F9D56 /* carViewController.m in Sources */,
 				D846CE561D42FC1F00104971 /* recommendTableViewCell.m in Sources */,
 				59F2650B1D3F07BC002F9D56 /* gasViewController.m in Sources */,

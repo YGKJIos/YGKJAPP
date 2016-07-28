@@ -39,7 +39,7 @@ static NSString *bendiUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地�
 //    progress.backgroundColor = [UIColor grayColor];
 //    progress.alpha = 0.5;
     // 拼接url
-    NSString *addressUrl = [NSString stringWithFormat:@"%@%@",bendiUrl,urlString];
+    NSString *addressUrl = [NSString stringWithFormat:@"%@%@",headerUrl,urlString];
     
     // AFN网络请求
     AFHTTPSessionManager *manager = [self manager];

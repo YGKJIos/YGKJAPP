@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="208" id="KGk-i7-Jjw" customClass="SecondDetailTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="208"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="341" height="207"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv8-gF-GeW">
+                        <rect key="frame" x="27" y="0.0" width="286" height="199"/>
+                        <string key="text">啊实打实的啊实打实的暗示是阿斯顿收到阿斯顿阿斯顿阿斯顿 收到阿斯顿阿斯顿收到撒旦撒旦暗示打大声道阿斯顿阿斯顿暗示大神爱迪生大声道阿斯顿阿斯顿爱的暗示大大按时大大我打爱我的安慰对我的爱的啊 啊啊啊 爱的挖到我爱的撒旦暗示的撒旦爱而为的阿斯顿阿斯顿爱擦粉啊发多少打的费爱迪生发分暗示大大df sd 撒旦发顺丰水电费是防守打法水电费水电费撒旦防守打法撒旦是否撒旦发顺丰撒旦防守打法撒旦发多少发送到发送到撒旦是</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kv8-gF-GeW" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-20" id="046-8s-bnI"/>
+                    <constraint firstItem="kv8-gF-GeW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="19" id="0By-MS-eG3"/>
+                    <constraint firstItem="kv8-gF-GeW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CAA-QQ-WZn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kv8-gF-GeW" secondAttribute="bottom" id="MSb-Uv-FRO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="67.5" y="539"/>
+        </tableViewCell>
+    </objects>
+</document>
