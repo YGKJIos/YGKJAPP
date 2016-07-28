@@ -37,7 +37,6 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 3;
@@ -47,10 +46,12 @@
     if (section == 0) {
         return 5;
     }
+    if (section == 1) {
+        return 3;
+    }
     
     return 1;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -75,13 +76,25 @@
         }
     }
     if (indexPath.section == 1) {
-        static NSString *reuse = @"reuse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
-        if (!cell) {
-            cell = [CarEvaluateTableViewCell greateEvaluateCell];
+        if (indexPath.row == 0) {
+            TitleCellTableViewCell *titleCell = [TitleCellTableViewCell createSectionTitleCellNib];
+            [titleCell setTitleImage:@"ms_pingjia" titleLab:@"评价 (1024)"];
+            return titleCell;
+        }else if (indexPath.row == 1)
+        {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            if (!cell) {
+                cell = [CarEvaluateTableViewCell greateEvaluateCell];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }else
+        {
+            ShowAllAndErorrCell *cell = [[ShowAllAndErorrCell alloc]init];
+            [cell setShowAllAndErorrCellStyle:showAllCellStyle];
+            return cell;
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
         
     }
     ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -103,7 +116,10 @@
         }
     }
     if (indexPath.section == 1) {
-        return 220;
+        if (indexPath.row == 1) {
+            return 154;
+        }
+        return 44;
     }
     if (indexPath.section == 2) {
         return 50;

@@ -22,8 +22,6 @@
         UIImage *image = [UIImage imageNamed:images[i]];
         [arr addObject:image];
     }
-    
-    
     view.scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 150) imagesGroup:arr];
     // 是否无限循环
     view.scrollView.infiniteLoop = YES;
