@@ -128,7 +128,9 @@
             [view setImages:arr[num] names:titles[num]];
             view.delegate = self;
             num++;
-            view.frame = CGRectMake(35+j*(40+50), 170+i*(67+20), 40, 60);
+            CGFloat wid = (WIDTH -220) / 4;
+            CGFloat boundsWid = 30 * WIDTH/375;
+            view.frame = CGRectMake((boundsWid+j*(50+wid)), 170+i*(67+20), 50*WIDTH/375, 67*HEIGHT/667);
             [self.bgView addSubview:view];
         }
     }

@@ -41,6 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"全部分类";
     [self creatLeftTableView];
     [self creatRightCollecTionView];
 }

@@ -10,6 +10,5 @@
 
 @interface HeaderCollectionReusableView : UICollectionReusableView
 
-- (void)setScrollViewImage:(NSArray *)images;
 
 @end

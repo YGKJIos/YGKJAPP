@@ -11,8 +11,7 @@
 #import "DOPDropDownMenu.h"
 #import "GameModel.h"
 #import "GameDetailTableViewController.h"
-@interface GameTableViewController ()<DOPDropDownMenuDataSource,DOPDropDownMenuDelegate>
-
+@interface GameTableViewController ()
 @property (nonatomic, strong) NSArray *classifys;
 @property (nonatomic, strong) NSArray *cates;
 @property (nonatomic, strong) NSArray *movices;
@@ -24,29 +23,20 @@
 @end
 
 @implementation GameTableViewController
+-(NSMutableArray *)MarkeArr
+{
+    if (!_MarkeArr) {
+        self.MarkeArr = [[NSMutableArray alloc]init];
+    }
+    return _MarkeArr;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addHeaderView];
     self.title = @"休闲娱乐";
-    
-    // 数据
-    self.classifys = @[@"美食",@"今日新单",@"电影",@"酒店"];
-    self.cates = @[@"自助餐",@"快餐",@"火锅",@"日韩料理",@"西餐",@"烧烤小吃"];
-    self.movices = @[@"内地剧",@"港台剧",@"英美剧"];
-    self.hostels = @[@"经济酒店",@"商务酒店",@"连锁酒店",@"度假酒店",@"公寓酒店"];
-    self.areas = @[@"全城",@"芙蓉区",@"雨花区",@"天心区",@"开福区",@"岳麓区"];
-    self.sorts = @[@"默认排序",@"离我最近",@"好评优先",@"人气优先",@"最新发布"];
-    
-    // 添加下拉菜单
-    DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 320) andHeight:44];
-    
-    menu.delegate = self;
-    menu.dataSource = self;
+    // 刷新数据
+    [self addHeaderView];
     [self MJrefreshLoadData];
-    self.MarkeArr = [[NSMutableArray alloc] init];
-    [self.view addSubview:menu];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,6 +67,7 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"xiuxianyule/queryxiuxianyule.action";
@@ -107,77 +98,9 @@
     });
 }
 
-
-
-- (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
-{
-    return 3;
-}
-
-- (NSInteger)menu:(DOPDropDownMenu *)menu numberOfRowsInColumn:(NSInteger)column
-{
-    if (column == 0) {
-        return self.classifys.count;
-    }else if (column == 1){
-        return self.areas.count;
-    }else {
-        return self.sorts.count;
-    }
-}
-
-- (NSString *)menu:(DOPDropDownMenu *)menu titleForRowAtIndexPath:(DOPIndexPath *)indexPath
-{
-    if (indexPath.column == 0) {
-        return self.classifys[indexPath.row];
-    } else if (indexPath.column == 1){
-        return self.areas[indexPath.row];
-    } else {
-        return self.sorts[indexPath.row];
-    }
-}
-
-- (NSInteger)menu:(DOPDropDownMenu *)menu numberOfItemsInRow:(NSInteger)row column:(NSInteger)column
-{
-    if (column == 0) {
-        if (row == 0) {
-            return self.cates.count;
-        } else if (row == 2){
-            return self.movices.count;
-        } else if (row == 3){
-            return self.hostels.count;
-        }
-    }
-    return 0;
-}
-
-- (NSString *)menu:(DOPDropDownMenu *)menu titleForItemsInRowAtIndexPath:(DOPIndexPath *)indexPath
-{
-    if (indexPath.column == 0) {
-        if (indexPath.row == 0) {
-            return self.cates[indexPath.item];
-        } else if (indexPath.row == 2){
-            return self.movices[indexPath.item];
-        } else if (indexPath.row == 3){
-            return self.hostels[indexPath.item];
-        }
-    }
-    return nil;
-}
-
-- (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath
-{
-    if (indexPath.item >= 0) {
-        NSLog(@"点击了 %ld - %ld - %ld 项目",indexPath.column,indexPath.row,indexPath.item);
-    }else {
-        NSLog(@"点击了 %ld - %ld 项目",indexPath.column,indexPath.row);
-    }
-}
-
-
-
 - (void)addHeaderView
 {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 400)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 300)];
     NSArray *arr = @[@"waimai_tu",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
     ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
     scroll.frame = CGRectMake(0, 0, WIDTH, 150);
@@ -197,10 +120,7 @@
             num++;
             [headerView addSubview:view];
         }
-
     }
-    
-    
     self.tableView.tableHeaderView = headerView;
 }
 
@@ -229,10 +149,8 @@
     GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if (cell == nil) {
         cell = [GameTableViewCell createGameCell];
-        [cell GameModel:self.MarkeArr[indexPath.row]];
     }
-    
-//    cell.selectionStyle = UITableViewScrollPositionNone;
+    [cell GameModel:self.MarkeArr[indexPath.row]];
     return cell;
 }
 
@@ -245,6 +163,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     GameDetailTableViewController *gameDetailVC = [[GameDetailTableViewController alloc] init];
     [self.navigationController pushViewController:gameDetailVC animated:YES];
 }

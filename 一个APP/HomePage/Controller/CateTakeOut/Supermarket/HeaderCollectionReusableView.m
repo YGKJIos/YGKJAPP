@@ -15,15 +15,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        NSArray *images = @[@"chaoshi_tu",@"chaoshi_tu",@"chaoshi_tu",@"chaoshi_tu",];
+        ScrollView *scroll = [ScrollView CreateScrollViewImages:images];
+        [self addSubview:scroll];
+        
     }
     return self;
 }
 
-- (void)setScrollViewImage:(NSArray *)images
-{
-    ScrollView *scroll = [ScrollView CreateScrollViewImages:images];
-    
-    [self addSubview:scroll];
-}
 
 @end

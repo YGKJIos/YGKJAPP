@@ -25,28 +25,28 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(25, 5, WIDTH-50, 70)];
+        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(25* WIDTH/375, 5, WIDTH-(50* WIDTH/375), 70)];
         bgView.backgroundColor = BGcolor(173, 224, 231);
         [self.contentView addSubview:bgView];
         
-        self.leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH/2-161, 10, 121, 51)];
+        self.leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH/2-171*WIDTH/375, 10, 121*WIDTH/375, 51)];
         [self.leftImage setUserInteractionEnabled:YES];
         self.leftImage.image = [UIImage imageNamed:@"shouye_xpfs"];
         [bgView addSubview:self.leftImage];
         UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
         [self.leftImage addGestureRecognizer:leftTap];
         
-        self.rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(self.leftImage.x+self.leftImage.width+35, 10, 121, 51)];
+        self.rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(self.leftImage.x+self.leftImage.width+35*WIDTH/375, 10, 121*WIDTH/375, 51)];
         [self.rightImage setUserInteractionEnabled:YES];
         self.rightImage.image = [UIImage imageNamed:@"shouye_ppmz"];
         [bgView addSubview:self.rightImage];
         UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
         [self.rightImage addGestureRecognizer:rightTap];
         
-        CGFloat wid = (WIDTH -330) / 3;
+        CGFloat wid = (WIDTH -332) / 3;
         CGFloat boundsWid = 25 * WIDTH/375;
         for (int i = 0; i < 4; i++) {
-            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(boundsWid+(70+wid)*i, bgView.y+bgView.height+10, 70, 110)];
+            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(boundsWid+(70+wid)*i, bgView.y+bgView.height+10, 70*WIDTH/375, 110*HEIGHT/667)];
             [view ordinaryModelStyle];
             view.tag = 1000+i;
             [self.contentView addSubview:view];

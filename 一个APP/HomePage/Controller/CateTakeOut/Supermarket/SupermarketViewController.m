@@ -24,12 +24,12 @@
   
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake(180*(WIDTH/375), 150);
-    flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 190);
+    flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 160);
     flowLayout.sectionInset = UIEdgeInsetsMake(8, 3, 8, 3);
     flowLayout.minimumInteritemSpacing = 8;
     flowLayout.minimumLineSpacing = 8;
     
-    UICollectionView *collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) collectionViewLayout:flowLayout];
+    UICollectionView *collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64) collectionViewLayout:flowLayout];
     collection.backgroundColor = BGcolor(226, 226, 226);
     collection.delegate = self;
     collection.dataSource = self;
@@ -80,9 +80,7 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *arr = @[@"chaoshi_tu",@"chaoshi_tu",@"chaoshi_tu",@"chaoshi_tu",];
     HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headID" forIndexPath:indexPath];
-    [headerView setScrollViewImage:arr];
     return headerView;
 }
 

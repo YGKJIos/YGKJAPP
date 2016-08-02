@@ -24,11 +24,8 @@
     self.tableView.backgroundColor = BGcolor(205, 205, 205);
     self.navigationItem.rightBarButtonItem = nil;
     [self.tableView setShowsVerticalScrollIndicator:NO];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +49,6 @@
     }
     return 1;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -138,9 +134,21 @@
             return 40;
         }
     }
-    if (indexPath.section == 2) {
-        return 50;
-    }
-    return 0;
+    return 50;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        if (indexPath.row > 0) {
+            
+        }
+    }
+    if (indexPath.section == 1) {
+        if (indexPath.row > 0) {
+            
+        }
+    }
+}
+
 @end

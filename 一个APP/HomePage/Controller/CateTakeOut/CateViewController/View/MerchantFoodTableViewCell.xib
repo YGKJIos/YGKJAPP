@@ -83,7 +83,7 @@
                 <outlet property="offerNumLab" destination="pAT-9O-oEe" id="CVP-3U-rKB"/>
                 <outlet property="originalMoneyLab" destination="CHI-BC-A1X" id="QKg-cI-6K0"/>
             </connections>
-            <point key="canvasLocation" x="166" y="287"/>
+            <point key="canvasLocation" x="229" y="268"/>
         </tableViewCell>
     </objects>
     <resources>

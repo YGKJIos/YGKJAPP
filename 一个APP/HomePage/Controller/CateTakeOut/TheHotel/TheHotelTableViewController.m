@@ -23,12 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"宾馆";
+    
     [self addTableHeaderView];
     self.HotelArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
     
 }
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.tableView.mj_header beginRefreshing];
@@ -60,7 +61,6 @@
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"binguan/querybinguan1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 TheHotelModel *model = [[TheHotelModel alloc] init];

@@ -29,14 +29,14 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng/";
 {
     HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil].firstObject;
 //    view.size = CGSizeMake(70, 124);
-    UILabel *lineLab = [[UILabel alloc]init];
-    lineLab.x = 40;
-    lineLab.height = 1;
-    lineLab.width = 8;
-    lineLab.y = view.costLab.y+4;
-    lineLab.backgroundColor = BGcolor(180, 180, 180);
-    lineLab.transform = CGAffineTransformMakeRotation(M_PI_4/2);
-    [view  addSubview:lineLab];
+//    UILabel *lineLab = [[UILabel alloc]init];
+//    lineLab.x = 0;
+//    lineLab.height = 1;
+//    lineLab.width = 8;
+//    lineLab.y = view.costLab.y+4;
+//    lineLab.backgroundColor = BGcolor(180, 180, 180);
+//    lineLab.transform = CGAffineTransformMakeRotation(M_PI_4/2);
+//    [view.costLab  addSubview:lineLab];
     
     return view;
 }

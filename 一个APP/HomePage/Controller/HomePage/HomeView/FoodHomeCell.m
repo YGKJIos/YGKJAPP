@@ -10,25 +10,26 @@
 #import "FoodHomeCell.h"
 #import "HomeModelView.h"
 
-static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
+static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
+static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
 @implementation FoodHomeCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        CGFloat wid = (WIDTH -345) / 3;
-        CGFloat boundsWid = 30 * WIDTH/375;
+        CGFloat wid = (WIDTH -(WIDTH -30)) / 3;
+        CGFloat boundsWid = 35 * WIDTH/375;
         for (int i = 0; i < 4; i++) {
-            HomeModelView *view = [HomeModelView foodModelStyleView];
-            view.frame = CGRectMake(boundsWid+i*(71+wid), 17,0,0);
+//            HomeModelView *view = [HomeModelView foodModelStyleView];
+            HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil].firstObject;
+            view.frame = CGRectMake((boundsWid+i*(71+wid))* WIDTH/375, 17,0,0);
             view.tag = 1000+i;
             [self.contentView addSubview:view];
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction:)];
             [view addGestureRecognizer:tap];
         }
-        
     }
     return self;
 }
@@ -43,7 +44,7 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
     for (int i = 0; i < 4; i++) {
         HomeModelView *view = [self.contentView viewWithTag:1000+i];
         view.foodTitleLab.text = nameArr[i];
-        NSString *url = [NSString stringWithFormat:@"%@%@",headUrl,tupianArr[i]];
+        NSString *url = [NSString stringWithFormat:@"%@%@",headerUrl,tupianArr[i]];
         [view.foodImage sd_setImageWithURL:[NSURL URLWithString:url]];
         view.foodName.text = jieshaoArr[i];
         view.moneyLab.text = [NSString stringWithFormat:@"%@",tejiaArr[i]];

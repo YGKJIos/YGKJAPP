@@ -1,29 +1,39 @@
 //
-//  LearnViewController.m
+//  shopViewController.m
 //  一个APP
 //
-//  Created by 梁立彬 on 16/7/4.
+//  Created by 远古科技 on 16/7/16.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "LearnViewController.h"
-#import "LearnDetailsTableViewController.h" // 学习详情
+#import "shopViewController.h"
+#import "shopCollectionViewCell.h"
 #import "HeaderCollectionReusableView.h"
-#import "LearnCollectionViewCell.h"
-#import "LearnModel.h"
-@interface LearnViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
-@property (nonatomic, strong)NSMutableArray *MarkeArr;
-@property (nonatomic, strong) UICollectionView *collection;
+#import "detailTableViewController.h"
+#import "ShopServeModel.h"
+#import "AFNetWorting.h"
 
+@interface shopViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@property (nonatomic, strong) UICollectionView *collection;
+@property (nonatomic, strong)NSMutableArray *MarkeArr;
 @end
 
-@implementation LearnViewController
+@implementation shopViewController
+
+-(NSMutableArray *)MarkeArr
+{
+    if (!_MarkeArr) {
+        self.MarkeArr = [[NSMutableArray alloc]init];
+    }
+    return _MarkeArr;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"学习培训";
+    self.navigationItem.title = @"本地购物";
+    
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(165*(WIDTH/375), 185);
+    flowLayout.itemSize = CGSizeMake(165*(WIDTH/375), 256*HEIGHT/667);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 150);
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 15, 20, 15);
     flowLayout.minimumLineSpacing = 10;
@@ -33,22 +43,22 @@
     self.collection.delegate = self;
     self.collection.dataSource = self;
     self.collection.showsVerticalScrollIndicator = NO;
+    
     [self.view addSubview:self.collection];
     
-    UINib *nib = [UINib nibWithNibName:@"LearnCollectionViewCell" bundle:[NSBundle mainBundle]];
-    [self.collection registerNib:nib forCellWithReuseIdentifier:@"learnCell"];
+    UINib *nib = [UINib nibWithNibName:@"shopCollectionViewCell" bundle:[NSBundle mainBundle]];
+    [self.collection registerNib:nib forCellWithReuseIdentifier:@"shopCell"];
     [self.collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
-    self.MarkeArr = [[NSMutableArray alloc] init];
-    [self MJrefreshLoadData];
     
+    [self MJrefreshLoadData];
+    // 下拉刷新
+  
 }
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.collection.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
-
 #pragma mark - MJ刷新
 - (void)MJrefreshLoadData
 {
@@ -74,11 +84,11 @@
     [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collection.mj_header endRefreshing];
-        NSString *url = @"peixun/querypeixun1.action";
+        NSString *url = @"sheying/querysheying1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
-                LearnModel *model = [[LearnModel alloc] init];
+                ShopServeModel *model = [[ShopServeModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
@@ -99,15 +109,17 @@
 }
 
 
+#pragma mark - collection数据源代理
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.MarkeArr.count;
 }
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    LearnCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"learnCell" forIndexPath:indexPath];
-    [cell LearnModel:self.MarkeArr[indexPath.row]];
-
+    shopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"shopCell" forIndexPath:indexPath];
+    [cell setShopCollectionModel:self.MarkeArr[indexPath.row]];
     return cell;
 }
 
@@ -117,16 +129,22 @@
     return headerView;
 }
 
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    LearnDetailsTableViewController *learnDetailVC = [[LearnDetailsTableViewController alloc]init];
-    [self.navigationController pushViewController:learnDetailVC animated:YES];
+    
+    detailTableViewController *detailVC = [[detailTableViewController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    
+    NSLog(@"row = %ld, section= %ld",indexPath.row,indexPath.section);
 }
+
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end
