@@ -27,13 +27,9 @@
     RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
     self.window.rootViewController = rootTabBar;
     rootTabBar.tabBar.translucent = NO;
-    
- 
-    
-//    ProgramVoteViewController *vc = [[ProgramVoteViewController alloc]init];
-//    self.window.rootViewController = vc;
-    SecondDetailTableViewController *rootvc = [[SecondDetailTableViewController alloc] init];
-    self.window.rootViewController = rootvc;
+
+//    SecondDetailTableViewController *rootvc = [[SecondDetailTableViewController alloc] init];
+//    self.window.rootViewController = rootvc;
 
     [self.window makeKeyAndVisible];
     

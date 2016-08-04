@@ -27,6 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.MarkeArr = [[NSMutableArray alloc]init];
+#pragma mark - 数据请求
+    [self MJrefreshLoadData];
     self.navigationItem.title = @"美食";
     
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -34,16 +37,8 @@
     UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationLeftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
     self.navigationItem.leftBarButtonItem = leftItem;
     
-    UIBarButtonItem *rightItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationRigthBtnAction) image:@"meishi_sousuo" highImage:@"meishi_sousuo"];
-    self.navigationItem.rightBarButtonItem = rightItem;
-    
     [self addHeaderView];
     [self addMenuBtn];
-    self.tableView.tableHeaderView = self.bgView;
-    
-#pragma mark - 数据请求
-    self.MarkeArr = [[NSMutableArray alloc]init];
-    [self MJrefreshLoadData];
     
 }
 
@@ -75,6 +70,7 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"meishi/querymeishi1.action";
@@ -114,31 +110,10 @@
 - (void)addHeaderView
 {
     self.bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 330)];
-    UIImage *image1 = [UIImage imageNamed:@"shouye_guangg"];
-        
-        UIImage *image2 = [UIImage imageNamed:@"shouye_haigou"];
-        
-        UIImage *image3 = [UIImage imageNamed:@"shouye_meishitou"];
-        
-        UIImage *image4 = [UIImage imageNamed:@"shouye_xinwen"];
-        NSArray *images = @[image1,image2,image3,image4];
-        self.scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 150) imagesGroup:images];
-        self.scrollView.delegate = self;
-        // 是否无限循环
-        self.scrollView.infiniteLoop = YES;
-        // pageControl样式
-        self.scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
-        self.scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-        
-        // 轮播图上的文字
-        //    scrollView.titlesGroup = titles;
-        // 分页控件图标
-        self.scrollView.dotColor = [UIColor cyanColor];
-        
-        // 循环时间间隔,默认2.0s
-        self.scrollView.autoScrollTimeInterval = 2.0;
-        //    self.tableView.tableHeaderView = self.scrollView;
-    [self.bgView addSubview:self.scrollView];
+    NSArray *images = @[@"shouye_guangg",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
+    ScrollView *scroll = [ScrollView CreateScrollViewImages:images];
+    [self.bgView addSubview:scroll];
+    self.tableView.tableHeaderView = self.bgView;
 }
 - (void)addMenuBtn
 {
@@ -157,40 +132,12 @@
             [self.bgView addSubview:view];
         }
     }
-    
-//    NSArray *titleArray = @[@"全部分类",@"附近",@"智能"];
-//    for (int i = 0; i < 3; i++) {
-//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//        button.frame = CGRectMake(WIDTH/3*i, 320, WIDTH/3, 40);
-//        button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 40);
-//        button.imageEdgeInsets = UIEdgeInsetsMake(0, 80, 0, 0);
-//        button.titleLabel.textColor = BGcolor(198, 198, 198);
-//        [button setTitleColor:[UIColor colorWithRed:198/255. green:198/255. blue:198/255. alpha:1] forState:UIControlStateNormal];
-//        button.titleLabel.font = [UIFont systemFontOfSize:13];
-//        [button setTitle:titleArray[i] forState:UIControlStateNormal];
-//        [button setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
-//        [button addTarget:self action:@selector(downMeunClick) forControlEvents:UIControlEventTouchUpInside];
-//        [self.bgView addSubview:button];
-//    }
-
-//    DropdownMenu *dropdown = [[DropdownMenu alloc] initDropdownWithButtonTitles:titleArray andLeftListArray:nil andRightListArray:nil];
-////    dropdown.view.frame = CGRectMake(0, 200, WIDTH, 40);
-//    dropdown.delegate = self;   //此句的代理方法可返回选中下标值
-//    [self.bgView addSubview:dropdown.view];
 }
 - (void)imageAndLableViewPush
 {
     CateTypeTableViewController *cateTypeVC = [[CateTypeTableViewController alloc]init];
     [self.navigationController pushViewController:cateTypeVC animated:YES];
 }
-//- (void)downMeunClick
-//{
-//    
-//}
-//// 下拉菜单
-//- (void)dropdownSelectedButtonIndex:(NSString *)index LeftIndex:(NSString *)left RightIndex:(NSString *)right {
-//    NSLog(@"%s : You choice button %@, left %@ and right %@", __FUNCTION__, index, left, right);
-//}
 
 //轮播图 点击代理方法
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index

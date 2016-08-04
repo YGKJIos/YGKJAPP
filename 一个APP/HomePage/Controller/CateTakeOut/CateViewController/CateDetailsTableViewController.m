@@ -9,10 +9,10 @@
 #import "CateDetailsTableViewController.h"
 #import "carWashTableViewController.h"
 #import "VoucherTableViewController.h"
-#import "DetailTableHeaderView.h"
+#import "DetailTableHeaderView.h"  // 头部 商家信息
 #import "groupTableViewCell.h"
-#import "CarEvaluateTableViewCell.h"
-#import "ShowAllAndErorrCell.h"
+#import "CarEvaluateTableViewCell.h"  // 评论 cell
+#import "ShowAllAndErorrCell.h"   // 查看全部信息 或者 错误反馈
 #import "voucherTableViewCell.h"
 #import "TitleCellTableViewCell.h"
 #import "ErrorInformationView.h" //报错页面
@@ -37,7 +37,6 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 3;
@@ -47,10 +46,12 @@
     if (section == 0) {
         return 5;
     }
+    if (section == 1) {
+        return 3;
+    }
     
     return 1;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -64,6 +65,7 @@
         {
             ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             [erorrCell setShowAllAndErorrCellStyle:showAllCellStyle];
+
             return erorrCell;
         } else
         {
@@ -75,13 +77,25 @@
         }
     }
     if (indexPath.section == 1) {
-        static NSString *reuse = @"reuse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
-        if (!cell) {
-            cell = [CarEvaluateTableViewCell greateEvaluateCell];
+        if (indexPath.row == 0) {
+            TitleCellTableViewCell *titleCell = [TitleCellTableViewCell createSectionTitleCellNib];
+            [titleCell setTitleImage:@"ms_pingjia" titleLab:@"评价 (1024)"];
+            titleCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return titleCell;
+        }else if (indexPath.row == 1)
+        {
+            static NSString *reuse = @"reuse";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+            if (!cell) {
+                cell = [CarEvaluateTableViewCell greateEvaluateCell];
+            }
+            return cell;
+        }else
+        {
+            ShowAllAndErorrCell *cell = [[ShowAllAndErorrCell alloc]init];
+            [cell setShowAllAndErorrCellStyle:showAllCellStyle];
+            return cell;
         }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
         
     }
     ShowAllAndErorrCell *erorrCell = [[ShowAllAndErorrCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -103,7 +117,10 @@
         }
     }
     if (indexPath.section == 1) {
-        return 220;
+        if (indexPath.row == 1) {
+            return 154;
+        }
+        return 44;
     }
     if (indexPath.section == 2) {
         return 50;
@@ -127,9 +144,18 @@
 #pragma mark - table点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
-        VoucherTableViewController *washVC = [[VoucherTableViewController alloc] init];
-        [self.navigationController pushViewController:washVC animated:YES];
+        if (indexPath.row > 0) {
+            
+            VoucherTableViewController *washVC = [[VoucherTableViewController alloc] init];
+            [self.navigationController pushViewController:washVC animated:YES];
+        }
+    }
+    if (indexPath.section == 1) {
+        if (indexPath.row >0 ) {
+            NSLog(@"全部");
+        }
     }
     if (indexPath.section == 2)
     {

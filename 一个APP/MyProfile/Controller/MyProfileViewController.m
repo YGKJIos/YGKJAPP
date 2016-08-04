@@ -12,7 +12,7 @@
 #import "MenuTableViewCell.h"
 #import "SetTableViewController.h"
 #import "orderViewController.h"
-
+#import "RefundTableViewController.h"
 @interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate,orderDelegate>
 @property (nonatomic, strong)NSArray *images;
 @property (nonatomic, strong)NSArray *titles;
@@ -31,6 +31,8 @@
 }
 - (void)RightAction
 {
+    SetTableViewController *setVC = [[SetTableViewController alloc] init];
+    [self.navigationController pushViewController:setVC animated:YES];
     
     NSLog(@"daksjhdkajshdkjashdlkashdlkashdklahdkl");
     NSLog(@"wode_rightBarButtonItem");
@@ -119,30 +121,22 @@
     }
     if (indexPath.section == 2) {
         return 157/3;
-    }
+    }     
     return 67;
 }
 
 - (void) orderDelegate
 {
-    orderViewController *orderVC = [[orderViewController alloc] init];
-    
-    [self.navigationController pushViewController:orderVC animated:YES];
+//    orderViewController *orderVC = [[orderViewController alloc] init];
+//    [self.navigationController pushViewController:orderVC animated:YES];
+    RefundTableViewController *refunVC = [[RefundTableViewController alloc] init];
+    [self.navigationController pushViewController:refunVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
