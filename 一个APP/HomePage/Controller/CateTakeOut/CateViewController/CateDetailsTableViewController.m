@@ -16,6 +16,7 @@
 #import "voucherTableViewCell.h"
 #import "TitleCellTableViewCell.h"
 #import "ErrorInformationView.h" //报错页面
+#import "SeeAllEvaluateTableViewController.h" // 查看全部评论
 
 @interface CateDetailsTableViewController ()
 
@@ -25,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"商家详情";
     self.tableView.backgroundColor = BGcolor(205, 205, 205);
     self.navigationItem.rightBarButtonItem = nil;
     [self.tableView setShowsVerticalScrollIndicator:NO];
@@ -154,11 +155,15 @@
     }
     if (indexPath.section == 1) {
         if (indexPath.row >0 ) {
+            SeeAllEvaluateTableViewController *allEvaluateVC = [[SeeAllEvaluateTableViewController alloc]init];
+            [self.navigationController pushViewController:allEvaluateVC animated:YES];
             NSLog(@"全部");
+            
         }
     }
     if (indexPath.section == 2)
     {
+        
         ErrorInformationView *errorView = [[ErrorInformationView alloc]initWithFrame:self.view.frame];
         [errorView showErrorView];
     }

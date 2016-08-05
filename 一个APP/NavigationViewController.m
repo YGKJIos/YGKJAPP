@@ -14,8 +14,6 @@
 
 @implementation NavigationViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationBar.translucent = NO;
@@ -35,8 +33,8 @@
         
         // 设置按钮
         UIBarButtonItem *leftItme = [UIBarButtonItem itemWithTarget:self action:@selector(leftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
-        UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBtnAction) image:@"meishi_sousuo" highImage:@"meishi_sousuo"];
-        viewController.navigationItem.rightBarButtonItem = rightItme;
+//        UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBtnAction) image:@"meishi_sousuo" highImage:@"meishi_sousuo"];
+//        viewController.navigationItem.rightBarButtonItem = rightItme;
         viewController.navigationItem.leftBarButtonItem = leftItme;
     }
     [super pushViewController:viewController animated:animated];

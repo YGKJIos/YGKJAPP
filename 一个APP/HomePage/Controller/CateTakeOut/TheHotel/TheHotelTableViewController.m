@@ -9,6 +9,7 @@
 #import "TheHotelTableViewController.h"
 #import "cardetailTableViewController.h"
 #import "TheHotelTableViewCell.h"
+#import "SeeAllEvaluateTableViewController.h"
 #import "TheHotelModel.h"
 
 
@@ -165,7 +166,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     cardetailTableViewController *detailVC = [[cardetailTableViewController alloc]init];
-    detailVC.navigationItem.title = @"宾馆详情";
+    self.navigationItem.title = @"宾馆详情";
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {
