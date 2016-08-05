@@ -13,5 +13,53 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x4e00;&#x4e2a;APP/Login/Controller/LoginViewController.m"
+            timestampString = "492082251.230895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-loginBtn:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[LoginViewController loginBtn:]_block_invoke"
+                  moduleName = "&#x4e00;&#x4e2a;APP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lianglibin/Desktop/YGKJAPP/%E4%B8%80%E4%B8%AAAPP/Login/Controller/LoginViewController.m"
+                  timestampString = "492082251.293788"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "727">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[LoginViewController loginBtn:]_block_invoke.101"
+                  moduleName = "&#x4e00;&#x4e2a;APP"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lianglibin/Desktop/YGKJAPP/%E4%B8%80%E4%B8%AAAPP/Login/Controller/LoginViewController.m"
+                  timestampString = "492082251.294022"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "17">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

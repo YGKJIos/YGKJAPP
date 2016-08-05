@@ -41,6 +41,7 @@
     if ([dic[@"status"] isEqualToString:@"NO"]) {
         self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
         self.select = NO;
+        _dic = dic;
     }
     
     // 1.点击
@@ -102,7 +103,6 @@
                 [self presentViewController:rootVC animated:YES completion:nil];
             });
         }
-        
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
