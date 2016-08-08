@@ -61,4 +61,17 @@
     return 10;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *oneCell = [tableView cellForRowAtIndexPath: indexPath];
+    if (oneCell.accessoryType == UITableViewCellAccessoryNone) {
+        oneCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+    } else
+        oneCell.accessoryType = UITableViewCellAccessoryNone;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+
+
 @end

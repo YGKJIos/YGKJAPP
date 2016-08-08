@@ -237,6 +237,7 @@
 		D846CE561D42FC1F00104971 /* recommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE541D42FC1F00104971 /* recommendTableViewCell.m */; };
 		D846CE571D42FC1F00104971 /* recommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */; };
 		D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE591D4318AE00104971 /* cardetailTableViewController.m */; };
+		D8471E821D55BC880035462B /* AppraiseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8471E811D55BC880035462B /* AppraiseTableViewController.m */; };
 		D849239D1D4AF8AC002ED1FF /* SetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D849239B1D4AF8AC002ED1FF /* SetTableViewCell.m */; };
 		D849239E1D4AF8AC002ED1FF /* SetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D849239C1D4AF8AC002ED1FF /* SetTableViewCell.xib */; };
 		D84923A21D4B27C5002ED1FF /* SetNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D84923A01D4B27C5002ED1FF /* SetNameTableViewCell.m */; };
@@ -697,6 +698,8 @@
 		D846CE551D42FC1F00104971 /* recommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = recommendTableViewCell.xib; sourceTree = "<group>"; };
 		D846CE581D4318AE00104971 /* cardetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cardetailTableViewController.h; sourceTree = "<group>"; };
 		D846CE591D4318AE00104971 /* cardetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cardetailTableViewController.m; sourceTree = "<group>"; };
+		D8471E801D55BC880035462B /* AppraiseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseTableViewController.h; sourceTree = "<group>"; };
+		D8471E811D55BC880035462B /* AppraiseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseTableViewController.m; sourceTree = "<group>"; };
 		D849239A1D4AF8AC002ED1FF /* SetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewCell.h; sourceTree = "<group>"; };
 		D849239B1D4AF8AC002ED1FF /* SetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewCell.m; sourceTree = "<group>"; };
 		D849239C1D4AF8AC002ED1FF /* SetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetTableViewCell.xib; sourceTree = "<group>"; };
@@ -890,6 +893,8 @@
 				D8FFC6D01D4C831E002E4224 /* RefundTableViewCell.h */,
 				D8FFC6D11D4C831E002E4224 /* RefundTableViewCell.m */,
 				D8FFC6D21D4C831E002E4224 /* RefundTableViewCell.xib */,
+				D8471E801D55BC880035462B /* AppraiseTableViewController.h */,
+				D8471E811D55BC880035462B /* AppraiseTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2155,6 +2160,7 @@
 				59F2651A1D3F1276002F9D56 /* waterViewController.m in Sources */,
 				594591111D3CAA5D00FAF565 /* SubmitOrderViewController.m in Sources */,
 				594591271D3CAC2500FAF565 /* NewsTableViewController.m in Sources */,
+				D8471E821D55BC880035462B /* AppraiseTableViewController.m in Sources */,
 				D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */,
 				D81103541D40A1EE00C659DA /* orderViewController.m in Sources */,
 				59C781BD1D45FAEF00BA18CA /* MerchantModel.m in Sources */,
