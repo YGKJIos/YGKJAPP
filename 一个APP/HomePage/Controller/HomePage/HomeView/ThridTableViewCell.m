@@ -8,7 +8,9 @@
 
 #import "ThridTableViewCell.h"
 #import "HomeModelView.h"
-static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
+
+static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
+static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
 @interface ThridTableViewCell ()
 @property (nonatomic, strong)UIImageView *posterImage;
 
@@ -66,11 +68,11 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
 - (void)lifeServeStyle
 {
     int num = 0;
-    CGFloat wid = (WIDTH -365) / 3;
+    CGFloat wid = (WIDTH -(WIDTH-10)) / 3 * WIDTH/375;
     CGFloat boundsWid = 30 * WIDTH/375;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 3; j++) {
-            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(boundsWid+j*(107+wid), 25+i*(95+15), 107, 95)];
+            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake((boundsWid+j*(107+wid))*WIDTH/375, 25+i*(95+15)*HEIGHT/667, 107*WIDTH/375, 95*HEIGHT/667)];
             [view ordinaryModelStyle];
             view.tag = 1000+(num++);
             [view setUserInteractionEnabled:YES];
@@ -80,13 +82,13 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
             [view addGestureRecognizer:tap];
         }
     }
-    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 250, WIDTH, 120)];
+    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 250*HEIGHT/667, WIDTH, 120)];
     [self.contentView addSubview:self.posterImage];
 }
 // 时事新闻
 - (void)newStyle
 {
-    HomeModelView *leftView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2-160, 10, 140, 100)];
+    HomeModelView *leftView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2-160*WIDTH/375, 10, 140*WIDTH/375, 100*HEIGHT/667)];
     [leftView ordinaryModelStyle];
     leftView.tag = 2000;
     [leftView setUserInteractionEnabled:YES];
@@ -95,7 +97,7 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
     UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
     [leftView addGestureRecognizer:leftTap];
     
-    HomeModelView *rightView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2+20, 10, 140, 100)];
+    HomeModelView *rightView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2+20*WIDTH/375, 10, 140*WIDTH/375, 100*HEIGHT/667)];
     [rightView ordinaryModelStyle];
     rightView.tag = 2001;
     [rightView setUserInteractionEnabled:YES];
@@ -112,13 +114,14 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
 {
     HomeModelView *leftView = [HomeModelView inviteModelStyleView];
     leftView.tag = 4000;
-    leftView.origin = CGPointMake(WIDTH/2-165, 15);
-    leftView.size = CGSizeMake(150, 60);
+    leftView.origin = CGPointMake(WIDTH/2-165*WIDTH/375, 15);
+    leftView.size = CGSizeMake(150*WIDTH/375, 60*HEIGHT/667);
     [self.contentView addSubview:leftView];
     
     HomeModelView *rightView = [HomeModelView inviteModelStyleView];
     rightView.tag = 4001;
-    rightView.origin = CGPointMake(WIDTH/2+15, 15);
+    rightView.origin = CGPointMake(WIDTH/2+15*WIDTH/375, 15);
+    rightView.size = CGSizeMake(150*WIDTH/375, 60*HEIGHT/667);
     [self.contentView addSubview:rightView];
     
     UITapGestureRecognizer *liftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
@@ -174,7 +177,7 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
         NSArray *titles = @[model.xinwenName1, model.xinwenName2];
         for (int i = 0; i < titles.count; i++) {
             HomeModelView *view = [self.contentView viewWithTag:2000+i];
-            NSString *url = [NSString stringWithFormat:@"%@%@",headUrl,arr[i]];
+            NSString *url = [NSString stringWithFormat:@"%@%@",headerUrl,arr[i]];
             [view.imageV sd_setImageWithURL:[NSURL URLWithString:url]];
             view.titleLab.text = titles[i];
         }
@@ -189,7 +192,7 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
         
         for (int i = 0; i < images.count; i++) {
             HomeModelView *view = (HomeModelView *)[self.contentView viewWithTag:3000+i];
-            NSString *urlStr = [NSString stringWithFormat:@"%@%@",headUrl,images[i]];
+            NSString *urlStr = [NSString stringWithFormat:@"%@%@",headerUrl,images[i]];
             [view.travelImage sd_setImageWithURL:[NSURL URLWithString:urlStr]];
             view.travelImage.opaque = YES;
             view.travelNameLab.text = names[i];
@@ -216,27 +219,18 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng";
     if (self.style == secondCellStyle) {
         
         HomeModelView *liftView = (HomeModelView *)[self.contentView viewWithTag:5000];
-        NSString *leftUrl = [NSString stringWithFormat:@"%@%@", headUrl,model.ershouTupian1];
+        NSString *leftUrl = [NSString stringWithFormat:@"%@%@", headerUrl,model.ershouTupian1];
         [liftView.secondImage sd_setImageWithURL:[NSURL URLWithString:leftUrl]];
         liftView.secondName.text = model.ershouName1;
         liftView.secondMoney.text = model.ershouJiage1;
         
         HomeModelView *rightView = (HomeModelView *)[self.contentView viewWithTag:5001];
-        NSString *rightUrl = [NSString stringWithFormat:@"%@%@",headUrl,model.ershouTupian2];
+        NSString *rightUrl = [NSString stringWithFormat:@"%@%@",headerUrl,model.ershouTupian2];
         [rightView.secondImage sd_setImageWithURL:[NSURL URLWithString:rightUrl]];
         rightView.secondName.text = model.ershouName2;
         rightView.secondMoney.text = model.ershouJiage2;
     }
 }
 
-- (void)awakeFromNib {
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

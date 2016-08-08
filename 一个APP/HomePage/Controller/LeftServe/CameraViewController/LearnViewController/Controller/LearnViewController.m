@@ -21,8 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+    self.navigationItem.title = @"学习培训";
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake(165*(WIDTH/375), 185);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 150);
@@ -75,7 +74,7 @@
     [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collection.mj_header endRefreshing];
-        NSString *url = @"sheying/querysheying1.action";
+        NSString *url = @"peixun/querypeixun1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
@@ -114,9 +113,7 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *arr = @[@"chaoshi_tu",@"chaoshi_tu",@"chaoshi_tu",@"chaoshi_tu",];
     HeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"headID" forIndexPath:indexPath];
-    [headerView setScrollViewImage:arr];
     return headerView;
 }
 

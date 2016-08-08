@@ -24,12 +24,12 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-    self.window.rootViewController = rootTabBar;
-    rootTabBar.tabBar.translucent = NO;
+//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+//    self.window.rootViewController = rootTabBar;
+//    rootTabBar.tabBar.translucent = NO;
 
-//    SecondDetailTableViewController *rootvc = [[SecondDetailTableViewController alloc] init];
-//    self.window.rootViewController = rootvc;
+    LoginViewController *rootvc = [[LoginViewController alloc] init];
+    self.window.rootViewController = rootvc;
 
     [self.window makeKeyAndVisible];
     

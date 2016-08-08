@@ -8,7 +8,7 @@
 
 #import "GameTableViewCell.h"
 
-static NSString *game = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *game = @"http://139.129.209.189:8080/shangcheng/";
 @implementation GameTableViewCell
 
 
@@ -29,9 +29,6 @@ static NSString *game = @"http://192.168.1.88:8080/shangcheng/";
     self.adressLabel.text = [NSString stringWithFormat:@"%@m", model.shangjiaJuli];
     
 }
-
-
-
 
 - (void)awakeFromNib {
     [super awakeFromNib];

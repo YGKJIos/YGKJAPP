@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="mimaField" destination="eS8-22-ElQ" id="2iI-uT-jML"/>
                 <outlet property="peopleTextField" destination="hVf-za-aef" id="RTY-6t-z5m"/>
+                <outlet property="phoneLoginBtn" destination="Zfb-ce-dEU" id="QJ0-3v-adQ"/>
                 <outlet property="remaberBtn" destination="rHA-aA-KS1" id="iif-j5-iId"/>
                 <outlet property="selectImage" destination="Cof-Tz-9Aa" id="Y1f-M3-8N3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -103,10 +104,9 @@
                         <constraint firstAttribute="width" constant="97" id="IHm-X3-nNg"/>
                         <constraint firstAttribute="height" constant="22" id="Qna-x3-S9M"/>
                     </constraints>
-                    <state key="normal" image="weixindenglu"/>
-                    <connections>
-                        <action selector="wxBtn:" destination="-1" eventType="touchUpInside" id="9fA-hk-WTG"/>
-                    </connections>
+                    <state key="normal" title="手机登录">
+                        <color key="titleColor" red="0.37647058823529411" green="0.77254901960784317" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xm-NY-29X">
                     <rect key="frame" x="172" y="604" width="30" height="21"/>
@@ -194,7 +194,6 @@
         <image name="denglumima" width="264" height="46"/>
         <image name="dengluming" width="264" height="46"/>
         <image name="jizhumima_weixuan" width="17" height="17"/>
-        <image name="weixindenglu" width="97" height="17"/>
         <image name="zhihuitongcheng" width="234" height="90"/>
         <image name="zhucezhanghu" width="80" height="24"/>
     </resources>

@@ -29,6 +29,7 @@ static NSString *bendiUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地�
     manager.responseSerializer = [AFHTTPResponseSerializer serializer]; // AFN不会解析,数据是data，需要自己解析
     //    manager.responseSerializer = [AFJSONResponseSerializer serializer]; // AFN会JSON解析返回的数据
     // 个人建议还是自己解析的比较好，有时接口返回的数据不合格会报3840错误，大致是AFN无法解析返回来的数据
+    [manager.requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     return manager;
 }
 
@@ -70,8 +71,6 @@ static NSString *bendiUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地�
 //    progress.labelText = @"加载中...";
     
     AFHTTPSessionManager *manager = [self manager];
-//    NSString *urlStr = [self montageUrl:params urlstr:[NSString stringWithFormat:@"%@%@?" , headerUrl,urlString]];
-////    NSLog(@"AFHTTPSessionManager===%@" , urlStr);
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",headerUrl,urlString];
     [manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         

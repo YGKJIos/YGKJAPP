@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShopServeModel.h"
 
 @interface shopCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *dazheImage;
@@ -15,8 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *jieshaoLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *placeImage;
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
-
-
+- (void)setShopCollectionModel:(ShopServeModel *)model;
 
 
 @end
