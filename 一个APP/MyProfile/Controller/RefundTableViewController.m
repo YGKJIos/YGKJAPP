@@ -8,6 +8,7 @@
 
 #import "RefundTableViewController.h"
 #import "RefundTableViewCell.h"
+#import "orderViewController.h"
 @interface RefundTableViewController ()
 
 @end
@@ -16,12 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"待付款";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,7 +49,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 260;
+    return 280;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -62,13 +58,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *oneCell = [tableView cellForRowAtIndexPath: indexPath];
-    if (oneCell.accessoryType == UITableViewCellAccessoryNone) {
-        oneCell.accessoryType = UITableViewCellAccessoryCheckmark;
-        
-    } else
-        oneCell.accessoryType = UITableViewCellAccessoryNone;
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    UITableViewCell *oneCell = [tableView cellForRowAtIndexPath: indexPath];
+//    if (oneCell.accessoryType == UITableViewCellAccessoryNone) {
+//        oneCell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        
+//    } else
+//        oneCell.accessoryType = UITableViewCellAccessoryNone;
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    orderViewController *orderVC = [[orderViewController alloc] init];
+    [self.navigationController pushViewController:orderVC animated:YES];
 }
 
 

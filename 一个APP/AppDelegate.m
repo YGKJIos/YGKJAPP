@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
 #import "SecondDetailTableViewController.h"
+#import "AppraiseTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -24,12 +25,14 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-//    self.window.rootViewController = rootTabBar;
-//    rootTabBar.tabBar.translucent = NO;
+    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+    self.window.rootViewController = rootTabBar;
+    rootTabBar.tabBar.translucent = NO;
 
-    LoginViewController *rootvc = [[LoginViewController alloc] init];
-    self.window.rootViewController = rootvc;
+//    AppraiseTableViewController *pjVC = [[AppraiseTableViewController alloc] init];
+//    self.window.rootViewController = pjVC;
+//    LoginViewController *rootvc = [[LoginViewController alloc] init];
+//    self.window.rootViewController = rootvc;
 
     [self.window makeKeyAndVisible];
     

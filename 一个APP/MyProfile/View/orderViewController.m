@@ -7,7 +7,7 @@
 //
 
 #import "orderViewController.h"
-
+#import "PlaceOrderTableViewController.h"
 @interface orderViewController ()
 @property (nonatomic, retain) IBOutlet UIScrollView *bcakView;
 
@@ -21,14 +21,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
         self.bcakView.contentSize = CGSizeMake(WIDTH, HEIGHT+100);
-    
-    
-    
+    self.title = @"订单详情";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// 付款按钮
+- (IBAction)payBtn:(id)sender {
+    PlaceOrderTableViewController *placeVC = [[PlaceOrderTableViewController alloc] init];
+    [self.navigationController pushViewController:placeVC animated:YES];
 }
 
 /*

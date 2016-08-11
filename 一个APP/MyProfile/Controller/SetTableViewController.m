@@ -19,14 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.frame = CGRectMake(0, 0, WIDTH, HEIGHT - 64);
-//    self.view.backgroundColor = BGcolor(205, 205, 205);
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
+
+    self.title = @"设置";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     SetFooterView *cell = [[[NSBundle mainBundle]loadNibNamed:@"SetFooterView" owner:nil options:nil]lastObject];
-//    cell.frame = CGRectMake(0, 0, WIDTH, 0);
     [cell.outBtn addTarget:self action:@selector(clickOutBtn) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableFooterView = cell;
 }
