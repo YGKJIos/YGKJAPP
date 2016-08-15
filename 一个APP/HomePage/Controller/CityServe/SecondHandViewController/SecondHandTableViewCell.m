@@ -24,8 +24,7 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
     self.nameLabel.text = model.shangjiaName;
     self.introduceLabel.text = model.shangjiaTongzhi;
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@", model.ershouJiage];
-    self.juliLabel.text = [NSString stringWithFormat:@"/  %@m", model.shangjiaJuli];
-    self.dayLabel.text = model.ershouShijian;
+    self.dayLabel.text = [NSString stringWithFormat:@"%@/%@m",model.ershouShijian,model.shangjiaJuli];
     [self.SecondHandImage sd_setImageWithURL:[NSURL  URLWithString:[NSString stringWithFormat:@"%@%@", Second, model.shangjiaTouxiang]]];
 }
 

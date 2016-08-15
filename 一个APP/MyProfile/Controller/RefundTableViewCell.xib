@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="259" id="KGk-i7-Jjw" customClass="RefundTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="432" height="259"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="284" id="KGk-i7-Jjw" customClass="RefundTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="284"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="432" height="258"/>
+                <rect key="frame" x="0.0" y="0.0" width="432" height="283"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆小面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmP-LN-aF1">
@@ -72,27 +72,39 @@
                         <color key="textColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="daifukuanbaiji_daifukuan" translatesAutoresizingMaskIntoConstraints="NO" id="4fo-8s-2ck">
+                        <rect key="frame" x="317" y="16" width="80" height="37"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="daifukuan_fukuan" translatesAutoresizingMaskIntoConstraints="NO" id="7Il-Fm-cml">
+                        <rect key="frame" x="312" y="235" width="91" height="40"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="odu-ja-t5i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="0f7-xT-vP5"/>
                     <constraint firstItem="odu-ja-t5i" firstAttribute="top" secondItem="qmP-LN-aF1" secondAttribute="bottom" constant="16" id="ESs-LE-qmK"/>
                     <constraint firstItem="qmP-LN-aF1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="Eyq-uz-MMr"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7Il-Fm-cml" secondAttribute="trailing" constant="21" id="PW5-y0-xVi"/>
                     <constraint firstItem="idc-4a-vBQ" firstAttribute="top" secondItem="G5Y-ns-py6" secondAttribute="bottom" constant="71" id="PqH-tS-Rua"/>
                     <constraint firstItem="idc-4a-vBQ" firstAttribute="leading" secondItem="65w-yT-Stv" secondAttribute="trailing" constant="21" id="R3N-vq-5XU"/>
                     <constraint firstAttribute="trailingMargin" secondItem="odu-ja-t5i" secondAttribute="trailing" constant="-8" id="SH3-mJ-mGA"/>
+                    <constraint firstItem="7Il-Fm-cml" firstAttribute="top" secondItem="odu-ja-t5i" secondAttribute="bottom" constant="172" id="VMv-tw-2TB"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4fo-8s-2ck" secondAttribute="trailing" constant="27" id="WZW-1o-h59"/>
                     <constraint firstItem="qoK-h1-F7X" firstAttribute="top" secondItem="odu-ja-t5i" secondAttribute="bottom" constant="13" id="Zcb-eX-2gZ"/>
                     <constraint firstItem="65w-yT-Stv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="21" id="ZeZ-aJ-3E6"/>
                     <constraint firstItem="65w-yT-Stv" firstAttribute="top" secondItem="qoK-h1-F7X" secondAttribute="bottom" constant="14" id="eOu-tM-53x"/>
+                    <constraint firstItem="4fo-8s-2ck" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="owG-uw-20G"/>
                     <constraint firstItem="G5Y-ns-py6" firstAttribute="leading" secondItem="65w-yT-Stv" secondAttribute="trailing" constant="21" id="pbB-91-FU5"/>
                     <constraint firstItem="qmP-LN-aF1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="21" id="tFQ-Wr-ocI"/>
                     <constraint firstItem="G5Y-ns-py6" firstAttribute="top" secondItem="odu-ja-t5i" secondAttribute="bottom" constant="48" id="whh-kQ-Mks"/>
                     <constraint firstItem="qoK-h1-F7X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="21" id="yPt-4K-ddl"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="320" y="325.5"/>
+            <point key="canvasLocation" x="320" y="338"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="daifukuan_fukuan" width="91" height="40"/>
+        <image name="daifukuanbaiji_daifukuan" width="80" height="37"/>
         <image name="dingdanxiangqing-tupian" width="149" height="113"/>
     </resources>
 </document>

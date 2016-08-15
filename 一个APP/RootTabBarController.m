@@ -14,7 +14,6 @@
 #import "MessageViewController.h"  //消息
 #import "HomePageViewController.h"  // 首页
 #import "MyProfileViewController.h"  // 我的
-
 @interface RootTabBarController ()
 
 @end
@@ -34,6 +33,8 @@
     
     MyProfileViewController *profile = [[MyProfileViewController alloc]init];
     [self addChildVC:profile originalImage:@"wode_hui-1" selectImage:@"wode_lan-1" title:@"我的"];
+    
+    
     
 //    MessageViewController *messageVC = [[MessageViewController alloc]init];
 //    [self addChildVC:messageVC originalImage:@"xiaoxihui" selectImage:@"xiaoxi" title:@"消息"];

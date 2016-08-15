@@ -25,10 +25,10 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.8分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbh-Wb-Eii">
-                    <rect key="frame" x="96" y="154" width="42" height="16"/>
+                    <rect key="frame" x="96" y="154" width="107" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="BRo-h3-ghI"/>
-                        <constraint firstAttribute="width" constant="42" id="UDa-zH-79P"/>
+                        <constraint firstAttribute="width" constant="107" id="UDa-zH-79P"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.93333333333333335" green="0.67843137254901964" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>

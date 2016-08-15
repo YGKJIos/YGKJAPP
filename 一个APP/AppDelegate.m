@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
-#import "CateDetailsTableViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -28,8 +28,8 @@
 
 //    LoginViewController *rootvc = [[LoginViewController alloc] init];
 //    self.window.rootViewController = rootvc;
-    
-        [self.window makeKeyAndVisible];
+
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

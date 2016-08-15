@@ -7,7 +7,7 @@
 //
 
 #import "RefundTableViewCell.h"
-
+#import "orderViewController.h"
 @implementation RefundTableViewCell
 
 
@@ -20,6 +20,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+}
+// 付款按钮
+- (IBAction)payBtn:(id)sender {
+ 
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

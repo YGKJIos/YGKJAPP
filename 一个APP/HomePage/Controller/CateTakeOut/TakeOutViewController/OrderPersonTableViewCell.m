@@ -35,7 +35,7 @@
     }else if (orderPersonStyle == MerchantSnackCell)
     {
         [self addMerchantSnackCell];
-    }else if (orderPersonStyle == FavorableCell){
+    }else if (orderPersonStyle == FavorableCell){ 
         [self addFavorableCell];
     }else if (orderPersonStyle == TotalCell){
         [self addTotalCell];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="374" height="114"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="374" height="113"/>
+                <rect key="frame" x="0.0" y="0.0" width="374" height="113.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eszh_tupian" translatesAutoresizingMaskIntoConstraints="NO" id="Dgq-Vr-F7N">
@@ -66,20 +66,10 @@
                         <color key="textColor" red="1" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGH-EZ-xLz">
-                        <rect key="frame" x="187" y="76" width="72" height="14"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="14" id="L1c-2d-H25"/>
-                            <constraint firstAttribute="width" constant="72" id="kMO-5p-ztm"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.61568627450980395" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天/234m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Diy-eb-Pmu">
-                        <rect key="frame" x="128" y="77" width="61" height="14"/>
+                        <rect key="frame" x="128" y="77" width="106" height="14"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="61" id="3OD-6a-Vwo"/>
+                            <constraint firstAttribute="width" constant="106" id="3OD-6a-Vwo"/>
                             <constraint firstAttribute="height" constant="14" id="es5-Ud-f1Z"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -96,27 +86,18 @@
                     <constraint firstItem="CXj-8f-8nd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="MUX-Zn-VlK"/>
                     <constraint firstItem="Diy-eb-Pmu" firstAttribute="top" secondItem="VRd-ar-Af5" secondAttribute="bottom" constant="4" id="NMh-uM-3f7"/>
                     <constraint firstItem="m4N-oh-yT8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="QMf-iD-75h"/>
-                    <constraint firstItem="nGH-EZ-xLz" firstAttribute="leading" secondItem="Diy-eb-Pmu" secondAttribute="trailing" constant="-2" id="W5z-1Q-2Ll"/>
                     <constraint firstItem="CXj-8f-8nd" firstAttribute="leading" secondItem="m4N-oh-yT8" secondAttribute="trailing" constant="-1" id="aFt-Sa-xs7"/>
                     <constraint firstItem="Lci-Wr-Xen" firstAttribute="top" secondItem="rCQ-ZS-8MR" secondAttribute="bottom" constant="8" id="k8v-gD-Dxj"/>
-                    <constraint firstItem="nGH-EZ-xLz" firstAttribute="top" secondItem="VRd-ar-Af5" secondAttribute="bottom" constant="3" id="m6g-Z5-YK8"/>
                     <constraint firstItem="Diy-eb-Pmu" firstAttribute="leading" secondItem="Dgq-Vr-F7N" secondAttribute="trailing" constant="8" id="qYr-tf-HN2"/>
-                    <constraint firstItem="Lci-Wr-Xen" firstAttribute="leading" secondItem="nGH-EZ-xLz" secondAttribute="trailing" constant="28" id="rD5-ZI-4N0"/>
                     <constraint firstItem="Dgq-Vr-F7N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="rKl-Hf-wFs"/>
                     <constraint firstItem="rCQ-ZS-8MR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="26" id="yYN-Kx-Q7V"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Lci-Wr-Xen" secondAttribute="trailing" constant="8" id="z0l-QJ-K8y"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="rD5-ZI-4N0"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="SecondHandImage" destination="Dgq-Vr-F7N" id="8cV-K6-Ok4"/>
                 <outlet property="dayLabel" destination="Diy-eb-Pmu" id="vyR-S5-CrX"/>
                 <outlet property="introduceLabel" destination="VRd-ar-Af5" id="U5v-U9-3PZ"/>
-                <outlet property="juliLabel" destination="nGH-EZ-xLz" id="EJg-S6-cKn"/>
                 <outlet property="nameLabel" destination="m4N-oh-yT8" id="IiQ-ha-jTU"/>
                 <outlet property="niceImage" destination="CXj-8f-8nd" id="oLc-5w-jHv"/>
                 <outlet property="phoneImage" destination="rCQ-ZS-8MR" id="Bkx-Gu-OGV"/>
