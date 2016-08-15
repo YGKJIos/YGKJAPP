@@ -51,6 +51,9 @@
                         <constraint firstAttribute="height" constant="29" id="dIf-AW-6e2"/>
                     </constraints>
                     <state key="normal" image="xiangqing_33"/>
+                    <connections>
+                        <action selector="phoneBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="a6k-ip-hfU"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSA-b2-i9d">
                     <rect key="frame" x="8" y="199" width="384" height="1"/>
@@ -102,7 +105,13 @@
                 <constraint firstItem="FSA-b2-i9d" firstAttribute="top" secondItem="Stm-HO-xCC" secondAttribute="bottom" constant="15" id="rfU-zC-Tcn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="354" y="315"/>
+            <connections>
+                <outlet property="addressLab" destination="TYw-el-i0j" id="H1T-Zc-olh"/>
+                <outlet property="grade" destination="oiQ-Ja-9hE" id="lzC-A7-Biz"/>
+                <outlet property="shopHeadImage" destination="KDa-Am-o0h" id="onR-66-Ooh"/>
+                <outlet property="shopName" destination="v8j-vd-we6" id="Xm0-Ea-FBf"/>
+            </connections>
+            <point key="canvasLocation" x="68" y="121"/>
         </view>
     </objects>
     <resources>

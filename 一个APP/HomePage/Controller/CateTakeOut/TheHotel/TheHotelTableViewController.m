@@ -7,7 +7,7 @@
 //
 
 #import "TheHotelTableViewController.h"
-#import "cardetailTableViewController.h"
+#import "CateDetailsTableViewController.h"
 #import "TheHotelTableViewCell.h"
 #import "SeeAllEvaluateTableViewController.h"
 #import "TheHotelModel.h"
@@ -71,10 +71,9 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
-        
-        NSLog(@"MJ-下拉刷新");
+
         
     });
     
@@ -165,8 +164,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    cardetailTableViewController *detailVC = [[cardetailTableViewController alloc]init];
-    self.navigationItem.title = @"宾馆详情";
+     CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc]init];
+    detailVC.navigationItem.title = @"宾馆详情";
+    detailVC.shopID = [self.HotelArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {

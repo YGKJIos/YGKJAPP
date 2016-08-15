@@ -17,7 +17,6 @@
 - (IBAction)programBtn:(id)sender;
 
 + (ProgramTableViewCell *)createProgramCellNib;
-- (void)setprogramcontentModel;
 
 
 

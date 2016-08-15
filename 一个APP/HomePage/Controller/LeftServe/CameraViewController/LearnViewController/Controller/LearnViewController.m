@@ -119,6 +119,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     LearnDetailsTableViewController *learnDetailVC = [[LearnDetailsTableViewController alloc]init];
+    learnDetailVC.navigationItem.title = @"学习详情";
+    learnDetailVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:learnDetailVC animated:YES];
 }
 

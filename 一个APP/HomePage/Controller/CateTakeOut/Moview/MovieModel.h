@@ -11,15 +11,16 @@
 @interface MovieModel : NSObject
 
 
-@property (nonatomic, retain) NSString *dianyingId;
-@property (nonatomic, retain) NSString *dianyingName;
-@property (nonatomic, retain) NSString *dianyingJianjie;
-@property (nonatomic, retain) NSString *dianyingXiaoguo;
-@property (nonatomic, retain) NSString *dianyingYuanjia;
-@property (nonatomic, retain) NSString *dianyingTejia;
-@property (nonatomic, retain) NSString *dianyingTupian;
-@property (nonatomic, retain) NSString *dianyingResou;
-@property (nonatomic, retain) NSString *dianyingLeixing;
-@property (nonatomic, retain) NSString *dianyingRebo;
+@property (nonatomic, copy) NSString *shangjiaId;
+@property (nonatomic, copy) NSString *dianyingName;
+@property (nonatomic, copy) NSString *dianyingJianjie;
+@property (nonatomic, copy) NSString *dianyingXiaoguo;
+@property (nonatomic, copy) NSString *dianyingYuanjia;
+@property (nonatomic, copy) NSString *dianyingTejia;
+@property (nonatomic, copy) NSString *dianyingTupian;
+@property (nonatomic, copy) NSString *dianyingResou;
+@property (nonatomic, copy) NSString *dianyingLeixing;
+@property (nonatomic, copy) NSString *dianyingRebo;
+@property (nonatomic, copy) NSString *dianyingPingfen;
 
 @end

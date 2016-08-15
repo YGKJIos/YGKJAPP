@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface StarEvaluateTotalTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *evaluateLab;
 
 
 + (StarEvaluateTotalTableViewCell *)greateCell;

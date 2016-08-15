@@ -30,9 +30,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商家介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TG-Iq-NoY">
-                        <rect key="frame" x="52" y="18" width="68" height="21"/>
+                        <rect key="frame" x="52" y="18" width="205" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="68" id="MlF-rD-gbH"/>
+                            <constraint firstAttribute="width" constant="205" id="MlF-rD-gbH"/>
                             <constraint firstAttribute="height" constant="21" id="Smz-cN-90q"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -50,9 +50,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新滋味面馆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JB7-Gi-JMn">
-                        <rect key="frame" x="30" y="62" width="85" height="18"/>
+                        <rect key="frame" x="30" y="62" width="166" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="85" id="4ph-1C-7OY"/>
+                            <constraint firstAttribute="width" constant="166" id="4ph-1C-7OY"/>
                             <constraint firstAttribute="height" constant="18" id="CNV-FD-Jq2"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>

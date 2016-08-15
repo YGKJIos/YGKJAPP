@@ -18,7 +18,7 @@ static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng/";
     return cell;
 }
 
-- (void)JobModel:(JobModel *)model
+- (void)JobModel:(MerchantInformationModel *)model
 {
     self.nameLab.text = model.shangjiaName;
     self.informationLab.text = model.shangjiaTongzhi;
@@ -27,9 +27,6 @@ static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng/";
     self.yearLab.text = model.qiuzhiNianxian;
     
 }
-
-
-
 
 
 - (void)awakeFromNib {

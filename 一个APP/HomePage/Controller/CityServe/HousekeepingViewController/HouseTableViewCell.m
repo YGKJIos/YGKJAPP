@@ -8,7 +8,8 @@
 
 #import "HouseTableViewCell.h"
 
-static NSString *jiazheng = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *bendi = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
 @implementation HouseTableViewCell
 
 + (HouseTableViewCell *) createHouseCell
@@ -18,10 +19,10 @@ static NSString *jiazheng = @"http://192.168.1.88:8080/shangcheng/";
 }
 
 
-- (void) HouseModel:(HouseModel *)model
+- (void) HouseModel:(MerchantInformationModel *)model
 {
     self.houseNameLabel.text = model.shangjiaName;
-    [self.huoseImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", jiazheng, model.shangjiaTouxiang]]];
+    [self.huoseImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", headUrl, model.shangjiaTouxiang]]];
     self.sevLabel.text = [NSString stringWithFormat:@"服务范围：%@", model.fuwuFanwei];
     self.projectLabel.text = [NSString stringWithFormat:@"服务项目：%@", model.fuwuXiangmu];
     self.introduceLabel.text = [NSString stringWithFormat:@"详情介绍：%@", model.shangjiaTongzhi];

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface detailTableViewController : UITableViewController
+
+@property (nonatomic, strong)MerchantInformationModel *model;
 
 @end

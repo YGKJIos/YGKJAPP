@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -59,21 +59,21 @@
                             </mask>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sanjiao_11" translatesAutoresizingMaskIntoConstraints="NO" id="MfX-bd-98J">
-                        <rect key="frame" x="284" y="29" width="68" height="10"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xing" translatesAutoresizingMaskIntoConstraints="NO" id="MfX-bd-98J">
+                        <rect key="frame" x="289" y="29" width="68" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="i0H-8k-jua"/>
                             <constraint firstAttribute="width" constant="68" id="yRC-UR-lHI"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.8分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-9w-vWW">
-                        <rect key="frame" x="359" y="24" width="37" height="18"/>
+                        <rect key="frame" x="364" y="24" width="37" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="37" id="NEa-Rs-GYV"/>
                             <constraint firstAttribute="height" constant="18" id="PZC-w2-KGR"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.97647058823529409" green="0.53725490196078429" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.96078431372549022" green="0.68627450980392157" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原价: 180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-KI-JUQ">
@@ -118,7 +118,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="YGE-64-XO4" secondAttribute="bottom" constant="11" id="MiC-yb-Xih"/>
                     <constraint firstItem="MfX-bd-98J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="21" id="NXp-yL-oe4"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Vo5-I7-bTd" secondAttribute="trailing" constant="15" id="ZtZ-J0-apB"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="mXB-9w-vWW" secondAttribute="trailing" constant="15" id="aef-8H-WAn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mXB-9w-vWW" secondAttribute="trailing" constant="10" id="aef-8H-WAn"/>
                     <constraint firstItem="npi-ld-88e" firstAttribute="leading" secondItem="KpJ-V6-nHG" secondAttribute="trailing" constant="13" id="bwn-cC-dQ4"/>
                     <constraint firstItem="MfX-bd-98J" firstAttribute="leading" secondItem="npi-ld-88e" secondAttribute="trailing" constant="8" id="c2a-Of-UNI"/>
                     <constraint firstItem="NCN-KI-JUQ" firstAttribute="top" secondItem="Vo5-I7-bTd" secondAttribute="bottom" constant="8" id="e9R-w3-whp"/>
@@ -160,6 +160,6 @@
     </objects>
     <resources>
         <image name="dianying_tus" width="83" height="67"/>
-        <image name="sanjiao_11" width="68" height="10"/>
+        <image name="xing" width="62" height="9"/>
     </resources>
 </document>

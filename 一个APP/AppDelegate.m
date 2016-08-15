@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
-#import "SecondDetailTableViewController.h"
+#import "CateDetailsTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,20 +18,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    
+
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-//    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-//    self.window.rootViewController = rootTabBar;
-//    rootTabBar.tabBar.translucent = NO;
+    RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+    self.window.rootViewController = rootTabBar;
+    rootTabBar.tabBar.translucent = NO;
 
-    LoginViewController *rootvc = [[LoginViewController alloc] init];
-    self.window.rootViewController = rootvc;
-
-    [self.window makeKeyAndVisible];
+//    LoginViewController *rootvc = [[LoginViewController alloc] init];
+//    self.window.rootViewController = rootvc;
+    
+        [self.window makeKeyAndVisible];
     
     return YES;
 }

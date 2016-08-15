@@ -57,7 +57,6 @@
     NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager"];
     [manager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     NSString *dicPath = [path stringByAppendingPathComponent:@"userDic.plish"];
-    NSLog(@"%@" , dicPath);
     
     if (self.select == YES) {
         _dic = @{@"userWangming":self.peopleTextField.text,@"password":self.mimaField.text,@"status":@"NO"};

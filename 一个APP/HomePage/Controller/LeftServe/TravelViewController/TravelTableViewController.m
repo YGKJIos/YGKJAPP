@@ -9,7 +9,7 @@
 #import "TravelTableViewController.h"
 #import "TravelView.h"
 #import "TravelTableViewCell.h"
-#import "TravelDetailTableViewController.h"
+#import "CateDetailsTableViewController.h"
 @interface TravelTableViewController ()
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
 @end
@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"同城旅游";
     [self addTableHeaderView];
     self.MarkeArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
@@ -51,11 +52,11 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"tongchenglvyou/querylvyou1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 TravelModel *model = [[TravelModel alloc] init];
@@ -65,10 +66,8 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
         }];
         
-        NSLog(@"MJ-下拉刷新");
         
     });
     
@@ -77,13 +76,8 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
     });
 }
-
-
-
-
 
 - (void)addTableHeaderView
 {
@@ -159,7 +153,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TravelDetailTableViewController *detailVC = [[TravelDetailTableViewController alloc] init];
+    CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc] init];
+    detailVC.navigationItem.title = @"旅游详情";
+    detailVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

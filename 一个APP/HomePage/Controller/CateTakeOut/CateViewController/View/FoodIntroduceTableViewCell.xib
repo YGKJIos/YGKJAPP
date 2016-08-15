@@ -78,7 +78,7 @@
                 <outlet property="numLab" destination="qsa-SU-zeM" id="naX-QA-Ogp"/>
                 <outlet property="typeName" destination="biR-ec-9EU" id="Ujf-T4-Rwk"/>
             </connections>
-            <point key="canvasLocation" x="133" y="232.5"/>
+            <point key="canvasLocation" x="207" y="228.5"/>
         </tableViewCell>
     </objects>
 </document>

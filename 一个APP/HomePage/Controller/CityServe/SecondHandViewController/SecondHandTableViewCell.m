@@ -7,7 +7,9 @@
 //
 
 #import "SecondHandTableViewCell.h"
-static NSString *Second = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *Second = @"http://192.168.1.88:8080/shangcheng";
+static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
+
 @implementation SecondHandTableViewCell
 
 
@@ -17,7 +19,7 @@ static NSString *Second = @"http://192.168.1.88:8080/shangcheng/";
     return cell;
 }
 
-- (void) SecondModel:(SecondModel *)model
+- (void) SecondModel:(MerchantInformationModel *)model
 {
     self.nameLabel.text = model.shangjiaName;
     self.introduceLabel.text = model.shangjiaTongzhi;

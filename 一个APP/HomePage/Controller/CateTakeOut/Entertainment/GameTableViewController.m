@@ -7,11 +7,13 @@
 //
 
 #import "GameTableViewController.h"
+#import "GameTypeTableViewController.h"
 #import "GameTableViewCell.h"
 #import "DOPDropDownMenu.h"
 #import "GameModel.h"
-#import "GameDetailTableViewController.h"
-@interface GameTableViewController ()
+#import "CateDetailsTableViewController.h"
+
+@interface GameTableViewController ()<ImageLabViewPushVCDelegate>
 @property (nonatomic, strong) NSArray *classifys;
 @property (nonatomic, strong) NSArray *cates;
 @property (nonatomic, strong) NSArray *movices;
@@ -72,7 +74,6 @@
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"xiuxianyule/queryxiuxianyule.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 GameModel *model = [[GameModel alloc] init];
@@ -82,10 +83,8 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
         }];
         
-        NSLog(@"MJ-下拉刷新");
         
     });
     
@@ -94,10 +93,9 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
     });
 }
-
+#pragma mark - 添加table 的haedView
 - (void)addHeaderView
 {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 300)];
@@ -112,8 +110,8 @@
     NSInteger num = 0;
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 2; j++) {
-            
             ImageAndLabView *view = [ImageAndLabView createViewNib];
+            view.delegate = self;
             view.frame = CGRectMake(30+(40+WIDTH/
                                         4-40)*i,scroll.height+ 10+(40+40)*j, 40, 40);
             [view setImages:images[num] names:titles[num]];
@@ -123,7 +121,11 @@
     }
     self.tableView.tableHeaderView = headerView;
 }
-
+- (void)imageAndLableViewPush
+{
+    GameTypeTableViewController *typeVC = [[GameTypeTableViewController alloc]init];
+    [self.navigationController pushViewController:typeVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -132,16 +134,10 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//
-//    return 0;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return self.MarkeArr.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -154,17 +150,17 @@
     return cell;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 117;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    GameDetailTableViewController *gameDetailVC = [[GameDetailTableViewController alloc] init];
+     CateDetailsTableViewController *gameDetailVC = [[CateDetailsTableViewController alloc] init];
+    gameDetailVC.navigationItem.title = @"宾馆详情";
+    gameDetailVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:gameDetailVC animated:YES];
 }
 

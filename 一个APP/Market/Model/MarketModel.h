@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSString *shangjiaLijian;
 @property (nonatomic, retain) NSString *meishiTejia;
 @property (nonatomic, retain) NSString *meishiYuanjia;
+@property (nonatomic, copy)NSString *shangjiaId;
 
 
 

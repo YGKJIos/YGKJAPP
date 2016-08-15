@@ -7,8 +7,9 @@
 //
 
 #import "detailTableViewController.h"
+#import "ShopIntroduceTableViewCell.h"
 #import "headerView.h"
-#import "shopPeoleTableViewCell.h"
+#import "MerchantInformationModel.h"
 #import "activeTableViewCell.h"
 #import "recommendTableViewCell.h"
 @interface detailTableViewController ()
@@ -19,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = self.model.shangjiaName;
     self.tableView.backgroundColor = BGcolor(205, 205, 205);
 }
 
@@ -29,44 +31,42 @@
 
 #pragma mark - Table view data source
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
 
     return 1;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
         static NSString *reuse = @"reuse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+        ShopIntroduceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
         if (!cell) {
-            cell = [shopPeoleTableViewCell greateCell];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell = [[NSBundle mainBundle]loadNibNamed:@"ShopIntroduceTableViewCell" owner:nil options:nil].lastObject;
         }
+        [cell setShopInformationModel:self.model];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     if (indexPath.section == 1) {
         static NSString *reuse = @"reuse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+        activeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
         if (!cell) {
             cell = [activeTableViewCell greateCell];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+        cell.contentLab.text = self.model.shangjiaTongzhi;
         return cell;
     }
-    if (indexPath.section == 2) {
-        static NSString *reuse = @"reuse";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
-        if (!cell) {
-            cell = [recommendTableViewCell greateCell];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
-        return cell;
-    }
+//    if (indexPath.section == 2) {
+//        static NSString *reuse = @"reuse";
+//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+//        if (!cell) {
+//            cell = [recommendTableViewCell greateCell];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        }
+//        return cell;
+//    }
     
     return nil;
 }
@@ -79,15 +79,15 @@
     if (indexPath.section == 1) {
         return 140;
     }
-    if (indexPath.section == 2) {
-        return 240;
-    }
+//    if (indexPath.section == 2) {
+//        return 240;
+//    }
     return 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -97,56 +97,14 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    
     if (section == 0) {
         headerView *header = [headerView greateHeaderView];
+        [header setModel:self.model];
         tableView.tableHeaderView = header;
     }
     return nil;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

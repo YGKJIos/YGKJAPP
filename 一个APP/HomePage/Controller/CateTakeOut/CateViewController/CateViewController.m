@@ -25,9 +25,16 @@
 
 @implementation CateViewController
 
+-(NSMutableArray *)MarkeArr
+{
+    if (!_MarkeArr) {
+        self.MarkeArr = [[NSMutableArray alloc]init];
+    }
+    return _MarkeArr;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.MarkeArr = [[NSMutableArray alloc]init];
 #pragma mark - 数据请求
     [self MJrefreshLoadData];
     self.navigationItem.title = @"美食";
@@ -171,7 +178,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
-//    merchantVC.shopID = [self.MarkeArr[indexPath.row] objectForKey:@"shangjiaId"];
+    MarketModel *model = self.MarkeArr[indexPath.row];
+    merchantVC.shopID = model.shangjiaId;
     [self.navigationController pushViewController:merchantVC animated:YES];
 }
 
