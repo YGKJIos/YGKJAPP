@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface FeastTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *feastImage;
@@ -18,9 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *placeImage;
 @property (weak, nonatomic) IBOutlet UILabel *placeLabel;
 
-
-
-
 + (FeastTableViewCell *) creactFeastCell;
+- (void)setModel:(MerchantInformationModel *)model;
 
 @end

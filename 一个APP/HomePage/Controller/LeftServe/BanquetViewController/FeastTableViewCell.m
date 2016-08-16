@@ -8,6 +8,8 @@
 
 #import "FeastTableViewCell.h"
 
+static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
+
 @implementation FeastTableViewCell
 
 
@@ -16,7 +18,19 @@
     FeastTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"FeastTableViewCell" owner:nil options:nil]lastObject];
     return cell;
 }
-
+- (void)setModel:(MerchantInformationModel *)model
+{
+    if (model != nil) {
+        NSString *url = [NSString stringWithFormat:@"%@%@" , headUrl,model.shangjiaTouxiang];
+        [self.feastImage sd_setImageWithURL:[NSURL URLWithString:url]];
+        
+        self.nameLabel.text = model.shangjiaName;
+        self.numlabel.text = model.shangjiaPingfen;
+        self.introduceLabel.text = model.shangjiaTongzhi;
+        self.placeLabel.text = model.shangjiaWeizhi;
+        
+    }
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
