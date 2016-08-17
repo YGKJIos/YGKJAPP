@@ -10,6 +10,8 @@
 #import "ShopTableViewCell.h"
 #import "ShopModel.h"
 #import "DropdownMenu.h"
+#import "CateDetailsTableViewController.h"
+#import "MarketModel.h"
 
 @interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate,dropdownDelegate>
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
@@ -60,9 +62,10 @@
 - (void)loadNewData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
-        NSString *url = @"waimai/querywaimai1.action";
+        NSString *url = @"shangjia/queryshangjia.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSLog(@"responseObject----%@",responseObject);
+            [self.MarkeArr removeAllObjects];
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 ShopModel *model = [[ShopModel alloc] init];
@@ -84,6 +87,21 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
+        NSString *url = @"shangjia/queryshangjia.action";
+        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSLog(@"responseObject----%@",responseObject);
+            NSArray *arr = responseObject;
+            for (NSDictionary *dic in arr) {
+                ShopModel *model = [[ShopModel alloc] init];
+                [model setValuesForKeysWithDictionary:dic];
+                [self.MarkeArr addObject:model];
+            }
+            [self.tableView reloadData];
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"error-----%@",error);
+        }];
+
         NSLog(@"MJ-上啦加载");
     });
 }
@@ -125,12 +143,17 @@
         cell = [ShopTableViewCell createShopCell];
     }
     [cell ShopModel:self.MarkeArr[indexPath.row]];
+    NSLog(@"~~~~%ld",_MarkeArr.count);
    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
+    MarketModel *model = self.MarkeArr[indexPath.row];
+    merchantVC.shopID = model.shangjiaId;
+    [self.navigationController pushViewController:merchantVC animated:YES];
     NSLog(@"%ld , %ld" , (long)indexPath.row , (long)indexPath.section);
 }
 
