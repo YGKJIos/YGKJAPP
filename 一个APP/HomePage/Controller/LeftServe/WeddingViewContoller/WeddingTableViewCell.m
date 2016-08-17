@@ -7,7 +7,8 @@
 //
 
 #import "WeddingTableViewCell.h"
-static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *yuming = @"http://192.168.1.88:8080/shangcheng";
+static NSString *headUrl = @"139.129.209.189:8080/shangcheng";
 @implementation WeddingTableViewCell
 
 
@@ -22,7 +23,7 @@ static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
     self.nameLabel.text = model.shangjiaName;
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.placeLabel.text = model.shangjiaWeizhi;
-    [self.weddingImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang]]];
+    [self.weddingImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", headUrl, model.shangjiaTouxiang]]];
     self.piceLabel.text = [NSString stringWithFormat:@"%@折起", model.shangjiaZhekou];
 }
 

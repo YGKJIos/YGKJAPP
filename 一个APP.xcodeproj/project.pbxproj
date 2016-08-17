@@ -38,7 +38,6 @@
 		59458FF81D3C8A1C00FAF565 /* TakePhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59458FD41D3C8A1C00FAF565 /* TakePhotoTableViewCell.m */; };
 		59458FF91D3C8A1C00FAF565 /* TakePhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59458FD51D3C8A1C00FAF565 /* TakePhotoTableViewCell.xib */; };
 		59458FFA1D3C8A1C00FAF565 /* TakePhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59458FD71D3C8A1C00FAF565 /* TakePhotoTableViewController.m */; };
-		59458FFB1D3C8A1C00FAF565 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59458FDA1D3C8A1C00FAF565 /* CarModel.m */; };
 		59458FFC1D3C8A1C00FAF565 /* sevCarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59458FDC1D3C8A1C00FAF565 /* sevCarTableViewCell.m */; };
 		59458FFD1D3C8A1C00FAF565 /* sevCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59458FDD1D3C8A1C00FAF565 /* sevCarTableViewCell.xib */; };
 		59458FFE1D3C8A1C00FAF565 /* sevCarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59458FDF1D3C8A1C00FAF565 /* sevCarTableViewController.m */; };
@@ -246,9 +245,7 @@
 		D845EAF41D488545009B3B52 /* SecondDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D845EAF21D488545009B3B52 /* SecondDetailTableViewCell.xib */; };
 		D845EAF71D4891BC009B3B52 /* SecondFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D845EAF61D4891BC009B3B52 /* SecondFooterView.m */; };
 		D845EAF91D4891E5009B3B52 /* SecondFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D845EAF81D4891E5009B3B52 /* SecondFooterView.xib */; };
-		D84696721D471D2B004C0DE4 /* banquetDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84696711D471D2B004C0DE4 /* banquetDetailTableViewController.m */; };
 		D84696781D472EFD004C0DE4 /* MoviewDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84696771D472EFD004C0DE4 /* MoviewDetailTableViewController.m */; };
-		D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D846CE591D4318AE00104971 /* cardetailTableViewController.m */; };
 		D8471E821D55BC880035462B /* AppraiseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8471E811D55BC880035462B /* AppraiseTableViewController.m */; };
 		D849239D1D4AF8AC002ED1FF /* SetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D849239B1D4AF8AC002ED1FF /* SetTableViewCell.m */; };
 		D849239E1D4AF8AC002ED1FF /* SetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D849239C1D4AF8AC002ED1FF /* SetTableViewCell.xib */; };
@@ -275,7 +272,10 @@
 		D85E795C1D43464F00E7775D /* groupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E795A1D43464F00E7775D /* groupTableViewCell.m */; };
 		D85E795D1D43464F00E7775D /* groupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E795B1D43464F00E7775D /* groupTableViewCell.xib */; };
 		D85E79671D4361B600E7775D /* CarEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E79651D4361B600E7775D /* CarEvaluateTableViewCell.xib */; };
+
 		D860860A1D45E15E002DD5DB /* weddingDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */; };
+
+
 		D86B7D691D5C103400380F49 /* PhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D671D5C103400380F49 /* PhoneTableViewCell.m */; };
 		D86B7D6A1D5C103400380F49 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B7D681D5C103400380F49 /* PhoneTableViewCell.xib */; };
 		D86B7D6D1D5C163C00380F49 /* PlaceOrderFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D6C1D5C163C00380F49 /* PlaceOrderFootView.m */; };
@@ -359,8 +359,6 @@
 		59458FD51D3C8A1C00FAF565 /* TakePhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TakePhotoTableViewCell.xib; sourceTree = "<group>"; };
 		59458FD61D3C8A1C00FAF565 /* TakePhotoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoTableViewController.h; sourceTree = "<group>"; };
 		59458FD71D3C8A1C00FAF565 /* TakePhotoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoTableViewController.m; sourceTree = "<group>"; };
-		59458FD91D3C8A1C00FAF565 /* CarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarModel.h; sourceTree = "<group>"; };
-		59458FDA1D3C8A1C00FAF565 /* CarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarModel.m; sourceTree = "<group>"; };
 		59458FDB1D3C8A1C00FAF565 /* sevCarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sevCarTableViewCell.h; sourceTree = "<group>"; };
 		59458FDC1D3C8A1C00FAF565 /* sevCarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sevCarTableViewCell.m; sourceTree = "<group>"; };
 		59458FDD1D3C8A1C00FAF565 /* sevCarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sevCarTableViewCell.xib; sourceTree = "<group>"; };
@@ -720,12 +718,8 @@
 		D845EAF51D4891BC009B3B52 /* SecondFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondFooterView.h; sourceTree = "<group>"; };
 		D845EAF61D4891BC009B3B52 /* SecondFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondFooterView.m; sourceTree = "<group>"; };
 		D845EAF81D4891E5009B3B52 /* SecondFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondFooterView.xib; sourceTree = "<group>"; };
-		D84696701D471D2B004C0DE4 /* banquetDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = banquetDetailTableViewController.h; sourceTree = "<group>"; };
-		D84696711D471D2B004C0DE4 /* banquetDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = banquetDetailTableViewController.m; sourceTree = "<group>"; };
 		D84696761D472EFD004C0DE4 /* MoviewDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviewDetailTableViewController.h; sourceTree = "<group>"; };
 		D84696771D472EFD004C0DE4 /* MoviewDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviewDetailTableViewController.m; sourceTree = "<group>"; };
-		D846CE581D4318AE00104971 /* cardetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cardetailTableViewController.h; sourceTree = "<group>"; };
-		D846CE591D4318AE00104971 /* cardetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cardetailTableViewController.m; sourceTree = "<group>"; };
 		D8471E801D55BC880035462B /* AppraiseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseTableViewController.h; sourceTree = "<group>"; };
 		D8471E811D55BC880035462B /* AppraiseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseTableViewController.m; sourceTree = "<group>"; };
 		D849239A1D4AF8AC002ED1FF /* SetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewCell.h; sourceTree = "<group>"; };
@@ -767,8 +761,11 @@
 		D85E795B1D43464F00E7775D /* groupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = groupTableViewCell.xib; sourceTree = "<group>"; };
 		D85E79631D4361B600E7775D /* CarEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarEvaluateTableViewCell.h; sourceTree = "<group>"; };
 		D85E79651D4361B600E7775D /* CarEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarEvaluateTableViewCell.xib; sourceTree = "<group>"; };
+
 		D86086081D45E15E002DD5DB /* weddingDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weddingDetailTableViewController.h; sourceTree = "<group>"; };
 		D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weddingDetailTableViewController.m; sourceTree = "<group>"; };
+
+
 		D86B7D661D5C103400380F49 /* PhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneTableViewCell.h; sourceTree = "<group>"; };
 		D86B7D671D5C103400380F49 /* PhoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneTableViewCell.m; sourceTree = "<group>"; };
 		D86B7D681D5C103400380F49 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
@@ -1002,8 +999,6 @@
 				59458FCD1D3C8A1C00FAF565 /* FeastTableViewCell.xib */,
 				59458FCE1D3C8A1C00FAF565 /* FeastTableViewController.h */,
 				59458FCF1D3C8A1C00FAF565 /* FeastTableViewController.m */,
-				D84696701D471D2B004C0DE4 /* banquetDetailTableViewController.h */,
-				D84696711D471D2B004C0DE4 /* banquetDetailTableViewController.m */,
 			);
 			path = BanquetViewController;
 			sourceTree = "<group>";
@@ -1025,15 +1020,11 @@
 		59458FD81D3C8A1C00FAF565 /* CarViewController */ = {
 			isa = PBXGroup;
 			children = (
-				59458FD91D3C8A1C00FAF565 /* CarModel.h */,
-				59458FDA1D3C8A1C00FAF565 /* CarModel.m */,
 				59458FDB1D3C8A1C00FAF565 /* sevCarTableViewCell.h */,
 				59458FDC1D3C8A1C00FAF565 /* sevCarTableViewCell.m */,
 				59458FDD1D3C8A1C00FAF565 /* sevCarTableViewCell.xib */,
 				59458FDE1D3C8A1C00FAF565 /* sevCarTableViewController.h */,
 				59458FDF1D3C8A1C00FAF565 /* sevCarTableViewController.m */,
-				D846CE581D4318AE00104971 /* cardetailTableViewController.h */,
-				D846CE591D4318AE00104971 /* cardetailTableViewController.m */,
 				D85E79591D43464F00E7775D /* groupTableViewCell.h */,
 				D85E795A1D43464F00E7775D /* groupTableViewCell.m */,
 				D85E795B1D43464F00E7775D /* groupTableViewCell.xib */,
@@ -1221,8 +1212,6 @@
 				5945907A1D3CA34F00FAF565 /* WeddingTableViewCell.xib */,
 				5945907B1D3CA34F00FAF565 /* WeddingTableViewController.h */,
 				5945907C1D3CA34F00FAF565 /* WeddingTableViewController.m */,
-				D86086081D45E15E002DD5DB /* weddingDetailTableViewController.h */,
-				D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */,
 			);
 			path = WeddingViewContoller;
 			sourceTree = "<group>";
@@ -2230,7 +2219,6 @@
 				59F46B961D4A0582001C6B7B /* shopCollectionViewCell.m in Sources */,
 				594591271D3CAC2500FAF565 /* NewsTableViewController.m in Sources */,
 				D8471E821D55BC880035462B /* AppraiseTableViewController.m in Sources */,
-				D846CE5A1D4318AE00104971 /* cardetailTableViewController.m in Sources */,
 				D81103541D40A1EE00C659DA /* orderViewController.m in Sources */,
 				59C781BD1D45FAEF00BA18CA /* MerchantInformationModel.m in Sources */,
 				59C781B11D4597A400BA18CA /* PlayerGroupCollectionReusableView.m in Sources */,
@@ -2293,7 +2281,6 @@
 				594590621D3CA1D400FAF565 /* HomeTableViewCell.m in Sources */,
 				59CA72301D5DABAA00B0D343 /* GameTypeTableViewController.m in Sources */,
 				590573F51D44B72C0033175B /* ProgramVoteViewController.m in Sources */,
-				D84696721D471D2B004C0DE4 /* banquetDetailTableViewController.m in Sources */,
 				594590F51D3CAA5D00FAF565 /* AllStylCollectionViewCell.m in Sources */,
 				D84FB6A41D39D6BA008B22E5 /* SetTableViewController.m in Sources */,
 				59458FFE1D3C8A1C00FAF565 /* sevCarTableViewController.m in Sources */,
@@ -2321,7 +2308,6 @@
 				5970C4501D531628001731A3 /* PhoneLoginViewController.m in Sources */,
 				59EEFC2F1D46FB55009DAFB5 /* StarEvaluateTotalTableViewCell.m in Sources */,
 				59366BBF1D06872300BB445A /* BaseViewController.m in Sources */,
-				59458FFB1D3C8A1C00FAF565 /* CarModel.m in Sources */,
 				592F298B1D3DC20A0016A550 /* CateTypeTableViewController.m in Sources */,
 				5945910F1D3CAA5D00FAF565 /* ShoppingCartTableViewCell.m in Sources */,
 				59D096FE1D139E6C00039C87 /* UIView+SDExtension.m in Sources */,
@@ -2353,7 +2339,6 @@
 				59458FFA1D3C8A1C00FAF565 /* TakePhotoTableViewController.m in Sources */,
 				59F7860D1D0BD9A1005A39FB /* FriendCell.m in Sources */,
 				594591011D3CAA5D00FAF565 /* HeaderCollectionReusableView.m in Sources */,
-				D860860A1D45E15E002DD5DB /* weddingDetailTableViewController.m in Sources */,
 				D845EAE51D484573009B3B52 /* SecondHeaderView.m in Sources */,
 				59F2651F1D3F14CE002F9D56 /* carViewController.m in Sources */,
 				59F2650B1D3F07BC002F9D56 /* gasViewController.m in Sources */,

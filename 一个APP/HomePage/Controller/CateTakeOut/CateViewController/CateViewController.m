@@ -91,7 +91,7 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
         
     });

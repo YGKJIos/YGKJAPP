@@ -7,9 +7,9 @@
 //
 
 #import "WeddingTableViewController.h"
+#import "CateDetailsTableViewController.h"
 #import "WeddingTableViewCell.h"
 #import "weddingModel.h"
-#import "weddingDetailTableViewController.h"
 @interface WeddingTableViewController ()
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
 @end
@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"婚庆服务";
     [self addTableHeaderView];
     self.MarkeArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
@@ -51,11 +52,11 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"hunqing/queryhunqing1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 weddingModel *model = [[weddingModel alloc] init];
@@ -65,10 +66,8 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
-        
-        NSLog(@"MJ-下拉刷新");
         
     });
     
@@ -77,12 +76,9 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
+
     });
 }
-
-
-
 
 - (void)addTableHeaderView
 {
@@ -97,9 +93,6 @@
     self.tableView.tableHeaderView = headerView;
 }
 
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -107,21 +100,14 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return self.MarkeArr.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *str = @"reuse";
-    
     WeddingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if (!cell) {
         cell = [WeddingTableViewCell createWeddingCell];
@@ -131,16 +117,15 @@
     return cell;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    weddingDetailTableViewController *detailVC = [[weddingDetailTableViewController alloc] init];
+    CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc] init];
+    detailVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
