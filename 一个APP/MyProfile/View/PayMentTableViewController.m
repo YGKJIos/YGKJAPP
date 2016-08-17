@@ -45,20 +45,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-<<<<<<< HEAD
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
-=======
-    return 0;
+
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
->>>>>>> c3940d063ad23a6fd3ab04354ec4c18cace8f752
-}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
