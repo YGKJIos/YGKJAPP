@@ -1,17 +1,18 @@
 //
-//  PlaceOrderTableViewCell.m
+//  PaymentTableViewCell.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/8/10.
+//  Created by 远古科技 on 16/8/11.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "PlaceOrderTableViewCell.h"
-@implementation PlaceOrderTableViewCell
+#import "PaymentTableViewCell.h"
 
-+(PlaceOrderTableViewCell *)createCell
+@implementation PaymentTableViewCell
+
++ (PaymentTableViewCell *)createCell
 {
-    PlaceOrderTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PlaceOrderTableViewCell" owner:nil options:nil]lastObject];
+    PaymentTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PaymentTableViewCell" owner:nil options:nil]lastObject];
     return cell;
 }
 
@@ -19,7 +20,6 @@
     [super awakeFromNib];
     // Initialization code
 }
-
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

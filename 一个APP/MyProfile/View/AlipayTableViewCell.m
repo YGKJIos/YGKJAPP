@@ -1,26 +1,25 @@
 //
-//  SetNameTableViewCell.m
+//  AlipayTableViewCell.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/7/29.
+//  Created by 远古科技 on 16/8/12.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "SetNameTableViewCell.h"
+#import "AlipayTableViewCell.h"
 
-@implementation SetNameTableViewCell
+@implementation AlipayTableViewCell
 
-
-+ (SetNameTableViewCell *)createCell
++ (AlipayTableViewCell *)createCell
 {
-    SetNameTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"SetNameTableViewCell" owner:nil options:nil]lastObject];
+    AlipayTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"AlipayTableViewCell" owner:nil options:nil]lastObject];
     return cell;
 }
 
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
+    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

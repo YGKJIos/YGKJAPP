@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface SetNameTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *leftLable;
 @property (weak, nonatomic) IBOutlet UILabel *RightLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *LeftImage;
-
 
 + (SetNameTableViewCell *)createCell;
 

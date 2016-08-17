@@ -10,7 +10,8 @@
 #import "SetTableViewCell.h"
 #import "SetNameTableViewCell.h"
 #import "SetFooterView.h"
-@interface SetTableViewController ()
+#import "SetNameViewController.h"
+@interface SetTableViewController ()<SecondViewControllerDelete>
 
 @end
 
@@ -54,8 +55,10 @@
         return cell;
     }
     if (indexPath.row == 1) {
+        
+        
         SetNameTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"SetNameTableViewCell" owner:nil options:nil]lastObject];
-        cell.RightLabel.text = @"Loki";
+        cell.RightLabel.tag = 1000;
         cell.RightLabel.textColor = BGcolor(175, 175, 175);
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -133,12 +136,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"sdsdsdsdsdsdsd");
+    if (indexPath.row == 0) {
+        NSLog(@"更换头像");
+    }
+    if (indexPath.row == 1) {
+        SetNameViewController *setVC = [[SetNameViewController alloc] init];
+        UILabel *nameLabel = (UILabel *)[self.view viewWithTag:1000];
+        setVC.str = nameLabel.text;
+        setVC.delegate = self;
+        [self.navigationController pushViewController:setVC animated:YES];
+        NSLog(@"修改昵称");
+    }
+    if (indexPath.row == 2) {
+        NSLog(@"修改收货地址");
+    }
+    if (indexPath.row == 3) {
+        NSLog(@"修改绑定手机");
+    }
+    if (indexPath.row == 4) {
+        NSLog(@"清除缓存");
+    }
+    if (indexPath.row == 5) {
+        NSLog(@"修改密码");
+    }
+    if (indexPath.row == 6) {
+        NSLog(@"修改安全");
+    }
+    
 }
 
 - (void)clickOutBtn
 {
     NSLog(@"123");
+}
+
+// 修改名字代理方法
+- (void)bringStr:(NSString *)str
+{
+    UILabel *nameLabel = (UILabel *)[self.view viewWithTag:1000];
+    nameLabel.text = str;
 }
 
 @end

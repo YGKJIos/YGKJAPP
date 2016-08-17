@@ -33,7 +33,6 @@ static NSInteger num; //点击增加 菜品份数计数
         self.numberLab.hidden = NO;
         self.numberLab.text = [NSString stringWithFormat:@"%ld",num];
     }
-    
 }
 - (void)jianBtnClick:(NSIndexPath *)indexPath
 {
