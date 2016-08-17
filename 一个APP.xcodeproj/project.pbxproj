@@ -228,10 +228,8 @@
 		D80148FB1D3CD79C00334EDB /* payViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80148F91D3CD79C00334EDB /* payViewController.xib */; };
 		D80148FF1D3CEB9B00334EDB /* lifepriceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80148FD1D3CEB9B00334EDB /* lifepriceViewController.m */; };
 		D80149001D3CEB9B00334EDB /* lifepriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80148FE1D3CEB9B00334EDB /* lifepriceViewController.xib */; };
-
 		D801DFF91D584F740070A4C9 /* AppraiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D801DFF71D584F740070A4C9 /* AppraiseTableViewCell.m */; };
 		D801DFFA1D584F740070A4C9 /* AppraiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D801DFF81D584F740070A4C9 /* AppraiseTableViewCell.xib */; };
-		D807A9B21D3F67FB00BC2801 /* JobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D807A9B11D3F67FB00BC2801 /* JobModel.m */; };
 		D81103541D40A1EE00C659DA /* orderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81103521D40A1EE00C659DA /* orderViewController.m */; };
 		D81103551D40A1EE00C659DA /* orderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81103531D40A1EE00C659DA /* orderViewController.xib */; };
 		D81BE78A1D59D06B0077A6DC /* PlaceOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81BE7891D59D06B0077A6DC /* PlaceOrderTableViewController.m */; };
@@ -278,13 +276,11 @@
 		D85E795D1D43464F00E7775D /* groupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E795B1D43464F00E7775D /* groupTableViewCell.xib */; };
 		D85E79671D4361B600E7775D /* CarEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E79651D4361B600E7775D /* CarEvaluateTableViewCell.xib */; };
 		D860860A1D45E15E002DD5DB /* weddingDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */; };
-
 		D86B7D691D5C103400380F49 /* PhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D671D5C103400380F49 /* PhoneTableViewCell.m */; };
 		D86B7D6A1D5C103400380F49 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B7D681D5C103400380F49 /* PhoneTableViewCell.xib */; };
 		D86B7D6D1D5C163C00380F49 /* PlaceOrderFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D6C1D5C163C00380F49 /* PlaceOrderFootView.m */; };
 		D86B7D6F1D5C165C00380F49 /* PlaceOrderFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B7D6E1D5C165C00380F49 /* PlaceOrderFootView.xib */; };
 		D86B7D721D5C1D4300380F49 /* PayMentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D711D5C1D4300380F49 /* PayMentTableViewController.m */; };
-
 		D8FFC6CF1D4C8140002E4224 /* RefundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFC6CE1D4C8140002E4224 /* RefundTableViewController.m */; };
 		D8FFC6D31D4C831E002E4224 /* RefundTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFC6D11D4C831E002E4224 /* RefundTableViewCell.m */; };
 		D8FFC6D41D4C831E002E4224 /* RefundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FFC6D21D4C831E002E4224 /* RefundTableViewCell.xib */; };
@@ -697,13 +693,9 @@
 		D80148FC1D3CEB9B00334EDB /* lifepriceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lifepriceViewController.h; sourceTree = "<group>"; };
 		D80148FD1D3CEB9B00334EDB /* lifepriceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lifepriceViewController.m; sourceTree = "<group>"; };
 		D80148FE1D3CEB9B00334EDB /* lifepriceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = lifepriceViewController.xib; sourceTree = "<group>"; };
-
 		D801DFF61D584F740070A4C9 /* AppraiseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseTableViewCell.h; sourceTree = "<group>"; };
 		D801DFF71D584F740070A4C9 /* AppraiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseTableViewCell.m; sourceTree = "<group>"; };
 		D801DFF81D584F740070A4C9 /* AppraiseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppraiseTableViewCell.xib; sourceTree = "<group>"; };
-		D807A9B01D3F67FB00BC2801 /* JobModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobModel.h; sourceTree = "<group>"; };
-		D807A9B11D3F67FB00BC2801 /* JobModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobModel.m; sourceTree = "<group>"; };
-
 		D81103511D40A1EE00C659DA /* orderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orderViewController.h; sourceTree = "<group>"; };
 		D81103521D40A1EE00C659DA /* orderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderViewController.m; sourceTree = "<group>"; };
 		D81103531D40A1EE00C659DA /* orderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = orderViewController.xib; sourceTree = "<group>"; };
@@ -777,7 +769,6 @@
 		D85E79651D4361B600E7775D /* CarEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarEvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		D86086081D45E15E002DD5DB /* weddingDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weddingDetailTableViewController.h; sourceTree = "<group>"; };
 		D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weddingDetailTableViewController.m; sourceTree = "<group>"; };
-
 		D86B7D661D5C103400380F49 /* PhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneTableViewCell.h; sourceTree = "<group>"; };
 		D86B7D671D5C103400380F49 /* PhoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneTableViewCell.m; sourceTree = "<group>"; };
 		D86B7D681D5C103400380F49 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
@@ -786,7 +777,6 @@
 		D86B7D6E1D5C165C00380F49 /* PlaceOrderFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceOrderFootView.xib; sourceTree = "<group>"; };
 		D86B7D701D5C1D4300380F49 /* PayMentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMentTableViewController.h; sourceTree = "<group>"; };
 		D86B7D711D5C1D4300380F49 /* PayMentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMentTableViewController.m; sourceTree = "<group>"; };
-
 		D8FFC6CD1D4C8140002E4224 /* RefundTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefundTableViewController.h; sourceTree = "<group>"; };
 		D8FFC6CE1D4C8140002E4224 /* RefundTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefundTableViewController.m; sourceTree = "<group>"; };
 		D8FFC6D01D4C831E002E4224 /* RefundTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefundTableViewCell.h; sourceTree = "<group>"; };
@@ -2519,6 +2509,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/一个APP/Tool/PrefixHeader.pch";
 				INFOPLIST_FILE = "一个APP/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.yuanguApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2536,6 +2527,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/一个APP/Tool/PrefixHeader.pch";
 				INFOPLIST_FILE = "一个APP/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.yuanguApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
