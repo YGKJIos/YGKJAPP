@@ -134,7 +134,7 @@
         UILabel *numlab = [self.view viewWithTag:path.row+3000];
         numlab.hidden = NO;
         numlab.text = [NSString stringWithFormat:@"%ld",self.num];
-    }
+    } 
 }
 - (void)jianBtnClick:(UIButton *)btn
 {
@@ -149,7 +149,6 @@
         if (self.num == 0) {
             UIButton *jianBtn = [self.view viewWithTag:path.row+1000];
             jianBtn.hidden = YES;
-            
             numlab.hidden = YES;
         }
     }

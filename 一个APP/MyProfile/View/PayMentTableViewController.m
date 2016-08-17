@@ -7,16 +7,33 @@
 //
 
 #import "PayMentTableViewController.h"
-
-@interface PayMentTableViewController ()
-
+#import "PaymentTableViewCell.h"
+#import "AlipayTableViewCell.h"
+@interface PayMentTableViewController ()<SelectBtnDelegate>
+@property (nonatomic, assign)BOOL select;
 @end
+
 
 @implementation PayMentTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"支付订单";
+    self.tableView.backgroundColor = BGcolor(247, 247, 247);
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200)];
+    footerView.backgroundColor = BGcolor(247, 247, 247);
+    self.tableView.tableFooterView = footerView;
+    UIButton *sureBtn = [[UIButton alloc] init];
+    sureBtn.frame = CGRectMake(60, 40, WIDTH - 120, 60);
+    [sureBtn setImage:[UIImage imageNamed:@"tijiaodingdan_querendingdan"] forState:UIControlStateNormal];
+    [sureBtn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:sureBtn];
+    self.select = YES;
+}
+
+- (void)click:(UIButton *)btn
+{
+    NSLog(@"11111111111");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,65 +45,57 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 0;
+
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 1;
+
+
 }
 
-/*
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    static NSString *reuse = @"reuse";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+    if (indexPath.section == 0) {
+        cell = [PaymentTableViewCell createCell];
+    }
+    if (indexPath.section == 1) {
+        AlipayTableViewCell *payCell = [AlipayTableViewCell createCell];
+        [payCell.selectBtn addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
+        payCell.delegate = self;
+        cell = payCell;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+// selectBtn点击方法
+- (void)action:(UIButton *)btn
+{
+    if (self.select == YES) {
+        [btn setImage:[UIImage imageNamed:@"zhifudingdan_14"] forState:UIControlStateNormal];
+    }
+    if (self.select == NO) {
+        [btn setImage:[UIImage imageNamed:@"zhifudingdan_09"] forState:UIControlStateNormal];
+    }
+    self.select = !self.select;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 15;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "PlaceOrderFootView.h"
-
 @implementation PlaceOrderFootView
 
 + (PlaceOrderFootView *)createCell
@@ -15,9 +14,7 @@
     PlaceOrderFootView *cell = [[[NSBundle mainBundle] loadNibNamed:@"PlaceOrderFootView" owner:nil options:nil]lastObject];
     return cell;
 }
-// 确认订单按钮
-- (IBAction)sureBtn:(id)sender {
-    
-}
+
+
 
 @end
