@@ -7,8 +7,9 @@
 //
 
 #import "HouseTableViewController.h"
+#import "detailTableViewController.h"
 #import "HouseTableViewCell.h"
-#import "HouseModel.h"
+#import "MerchantInformationModel.h"
 
 @interface HouseTableViewController ()
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"家政服务";
     [self addTableHeaderView];
     self.MarkeArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
@@ -52,25 +54,23 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"jiazhengfuwu/queryjiazhengfuwu.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
-                HouseModel *model = [[HouseModel alloc] init];
+                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
-        
-        NSLog(@"MJ-下拉刷新");
-        
+
     });
     
 }
@@ -78,7 +78,6 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
     });
 }
 
@@ -102,8 +101,6 @@
     self.tableView.tableHeaderView = headerView;
 }
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.MarkeArr.count;
 }
@@ -113,6 +110,9 @@
     HouseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if (!cell) {
         cell = [HouseTableViewCell createHouseCell];
+    }
+    if (self.MarkeArr.count > 0) {
+        
         [cell HouseModel:self.MarkeArr[indexPath.row]];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -120,58 +120,16 @@
     return cell;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
 }
 
-
-
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    detailTableViewController *detailVC = [[detailTableViewController alloc]init];
+    detailVC.model = self.MarkeArr[indexPath.row];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

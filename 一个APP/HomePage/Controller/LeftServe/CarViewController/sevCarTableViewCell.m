@@ -16,7 +16,7 @@ static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
     return cell;
 }
 
-- (void)CarModel:(CarModel *)model
+- (void)CarModel:(MerchantInformationModel *)model
 {
     self.nameLabel.text = model.shangjiaName;
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];

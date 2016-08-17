@@ -8,7 +8,7 @@
 
 #import "carWashTableViewController.h"
 #import "GroupPurchaseView.h"
-#import "shopPeoleTableViewCell.h"
+#import "ShopIntroduceTableViewCell.h"
 #import "StarEvaluateTotalTableViewCell.h"
 #import "EvaluateTableViewCell.h"
 #import "carConsumeTableViewCell.h"
@@ -66,7 +66,7 @@
         static NSString *reuse = @"reuse";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
         if (!cell) {
-            cell = [shopPeoleTableViewCell greateCell];
+            cell = [[NSBundle mainBundle]loadNibNamed:@"ShopIntroduceTableViewCell" owner:nil options:nil].lastObject;
         }
         cell.selectionStyle = UITableViewCellStyleDefault;
         return cell;

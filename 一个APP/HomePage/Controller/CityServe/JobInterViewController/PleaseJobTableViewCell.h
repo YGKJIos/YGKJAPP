@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JobModel.h"
+#import "MerchantInformationModel.h"
 @interface PleaseJobTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
@@ -25,6 +25,6 @@
 
 + (PleaseJobTableViewCell *)createJobCell;
 
-- (void) JobModel:(JobModel *)model;
+- (void) JobModel:(MerchantInformationModel *)model;
 
 @end

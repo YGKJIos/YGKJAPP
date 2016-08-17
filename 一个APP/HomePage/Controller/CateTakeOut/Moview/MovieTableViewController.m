@@ -10,6 +10,7 @@
 #import "MoiveTableViewCell.h"
 #import "MovieModel.h"
 #import "MoviewDetailTableViewController.h"
+#import "CateDetailsTableViewController.h"
 
 @interface MovieTableViewController ()
 @property (nonatomic, retain) NSMutableArray *MovieArr;
@@ -57,11 +58,11 @@
 }
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.MovieArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"dianying/querydianying1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 MovieModel *model = [[MovieModel alloc] init];
@@ -71,10 +72,8 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
         }];
         
-        NSLog(@"MJ-下拉刷新");
         
     });
     
@@ -83,7 +82,7 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
+        
     });
 }
 
@@ -122,7 +121,6 @@
     return cell;
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 151;
@@ -131,7 +129,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MoviewDetailTableViewController *detailVC = [[MoviewDetailTableViewController alloc] init];
+     CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc] init];
+    detailVC.navigationItem.title = @"电影详情";
+    detailVC.shopID = [self.MovieArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

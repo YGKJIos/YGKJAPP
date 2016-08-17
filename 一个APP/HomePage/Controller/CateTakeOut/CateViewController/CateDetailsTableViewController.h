@@ -10,4 +10,7 @@
 
 @interface CateDetailsTableViewController : UITableViewController
 
+@property (nonatomic, strong)NSString *shopID;
+@property (nonatomic, strong)NSString *textUrl;
+
 @end

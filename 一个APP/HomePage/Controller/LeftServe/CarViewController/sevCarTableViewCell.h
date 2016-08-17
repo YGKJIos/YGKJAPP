@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CarModel.h"
+#import "MerchantInformationModel.h"
 @interface sevCarTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *sevCarImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -21,6 +21,6 @@
 
 + (sevCarTableViewCell *) createSevCarCell;
 
-- (void)CarModel:(CarModel *) model;
+- (void)CarModel:(MerchantInformationModel *) model;
 
 @end

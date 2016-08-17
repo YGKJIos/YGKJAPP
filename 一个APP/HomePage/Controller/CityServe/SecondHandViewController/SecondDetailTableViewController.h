@@ -6,6 +6,9 @@
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
+/**
+ *  二手详情暂时没用
+ */
 #import <UIKit/UIKit.h>
 
 @interface SecondDetailTableViewController : UITableViewController

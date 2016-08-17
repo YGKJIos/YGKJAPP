@@ -24,19 +24,20 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
 {
     NSString *imageStr = [NSString stringWithFormat:@"%@%@", headUrl, model.dianyingTupian];
     [self.movieImage sd_setImageWithURL:[NSURL URLWithString:imageStr]];
+    // 电影名称
     self.nameLabe.text = model.dianyingName;
+    // 电影介绍
     self.jieshaoLabel.text = model.dianyingJianjie;
     NSString *stylStr = [NSString stringWithFormat:@"%@%@", headUrl, model.dianyingLeixing];
     [self.stylImage sd_setImageWithURL:[NSURL URLWithString:stylStr]];
     NSString *tuijianStr= [NSString stringWithFormat:@"%@%@", headUrl, model.dianyingRebo];
     [self.tuijianImage sd_setImageWithURL:[NSURL URLWithString:tuijianStr]];
+    // 特价
     self.rmbshuLabel.text = [NSString stringWithFormat:@"¥%@", model.dianyingTejia];
-    self.yjrmbLabel
+    // 原价
+    self.yjrmbLabel.text = [NSString stringWithFormat:@"¥%@", model.dianyingYuanjia];
     
-    
-    
-    
-    .text = [NSString stringWithFormat:@"¥%@", model.dianyingYuanjia];
+    self.numLabel.text = model.dianyingPingfen;
 }
 
 

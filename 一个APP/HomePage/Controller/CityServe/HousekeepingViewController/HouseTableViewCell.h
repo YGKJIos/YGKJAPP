@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HouseModel.h"
+#import "MerchantInformationModel.h"
+
 @interface HouseTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *huoseImage;
 @property (weak, nonatomic) IBOutlet UILabel *houseNameLabel;
@@ -16,10 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *introduceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *phoneImage;
 
-
-
 + (HouseTableViewCell *) createHouseCell;
 
-- (void)HouseModel: (HouseModel *) model;
+- (void)HouseModel:(MerchantInformationModel *) model;
 
 @end

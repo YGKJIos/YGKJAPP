@@ -11,6 +11,7 @@
 #import "HeaderCollectionReusableView.h"
 #import "detailTableViewController.h"
 #import "ShopServeModel.h"
+#import "MerchantInformationModel.h"
 #import "AFNetWorting.h"
 
 @interface shopViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -51,7 +52,6 @@
     [self.collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
     
     [self MJrefreshLoadData];
-    // 下拉刷新
   
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -78,7 +78,6 @@
     self.collection.mj_footer = footer;
     
 }
-
 // 下拉刷新的方法
 - (void)loadNewData{
     [self.MarkeArr removeAllObjects];
@@ -86,16 +85,17 @@
         [self.collection.mj_header endRefreshing];
         NSString *url = @"sheying/querysheying1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSLog(@"responseObject - %@" , responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
-                ShopServeModel *model = [[ShopServeModel alloc] init];
+                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
             [self.collection reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
         
     });
@@ -133,9 +133,9 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     detailTableViewController *detailVC = [[detailTableViewController alloc] init];
+    detailVC.model = self.MarkeArr[indexPath.row];
     [self.navigationController pushViewController:detailVC animated:YES];
-    
-    NSLog(@"row = %ld, section= %ld",indexPath.row,indexPath.section);
+
 }
 
 

@@ -10,4 +10,6 @@
 
 @interface LearnDetailsTableViewController : UITableViewController
 
+@property (nonatomic, copy)NSString *shopID;
+
 @end

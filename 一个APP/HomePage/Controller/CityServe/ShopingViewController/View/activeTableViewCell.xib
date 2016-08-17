@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="379" height="140"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="379" height="139"/>
+                <rect key="frame" x="0.0" y="0.0" width="379" height="139.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiangqing_51" translatesAutoresizingMaskIntoConstraints="NO" id="1Vd-N7-pSS">
@@ -42,53 +42,32 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.夏季商品全场5折" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzo-kV-wXb">
-                        <rect key="frame" x="28" y="58" width="324" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgX-iy-cvm">
+                        <rect key="frame" x="28" y="58" width="329" height="65"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="17" id="xJk-Zg-GR2"/>
+                            <constraint firstAttribute="height" constant="65" id="GpQ-jQ-hBC"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.购买夏季商品满1000元还可以立减50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH0-ST-Ejn">
-                        <rect key="frame" x="28" y="83" width="324" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="18" id="Zsm-PL-ruY"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.秋季新品上市一次购买满2000元可享受9.5折" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cu-vX-8Th">
-                        <rect key="frame" x="28" y="109" width="324" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="17" id="6Gw-TR-WKK"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7cu-vX-8Th" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="7Xk-FY-e0x"/>
                     <constraint firstItem="1Vd-N7-pSS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="7jC-xb-hXu"/>
                     <constraint firstItem="8pt-s0-W04" firstAttribute="top" secondItem="Yqu-Kl-CuK" secondAttribute="bottom" constant="14" id="CYU-Me-sr3"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ZH0-ST-Ejn" secondAttribute="trailing" constant="19" id="Dxt-mw-ftI"/>
                     <constraint firstItem="Yqu-Kl-CuK" firstAttribute="leading" secondItem="1Vd-N7-pSS" secondAttribute="trailing" constant="8" id="JmB-T0-c3D"/>
-                    <constraint firstItem="ZH0-ST-Ejn" firstAttribute="top" secondItem="qzo-kV-wXb" secondAttribute="bottom" constant="8" id="NJN-P8-0Cd"/>
-                    <constraint firstItem="ZH0-ST-Ejn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="OvP-CB-Byy"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="7cu-vX-8Th" secondAttribute="trailing" constant="19" id="TR2-Kb-pii"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="qzo-kV-wXb" secondAttribute="trailing" constant="19" id="XdD-Ww-8VR"/>
-                    <constraint firstItem="7cu-vX-8Th" firstAttribute="top" secondItem="ZH0-ST-Ejn" secondAttribute="bottom" constant="8" id="bNG-4c-3Dj"/>
                     <constraint firstAttribute="trailingMargin" secondItem="8pt-s0-W04" secondAttribute="trailing" id="c0i-4m-Npe"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="LgX-iy-cvm" secondAttribute="trailing" constant="14" id="mS8-eD-ZKq"/>
                     <constraint firstItem="1Vd-N7-pSS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="rHL-Qm-sbR"/>
+                    <constraint firstItem="LgX-iy-cvm" firstAttribute="top" secondItem="8pt-s0-W04" secondAttribute="bottom" constant="14" id="s4E-6e-oFO"/>
                     <constraint firstItem="8pt-s0-W04" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="sMm-t6-e2w"/>
                     <constraint firstItem="Yqu-Kl-CuK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="vt0-ll-GfF"/>
-                    <constraint firstItem="qzo-kV-wXb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="x06-eW-hUy"/>
-                    <constraint firstItem="qzo-kV-wXb" firstAttribute="top" secondItem="8pt-s0-W04" secondAttribute="bottom" constant="14" id="xdp-Zx-JOc"/>
+                    <constraint firstItem="LgX-iy-cvm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="yVe-Su-3vj"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLab" destination="LgX-iy-cvm" id="yWM-dm-Wov"/>
+            </connections>
             <point key="canvasLocation" x="281.5" y="257"/>
         </tableViewCell>
     </objects>

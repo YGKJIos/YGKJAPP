@@ -10,16 +10,19 @@
 
 @interface MarketModel : NSObject
 
-@property (nonatomic, retain) NSString *meishiId;
-@property (nonatomic, retain) NSString *shangjiaJiage;
-@property (nonatomic, retain) NSString *shangjiaJuli;
-@property (nonatomic, retain) NSString *shangjiaName;
-@property (nonatomic, retain) NSString *shangjiaPingfen;
-@property (nonatomic, retain) NSString *shangjiaTongzhi;
-@property (nonatomic, retain) NSString *shangjiaTouxiang;
-@property (nonatomic, retain) NSString *shangjiaLijian;
-@property (nonatomic, retain) NSString *meishiTejia;
-@property (nonatomic, retain) NSString *meishiYuanjia;
+@property (nonatomic, copy) NSString *meishiId;
+@property (nonatomic, copy) NSString *shangjiaJiage;
+@property (nonatomic, copy) NSString *shangjiaJuli;
+@property (nonatomic, copy) NSString *shangjiaName;
+@property (nonatomic, copy) NSString *shangjiaPingfen;
+@property (nonatomic, copy) NSString *shangjiaTongzhi;
+@property (nonatomic, copy) NSString *shangjiaTouxiang;
+@property (nonatomic, copy) NSString *shangjiaLijian;
+@property (nonatomic, copy) NSString *meishiTejia;
+@property (nonatomic, copy) NSString *meishiYuanjia;
+@property (nonatomic, copy) NSString *shangjiaId;
+@property (nonatomic, copy) NSString *shangjiaWeizhi;
+@property (nonatomic, copy) NSString *shangjiaJutiweizhi;
 
 
 

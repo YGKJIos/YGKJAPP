@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface voucherTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *TGHeadImage;
+@property (weak, nonatomic) IBOutlet UILabel *TGname;
+@property (weak, nonatomic) IBOutlet UILabel *TGspecialMoney;
+@property (weak, nonatomic) IBOutlet UILabel *TGOriginalMoney;
+- (IBAction)payBtn:(id)sender;
 
 + (voucherTableViewCell *)greateCell;
+- (void)setmodel:(MerchantInformationModel *)model;
 
 @end

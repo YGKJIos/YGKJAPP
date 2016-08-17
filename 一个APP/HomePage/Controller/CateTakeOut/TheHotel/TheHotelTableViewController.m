@@ -7,7 +7,7 @@
 //
 
 #import "TheHotelTableViewController.h"
-#import "cardetailTableViewController.h"
+#import "CateDetailsTableViewController.h"
 #import "TheHotelTableViewCell.h"
 #import "SeeAllEvaluateTableViewController.h"
 #import "TheHotelModel.h"
@@ -71,10 +71,8 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
-        
-        NSLog(@"MJ-下拉刷新");
         
     });
     
@@ -92,46 +90,46 @@
 
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 190)];
     headerView.backgroundColor = [UIColor redColor];
-    
-    // 日全房
-    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self createBtn:leftBtn title:@"全日房" x:0];
-    [leftBtn addTarget:self action:@selector(dayHouseClick) forControlEvents:UIControlEventTouchUpInside];
-    [headerView addSubview:leftBtn];
-    // 钟点房
-    UIButton *rigthBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self createBtn:rigthBtn title:@"钟点房" x:WIDTH/2];
-    
-    [rigthBtn addTarget:self action:@selector(hourHouseClick) forControlEvents:UIControlEventTouchUpInside];
-    [headerView addSubview:rigthBtn];
-    // 滑动的线
-    self.lineLab = [[UILabel alloc]init];
-    self.lineLab.frame = CGRectMake(0, 38, WIDTH/2, 2);
-    self.lineLab.backgroundColor = BGcolor(83, 198, 24);
-    [headerView addSubview:self.lineLab];
+//    
+//    // 日全房
+//    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [self createBtn:leftBtn title:@"全日房" x:0];
+//    [leftBtn addTarget:self action:@selector(dayHouseClick) forControlEvents:UIControlEventTouchUpInside];
+//    [headerView addSubview:leftBtn];
+//    // 钟点房
+//    UIButton *rigthBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [self createBtn:rigthBtn title:@"钟点房" x:WIDTH/2];
+//    
+//    [rigthBtn addTarget:self action:@selector(hourHouseClick) forControlEvents:UIControlEventTouchUpInside];
+//    [headerView addSubview:rigthBtn];
+//    // 滑动的线
+//    self.lineLab = [[UILabel alloc]init];
+//    self.lineLab.frame = CGRectMake(0, 38, WIDTH/2, 2);
+//    self.lineLab.backgroundColor = BGcolor(83, 198, 24);
+//    [headerView addSubview:self.lineLab];
     
     NSArray *arr = @[@"binguandatu_tus",@"waimai_tu",@"shouye_haigou",@"shouye_meishitou"];
     ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
-    scroll.frame = CGRectMake(0, leftBtn.height, WIDTH, 150);
+    scroll.frame = CGRectMake(0, 0, WIDTH, 150);
     [headerView addSubview:scroll];
     
     self.tableView.tableHeaderView = headerView;
 }
 
-- (void)dayHouseClick
-{
-    [UIView animateWithDuration:0.15 animations:^{
-        self.lineLab.frame = CGRectMake(0, 38, WIDTH/2, 2);
-    }];
-
-}
-- (void)hourHouseClick
-{
-    [UIView animateWithDuration:0.2 animations:^{
-        self.lineLab.frame = CGRectMake(WIDTH/2, 38, WIDTH/2, 2);
-    }];
-
-}
+//- (void)dayHouseClick
+//{
+//    [UIView animateWithDuration:0.15 animations:^{
+//        self.lineLab.frame = CGRectMake(0, 38, WIDTH/2, 2);
+//    }];
+//
+//}
+//- (void)hourHouseClick
+//{
+//    [UIView animateWithDuration:0.2 animations:^{
+//        self.lineLab.frame = CGRectMake(WIDTH/2, 38, WIDTH/2, 2);
+//    }];
+//
+//}
 
 - (void)createBtn:(UIButton *)btn title:(NSString *)title x:(CGFloat)x
 {
@@ -165,8 +163,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    cardetailTableViewController *detailVC = [[cardetailTableViewController alloc]init];
-    self.navigationItem.title = @"宾馆详情";
+     CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc]init];
+    detailVC.navigationItem.title = @"宾馆详情";
+    detailVC.shopID = [self.HotelArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {

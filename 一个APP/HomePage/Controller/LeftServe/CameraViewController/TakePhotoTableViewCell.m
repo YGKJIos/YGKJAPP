@@ -7,7 +7,7 @@
 //
 
 #import "TakePhotoTableViewCell.h"
-static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
 @implementation TakePhotoTableViewCell
 
 

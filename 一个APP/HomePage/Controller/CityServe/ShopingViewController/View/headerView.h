@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface headerView : UIView
 
+// 评分
+@property (weak, nonatomic) IBOutlet UILabel *gradeLab;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 + (headerView *)greateHeaderView;
+- (void)setModel:(MerchantInformationModel *)model;
 
 @end

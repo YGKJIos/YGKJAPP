@@ -1,14 +1,14 @@
 //
-//  HouseModel.m
+//  MerchantModel.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/7/9.
+//  Created by 梁立彬 on 16/7/25.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "HouseModel.h"
+#import "MerchantInformationModel.h"
 
-@implementation HouseModel
+@implementation MerchantInformationModel
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {

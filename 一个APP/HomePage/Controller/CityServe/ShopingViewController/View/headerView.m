@@ -7,6 +7,7 @@
 //
 
 #import "headerView.h"
+static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation headerView
 
@@ -17,12 +18,11 @@
     return head;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setModel:(MerchantInformationModel *)model
+{
+    NSString *url = [NSString stringWithFormat:@"%@%@",headUrl,model.shangjiaTouxiang];
+    [self.image sd_setImageWithURL:[NSURL URLWithString:url]];
+    self.gradeLab.text = [NSString stringWithFormat:@"%@分",model.shangjiaPingfen];
 }
-*/
 
 @end

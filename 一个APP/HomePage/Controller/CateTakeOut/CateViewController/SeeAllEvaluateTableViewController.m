@@ -6,6 +6,7 @@
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
+// 查看全部评论 VC
 #import "SeeAllEvaluateTableViewController.h"
 #import "EvaluateTitleTableViewCell.h"
 #import "EvaluateTableViewCell.h"

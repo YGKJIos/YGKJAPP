@@ -270,8 +270,10 @@
             [cell cellStyle:newCellStyle];
             cell.delegte = self;
         }
-        HomeModel *model = self.homeArr[4];
-        [cell setThridCellHomeModel:model];
+        if (self.homeArr.count > 0) {
+            HomeModel *model = self.homeArr[4];
+            [cell setThridCellHomeModel:model];
+        }
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -283,8 +285,11 @@
             cell = [[FoodHomeCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"foodId"];
             cell.delegate = self;
         }
-        HomeModel *model = self.homeArr[3];
-        [cell setFoodCellModel:model];
+        if (self.homeArr.count > 0) {
+            
+            HomeModel *model = self.homeArr[3];
+            [cell setFoodCellModel:model];
+        }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -309,8 +314,10 @@
             [cell cellStyle:travelCellStyle];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        HomeModel *model = self.homeArr[2];
-        [cell setThridCellHomeModel:model];
+        if (self.homeArr.count > 0) {
+            HomeModel *model = self.homeArr[2];
+            [cell setThridCellHomeModel:model];
+        }
         return cell;
     }
     // 热门招聘
@@ -322,8 +329,11 @@
             cell.delegte =self;
             [cell cellStyle:hotJobCellStyle];
         }
-        HomeModel *model = self.homeArr[0];
-        [cell setThridCellHomeModel:model];
+        if (self.homeArr.count > 0) {
+            
+            HomeModel *model = self.homeArr[0];
+            [cell setThridCellHomeModel:model];
+        }
         return cell;
     }
     // 二手置换
@@ -334,8 +344,11 @@
             [cell cellStyle:secondCellStyle];
             cell.delegte = self;
         }
-        HomeModel *model = self.homeArr[1];
-        [cell setThridCellHomeModel:model];
+        if (self.homeArr.count > 0) {
+            
+            HomeModel *model = self.homeArr[1];
+            [cell setThridCellHomeModel:model];
+        }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }

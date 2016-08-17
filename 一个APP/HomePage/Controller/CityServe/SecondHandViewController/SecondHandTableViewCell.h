@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SecondModel.h"
+#import "MerchantInformationModel.h"
 @interface SecondHandTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *SecondHandImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -16,10 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *phoneImage;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *juliLabel;
 
 + (SecondHandTableViewCell *) createSecondHandCell;
 
-- (void) SecondModel: (SecondModel *) model;
+- (void) SecondModel:(MerchantInformationModel *) model;
 
 @end

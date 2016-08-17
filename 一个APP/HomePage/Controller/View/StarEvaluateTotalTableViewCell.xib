@@ -22,7 +22,7 @@
                             <constraint firstAttribute="height" constant="10" id="8dU-I5-prT"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="135人评价" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhg-cC-6yJ">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="135人评价" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhg-cC-6yJ">
                         <rect key="frame" x="187" y="15" width="99" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="Aya-Gx-xG1"/>
@@ -32,7 +32,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAd-Tl-Ag1">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAd-Tl-Ag1">
                         <rect key="frame" x="294" y="12" width="7" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="7" id="BeH-mN-0uU"/>
@@ -62,6 +62,9 @@
                     <constraint firstItem="xhg-cC-6yJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="uQV-bR-PEV"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="evaluateLab" destination="cfO-Cr-vw6" id="8i0-qf-VuH"/>
+            </connections>
             <point key="canvasLocation" x="262.5" y="264"/>
         </tableViewCell>
     </objects>

@@ -113,6 +113,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
+    merchantVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:merchantVC animated:YES];
 }
 

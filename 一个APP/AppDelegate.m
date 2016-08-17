@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
-#import "SecondDetailTableViewController.h"
-#import "AppraiseTableViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -19,9 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    
+
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
@@ -29,8 +26,6 @@
     self.window.rootViewController = rootTabBar;
     rootTabBar.tabBar.translucent = NO;
 
-//    AppraiseTableViewController *pjVC = [[AppraiseTableViewController alloc] init];
-//    self.window.rootViewController = pjVC;
 //    LoginViewController *rootvc = [[LoginViewController alloc] init];
 //    self.window.rootViewController = rootvc;
 

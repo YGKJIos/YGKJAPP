@@ -8,8 +8,9 @@
 
 #import "SecondHandTableViewController.h"
 #import "SecondHandTableViewCell.h"
-#import "SecondModel.h"
-#import "SecondDetailTableViewController.h"
+#import "MerchantInformationModel.h"
+#import "SecondDetailTableViewController.h" //  暂时没用
+#import "detailTableViewController.h"
 @interface SecondHandTableViewController ()
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
 @end
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"二手置换";
     [self addTableHeaderView];
     self.MarkeArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
@@ -52,24 +54,22 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"ershou/queryershou.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
-                SecondModel *model = [[SecondModel alloc] init];
+                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
         }];
         
-        NSLog(@"MJ-下拉刷新");
         
     });
     
@@ -78,15 +78,7 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
     });
-}
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
 }
 
 // 轮播图
@@ -103,23 +95,9 @@
     self.tableView.tableHeaderView = headerView;
 }
 
-
-
-
-
-
-
-
-
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return self.MarkeArr.count;
 }
 
@@ -132,24 +110,24 @@
     
     if (!cell) {
         cell = [SecondHandTableViewCell createSecondHandCell];
-        [cell SecondModel:self.MarkeArr[indexPath.row]];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    [cell SecondModel:self.MarkeArr[indexPath.row]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 110;
 }
 //
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    SecondDetailTableViewController *detailVC = [[SecondDetailTableViewController alloc] init];
-//    [self.navigationController pushViewController:detailVC animated:YES];
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    detailTableViewController *detailVC = [[detailTableViewController alloc] init];
+    detailVC.model = self.MarkeArr[indexPath.row];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 
 @end

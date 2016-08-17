@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
+
 
 @interface ShopIntroduceTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *shopName;
 @property (weak, nonatomic) IBOutlet UILabel *addressLab;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 @property (weak, nonatomic) IBOutlet UIButton *phoneBtn;
+@property (nonatomic, copy)NSString *phoneNum;
+
+- (void)setShopInformationModel:(MerchantInformationModel *)model;
+
+
+
 
 @end

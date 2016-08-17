@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = [self.shopArr[0] shangjiaName];
     
     self.foodArr = [NSMutableArray arrayWithObjects:@"鱼丸",@"粗面",@"油面",@"鱼丸",@"鱼丸", nil];
     
@@ -51,46 +52,59 @@
         return 0;
     }
     if (section == 3) {
-        return self.foodArr.count+2;
+        return 2;
     }
-    
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         StarEvaluateTotalTableViewCell *cell = [StarEvaluateTotalTableViewCell greateCell];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.evaluateLab.text = [self.shopArr[0] shangjiaPingfen];
         return cell;
     }
     if (indexPath.section == 2) {
         ShopIntroduceTableViewCell *shopCell = [[NSBundle mainBundle]loadNibNamed:@"ShopIntroduceTableViewCell" owner:nil options:nil].lastObject;
         shopCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [shopCell setShopInformationModel:self.shopArr[0]];
         return shopCell;
     }
     if (indexPath.section == 3) {
         if (indexPath.row == 0) {
             TitleCellTableViewCell *titleCell = [TitleCellTableViewCell createSectionTitleCellNib];
             [titleCell setTitleImage:@"djq_taocanjieshao2" titleLab:@"套餐介绍"];
+            titleCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return titleCell;
-        }else if(self.foodArr.count+1 == indexPath.row){
-            UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }else{
             
-            UILabel *textLab = [[UILabel alloc]initWithFrame:CGRectMake(30, 15, 120, 20)];
-            textLab.textColor = BGcolor(65, 186, 206);
-            textLab.text = @"查看图片详情";
-            [cell.contentView addSubview:textLab];
-            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH-36, 19, 6, 12)];
-            imageView.image = [UIImage imageNamed:@"djq_jiantoulan"];
-            [cell.contentView addSubview:imageView];
+            UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuse"];
+            cell.textLabel.numberOfLines = 0;
+            cell.textLabel.font = [UIFont systemFontOfSize:13];
+            cell.textLabel.text = self.model.tuangouShuoming;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
-        }else
-        {
-            FoodIntroduceTableViewCell *foodCell = [[NSBundle mainBundle]loadNibNamed:@"FoodIntroduceTableViewCell" owner:nil options:nil].lastObject;
-            foodCell.selectionStyle = UITableViewCellSelectionStyleNone;
-            foodCell.typeName.text = self.foodArr[indexPath.row-1];
-            return foodCell;
+            
         }
+//        else if(self.foodArr.count+1 == indexPath.row){
+//            UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            
+//            UILabel *textLab = [[UILabel alloc]initWithFrame:CGRectMake(30, 15, 120, 20)];
+//            textLab.textColor = BGcolor(65, 186, 206);
+//            textLab.text = @"查看图片详情";
+//            [cell.contentView addSubview:textLab];
+//            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH-36, 19, 6, 12)];
+//            imageView.image = [UIImage imageNamed:@"djq_jiantoulan"];
+//            [cell.contentView addSubview:imageView];
+//            return cell;
+//        }
+//        else
+//        {
+//            FoodIntroduceTableViewCell *foodCell = [[NSBundle mainBundle]loadNibNamed:@"FoodIntroduceTableViewCell" owner:nil options:nil].lastObject;
+//            foodCell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            foodCell.typeName.text = self.foodArr[indexPath.row-1];
+//            return foodCell;
+//        }
     }
     
     ConsumePromptTableViewCell *consumeCell = [[NSBundle mainBundle]loadNibNamed:@"ConsumePromptTableViewCell" owner:nil options:nil].lastObject;
@@ -113,7 +127,7 @@
         if (indexPath.row == self.foodArr.count +1) {
             return 50;
         }
-        return 37;
+        return 60;
     }else
     {
         return 536;
@@ -124,10 +138,10 @@
 {
     if (section == 0) {
         GroupPurchaseView *groupView = [[NSBundle mainBundle]loadNibNamed:@"GroupPurchaseView" owner:nil options:nil].lastObject;
-        groupView.frame = CGRectMake(0, 0, WIDTH, 0);
+        groupView.frame = CGRectMake(0, 0, WIDTH, 255);
+        [groupView setModel:self.model];
         groupView.backgroundColor = [UIColor whiteColor];
-        self.tableView.tableHeaderView = groupView;
-        return tableView.tableHeaderView;
+        return groupView;
     }
     return nil;
 }

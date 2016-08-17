@@ -1,30 +1,23 @@
 //
-//  GameTableViewController.m
+//  GameTypeTableViewController.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/6/27.
+//  Created by 梁立彬 on 16/8/12.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "GameTableViewController.h"
 #import "GameTypeTableViewController.h"
-#import "GameTableViewCell.h"
-#import "DOPDropDownMenu.h"
-#import "GameModel.h"
 #import "CateDetailsTableViewController.h"
+#import "GameTableViewCell.h"
+#import "GameModel.h"
 
-@interface GameTableViewController ()<ImageLabViewPushVCDelegate>
-@property (nonatomic, strong) NSArray *classifys;
-@property (nonatomic, strong) NSArray *cates;
-@property (nonatomic, strong) NSArray *movices;
-@property (nonatomic, strong) NSArray *hostels;
-@property (nonatomic, strong) NSArray *areas;
-@property (nonatomic, strong) NSArray *sorts;
+@interface GameTypeTableViewController ()
 @property (nonatomic, strong) NSMutableArray *MarkeArr;
 
 @end
 
-@implementation GameTableViewController
+@implementation GameTypeTableViewController
+
 -(NSMutableArray *)MarkeArr
 {
     if (!_MarkeArr) {
@@ -35,9 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"休闲娱乐";
-    // 刷新数据
-    [self addHeaderView];
+    self.navigationItem.rightBarButtonItem = nil;
     [self MJrefreshLoadData];
 }
 
@@ -46,7 +37,6 @@
     [self.tableView.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
-
 #pragma mark - MJ刷新
 - (void)MJrefreshLoadData
 {
@@ -95,37 +85,6 @@
         [self.tableView.mj_footer endRefreshing];
     });
 }
-#pragma mark - 添加table 的haedView
-- (void)addHeaderView
-{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 300)];
-    NSArray *arr = @[@"waimai_tu",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
-    ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
-    scroll.frame = CGRectMake(0, 0, WIDTH, 150);
-    [headerView addSubview:scroll];
-    
-    //图片数组
-    NSArray *images = @[@"xiuxian_zhuoyou",@"xiuxian_kafei",@"xiuxian_anmo",@"xiuxian_ktv",@"xiuxian_yundong",@"xiuxian_dianying",@"xiuxian_xiyu",@"xiuxian_quanbu"];
-    NSArray *titles = @[@"桌游电玩",@"酒吧咖啡",@"足疗按摩",@"KTV",@"运动健身",@"4D/5D电影",@"沐浴汗蒸",@"其他娱乐"];
-    NSInteger num = 0;
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 2; j++) {
-            ImageAndLabView *view = [ImageAndLabView createViewNib];
-            view.delegate = self;
-            view.frame = CGRectMake(30+(40+WIDTH/
-                                        4-40)*i,scroll.height+ 10+(40+40)*j, 40, 40);
-            [view setImages:images[num] names:titles[num]];
-            num++;
-            [headerView addSubview:view];
-        }
-    }
-    self.tableView.tableHeaderView = headerView;
-}
-- (void)imageAndLableViewPush
-{
-    GameTypeTableViewController *typeVC = [[GameTypeTableViewController alloc]init];
-    [self.navigationController pushViewController:typeVC animated:YES];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -135,36 +94,29 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return self.MarkeArr.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *str = @"reuse";
-    GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *reuse = @"reuse";
+    GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
     if (cell == nil) {
         cell = [GameTableViewCell createGameCell];
     }
     [cell GameModel:self.MarkeArr[indexPath.row]];
     return cell;
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 117;
 }
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-     CateDetailsTableViewController *gameDetailVC = [[CateDetailsTableViewController alloc] init];
+    CateDetailsTableViewController *gameDetailVC = [[CateDetailsTableViewController alloc] init];
     gameDetailVC.navigationItem.title = @"宾馆详情";
     gameDetailVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:gameDetailVC animated:YES];
 }
-
-
-
 
 @end

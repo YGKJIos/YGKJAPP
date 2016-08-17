@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface VoucherTableViewController : UITableViewController
+@property (nonatomic, strong)MerchantInformationModel *model;
+@property (nonatomic, strong)NSMutableArray *shopArr;
 
 @end
