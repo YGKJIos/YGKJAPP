@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *TGname;
 @property (weak, nonatomic) IBOutlet UILabel *TGspecialMoney;
 @property (weak, nonatomic) IBOutlet UILabel *TGOriginalMoney;
-- (IBAction)payBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *payBtn;
 
 + (voucherTableViewCell *)greateCell;
 - (void)setmodel:(MerchantInformationModel *)model;

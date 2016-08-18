@@ -10,9 +10,6 @@
 
 @implementation voucherTableViewCell
 
-- (IBAction)payBtn:(id)sender {
-}
-
 + (voucherTableViewCell *)greateCell
 {
     voucherTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"voucherTableViewCell" owner:nil options:nil]lastObject];

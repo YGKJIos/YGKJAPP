@@ -18,6 +18,10 @@
 #import "ErrorInformationView.h" //报错页面
 #import "SeeAllEvaluateTableViewController.h" // 查看全部评论
 #import "MerchantInformationModel.h"
+#import <AlipaySDK/AlipaySDK.h>
+//#import "DataSigner.h"
+//#import "Order.h"
+
 
 @interface CateDetailsTableViewController ()
 @property (nonatomic, strong)NSMutableArray *dataArr;// 商家信息
@@ -139,6 +143,8 @@
             static NSString *reuse = @"reuse";
             voucherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
             cell = [voucherTableViewCell greateCell];
+            cell.payBtn.tag = 1000+indexPath.row;
+            [cell.payBtn addTarget:self action:@selector(payOrderClick:) forControlEvents:UIControlEventTouchUpInside];
             if (self.TGArr.count != 0) {
                 
                 MerchantInformationModel *model = self.TGArr[indexPath.row-1];
@@ -177,6 +183,58 @@
 //    [erorrCell setShowAllAndErorrCellStyle:erorrCellStyle];
 //    return erorrCell;
     return nil;
+}
+
+- (void)payOrderClick:(UIButton *)btn
+{
+    /*
+     *点击获取prodcut实例并初始化订单信息
+     */
+    Product *product = [self.TGArr objectAtIndex:btn.tag-1000];
+    
+    NSString *partner = @"2016072001642380";
+    NSString *seller = @"yuangukeji2016@163.com";
+    NSString *privateKey = @"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDI6d306Q8fIfCOaTXyiUeJHkrIvYISRcc73s3vF1ZT7XN8RNPwJxo8pWaJMmvyTn9N4HQ632qJBVHf8sxHi/fEsraprwCtzvzQETrNRwVxLO5jVmRGi60j8Ue1efIlzPXV9je9mkjzOmdssymZkh2QhUrCmZYI/FCEa3/cNMW0QIDAQAB";
+    
+//    Order *order = [[Order alloc] init];
+//    order.partner = partner;
+//    order.sellerID = seller;
+//    order.outTradeNO = @""; //订单ID（由商家自行制定）
+//    order.subject = product.subject; //商品标题
+//    order.body = product.body; //商品描述
+//    order.totalFee = [NSString stringWithFormat:@"%.2f",product.price]; //商品价格
+//    order.notifyURL =  @"http://www.xxx.com"; //回调URL
+//    
+//    order.service = @"mobile.securitypay.pay";
+//    order.paymentType = @"1";
+//    order.inputCharset = @"utf-8";
+//    order.itBPay = @"30m";
+//    order.showURL = @"m.alipay.com";
+//    
+//    //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
+//    NSString *appScheme = @"alisdkdemo";
+//    
+//    //将商品信息拼接成字符串
+//    NSString *orderSpec = [order description];
+//    NSLog(@"orderSpec = %@",orderSpec);
+//    
+//    //获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
+//    id<DataSigner> signer = CreateRSADataSigner(privateKey);
+//    NSString *signedString = [signer signString:orderSpec];
+//    
+//    //将签名成功字符串格式化为订单字符串,请严格按照该格式
+//    NSString *orderString = nil;
+//    if (signedString != nil) {
+//        orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",
+//                       orderSpec, signedString, @"RSA"];
+//        
+//        [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+//            //【callback处理支付结果】
+//            NSLog(@"reslut = %@",resultDic);
+//        }];
+//        
+//    }
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
