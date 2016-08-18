@@ -18,10 +18,6 @@
 #import "ErrorInformationView.h" //报错页面
 #import "SeeAllEvaluateTableViewController.h" // 查看全部评论
 #import "MerchantInformationModel.h"
-#import <AlipaySDK/AlipaySDK.h>
-//#import "DataSigner.h"
-//#import "Order.h"
-
 
 @interface CateDetailsTableViewController ()
 @property (nonatomic, strong)NSMutableArray *dataArr;// 商家信息

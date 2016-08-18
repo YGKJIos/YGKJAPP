@@ -187,8 +187,6 @@
 		59F2651F1D3F14CE002F9D56 /* carViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F2651D1D3F14CE002F9D56 /* carViewController.m */; };
 		59F265201D3F14CE002F9D56 /* carViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F2651E1D3F14CE002F9D56 /* carViewController.xib */; };
 		59F284911D1E1B3400C815D1 /* ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F284901D1E1B3400C815D1 /* ScrollView.m */; };
-		59F3F89D1D6457CB00D28306 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59F3F89B1D6457CB00D28306 /* AlipaySDK.bundle */; };
-		59F3F89E1D6457CB00D28306 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F3F89C1D6457CB00D28306 /* AlipaySDK.framework */; };
 		59F46B8E1D4A0582001C6B7B /* detailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F46B7A1D4A0582001C6B7B /* detailTableViewController.m */; };
 		59F46B8F1D4A0582001C6B7B /* shopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F46B7C1D4A0582001C6B7B /* shopViewController.m */; };
 		59F46B901D4A0582001C6B7B /* activeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F46B801D4A0582001C6B7B /* activeTableViewCell.m */; };
@@ -289,10 +287,6 @@
 		D85E795C1D43464F00E7775D /* groupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E795A1D43464F00E7775D /* groupTableViewCell.m */; };
 		D85E795D1D43464F00E7775D /* groupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E795B1D43464F00E7775D /* groupTableViewCell.xib */; };
 		D85E79671D4361B600E7775D /* CarEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E79651D4361B600E7775D /* CarEvaluateTableViewCell.xib */; };
-
-		D860860A1D45E15E002DD5DB /* weddingDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */; };
-
-
 		D86B7D691D5C103400380F49 /* PhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D671D5C103400380F49 /* PhoneTableViewCell.m */; };
 		D86B7D6A1D5C103400380F49 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B7D681D5C103400380F49 /* PhoneTableViewCell.xib */; };
 		D86B7D6D1D5C163C00380F49 /* PlaceOrderFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D6C1D5C163C00380F49 /* PlaceOrderFootView.m */; };
@@ -638,8 +632,6 @@
 		59F2651E1D3F14CE002F9D56 /* carViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = carViewController.xib; sourceTree = "<group>"; };
 		59F2848F1D1E1B3400C815D1 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
 		59F284901D1E1B3400C815D1 /* ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollView.m; sourceTree = "<group>"; };
-		59F3F89B1D6457CB00D28306 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		59F3F89C1D6457CB00D28306 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		59F46B791D4A0582001C6B7B /* detailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailTableViewController.h; sourceTree = "<group>"; };
 		59F46B7A1D4A0582001C6B7B /* detailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailTableViewController.m; sourceTree = "<group>"; };
 		59F46B7B1D4A0582001C6B7B /* shopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shopViewController.h; sourceTree = "<group>"; };
@@ -799,11 +791,6 @@
 		D85E795B1D43464F00E7775D /* groupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = groupTableViewCell.xib; sourceTree = "<group>"; };
 		D85E79631D4361B600E7775D /* CarEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarEvaluateTableViewCell.h; sourceTree = "<group>"; };
 		D85E79651D4361B600E7775D /* CarEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarEvaluateTableViewCell.xib; sourceTree = "<group>"; };
-
-		D86086081D45E15E002DD5DB /* weddingDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weddingDetailTableViewController.h; sourceTree = "<group>"; };
-		D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weddingDetailTableViewController.m; sourceTree = "<group>"; };
-
-
 		D86B7D661D5C103400380F49 /* PhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneTableViewCell.h; sourceTree = "<group>"; };
 		D86B7D671D5C103400380F49 /* PhoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneTableViewCell.m; sourceTree = "<group>"; };
 		D86B7D681D5C103400380F49 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
@@ -837,7 +824,6 @@
 				59F7E9FB1D62B616004E6DB2 /* CoreTelephony.framework in Frameworks */,
 				59F7E9F91D62B60D004E6DB2 /* SystemConfiguration.framework in Frameworks */,
 				59F7E9F71D62B5A4004E6DB2 /* libz.tbd in Frameworks */,
-				59F3F89E1D6457CB00D28306 /* AlipaySDK.framework in Frameworks */,
 				59F7E9F51D62B58E004E6DB2 /* libc++.tbd in Frameworks */,
 				7FE543E11CE4C2BEAB34EAE2 /* libPods.a in Frameworks */,
 			);
@@ -1615,15 +1601,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		59F3F89A1D6457CB00D28306 /* AliPay */ = {
-			isa = PBXGroup;
-			children = (
-				59F3F89B1D6457CB00D28306 /* AlipaySDK.bundle */,
-				59F3F89C1D6457CB00D28306 /* AlipaySDK.framework */,
-			);
-			path = AliPay;
-			sourceTree = "<group>";
-		};
 		59F46B771D4A0582001C6B7B /* ShopingViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1733,7 +1710,6 @@
 				59FFB6DB1D05066F00071E0E /* Discover */,
 				594590811D3CA75D00FAF565 /* Market */,
 				59FFB6E31D05066F00071E0E /* Message */,
-				59F3F89A1D6457CB00D28306 /* AliPay */,
 				59FFB6B21D0501F000071E0E /* LaunchScreen.storyboard */,
 				59FFB6B51D0501F000071E0E /* Info.plist */,
 				59FFB6FC1D05187D00071E0E /* Assets.xcassets */,
@@ -2129,7 +2105,6 @@
 				594591081D3CAA5D00FAF565 /* AddressAndMOdificationViewController.xib in Resources */,
 				59EEFC271D46FB55009DAFB5 /* ConsumePromptTableViewCell.xib in Resources */,
 				590573EC1D449A7E0033175B /* LearnGroupPurchaseTableViewCell.xib in Resources */,
-				59F3F89D1D6457CB00D28306 /* AlipaySDK.bundle in Resources */,
 				594590051D3C8A1C00FAF565 /* TravelTableViewCell.xib in Resources */,
 				594591161D3CAA5D00FAF565 /* TakeOutRightTableCell.xib in Resources */,
 				D85D12B41D5D6B88005EBFAC /* AlipayTableViewCell.xib in Resources */,
@@ -2586,7 +2561,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/一个APP/Tool",
 					"$(PROJECT_DIR)/一个APP",
-					"$(PROJECT_DIR)/一个APP/AliPay",
 					"$(PROJECT_DIR)/一个APP/iOSDemo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2604,10 +2578,7 @@
 				INFOPLIST_FILE = "一个APP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/一个APP/iOSDemo/AliSDKDemo",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2647,7 +2618,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/一个APP/Tool",
 					"$(PROJECT_DIR)/一个APP",
-					"$(PROJECT_DIR)/一个APP/AliPay",
 					"$(PROJECT_DIR)/一个APP/iOSDemo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2665,10 +2635,7 @@
 				INFOPLIST_FILE = "一个APP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/一个APP/iOSDemo/AliSDKDemo",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
