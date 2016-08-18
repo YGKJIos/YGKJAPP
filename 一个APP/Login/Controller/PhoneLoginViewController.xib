@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneLoginViewController">
@@ -22,21 +22,26 @@
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglubeijing" translatesAutoresizingMaskIntoConstraints="NO" id="CfL-lY-wyc">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <animations/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhihuitongcheng" translatesAutoresizingMaskIntoConstraints="NO" id="6bZ-e4-KLt">
                             <rect key="frame" x="70" y="60" width="235" height="90"/>
+                            <animations/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_phone" translatesAutoresizingMaskIntoConstraints="NO" id="HeL-bb-AtY">
                             <rect key="frame" x="50" y="227" width="240" height="38"/>
+                            <animations/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_test" translatesAutoresizingMaskIntoConstraints="NO" id="CSm-qA-1B4">
                             <rect key="frame" x="50" y="308" width="274" height="38"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="38" id="TbC-Lr-rQC"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXh-dY-qoF">
                             <rect key="frame" x="239" y="227" width="90" height="38"/>
+                            <animations/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="M3J-JQ-vXq"/>
@@ -51,11 +56,13 @@
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-NY-HnI">
                             <rect key="frame" x="86" y="308" width="238" height="38"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ba-bL-V3L">
                             <rect key="frame" x="50" y="406" width="274" height="40"/>
+                            <animations/>
                             <state key="normal" image="denglu"/>
                             <connections>
                                 <action selector="loginBtn:" destination="-1" eventType="touchUpInside" id="30y-pn-COd"/>
@@ -63,6 +70,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nl-7I-OrJ">
                             <rect key="frame" x="131" y="494" width="112" height="24"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="112" id="73r-jd-Xpk"/>
                                 <constraint firstAttribute="height" constant="24" id="ciy-It-cUO"/>
@@ -77,6 +85,7 @@
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6N-qX-XPM">
                             <rect key="frame" x="142" y="520" width="90" height="1"/>
+                            <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="G8Y-FQ-6oT"/>
@@ -85,6 +94,7 @@
                         </view>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cc-O6-Pll">
                             <rect key="frame" x="86" y="227" width="151" height="38"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="38" id="lY2-yR-Vm3"/>
                             </constraints>
@@ -92,6 +102,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
+                    <animations/>
                     <constraints>
                         <constraint firstItem="9cc-O6-Pll" firstAttribute="top" secondItem="6bZ-e4-KLt" secondAttribute="bottom" constant="77" id="2xf-Zo-adx"/>
                         <constraint firstItem="6bZ-e4-KLt" firstAttribute="top" secondItem="re8-3L-3x5" secondAttribute="top" constant="60" id="5br-hU-fzD"/>
@@ -129,6 +140,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="re8-3L-3x5" secondAttribute="bottom" id="0pX-ly-sYE"/>

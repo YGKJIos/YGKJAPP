@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self data];
-    
+    self.title = @"我的";
     UIBarButtonItem *barBtn = [UIBarButtonItem itemWithTarget:self action:@selector(RightAction) image:@"shezhi" highImage:@""];
     self.navigationItem.rightBarButtonItem = barBtn;
     [self addTableView];

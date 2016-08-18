@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol voucherBtnDelegate <NSObject>
+
+@end
+
 @interface PlaceOrderTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *djqBtn;
 
 + (PlaceOrderTableViewCell *)createCell;
+
+@property (nonatomic, assign) id<voucherBtnDelegate>delegate;
 
 @end

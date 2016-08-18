@@ -19,5 +19,9 @@
 + (ProgramTableViewCell *)createProgramCellNib;
 
 
+//- (void)setprogramcontentModel;
+
+
+
 
 @end

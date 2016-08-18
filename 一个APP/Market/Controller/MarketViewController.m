@@ -10,6 +10,8 @@
 #import "ShopTableViewCell.h"
 #import "ShopModel.h"
 #import "DropdownMenu.h"
+#import "CateDetailsTableViewController.h"
+#import "MarketModel.h"
 
 @interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate,dropdownDelegate>
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
@@ -27,7 +29,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"商家";
     [self addTableViewAndHeaderView];
     // 添加刷新
     [self MJrefreshLoadData];
@@ -58,11 +60,11 @@
 }
 // 下拉刷新的方法
 - (void)loadNewData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
-        NSString *url = @"waimai/querywaimai1.action";
+        NSString *url = @"shangjia/queryshangjia.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
+            [self.MarkeArr removeAllObjects];
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
                 ShopModel *model = [[ShopModel alloc] init];
@@ -72,10 +74,8 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
-        }];
 
-        NSLog(@"MJ-下拉刷新");
+        }];
         
     });
     
@@ -84,7 +84,18 @@
 - (void)loadMoreData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
+        NSString *url = @"shangjia/queryshangjia.action";
+        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            NSArray *arr = responseObject;
+            for (NSDictionary *dic in arr) {
+                ShopModel *model = [[ShopModel alloc] init];
+                [model setValuesForKeysWithDictionary:dic];
+                [self.MarkeArr addObject:model];
+            }
+            [self.tableView reloadData];
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        }];
     });
 }
 
@@ -100,7 +111,7 @@
     
     
     // tabelViewheaderView  设置
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 180)];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
     _tableView.tableHeaderView = headerView;
     // 轮播图
     NSArray *img = @[@"shouye_guangg",@"shouye_haigou" , @"shouye_meishitou",@"shouye_xinwen"];
@@ -124,14 +135,19 @@
     if (cell == nil) {
         cell = [ShopTableViewCell createShopCell];
     }
-    [cell ShopModel:self.MarkeArr[indexPath.row]];
+    if (self.MarkeArr != nil) {
+        [cell ShopModel:self.MarkeArr[indexPath.row]];
+    }
    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%ld , %ld" , (long)indexPath.row , (long)indexPath.section);
+    CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
+    MarketModel *model = self.MarkeArr[indexPath.row];
+    merchantVC.shopID = model.shangjiaId;
+    [self.navigationController pushViewController:merchantVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -12,11 +12,12 @@
             <rect key="frame" x="0.0" y="0.0" width="405" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="405" height="114.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="405" height="114"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="tu1" translatesAutoresizingMaskIntoConstraints="NO" id="JjM-HQ-CEX">
                         <rect key="frame" x="21" y="34" width="84" height="67"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="84" id="Up7-Ny-gcE"/>
                             <constraint firstAttribute="height" constant="67" id="Vmz-QD-q62"/>
@@ -24,6 +25,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="尤末小馆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Mt-KQ-hZF">
                         <rect key="frame" x="113" y="34" width="143" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="bZP-zu-bcH"/>
                             <constraint firstAttribute="width" constant="143" id="laA-PS-D9U"/>
@@ -34,6 +36,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="xing" translatesAutoresizingMaskIntoConstraints="NO" id="lOR-cJ-e7x">
                         <rect key="frame" x="113" y="63" width="63" height="10"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="63" id="BFH-Q7-P3u"/>
                             <constraint firstAttribute="height" constant="10" id="qdD-5o-nJp"/>
@@ -41,6 +44,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="旗舰店午餐特惠，节假日通用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SK-we-ADv">
                         <rect key="frame" x="113" y="80" width="214" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="214" id="biC-YS-4NL"/>
                             <constraint firstAttribute="height" constant="21" id="xCq-W7-fKC"/>
@@ -51,6 +55,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="234m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6k7-o0-S5B">
                         <rect key="frame" x="330" y="80" width="58" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="58" id="eiE-cg-H3R"/>
                             <constraint firstAttribute="height" constant="21" id="vqD-NH-YtZ"/>
@@ -61,6 +66,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="¥ 24/位" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHc-1I-sGl">
                         <rect key="frame" x="306" y="35" width="82" height="20"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="82" id="HOq-1Q-bWd"/>
                             <constraint firstAttribute="height" constant="20" id="U2h-4u-4pt"/>
@@ -71,6 +77,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="shangjia_tehui" translatesAutoresizingMaskIntoConstraints="NO" id="dZf-7g-HV5">
                         <rect key="frame" x="360" y="0.0" width="28" height="33"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="28" id="EPs-vU-nlv"/>
                             <constraint firstAttribute="height" constant="33" id="G2r-FV-gG0"/>
@@ -78,6 +85,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="4.8分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfo-2S-1PH">
                         <rect key="frame" x="181" y="57" width="42" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="PSH-cV-Kle"/>
                             <constraint firstAttribute="width" constant="42" id="fnh-Sr-mLv"/>
@@ -87,6 +95,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="6k7-o0-S5B" firstAttribute="top" secondItem="zHc-1I-sGl" secondAttribute="bottom" constant="25" id="2rv-yN-onz"/>
                     <constraint firstItem="lOR-cJ-e7x" firstAttribute="leading" secondItem="JjM-HQ-CEX" secondAttribute="trailing" constant="8" id="5eO-Ku-FYq"/>
@@ -102,6 +111,7 @@
                     <constraint firstItem="3Mt-KQ-hZF" firstAttribute="leading" secondItem="JjM-HQ-CEX" secondAttribute="trailing" constant="8" id="iQP-tK-pMW"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="danjiaLabel" destination="zHc-1I-sGl" id="E3A-Cq-GLk"/>
                 <outlet property="fenLabel" destination="Rfo-2S-1PH" id="jd5-ca-wd5"/>

@@ -23,7 +23,7 @@ static NSString *shangcheng = @"http://192.168.1.88:8080/shangcheng/";
 {
     self.nameLabel.text = model.shangjiaName;
     self.fenLabel.text = model.shangjiaPingfen;
-    self.jieshaoLabel.text =  model.shangjiaTongzhi;
+    self.jieshaoLabel.text =  model.shangjiaWeizhi;
     self.juliLabel.text = [NSString stringWithFormat:@"%@m", model.shangjiaJuli];;
 }
 

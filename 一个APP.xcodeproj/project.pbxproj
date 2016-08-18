@@ -245,6 +245,8 @@
 		D81103541D40A1EE00C659DA /* orderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81103521D40A1EE00C659DA /* orderViewController.m */; };
 		D81103551D40A1EE00C659DA /* orderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81103531D40A1EE00C659DA /* orderViewController.xib */; };
 		D81BE78A1D59D06B0077A6DC /* PlaceOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81BE7891D59D06B0077A6DC /* PlaceOrderTableViewController.m */; };
+		D83EA40D1D62A496008437E7 /* SetNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83EA40B1D62A496008437E7 /* SetNameViewController.m */; };
+		D83EA40E1D62A496008437E7 /* SetNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83EA40C1D62A496008437E7 /* SetNameViewController.xib */; };
 		D841A1901D5AD30200F64C0F /* PlaceOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D841A18E1D5AD30200F64C0F /* PlaceOrderTableViewCell.m */; };
 		D841A1911D5AD30200F64C0F /* PlaceOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D841A18F1D5AD30200F64C0F /* PlaceOrderTableViewCell.xib */; };
 		D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D842DF2B1D224642008A54B7 /* DOPDropDownMenu.m */; };
@@ -282,14 +284,22 @@
 		D8552ACD1D44A71A00C74C49 /* carConsumeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8552ACB1D44A71A00C74C49 /* carConsumeTableViewCell.m */; };
 		D8552ACE1D44A71A00C74C49 /* carConsumeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8552ACC1D44A71A00C74C49 /* carConsumeTableViewCell.xib */; };
 		D8552AD01D44BE9200C74C49 /* CarEvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8552ACF1D44BE9200C74C49 /* CarEvaluateTableViewCell.m */; };
+		D85D12B31D5D6B88005EBFAC /* AlipayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85D12B11D5D6B88005EBFAC /* AlipayTableViewCell.m */; };
+		D85D12B41D5D6B88005EBFAC /* AlipayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85D12B21D5D6B88005EBFAC /* AlipayTableViewCell.xib */; };
 		D85E795C1D43464F00E7775D /* groupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D85E795A1D43464F00E7775D /* groupTableViewCell.m */; };
 		D85E795D1D43464F00E7775D /* groupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E795B1D43464F00E7775D /* groupTableViewCell.xib */; };
 		D85E79671D4361B600E7775D /* CarEvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85E79651D4361B600E7775D /* CarEvaluateTableViewCell.xib */; };
+
+		D860860A1D45E15E002DD5DB /* weddingDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */; };
+
+
 		D86B7D691D5C103400380F49 /* PhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D671D5C103400380F49 /* PhoneTableViewCell.m */; };
 		D86B7D6A1D5C103400380F49 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B7D681D5C103400380F49 /* PhoneTableViewCell.xib */; };
 		D86B7D6D1D5C163C00380F49 /* PlaceOrderFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D6C1D5C163C00380F49 /* PlaceOrderFootView.m */; };
 		D86B7D6F1D5C165C00380F49 /* PlaceOrderFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B7D6E1D5C165C00380F49 /* PlaceOrderFootView.xib */; };
 		D86B7D721D5C1D4300380F49 /* PayMentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D711D5C1D4300380F49 /* PayMentTableViewController.m */; };
+		D86B7D761D5C50EE00380F49 /* PaymentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D741D5C50EE00380F49 /* PaymentTableViewCell.m */; };
+		D86B7D771D5C50EE00380F49 /* PaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B7D751D5C50EE00380F49 /* PaymentTableViewCell.xib */; };
 		D8FFC6CF1D4C8140002E4224 /* RefundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFC6CE1D4C8140002E4224 /* RefundTableViewController.m */; };
 		D8FFC6D31D4C831E002E4224 /* RefundTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFC6D11D4C831E002E4224 /* RefundTableViewCell.m */; };
 		D8FFC6D41D4C831E002E4224 /* RefundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FFC6D21D4C831E002E4224 /* RefundTableViewCell.xib */; };
@@ -721,6 +731,9 @@
 		D81103531D40A1EE00C659DA /* orderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = orderViewController.xib; sourceTree = "<group>"; };
 		D81BE7881D59D06B0077A6DC /* PlaceOrderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOrderTableViewController.h; sourceTree = "<group>"; };
 		D81BE7891D59D06B0077A6DC /* PlaceOrderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOrderTableViewController.m; sourceTree = "<group>"; };
+		D83EA40A1D62A496008437E7 /* SetNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetNameViewController.h; sourceTree = "<group>"; };
+		D83EA40B1D62A496008437E7 /* SetNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetNameViewController.m; sourceTree = "<group>"; };
+		D83EA40C1D62A496008437E7 /* SetNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetNameViewController.xib; sourceTree = "<group>"; };
 		D841A18D1D5AD30200F64C0F /* PlaceOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOrderTableViewCell.h; sourceTree = "<group>"; };
 		D841A18E1D5AD30200F64C0F /* PlaceOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOrderTableViewCell.m; sourceTree = "<group>"; };
 		D841A18F1D5AD30200F64C0F /* PlaceOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceOrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -778,11 +791,19 @@
 		D8552ACB1D44A71A00C74C49 /* carConsumeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = carConsumeTableViewCell.m; sourceTree = "<group>"; };
 		D8552ACC1D44A71A00C74C49 /* carConsumeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = carConsumeTableViewCell.xib; sourceTree = "<group>"; };
 		D8552ACF1D44BE9200C74C49 /* CarEvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarEvaluateTableViewCell.m; sourceTree = "<group>"; };
+		D85D12B01D5D6B88005EBFAC /* AlipayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipayTableViewCell.h; sourceTree = "<group>"; };
+		D85D12B11D5D6B88005EBFAC /* AlipayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlipayTableViewCell.m; sourceTree = "<group>"; };
+		D85D12B21D5D6B88005EBFAC /* AlipayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlipayTableViewCell.xib; sourceTree = "<group>"; };
 		D85E79591D43464F00E7775D /* groupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = groupTableViewCell.h; sourceTree = "<group>"; };
 		D85E795A1D43464F00E7775D /* groupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = groupTableViewCell.m; sourceTree = "<group>"; };
 		D85E795B1D43464F00E7775D /* groupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = groupTableViewCell.xib; sourceTree = "<group>"; };
 		D85E79631D4361B600E7775D /* CarEvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarEvaluateTableViewCell.h; sourceTree = "<group>"; };
 		D85E79651D4361B600E7775D /* CarEvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarEvaluateTableViewCell.xib; sourceTree = "<group>"; };
+
+		D86086081D45E15E002DD5DB /* weddingDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weddingDetailTableViewController.h; sourceTree = "<group>"; };
+		D86086091D45E15E002DD5DB /* weddingDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weddingDetailTableViewController.m; sourceTree = "<group>"; };
+
+
 		D86B7D661D5C103400380F49 /* PhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneTableViewCell.h; sourceTree = "<group>"; };
 		D86B7D671D5C103400380F49 /* PhoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneTableViewCell.m; sourceTree = "<group>"; };
 		D86B7D681D5C103400380F49 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
@@ -791,6 +812,9 @@
 		D86B7D6E1D5C165C00380F49 /* PlaceOrderFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceOrderFootView.xib; sourceTree = "<group>"; };
 		D86B7D701D5C1D4300380F49 /* PayMentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMentTableViewController.h; sourceTree = "<group>"; };
 		D86B7D711D5C1D4300380F49 /* PayMentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMentTableViewController.m; sourceTree = "<group>"; };
+		D86B7D731D5C50EE00380F49 /* PaymentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentTableViewCell.h; sourceTree = "<group>"; };
+		D86B7D741D5C50EE00380F49 /* PaymentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentTableViewCell.m; sourceTree = "<group>"; };
+		D86B7D751D5C50EE00380F49 /* PaymentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentTableViewCell.xib; sourceTree = "<group>"; };
 		D8FFC6CD1D4C8140002E4224 /* RefundTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefundTableViewController.h; sourceTree = "<group>"; };
 		D8FFC6CE1D4C8140002E4224 /* RefundTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefundTableViewController.m; sourceTree = "<group>"; };
 		D8FFC6D01D4C831E002E4224 /* RefundTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefundTableViewCell.h; sourceTree = "<group>"; };
@@ -939,6 +963,9 @@
 				D84923A41D4B36A2002ED1FF /* SetFooterView.h */,
 				D84923A51D4B36A2002ED1FF /* SetFooterView.m */,
 				D84923A71D4B36C1002ED1FF /* SetFooterView.xib */,
+				D83EA40A1D62A496008437E7 /* SetNameViewController.h */,
+				D83EA40B1D62A496008437E7 /* SetNameViewController.m */,
+				D83EA40C1D62A496008437E7 /* SetNameViewController.xib */,
 				D8FFC6CD1D4C8140002E4224 /* RefundTableViewController.h */,
 				D8FFC6CE1D4C8140002E4224 /* RefundTableViewController.m */,
 				D8FFC6D01D4C831E002E4224 /* RefundTableViewCell.h */,
@@ -988,6 +1015,12 @@
 				D86B7D6E1D5C165C00380F49 /* PlaceOrderFootView.xib */,
 				D86B7D701D5C1D4300380F49 /* PayMentTableViewController.h */,
 				D86B7D711D5C1D4300380F49 /* PayMentTableViewController.m */,
+				D86B7D731D5C50EE00380F49 /* PaymentTableViewCell.h */,
+				D86B7D741D5C50EE00380F49 /* PaymentTableViewCell.m */,
+				D86B7D751D5C50EE00380F49 /* PaymentTableViewCell.xib */,
+				D85D12B01D5D6B88005EBFAC /* AlipayTableViewCell.h */,
+				D85D12B11D5D6B88005EBFAC /* AlipayTableViewCell.m */,
+				D85D12B21D5D6B88005EBFAC /* AlipayTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2069,6 +2102,7 @@
 				D853E4771D3C853400C1FF9D /* postsucceedViewController.xib in Resources */,
 				59F46B971D4A0582001C6B7B /* shopCollectionViewCell.xib in Resources */,
 				59FE11071D406EB900E8257B /* MerchantHeadView.xib in Resources */,
+				D86B7D771D5C50EE00380F49 /* PaymentTableViewCell.xib in Resources */,
 				5945911D1D3CAA5D00FAF565 /* TheHotelTableViewCell.xib in Resources */,
 				59EEFC341D46FB55009DAFB5 /* voucherTableViewCell.xib in Resources */,
 				59EEFC301D46FB55009DAFB5 /* StarEvaluateTotalTableViewCell.xib in Resources */,
@@ -2098,6 +2132,7 @@
 				59F3F89D1D6457CB00D28306 /* AlipaySDK.bundle in Resources */,
 				594590051D3C8A1C00FAF565 /* TravelTableViewCell.xib in Resources */,
 				594591161D3CAA5D00FAF565 /* TakeOutRightTableCell.xib in Resources */,
+				D85D12B41D5D6B88005EBFAC /* AlipayTableViewCell.xib in Resources */,
 				59F265161D3F0F9D002F9D56 /* powerViewController.xib in Resources */,
 				D85E795D1D43464F00E7775D /* groupTableViewCell.xib in Resources */,
 				59458FF51D3C8A1C00FAF565 /* FeastTableViewCell.xib in Resources */,
@@ -2145,6 +2180,7 @@
 				594590971D3CA75D00FAF565 /* ShopTableViewCell.xib in Resources */,
 				590573DC1D4469050033175B /* LearnCollectionViewCell.xib in Resources */,
 				D80148FB1D3CD79C00334EDB /* payViewController.xib in Resources */,
+				D83EA40E1D62A496008437E7 /* SetNameViewController.xib in Resources */,
 				D84923A31D4B27C5002ED1FF /* SetNameTableViewCell.xib in Resources */,
 				59EEFC321D46FB55009DAFB5 /* TitleCellTableViewCell.xib in Resources */,
 				59CAF3FE1D4310B200F1A576 /* FoodIntroduceTableViewCell.xib in Resources */,
@@ -2292,6 +2328,7 @@
 				59D096F91D139E6C00039C87 /* TAAnimatedDotView.m in Sources */,
 				D801DFF91D584F740070A4C9 /* AppraiseTableViewCell.m in Sources */,
 				59EC73A21D0947EA009062D9 /* SearchView.m in Sources */,
+				D86B7D761D5C50EE00380F49 /* PaymentTableViewCell.m in Sources */,
 				59D096FB1D139E6C00039C87 /* TAPageControl.m in Sources */,
 				D86B7D691D5C103400380F49 /* PhoneTableViewCell.m in Sources */,
 				59471B2D1D507A6500D358FC /* SeeAllEvaluateTableViewController.m in Sources */,
@@ -2312,6 +2349,7 @@
 				59CAF3FD1D4310B200F1A576 /* FoodIntroduceTableViewCell.m in Sources */,
 				594591171D3CAA5D00FAF565 /* TakeOutTableViewController.m in Sources */,
 				5945907D1D3CA34F00FAF565 /* weddingModel.m in Sources */,
+				D85D12B31D5D6B88005EBFAC /* AlipayTableViewCell.m in Sources */,
 				590573F91D44B9C00033175B /* PlayerCollectionViewCell.m in Sources */,
 				59E4EA4E1D193AFE000083B8 /* profileHeaderView.m in Sources */,
 				594590651D3CA1D400FAF565 /* TableViewHeader.m in Sources */,
@@ -2328,6 +2366,7 @@
 				59CAF40D1D4363F400F1A576 /* ErrorInformationView.m in Sources */,
 				D841A1901D5AD30200F64C0F /* PlaceOrderTableViewCell.m in Sources */,
 				594591121D3CAA5D00FAF565 /* TakeOutInformationController.m in Sources */,
+				D83EA40D1D62A496008437E7 /* SetNameViewController.m in Sources */,
 				59F46B9F1D4A070B001C6B7B /* ShopServeModel.m in Sources */,
 				594590621D3CA1D400FAF565 /* HomeTableViewCell.m in Sources */,
 				59CA72301D5DABAA00B0D343 /* GameTypeTableViewController.m in Sources */,
@@ -2563,6 +2602,7 @@
 					"$(SRCROOT)/一个APP/AliPay",
 				);
 				INFOPLIST_FILE = "一个APP/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2623,6 +2663,7 @@
 					"$(SRCROOT)/一个APP/AliPay",
 				);
 				INFOPLIST_FILE = "一个APP/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

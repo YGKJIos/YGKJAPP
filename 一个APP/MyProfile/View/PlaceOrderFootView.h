@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+@protocol PayBtnDelegate <NSObject>
+
+
+
+@end
+
 @interface PlaceOrderFootView : UIView
 
+@property (weak, nonatomic) IBOutlet UIButton *payBtn;
+
 + (PlaceOrderFootView *)createCell;
+
+@property (nonatomic, assign)id<PayBtnDelegate>delegate;
 
 @end
