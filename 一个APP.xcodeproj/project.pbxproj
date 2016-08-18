@@ -814,6 +814,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F7E9F91D62B60D004E6DB2 /* SystemConfiguration.framework in Frameworks */,
 				59F7EA091D62B68D004E6DB2 /* CoreMotion.framework in Frameworks */,
 				59F7EA071D62B680004E6DB2 /* CFNetwork.framework in Frameworks */,
 				59F7EA051D62B673004E6DB2 /* Foundation.framework in Frameworks */,
@@ -822,7 +823,6 @@
 				59F7E9FF1D62B62F004E6DB2 /* CoreText.framework in Frameworks */,
 				59F7E9FD1D62B61E004E6DB2 /* QuartzCore.framework in Frameworks */,
 				59F7E9FB1D62B616004E6DB2 /* CoreTelephony.framework in Frameworks */,
-				59F7E9F91D62B60D004E6DB2 /* SystemConfiguration.framework in Frameworks */,
 				59F7E9F71D62B5A4004E6DB2 /* libz.tbd in Frameworks */,
 				59F7E9F51D62B58E004E6DB2 /* libc++.tbd in Frameworks */,
 				7FE543E11CE4C2BEAB34EAE2 /* libPods.a in Frameworks */,
