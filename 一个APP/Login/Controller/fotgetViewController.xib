@@ -75,7 +75,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入电话号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wL-ds-oRQ">
-                    <rect key="frame" x="100" y="149" width="128" height="30"/>
+                    <rect key="frame" x="119" y="149" width="109" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -87,17 +87,17 @@
                     <state key="normal" image="huoquyanzhengma"/>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kIm-YD-vrr">
-                    <rect key="frame" x="100" y="232" width="128" height="30"/>
+                    <rect key="frame" x="119" y="232" width="169" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YTa-AP-r0b">
-                    <rect key="frame" x="100" y="309" width="128" height="30"/>
+                    <rect key="frame" x="119" y="309" width="169" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="isA-4V-H3H">
-                    <rect key="frame" x="100" y="390" width="128" height="30"/>
+                    <rect key="frame" x="119" y="390" width="169" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
@@ -131,7 +131,7 @@
                 <constraint firstItem="IiE-ac-O3q" firstAttribute="top" secondItem="chY-Mf-I7w" secondAttribute="bottom" constant="8" symbolic="YES" id="4fF-DD-mlQ"/>
                 <constraint firstItem="6wL-ds-oRQ" firstAttribute="top" secondItem="CX8-od-AGM" secondAttribute="bottom" constant="90" id="54j-BN-E19"/>
                 <constraint firstItem="kug-IJ-rvs" firstAttribute="centerY" secondItem="isA-4V-H3H" secondAttribute="centerY" id="8Eh-Lf-4nw"/>
-                <constraint firstItem="6wL-ds-oRQ" firstAttribute="trailing" secondItem="kIm-YD-vrr" secondAttribute="trailing" id="8mV-cW-yWn"/>
+                <constraint firstItem="6wL-ds-oRQ" firstAttribute="trailing" secondItem="kIm-YD-vrr" secondAttribute="trailing" constant="-60" id="8mV-cW-yWn"/>
                 <constraint firstItem="uoo-Y0-JeN" firstAttribute="centerX" secondItem="CX8-od-AGM" secondAttribute="centerX" id="8nl-iA-1Ne"/>
                 <constraint firstItem="isA-4V-H3H" firstAttribute="top" secondItem="NmF-w8-28J" secondAttribute="bottom" constant="45" id="AEZ-Aj-1Fe"/>
                 <constraint firstItem="tli-qP-VUs" firstAttribute="leading" secondItem="zER-Ga-bTV" secondAttribute="leading" id="AiA-1c-S3g"/>
@@ -161,7 +161,6 @@
                 <constraint firstAttribute="trailing" secondItem="uoo-Y0-JeN" secondAttribute="trailing" id="bnE-ue-ucw"/>
                 <constraint firstItem="UuJ-KL-qBZ" firstAttribute="leading" secondItem="vZO-Kq-CHE" secondAttribute="leading" id="dJt-za-M8A"/>
                 <constraint firstItem="kIm-YD-vrr" firstAttribute="trailing" secondItem="YTa-AP-r0b" secondAttribute="trailing" id="dem-iu-o7W"/>
-                <constraint firstItem="6wL-ds-oRQ" firstAttribute="leading" secondItem="zER-Ga-bTV" secondAttribute="trailing" constant="43" id="gSy-TP-Mdy"/>
                 <constraint firstItem="IiE-ac-O3q" firstAttribute="trailing" secondItem="FTb-51-oun" secondAttribute="trailing" id="h0x-UH-Pgi"/>
                 <constraint firstItem="IiE-ac-O3q" firstAttribute="top" secondItem="6wL-ds-oRQ" secondAttribute="bottom" constant="5" id="jiY-GC-ihm"/>
                 <constraint firstItem="vZO-Kq-CHE" firstAttribute="top" secondItem="UuJ-KL-qBZ" secondAttribute="bottom" constant="54" id="mEr-W3-cok"/>

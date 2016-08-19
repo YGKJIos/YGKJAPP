@@ -12,6 +12,8 @@
 #import "SetFooterView.h"
 #import "SetNameViewController.h"
 #import "EditingAddressViewController.h"
+#import "ChangePasswordViewController.h"
+#import "LoginViewController.h"
 @interface SetTableViewController ()<SecondViewControllerDelete,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @end
@@ -225,6 +227,8 @@
         NSLog(@"清除缓存");
     }
     if (indexPath.row == 4) {
+        ChangePasswordViewController *passWordVC = [[ChangePasswordViewController alloc] init];
+        [self.navigationController pushViewController:passWordVC animated:YES];
         NSLog(@"修改密码");
     }
 //    if (indexPath.row == 6) {
@@ -232,9 +236,11 @@
 //    }
     
 }
-
+// 退出登录按钮
 - (void)clickOutBtn
 {
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    [self presentViewController:loginVC animated:YES completion:nil];
     NSLog(@"123");
 }
 
