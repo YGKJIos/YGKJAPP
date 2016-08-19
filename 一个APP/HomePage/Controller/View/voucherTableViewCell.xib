@@ -82,6 +82,7 @@
                 <outlet property="TGOriginalMoney" destination="cC6-ZR-TRh" id="zRk-13-5Wg"/>
                 <outlet property="TGname" destination="F7c-6B-ot6" id="Zqh-jn-3Bl"/>
                 <outlet property="TGspecialMoney" destination="HWt-tn-1Ur" id="ckN-2E-BIL"/>
+                <outlet property="payBtn" destination="sjE-sC-yjf" id="JAQ-Hj-LWt"/>
             </connections>
             <point key="canvasLocation" x="341" y="306.5"/>
         </tableViewCell>

@@ -42,34 +42,43 @@
         self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
         self.select = NO;
         _dic = dic;
+        [self loginBtn:_dic];
     }
     
-    // 1.点击
+    // 1.点击收回键盘
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldShouldReturn:)];
     [self.view addGestureRecognizer:tap];
 }
 
 // 记住密码点击方法
 - (IBAction)remaberBtn:(id)sender {
+    if (self.select == YES) {
+        
+        self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
+    } else if (self.select == NO)
+    {
+        self.selectImage.image = [UIImage imageNamed:@"jizhumima_weixuan"];
+    }
+    self.select = !self.select;
+}
+
+- (void)keepDataInSandBox:(NSString *)userId
+{
     // 获取 沙盒
     NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSFileManager *manager = [NSFileManager defaultManager];
     NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager"];
     [manager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     NSString *dicPath = [path stringByAppendingPathComponent:@"userDic.plish"];
-    
-    if (self.select == YES) {
-        _dic = @{@"userWangming":self.peopleTextField.text,@"password":self.mimaField.text,@"status":@"NO"};
+    if (self.select == NO) {
+        _dic = @{@"userWangming":self.peopleTextField.text,@"password":self.mimaField.text,@"status":@"NO",@"userId":userId};
         [_dic writeToFile:dicPath atomically:YES];
-        self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
-    } else if (self.select == NO)
+    }else
     {
         [manager removeItemAtPath:dicPath error:nil];
-        self.selectImage.image = [UIImage imageNamed:@"jizhumima_weixuan"];
     }
-    self.select = !self.select;
-    
 }
+
 // 忘记密码点击方法
 - (IBAction)forgetBtn:(id)sender {
     
@@ -78,14 +87,13 @@
     [self presentViewController:fotgetVC animated:YES completion:^{
         
     }];
-    
 }
 // 登录按钮点击方法
 - (IBAction)loginBtn:(id)sender {
 
     NSString *url = @"user/wangminglogin.action?";
     [AFNetWorting postNetWortingWithUrlString:url params:_dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-        
+        NSLog(@"responseObject - %@" , responseObject);
         if ([@"0"isEqualToString:responseObject[@"ok"]]) {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"登录失败!";
@@ -94,6 +102,7 @@
             });
         }else
         {
+            [self keepDataInSandBox:responseObject[@"userId"]];
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"登录中请稍后...";
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -127,6 +136,7 @@
 {
     [self.peopleTextField resignFirstResponder];
     [self.mimaField resignFirstResponder];
+    _dic = @{@"userWangming":self.peopleTextField.text,@"password":self.mimaField.text};
     return YES;
 }
 
