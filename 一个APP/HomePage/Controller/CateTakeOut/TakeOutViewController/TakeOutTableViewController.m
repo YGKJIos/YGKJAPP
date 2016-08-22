@@ -34,27 +34,12 @@ static BOOL result = YES;
     self.takeOutArr = [NSMutableArray array];
     [self addTableHeaderView];
     self.tableView.showsVerticalScrollIndicator = NO;
-    // 数据
-    self.classifys = @[@"美食",@"今日新单",@"电影",@"酒店"];
-    self.cates = @[@"自助餐",@"快餐",@"火锅",@"日韩料理",@"西餐",@"烧烤小吃"];
-    self.movices = @[@"内地剧",@"港台剧",@"英美剧"];
-    self.hostels = @[@"经济酒店",@"商务酒店",@"连锁酒店",@"度假酒店",@"公寓酒店"];
-    self.areas = @[@"全城",@"芙蓉区",@"雨花区",@"天心区",@"开福区",@"岳麓区"];
-    self.sorts = @[@"默认排序",@"离我最近",@"好评优先",@"人气优先",@"最新发布"];
-    // 添加下拉菜单
-//    DOPDropDownMenu *menu = [[DOPDropDownMenu alloc] initWithOrigin:CGPointMake(0, 104) andHeight:44];
-//    menu.delegate = self;
-//    menu.dataSource = self;
-//    [self.view addSubview:menu];
 #pragma mark - 数据请求
     [self MJrefreshLoadData];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (result) {
-        [self.tableView.mj_header beginRefreshing];
-        result = NO;
-    }
+    [self.tableView.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
 #pragma mark - MJ刷新
@@ -78,7 +63,7 @@ static BOOL result = YES;
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"waimai/querywaimai1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -91,7 +76,7 @@ static BOOL result = YES;
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
         
     });
@@ -184,7 +169,6 @@ static BOOL result = YES;
     }
     
     self.tableView.tableHeaderView = tableHeaderView;
-
 }
 - (void)clickBtnImage:(UIButton *)btn
 {
@@ -198,7 +182,6 @@ static BOOL result = YES;
 }
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return self.takeOutArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -218,7 +201,9 @@ static BOOL result = YES;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TakeOutInformationController *informationVC = [[TakeOutInformationController alloc]init];
-    informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
+    if (self.takeOutArr.count > 0) {        informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
+        informationVC.model = self.takeOutArr[indexPath.row];
+    }
     [self.navigationController pushViewController:informationVC animated:YES];
 }
 

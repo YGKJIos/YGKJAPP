@@ -7,6 +7,7 @@
 //
 
 #import "TakeOutInformationView.h"
+static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
 
 @implementation TakeOutInformationView
 
@@ -14,6 +15,10 @@
 {
     TakeOutInformationView *view = [[NSBundle mainBundle]loadNibNamed:@"TakeOutInformationView" owner:nil options:nil].lastObject;
     return view;
+}
+- (void)setModel:(TakeOutModel *)model
+{
+    
 }
 
 

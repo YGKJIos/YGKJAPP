@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface TakeOutModel : NSObject
+@property (nonatomic, strong)NSString *shangjiaId;
 @property (nonatomic, strong)NSString *shangjiaName;
 @property (nonatomic, strong)NSString *shangjiaPingfen;
 @property (nonatomic, strong)NSString *shangjiaWeizhi;
