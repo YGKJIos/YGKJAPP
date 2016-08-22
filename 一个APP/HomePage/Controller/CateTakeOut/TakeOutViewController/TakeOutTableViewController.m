@@ -5,7 +5,7 @@
 //  Created by 梁立彬 on 16/6/25.
 //  Copyright © 2016年 llb. All rights reserved.
 //
-
+// 外卖
 #import "TakeOutTableViewController.h"
 #import "TypeTakeOutTableViewController.h" // 美食，鲜花，蛋糕。。
 #import "TakeOutInformationController.h"// 商家详情
@@ -218,6 +218,7 @@ static BOOL result = YES;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TakeOutInformationController *informationVC = [[TakeOutInformationController alloc]init];
+    informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
     [self.navigationController pushViewController:informationVC animated:YES];
 }
 

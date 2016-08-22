@@ -19,6 +19,7 @@
 @property (nonatomic, copy)NSString *shangjiaTouxiang;
 @property (nonatomic, copy)NSString *shangjiaLeixing;
 @property (nonatomic, copy)NSString *shangjiaYingyeshijian;
+@property (nonatomic, retain) NSString *shangjiaJiage;
 
 // 团购券
 @property (nonatomic, copy)NSString *tuangouName;

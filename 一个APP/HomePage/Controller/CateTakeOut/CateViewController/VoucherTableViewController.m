@@ -14,6 +14,9 @@
 #import "FoodIntroduceTableViewCell.h" // 套餐介绍
 #import "StarEvaluateTotalTableViewCell.h" // 评价cell
 #import "TitleCellTableViewCell.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "Order.h"
+#import "DataSigner.h"
 
 @interface VoucherTableViewController ()
 @property (nonatomic, strong)NSMutableArray *foodArr;
@@ -140,11 +143,72 @@
         GroupPurchaseView *groupView = [[NSBundle mainBundle]loadNibNamed:@"GroupPurchaseView" owner:nil options:nil].lastObject;
         groupView.frame = CGRectMake(0, 0, WIDTH, 255);
         [groupView setModel:self.model];
+        [groupView.panicBuyBtn addTarget:self action:@selector(payOrderClick) forControlEvents:UIControlEventTouchUpInside];
         groupView.backgroundColor = [UIColor whiteColor];
         return groupView;
     }
     return nil;
 }
+- (void)payOrderClick
+{
+    NSString *partner = @"2088421498633042";
+    NSString *seller = @"yuangukeji2016@163.com";
+    
+    NSString *privateKey = @"MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBANtBtnXen67rs2qolD3ibUkuL5pJaxPhEl96I0ckPq0U0BoPHud/1sq8aDwwxTxBLN1cr9OsgRX8k0rhbgPuQj6Ma1qsSYL7hspXxFyiTMKe/QCZVK3iEE8v7prR+GS+IO3j/PxrXVg+9OzlzflwLUwhS7KXw4fMrr7/LKg19ZqfAgMBAAECgYEAixqu0ytR7h1V8CZSHs0H/vTReLZ5u9wA1xhbR2hkZ1UcDlxnhAIkWO2dyAo9KFRFTY/fcZExOKzNGiXZsZ644V9PZYiU4iHSEI2zOZegnxQvYIFKhV+itfJl2z8AtHWlLfzxPCwULhYpAC9FW9bm0DtWmXkTOqVeGd/KNI+5fkkCQQD1fnKlSx8I6MGhVpMGzGDzFiS0Nv4ns5uB9W/Yxf3sHXFKhLhlvuyLyGJrbtnAwfNya0spimIwA50pSXpekEX9AkEA5KPRcAXK97uHmkyRp2hgm4cTvyuldQvubbbiYK1XQnRCft09Mrdi2aqut1cuPRlgyOQIGSkcGhsNQnb+OVP3ywJBAOopotFnxkKJQajTG4rwh8lW5cvAaM0V1M8xfW4X7Qy7SMT7s6fZZWgvyzEOm0XxunT5Qshs5xtFVzN6ku6AT0ECQCSOBHgylObStrV2tHrdd0SmbgPMiKGUDMTBzqPCUwcu60q5OIWZSFagsVpit+PQ4OZ9fsX3CqUp2g7cU3z67c0CQQDNaUEAOB42Ybe6hBKcQChIoxkXxWIUwrQ19ObW/MMOTrvSyE7UsRa9ezdx2xQGUcwOq8AvGOnLgiziuOblJ51I";
+    
+    Order *order = [[Order alloc] init];
+    order.partner = partner;
+    order.sellerID = seller;
+    order.outTradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
+    order.subject = self.model.shangjiaName; //商品标题
+    order.body = self.model.tuangouShuoming; //商品描述
+    order.totalFee = [NSString stringWithFormat:@"%@",self.model.tuangouTejia]; //商品价格
+    order.notifyURL =  @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //回调URL
+    
+    order.service = @"mobile.securitypay.pay";
+    order.paymentType = @"1";
+    order.inputCharset = @"utf-8";
+    order.itBPay = @"30m";
+    order.showURL = @"m.alipay.com";
+    
+    //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
+    NSString *appScheme = @"alisdkdemo";
+    
+    //将商品信息拼接成字符串
+    NSString *orderSpec = [order description];
+    NSLog(@"orderSpec = %@",orderSpec);
+    
+    //获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
+    id<DataSigner> signer = CreateRSADataSigner(privateKey);
+    NSString *signedString = [signer signString:orderSpec];
+    
+    //将签名成功字符串格式化为订单字符串,请严格按照该格式
+    NSString *orderString = nil;
+    if (signedString != nil) {
+        orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",orderSpec, signedString, @"RSA"];
+        
+        [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+            //【callback处理支付结果】
+            NSLog(@"reslut = %@",resultDic);
+        }];
+    }
+}
+- (NSString *)generateTradeNO
+{
+    static int kNumber = 15;
+    
+    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    NSMutableString *resultStr = [[NSMutableString alloc] init];
+    srand((unsigned)time(0));
+    for (int i = 0; i < kNumber; i++)
+    {
+        unsigned index = rand() % [sourceStr length];
+        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
+        [resultStr appendString:oneStr];
+    }
+    return resultStr;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {

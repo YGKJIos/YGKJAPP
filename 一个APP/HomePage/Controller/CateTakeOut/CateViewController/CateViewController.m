@@ -165,8 +165,10 @@
     if (cell == nil) {
         cell = [[NSBundle mainBundle]loadNibNamed:@"MarketCell" owner:nil options:nil].lastObject;
     }
-    
-    [cell marketModel:self.MarkeArr[indexPath.row]];
+    if (self.MarkeArr.count != 0) {
+        
+        [cell marketModel:self.MarkeArr[indexPath.row]];
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

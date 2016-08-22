@@ -5,7 +5,7 @@
 //  Created by 梁立彬 on 16/7/5.
 //  Copyright © 2016年 llb. All rights reserved.
 //
-
+//  
 #import "TakeOutInformationController.h"
 #import "TakeOutInformationView.h"
 #import "TakeOutRightTableCell.h"
@@ -34,6 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.result = YES;
     self.num = 0;
     self.view.backgroundColor = [UIColor whiteColor];

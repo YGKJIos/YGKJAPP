@@ -22,7 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.MarkeArr = [[NSMutableArray alloc]init];
-    
     self.navigationItem.title = @"美食";
     self.navigationItem.rightBarButtonItem = nil;
     [self MJrefreshLoadData];
@@ -69,7 +68,7 @@
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
         
     });
@@ -101,7 +100,9 @@
     if (cell == nil) {
         cell = [MarketCell cellCreaterNibLoad];
     }
-    [cell marketModel:self.MarkeArr[indexPath.row]];
+    if (self.MarkeArr.count != 0) {
+        [cell marketModel:self.MarkeArr[indexPath.row]];
+    }
     return cell;
 }
 

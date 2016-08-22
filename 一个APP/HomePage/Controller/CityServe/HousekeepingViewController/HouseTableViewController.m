@@ -128,7 +128,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     detailTableViewController *detailVC = [[detailTableViewController alloc]init];
-    detailVC.model = self.MarkeArr[indexPath.row];
+    if (self.MarkeArr.count != 0) {
+        detailVC.model = self.MarkeArr[indexPath.row];
+    }
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
