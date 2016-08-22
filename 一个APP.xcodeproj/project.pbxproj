@@ -253,6 +253,8 @@
 		D80149001D3CEB9B00334EDB /* lifepriceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80148FE1D3CEB9B00334EDB /* lifepriceViewController.xib */; };
 		D801DFF91D584F740070A4C9 /* AppraiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D801DFF71D584F740070A4C9 /* AppraiseTableViewCell.m */; };
 		D801DFFA1D584F740070A4C9 /* AppraiseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D801DFF81D584F740070A4C9 /* AppraiseTableViewCell.xib */; };
+		D8087C4A1D6451D300E06BF5 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8087C481D6451D300E06BF5 /* ChangePasswordViewController.m */; };
+		D8087C4B1D6451D300E06BF5 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8087C491D6451D300E06BF5 /* ChangePasswordViewController.xib */; };
 		D81103541D40A1EE00C659DA /* orderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81103521D40A1EE00C659DA /* orderViewController.m */; };
 		D81103551D40A1EE00C659DA /* orderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81103531D40A1EE00C659DA /* orderViewController.xib */; };
 		D81BE78A1D59D06B0077A6DC /* PlaceOrderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81BE7891D59D06B0077A6DC /* PlaceOrderTableViewController.m */; };
@@ -829,6 +831,9 @@
 		D801DFF61D584F740070A4C9 /* AppraiseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseTableViewCell.h; sourceTree = "<group>"; };
 		D801DFF71D584F740070A4C9 /* AppraiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseTableViewCell.m; sourceTree = "<group>"; };
 		D801DFF81D584F740070A4C9 /* AppraiseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppraiseTableViewCell.xib; sourceTree = "<group>"; };
+		D8087C471D6451D300E06BF5 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		D8087C481D6451D300E06BF5 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		D8087C491D6451D300E06BF5 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		D81103511D40A1EE00C659DA /* orderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orderViewController.h; sourceTree = "<group>"; };
 		D81103521D40A1EE00C659DA /* orderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderViewController.m; sourceTree = "<group>"; };
 		D81103531D40A1EE00C659DA /* orderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = orderViewController.xib; sourceTree = "<group>"; };
@@ -1066,6 +1071,9 @@
 				D83EA40A1D62A496008437E7 /* SetNameViewController.h */,
 				D83EA40B1D62A496008437E7 /* SetNameViewController.m */,
 				D83EA40C1D62A496008437E7 /* SetNameViewController.xib */,
+				D8087C471D6451D300E06BF5 /* ChangePasswordViewController.h */,
+				D8087C481D6451D300E06BF5 /* ChangePasswordViewController.m */,
+				D8087C491D6451D300E06BF5 /* ChangePasswordViewController.xib */,
 				D8FFC6CD1D4C8140002E4224 /* RefundTableViewController.h */,
 				D8FFC6CE1D4C8140002E4224 /* RefundTableViewController.m */,
 				D8FFC6D01D4C831E002E4224 /* RefundTableViewCell.h */,
@@ -2375,6 +2383,7 @@
 				59F2650C1D3F07BC002F9D56 /* gasViewController.xib in Resources */,
 				594591261D3CAC2500FAF565 /* NewsTableViewCell.xib in Resources */,
 				594590611D3CA1D400FAF565 /* HomeModelView.xib in Resources */,
+				D8087C4B1D6451D300E06BF5 /* ChangePasswordViewController.xib in Resources */,
 				D86B7D6F1D5C165C00380F49 /* PlaceOrderFootView.xib in Resources */,
 				D80149001D3CEB9B00334EDB /* lifepriceViewController.xib in Resources */,
 				D853E47B1D3C853400C1FF9D /* succeedViewController.xib in Resources */,
@@ -2574,6 +2583,7 @@
 				594590F91D3CAA5D00FAF565 /* GameTableViewCell.m in Sources */,
 				5910B8B01D1238F300BA1C16 /* DropdownMenu.m in Sources */,
 				594590681D3CA1D400FAF565 /* HomePageViewController.m in Sources */,
+				D8087C4A1D6451D300E06BF5 /* ChangePasswordViewController.m in Sources */,
 				59CAF4011D43196F00F1A576 /* VoucherTableViewController.m in Sources */,
 				59EEFC311D46FB55009DAFB5 /* TitleCellTableViewCell.m in Sources */,
 				59458FF81D3C8A1C00FAF565 /* TakePhotoTableViewCell.m in Sources */,
