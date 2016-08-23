@@ -12,7 +12,6 @@
 @interface GroupPurchaseView : UIView
 
 @property (weak, nonatomic) IBOutlet UIImageView *foodImage;
-@property (weak, nonatomic) IBOutlet UILabel *moneyLab;
 @property (weak, nonatomic) IBOutlet UILabel *sellTotal;
 @property (weak, nonatomic) IBOutlet UILabel *TEMoney;
 @property (weak, nonatomic) IBOutlet UIButton *panicBuyBtn;

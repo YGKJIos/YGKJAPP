@@ -29,7 +29,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"商家";
     [self addTableViewAndHeaderView];
     // 添加刷新
     [self MJrefreshLoadData];
@@ -60,11 +60,10 @@
 }
 // 下拉刷新的方法
 - (void)loadNewData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"shangjia/queryshangjia.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             [self.MarkeArr removeAllObjects];
             NSArray *arr = responseObject;
             if (arr.count == 0) {
@@ -79,10 +78,8 @@
             [self.tableView reloadData];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
-        }];
 
-        NSLog(@"MJ-下拉刷新");
+        }];
         
     });
     
@@ -93,7 +90,6 @@
         [self.tableView.mj_footer endRefreshing];
         NSString *url = @"shangjia/queryshangjia.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject----%@",responseObject);
             NSArray *arr = responseObject;
             if (arr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
@@ -107,10 +103,7 @@
             [self.tableView reloadData];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
         }];
-
-        NSLog(@"MJ-上啦加载");
     });
 }
 
@@ -126,7 +119,7 @@
     
     
     // tabelViewheaderView  设置
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 180)];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
     _tableView.tableHeaderView = headerView;
     // 轮播图
     NSArray *img = @[@"shouye_guangg",@"shouye_haigou" , @"shouye_meishitou",@"shouye_xinwen"];
@@ -150,8 +143,9 @@
     if (cell == nil) {
         cell = [ShopTableViewCell createShopCell];
     }
-    [cell ShopModel:self.MarkeArr[indexPath.row]];
-    NSLog(@"~~~~%ld",_MarkeArr.count);
+    if (self.MarkeArr != nil) {
+        [cell ShopModel:self.MarkeArr[indexPath.row]];
+    }
    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -162,7 +156,6 @@
     MarketModel *model = self.MarkeArr[indexPath.row];
     merchantVC.shopID = model.shangjiaId;
     [self.navigationController pushViewController:merchantVC animated:YES];
-    NSLog(@"%ld , %ld" , (long)indexPath.row , (long)indexPath.section);
 }
 
 - (void)didReceiveMemoryWarning {

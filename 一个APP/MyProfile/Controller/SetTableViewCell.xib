@@ -55,7 +55,7 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
-                <outlet property="rightImage" destination="qvS-81-ccT" id="FPF-lp-PkV"/>
+                <outlet property="headImage" destination="qvS-81-ccT" id="2th-N6-un0"/>
             </connections>
             <point key="canvasLocation" x="324.5" y="334"/>
         </tableViewCell>

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,15 +20,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="djq_heitiao" translatesAutoresizingMaskIntoConstraints="NO" id="GOU-xU-Tu9">
                     <rect key="frame" x="0.0" y="131" width="375" height="30"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2人餐，门市价:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MN-VF-hYB">
-                    <rect key="frame" x="19" y="139" width="126" height="17"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="126" id="X0A-3V-NUQ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已售240" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBg-Cp-80X">
                     <rect key="frame" x="253" y="137" width="96" height="17"/>
                     <constraints>
@@ -72,11 +62,10 @@
                         <constraint firstAttribute="height" constant="14" id="WiJ-I0-fG5"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elY-Br-mTS">
-                    <rect key="frame" x="144" y="137" width="51" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2人餐，门市价:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MN-VF-hYB">
+                    <rect key="frame" x="30" y="139" width="193" height="17"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="0vG-Jb-zsE"/>
-                        <constraint firstAttribute="width" constant="51" id="j9f-cf-5FI"/>
+                        <constraint firstAttribute="width" constant="193" id="X0A-3V-NUQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -86,13 +75,11 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="kYF-UZ-QYa" firstAttribute="bottom" secondItem="mlI-cs-jfQ" secondAttribute="bottom" id="2XD-LB-qYW"/>
-                <constraint firstItem="sBg-Cp-80X" firstAttribute="firstBaseline" secondItem="elY-Br-mTS" secondAttribute="firstBaseline" id="4BJ-YA-FEc"/>
-                <constraint firstItem="7MN-VF-hYB" firstAttribute="firstBaseline" secondItem="elY-Br-mTS" secondAttribute="firstBaseline" id="4jj-DC-pna"/>
                 <constraint firstItem="GRx-oc-bIg" firstAttribute="top" secondItem="GOU-xU-Tu9" secondAttribute="bottom" constant="30" id="5nx-ZW-qic"/>
                 <constraint firstItem="kYF-UZ-QYa" firstAttribute="top" secondItem="GOU-xU-Tu9" secondAttribute="bottom" constant="58" id="6O9-KS-qis"/>
                 <constraint firstItem="GOU-xU-Tu9" firstAttribute="leading" secondItem="z6j-VV-5Y6" secondAttribute="leading" id="6WP-hb-9WB"/>
                 <constraint firstItem="mlI-cs-jfQ" firstAttribute="leading" secondItem="ubq-Hw-KMD" secondAttribute="leading" id="7BC-n9-CBs"/>
-                <constraint firstItem="7MN-VF-hYB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="19" id="8tD-Kn-Eqm"/>
+                <constraint firstItem="7MN-VF-hYB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="8tD-Kn-Eqm"/>
                 <constraint firstItem="ubq-Hw-KMD" firstAttribute="top" secondItem="GOU-xU-Tu9" secondAttribute="bottom" constant="15" id="Eep-nl-QQp"/>
                 <constraint firstItem="ubq-Hw-KMD" firstAttribute="top" secondItem="7MN-VF-hYB" secondAttribute="bottom" constant="20" id="EyY-F3-Mob"/>
                 <constraint firstAttribute="trailing" secondItem="z6j-VV-5Y6" secondAttribute="trailing" id="F22-Oh-NbJ"/>
@@ -100,36 +87,25 @@
                 <constraint firstItem="sBg-Cp-80X" firstAttribute="centerY" secondItem="GOU-xU-Tu9" secondAttribute="centerY" id="Hse-KX-GR3"/>
                 <constraint firstItem="mlI-cs-jfQ" firstAttribute="top" secondItem="kYF-UZ-QYa" secondAttribute="top" id="IJn-jy-d2m"/>
                 <constraint firstItem="z6j-VV-5Y6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SP1-8A-aJl"/>
-                <constraint firstItem="elY-Br-mTS" firstAttribute="leading" secondItem="7MN-VF-hYB" secondAttribute="trailing" constant="-1" id="aTv-XH-uOZ"/>
-                <constraint firstItem="ubq-Hw-KMD" firstAttribute="leading" secondItem="7MN-VF-hYB" secondAttribute="leading" constant="11" id="bif-nB-cb5"/>
+                <constraint firstItem="ubq-Hw-KMD" firstAttribute="leading" secondItem="7MN-VF-hYB" secondAttribute="leading" id="bif-nB-cb5"/>
                 <constraint firstAttribute="trailing" secondItem="sBg-Cp-80X" secondAttribute="trailing" constant="26" id="cV1-pF-2IP"/>
                 <constraint firstAttribute="trailing" secondItem="GRx-oc-bIg" secondAttribute="trailing" constant="16" id="dhc-wk-vax"/>
                 <constraint firstItem="mlI-cs-jfQ" firstAttribute="top" secondItem="ubq-Hw-KMD" secondAttribute="bottom" constant="15" id="etK-Ku-kzB"/>
-                <constraint firstItem="elY-Br-mTS" firstAttribute="baseline" secondItem="sBg-Cp-80X" secondAttribute="baseline" id="gcX-2v-rkW"/>
                 <constraint firstItem="GRx-oc-bIg" firstAttribute="leading" secondItem="kYF-UZ-QYa" secondAttribute="trailing" constant="74" id="ixl-aL-2XA"/>
                 <constraint firstItem="z6j-VV-5Y6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mXH-oY-PNm"/>
-                <constraint firstItem="GOU-xU-Tu9" firstAttribute="top" secondItem="elY-Br-mTS" secondAttribute="bottom" constant="-27" id="rJX-AB-EHM"/>
-                <constraint firstItem="elY-Br-mTS" firstAttribute="baseline" secondItem="7MN-VF-hYB" secondAttribute="baseline" id="rVq-qI-cS5"/>
                 <constraint firstItem="GOU-xU-Tu9" firstAttribute="trailing" secondItem="z6j-VV-5Y6" secondAttribute="trailing" id="v27-YG-i7S"/>
                 <constraint firstItem="GOU-xU-Tu9" firstAttribute="bottom" secondItem="z6j-VV-5Y6" secondAttribute="bottom" id="v9y-dT-bKy"/>
-                <constraint firstItem="sBg-Cp-80X" firstAttribute="leading" secondItem="elY-Br-mTS" secondAttribute="trailing" constant="73" id="xLN-0s-7jZ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="4jj-DC-pna"/>
-                    <exclude reference="gcX-2v-rkW"/>
-                    <exclude reference="rVq-qI-cS5"/>
                     <exclude reference="2XD-LB-qYW"/>
-                    <exclude reference="4BJ-YA-FEc"/>
-                    <exclude reference="xLN-0s-7jZ"/>
                     <exclude reference="ixl-aL-2XA"/>
                 </mask>
             </variation>
             <connections>
                 <outlet property="TEMoney" destination="ubq-Hw-KMD" id="6xs-BT-msJ"/>
                 <outlet property="foodImage" destination="z6j-VV-5Y6" id="Htp-wQ-nj1"/>
-                <outlet property="moneyLab" destination="elY-Br-mTS" id="rcW-9F-gFh"/>
                 <outlet property="nameLab" destination="7MN-VF-hYB" id="JQJ-CX-I34"/>
                 <outlet property="panicBuyBtn" destination="GRx-oc-bIg" id="axo-4v-Hzb"/>
                 <outlet property="sellTotal" destination="sBg-Cp-80X" id="h5Q-im-2dg"/>

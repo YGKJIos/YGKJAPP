@@ -18,6 +18,10 @@
 #import "ErrorInformationView.h" //报错页面
 #import "SeeAllEvaluateTableViewController.h" // 查看全部评论
 #import "MerchantInformationModel.h"
+// 支付宝
+#import <AlipaySDK/AlipaySDK.h>
+#import "Order.h"
+#import "DataSigner.h"
 
 @interface CateDetailsTableViewController ()
 @property (nonatomic, strong)NSMutableArray *dataArr;// 商家信息
@@ -139,6 +143,8 @@
             static NSString *reuse = @"reuse";
             voucherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
             cell = [voucherTableViewCell greateCell];
+            cell.payBtn.tag = 1000+indexPath.row;
+            [cell.payBtn addTarget:self action:@selector(payOrderClick:) forControlEvents:UIControlEventTouchUpInside];
             if (self.TGArr.count != 0) {
                 
                 MerchantInformationModel *model = self.TGArr[indexPath.row-1];
@@ -177,6 +183,74 @@
 //    [erorrCell setShowAllAndErorrCellStyle:erorrCellStyle];
 //    return erorrCell;
     return nil;
+}
+
+- (void)payOrderClick:(UIButton *)sender
+{
+    /*
+     *点击获取prodcut实例并初始化订单信息
+     */
+    MerchantInformationModel *model = [self.TGArr objectAtIndex:sender.tag-1001];
+    
+    NSString *partner = @"2088421498633042";
+    NSString *seller = @"yuangukeji2016@163.com";
+    NSString *privateKey = @"MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBANtBtnXen67rs2qolD3ibUkuL5pJaxPhEl96I0ckPq0U0BoPHud/1sq8aDwwxTxBLN1cr9OsgRX8k0rhbgPuQj6Ma1qsSYL7hspXxFyiTMKe/QCZVK3iEE8v7prR+GS+IO3j/PxrXVg+9OzlzflwLUwhS7KXw4fMrr7/LKg19ZqfAgMBAAECgYEAixqu0ytR7h1V8CZSHs0H/vTReLZ5u9wA1xhbR2hkZ1UcDlxnhAIkWO2dyAo9KFRFTY/fcZExOKzNGiXZsZ644V9PZYiU4iHSEI2zOZegnxQvYIFKhV+itfJl2z8AtHWlLfzxPCwULhYpAC9FW9bm0DtWmXkTOqVeGd/KNI+5fkkCQQD1fnKlSx8I6MGhVpMGzGDzFiS0Nv4ns5uB9W/Yxf3sHXFKhLhlvuyLyGJrbtnAwfNya0spimIwA50pSXpekEX9AkEA5KPRcAXK97uHmkyRp2hgm4cTvyuldQvubbbiYK1XQnRCft09Mrdi2aqut1cuPRlgyOQIGSkcGhsNQnb+OVP3ywJBAOopotFnxkKJQajTG4rwh8lW5cvAaM0V1M8xfW4X7Qy7SMT7s6fZZWgvyzEOm0XxunT5Qshs5xtFVzN6ku6AT0ECQCSOBHgylObStrV2tHrdd0SmbgPMiKGUDMTBzqPCUwcu60q5OIWZSFagsVpit+PQ4OZ9fsX3CqUp2g7cU3z67c0CQQDNaUEAOB42Ybe6hBKcQChIoxkXxWIUwrQ19ObW/MMOTrvSyE7UsRa9ezdx2xQGUcwOq8AvGOnLgiziuOblJ51I";
+    
+    
+//    NSString *privateKey = @"MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAM6ZijjmhIzO13OQdmV3XvOIArZknkgDkQEhmbVwpQY3a9GiWSfyzzKWrTbv1jkmJcD/F5D6pk55BAgDemUPr9F+n7MmczyCU48SWGXuXvaRUOoTcB+3ISH2c2sQOaHvfM0LHPvBNjyVutWDdvfp/g+dvbQ6bGYnusFgO0Lb1yMDAgMBAAECgYARz6bc9PKkeQiWC/RJFxt2f1lMhCwpJTWRFWZ8//MaMBj5f7eT/Bjk0ZypSc/8KU/D7boIY7OGvGQelL4ujEWp8ECBoz49kInRLSPRw5L5kLQaVKMXqgZa9S5vp0E480tlDnOZncksygnxtWcXApFwPL6I3Vqe6WANKaIvhg4/MQJBAPDa43ey2/R6rVmxaJ+QpYdQunlqJ1zWX9tgCtKw7u3RPBQAuDFlMTZjtZD2ZXEuouRZA2tnoHJqampqxbFk7gcCQQDblzwTKdJWPB96/GcWlp/kf9JpS9L3hBNplGFXgIjBIivXRfIfaZ8eJtYICJLCX3kheuj/bsj4goS8wPDJCmQlAkBDNODJ8rebdWvPnkhSVftKUcVmwa8wIYVn4lnCxqo04/B+qGC9L75WreXpCEfwGBJN42Sn4KeNpZICFb8KK96bAkBdLmXds+d/lG+/Xo/YM/6RlfQRno1dXvxl1wMfgHmHixqTdSjzT3yn7M7yBcFRHfZm0KNCkR5S5f+xoSYMCY7JAkA7Fz5a/yfBZTfwktDFc6Rdt46ozgxWeM0qwexa6XBEho7t0u/N/8IBAxCxRvFdXgndu+qJfUhpPy22cgUx55fs";
+    
+    Order *order = [[Order alloc] init];
+    order.partner = partner;
+    order.sellerID = seller;
+    order.outTradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
+//    order.subject = model.shangjiaName; //商品标题
+//    order.body = model.tuangouShuoming; //商品描述
+    order.subject = @"测试商品"; //商品标题
+    order.body = @"注意着是测试"; //商品描述
+    order.totalFee = [NSString stringWithFormat:@"%@",@"0.01"]; //商品价格
+    order.notifyURL =  @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //回调URL
+    
+    order.service = @"mobile.securitypay.pay";
+    order.paymentType = @"1";
+    order.inputCharset = @"utf-8";
+    order.itBPay = @"30m";
+    order.showURL = @"m.alipay.com";
+    
+    //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
+    NSString *appScheme = @"alisdkdemo";
+    
+    //将商品信息拼接成字符串
+    NSString *orderSpec = [order description];
+    NSLog(@"orderSpec = %@",orderSpec);
+    
+    //获取私钥并将商户信息签名,外部商户可以根据情况存放私钥和签名,只需要遵循RSA签名规范,并将签名字符串base64编码和UrlEncode
+    id<DataSigner> signer = CreateRSADataSigner(privateKey);
+    NSString *signedString = [signer signString:orderSpec];
+    
+    //将签名成功字符串格式化为订单字符串,请严格按照该格式
+    NSString *orderString = nil;
+    if (signedString != nil) {
+        orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",orderSpec, signedString, @"RSA"];
+        
+        [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+            //【callback处理支付结果】
+            NSLog(@"reslut = %@",resultDic);
+        }];
+    }
+}
+- (NSString *)generateTradeNO
+{
+    static int kNumber = 15;
+    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    NSMutableString *resultStr = [[NSMutableString alloc] init];
+    srand((unsigned)time(0));
+    for (int i = 0; i < kNumber; i++)
+    {
+        unsigned index = rand() % [sourceStr length];
+        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
+        [resultStr appendString:oneStr];
+    }
+    return resultStr;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
