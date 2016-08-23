@@ -36,10 +36,6 @@
         rootTabBar.tabBar.translucent = NO;
 
     }
-    
-
-    
-
     [self.window makeKeyAndVisible];
     
     return YES;
