@@ -15,16 +15,12 @@ static NSString *url = @"http://139.129.209.189:8080/shangcheng";
 {
     NSString *imageURl = [NSString stringWithFormat:@"%@%@",url,model.tuangouTouxiang];
     [self.foodImage sd_setImageWithURL:[NSURL URLWithString:imageURl]];
-    // 门市价
-    NSString *moneyText = [NSString stringWithFormat:@"¥%@",model.tuangouYuanjia];
-    self.moneyLab.text = moneyText;
-    
     // 特价
     NSString *TEmoney = [NSString stringWithFormat:@"¥%@",model.tuangouTejia];
     self.TEMoney.text = TEmoney;
     
     // 套餐
-    NSString *nameText = [NSString stringWithFormat:@"%@",model.tuangouName];
+    NSString *nameText = [NSString stringWithFormat:@"%@: ¥%@",model.tuangouName,model.tuangouYuanjia];
     self.nameLab.text = nameText;
 }
 

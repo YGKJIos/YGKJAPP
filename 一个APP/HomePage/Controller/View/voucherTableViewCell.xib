@@ -59,9 +59,6 @@
                             <constraint firstAttribute="height" constant="24" id="HEj-rM-Yzu"/>
                         </constraints>
                         <state key="normal" image="qcsj_lijigoumai"/>
-                        <connections>
-                            <action selector="payBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WYg-Nj-dbU"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>

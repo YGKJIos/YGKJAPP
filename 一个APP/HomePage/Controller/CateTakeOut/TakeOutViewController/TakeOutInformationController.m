@@ -5,7 +5,7 @@
 //  Created by 梁立彬 on 16/7/5.
 //  Copyright © 2016年 llb. All rights reserved.
 //
-
+//  
 #import "TakeOutInformationController.h"
 #import "TakeOutInformationView.h"
 #import "TakeOutRightTableCell.h"
@@ -37,10 +37,9 @@
     self.result = YES;
     self.num = 0;
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBarButtonItemClickItme) image:@"wode_sctb" highImage:@"wode_sctb"];
-    self.navigationItem.rightBarButtonItem = rightItme;
-
+    // 收藏按钮
+//    UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBarButtonItemClickItme) image:@"wode_sctb" highImage:@"wode_sctb"];
+    self.navigationItem.rightBarButtonItem = nil;
     self.listArr = [NSMutableArray arrayWithObjects:@"热销菜品",@"套餐",@"盖饭",@"炒菜",@"凉菜",@"饮品", nil];
     
     TakeOutInformationView *headView = [TakeOutInformationView CreateInformationNib];
@@ -55,14 +54,22 @@
     [self.view addSubview:headView];
     [self addTableView];
     [self addFoodView];
+    [self loadData];
 }
 - (void)rightBarButtonItemClickItme
 {
     NSLog(@"点击收藏");
 }
 #pragma mark - 网络请求
-
-
+- (void)loadData
+{
+    NSDictionary *dic = @{@"shangjiaId":self.model.shangjiaId};
+    [AFNetWorting postNetWortingWithUrlString:@"waimai//querywaimaishipin.action?" params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+}
 #pragma mark - 添加店铺的菜品
 - (void)addTableView
 {
@@ -236,7 +243,6 @@
 //    self.result = !self.result;
     ShoppingCartViewController *shopVC = [[ShoppingCartViewController alloc]init];
     [self.navigationController pushViewController:shopVC animated:YES];
-    
 }
 - (void)controlAction
 {

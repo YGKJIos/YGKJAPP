@@ -93,7 +93,6 @@
 
     NSString *url = @"user/wangminglogin.action?";
     [AFNetWorting postNetWortingWithUrlString:url params:_dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"responseObject - %@" , responseObject);
         if ([@"0"isEqualToString:responseObject[@"ok"]]) {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"登录失败!";

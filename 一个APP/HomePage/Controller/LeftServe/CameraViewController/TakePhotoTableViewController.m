@@ -124,7 +124,9 @@
 {
     CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc]init];
     detailVC.navigationItem.title = @"摄影详情";
-    detailVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
+    if (self.MarkeArr.count != 0) {
+        detailVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
+    }
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

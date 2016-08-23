@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TakeOutModel.h"
 
 @interface TakeOutInformationController : UIViewController
+@property (nonatomic, strong)TakeOutModel *model;
 
 @end
