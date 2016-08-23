@@ -171,7 +171,7 @@
     _mapView.showsUserLocation = YES;//显示定位图层
     [_mapView updateLocationData:userLocation];
     
-//    _mapView.centerCoordinate = userLocation.location.coordinate;
+    _mapView.centerCoordinate = userLocation.location.coordinate;
     _mapView.zoomLevel = 18;
 //    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
 }

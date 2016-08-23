@@ -10,7 +10,7 @@
 #import "SupermarketCollectionViewCell.h"
 #import "HeaderCollectionReusableView.h"
 #import "SearchView.h"
-
+#import "ZGP_SuperMarketModel.h"
 @interface SupermarketViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic, strong)UIButton *searchBtn;
 @property (nonatomic, strong)UICollectionView *collection;
@@ -82,9 +82,9 @@
                 [self.view addSubview:placeholderImage];
             }else{
                 for (NSDictionary *dic in arr) {
-//                    MovieModel *model = [[MovieModel alloc] init];
-//                    [model setValuesForKeysWithDictionary:dic];
-//                    [self.MovieArr addObject:model];
+                    ZGP_SuperMarketModel *model = [[ZGP_SuperMarketModel alloc] init];
+                    [model setValuesForKeysWithDictionary:dic];
+                    [self.superMarketArr addObject:model];
                 }
                 [self.collection reloadData];
             }

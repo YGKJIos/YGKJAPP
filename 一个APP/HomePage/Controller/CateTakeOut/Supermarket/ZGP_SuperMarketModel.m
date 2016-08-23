@@ -9,5 +9,8 @@
 #import "ZGP_SuperMarketModel.h"
 
 @implementation ZGP_SuperMarketModel
-
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+}
 @end

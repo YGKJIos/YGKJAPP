@@ -10,4 +10,10 @@
 
 @interface ZGP_SuperMarketModel : NSObject
 @property (nonatomic, strong)NSString *shangjiaName;
+@property (nonatomic, strong)NSString *shangjiaTongzhi;
+@property (nonatomic, strong)NSString *shangjiaWeizhi;
+@property (nonatomic, strong)NSString *shangjiaTouxiang;
+@property (nonatomic, strong)NSString *shangjiaPingfen;
+@property (nonatomic, strong)NSString *qisongjia;
+
 @end
