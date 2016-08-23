@@ -11,6 +11,7 @@
 #import "fotgetViewController.h"
 #import "postViewController.h"
 #import "PhoneLoginViewController.h"
+#import "UserInfo.h"
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *selectImage;
 @property (weak, nonatomic) IBOutlet UIButton *remaberBtn;
@@ -104,6 +105,10 @@
             [self keepDataInSandBox:responseObject[@"userId"]];
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"登录中请稍后...";
+            
+            [UserInfo shareAccount].accountDict = responseObject;
+            [[UserInfo shareAccount] saveToSandBox];
+            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [hud hide:YES];
                 RootTabBarController *rootVC = [[RootTabBarController alloc]init];

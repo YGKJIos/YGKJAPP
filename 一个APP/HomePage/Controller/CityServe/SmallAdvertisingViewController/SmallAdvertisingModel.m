@@ -9,5 +9,9 @@
 #import "SmallAdvertisingModel.h"
 
 @implementation SmallAdvertisingModel
-
+#pragma mark - 容错方法
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+}
 @end

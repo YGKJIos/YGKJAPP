@@ -8,10 +8,10 @@
 
 #import "CarViewController.h"
 
+#import "UserInfo.h"
 
 
-
-@interface CarViewController ()
+@interface CarViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
 
 @property (nonatomic, retain) UIImageView *mapImage; //
 
@@ -31,7 +31,8 @@
 
 @property (nonatomic, retain) UILabel *carPoolingLabel; // 拼车label
 
-
+@property (nonatomic, strong)BMKMapView *mapView;
+@property (nonatomic, strong)BMKLocationService *locService;
 @end
 
 @implementation CarViewController
@@ -45,9 +46,13 @@
 
 - (void)createMap
 {
-    self.mapImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 300)];
-    self.mapImage.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:self.mapImage];
+    self.mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 300)];
+    [self.view addSubview:_mapView];
+    self.locService = [[BMKLocationService alloc]init];
+    [_locService startUserLocationService];
+//    self.mapImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT - 300)];
+//    self.mapImage.backgroundColor = [UIColor yellowColor];
+//    [self.view addSubview:self.mapImage];
     
     self.carView = [[UIView alloc] initWithFrame:CGRectMake(0, HEIGHT - 300, WIDTH, 300)];
     self.carView.backgroundColor = [UIColor whiteColor];
@@ -105,10 +110,91 @@
 
 - (void)tap:(UITapGestureRecognizer *)tap
 {
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:self.addressField.text forKey:@"congnalai"];
+    [param setObject:self.destinatioField.text forKey:@"daonaqu"];
+#warning 暂时未登陆 值为nil 随便设置一个值代替 防止 crash
+//    [param setObject:[UserInfo shareAccount].accountDict forKey:@"userId"]; // 暂时未登陆 值为nil
+    [param setObject:@"aaa" forKey:@"userId"];
+    NSString *url = @"dache/userdache.action?";
+    if (self.addressField.text.length != 0 && self.destinatioField.text.length != 0 ) {
+        
+        [AFNetWorting postNetWortingWithUrlString:url params:param controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+            if ([[(NSDictionary *)responseObject objectForKey:@"ok"] isEqualToString:@"1"])  {
+                
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"拼车成功" message:@"wait a moment" preferredStyle:UIAlertControllerStyleAlert];
+                /**< 创建action对象*/
+                UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                }];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+                NSLog(@"拼车成功");
+            }else if ([[(NSDictionary *)responseObject objectForKey:@"ok"] isEqualToString:@"0"])
+            {
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"拼车失败" message:@"大不了重新再来" preferredStyle:UIAlertControllerStyleAlert];
+                /**< 创建action对象*/
+                UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    
+                }];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+                NSLog(@"拼车失败");
+            }
+            NSLog(@"````%@", responseObject);
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            NSLog(@"failure");
+            UIAlertController *alerController = [UIAlertController alertControllerWithTitle:@"拼车失败" message:@"请求超时" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [alerController addAction:sureAction];
+            [self presentViewController:alerController animated:YES completion:nil];
+        }];
+    }else if (self.addressField.text.length == 0)
+    {
+        UIAlertController *alerController = [UIAlertController alertControllerWithTitle:@"起始点不能为空" message:@"请重新输入" preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+//        [alerController addAction:sureAction];
+        [self performSelector:@selector(diss) withObject:self afterDelay:2];
+        [self presentViewController:alerController animated:YES completion:nil];
+    }else if (self.destinatioField.text.length == 0)
+    {
+        UIAlertController *alerController = [UIAlertController alertControllerWithTitle:@"目的地不能为空" message:@"请重新输入" preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+//        [alerController addAction:sureAction];
+        [self performSelector:@selector(diss) withObject:self afterDelay:2];
+        [self presentViewController:alerController animated:YES completion:nil];
+    }
     NSLog(@"开始拼车");
 }
-
-
+-(void)diss
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+//处理位置坐标更新
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
+{
+    _mapView.showsUserLocation = YES;//显示定位图层
+    [_mapView updateLocationData:userLocation];
+    
+    _mapView.centerCoordinate = userLocation.location.coordinate;
+    _mapView.zoomLevel = 16;
+    //NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [_mapView viewWillAppear];
+    _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    _locService.delegate = self;
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [_mapView viewWillDisappear];
+    _mapView.delegate = nil; // 不用时，置nil
+    _locService.delegate = nil;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

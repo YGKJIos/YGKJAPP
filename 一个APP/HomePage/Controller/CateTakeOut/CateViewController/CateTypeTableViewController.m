@@ -14,6 +14,7 @@
 
 @interface CateTypeTableViewController ()
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
+@property (nonatomic, strong)NSMutableArray *fenleiArr;
 
 @end
 
@@ -22,6 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.MarkeArr = [[NSMutableArray alloc]init];
+
+    self.fenleiArr = [NSMutableArray array];
+
+
     self.navigationItem.title = @"美食";
     self.navigationItem.rightBarButtonItem = nil;
     [self MJrefreshLoadData];
@@ -59,14 +64,30 @@
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"meishi/querymeishi1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSArray *arr = responseObject;
-            for (NSDictionary *dic in arr) {
-                MarketModel *model = [[MarketModel alloc] init];
-                [model setValuesForKeysWithDictionary:dic];
-                [self.MarkeArr addObject:model];
+            if (responseObject == nil) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
+                for (NSDictionary *dic in responseObject) {
+                    if ([self.shangjiajutiweizhi isEqualToString:@"7"]) {
+                        _fenleiArr = responseObject;
+                    }else if (dic[@"shangjiaJutiweizhi"] == self.shangjiajutiweizhi) {
+                        [_fenleiArr addObject:dic];
+                    }
+                }
+                NSLog(@"fenleiArr : %@", _fenleiArr);
+                if (_fenleiArr.count == 0) {
+                    ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:placeholderImage];
+                }else{
+                for (NSDictionary *dic in _fenleiArr) {
+                    MarketModel *model = [[MarketModel alloc] init];
+                    [model setValuesForKeysWithDictionary:dic];
+                    [self.MarkeArr addObject:model];
+                }
+                }
+                [self.tableView reloadData];
             }
-            [self.tableView reloadData];
-            
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];

@@ -16,10 +16,15 @@
 #import "MarketModel.h"
 
 @interface CateViewController ()<SDCycleScrollViewDelegate,dropdownDelegate,ImageLabViewPushVCDelegate>
+{
+    NSInteger _k;
+}
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
 @property (nonatomic, strong)UIView *bgView;// tableViewHeaderView
 @property (nonatomic, strong)DropdownMenu *menu;
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
+@property (nonatomic, strong)NSArray *titles;
+@property (nonatomic, strong)ImageAndLabView *btnview;
 
 @end
 
@@ -38,7 +43,7 @@
 #pragma mark - 数据请求
     [self MJrefreshLoadData];
     self.navigationItem.title = @"美食";
-    
+
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationLeftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
@@ -83,13 +88,17 @@
         NSString *url = @"meishi/querymeishi1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
-            for (NSDictionary *dic in arr) {
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
+                for (NSDictionary *dic in arr) {
                 MarketModel *model = [[MarketModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
             [self.tableView reloadData];
-            
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
@@ -126,28 +135,34 @@
 {
     NSArray *arr = @[@"meishi_zizhu",@"meishi_huoguo",@"meishi_kuaican",@"meishi_xican",@"meishi_zhongcan",@"meishi_shaokao",@"meishi_dangao",@"meishi_quanbu"];
     
-    NSArray *titles = @[@"自助餐",@"火锅",@"快餐小吃",@"西餐",@"中餐",@"烤肉/烧烤",@"蛋糕",@"全部分类",];
+    self.titles = @[@"自助餐",@"火锅",@"快餐小吃",@"西餐",@"中餐",@"烤肉/烧烤",@"蛋糕",@"全部分类"];
+    
     int num = 0;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 4; j++) {
-            ImageAndLabView *view = [ImageAndLabView createViewNib];
-            [view setUserInteractionEnabled:YES];
-            [view setImages:arr[num] names:titles[num]];
-            view.delegate = self;
+            self.btnview = [ImageAndLabView createViewNib];
+            [_btnview setUserInteractionEnabled:YES];
+            [_btnview setImages:arr[num] names:_titles[num] tag:100 + _k];
+            _btnview.delegate = self;
+            _btnview.userInteractionEnabled = YES;
             num++;
             CGFloat wid = (WIDTH -220) / 4;
             CGFloat boundsWid = 30 * WIDTH/375;
-            view.frame = CGRectMake((boundsWid+j*(50+wid)), 170+i*(67+20), 50*WIDTH/375, 67*HEIGHT/667);
-            [self.bgView addSubview:view];
+            _btnview.frame = CGRectMake((boundsWid+j*(50+wid)), 170+i*(67+20), 50*WIDTH/375, 67*HEIGHT/667);
+            [self.bgView addSubview:_btnview];
+            _k ++;
+
         }
     }
+
 }
-- (void)imageAndLableViewPush
+- (void)imageAndLableViewPush:(UIButton *)btn
 {
     CateTypeTableViewController *cateTypeVC = [[CateTypeTableViewController alloc]init];
+    cateTypeVC.shangjiajutiweizhi = [NSString stringWithFormat:@"%ld", btn.tag - 100];
+    NSLog(@"cateTypeVC.shangjiajutiweizhi = %@", cateTypeVC.shangjiajutiweizhi);
     [self.navigationController pushViewController:cateTypeVC animated:YES];
 }
-
 //轮播图 点击代理方法
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {

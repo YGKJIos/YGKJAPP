@@ -40,7 +40,16 @@
                 btn.frame = CGRectMake(30+(WIDTH/4-5)*i, 5, 45, 57);
                 btn.tag = 1000+i;
                 [btn setBackgroundImage:[UIImage imageNamed:arr[i]] forState:UIControlStateNormal];
-                [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+//                [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+                if (btn.tag == 1000) {
+                    [btn addTarget:self action:@selector(firstBtn:) forControlEvents:UIControlEventTouchUpInside];
+                }
+                if (btn.tag == 1001) {
+                    [btn addTarget:self action:@selector(twoBtn:) forControlEvents:UIControlEventTouchUpInside];
+                }
+                if (btn.tag == 1002) {
+                    [btn addTarget:self action:@selector(thirdBtn:) forControlEvents:UIControlEventTouchUpInside];
+                }
                 [self.contentView addSubview:btn];
                 
 //                [self addBtnRedLable:btn];
@@ -54,10 +63,12 @@
                 numLab.backgroundColor=BGcolor(255, 135, 145);
                 [btn addSubview:numLab];
             }
-            
         }
     }
     return self;
+//    UIButton *firstBtn = (UIButton *)[self.contentView viewWithTag:1001];
+//    [firstBtn addTarget:self action:@selector(firstAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.contentView addSubview:firstBtn];
 }
 
 - (void)addBtnRedLable:(UIButton *)btn
@@ -73,12 +84,34 @@
     [btn addSubview:numLab];
 }
 
+
+
+
 - (void)btnAction:(UIButton *)btn
 {
-    [self.delegate orderDelegate];
+    
+//    [self.delegate orderDelegate];
     
     NSLog(@"dadadada");
 }
+
+- (void)firstBtn:(UIButton *)btn
+{
+    [self.delegate orderDelegate];
+}
+
+- (void)twoBtn:(UIButton *)btn
+{
+    [self.twoDelegate twoDelegate];
+}
+
+- (void)thirdBtn:(UIButton *)btn
+{
+    [self.thirdDelegate thirdDelegate];
+}
+
+
+
 
 - (void)awakeFromNib {
     // Initialization code

@@ -16,7 +16,7 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 @interface TypeTakeOutTableViewController ()
 @property (nonatomic, strong)NSMutableArray *takeOutArr;
 //@property (nonatomic, assign)BOOL result;
-
+@property (nonatomic, strong) NSMutableArray *fenleiArr;
 @end
 
 @implementation TypeTakeOutTableViewController
@@ -31,6 +31,7 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fenleiArr = [NSMutableArray array];
     // 数据请求
     [self MJrefreshLoadData];
 }
@@ -68,13 +69,28 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
         NSString *url = @"waimai/querywaimai1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
-            for (NSDictionary *dic in arr) {
-                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
-                [model setValuesForKeysWithDictionary:dic];
-                [self.takeOutArr addObject:model];
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
+                for (NSDictionary *Dic in responseObject) {
+                    if (Dic[@"shangjiaJutiweizhi"] == self.shangjiajutiweizhi) {
+                        [_fenleiArr addObject:Dic];
+                    }
+                }
+                NSLog(@"%ld",_fenleiArr.count);
+                if (_fenleiArr.count == 0) {
+                    ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:placeholderImage];
+                }else{
+                    for (NSDictionary *dic in _fenleiArr) {
+                        MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
+                        [model setValuesForKeysWithDictionary:dic];
+                        [self.takeOutArr addObject:model];
+                    }
+                }
+                [self.tableView reloadData];
             }
-            [self.tableView reloadData];
-            
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
         }];
         
@@ -90,8 +106,8 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-//    return self.takeOutArr.count;
-    return 10;
+    return self.takeOutArr.count;
+//    return 10;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *takeOut = @"takeOutId";
@@ -99,7 +115,7 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
     if (cell == nil) {
         cell = [TakeTableViewCell CreateTakeOutCell];
     }
-//    [cell setTakeOutModel:self.takeOutArr[indexPath.row]];
+    [cell setTakeOutModel:self.takeOutArr[indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

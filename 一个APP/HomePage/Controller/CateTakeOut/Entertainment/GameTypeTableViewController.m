@@ -13,7 +13,7 @@
 
 @interface GameTypeTableViewController ()
 @property (nonatomic, strong) NSMutableArray *MarkeArr;
-
+@property (nonatomic, strong) NSMutableArray *fenLeiArr;
 @end
 
 @implementation GameTypeTableViewController
@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fenLeiArr = [NSMutableArray array];
     self.navigationItem.rightBarButtonItem = nil;
     [self MJrefreshLoadData];
 }
@@ -65,13 +66,27 @@
         NSString *url = @"xiuxianyule/queryxiuxianyule.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
-            for (NSDictionary *dic in arr) {
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
+                for (NSDictionary *dic in responseObject) {
+                    if (dic[@"shangjiaJutiweizhi"] == self.shangjiajutiweizhi) {
+                        [_fenLeiArr addObject:dic];
+                    }
+                }
+                if (_fenLeiArr.count == 0) {
+                    ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                    [self.view addSubview:placeholderImage];
+                }else{
+            for (NSDictionary *dic in _fenLeiArr) {
                 GameModel *model = [[GameModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
+                }
             [self.tableView reloadData];
-            
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
         }];
         
