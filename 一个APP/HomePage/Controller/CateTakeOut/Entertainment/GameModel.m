@@ -9,5 +9,8 @@
 #import "GameModel.h"
 
 @implementation GameModel
-
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+}
 @end

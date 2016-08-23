@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -18,6 +17,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dianying_tus" translatesAutoresizingMaskIntoConstraints="NO" id="KpJ-V6-nHG">
                         <rect key="frame" x="27" y="20" width="94" height="77"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="77" id="Mvv-Xv-LE9"/>
                             <constraint firstAttribute="width" constant="94" id="wMO-MG-PAm"/>
@@ -25,6 +25,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爆米花" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npi-ld-88e">
                         <rect key="frame" x="134" y="20" width="119" height="26"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="2Zl-Y1-vHy"/>
                             <constraint firstAttribute="height" constant="26" id="Ely-T6-Luk"/>
@@ -47,6 +48,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="包房餐特惠, 节假日通用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vo5-I7-bTd">
                         <rect key="frame" x="134" y="54" width="262" height="20"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="6dk-tm-5Gb"/>
                             <constraint firstAttribute="width" constant="262" id="UOr-Mc-STn"/>
@@ -62,6 +64,7 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xing" translatesAutoresizingMaskIntoConstraints="NO" id="MfX-bd-98J">
                         <rect key="frame" x="289" y="29" width="68" height="10"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="i0H-8k-jua"/>
                             <constraint firstAttribute="width" constant="68" id="yRC-UR-lHI"/>
@@ -69,6 +72,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.8分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-9w-vWW">
                         <rect key="frame" x="364" y="24" width="37" height="18"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="37" id="NEa-Rs-GYV"/>
                             <constraint firstAttribute="height" constant="18" id="PZC-w2-KGR"/>
@@ -79,6 +83,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原价: 180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCN-KI-JUQ">
                         <rect key="frame" x="197" y="82" width="101" height="16"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="101" id="3Ur-HN-TE1"/>
                             <constraint firstAttribute="height" constant="16" id="tAk-R9-JoA"/>
@@ -89,6 +94,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-QS-hcC">
                         <rect key="frame" x="134" y="77" width="55" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="TsU-4c-s91"/>
                             <constraint firstAttribute="width" constant="55" id="bns-Qf-e9f"/>
@@ -99,6 +105,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGE-64-XO4">
                         <rect key="frame" x="311" y="82" width="85" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="85" id="M7u-Bp-gje"/>
                             <constraint firstAttribute="height" constant="21" id="o27-lu-BiU"/>
@@ -108,6 +115,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="Vo5-I7-bTd" firstAttribute="leading" secondItem="KpJ-V6-nHG" secondAttribute="trailing" constant="13" id="052-F7-cCn"/>
                     <constraint firstItem="mXB-9w-vWW" firstAttribute="leading" secondItem="MfX-bd-98J" secondAttribute="trailing" constant="7" id="8Py-Ke-Hcm"/>
@@ -146,6 +154,7 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="adressLabel" destination="YGE-64-XO4" id="Y7c-qG-xkj"/>
                 <outlet property="jsLabel" destination="Vo5-I7-bTd" id="caz-59-CJ1"/>

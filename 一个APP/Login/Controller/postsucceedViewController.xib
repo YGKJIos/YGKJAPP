@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="postsucceedViewController">
@@ -17,15 +17,18 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglubeijing" translatesAutoresizingMaskIntoConstraints="NO" id="JF0-W5-9uy">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhucechenggong_heitiao" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-lO-rAk">
                     <rect key="frame" x="0.0" y="30" width="375" height="47"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="47" id="QIg-LP-4yJ"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜您以注册成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-qc-Ai4">
                     <rect key="frame" x="119" y="221" width="145" height="21"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="145" id="WjV-Up-PDi"/>
                         <constraint firstAttribute="height" constant="21" id="ipY-Yf-Tcg"/>
@@ -36,6 +39,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请点击确认立即体验" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3U-iV-1hn">
                     <rect key="frame" x="108" y="272" width="166" height="28"/>
+                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="1hp-dc-6JM"/>
                         <constraint firstAttribute="width" constant="166" id="IEv-px-vlf"/>
@@ -46,12 +50,14 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cf-cO-haU">
                     <rect key="frame" x="141" y="372" width="100" height="100"/>
+                    <animations/>
                     <state key="normal" image="queren"/>
                     <connections>
                         <action selector="querenBtn:" destination="-1" eventType="touchUpInside" id="L7e-hJ-rre"/>
                     </connections>
                 </button>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="VHu-qc-Ai4" firstAttribute="centerX" secondItem="m3U-iV-1hn" secondAttribute="centerX" id="0Ol-pl-fa1"/>

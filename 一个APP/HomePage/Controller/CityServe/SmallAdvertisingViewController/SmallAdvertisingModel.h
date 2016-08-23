@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface SmallAdvertisingModel : NSObject
-@property (nonatomic, strong)NSString *name;
+@property (nonatomic, strong)NSString *userName;
 @property (nonatomic, strong)NSString *headImg;
-@property (nonatomic, strong)NSString *cont;
+@property (nonatomic, strong)NSString *guanggaoNeirong;
 @property (nonatomic, strong)NSArray *talkImgArray;
 @property (nonatomic, assign)NSInteger h;
 @end

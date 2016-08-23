@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TypeTakeOutTableViewController : UITableViewController
-
+@property (nonatomic, strong)NSString *shangjiajutiweizhi;
 @end

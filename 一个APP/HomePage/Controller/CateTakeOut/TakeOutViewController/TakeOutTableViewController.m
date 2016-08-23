@@ -15,6 +15,9 @@
 static BOOL result = YES;
 
 @interface TakeOutTableViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate,ImageLabViewPushVCDelegate>
+{
+    NSInteger _k;
+}
 @property (nonatomic, strong) NSArray *classifys;
 @property (nonatomic, strong) NSArray *cates;
 @property (nonatomic, strong) NSArray *movices;
@@ -83,13 +86,18 @@ static BOOL result = YES;
         NSString *url = @"waimai/querywaimai1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
+            
             for (NSDictionary *dic in arr) {
                 TakeOutModel *model = [[TakeOutModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.takeOutArr addObject:model];
             }
             [self.tableView reloadData];
-            
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"error-----%@",error);
         }];
@@ -179,7 +187,7 @@ static BOOL result = YES;
         ImageAndLabView *view = [ImageAndLabView createViewNib];
         view.frame = CGRectMake(30+(40+WIDTH/4-40)*i,scrollView.height+ 10, 40, 40);
         view.delegate = self;
-        [view setImages:btnImage[i] names:titles[i]];
+        [view setImages:btnImage[i] names:titles[i]tag: 100 + i];
         [tableHeaderView addSubview:view];
     }
     
@@ -191,9 +199,10 @@ static BOOL result = YES;
     NSLog(@"meishi");
 }
 #pragma mark - 美食 ，鲜花，蛋糕，药品 跳转方法
-- (void)imageAndLableViewPush
+- (void)imageAndLableViewPush:(UIButton *)btn
 {
     TypeTakeOutTableViewController *typeTakeOutVC = [[TypeTakeOutTableViewController alloc]init];
+    typeTakeOutVC.shangjiajutiweizhi = [NSString stringWithFormat:@"%ld", btn.tag - 100];
     [self.navigationController pushViewController:typeTakeOutVC animated:YES];
 }
 #pragma mark - Table view data source

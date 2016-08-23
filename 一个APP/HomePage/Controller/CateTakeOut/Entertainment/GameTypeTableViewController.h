@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GameTypeTableViewController : UITableViewController
-
+@property (nonatomic, strong)NSString *shangjiajutiweizhi;
 @end

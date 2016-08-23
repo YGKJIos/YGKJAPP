@@ -92,6 +92,10 @@
             
             NSArray *arr = @[@"zhaopin",@"ershou",@"zhoubian",@"meishi",@"xinwen"];
             NSDictionary *rootDic = responseObject;
+            if (rootDic == nil) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
             for (int i= 0 ; i < arr.count; i++) {
                 NSDictionary *dic = rootDic[arr[i]];
                 HomeModel *model = [[HomeModel alloc] init];
@@ -99,7 +103,7 @@
                 [self.homeArr addObject:model];
             }
             [self.tableView reloadData];
-            
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"error-----%@",error);
         }];

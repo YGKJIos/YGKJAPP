@@ -28,8 +28,13 @@
 
 //    LoginViewController *rootvc = [[LoginViewController alloc] init];
 //    self.window.rootViewController = rootvc;
-
+    _mapManager = [[BMKMapManager alloc]init];
+    BOOL ret = [_mapManager start:@"R2tUfNSzjTbQvFhE9WTnB7t4Ly5ippiL"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
     [self.window makeKeyAndVisible];
+    
     
     return YES;
 }

@@ -71,7 +71,7 @@ static NSString *bendiUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地�
 //    progress.labelText = @"加载中...";
     
     AFHTTPSessionManager *manager = [self manager];
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@",headerUrl,urlString];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",bendiUrl,urlString];
     [manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

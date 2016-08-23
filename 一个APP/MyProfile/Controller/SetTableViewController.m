@@ -167,6 +167,7 @@
 
 - (void)clickOutBtn
 {
+    [[UserInfo shareAccount] logoOutAccount];
     NSLog(@"123");
 }
 
