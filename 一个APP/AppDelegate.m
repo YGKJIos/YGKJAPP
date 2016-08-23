@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "TakeOutInformationController.h"
 
 @interface AppDelegate ()
 
@@ -32,9 +33,11 @@
         self.window.rootViewController = rootvc;
     }else{
         
-        RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+//        RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
+//        self.window.rootViewController = rootTabBar;
+//        rootTabBar.tabBar.translucent = NO;
+        TakeOutInformationController *rootTabBar = [[TakeOutInformationController alloc]init];
         self.window.rootViewController = rootTabBar;
-        rootTabBar.tabBar.translucent = NO;
     }
     
 

@@ -50,5 +50,13 @@
 @property (nonatomic, copy) NSString *waimaiPeisongfei;
 @property (nonatomic, copy) NSString *shangjiaZuobiao;
 
+// 外卖详情
+@property (nonatomic, copy) NSString *waimaishipinId;
+@property (nonatomic, copy) NSString *waimaishipinName;
+@property (nonatomic, copy) NSString *waimaishipinJiage;
+@property (nonatomic, copy) NSString *waimaishipinLeixing;
+@property (nonatomic, copy) NSString *waimaishipinYishou;
+
+
 
 @end

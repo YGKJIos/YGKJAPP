@@ -104,7 +104,6 @@
 		594591071D3CAA5D00FAF565 /* AddressAndMOdificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594590C61D3CAA5D00FAF565 /* AddressAndMOdificationViewController.m */; };
 		594591081D3CAA5D00FAF565 /* AddressAndMOdificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594590C71D3CAA5D00FAF565 /* AddressAndMOdificationViewController.xib */; };
 		5945910A1D3CAA5D00FAF565 /* EditingAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594590CB1D3CAA5D00FAF565 /* EditingAddressViewController.m */; };
-		5945910C1D3CAA5D00FAF565 /* TakeOutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 594590D11D3CAA5D00FAF565 /* TakeOutModel.m */; };
 		5945910E1D3CAA5D00FAF565 /* RemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594590D51D3CAA5D00FAF565 /* RemarkViewController.m */; };
 		594591101D3CAA5D00FAF565 /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594590D91D3CAA5D00FAF565 /* ShoppingCartViewController.m */; };
 		594591111D3CAA5D00FAF565 /* SubmitOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594590DB1D3CAA5D00FAF565 /* SubmitOrderViewController.m */; };
@@ -504,8 +503,6 @@
 		594590C71D3CAA5D00FAF565 /* AddressAndMOdificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressAndMOdificationViewController.xib; sourceTree = "<group>"; };
 		594590CA1D3CAA5D00FAF565 /* EditingAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingAddressViewController.h; sourceTree = "<group>"; };
 		594590CB1D3CAA5D00FAF565 /* EditingAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingAddressViewController.m; sourceTree = "<group>"; };
-		594590D01D3CAA5D00FAF565 /* TakeOutModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOutModel.h; sourceTree = "<group>"; };
-		594590D11D3CAA5D00FAF565 /* TakeOutModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOutModel.m; sourceTree = "<group>"; };
 		594590D41D3CAA5D00FAF565 /* RemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemarkViewController.h; sourceTree = "<group>"; };
 		594590D51D3CAA5D00FAF565 /* RemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemarkViewController.m; sourceTree = "<group>"; };
 		594590D81D3CAA5D00FAF565 /* ShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartViewController.h; sourceTree = "<group>"; };
@@ -1564,8 +1561,6 @@
 		594590CF1D3CAA5D00FAF565 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				594590D01D3CAA5D00FAF565 /* TakeOutModel.h */,
-				594590D11D3CAA5D00FAF565 /* TakeOutModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2634,7 +2629,6 @@
 				594590321D3C9FAD00FAF565 /* HouseTableViewCell.m in Sources */,
 				59FFB6F81D050A0C00071E0E /* RootTabBarController.m in Sources */,
 				D8552AD01D44BE9200C74C49 /* CarEvaluateTableViewCell.m in Sources */,
-				5945910C1D3CAA5D00FAF565 /* TakeOutModel.m in Sources */,
 				59C54C891D6AA1B2009BF605 /* MenuOrderTableViewCell.m in Sources */,
 				59EEFC281D46FB55009DAFB5 /* DetailTableHeaderView.m in Sources */,
 				5945911E1D3CAA5D00FAF565 /* TheHotelTableViewController.m in Sources */,

@@ -9,6 +9,7 @@
 // 美食、 鲜花、蛋糕、药品 跳转的页面
 #import "TypeTakeOutTableViewController.h"
 #import "TakeOutInformationController.h"
+#import "MerchantInformationModel.h"
 #import "TakeTableViewCell.h"
 static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 
@@ -68,14 +69,13 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
-                TakeOutModel *model = [[TakeOutModel alloc] init];
+                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.takeOutArr addObject:model];
             }
             [self.tableView reloadData];
             
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
         }];
         
     });

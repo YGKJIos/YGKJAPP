@@ -11,8 +11,7 @@
 #import "TakeOutInformationController.h"// 商家详情
 #import "TakeTableViewCell.h"
 #import "DOPDropDownMenu.h"
-#import "TakeOutModel.h"
-static BOOL result = YES;
+#import "MerchantInformationModel.h"
 
 @interface TakeOutTableViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate,ImageLabViewPushVCDelegate>
 @property (nonatomic, strong) NSArray *classifys;
@@ -63,13 +62,14 @@ static BOOL result = YES;
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.takeOutArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"waimai/querywaimai1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
             for (NSDictionary *dic in arr) {
-                TakeOutModel *model = [[TakeOutModel alloc] init];
+                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.takeOutArr addObject:model];
             }
@@ -201,7 +201,8 @@ static BOOL result = YES;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TakeOutInformationController *informationVC = [[TakeOutInformationController alloc]init];
-    if (self.takeOutArr.count > 0) {        informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
+    if (self.takeOutArr.count > 0) {
+        informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
         informationVC.model = self.takeOutArr[indexPath.row];
     }
     [self.navigationController pushViewController:informationVC animated:YES];
