@@ -327,6 +327,8 @@
 		D86B7D721D5C1D4300380F49 /* PayMentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D711D5C1D4300380F49 /* PayMentTableViewController.m */; };
 		D86B7D761D5C50EE00380F49 /* PaymentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D86B7D741D5C50EE00380F49 /* PaymentTableViewCell.m */; };
 		D86B7D771D5C50EE00380F49 /* PaymentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B7D751D5C50EE00380F49 /* PaymentTableViewCell.xib */; };
+		D874A8441D6A92CF00EF44E4 /* GoEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D874A8421D6A92CF00EF44E4 /* GoEvaluateViewController.m */; };
+		D874A8451D6A92CF00EF44E4 /* GoEvaluateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D874A8431D6A92CF00EF44E4 /* GoEvaluateViewController.xib */; };
 		D8FFC6CF1D4C8140002E4224 /* RefundTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFC6CE1D4C8140002E4224 /* RefundTableViewController.m */; };
 		D8FFC6D31D4C831E002E4224 /* RefundTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FFC6D11D4C831E002E4224 /* RefundTableViewCell.m */; };
 		D8FFC6D41D4C831E002E4224 /* RefundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FFC6D21D4C831E002E4224 /* RefundTableViewCell.xib */; };
@@ -960,6 +962,9 @@
 		D86B7D731D5C50EE00380F49 /* PaymentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentTableViewCell.h; sourceTree = "<group>"; };
 		D86B7D741D5C50EE00380F49 /* PaymentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentTableViewCell.m; sourceTree = "<group>"; };
 		D86B7D751D5C50EE00380F49 /* PaymentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentTableViewCell.xib; sourceTree = "<group>"; };
+		D874A8411D6A92CF00EF44E4 /* GoEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoEvaluateViewController.h; sourceTree = "<group>"; };
+		D874A8421D6A92CF00EF44E4 /* GoEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoEvaluateViewController.m; sourceTree = "<group>"; };
+		D874A8431D6A92CF00EF44E4 /* GoEvaluateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoEvaluateViewController.xib; sourceTree = "<group>"; };
 		D8FFC6CD1D4C8140002E4224 /* RefundTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefundTableViewController.h; sourceTree = "<group>"; };
 		D8FFC6CE1D4C8140002E4224 /* RefundTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefundTableViewController.m; sourceTree = "<group>"; };
 		D8FFC6D01D4C831E002E4224 /* RefundTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefundTableViewCell.h; sourceTree = "<group>"; };
@@ -1171,6 +1176,9 @@
 				D81103511D40A1EE00C659DA /* orderViewController.h */,
 				D81103521D40A1EE00C659DA /* orderViewController.m */,
 				D81103531D40A1EE00C659DA /* orderViewController.xib */,
+				D874A8411D6A92CF00EF44E4 /* GoEvaluateViewController.h */,
+				D874A8421D6A92CF00EF44E4 /* GoEvaluateViewController.m */,
+				D874A8431D6A92CF00EF44E4 /* GoEvaluateViewController.xib */,
 				D81BE7881D59D06B0077A6DC /* PlaceOrderTableViewController.h */,
 				D81BE7891D59D06B0077A6DC /* PlaceOrderTableViewController.m */,
 				D841A18D1D5AD30200F64C0F /* PlaceOrderTableViewCell.h */,
@@ -2454,6 +2462,7 @@
 				D85E79671D4361B600E7775D /* CarEvaluateTableViewCell.xib in Resources */,
 				59F46B911D4A0582001C6B7B /* activeTableViewCell.xib in Resources */,
 				594590FD1D3CAA5D00FAF565 /* MoiveTableViewCell.xib in Resources */,
+				D874A8451D6A92CF00EF44E4 /* GoEvaluateViewController.xib in Resources */,
 				59F2651B1D3F1276002F9D56 /* waterViewController.xib in Resources */,
 				59F786091D0BD793005A39FB /* FriendGroupView.xib in Resources */,
 				59458FFD1D3C8A1C00FAF565 /* sevCarTableViewCell.xib in Resources */,
@@ -2736,6 +2745,7 @@
 				2A74B0A71D68C644001C7E40 /* ZGP_FBGuangGaoViewController.m in Sources */,
 				59F786111D0BDE19005A39FB /* FriendModel.m in Sources */,
 				59F284911D1E1B3400C815D1 /* ScrollView.m in Sources */,
+				D874A8441D6A92CF00EF44E4 /* GoEvaluateViewController.m in Sources */,
 				59EEFC2C1D46FB55009DAFB5 /* ShopIntroduceTableViewCell.m in Sources */,
 				5910B8AE1D1238F300BA1C16 /* ConditionDoubleTableView.m in Sources */,
 				59EEFC2E1D46FB55009DAFB5 /* ShowAllAndErorrCell.m in Sources */,

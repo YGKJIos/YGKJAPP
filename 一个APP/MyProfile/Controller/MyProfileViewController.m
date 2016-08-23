@@ -13,7 +13,8 @@
 #import "SetTableViewController.h"
 #import "orderViewController.h"
 #import "RefundTableViewController.h"
-@interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate,orderDelegate>
+#import "GoEvaluateViewController.h"
+@interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate,orderDelegate,twoBtnDelegate,thirdBtnDelegate>
 @property (nonatomic, strong)NSArray *images;
 @property (nonatomic, strong)NSArray *titles;
 
@@ -91,6 +92,8 @@
         if (cell==nil) {
             cell = [[FictionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"fictionID"];
             cell.delegate = self;
+            cell.twoDelegate = self;
+            cell.thirdDelegate = self;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -127,11 +130,30 @@
 
 - (void) orderDelegate
 {
-//    orderViewController *orderVC = [[orderViewController alloc] init];
-//    [self.navigationController pushViewController:orderVC animated:YES];
-    RefundTableViewController *refunVC = [[RefundTableViewController alloc] init];
-    [self.navigationController pushViewController:refunVC animated:YES];
+        RefundTableViewController *refunVC = [[RefundTableViewController alloc] init];
+        [self.navigationController pushViewController:refunVC animated:YES];
 }
+
+
+- (void) twoDelegate
+{
+    
+    NSLog(@"wieufgusdb oviuhQBKHBGFPUSJKBCGOIUEFJ");
+}
+
+- (void) thirdDelegate
+{
+    GoEvaluateViewController *evaluaVC = [[GoEvaluateViewController alloc] init];
+    [self.navigationController pushViewController:evaluaVC animated:YES];
+    NSLog(@"ddddddddd555555555555555555555555555588");
+}
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

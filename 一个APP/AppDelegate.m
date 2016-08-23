@@ -23,7 +23,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    // 判断是不是第一次登录
+//    // 判断是不是第一次登录
     NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
@@ -37,15 +37,6 @@
         rootTabBar.tabBar.translucent = NO;
     }
     
-
-
-//    LoginViewController *rootvc = [[LoginViewController alloc] init];
-//    self.window.rootViewController = rootvc;
-    _mapManager = [[BMKMapManager alloc]init];
-    BOOL ret = [_mapManager start:@"R2tUfNSzjTbQvFhE9WTnB7t4Ly5ippiL"  generalDelegate:nil];
-    if (!ret) {
-        NSLog(@"manager start failed!");
-    }
 
     [self.window makeKeyAndVisible];
     

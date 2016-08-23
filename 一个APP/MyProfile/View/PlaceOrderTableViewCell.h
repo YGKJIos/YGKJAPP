@@ -17,6 +17,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *djqBtn;
 
 + (PlaceOrderTableViewCell *)createCell;
+// 减少数量按钮
+@property (weak, nonatomic) IBOutlet UIButton *reduceBtn;
+// 增加数量按钮
+@property (weak, nonatomic) IBOutlet UIButton *addBtn;
+// 数量
+@property (weak, nonatomic) IBOutlet UILabel *numLbl;
 
 @property (nonatomic, assign) id<voucherBtnDelegate>delegate;
 
