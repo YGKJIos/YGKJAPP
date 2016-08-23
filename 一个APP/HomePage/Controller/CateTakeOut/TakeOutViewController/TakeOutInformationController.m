@@ -133,9 +133,9 @@
     if (tableView == self.leftTableView) {
         static NSString *orderID = @"orderID";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:orderID];
-//        if (cell == nil) {
-//            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:orderID];
-//        }
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:orderID];
+        }
         cell.detailTextLabel.text = self.listArr[indexPath.row];
         return cell;
     }
@@ -143,17 +143,14 @@
     {
         static NSString *rightID = @"rightID";
         TakeOutRightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:rightID];
-//        if (cell == nil) {
-//            cell = [[NSBundle mainBundle]loadNibNamed:@"TakeOutRightTableCell" owner:nil options:nil].lastObject;
-            if (self.foodArr.count > 0) {
-                [cell setTakeOutRightTableModel:self.foodArr[indexPath.row]];
-            }
-            cell.jianBtn.tag = 1000+indexPath.row;
-            cell.jiaBtn.tag = 2000+indexPath.row;
-            cell.numberLab.tag = 3000+indexPath.row;
-            [cell.jiaBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.jianBtn addTarget:self action:@selector(jianBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-//        }
+        if (self.foodArr.count > 0) {
+            [cell setTakeOutRightTableModel:self.foodArr[indexPath.row]];
+        }
+        cell.jianBtn.tag = 1000+indexPath.row;
+        cell.jiaBtn.tag = 2000+indexPath.row;
+        cell.numberLab.tag = 3000+indexPath.row;
+        [cell.jiaBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.jianBtn addTarget:self action:@selector(jianBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }
 }

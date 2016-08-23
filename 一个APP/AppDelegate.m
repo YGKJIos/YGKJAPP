@@ -23,7 +23,6 @@
 
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    
     // 判断是不是第一次登录
     NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
@@ -32,12 +31,10 @@
         LoginViewController *rootvc = [[LoginViewController alloc] init];
         self.window.rootViewController = rootvc;
     }else{
-        
-//        RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
-//        self.window.rootViewController = rootTabBar;
-//        rootTabBar.tabBar.translucent = NO;
-        TakeOutInformationController *rootTabBar = [[TakeOutInformationController alloc]init];
+        RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
         self.window.rootViewController = rootTabBar;
+        rootTabBar.tabBar.translucent = NO;
+
     }
     
 
