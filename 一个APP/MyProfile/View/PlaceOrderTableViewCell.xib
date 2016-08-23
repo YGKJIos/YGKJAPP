@@ -222,7 +222,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addBtn" destination="KYb-gB-Tin" id="6ah-Wg-8de"/>
                 <outlet property="djqBtn" destination="MJg-8v-xOB" id="zQM-u2-Kzf"/>
+                <outlet property="numLbl" destination="LgW-yw-06n" id="QNn-ak-B2U"/>
+                <outlet property="reduceBtn" destination="WU6-Bw-HFi" id="hRK-eI-ugq"/>
             </connections>
             <point key="canvasLocation" x="364" y="379"/>
         </tableViewCell>
