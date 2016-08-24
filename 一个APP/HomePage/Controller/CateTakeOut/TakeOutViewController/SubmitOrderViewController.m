@@ -65,7 +65,6 @@
     if (indexPath.section == 0) {
         OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
         [cell setOrderPersonCellStyle:InformationOrderPersonCell model:self.model];
-        
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;

@@ -9,7 +9,6 @@
 #import "AllStylViewController.h"
 #import "AllStylCollectionReusableView.h" // headerView设置
 #import "AllStylCollectionViewCell.h" // 自定义cell
-
 #import "CateViewController.h"                  // 美食
 #import "shopViewController.h"                  // 本地购物
 #import "TheHotelTableViewController.h"         // 宾馆
@@ -26,6 +25,7 @@
 #import "PleaseJobTableViewController.h"        // 招聘
 #import "NewsTableViewController.h"             // 新闻
 #import "HouseTableViewController.h"            // 家政
+
 @interface AllStylViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *arr;
@@ -69,21 +69,16 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, self.view.size.height) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor whiteColor];
     
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     [self.view addSubview:self.tableView];
-    
-   
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.arr.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -100,13 +95,10 @@
     return cell;
     
 }
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
 }
-
 // leftTableView点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -165,8 +157,6 @@
     [self.collectionView reloadData];
     NSLog(@"点毛线");
 }
-
-
 
 - (void)creatRightCollecTionView
 {
@@ -320,14 +310,6 @@
             
         }
     }
-    
-
-
-
-
-
-    
-    
 }
 
 

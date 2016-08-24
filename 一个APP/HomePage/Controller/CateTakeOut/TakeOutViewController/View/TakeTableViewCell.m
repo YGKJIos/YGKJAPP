@@ -8,7 +8,7 @@
 
 #import "TakeTableViewCell.h"
 
-static NSString *beforeUrl = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *beforeUrl = @"http://139.129.209.189:8080/shangcheng/";
 
 @implementation TakeTableViewCell
 

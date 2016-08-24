@@ -30,7 +30,6 @@
     self.navigationItem.title = @"宴会服务";
     [self addTableHeaderView];
     [self MJrefreshLoadData];
-    
 }
 - (void)addTableHeaderView
 {

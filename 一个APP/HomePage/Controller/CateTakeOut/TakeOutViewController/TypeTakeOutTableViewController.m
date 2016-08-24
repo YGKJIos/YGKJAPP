@@ -31,67 +31,33 @@
     [super viewDidLoad];
     self.fenleiArr = [NSMutableArray array];
     // 数据请求
-    [self MJrefreshLoadData];
+    [self loadNewData];
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self.tableView.mj_header beginRefreshing];
-    [super viewWillAppear:animated];
-}
-#pragma mark - MJ刷新
-- (void)MJrefreshLoadData
-{
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    self.tableView.mj_header.automaticallyChangeAlpha = YES;
-    [header setTitle:@"正在刷新数据中..." forState:MJRefreshStateRefreshing];
-    [header setTitle:@"下拉刷新数据" forState:MJRefreshStateIdle];
-    [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
-    header.lastUpdatedTimeLabel.hidden = YES;
-    self.tableView.mj_header = header;
-    
-    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    // 设置文字
-    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
-    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
-    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
-    self.tableView.mj_footer = footer;
-}
-
 // 下拉刷新的方法
 - (void)loadNewData{
     [self.takeOutArr removeAllObjects];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_header endRefreshing];
-        NSString *url = @"waimai/querywaimai1.action";
-        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSArray *arr = responseObject;
-            if (arr.count == 0) {
+    NSString *url = @"waimai/querywaimai1.action";
+    [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSArray *arr = responseObject;
+        if (arr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+            [self.view addSubview:placeholderImage];
+        }else{
+            for (NSDictionary *Dic in arr) {
+                if (Dic[@"shangjiaJutiweizhi"] == self.shangjiajutiweizhi) {
+                    MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
+                    [model setValuesForKeysWithDictionary:Dic];
+                    [self.takeOutArr addObject:model];
+                }
+            }
+            if (self.takeOutArr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
                 [self.view addSubview:placeholderImage];
-            }else{
-                for (NSDictionary *Dic in arr) {
-                    if (Dic[@"shangjiaJutiweizhi"] == self.shangjiajutiweizhi) {
-                        MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
-                        [model setValuesForKeysWithDictionary:Dic];
-                        [self.takeOutArr addObject:model];
-                    }
-                }
-                if (self.takeOutArr.count == 0) {
-                    ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
-                    [self.view addSubview:placeholderImage];
-                }
-                [self.tableView reloadData];
             }
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        }];
-        
-    });
-}
-// 上拉加载的方法
-- (void)loadMoreData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_footer endRefreshing];
-    });
+            [self.tableView reloadData];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    }];
 }
 
 #pragma mark - Table view data source
