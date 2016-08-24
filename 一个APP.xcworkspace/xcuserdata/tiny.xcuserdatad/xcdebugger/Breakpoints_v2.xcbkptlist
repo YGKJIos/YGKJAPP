@@ -52,28 +52,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x4e00;&#x4e2a;APP/HomePage/Controller/CateTakeOut/TakeOutViewController/TakeOutInformationController.m"
-            timestampString = "493744528.175433"
+            timestampString = "493751455.37176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
             endingLineNumber = "149"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "&#x4e00;&#x4e2a;APP/HomePage/Controller/CateTakeOut/TakeOutViewController/TakeOutInformationController.m"
-            timestampString = "493745284.080883"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
-            landmarkName = "-addBtnClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

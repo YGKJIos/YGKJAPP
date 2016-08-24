@@ -188,7 +188,7 @@
     }
     
     self.textBtn = btn;
-    
+    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld", _k];
     //    UITableViewCell * cell = (UITableViewCell *)[[btn superview] superview];
 //    NSIndexPath * path = [self.rightTableView indexPathForCell:cell];
 //    NSLog(@"index row%ld", [path row]);
@@ -218,6 +218,7 @@
         }
     }
     _k--;
+    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld", _k];
 }
 #pragma mark - tableView 点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

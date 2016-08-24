@@ -8,9 +8,9 @@
 
 #import "AFNetWorting.h"
 #import <AFNetworking.h>
-
-static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
-static NSString *bendiUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地服务器
+#warning 本地服务器与测试服务器互换
+static NSString *bendiUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址 // headerUrl
+static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地服务器 // bendiUrl
 
 @implementation AFNetWorting
 
