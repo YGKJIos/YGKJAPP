@@ -297,8 +297,6 @@
             NSLog(@"reslut = %@",resultDic);
         }];
     }
-
-    
 }
 - (NSString *)generateTradeNO
 {

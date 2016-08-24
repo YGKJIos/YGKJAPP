@@ -26,7 +26,6 @@
     [self.view addSubview:tableView];
     [self addHeardView:tableView];
     [self addBottomView];
-    
 }
 #pragma mark - 添加tableview 的头视图
 - (void)addHeardView:(UITableView *)table;

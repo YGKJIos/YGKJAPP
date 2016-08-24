@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "MerchantInformationModel.h"
+
 
 @interface TakeOutRightTableCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;// 商家图片

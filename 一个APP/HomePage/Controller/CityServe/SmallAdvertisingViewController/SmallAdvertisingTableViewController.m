@@ -10,7 +10,6 @@
 #import "SmallAdvertisingModel.h"
 #import "SmallAdvertisingCell.h"
 #import "UserInfo.h"
-#import "ZGP_FBguanggaoTableViewController.h"
 #import "ZGP_FBGuangGaoViewController.h"
 @interface SmallAdvertisingTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)NSMutableArray *modelArray;

@@ -9,11 +9,11 @@
 #import "MarketViewController.h"
 #import "ShopTableViewCell.h"
 #import "ShopModel.h"
-#import "DropdownMenu.h"
+
 #import "CateDetailsTableViewController.h"
 #import "MarketModel.h"
 
-@interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate,dropdownDelegate>
+@interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, assign)BOOL result;

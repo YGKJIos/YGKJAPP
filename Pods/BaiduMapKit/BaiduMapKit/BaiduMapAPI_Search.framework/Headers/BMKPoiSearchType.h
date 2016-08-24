@@ -148,7 +148,7 @@ enum {
 ///POIuid
 @property (nonatomic, strong) NSString* uid;
 ///POI标签
-//@property (nonatomic, strong) NSString* tag;
+@property (nonatomic, strong) NSString* tag;
 ///POI详情页url
 @property (nonatomic, strong) NSString* detailUrl;
 ///POI所属分类，如“hotel”，“cater”，“life”
@@ -205,7 +205,7 @@ enum {
 ///POI坐标
 @property (nonatomic) CLLocationCoordinate2D pt;
 ///POI标签
-//@property (nonatomic, strong) NSString* tag;
+@property (nonatomic, strong) NSString* tag;
 ///价格
 @property (nonatomic, assign) double price;
 ///星级（0-50），50表示五星

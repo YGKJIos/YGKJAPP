@@ -31,7 +31,6 @@
 		2693BB036E13D9F26AC60D19C7AA6C94 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 156706DDEE076A0F780D2ED0705269EC /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		275B42D4FFA2648A48DBCAB43374DEFE /* SDWebImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EAA304D9AE25A0906622583129B88E7 /* SDWebImageDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2989492A1A182744E36FD61DF1746D94 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 110E05E6ED451100822211B22A701110 /* Foundation.framework */; };
-		2A846F791D65E6C900CD7D24 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A846F781D65E6C900CD7D24 /* BaiduMapAPI_Search.framework */; };
 		2D06AAE9AF7620896CB2C7A2B2BDAC85 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C5236F56B4EF33AE84CB69DACDBB57 /* UIImageView+HighlightedWebCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		2D7FBA552B3CED667D78641BD3DEF96C /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 76112BC29496DAF2FDA925B98BA42D53 /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E6338BA238C05593D316DE8A59889D4 /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B5DC847256750172D6F256BE583152 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -208,7 +207,6 @@
 		27FE16B3B6B43368DADEBD0EBBCB1A11 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		28134F884A06E959C272736D5B3AA8F2 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
 		28E8C3CF4639374A327BD7354EA506A0 /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
-		2A846F781D65E6C900CD7D24 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		2EB472E7B80A531D54C3D079A87B58FD /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
 		315F61E24A4D654C9BDA5CA25E259FD1 /* MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
 		332B08905717229F7CB650CE4340E87D /* MJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshComponent.h; path = MJRefresh/Base/MJRefreshComponent.h; sourceTree = "<group>"; };
@@ -223,6 +221,7 @@
 		4093541FCBB493F5820EC1A2EE93B88A /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E84F5C2CA54043C95A7613EE756FB8 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Cloud.framework; path = BaiduMapKit/BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		423E1359897BCA85A22317FB11A65A92 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		42C2DCE25209656CB698FE0C8B5EF795 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BaiduMapAPI_Search.framework; path = BaiduMapKit/BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		46B632788AC8B0218B6B98CC509F2013 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
 		475E2F858F1E699422A093E82A4CEE0A /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
 		47B7166E112D5060B4F539C32A340F64 /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
@@ -361,7 +360,6 @@
 			files = (
 				2053D71CF543C3A3CC47C5409D61923C /* CoreGraphics.framework in Frameworks */,
 				6083F51989A0009C740D92767F4DC1FC /* Foundation.framework in Frameworks */,
-				2A846F791D65E6C900CD7D24 /* BaiduMapAPI_Search.framework in Frameworks */,
 				00F09DB5E05D1208F27161E2F016FE36 /* MobileCoreServices.framework in Frameworks */,
 				022B549F10007177A43FAB1DD5114F7D /* Security.framework in Frameworks */,
 				CE8965366A3B07A6C0615055A31B8B83 /* SystemConfiguration.framework in Frameworks */,
@@ -640,12 +638,12 @@
 		B1BEFA52E85C0F020A1733A4FC31D744 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A846F781D65E6C900CD7D24 /* BaiduMapAPI_Search.framework */,
 				B56F7A5F194F92F6AF73A2F225713624 /* BaiduMapAPI_Base.framework */,
 				40E84F5C2CA54043C95A7613EE756FB8 /* BaiduMapAPI_Cloud.framework */,
 				573011315811E454FC7C5A28F90CE016 /* BaiduMapAPI_Location.framework */,
 				CA549093EBE7F0E6DA5350D07A24D6A5 /* BaiduMapAPI_Map.framework */,
 				AD20FD294A55915DFDD6BAEBDC9E69E6 /* BaiduMapAPI_Radar.framework */,
+				42C2DCE25209656CB698FE0C8B5EF795 /* BaiduMapAPI_Search.framework */,
 				249C8614009D9250FCA1222FF139DDA5 /* BaiduMapAPI_Utils.framework */,
 			);
 			name = Frameworks;
@@ -1204,10 +1202,6 @@
 			baseConfigurationReference = DDE62AA206E6123E7A4F15878C651FAD /* AFNetworking.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/BaiduMapKit",
-				);
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1389,10 +1383,6 @@
 			baseConfigurationReference = DDE62AA206E6123E7A4F15878C651FAD /* AFNetworking.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/BaiduMapKit",
-				);
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
