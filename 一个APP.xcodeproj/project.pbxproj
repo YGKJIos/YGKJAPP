@@ -236,11 +236,7 @@
 		59F786111D0BDE19005A39FB /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F786101D0BDE19005A39FB /* FriendModel.m */; };
 		59F7E9F51D62B58E004E6DB2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7E9F41D62B58E004E6DB2 /* libc++.tbd */; };
 		59F7E9F71D62B5A4004E6DB2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7E9F61D62B5A4004E6DB2 /* libz.tbd */; };
-		59F7E9F91D62B60D004E6DB2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7E9F81D62B60D004E6DB2 /* SystemConfiguration.framework */; };
-		59F7E9FB1D62B616004E6DB2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7E9FA1D62B616004E6DB2 /* CoreTelephony.framework */; };
-		59F7E9FD1D62B61E004E6DB2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7E9FC1D62B61E004E6DB2 /* QuartzCore.framework */; };
 		59F7E9FF1D62B62F004E6DB2 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7E9FE1D62B62F004E6DB2 /* CoreText.framework */; };
-		59F7EA011D62B661004E6DB2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7EA001D62B661004E6DB2 /* CoreGraphics.framework */; };
 		59F7EA031D62B668004E6DB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7EA021D62B668004E6DB2 /* UIKit.framework */; };
 		59F7EA051D62B673004E6DB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7EA041D62B673004E6DB2 /* Foundation.framework */; };
 		59F7EA071D62B680004E6DB2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7EA061D62B680004E6DB2 /* CFNetwork.framework */; };
@@ -984,17 +980,13 @@
 				2A74C0471D64922A00EEBE69 /* QuartzCore.framework in Frameworks */,
 				2A74C0451D64921200EEBE69 /* CoreLocation.framework in Frameworks */,
 				2A74C0431D6491BA00EEBE69 /* BaiduMapAPI_Base.framework in Frameworks */,
-				59F7E9F91D62B60D004E6DB2 /* SystemConfiguration.framework in Frameworks */,
 				59F7EA091D62B68D004E6DB2 /* CoreMotion.framework in Frameworks */,
 				59F7EA071D62B680004E6DB2 /* CFNetwork.framework in Frameworks */,
 				59F7EA051D62B673004E6DB2 /* Foundation.framework in Frameworks */,
 				59F7EA031D62B668004E6DB2 /* UIKit.framework in Frameworks */,
 				59D07B611D65936C0099C1DA /* libssl.a in Frameworks */,
-				59F7EA011D62B661004E6DB2 /* CoreGraphics.framework in Frameworks */,
 				59D07B601D65936C0099C1DA /* libcrypto.a in Frameworks */,
 				59F7E9FF1D62B62F004E6DB2 /* CoreText.framework in Frameworks */,
-				59F7E9FD1D62B61E004E6DB2 /* QuartzCore.framework in Frameworks */,
-				59F7E9FB1D62B616004E6DB2 /* CoreTelephony.framework in Frameworks */,
 				59F7E9F71D62B5A4004E6DB2 /* libz.tbd in Frameworks */,
 				59D07B541D6592170099C1DA /* AlipaySDK.framework in Frameworks */,
 				59F7E9F51D62B58E004E6DB2 /* libc++.tbd in Frameworks */,
@@ -1095,9 +1087,9 @@
 		5910B88B1D1234D700BA1C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5945909B1D3CAA5D00FAF565 /* CateTakeOut */,
 				594590441D3CA1D400FAF565 /* HomePage */,
 				5945911F1D3CAC2500FAF565 /* News */,
-				5945909B1D3CAA5D00FAF565 /* CateTakeOut */,
 				594590091D3C9FAD00FAF565 /* CityServe */,
 				59458FC91D3C8A1C00FAF565 /* LeftServe */,
 				59EEFC0E1D46FB55009DAFB5 /* View */,
@@ -2365,7 +2357,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ZGP_;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "祝高鹏";
 				TargetAttributes = {
 					59FFB6A01D0501F000071E0E = {

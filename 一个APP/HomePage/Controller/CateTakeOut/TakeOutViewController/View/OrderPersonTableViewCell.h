@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 typedef NS_ENUM(NSInteger, OrderPersonCell){
     InformationOrderPersonCell,  // 订单信息
@@ -26,6 +27,9 @@ typedef NS_ENUM(NSInteger, OrderPersonCell){
 @property (nonatomic, strong)UILabel *phoneNumLab;
 @property (nonatomic, strong)UILabel *addressLab;
 
-- (void)setOrderPersonCellStyle:(OrderPersonCell)orderPersonStyle;
+// 确定下单按钮
+@property (nonatomic, strong)UIButton *payBtn;
+
+- (void)setOrderPersonCellStyle:(OrderPersonCell)orderPersonStyle model:(MerchantInformationModel *)model;
 
 @end

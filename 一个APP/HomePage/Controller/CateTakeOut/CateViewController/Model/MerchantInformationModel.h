@@ -57,6 +57,11 @@
 @property (nonatomic, copy) NSString *waimaishipinLeixing;
 @property (nonatomic, copy) NSString *waimaishipinYishou;
 
+// 收货地址
+@property (nonatomic, copy) NSString *shouhuoDizhi;
+@property (nonatomic, copy) NSString *shouhuodizhiId;
+
+
 
 
 @end

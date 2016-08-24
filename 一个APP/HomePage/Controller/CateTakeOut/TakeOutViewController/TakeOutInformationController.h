@@ -10,6 +10,7 @@
 #import "MerchantInformationModel.h"
 
 @interface TakeOutInformationController : UIViewController
+
 @property (nonatomic, strong)MerchantInformationModel *model;
 
 @end

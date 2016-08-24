@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @protocol modifBtnPushAddressModifVCDelegate <NSObject>
 
@@ -23,5 +24,6 @@
 @property (nonatomic, strong)UIButton *modifBtn;
 @property (nonatomic, strong)UIButton *deleteBtn;
 @property (nonatomic, assign)id<modifBtnPushAddressModifVCDelegate>delegate;
+- (void)setModel:(MerchantInformationModel *)model;
 
 @end

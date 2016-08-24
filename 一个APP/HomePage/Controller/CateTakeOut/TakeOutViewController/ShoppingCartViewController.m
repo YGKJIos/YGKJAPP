@@ -4,7 +4,7 @@
 //
 //  Created by 梁立彬 on 16/7/9.
 //  Copyright © 2016年 llb. All rights reserved.
-//
+//  购物车页面。 
 
 #import "ShoppingCartViewController.h"
 #import "ShoppingCartTableViewCell.h"
@@ -105,7 +105,6 @@
     SubmitOrderViewController *submitVC = [[SubmitOrderViewController alloc]init];
     [self.navigationController pushViewController:submitVC animated:YES];
 }
-
 
 #pragma mark - tableView代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

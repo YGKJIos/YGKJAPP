@@ -36,25 +36,23 @@
 #if 1
 - (void)creatData
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSString *url = @"user/chakanguanggao.action";
-        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSArray *arr = responseObject;
-            if (arr.count == 0) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
-                [self.view addSubview:placeholderImage];
-            }else{
-                for (NSDictionary *dic in arr) {
-                    SmallAdvertisingModel *model = [[SmallAdvertisingModel alloc] init];
-                    [model setValuesForKeysWithDictionary:dic];
-                    [self.modelArray addObject:model];
-                }
-                [self.tableView reloadData];
+    NSString *url = @"user/chakanguanggao.action";
+    [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSArray *arr = responseObject;
+        if (arr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:placeholderImage];
+        }else{
+            for (NSDictionary *dic in arr) {
+                SmallAdvertisingModel *model = [[SmallAdvertisingModel alloc] init];
+                [model setValuesForKeysWithDictionary:dic];
+                [self.modelArray addObject:model];
             }
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            
-        }];
-    });
+            [self.tableView reloadData];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
     
 }
 #endif
