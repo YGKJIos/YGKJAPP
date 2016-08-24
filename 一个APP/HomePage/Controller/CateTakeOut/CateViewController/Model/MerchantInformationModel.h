@@ -46,8 +46,8 @@
 @property (nonatomic, copy) NSString *shangjiaJuli;
 
 // 外卖
-@property (nonatomic, copy) NSString *waimaiQisongjia;
-@property (nonatomic, copy) NSString *waimaiPeisongfei;
+@property (nonatomic, copy) NSString *qisongjia;
+@property (nonatomic, copy) NSString *peisongfei;
 @property (nonatomic, copy) NSString *shangjiaZuobiao;
 
 // 外卖详情

@@ -58,7 +58,7 @@
 
 - (void)setModel:(MerchantInformationModel *)model
 {
-    NSString *title = [NSString stringWithFormat:@"%@元起送价",model.waimaiQisongjia];
+    NSString *title = [NSString stringWithFormat:@"%@元起送价",model.qisongjia];
     [self.orderMoneyBtn setTitle:title forState:UIControlStateNormal];
     self.orderNum.hidden = YES;
 }

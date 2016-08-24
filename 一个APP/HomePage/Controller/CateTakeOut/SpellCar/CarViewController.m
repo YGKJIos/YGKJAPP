@@ -118,7 +118,6 @@
     [param setObject:@"aaa" forKey:@"userId"];
     NSString *url = @"dache/userdache.action?";
     if (self.addressField.text.length != 0 && self.destinatioField.text.length != 0 ) {
-        
         [AFNetWorting postNetWortingWithUrlString:url params:param controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             
             if ([[(NSDictionary *)responseObject objectForKey:@"ok"] isEqualToString:@"1"])  {
@@ -130,7 +129,6 @@
                 }];
                 [alert addAction:action];
                 [self presentViewController:alert animated:YES completion:nil];
-                NSLog(@"拼车成功");
             }else if ([[(NSDictionary *)responseObject objectForKey:@"ok"] isEqualToString:@"0"])
             {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"拼车失败" message:@"大不了重新再来" preferredStyle:UIAlertControllerStyleAlert];
@@ -140,11 +138,8 @@
                 }];
                 [alert addAction:action];
                 [self presentViewController:alert animated:YES completion:nil];
-                NSLog(@"拼车失败");
             }
-            NSLog(@"````%@", responseObject);
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"failure");
             UIAlertController *alerController = [UIAlertController alertControllerWithTitle:@"拼车失败" message:@"请求超时" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
             [alerController addAction:sureAction];
@@ -165,7 +160,6 @@
         [self performSelector:@selector(diss) withObject:self afterDelay:2];
         [self presentViewController:alerController animated:YES completion:nil];
     }
-    NSLog(@"开始拼车");
 }
 -(void)diss
 {

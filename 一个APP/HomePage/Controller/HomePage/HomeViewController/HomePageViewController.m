@@ -153,18 +153,14 @@
         titleStr = @"当前您的位置";
         showmeg = [NSString stringWithFormat:@"%@",item.title];
         
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
-        NSLog(@"%@", showmeg);
-        [myAlertView show];
-//       [self addNavigationView];
+//        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+//        [myAlertView show];
         [self creatLocationBtn];
     }
 }
 - (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
 {
     
-    
-    //NSLog(@"heading is %@",userLocation.heading);
 }
 //处理位置坐标更新
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
