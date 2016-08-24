@@ -37,7 +37,7 @@
     [self.view addSubview:homeTabVC.tableView];
     
     // 添加百度地图
-//    [self currentLocation];
+    [self currentLocation];
 }
 // 导航栏中央搜索按键
 - (void)addNavigationView
@@ -150,7 +150,7 @@
         item.title = result.address;
         NSString* titleStr;
         
-        titleStr = @"反向地理编码";
+        titleStr = @"当前您的位置";
         showmeg = [NSString stringWithFormat:@"%@",item.title];
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
