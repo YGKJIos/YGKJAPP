@@ -22,20 +22,27 @@
 
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+#warning 狠狠狠狠...重要,别删 Don't delete
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [_mapManager start:@"R2tUfNSzjTbQvFhE9WTnB7t4Ly5ippiL"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
     
     // 判断是不是第一次登录
-//    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-//    NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
-//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-//    if (dic == nil) {
-//        LoginViewController *rootvc = [[LoginViewController alloc] init];
-//        self.window.rootViewController = rootvc;
-//    }else{
+    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    if (dic == nil) {
+        LoginViewController *rootvc = [[LoginViewController alloc] init];
+        self.window.rootViewController = rootvc;
+    }else{
     
         RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
         self.window.rootViewController = rootTabBar;
         rootTabBar.tabBar.translucent = NO;
-//    }
+    }
 
 
     [self.window makeKeyAndVisible];

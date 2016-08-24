@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TakeOutModel.h"
+#import "MerchantInformationModel.h"
 
 @interface TakeOutInformationView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *shopImage;// 商家图片
@@ -19,6 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIView *scrollLine;
 
 + (TakeOutInformationView *)CreateInformationNib;
-- (void)setModel:(TakeOutModel *)model;
+- (void)setModel:(MerchantInformationModel *)model;
 
 @end

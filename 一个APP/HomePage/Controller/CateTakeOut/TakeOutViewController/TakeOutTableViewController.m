@@ -11,7 +11,7 @@
 #import "TakeOutInformationController.h"// 商家详情
 #import "TakeTableViewCell.h"
 #import "DOPDropDownMenu.h"
-#import "TakeOutModel.h"
+#import "MerchantInformationModel.h"
 static BOOL result = YES;
 
 @interface TakeOutTableViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate,ImageLabViewPushVCDelegate>
@@ -77,7 +77,7 @@ static BOOL result = YES;
             }else{
             
             for (NSDictionary *dic in arr) {
-                TakeOutModel *model = [[TakeOutModel alloc] init];
+                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.takeOutArr addObject:model];
             }

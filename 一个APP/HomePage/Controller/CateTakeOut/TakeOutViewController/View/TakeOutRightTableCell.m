@@ -12,7 +12,7 @@
 
 static NSInteger num; //点击增加 菜品份数计数
 
-- (void)setTakeOutRightTableModel:(TakeOutModel *)model
+- (void)setTakeOutRightTableModel:(MerchantInformationModel *)model
 {
     
 }

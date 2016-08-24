@@ -83,7 +83,7 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
                     [self.view addSubview:placeholderImage];
                 }else{
                     for (NSDictionary *dic in _fenleiArr) {
-                        TakeOutModel *model = [[TakeOutModel alloc] init];
+                        MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
                         [model setValuesForKeysWithDictionary:dic];
                         [self.takeOutArr addObject:model];
                     }

@@ -20,7 +20,7 @@ static NSString *beforeUrl = @"http://192.168.1.88:8080/shangcheng/";
     [cell.salesLab sizeToFit];
     return cell;
 }
-- (void)setTakeOutModel:(TakeOutModel *)model
+- (void)setTakeOutModel:(MerchantInformationModel *)model
 {
     if (model) {
         NSString *url = [NSString stringWithFormat:@"%@%@",beforeUrl,model.shangjiaTouxiang];

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class TakeOutModel;
+@class MerchantInformationModel;
 
 @interface TakeOutRightTableCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;// 商家图片
@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberLab;// 份数
 
 - (void)addBtnClickAction:(NSIndexPath *)indexPath;
-- (void)setTakeOutRightTableModel:(TakeOutModel *)model;
+- (void)setTakeOutRightTableModel:(MerchantInformationModel *)model;
 
 
 @end
