@@ -95,7 +95,6 @@
     NSLog(@"恒运大厦定位");
     MapViewController *map = [[MapViewController alloc] init];
     [self.navigationController pushViewController:map animated:YES];
-    
 }
 
 - (void)currentLocation
@@ -106,7 +105,7 @@
     _locService.delegate = self;
     self.geocodesearch = [[BMKGeoCodeSearch alloc] init]; // 编码服务的初始化(就是获取经纬度,或者获取地理位置服务)
     self.geocodesearch.delegate = self;
-    NSLog(@"定位的经度:%f,定位的纬度:%f",_locService.userLocation.location.coordinate.longitude,_locService.userLocation.location.coordinate.latitude);
+//    NSLog(@"定位的经度:%f,定位的纬度:%f",_locService.userLocation.location.coordinate.longitude,_locService.userLocation.location.coordinate.latitude);
 //    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 //    button.frame = CGRectMake(0, 0, 60, 40);
 //    [button setTitle:@"获取地址" forState:UIControlStateNormal];

@@ -14,6 +14,9 @@
 #import "AddFoodView.h"
 
 @interface TakeOutInformationController ()<UITableViewDataSource,UITableViewDelegate>
+{
+    NSInteger _k;
+}
 @property (nonatomic, strong)UIView *line;
 @property (nonatomic, strong)UIButton *cateBtn; // 食品
 @property (nonatomic, strong)UIButton *evaluateBtn; // 评论
@@ -103,13 +106,14 @@
     self.leftTableView.dataSource = self;
     self.leftTableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.leftTableView];
-    
+    [_leftTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"orderID"];
     UIView *leftview = [[UIView alloc]init];
     self.leftTableView.tableFooterView = leftview;
     
     self.rightTableView = [[UITableView alloc]initWithFrame:CGRectMake(114*WIDTH/375, 220, WIDTH -114*WIDTH/375 , HEIGHT-220-113) style:UITableViewStylePlain];
     self.rightTableView.delegate = self;
     self.rightTableView.dataSource = self;
+    
     [_rightTableView registerNib:[UINib nibWithNibName:@"TakeOutRightTableCell" bundle:nil] forCellReuseIdentifier:@"rightID"];
     self.rightTableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.rightTableView];
@@ -133,30 +137,32 @@
     if (tableView == self.leftTableView) {
         static NSString *orderID = @"orderID";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:orderID];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:orderID];
-        }
-        cell.detailTextLabel.text = self.listArr[indexPath.row];
+       
+        cell.textLabel.text = self.listArr[indexPath.row];
         return cell;
-    }
-    else
-    {
+    }else if(tableView == self.rightTableView){
         static NSString *rightID = @"rightID";
-        TakeOutRightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:rightID];
-        if (self.foodArr.count > 0) {
+        TakeOutRightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:rightID forIndexPath:indexPath];
+//        cell.jiaBtn = nil;
+//        cell.jianBtn = nil;
+//        if (self.foodArr.count > 0) {
             [cell setTakeOutRightTableModel:self.foodArr[indexPath.row]];
-        }
+//        }
         cell.jianBtn.tag = 1000+indexPath.row;
         cell.jiaBtn.tag = 2000+indexPath.row;
         cell.numberLab.tag = 3000+indexPath.row;
         [cell.jiaBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.jianBtn addTarget:self action:@selector(jianBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
+    }else
+    {
+        return nil;
     }
 }
 #pragma mark - 加、减按钮的点击方法
 - (void)addBtnClick:(UIButton *)btn
 {
+    _k++;
     if (self.textBtn == btn) {
         ++self.num;
         NSInteger number = btn.tag-2000;
@@ -180,7 +186,9 @@
         numlab.hidden = NO;
         numlab.text = [NSString stringWithFormat:@"%ld",self.num];
     }
+    
     self.textBtn = btn;
+    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld", _k];
     //    UITableViewCell * cell = (UITableViewCell *)[[btn superview] superview];
 //    NSIndexPath * path = [self.rightTableView indexPathForCell:cell];
 //    NSLog(@"index row%ld", [path row]);
@@ -209,6 +217,8 @@
             numlab.hidden = YES;
         }
     }
+    _k--;
+    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld", _k];
 }
 #pragma mark - tableView 点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

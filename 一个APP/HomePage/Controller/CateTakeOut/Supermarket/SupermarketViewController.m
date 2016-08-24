@@ -11,6 +11,7 @@
 #import "HeaderCollectionReusableView.h"
 #import "SearchView.h"
 #import "ZGP_SuperMarketModel.h"
+#import "TakeOutInformationController.h"
 @interface SupermarketViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic, strong)UIButton *searchBtn;
 @property (nonatomic, strong)UICollectionView *collection;
@@ -130,14 +131,13 @@
 //
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return _superMarketArr.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SupermarketCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"reportFilterCell" forIndexPath:indexPath];
     
-    cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"reportFilterCell" forIndexPath:indexPath];
-    
+    [cell ZGP_SuperMarketModel:_superMarketArr[indexPath.row]];
     return cell;
 }
 
@@ -148,6 +148,12 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    TakeOutInformationController *informationVC = [[TakeOutInformationController alloc]init];
+    if (self.superMarketArr.count > 0) {
+        informationVC.navigationItem.title = [self.superMarketArr[indexPath.row] shangjiaName];
+        informationVC.model = self.superMarketArr[indexPath.row];
+    }
+    [self.navigationController pushViewController:informationVC animated:YES];
     NSLog(@"row = %ld, section= %ld",indexPath.row,indexPath.section);
 }
 

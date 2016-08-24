@@ -36,14 +36,12 @@
 #import "NewsTableViewController.h" // 新闻
 #import "priceViewController.h" // 生活缴费
 #import "shopViewController.h" // 本地购物
-
 #import "HomeModel.h" // 首页model
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate,FoodHomePushDelegate,ShopingPushDelegate>
 
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
 @property (nonatomic, retain) NSMutableArray *homeArr; // 首页model数组
-
 @end
 
 @implementation HomePageTableViewController
@@ -74,13 +72,6 @@
     header.lastUpdatedTimeLabel.hidden = YES;
     self.tableView.mj_header = header;
     
-    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    // 设置文字
-    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
-    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
-    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
-    self.tableView.mj_footer = footer;
-    
 }
 
 // 下拉刷新的方法
@@ -105,20 +96,13 @@
             [self.tableView reloadData];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
+            
         }];
         
         
     });
     
 }
-// 上拉加载的方法
-- (void)loadMoreData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_footer endRefreshing];
-    });
-}
-
 - (void)addHeaderView
 {
     UIImage *image1 = [UIImage imageNamed:@"shouye_guangg"];
@@ -504,7 +488,6 @@
         SecondHandTableViewController *secondVC = [[SecondHandTableViewController alloc]init];
         [self.navigationController pushViewController:secondVC animated:YES];
     }
-    
 }
 #pragma mark - 美食精选
 - (void)foodHomePushDelegateMethod

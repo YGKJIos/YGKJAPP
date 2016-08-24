@@ -9,7 +9,7 @@
 #import "NewsTableViewController.h"
 #import "NewsTableViewCell.h"
 
-@interface NewsTableViewController ()
+@interface NewsTableViewController ()<UIWebViewDelegate>
 
 @end
 
@@ -18,7 +18,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"时事新闻";
-    [self addTableHeaderView];
+//    [self addTableHeaderView];
+    UIWebView *wv = [[UIWebView alloc]initWithFrame:self.view.bounds];
+    /**< 自适应边界 */
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    [self.view addSubview:wv];
+
+    
+    // js
+    wv.scalesPageToFit = YES;
+    wv.delegate = self;
+    
+    NSURLRequest *request =  [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://3g.163.com/touch/news/subchannel/all?nav=2&version=v_standard&articleversion=B"]];
+    [wv loadRequest:request];
+
+    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 
 }
 
@@ -64,7 +79,6 @@
 
     return cell;
 }
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

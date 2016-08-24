@@ -9,7 +9,22 @@
 #import "AllStylViewController.h"
 #import "AllStylCollectionReusableView.h" // headerView设置
 #import "AllStylCollectionViewCell.h" // 自定义cell
-
+#import "CateViewController.h"                  // 美食
+#import "shopViewController.h"                  // 本地购物
+#import "TheHotelTableViewController.h"         // 宾馆
+#import "FeastTableViewController.h"            // 宴会
+#import "TakePhotoTableViewController.h"        // 摄影写真
+#import "LearnViewController.h"                 // 学习
+#import "GameTableViewController.h"             // 娱乐
+#import "TravelTableViewController.h"           // 周边游
+#import "priceViewController.h"                 // 生活服务
+#import "sevCarTableViewController.h"           // 汽车服务
+#import "MovieTableViewController.h"            // 电影
+#import "WeddingTableViewController.h"          // 婚庆服务
+#import "carViewController.h"                   // 拼车
+#import "PleaseJobTableViewController.h"        // 招聘
+#import "NewsTableViewController.h"             // 新闻
+#import "HouseTableViewController.h"            // 家政
 
 @interface AllStylViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, retain) UITableView *tableView;
@@ -135,7 +150,7 @@
         self.ReusableView.headImage.image = [UIImage imageNamed:@"shenghuofuwuheadview"];
     }
     if (indexPath.row == 9) {
-        self.arr1 = [NSMutableArray arrayWithObjects:@"家装", @"汽车服务", @"电影", @"婚庆", @"拼车", @"招聘", @"新闻", nil];
+        self.arr1 = [NSMutableArray arrayWithObjects:@"家政", @"汽车服务", @"电影", @"婚庆", @"拼车", @"招聘", @"新闻", nil];
         self.imageArr = [NSMutableArray arrayWithObjects:@"qita_06", @"qita_08", @"qita_10", @"qita_15", @"qita_16", @"qita_17", @"qita_21", nil];
         self.ReusableView.headImage.image = [UIImage imageNamed:@"qitaheadview"];
     }
@@ -208,9 +223,94 @@
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    // 美食
+    if (_tableView.indexPathForSelectedRow.row == 0) {
+        CateViewController *cate = [[CateViewController alloc] init];
+        [self.navigationController pushViewController:cate animated:YES];
+    }
+    // 摄影写真
+    else if (_tableView.indexPathForSelectedRow.row == 1){
+        TakePhotoTableViewController *take = [[TakePhotoTableViewController alloc] init];
+        [self.navigationController pushViewController:take animated:YES];
+    }
+    // 本地购物
+    else if (_tableView.indexPathForSelectedRow.row == 2){
+        shopViewController *take = [[shopViewController alloc] init];
+        [self.navigationController pushViewController:take animated:YES];
+    }
+    // 宴会
+    else if (_tableView.indexPathForSelectedRow.row == 3){
+        FeastTableViewController *take = [[FeastTableViewController alloc] init];
+        [self.navigationController pushViewController:take animated:YES];
+    }
+    // 周边游
+    else if (_tableView.indexPathForSelectedRow.row == 4){
+        TravelTableViewController *take = [[TravelTableViewController alloc] init];
+        [self.navigationController pushViewController:take animated:YES];
+    }
+    // 休闲娱乐
+    else if (_tableView.indexPathForSelectedRow.row == 5){
+        GameTableViewController *take = [[GameTableViewController alloc] init];
+        [self.navigationController pushViewController:take animated:YES];
+    }
+    // 酒店宾馆
+    else if (_tableView.indexPathForSelectedRow.row == 6){
+        TheHotelTableViewController *take = [[TheHotelTableViewController alloc] init];
+        [self.navigationController pushViewController:take animated:YES];
+    }
+    // 学习培训
+    else if (_tableView.indexPathForSelectedRow.row == 7){
+        LearnViewController *take = [[LearnViewController alloc] init];
+        [self.navigationController pushViewController:take animated:YES];
+    }
+    // 生活服务
+    else if (_tableView.indexPathForSelectedRow.row == 8){
+        priceViewController *take = [[priceViewController alloc] init];
+        [self.navigationController pushViewController:take animated:YES];
+    }
+    // 其他
+    else if (_tableView.indexPathForSelectedRow.row == 9){
+        // 家装
+        if (indexPath.item == 0) {
+            HouseTableViewController *vc = [[HouseTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        //  汽车服务
+        else if (indexPath.item == 1){
+            sevCarTableViewController *vc = [[sevCarTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        // 电影
+        else if (indexPath.item == 2){
+            MovieTableViewController *vc = [[MovieTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        // 婚庆
+        else if (indexPath.item == 3){
+            WeddingTableViewController *vc = [[WeddingTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        // 拼车
+        else if (indexPath.item == 4){
+            CarViewController *vc = [[CarViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        // 招聘
+        else if (indexPath.item == 5){
+            PleaseJobTableViewController *vc = [[PleaseJobTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        // 新闻
+        else if (indexPath.item == 6){
+            NewsTableViewController *vc = [[NewsTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
+        else{
+            
+        }
+    }
 }
-
 
 
 
