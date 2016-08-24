@@ -15,5 +15,5 @@
 @property (nonatomic, strong)NSString *shangjiaTouxiang;
 @property (nonatomic, strong)NSString *shangjiaPingfen;
 @property (nonatomic, strong)NSString *qisongjia;
-
+@property (nonatomic, strong)NSString *peisongfei;
 @end
