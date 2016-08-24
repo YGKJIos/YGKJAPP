@@ -9,6 +9,7 @@
 // 美食、 鲜花、蛋糕、药品 跳转的页面
 #import "TypeTakeOutTableViewController.h"
 #import "TakeOutInformationController.h"
+#import "MerchantInformationModel.h"
 #import "TakeTableViewCell.h"
 static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 
@@ -91,7 +92,6 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
                 [self.tableView reloadData];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"error-----%@",error);
         }];
         
     });

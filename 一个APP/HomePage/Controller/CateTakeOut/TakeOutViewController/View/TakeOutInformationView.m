@@ -18,7 +18,10 @@ static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
 }
 - (void)setModel:(MerchantInformationModel *)model
 {
-    
+    NSString *urlImage = [NSString stringWithFormat:@"%@%@",bendi,model.shangjiaTouxiang];
+    [self.shopImage sd_setImageWithURL:[NSURL URLWithString:urlImage] placeholderImage:nil];
+    self.sendSriceLab.text = [NSString stringWithFormat:@"起送价：%@",model.waimaiQisongjia];
+    self.shipFeeLab.text = [NSString stringWithFormat:@"配送费：%@",model.waimaiPeisongfei];
 }
 
 

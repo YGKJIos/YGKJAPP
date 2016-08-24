@@ -17,14 +17,14 @@
                         <constraint firstAttribute="height" constant="140" id="orw-0p-8uN"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waimai_shou" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-Q4-Fq9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wm_q" translatesAutoresizingMaskIntoConstraints="NO" id="i0S-Q4-Fq9">
                     <rect key="frame" x="23" y="152" width="19" height="19"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="19" id="HPJ-l5-RoO"/>
                         <constraint firstAttribute="height" constant="19" id="ngf-hv-gBt"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waimai_jian2" translatesAutoresizingMaskIntoConstraints="NO" id="WfN-El-w8z">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wm_p" translatesAutoresizingMaskIntoConstraints="NO" id="WfN-El-w8z">
                     <rect key="frame" x="147" y="152" width="19" height="19"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="5DH-dL-v3M"/>
@@ -126,6 +126,8 @@
                 <outlet property="evaluateBtn" destination="h2w-9q-bAw" id="Dpb-Wy-nzk"/>
                 <outlet property="introduceBtn" destination="TIT-Us-Lc8" id="sp3-Z6-z7N"/>
                 <outlet property="scrollLine" destination="a46-oN-kHc" id="q61-LO-z4S"/>
+                <outlet property="sendSriceLab" destination="BQm-0t-GzD" id="CBs-yQ-3tx"/>
+                <outlet property="shipFeeLab" destination="ZNR-i5-ApL" id="v19-CK-tAW"/>
                 <outlet property="shopImage" destination="Wia-x3-XMK" id="XuS-fY-7Xm"/>
             </connections>
             <point key="canvasLocation" x="238.5" y="213"/>
@@ -133,7 +135,7 @@
     </objects>
     <resources>
         <image name="waimai_datu" width="399" height="140"/>
-        <image name="waimai_jian2" width="19" height="19"/>
-        <image name="waimai_shou" width="19" height="19"/>
+        <image name="wm_p" width="19" height="19"/>
+        <image name="wm_q" width="19" height="19"/>
     </resources>
 </document>

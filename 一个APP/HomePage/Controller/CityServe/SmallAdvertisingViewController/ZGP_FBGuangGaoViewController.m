@@ -17,10 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"我要发布";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStylePlain target:self action:@selector(fabuguanggao)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.width = 80;
+    button.height = 40;
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    [button setTitle:@"发布" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(fabuguanggao) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItme = [[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = rightItme;
     // 创建输入框
     [self creatTextField];
 }

@@ -36,7 +36,8 @@
     [self addChildViewController:homeTabVC];
     [self.view addSubview:homeTabVC.tableView];
     
-    [self currentLocation];
+    // 添加百度地图
+//    [self currentLocation];
 }
 // 导航栏中央搜索按键
 - (void)addNavigationView
@@ -154,7 +155,7 @@
         
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
         NSLog(@"%@", showmeg);
-//        [myAlertView show];
+        [myAlertView show];
 //       [self addNavigationView];
         [self creatLocationBtn];
     }

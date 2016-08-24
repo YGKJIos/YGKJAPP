@@ -12,7 +12,9 @@
 #import "TakeTableViewCell.h"
 #import "DOPDropDownMenu.h"
 #import "MerchantInformationModel.h"
+
 static BOOL result = YES;
+
 
 @interface TakeOutTableViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate,ImageLabViewPushVCDelegate>
 {
@@ -66,6 +68,7 @@ static BOOL result = YES;
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.takeOutArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"waimai/querywaimai1.action";
@@ -210,7 +213,8 @@ static BOOL result = YES;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TakeOutInformationController *informationVC = [[TakeOutInformationController alloc]init];
-    if (self.takeOutArr.count > 0) {        informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
+    if (self.takeOutArr.count > 0) {
+        informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
         informationVC.model = self.takeOutArr[indexPath.row];
     }
     [self.navigationController pushViewController:informationVC animated:YES];

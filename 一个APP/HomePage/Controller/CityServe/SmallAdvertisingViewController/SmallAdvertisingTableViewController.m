@@ -10,7 +10,6 @@
 #import "SmallAdvertisingModel.h"
 #import "SmallAdvertisingCell.h"
 #import "UserInfo.h"
-#import "ZGP_FBguanggaoTableViewController.h"
 #import "ZGP_FBGuangGaoViewController.h"
 @interface SmallAdvertisingTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)NSMutableArray *modelArray;
@@ -20,10 +19,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"小广告栏";
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.width = 80;
+    button.height = 40;
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    [button setTitle:@"发布广告" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(fabuguanggao) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItme = [[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = rightItme;
     self.modelArray = [NSMutableArray array];
     [self creatData];        /**< 数据请求>*/
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发布广告" style:UIBarButtonItemStylePlain target:self action:@selector(fabuguanggao)];
-    //    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"zhanwei.png"]];
 }
 #if 1
 - (void)creatData
@@ -46,8 +53,6 @@
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
-        
-        
     });
     
 }

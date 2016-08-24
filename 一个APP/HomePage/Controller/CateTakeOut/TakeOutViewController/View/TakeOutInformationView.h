@@ -11,6 +11,9 @@
 
 @interface TakeOutInformationView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *shopImage;// 商家图片
+@property (weak, nonatomic) IBOutlet UILabel *sendSriceLab;// 起送价
+@property (weak, nonatomic) IBOutlet UILabel *shipFeeLab;// 配送价
+
 
 @property (weak, nonatomic) IBOutlet UIButton *cateBtn;//餐品
 @property (weak, nonatomic) IBOutlet UIButton *evaluateBtn;//评价

@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "TakeOutInformationController.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,7 @@
 
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+
 #warning 狠狠狠狠...重要,别删 Don't delete
     _mapManager = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
@@ -43,11 +45,7 @@
         self.window.rootViewController = rootTabBar;
         rootTabBar.tabBar.translucent = NO;
     }
-
-
     [self.window makeKeyAndVisible];
-    
-    
     return YES;
 }
 
