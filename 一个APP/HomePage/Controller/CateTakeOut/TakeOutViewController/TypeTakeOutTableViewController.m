@@ -11,11 +11,9 @@
 #import "TakeOutInformationController.h"
 #import "MerchantInformationModel.h"
 #import "TakeTableViewCell.h"
-static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 
 @interface TypeTakeOutTableViewController ()
 @property (nonatomic, strong)NSMutableArray *takeOutArr;
-//@property (nonatomic, assign)BOOL result;
 @property (nonatomic, strong) NSMutableArray *fenleiArr;
 @end
 
@@ -37,10 +35,7 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (result) {
-        [self.tableView.mj_header beginRefreshing];
-        result = NO;
-    }
+    [self.tableView.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
 #pragma mark - MJ刷新
@@ -64,30 +59,26 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 
 // 下拉刷新的方法
 - (void)loadNewData{
+    [self.takeOutArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"waimai/querywaimai1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
             if (arr.count == 0) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
                 [self.view addSubview:placeholderImage];
             }else{
-                for (NSDictionary *Dic in responseObject) {
+                for (NSDictionary *Dic in arr) {
                     if (Dic[@"shangjiaJutiweizhi"] == self.shangjiajutiweizhi) {
-                        [_fenleiArr addObject:Dic];
-                    }
-                }
-                NSLog(@"%ld",_fenleiArr.count);
-                if (_fenleiArr.count == 0) {
-                    ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
-                    [self.view addSubview:placeholderImage];
-                }else{
-                    for (NSDictionary *dic in _fenleiArr) {
                         MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
-                        [model setValuesForKeysWithDictionary:dic];
+                        [model setValuesForKeysWithDictionary:Dic];
                         [self.takeOutArr addObject:model];
                     }
+                }
+                if (self.takeOutArr.count == 0) {
+                    ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+                    [self.view addSubview:placeholderImage];
                 }
                 [self.tableView reloadData];
             }
@@ -107,7 +98,7 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.takeOutArr.count;
-//    return 10;
+
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *takeOut = @"takeOutId";
@@ -126,6 +117,10 @@ static BOOL result = YES;  // 下拉刷新只有第一次进的时候刷新
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TakeOutInformationController *informationVC = [[TakeOutInformationController alloc]init];
+    if (self.takeOutArr.count > 0) {
+        informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
+        informationVC.model = self.takeOutArr[indexPath.row];
+    }
     [self.navigationController pushViewController:informationVC animated:YES];
 }
 

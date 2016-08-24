@@ -19,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavigationStyle];
+//    [self setNavigationStyle];
+    self.navigationItem.title = @"热门招聘";
     [self addTableViewHeaderView];
     self.jobArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
@@ -74,8 +75,6 @@
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
-        
-        
     });
     
 }

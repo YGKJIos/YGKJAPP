@@ -74,7 +74,6 @@
         if (TGArr.count != 0) {
             
             for (NSDictionary *dic in TGArr) {
-                
                 MerchantInformationModel *model = [[MerchantInformationModel alloc]init];
                 
                 [model setValuesForKeysWithDictionary:dic];

@@ -23,11 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.MarkeArr = [[NSMutableArray alloc]init];
-
     self.fenleiArr = [NSMutableArray array];
-
-
-    self.navigationItem.title = @"美食";
     self.navigationItem.rightBarButtonItem = nil;
     [self MJrefreshLoadData];
 }
@@ -56,7 +52,6 @@
     self.tableView.mj_footer = footer;
     
 }
-
 // 下拉刷新的方法
 - (void)loadNewData{
     [self.MarkeArr removeAllObjects];
@@ -65,7 +60,7 @@
         NSString *url = @"meishi/querymeishi1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             if (responseObject == nil) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.tableView.frame];
                 [self.view addSubview:placeholderImage];
             }else{
                 for (NSDictionary *dic in responseObject) {
@@ -75,7 +70,6 @@
                         [_fenleiArr addObject:dic];
                     }
                 }
-                NSLog(@"fenleiArr : %@", _fenleiArr);
                 if (_fenleiArr.count == 0) {
                     ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
                     [self.view addSubview:placeholderImage];
@@ -85,7 +79,7 @@
                     [model setValuesForKeysWithDictionary:dic];
                     [self.MarkeArr addObject:model];
                 }
-                }
+            }
                 [self.tableView reloadData];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -135,7 +129,10 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
-    merchantVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
+    if (self.MarkeArr.count > 0) {
+        MarketModel *model = self.MarkeArr[indexPath.row];
+        merchantVC.shopID = model.shangjiaId;
+    }
     [self.navigationController pushViewController:merchantVC animated:YES];
 }
 

@@ -24,7 +24,6 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
 
-#warning 狠狠狠狠...重要,别删 Don't delete
     _mapManager = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
     BOOL ret = [_mapManager start:@"R2tUfNSzjTbQvFhE9WTnB7t4Ly5ippiL"  generalDelegate:nil];

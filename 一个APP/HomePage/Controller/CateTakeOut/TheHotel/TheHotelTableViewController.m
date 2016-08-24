@@ -92,7 +92,7 @@
 - (void)addTableHeaderView
 {
 
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 190)];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
     headerView.backgroundColor = [UIColor redColor];
 //    
 //    // 日全房
@@ -168,7 +168,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
      CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc]init];
-    detailVC.navigationItem.title = @"宾馆详情";
+    detailVC.navigationItem.title = [self.HotelArr[indexPath.row] shangjiaName];
     detailVC.shopID = [self.HotelArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:detailVC animated:YES];
 }

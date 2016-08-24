@@ -13,19 +13,12 @@
 #import "DOPDropDownMenu.h"
 #import "MerchantInformationModel.h"
 
-static BOOL result = YES;
 
-
-@interface TakeOutTableViewController ()<DOPDropDownMenuDataSource, DOPDropDownMenuDelegate,ImageLabViewPushVCDelegate>
+@interface TakeOutTableViewController ()<ImageLabViewPushVCDelegate>
 {
     NSInteger _k;
 }
-@property (nonatomic, strong) NSArray *classifys;
 @property (nonatomic, strong) NSArray *cates;
-@property (nonatomic, strong) NSArray *movices;
-@property (nonatomic, strong) NSArray *hostels;
-@property (nonatomic, strong) NSArray *areas;
-@property (nonatomic, strong) NSArray *sorts;
 
 @property (nonatomic, strong)NSMutableArray *takeOutArr;
 
@@ -75,7 +68,7 @@ static BOOL result = YES;
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
             if (arr.count == 0) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
                 [self.view addSubview:placeholderImage];
             }else{
             
@@ -99,70 +92,6 @@ static BOOL result = YES;
     });
 }
 
-- (NSInteger)numberOfColumnsInMenu:(DOPDropDownMenu *)menu
-{
-    return 3;
-}
-
-- (NSInteger)menu:(DOPDropDownMenu *)menu numberOfRowsInColumn:(NSInteger)column
-{
-    if (column == 0) {
-        return self.classifys.count;
-    }else if (column == 1){
-        return self.areas.count;
-    }else {
-        return self.sorts.count;
-    }
-}
-
-- (NSString *)menu:(DOPDropDownMenu *)menu titleForRowAtIndexPath:(DOPIndexPath *)indexPath
-{
-    if (indexPath.column == 0) {
-        return self.classifys[indexPath.row];
-    } else if (indexPath.column == 1){
-        return self.areas[indexPath.row];
-    } else {
-        return self.sorts[indexPath.row];
-    }
-}
-
-- (NSInteger)menu:(DOPDropDownMenu *)menu numberOfItemsInRow:(NSInteger)row column:(NSInteger)column
-{
-    if (column == 0) {
-        if (row == 0) {
-            return self.cates.count;
-        } else if (row == 2){
-            return self.movices.count;
-        } else if (row == 3){
-            return self.hostels.count;
-        }
-    }
-    return 0;
-}
-
-- (NSString *)menu:(DOPDropDownMenu *)menu titleForItemsInRowAtIndexPath:(DOPIndexPath *)indexPath
-{
-    if (indexPath.column == 0) {
-        if (indexPath.row == 0) {
-            return self.cates[indexPath.item];
-        } else if (indexPath.row == 2){
-            return self.movices[indexPath.item];
-        } else if (indexPath.row == 3){
-            return self.hostels[indexPath.item];
-        }
-    }
-    return nil;
-}
-
-- (void)menu:(DOPDropDownMenu *)menu didSelectRowAtIndexPath:(DOPIndexPath *)indexPath
-{
-    if (indexPath.item >= 0) {
-        NSLog(@"点击了 %ld - %ld - %ld 项目",indexPath.column,indexPath.row,indexPath.item);
-    }else {
-        NSLog(@"点击了 %ld - %ld 项目",indexPath.column,indexPath.row);
-    }
-}
-
 - (void)addTableHeaderView
 {
     UIView *tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 228)];
@@ -171,6 +100,7 @@ static BOOL result = YES;
     [tableHeaderView addSubview:scrollView];
     NSArray *btnImage = @[@"waimai_meishi",@"waimei_xianhua",@"waimai_dangao",@"waimai_yaopin"];
     NSArray *titles = @[@"美食",@"鲜花",@"蛋糕",@"药品"];
+    self.cates = titles;
     for (int i = 0; i < 4; i++) {
         ImageAndLabView *view = [ImageAndLabView createViewNib];
         view.frame = CGRectMake(30+(40+WIDTH/4-40)*i,scrollView.height+ 10, 40, 40);
@@ -190,6 +120,7 @@ static BOOL result = YES;
 {
     TypeTakeOutTableViewController *typeTakeOutVC = [[TypeTakeOutTableViewController alloc]init];
     typeTakeOutVC.shangjiajutiweizhi = [NSString stringWithFormat:@"%ld", btn.tag - 100];
+    typeTakeOutVC.navigationItem.title = self.cates[btn.tag - 100];
     [self.navigationController pushViewController:typeTakeOutVC animated:YES];
 }
 #pragma mark - Table view data source

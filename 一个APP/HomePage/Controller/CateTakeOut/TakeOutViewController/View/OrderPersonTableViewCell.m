@@ -25,10 +25,10 @@
     }
     return self;
 }
-- (void)setOrderPersonCellStyle:(OrderPersonCell)orderPersonStyle
+- (void)setOrderPersonCellStyle:(OrderPersonCell)orderPersonStyle model:(MerchantInformationModel *)model
 {
     if (orderPersonStyle == InformationOrderPersonCell) {
-        [self addInformationOrderPersonCell];
+        [self addInformationOrderPersonCell:model];
     }else if (orderPersonStyle == PaymentOrderPersonCell)
     {
         [self addPaymentOrderPersonCell];
@@ -45,43 +45,46 @@
     }
 }
 // 添加订单用户的信息
-- (void)addInformationOrderPersonCell
+- (void)addInformationOrderPersonCell:(MerchantInformationModel *)model
 {
-    self.nameLabel = [UILabel newAutoLayoutView];
-    self.nameLabel.text = @"顾小龙";
-    self.nameLabel.textColor = BGcolor(78, 78, 78);
-    [self.contentView addSubview:self.nameLabel];
-    
-    self.sexLab = [UILabel newAutoLayoutView];
-    self.sexLab.text = @"男";
-    self.sexLab.textColor = BGcolor(78, 78, 78);
-    [self.contentView addSubview:self.sexLab];
-    
-    self.phoneNumLab = [UILabel newAutoLayoutView];
-    self.phoneNumLab.text = @"1234565432";
-    self.phoneNumLab.textColor = BGcolor(78, 78, 78);
-    [self.contentView addSubview:self.phoneNumLab];
+//    self.nameLabel = [UILabel newAutoLayoutView];
+//    self.nameLabel.text = @"顾小龙";
+//    self.nameLabel.textColor = BGcolor(78, 78, 78);
+//    [self.contentView addSubview:self.nameLabel];
+//    
+//    self.sexLab = [UILabel newAutoLayoutView];
+//    self.sexLab.text = @"男";
+//    self.sexLab.textColor = BGcolor(78, 78, 78);
+//    [self.contentView addSubview:self.sexLab];
+//    
+//    self.phoneNumLab = [UILabel newAutoLayoutView];
+//    self.phoneNumLab.text = @"1234565432";
+//    self.phoneNumLab.textColor = BGcolor(78, 78, 78);
+//    [self.contentView addSubview:self.phoneNumLab];
     
     self.addressLab = [UILabel newAutoLayoutView];
-    self.addressLab.text = @"南岗区花园街恒运大厦A座1024";
+    self.addressLab.text = @"请填写地址";
     self.addressLab.textColor = BGcolor(78, 78, 78);
     [self.contentView addSubview:self.addressLab];
+    if (model != nil) {
+        self.addressLab.text = model.shouhuoDizhi;
+    }
     
-    [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
-    [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-    [self.nameLabel autoSetDimensionsToSize:CGSizeMake(100, 20)];
-    
-    [self.sexLab autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.nameLabel withOffset:15];
-    [self.sexLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-    [self.sexLab autoSetDimensionsToSize:CGSizeMake(50, 20)];
-    
-    [self.phoneNumLab autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.sexLab withOffset:15];
-    [self.phoneNumLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-    [self.phoneNumLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
+//    [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:10];
+//    [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+//    [self.nameLabel autoSetDimensionsToSize:CGSizeMake(100, 20)];
+//    
+//    [self.sexLab autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.nameLabel withOffset:15];
+//    [self.sexLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+//    [self.sexLab autoSetDimensionsToSize:CGSizeMake(50, 20)];
+//    
+//    [self.phoneNumLab autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.sexLab withOffset:15];
+//    [self.phoneNumLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+//    [self.phoneNumLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
     
     [self.addressLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
-    [self.addressLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:41];
-    [self.addressLab autoSetDimensionsToSize:CGSizeMake(WIDTH, 20)];
+    [self.addressLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
+    [self.addressLab autoSetDimensionsToSize:CGSizeMake(WIDTH, 40)];
 }
 // 订单 选择支付的方式
 - (void)addPaymentOrderPersonCell
@@ -102,22 +105,23 @@
     [self.contentView addSubview:reduceLab];
     [reduceLab autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:onLineBtn withOffset:0 relation:NSLayoutRelationLessThanOrEqual];
     [reduceLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-//    reduceLab.text = @"立减10元";
     reduceLab.textColor = BGcolor(250, 83, 68);
     reduceLab.font = [UIFont systemFontOfSize:14];
     
-    UIButton *arriveBtn = [UIButton newAutoLayoutView];
-    [self.contentView addSubview:arriveBtn];
-    [arriveBtn autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:70];
-    [arriveBtn autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    [arriveBtn autoSetDimensionsToSize:CGSizeMake(120, 30)];
     
-    [arriveBtn setImage:[UIImage imageNamed:@"waimai_dingdan_weixuanzhong"] forState:UIControlStateNormal];
-    [arriveBtn setTitle:@"货到付款" forState:UIControlStateNormal];
-    arriveBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
-    [arriveBtn setTitleColor:[UIColor colorWithRed:(80)/255. green:(80)/255. blue:(80)/255. alpha:1] forState:UIControlStateNormal];
-    [arriveBtn addTarget:self action:@selector(arriveBtnAction:) forControlEvents:UIControlEventTouchUpInside];
-    self.arriveBtn = arriveBtn;
+#pragma mark - 货到付款
+//    UIButton *arriveBtn = [UIButton newAutoLayoutView];
+//    [self.contentView addSubview:arriveBtn];
+//    [arriveBtn autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:70];
+//    [arriveBtn autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+//    [arriveBtn autoSetDimensionsToSize:CGSizeMake(120, 30)];
+//    
+//    [arriveBtn setImage:[UIImage imageNamed:@"waimai_dingdan_weixuanzhong"] forState:UIControlStateNormal];
+//    [arriveBtn setTitle:@"货到付款" forState:UIControlStateNormal];
+//    arriveBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+//    [arriveBtn setTitleColor:[UIColor colorWithRed:(80)/255. green:(80)/255. blue:(80)/255. alpha:1] forState:UIControlStateNormal];
+//    [arriveBtn addTarget:self action:@selector(arriveBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+//    self.arriveBtn = arriveBtn;
     
 }
 - (void)arriveBtnAction:(UIButton *)btn
@@ -243,12 +247,10 @@
     [payBtn setTitle:@"确认下单" forState:UIControlStateNormal];
     payBtn.backgroundColor = BGcolor(65, 186, 206);
     [payBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [payBtn addTarget:self action:@selector(surePayOrder) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.payBtn = payBtn;
 }
-- (void)surePayOrder
-{
-    NSLog(@"lijixiadan");
-}
+
 
 - (void)awakeFromNib {
     // Initialization code

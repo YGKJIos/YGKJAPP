@@ -179,14 +179,12 @@
     }else{
         self.num += 1;
         NSInteger number = btn.tag-2000;
-        NSLog(@"number --- %ld" , number);
         self.foodView.orderNum.hidden = NO;
         UIButton *jianBtn = [self.view viewWithTag:number+1000];
         jianBtn.hidden = NO;
         UILabel *numlab = [self.view viewWithTag:number+3000];
         numlab.hidden = NO;
         numlab.text = [NSString stringWithFormat:@"%ld",self.num];
-        
     }
     
     self.textBtn = btn;
@@ -240,9 +238,7 @@
             self.titleText = @"饮品";
             for (int i = 0; i < self.allFoods.count; i++) {
                 MerchantInformationModel *model = self.allFoods[i];
-                NSLog(@"%d",i);
                 if ([model.waimaishipinLeixing isEqualToString:@"1"]){
-                    NSLog(@"类型：%@", model.waimaishipinLeixing);
                 [self.foodArr addObject:self.allFoods[i]];
                 }
             }
@@ -278,7 +274,6 @@
         if (self.titleText != nil) {
             titleLab.text = self.titleText;
         }
-        
         UIView *leftLine = [[UIView alloc]initWithFrame:CGRectMake(titleLab.x-40, headView.center.y, 40, 1)];
         leftLine.backgroundColor = BGcolor(65, 187, 206);
         [headView addSubview:leftLine];
@@ -310,7 +305,6 @@
     self.foodView = [AddFoodView CreateAddFoodView];
     [self.foodView setUserInteractionEnabled:YES];
     self.foodView.origin = CGPointMake(0, HEIGHT-113);
-    self.foodView.tag = 5000;
     self.foodView.width = WIDTH;
     self.foodView.height = 450;
     [self.foodView.orderMoneyBtn addTarget:self action:@selector(orderMoneyBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -328,7 +322,6 @@
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancel];
         [self presentViewController:alert animated:YES completion:nil];
-
     }else{
         ShoppingCartViewController *shopVC = [[ShoppingCartViewController alloc]init];
         shopVC.navigationItem.title = self.model.shangjiaName;

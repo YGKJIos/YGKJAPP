@@ -154,13 +154,13 @@
 
         }
     }
-
 }
 - (void)imageAndLableViewPush:(UIButton *)btn
 {
     CateTypeTableViewController *cateTypeVC = [[CateTypeTableViewController alloc]init];
     cateTypeVC.shangjiajutiweizhi = [NSString stringWithFormat:@"%ld", btn.tag - 100];
-    NSLog(@"cateTypeVC.shangjiajutiweizhi = %@", cateTypeVC.shangjiajutiweizhi);
+    cateTypeVC.navigationItem.title = self.titles[btn.tag-100];
+//    NSLog(@"cateTypeVC.shangjiajutiweizhi = %@", cateTypeVC.shangjiajutiweizhi);
     [self.navigationController pushViewController:cateTypeVC animated:YES];
 }
 //轮播图 点击代理方法
@@ -195,8 +195,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CateDetailsTableViewController *merchantVC = [[CateDetailsTableViewController alloc]init];
-    MarketModel *model = self.MarkeArr[indexPath.row];
-    merchantVC.shopID = model.shangjiaId;
+    if (self.MarkeArr.count > 0) {
+        
+        MarketModel *model = self.MarkeArr[indexPath.row];
+        merchantVC.shopID = model.shangjiaId;
+    }
     [self.navigationController pushViewController:merchantVC animated:YES];
 }
 

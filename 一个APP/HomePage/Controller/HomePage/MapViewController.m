@@ -115,12 +115,10 @@
         item.title = result.address;
         NSString* titleStr;
         NSString* showmeg;
-        titleStr = @"反向地理编码";
+        titleStr = @"当前位置";
         showmeg = [NSString stringWithFormat:@"%@",item.title];
-        NSLog(@"showmeg : %@",showmeg);
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
         [myAlertView show];
-        
     }
 }
 - (void)didReceiveMemoryWarning {

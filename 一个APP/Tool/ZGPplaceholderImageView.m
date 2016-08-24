@@ -21,9 +21,8 @@
 
 - (void)creatSubView
 {
-    self.placeholderImage = [[UIImageView alloc] initWithFrame:self.frame];
+    _placeholderImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
     _placeholderImage.image = [UIImage imageNamed:@"zhanwei.png"];
-    
     [self addSubview:_placeholderImage];
 }
 /*
