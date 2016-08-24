@@ -10,6 +10,7 @@
 #import "AllStylCollectionReusableView.h" // headerView设置
 #import "AllStylCollectionViewCell.h" // 自定义cell
 
+
 @interface AllStylViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *arr;
@@ -53,21 +54,16 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, self.view.size.height) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor whiteColor];
     
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     [self.view addSubview:self.tableView];
-    
-   
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.arr.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -84,13 +80,10 @@
     return cell;
     
 }
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 60;
 }
-
 // leftTableView点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -149,8 +142,6 @@
     [self.collectionView reloadData];
     NSLog(@"点毛线");
 }
-
-
 
 - (void)creatRightCollecTionView
 {
@@ -213,6 +204,10 @@
     [cell setImages:self.imageArr[indexPath.row] titles:self.arr1[indexPath.row]];
     
     return cell;
+    
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
     
 }
 

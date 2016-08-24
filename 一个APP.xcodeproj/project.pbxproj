@@ -34,6 +34,8 @@
 		59366BBF1D06872300BB445A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BBE1D06872300BB445A /* BaseViewController.m */; };
 		59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BC41D06CB8B00BB445A /* MessageTableViewCell.m */; };
 		59366BC71D06CB8B00BB445A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59366BC51D06CB8B00BB445A /* MessageTableViewCell.xib */; };
+		593C8EF91D6DA05700104229 /* SucceedPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 593C8EF71D6DA05700104229 /* SucceedPayViewController.m */; };
+		593C8EFA1D6DA05700104229 /* SucceedPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 593C8EF81D6DA05700104229 /* SucceedPayViewController.xib */; };
 		5940BC2B1D1A552900982820 /* FictionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940BC2A1D1A552900982820 /* FictionTableViewCell.m */; };
 		5940BC2D1D1A556400982820 /* FictionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5940BC2C1D1A556400982820 /* FictionView.xib */; };
 		5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5940BC2F1D1A8F6900982820 /* MenuTableViewCell.m */; };
@@ -382,6 +384,9 @@
 		59366BC31D06CB8B00BB445A /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		59366BC41D06CB8B00BB445A /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
 		59366BC51D06CB8B00BB445A /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		593C8EF61D6DA05700104229 /* SucceedPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SucceedPayViewController.h; sourceTree = "<group>"; };
+		593C8EF71D6DA05700104229 /* SucceedPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SucceedPayViewController.m; sourceTree = "<group>"; };
+		593C8EF81D6DA05700104229 /* SucceedPayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SucceedPayViewController.xib; sourceTree = "<group>"; };
 		5940BC291D1A552900982820 /* FictionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FictionTableViewCell.h; sourceTree = "<group>"; };
 		5940BC2A1D1A552900982820 /* FictionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FictionTableViewCell.m; sourceTree = "<group>"; };
 		5940BC2C1D1A556400982820 /* FictionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FictionView.xib; sourceTree = "<group>"; };
@@ -943,25 +948,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				2A74C0551D64929B00EEBE69 /* libstdc++.6.0.9.tbd in Frameworks */,
-				2A74C0531D64929000EEBE69 /* CoreTelephony.framework in Frameworks */,
-				2A74C0511D64928500EEBE69 /* libsqlite3.0.tbd in Frameworks */,
-				2A74C04F1D64926100EEBE69 /* Security.framework in Frameworks */,
-				2A74C04D1D64925500EEBE69 /* CoreGraphics.framework in Frameworks */,
-				2A74C04B1D64924B00EEBE69 /* SystemConfiguration.framework in Frameworks */,
-				2A74C0491D64923500EEBE69 /* OpenGLES.framework in Frameworks */,
-				2A74C0471D64922A00EEBE69 /* QuartzCore.framework in Frameworks */,
-				2A74C0451D64921200EEBE69 /* CoreLocation.framework in Frameworks */,
-				2A74C0431D6491BA00EEBE69 /* BaiduMapAPI_Base.framework in Frameworks */,
-
 				2AF3FD691D6D988A0092C894 /* libstdc++.6.0.9.tbd in Frameworks */,
 				2AF3FD671D6D98760092C894 /* libsqlite3.0.tbd in Frameworks */,
 				2AF3FD651D6D98520092C894 /* Security.framework in Frameworks */,
 				2AF3FD631D6D982C0092C894 /* OpenGLES.framework in Frameworks */,
 				2AF3FD611D6D98130092C894 /* CoreLocation.framework in Frameworks */,
-				59F7E9F91D62B60D004E6DB2 /* SystemConfiguration.framework in Frameworks */,
-
 				59F7EA091D62B68D004E6DB2 /* CoreMotion.framework in Frameworks */,
 				59F7EA071D62B680004E6DB2 /* CFNetwork.framework in Frameworks */,
 				59F7EA051D62B673004E6DB2 /* Foundation.framework in Frameworks */,
@@ -1670,6 +1661,9 @@
 				59D07AF31D6592170099C1DA /* openssl */,
 				59D07B3F1D6592170099C1DA /* Order.h */,
 				59D07B401D6592170099C1DA /* Order.m */,
+				593C8EF61D6DA05700104229 /* SucceedPayViewController.h */,
+				593C8EF71D6DA05700104229 /* SucceedPayViewController.m */,
+				593C8EF81D6DA05700104229 /* SucceedPayViewController.xib */,
 				59D07B411D6592170099C1DA /* Util */,
 			);
 			path = AliPay;
@@ -2314,10 +2308,8 @@
 		59FFB6991D0501F000071E0E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = llb;
-
 				TargetAttributes = {
 					59FFB6A01D0501F000071E0E = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -2382,6 +2374,7 @@
 				D842DF311D224642008A54B7 /* icon_chose_arrow_sel@2x.png in Resources */,
 				D84923A81D4B36C1002ED1FF /* SetFooterView.xib in Resources */,
 				D853E4791D3C853400C1FF9D /* postViewController.xib in Resources */,
+				593C8EFA1D6DA05700104229 /* SucceedPayViewController.xib in Resources */,
 				D86B7D6A1D5C103400380F49 /* PhoneTableViewCell.xib in Resources */,
 				5940BC2D1D1A556400982820 /* FictionView.xib in Resources */,
 				594591081D3CAA5D00FAF565 /* AddressAndMOdificationViewController.xib in Resources */,
@@ -2575,6 +2568,7 @@
 				59C781B11D4597A400BA18CA /* PlayerGroupCollectionReusableView.m in Sources */,
 				D8552ABE1D444EB100C74C49 /* carWashTableViewController.m in Sources */,
 				594590031D3C8A1C00FAF565 /* TravelModel.m in Sources */,
+				593C8EF91D6DA05700104229 /* SucceedPayViewController.m in Sources */,
 				59D07B591D6592170099C1DA /* MD5DataSigner.m in Sources */,
 				594590F41D3CAA5D00FAF565 /* AllStylCollectionReusableView.m in Sources */,
 				594590931D3CA75D00FAF565 /* MarketViewController.m in Sources */,

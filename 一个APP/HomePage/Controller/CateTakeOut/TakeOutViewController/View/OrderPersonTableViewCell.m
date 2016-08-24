@@ -65,6 +65,9 @@
     self.addressLab = [UILabel newAutoLayoutView];
     self.addressLab.text = @"请填写地址";
     self.addressLab.textColor = BGcolor(78, 78, 78);
+    self.addressLab.font = [UIFont systemFontOfSize:15];
+    self.addressLab.numberOfLines = 0;
+    [self.addressLab sizeToFit];
     [self.contentView addSubview:self.addressLab];
     if (model != nil) {
         self.addressLab.text = model.shouhuoDizhi;
@@ -82,9 +85,9 @@
 //    [self.phoneNumLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
 //    [self.phoneNumLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
     
-    [self.addressLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
+    [self.addressLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:15];
     [self.addressLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:15];
-    [self.addressLab autoSetDimensionsToSize:CGSizeMake(WIDTH, 40)];
+    [self.addressLab autoSetDimensionsToSize:CGSizeMake(WIDTH-60, 55)];
 }
 // 订单 选择支付的方式
 - (void)addPaymentOrderPersonCell
