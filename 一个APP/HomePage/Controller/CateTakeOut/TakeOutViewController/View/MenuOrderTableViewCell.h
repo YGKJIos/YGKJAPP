@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface MenuOrderTableViewCell : UITableViewCell
 @property (nonatomic, strong)UILabel *foodName;

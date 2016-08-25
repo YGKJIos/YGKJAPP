@@ -33,6 +33,7 @@
 @property (nonatomic, copy)NSString *titleText; // 右边tableView  sectionView
 @property (nonatomic, assign)UIButton *textBtn;
 @property (nonatomic, strong)AddFoodView *foodView;
+@property (nonatomic, strong)NSMutableArray *selectArr;
 
 @end
 
@@ -51,6 +52,13 @@
         self.allFoods = [[NSMutableArray alloc]init];
     }
     return _allFoods;
+}
+-(NSMutableArray *)selectArr
+{
+    if (!_selectArr) {
+        self.selectArr = [[NSMutableArray alloc]init];
+    }
+    return _selectArr;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -137,17 +145,22 @@
     if (tableView == self.leftTableView) {
         static NSString *orderID = @"orderID";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:orderID];
-       
         cell.textLabel.text = self.listArr[indexPath.row];
         return cell;
     }else if(tableView == self.rightTableView){
         static NSString *rightID = @"rightID";
         TakeOutRightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:rightID forIndexPath:indexPath];
-//        cell.jiaBtn = nil;
-//        cell.jianBtn = nil;
-//        if (self.foodArr.count > 0) {
-            [cell setTakeOutRightTableModel:self.foodArr[indexPath.row]];
-//        }
+        if (self.foodArr.count > 0) {
+            MerchantInformationModel *model = self.foodArr[indexPath.row];
+            [cell setTakeOutRightTableModel:model];
+            if (model.gwsz.integerValue == 0) {
+                cell.numberLab.hidden = YES;
+                cell.jianBtn.hidden = YES;
+            } else {
+                cell.numberLab.hidden = NO;
+                cell.jianBtn.hidden = NO;
+            }
+        }
         cell.jianBtn.tag = 1000+indexPath.row;
         cell.jiaBtn.tag = 2000+indexPath.row;
         cell.numberLab.tag = 3000+indexPath.row;
@@ -162,70 +175,68 @@
 #pragma mark - 加、减按钮的点击方法
 - (void)addBtnClick:(UIButton *)btn
 {
-    _k++;
-    if (self.textBtn == btn) {
-        ++self.num;
-        NSInteger number = btn.tag-2000;
-        NSLog(@"number --- %ld" , number);
-        if (self.num > 0){
-            
-            self.foodView.orderNum.hidden = NO;
-            UIButton *jianBtn = [self.view viewWithTag:number+1000];
-            jianBtn.hidden = NO;
-            UILabel *numlab = [self.view viewWithTag:number+3000];
-            numlab.hidden = NO;
-            numlab.text = [NSString stringWithFormat:@"%ld",self.num];
-        }
-    }else{
-        self.num += 1;
-        NSInteger number = btn.tag-2000;
+    NSInteger number = btn.tag-2000;
+    MerchantInformationModel *model = self.foodArr[number];
+    model.gwsz = [NSString stringWithFormat:@"%ld",model.gwsz.integerValue + 1];
+    if (model.gwsz.integerValue > 0){
         self.foodView.orderNum.hidden = NO;
         UIButton *jianBtn = [self.view viewWithTag:number+1000];
         jianBtn.hidden = NO;
         UILabel *numlab = [self.view viewWithTag:number+3000];
         numlab.hidden = NO;
-        numlab.text = [NSString stringWithFormat:@"%ld",self.num];
+        numlab.text = [NSString stringWithFormat:@"%@",model.gwsz];
+    } else {
+        self.foodView.orderNum.hidden = NO;
+        UIButton *jianBtn = [self.view viewWithTag:number+1000];
+        jianBtn.hidden = NO;
+        UILabel *numlab = [self.view viewWithTag:number+3000];
+        numlab.hidden = NO;
+        numlab.text = [NSString stringWithFormat:@"%@",model.gwsz];
     }
-    
-    self.textBtn = btn;
-    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld", _k];
-    //    UITableViewCell * cell = (UITableViewCell *)[[btn superview] superview];
-//    NSIndexPath * path = [self.rightTableView indexPathForCell:cell];
-//    NSLog(@"index row%ld", [path row]);
-//    ++self.num;
-//    if (self.num >= 1) {
-//        UIButton *jianBtn = [self.view viewWithTag:path.row+1000];
-//        jianBtn.hidden = NO;
-//        UILabel *numlab = [self.view viewWithTag:path.row+3000];
-//        numlab.hidden = NO;
-//        numlab.text = [NSString stringWithFormat:@"%ld",self.num];
-//    } 
+    [self.foodArr replaceObjectAtIndex:number withObject:model];
+     _k++;
+    [self.selectArr addObject:model];
+    NSLog(@"%@" , self.selectArr);
+    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld",self.selectArr.count];
 }
 - (void)jianBtnClick:(UIButton *)btn
 {
-    UITableViewCell * cell = (UITableViewCell *)[[btn superview] superview];
-    NSIndexPath * path = [self.rightTableView indexPathForCell:cell];
-    if (self.num <= 0) {
-        return;
-    }else{
-        --self.num;
-        UILabel *numlab = [self.view viewWithTag:path.row+3000];
-        numlab.text = [NSString stringWithFormat:@"%ld",self.num];
-        if (self.num == 0) {
-            UIButton *jianBtn = [self.view viewWithTag:path.row+1000];
-            jianBtn.hidden = YES;
-            numlab.hidden = YES;
-        }
+    NSInteger number = btn.tag-1000;
+    MerchantInformationModel *model = self.foodArr[number];
+    model.gwsz = [NSString stringWithFormat:@"%ld",model.gwsz.integerValue - 1];
+    if (model.gwsz.integerValue > 0){
+        UIButton *jianBtn = [self.view viewWithTag:number+1000];
+        jianBtn.hidden = NO;
+        UILabel *numlab = [self.view viewWithTag:number+3000];
+        numlab.hidden = NO;
+        numlab.text = [NSString stringWithFormat:@"%@",model.gwsz];
+    } else {
+        UIButton *jianBtn = [self.view viewWithTag:number+1000];
+        jianBtn.hidden = YES;
+        UILabel *numlab = [self.view viewWithTag:number+3000];
+        numlab.hidden = YES;
+        numlab.text = [NSString stringWithFormat:@"%@",model.gwsz];
+        
     }
+    [self.foodArr replaceObjectAtIndex:number withObject:model];
     _k--;
-    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld", _k];
+    if (self.selectArr.count > 0) {
+        [self.selectArr removeObjectAtIndex:number];
+    }
+    if (self.selectArr.count <= 0) {
+        self.foodView.orderNum.hidden = YES;
+    }
+    NSLog(@"%@" , self.selectArr);
+    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld", self.selectArr.count];
+    
 }
 #pragma mark - tableView 点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.foodArr removeAllObjects];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (tableView == self.leftTableView) {
+        [self.foodArr removeAllObjects];
         if (indexPath.row == 0) {
             self.titleText= @"食品";
             for (int i = 0; i < self.allFoods.count; i++) {
@@ -326,6 +337,7 @@
     }else{
         ShoppingCartViewController *shopVC = [[ShoppingCartViewController alloc]init];
         shopVC.navigationItem.title = self.model.shangjiaName;
+        shopVC.selectArr = self.selectArr;
         [self.navigationController pushViewController:shopVC animated:YES];
     }
 }

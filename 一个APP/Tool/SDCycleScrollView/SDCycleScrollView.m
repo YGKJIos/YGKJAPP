@@ -199,7 +199,6 @@ NSString * const ID = @"cycleCell";
 - (void)setImageURLStringsGroup:(NSArray *)imageURLStringsGroup
 {
     _imageURLStringsGroup = imageURLStringsGroup;
-    
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:imageURLStringsGroup.count];
     for (int i = 0; i < imageURLStringsGroup.count; i++) {
         UIImage *image = [[UIImage alloc] init];

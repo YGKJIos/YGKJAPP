@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ShoppingCartViewController : UIViewController
+@property (nonatomic, strong)NSMutableArray *selectArr;
 
 @end

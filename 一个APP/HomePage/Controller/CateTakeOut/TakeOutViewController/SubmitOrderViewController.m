@@ -21,7 +21,6 @@
 #import "ALiPaysuccessViewController.h" // 支付成功返回界面
 @interface SubmitOrderViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,addressInformation,passDelegate>
 
-@property (nonatomic, strong)NSArray *arr;
 @property (nonatomic, strong)UIControl *control;
 @property (nonatomic, strong)UIView *numPeopleView;
 @property (nonatomic, strong)MerchantInformationModel *model;
@@ -35,7 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"提交订单";
-    self.arr = @[@"鱼丸粗面",@"墨鱼丸粗面",@"鱼丸油面"];
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.delegate = self;
@@ -54,7 +52,8 @@
         return 2;
     }
     if (section == 3) {
-        return 4;
+        return 3;
+//        return 4;
     }
     if (section == 4) {
         return 2;
@@ -84,20 +83,21 @@
         }
         if (indexPath.row == 1) {
             MenuOrderTableViewCell *menuCell = [[MenuOrderTableViewCell alloc]init];
-            [menuCell setMenuArr:self.arr];
+            [menuCell setMenuArr:self.selectArr];
             menuCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return menuCell;
             
         }
+//        if (indexPath.row == 2) {
+//            OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
+//            [cell setOrderPersonCellStyle:FavorableCell model:nil];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            return cell;
+//        }
         if (indexPath.row == 2) {
             OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
-            [cell setOrderPersonCellStyle:FavorableCell model:nil];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            return cell;
-        }
-        if (indexPath.row == 3) {
-            OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
             [cell setOrderPersonCellStyle:TotalCell model:nil];
+            [cell setTotalCell:self.selectArr];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }
@@ -113,6 +113,7 @@
             OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
             [cell setOrderPersonCellStyle:SurePayOrderCell model:nil];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell setUsePayCell:self.selectArr];
             [cell.payBtn addTarget:self action:@selector(surePayOrder) forControlEvents:UIControlEventTouchUpInside];
             return cell;
         }
@@ -147,7 +148,7 @@
     }
     if (indexPath.section == 3) {
         if (indexPath.row == 1) {
-            return (self.arr.count *30);
+            return (self.selectArr.count *30);
         }
     }
     return 49;
@@ -320,6 +321,7 @@
     }
     return resultStr;
 }
+
 - (void)passValue:(NSString *)string
 {
     _beizhu = string;

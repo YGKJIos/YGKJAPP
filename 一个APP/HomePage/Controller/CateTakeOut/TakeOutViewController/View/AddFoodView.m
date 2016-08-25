@@ -30,7 +30,7 @@
         
         UILabel *orderLab = [[UILabel alloc]initWithFrame:CGRectMake(shopImage.x+shopImage.width+10, 14.5, WIDTH - 145, 20)];
         orderLab.textColor = BGcolor(143, 143, 143);
-        orderLab.text = @"您还未选择任何菜品";
+        orderLab.text = @"查看您选择的菜品";
         [self addSubview:orderLab];
         
         UILabel *orderMoneyLab = [[UILabel alloc]initWithFrame:CGRectMake(WIDTH-145, 0, 145, 49)];
