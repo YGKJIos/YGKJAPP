@@ -14,7 +14,10 @@
 #import "orderViewController.h"
 #import "RefundTableViewController.h"
 #import "GoEvaluateViewController.h"
-@interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate,orderDelegate,twoBtnDelegate,thirdBtnDelegate>
+#import "waitUseTableViewController.h"
+//#import "groupShopViewController.h"
+#import "groupShopTableViewController.h"
+@interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate,orderDelegate,twoBtnDelegate,thirdBtnDelegate,firstBtnDelegate>
 @property (nonatomic, strong)NSArray *images;
 @property (nonatomic, strong)NSArray *titles;
 
@@ -94,6 +97,7 @@
             cell.delegate = self;
             cell.twoDelegate = self;
             cell.thirdDelegate = self;
+            cell.firstDelegate = self;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -130,13 +134,20 @@
 
 - (void) orderDelegate
 {
-        RefundTableViewController *refunVC = [[RefundTableViewController alloc] init];
-        [self.navigationController pushViewController:refunVC animated:YES];
+    groupShopTableViewController *shopVC = [[groupShopTableViewController alloc] init];
+    [self.navigationController pushViewController:shopVC animated:YES];
 }
 
+- (void) firstDelegate
+{
+    NSLog(@"点地啊你单大大你");
+}
 
 - (void) twoDelegate
 {
+    waitUseTableViewController *useVC = [[waitUseTableViewController alloc] init]
+    ;
+    [self.navigationController pushViewController:useVC animated:YES];
     
     NSLog(@"wieufgusdb oviuhQBKHBGFPUSJKBCGOIUEFJ");
 }
@@ -147,8 +158,6 @@
     [self.navigationController pushViewController:evaluaVC animated:YES];
     NSLog(@"ddddddddd555555555555555555555555555588");
 }
-
-
 
 
 
