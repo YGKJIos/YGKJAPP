@@ -18,14 +18,15 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "Order.h"
 #import "DataSigner.h"
-
-@interface SubmitOrderViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,addressInformation>
+#import "ALiPaysuccessViewController.h" // 支付成功返回界面
+@interface SubmitOrderViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,addressInformation,passDelegate>
 
 @property (nonatomic, strong)UIControl *control;
 @property (nonatomic, strong)UIView *numPeopleView;
 @property (nonatomic, strong)MerchantInformationModel *model;
 @property (nonatomic, strong)UITableView *tableView;
-@property (nonatomic, strong)UITextField *manNumText; // 填写用餐人数
+@property (nonatomic, strong)NSString *beizhu;
+@property (nonatomic, strong)UITextField *numTextF;
 @end
 
 @implementation SubmitOrderViewController
@@ -121,8 +122,8 @@
         UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"beizhuID"];
         cell.textLabel.text = @"用餐人数";
         cell.detailTextLabel.text = @"方便商家为您配送餐具";
-        if (self.manNumText.text != nil) {
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@位用餐人数",self.manNumText.text];
+        if (self.numTextF.text != nil) {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@位用餐人数",self.numTextF.text];
         }
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -132,6 +133,9 @@
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"beizhuID"];
     cell.textLabel.text = @"备注";
     cell.detailTextLabel.text = @"选填（口味，菜品要求等）";
+    if (_beizhu.length != 0) {
+        cell.detailTextLabel.text = _beizhu;
+    }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -171,6 +175,7 @@
         if (indexPath.row == 0) {
             RemarkViewController *remarkVC = [[RemarkViewController alloc]init];
             remarkVC.title = @"备注";
+            remarkVC.delegate = self;
             [self.navigationController pushViewController:remarkVC animated:YES];
         }
         if (indexPath.row == 1) {
@@ -202,18 +207,18 @@
     [textLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:WIDTH/2-144];
     [textLab autoSetDimensionsToSize:CGSizeMake(144, 20)];
     
-    UITextField *numTextF = [UITextField newAutoLayoutView];
-    [self.numPeopleView addSubview:numTextF];
-    numTextF.backgroundColor = BGcolor(223, 223, 223);
-    numTextF.text = @"1";
-    numTextF.delegate = self;
-    numTextF.layer.masksToBounds = YES;
-    numTextF.keyboardType = UIKeyboardTypeNumberPad;
-    numTextF.layer.cornerRadius = 5;
-    numTextF.textAlignment = NSTextAlignmentCenter;
-    [numTextF autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:textLab withOffset:5 relation:NSLayoutRelationEqual];
-    [numTextF autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    [numTextF autoSetDimensionsToSize:CGSizeMake(92, 30)];
+    self.numTextF = [UITextField newAutoLayoutView];
+    [self.numPeopleView addSubview:self.numTextF];
+    self.numTextF.backgroundColor = BGcolor(223, 223, 223);
+    self.numTextF.text = @"1";
+    self.numTextF.delegate = self;
+    self.numTextF.layer.masksToBounds = YES;
+    self.numTextF.keyboardType = UIKeyboardTypeNumberPad;
+    self.numTextF.layer.cornerRadius = 5;
+    self.numTextF.textAlignment = NSTextAlignmentCenter;
+    [self.numTextF autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:textLab withOffset:5 relation:NSLayoutRelationEqual];
+    [self.numTextF autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    [self.numTextF autoSetDimensionsToSize:CGSizeMake(92, 30)];
     
     UILabel *people = [UILabel newAutoLayoutView];
     people.text = @"人";
@@ -221,7 +226,7 @@
     people.textColor = BGcolor(65, 186, 206);
     [self.numPeopleView addSubview:people];
     [people autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    [people autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:numTextF withOffset:5 relation:NSLayoutRelationEqual];
+    [people autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.numTextF withOffset:5 relation:NSLayoutRelationEqual];
     [people autoSetDimensionsToSize:CGSizeMake(20, 20)];
     
 }
@@ -295,6 +300,10 @@
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
             //【callback处理支付结果】
             NSLog(@"reslut = %@",resultDic);
+            if ([resultDic[@"resultStatus"] isEqualToString:@"9000"]) {
+                ALiPaysuccessViewController *success = [[ALiPaysuccessViewController alloc] init];
+                [self.navigationController pushViewController:success animated:YES];
+            }
         }];
     }
 }
@@ -311,6 +320,12 @@
         [resultStr appendString:oneStr];
     }
     return resultStr;
+}
+
+- (void)passValue:(NSString *)string
+{
+    _beizhu = string;
+    [_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
