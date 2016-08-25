@@ -29,7 +29,8 @@
     [super viewDidLoad];
     
     // 设置navigation 的样式
-    [self addNavigationView];
+//    [self addNavigationView];
+    self.navigationItem.title = @"智慧同城";
     HomePageTableViewController *homeTabVC = [[HomePageTableViewController alloc]init];
     homeTabVC.tableView.y = 0;
     homeTabVC.tableView.height = HEIGHT;

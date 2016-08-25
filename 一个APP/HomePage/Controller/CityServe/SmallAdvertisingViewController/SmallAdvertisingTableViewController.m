@@ -25,6 +25,7 @@
     button.height = 40;
     button.titleLabel.font = [UIFont systemFontOfSize:16];
     [button setTitle:@"发布广告" forState:UIControlStateNormal];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 0)];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(fabuguanggao) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItme = [[UIBarButtonItem alloc]initWithCustomView:button];
