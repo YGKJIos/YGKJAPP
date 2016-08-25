@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
+
+@protocol addressInformation <NSObject>
+
+- (void)selectAddressInformation:(MerchantInformationModel *)model;
+
+@end
 
 @interface EditingAddressViewController : UIViewController
+@property (nonatomic, assign)id<addressInformation>delegate;
 
 @end

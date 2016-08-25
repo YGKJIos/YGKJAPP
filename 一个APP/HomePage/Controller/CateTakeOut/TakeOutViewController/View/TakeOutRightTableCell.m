@@ -7,14 +7,18 @@
 //
 
 #import "TakeOutRightTableCell.h"
-
+static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
 @implementation TakeOutRightTableCell
 
 static NSInteger num; //点击增加 菜品份数计数
 
-- (void)setTakeOutRightTableModel:(TakeOutModel *)model
+- (void)setTakeOutRightTableModel:(MerchantInformationModel *)model
 {
-    
+    NSString *url = [NSString stringWithFormat:@"%@%@",bendi,model.shangjiaTouxiang];
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
+    self.sellNumLab.text = model.waimaishipinYishou;
+    self.nameLab.text = model.waimaishipinName;
+    self.pirceLab.text = [NSString stringWithFormat:@"¥%@" , model.waimaishipinJiage];
 }
 
 - (void)addBtnClickAction:(NSIndexPath *)indexPath

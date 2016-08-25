@@ -8,7 +8,7 @@
 
 #import "TakeTableViewCell.h"
 
-static NSString *beforeUrl = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *beforeUrl = @"http://139.129.209.189:8080/shangcheng/";
 
 @implementation TakeTableViewCell
 
@@ -20,17 +20,17 @@ static NSString *beforeUrl = @"http://192.168.1.88:8080/shangcheng/";
     [cell.salesLab sizeToFit];
     return cell;
 }
-- (void)setTakeOutModel:(TakeOutModel *)model
+- (void)setTakeOutModel:(MerchantInformationModel *)model
 {
     if (model) {
         NSString *url = [NSString stringWithFormat:@"%@%@",beforeUrl,model.shangjiaTouxiang];
         [self.foodImageView sd_setImageWithURL:[NSURL URLWithString:url]];
         self.shopName.text = model.shangjiaName;
         self.gradeLab.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
-        self.moneyLab.text = model.waimaiQisongjia;
+        self.moneyLab.text = model.qisongjia;
         self.salesLab.text = model.shangjiaTongzhi;
         
-        NSString *sendStr = [NSString stringWithFormat:@"¥%@ 配送费",model.waimaiPeisongfei];
+        NSString *sendStr = [NSString stringWithFormat:@"¥%@ 配送费",model.peisongfei];
         NSMutableDictionary *strDic = [NSMutableDictionary dictionaryWithObject:[UIFont systemFontOfSize:15] forKey:NSFontAttributeName];
         NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:sendStr];
         [str addAttributes:strDic range:NSMakeRange(1, 1)];

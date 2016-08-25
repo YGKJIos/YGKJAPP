@@ -15,6 +15,9 @@
 #import "MerchantInformationModel.h"
 
 @interface GameTableViewController ()<ImageLabViewPushVCDelegate>
+{
+    NSInteger _k;
+}
 @property (nonatomic, strong) NSArray *classifys;
 @property (nonatomic, strong) NSArray *cates;
 @property (nonatomic, strong) NSArray *movices;
@@ -76,13 +79,17 @@
         NSString *url = @"xiuxianyule/queryxiuxianyule.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
             for (NSDictionary *dic in arr) {
                 MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
             [self.tableView reloadData];
-            
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
         }];
     });
@@ -113,16 +120,18 @@
             view.delegate = self;
             view.frame = CGRectMake(30+(40+WIDTH/
                                         4-40)*i,scroll.height+ 10+(40+40)*j, 40, 40);
-            [view setImages:images[num] names:titles[num]];
+            [view setImages:images[num] names:titles[num]tag: 100 + _k];
             num++;
             [headerView addSubview:view];
+            _k ++;
         }
     }
     self.tableView.tableHeaderView = headerView;
 }
-- (void)imageAndLableViewPush
+- (void)imageAndLableViewPush:(UIButton *)btn
 {
     GameTypeTableViewController *typeVC = [[GameTypeTableViewController alloc]init];
+    typeVC.shangjiajutiweizhi = [NSString stringWithFormat:@"%ld", btn.tag - 100];
     [self.navigationController pushViewController:typeVC animated:YES];
 }
 

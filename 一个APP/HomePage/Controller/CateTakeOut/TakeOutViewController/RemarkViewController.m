@@ -10,7 +10,7 @@
 #import "RemarkViewController.h"
 
 @interface RemarkViewController ()<UITextFieldDelegate>
-
+@property (nonatomic, strong)UITextField *remarkText;
 @end
 
 @implementation RemarkViewController
@@ -20,25 +20,33 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UITextField *remarkText = [UITextField newAutoLayoutView];
-    [self.view addSubview:remarkText];
-    remarkText.placeholder = @"请写下自己的口味，需求等要求，已便商家备餐";
-    [remarkText autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
-    [remarkText autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
-    [remarkText autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
-    [remarkText autoSetDimension:ALDimensionHeight toSize:160];
+    self.remarkText = [UITextField newAutoLayoutView];
+    [self.view addSubview:_remarkText];
+    _remarkText.placeholder = @"请写下自己的口味，需求等要求，已便商家备餐";
+    [_remarkText autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
+    [_remarkText autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
+    [_remarkText autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+    [_remarkText autoSetDimension:ALDimensionHeight toSize:160];
     
-    [remarkText drawPlaceholderInRect:CGRectMake(0, 0, remarkText.width, 20)];
-    remarkText.backgroundColor = BGcolor(235, 235, 235);
-    remarkText.layer.masksToBounds = YES;
-    remarkText.layer.cornerRadius = 5;
+    [_remarkText drawPlaceholderInRect:CGRectMake(0, 0, _remarkText.width, 20)];
+    _remarkText.backgroundColor = BGcolor(235, 235, 235);
+    _remarkText.layer.masksToBounds = YES;
+    _remarkText.layer.cornerRadius = 5;
+    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(fanhui) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
-
+- (void)fanhui
+{
+    [self.delegate passValue:_remarkText.text];
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"fahui");
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

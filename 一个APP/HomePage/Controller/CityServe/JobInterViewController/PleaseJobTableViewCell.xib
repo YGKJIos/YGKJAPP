@@ -43,7 +43,7 @@
                         <rect key="frame" x="242" y="66" width="10" height="8"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文案策划" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLK-gW-ZGC">
-                        <rect key="frame" x="121" y="25" width="68" height="15"/>
+                        <rect key="frame" x="121" y="25" width="142" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="68" id="5Qh-Cn-myd"/>
                             <constraint firstAttribute="height" constant="15" id="lSY-4n-Ex3"/>
@@ -51,6 +51,11 @@
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5Qh-Cn-myd"/>
+                            </mask>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="互通物流有限公司 （50人）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsP-zr-Mcb">
                         <rect key="frame" x="121" y="40" width="148" height="21"/>
@@ -138,6 +143,7 @@
                     <constraint firstItem="NTX-CH-XWU" firstAttribute="leading" secondItem="HpX-Nh-QYd" secondAttribute="trailing" constant="3" id="MTY-DQ-pfR"/>
                     <constraint firstItem="h8i-rB-9gD" firstAttribute="top" secondItem="DMh-sU-5KP" secondAttribute="bottom" constant="8" id="MqP-1v-JUu"/>
                     <constraint firstItem="N5b-nk-TCE" firstAttribute="leading" secondItem="aFn-dU-RBo" secondAttribute="trailing" constant="20" id="St6-sM-qE1"/>
+                    <constraint firstItem="rCu-Pk-lOL" firstAttribute="leading" secondItem="bLK-gW-ZGC" secondAttribute="trailing" constant="10" id="Yph-PH-TWn"/>
                     <constraint firstAttribute="trailingMargin" secondItem="rCu-Pk-lOL" secondAttribute="trailing" id="aLU-yu-v8J"/>
                     <constraint firstItem="PsP-zr-Mcb" firstAttribute="leading" secondItem="aFn-dU-RBo" secondAttribute="trailing" constant="6" id="aTB-OS-vJk"/>
                     <constraint firstItem="789-3h-njT" firstAttribute="leading" secondItem="aFn-dU-RBo" secondAttribute="trailing" constant="8" id="dgn-Qu-7a7"/>

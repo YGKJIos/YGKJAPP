@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface AddFoodView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *shoppingImage;//购物车图片
@@ -15,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *orderNum;
 
 + (AddFoodView *)CreateAddFoodView;
+- (void)setModel:(MerchantInformationModel *)model;
 
 @end

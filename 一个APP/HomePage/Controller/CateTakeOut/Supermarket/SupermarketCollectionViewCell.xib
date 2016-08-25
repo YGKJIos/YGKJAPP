@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,6 +15,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chaoshi_xiaotu" translatesAutoresizingMaskIntoConstraints="NO" id="3dA-Ne-STp">
                         <rect key="frame" x="56" y="8" width="89" height="60"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="89" id="GRm-jf-Ir2"/>
                             <constraint firstAttribute="height" constant="60" id="dFs-4R-7E3"/>
@@ -22,6 +23,7 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chaoshi_baoyou" translatesAutoresizingMaskIntoConstraints="NO" id="hLF-53-SI6">
                         <rect key="frame" x="135" y="100" width="25" height="12"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="7PZ-4X-EAX"/>
                             <constraint firstAttribute="height" constant="12" id="pYn-i2-FRt"/>
@@ -29,6 +31,7 @@
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chaoshi_xiaoche" translatesAutoresizingMaskIntoConstraints="NO" id="uCF-yY-G6E">
                         <rect key="frame" x="132" y="130" width="30" height="18"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="OWp-hX-HGj"/>
                             <constraint firstAttribute="height" constant="18" id="PN6-Kl-yfb"/>
@@ -36,6 +39,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西域美农新疆特级野生和田红枣" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXN-dw-UTH">
                         <rect key="frame" x="-10" y="74" width="200" height="20"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="200" id="Uik-hv-AMj"/>
                             <constraint firstAttribute="height" constant="20" id="s6O-fk-cTm"/>
@@ -46,6 +50,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pch-ac-ch5">
                         <rect key="frame" x="20" y="130" width="53" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="5pa-Q2-Ajj"/>
                             <constraint firstAttribute="width" constant="53" id="jpN-F7-hWS"/>
@@ -56,6 +61,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shT-Tk-7Ed">
                         <rect key="frame" x="20" y="95" width="53" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="53" id="WAS-GT-2is"/>
                             <constraint firstAttribute="height" constant="21" id="vsJ-n7-ahd"/>
@@ -65,8 +71,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="pch-ac-ch5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="7Mj-2d-cee"/>

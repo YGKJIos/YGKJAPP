@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -17,6 +17,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shezhi_nicheng" translatesAutoresizingMaskIntoConstraints="NO" id="KBN-m5-zfc">
                         <rect key="frame" x="26" y="28" width="22" height="22"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="Wt1-T1-qOl"/>
                             <constraint firstAttribute="width" constant="22" id="YwJ-Ns-s30"/>
@@ -24,6 +25,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2U-0d-vhP">
                         <rect key="frame" x="56" y="29" width="77" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="2GM-pU-A0D"/>
                             <constraint firstAttribute="width" constant="77" id="3Ll-fd-AEU"/>
@@ -34,6 +36,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loki" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlo-rd-f5H">
                         <rect key="frame" x="230" y="29" width="107" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="107" id="42A-kp-rrx"/>
                             <constraint firstAttribute="height" constant="21" id="hXt-jO-yIE"/>
@@ -43,6 +46,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="Nlo-rd-f5H" secondAttribute="trailing" id="18H-gr-cKH"/>
                     <constraint firstItem="n2U-0d-vhP" firstAttribute="leading" secondItem="KBN-m5-zfc" secondAttribute="trailing" constant="8" id="Fx3-VN-vTX"/>
@@ -52,6 +56,7 @@
                     <constraint firstItem="n2U-0d-vhP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="21" id="xVI-hs-k8F"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="LeftImage" destination="KBN-m5-zfc" id="ubW-hW-MWT"/>
                 <outlet property="RightLabel" destination="Nlo-rd-f5H" id="0a4-H5-6Yc"/>

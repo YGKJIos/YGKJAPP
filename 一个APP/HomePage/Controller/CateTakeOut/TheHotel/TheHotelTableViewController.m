@@ -63,13 +63,17 @@
         NSString *url = @"binguan/querybinguan1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
             for (NSDictionary *dic in arr) {
                 TheHotelModel *model = [[TheHotelModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.HotelArr addObject:model];
             }
             [self.tableView reloadData];
-            
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
@@ -88,7 +92,7 @@
 - (void)addTableHeaderView
 {
 
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 190)];
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
     headerView.backgroundColor = [UIColor redColor];
 //    
 //    // 日全房
@@ -164,7 +168,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
      CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc]init];
-    detailVC.navigationItem.title = @"宾馆详情";
+    detailVC.navigationItem.title = [self.HotelArr[indexPath.row] shangjiaName];
     detailVC.shopID = [self.HotelArr[indexPath.row] shangjiaId];
     [self.navigationController pushViewController:detailVC animated:YES];
 }

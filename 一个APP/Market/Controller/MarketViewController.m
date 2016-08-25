@@ -9,11 +9,11 @@
 #import "MarketViewController.h"
 #import "ShopTableViewCell.h"
 #import "ShopModel.h"
-#import "DropdownMenu.h"
+
 #import "CateDetailsTableViewController.h"
 #import "MarketModel.h"
 
-@interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate,dropdownDelegate>
+@interface MarketViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)NSMutableArray *MarkeArr;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, assign)BOOL result;
@@ -66,13 +66,17 @@
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             [self.MarkeArr removeAllObjects];
             NSArray *arr = responseObject;
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
             for (NSDictionary *dic in arr) {
                 ShopModel *model = [[ShopModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
             [self.tableView reloadData];
-            
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
 
         }];
@@ -87,13 +91,17 @@
         NSString *url = @"shangjia/queryshangjia.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
             for (NSDictionary *dic in arr) {
                 ShopModel *model = [[ShopModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
             [self.tableView reloadData];
-            
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
         }];
     });

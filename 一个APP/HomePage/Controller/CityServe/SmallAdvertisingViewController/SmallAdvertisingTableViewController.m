@@ -9,41 +9,58 @@
 #import "SmallAdvertisingTableViewController.h"
 #import "SmallAdvertisingModel.h"
 #import "SmallAdvertisingCell.h"
-
-@interface SmallAdvertisingTableViewController ()
+#import "UserInfo.h"
+#import "ZGP_FBGuangGaoViewController.h"
+@interface SmallAdvertisingTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)NSMutableArray *modelArray;
-
 @end
 
 @implementation SmallAdvertisingTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initData];
-
+    self.navigationItem.title = @"小广告栏";
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.width = 80;
+    button.height = 40;
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    [button setTitle:@"发布广告" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(fabuguanggao) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItme = [[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = rightItme;
+    self.modelArray = [NSMutableArray array];
+    [self creatData];        /**< 数据请求>*/
 }
-- (void)initData
+#if 1
+- (void)creatData
 {
-    /** 假数据*/
-    _modelArray = [NSMutableArray array];
-    SmallAdvertisingModel *model = [[SmallAdvertisingModel alloc] init];
-    model.name = @"摩羯座";
-    model.headImg = @"xgg_1";
-    model.cont = @"好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃";
-    NSArray *imgArray = @[@"xgg_3",@"xgg_2"];
-    model.talkImgArray = imgArray;
-    [_modelArray addObject:model];
+    NSString *url = @"user/chakanguanggao.action";
+    [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSArray *arr = responseObject;
+        if (arr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:placeholderImage];
+        }else{
+            for (NSDictionary *dic in arr) {
+                SmallAdvertisingModel *model = [[SmallAdvertisingModel alloc] init];
+                [model setValuesForKeysWithDictionary:dic];
+                [self.modelArray addObject:model];
+            }
+            [self.tableView reloadData];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
     
-    
-    SmallAdvertisingModel *model2 = [[SmallAdvertisingModel alloc] init];
-    model2.name = @"水瓶座";
-    model2.headImg = @"xgg_1";
-    model2.cont = @"好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃好吃";
-    NSArray *imgArray2 = @[@"xgg_2",@"xgg_3",@"xgg_2",@"xgg_3"];
-    model2.talkImgArray = imgArray2;
-    [_modelArray addObject:model2];
 }
-
+#endif
+#pragma mark -  发布广告
+- (void)fabuguanggao
+{
+    ZGP_FBGuangGaoViewController *faBuGuangGua = [[ZGP_FBGuangGaoViewController alloc] init];
+    [self.navigationController pushViewController:faBuGuangGua animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -63,14 +80,14 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell setDataForCellWithModel:_modelArray[indexPath.row]];
-    return cell;
+        return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SmallAdvertisingModel *model = _modelArray[indexPath.row];
-    NSInteger temp = [self HelperTextHeightFromTextString:model.cont width:[UIScreen mainScreen].bounds.size.width - 20 fontSize:14];
+    NSInteger temp = [self HelperTextHeightFromTextString:model.guanggaoNeirong width:[UIScreen mainScreen].bounds.size.width - 20 fontSize:14];
     model.h = temp;
-    return temp +180;
+    return temp+130;
 }
 - (CGFloat)HelperTextHeightFromTextString:(NSString *)text width:(CGFloat)textWidth fontSize:(CGFloat)size
 {

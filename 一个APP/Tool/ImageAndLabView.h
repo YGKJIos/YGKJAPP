@@ -10,7 +10,7 @@
 
 @protocol ImageLabViewPushVCDelegate <NSObject>
 
-- (void)imageAndLableViewPush;
+- (void)imageAndLableViewPush:(UIButton *)btn;
 
 @end
 
@@ -23,6 +23,6 @@
 
 + (ImageAndLabView *)createViewNib;
 
-- (void)setImages:(NSString *)image names:(NSString *)name;
+- (void)setImages:(NSString *)image names:(NSString *)name tag:(NSInteger)tag;
 
 @end

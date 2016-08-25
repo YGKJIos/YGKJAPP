@@ -18,17 +18,18 @@
     
     return view;
 }
-- (void)setImages:(NSString *)image names:(NSString *)name
+- (void)setImages:(NSString *)image names:(NSString *)name tag:(NSInteger)tag
 {
     [self.imageBtn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [self.imageBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
     self.nameLab.text = name;
+    [self.imageBtn setTag:tag];
     
 }
 
 - (void)clickAction:(UIButton *)btn
 {
-    [self.delegate imageAndLableViewPush];
+    [self.delegate imageAndLableViewPush:btn];
 }
 
 

@@ -10,7 +10,6 @@
 #import "groupShopModel.h"
 @interface groupShopTableViewCell : UITableViewCell
 
-
 @property (weak, nonatomic) IBOutlet UILabel *shopMassgeLab;
 @property (weak, nonatomic) IBOutlet UILabel *shopNumLab;
 @property (weak, nonatomic) IBOutlet UILabel *shopPriceLab;

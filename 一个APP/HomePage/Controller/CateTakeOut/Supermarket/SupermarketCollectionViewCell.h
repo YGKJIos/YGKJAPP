@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZGP_SuperMarketModel.h"
 @interface SupermarketCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *commodityImage;
 @property (weak, nonatomic) IBOutlet UILabel *describeLab;
 @property (weak, nonatomic) IBOutlet UILabel *qualityLab;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab;
+
++ (SupermarketCollectionViewCell *) createMoiveCell;
+
+- (void)ZGP_SuperMarketModel:(ZGP_SuperMarketModel *) model;
 
 @end

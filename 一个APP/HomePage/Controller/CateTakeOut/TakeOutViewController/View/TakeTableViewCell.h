@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TakeOutModel.h"
+#import "MerchantInformationModel.h"
 
 @interface TakeTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *foodImageView; // 店铺图片
@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 
 + (TakeTableViewCell *)CreateTakeOutCell;
-- (void)setTakeOutModel:(TakeOutModel *)model;
+- (void)setTakeOutModel:(MerchantInformationModel *)model;
 
 
 @end

@@ -87,13 +87,17 @@
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSLog(@"responseObject - %@" , responseObject);
             NSArray *arr = responseObject;
-            for (NSDictionary *dic in arr) {
-                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
-                [model setValuesForKeysWithDictionary:dic];
-                [self.MarkeArr addObject:model];
+            if (arr.count == 0) {
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                [self.view addSubview:placeholderImage];
+            }else{
+                for (NSDictionary *dic in arr) {
+                    MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
+                    [model setValuesForKeysWithDictionary:dic];
+                    [self.MarkeArr addObject:model];
+                }
+                [self.collection reloadData];
             }
-            [self.collection reloadData];
-            
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];

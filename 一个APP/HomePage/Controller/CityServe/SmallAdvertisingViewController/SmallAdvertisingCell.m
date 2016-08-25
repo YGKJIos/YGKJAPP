@@ -23,12 +23,12 @@
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
     [self.contentView addSubview:topView];
     
-    _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(30, 10, 40, 40)];
+    _headImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 0, 0)];
     [topView addSubview:_headImageView];
     _headImageView.layer.cornerRadius = 20;
     _headImageView.layer.masksToBounds = YES;
     
-    _userName = [[UILabel alloc] initWithFrame:CGRectMake(_headImageView.frame.size.width + 50, 0, [UIScreen mainScreen].bounds.size.width - 70, 60)];
+    _userName = [[UILabel alloc] initWithFrame:CGRectMake(_headImageView.frame.size.width  + 30, 0, [UIScreen mainScreen].bounds.size.width - 70, 60)];
     [topView addSubview:_userName];
     
     _phoneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -40,12 +40,13 @@
     
     _contLab = [[UILabel alloc] initWithFrame:CGRectMake(30, topView.frame.size.height + topView.frame.origin.y, [UIScreen mainScreen].bounds.size.width - 50, 20)];
     [self.contentView addSubview:_contLab];
-    _contLab.font = [UIFont systemFontOfSize:13];
+    _contLab.font = [UIFont systemFontOfSize:20];
     _contLab.numberOfLines = 0;
     
     _imgView = [[UIView alloc] initWithFrame:CGRectMake(0, _contLab.frame.size.height + _contLab.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width, 100)];
     [self.contentView addSubview:_imgView];
-    
+#pragma mark - 暂时不需要添加照片
+#if 0
     NSInteger wid = ([UIScreen mainScreen].bounds.size.width - 50)/4;
     for (NSInteger i = 0; i < 4; i ++) {
         UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(30 + (wid + 3)* i, 0, 72.5, 100)];
@@ -56,15 +57,16 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction:)];
         [img addGestureRecognizer:tap];
     }
+#endif
 }
 - (void)setDataForCellWithModel:(SmallAdvertisingModel *)model
 {
     _headImageView.image = [UIImage imageNamed:model.headImg];
-    _userName.text = model.name;
+    _userName.text = model.userName;
     CGRect f = _contLab.frame;
     f.size.height = model.h;
     _contLab.frame = f;
-    _contLab.text = model.cont;
+    _contLab.text = model.guanggaoNeirong;
     
     CGRect imgf = _imgView.frame;
     imgf.origin.y = _contLab.frame.size.height + _contLab.frame.origin.y + 10;

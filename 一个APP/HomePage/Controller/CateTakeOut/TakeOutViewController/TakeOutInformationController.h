@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TakeOutModel.h"
+#import "MerchantInformationModel.h"
 
 @interface TakeOutInformationController : UIViewController
-@property (nonatomic, strong)TakeOutModel *model;
+
+@property (nonatomic, strong)MerchantInformationModel *model;
 
 @end
