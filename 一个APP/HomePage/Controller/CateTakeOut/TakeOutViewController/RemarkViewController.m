@@ -32,7 +32,9 @@
     _remarkText.backgroundColor = BGcolor(235, 235, 235);
     _remarkText.layer.masksToBounds = YES;
     _remarkText.layer.cornerRadius = 5;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"fanhiu"] style:UIBarButtonItemStylePlain target:self action:@selector(fanhui)];
+    UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(fanhui) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {

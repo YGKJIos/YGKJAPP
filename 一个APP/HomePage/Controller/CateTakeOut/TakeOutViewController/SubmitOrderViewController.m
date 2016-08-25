@@ -18,7 +18,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "Order.h"
 #import "DataSigner.h"
-
+#import "ALiPaysuccessViewController.h" // 支付成功返回界面
 @interface SubmitOrderViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,addressInformation,passDelegate>
 
 @property (nonatomic, strong)NSArray *arr;
@@ -299,6 +299,10 @@
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
             //【callback处理支付结果】
             NSLog(@"reslut = %@",resultDic);
+            if ([resultDic[@"resultStatus"] isEqualToString:@"9000"]) {
+                ALiPaysuccessViewController *success = [[ALiPaysuccessViewController alloc] init];
+                [self.navigationController pushViewController:success animated:YES];
+            }
         }];
     }
 }

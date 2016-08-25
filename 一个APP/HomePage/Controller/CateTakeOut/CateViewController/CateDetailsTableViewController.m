@@ -22,7 +22,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "Order.h"
 #import "DataSigner.h"
-
+#import "ALiPaysuccessViewController.h" // 支付成功返回界面
 @interface CateDetailsTableViewController ()
 @property (nonatomic, strong)NSMutableArray *dataArr;// 商家信息
 @property (nonatomic, strong)NSMutableArray *TGArr; // 团购券数组
@@ -201,7 +201,8 @@
     order.outTradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
     order.subject = model.shangjiaName; //商品标题
     order.body = model.tuangouShuoming; //商品描述
-    order.totalFee = [NSString stringWithFormat:@"%@",model.tuangouTejia]; //商品价格
+//    order.totalFee = [NSString stringWithFormat:@"%@",model.tuangouTejia]; //商品价格
+    order.totalFee = @"0.01";
     order.notifyURL =  @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //回调URL
     
     order.service = @"mobile.securitypay.pay";
@@ -229,6 +230,10 @@
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
             //【callback处理支付结果】
             NSLog(@"reslut = %@",resultDic);
+            if ([resultDic[@"resultStatus"] isEqualToString:@"9000"]) {
+                ALiPaysuccessViewController *success = [[ALiPaysuccessViewController alloc] init];
+                [self.navigationController pushViewController:success animated:YES];
+            }
         }];
     }
 }
