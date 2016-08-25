@@ -10,4 +10,6 @@
 
 @interface SubmitOrderViewController : UIViewController
 
+@property (nonatomic, strong)NSMutableArray *selectArr;
+
 @end

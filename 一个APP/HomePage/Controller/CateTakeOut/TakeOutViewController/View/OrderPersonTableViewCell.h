@@ -27,8 +27,15 @@ typedef NS_ENUM(NSInteger, OrderPersonCell){
 @property (nonatomic, strong)UILabel *phoneNumLab;
 @property (nonatomic, strong)UILabel *addressLab;
 
+// 选择的食品
+@property (nonatomic, strong)UILabel *totalText; // 订单统计
+@property (nonatomic, strong)UILabel *waitPayLab; // 待支付总价
+- (void)setTotalCell:(NSMutableArray *)selectArr; // 统计方法
+
 // 确定下单按钮
+@property (nonatomic, strong)UILabel *usePayLab;
 @property (nonatomic, strong)UIButton *payBtn;
+- (void)setUsePayCell:(NSMutableArray *)selectArr;
 
 - (void)setOrderPersonCellStyle:(OrderPersonCell)orderPersonStyle model:(MerchantInformationModel *)model;
 
