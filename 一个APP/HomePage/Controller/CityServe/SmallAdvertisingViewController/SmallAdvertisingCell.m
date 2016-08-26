@@ -30,6 +30,7 @@
     
     _userName = [[UILabel alloc] initWithFrame:CGRectMake(_headImageView.frame.size.width  + 30, 0, [UIScreen mainScreen].bounds.size.width - 70, 60)];
     [topView addSubview:_userName];
+    _userName.font = [UIFont systemFontOfSize:10];
     
     _phoneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _phoneBtn.origin = CGPointMake(WIDTH-54, topView.size.height/2 - 14);
@@ -40,7 +41,7 @@
     
     _contLab = [[UILabel alloc] initWithFrame:CGRectMake(30, topView.frame.size.height + topView.frame.origin.y, [UIScreen mainScreen].bounds.size.width - 50, 20)];
     [self.contentView addSubview:_contLab];
-    _contLab.font = [UIFont systemFontOfSize:20];
+    _contLab.font = [UIFont systemFontOfSize:12];
     _contLab.numberOfLines = 0;
     
     _imgView = [[UIView alloc] initWithFrame:CGRectMake(0, _contLab.frame.size.height + _contLab.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width, 100)];
