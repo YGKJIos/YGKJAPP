@@ -149,7 +149,7 @@
     
     UILabel *shopNameLab = [UILabel newAutoLayoutView];
     [self.contentView addSubview:shopNameLab];
-    shopNameLab.text = @"刘记快餐";
+    shopNameLab.text = @"选择商品";
     shopNameLab.textColor = BGcolor(65, 186, 206);
     shopNameLab.font = [UIFont systemFontOfSize:14];
     [shopNameLab autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:snackImage withOffset:10 relation:NSLayoutRelationLessThanOrEqual];

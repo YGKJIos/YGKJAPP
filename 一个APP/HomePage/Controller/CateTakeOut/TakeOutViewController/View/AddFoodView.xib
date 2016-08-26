@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还未选择任何菜品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaF-h4-WHY">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看您选择的菜品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaF-h4-WHY">
                     <rect key="frame" x="56" y="16" width="153" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Usq-g6-WGw"/>
@@ -70,7 +70,7 @@
                 <outlet property="orderNum" destination="dwR-7u-aYq" id="lRW-27-QPh"/>
                 <outlet property="shoppingImage" destination="FTK-VS-UFe" id="7li-wj-QUP"/>
             </connections>
-            <point key="canvasLocation" x="227.5" y="263.5"/>
+            <point key="canvasLocation" x="316.5" y="251.5"/>
         </view>
     </objects>
     <resources>

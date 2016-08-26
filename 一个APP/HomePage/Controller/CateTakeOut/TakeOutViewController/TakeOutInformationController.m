@@ -7,24 +7,21 @@
 //
 //   外卖详情
 #import "TakeOutInformationController.h"
-#import "MerchantInformationModel.h"
+#import "SubmitOrderViewController.h"
 #import "TakeOutInformationView.h"
 #import "TakeOutRightTableCell.h"
 #import "ShoppingCartViewController.h" //购物车页面
 #import "AddFoodView.h"
 
 @interface TakeOutInformationController ()<UITableViewDataSource,UITableViewDelegate>
-{
-    NSInteger _k;
-}
 @property (nonatomic, strong)UIView *line;
 @property (nonatomic, strong)UIButton *cateBtn; // 食品
 @property (nonatomic, strong)UIButton *evaluateBtn; // 评论
 @property (nonatomic, strong)UIButton *introduceBtn; // 介绍
-@property (nonatomic, strong)UITableView *leftTableView;
+//@property (nonatomic, strong)UITableView *leftTableView;
 @property (nonatomic, strong)UITableView *rightTableView;
 @property (nonatomic, strong)NSMutableArray *listArr; // 左边菜品
-@property (nonatomic, strong)NSMutableArray *allFoods; // 右边全部食品
+//@property (nonatomic, strong)NSMutableArray *allFoods; // 右边全部食品
 @property (nonatomic, strong)NSMutableArray *foodArr;// 显示菜品信息
 @property (nonatomic, strong)UIButton *jianBtn; // 减少按钮
 @property (nonatomic, strong)UIButton *jiaBtn; // 增加按钮
@@ -46,13 +43,13 @@
     }
     return _foodArr;
 }
--(NSMutableArray *)allFoods
-{
-    if (!_allFoods) {
-        self.allFoods = [[NSMutableArray alloc]init];
-    }
-    return _allFoods;
-}
+//-(NSMutableArray *)allFoods
+//{
+//    if (!_allFoods) {
+//        self.allFoods = [[NSMutableArray alloc]init];
+//    }
+//    return _allFoods;
+//}
 -(NSMutableArray *)selectArr
 {
     if (!_selectArr) {
@@ -66,8 +63,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // 收藏按钮
 //    UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBarButtonItemClickItme) image:@"wode_sctb" highImage:@"wode_sctb"];
+    //    self.listArr = [NSMutableArray arrayWithObjects:@"食品",@"饮品",@"其他" ,nil];
     self.navigationItem.rightBarButtonItem = nil;
-    self.listArr = [NSMutableArray arrayWithObjects:@"食品",@"饮品",@"其他" ,nil];
     TakeOutInformationView *headView = [TakeOutInformationView CreateInformationNib];
     headView.frame = CGRectMake(0, 0, WIDTH, 220);
     [headView setModel:self.model];
@@ -90,16 +87,16 @@
 #pragma mark - 网络请求
 - (void)loadData
 {
+    
 //    NSDictionary *dic = @{@"shangjiaId":self.model.shangjiaId};
     NSDictionary *dic = @{@"shangjiaId":@"159"};
     [AFNetWorting postNetWortingWithUrlString:@"waimai//querywaimaishipin.action?" params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
         for (NSDictionary *dic in responseObject) {
+            NSLog(@"详情*********%@" , responseObject);
             MerchantInformationModel *model = [[MerchantInformationModel alloc]init];
             [model setValuesForKeysWithDictionary:dic];
-            if ([model.waimaishipinLeixing isEqualToString:@"0"]) {
-                [self.foodArr addObject:model];
-            }
-            [self.allFoods addObject:model];
+            [self.foodArr addObject:model];
+            
         }
         [self.rightTableView reloadData];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -109,16 +106,16 @@
 #pragma mark - 添加店铺的菜品
 - (void)addTableView
 {
-    self.leftTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, 114*WIDTH/375, HEIGHT-220-113) style:UITableViewStylePlain];
-    self.leftTableView.delegate = self;
-    self.leftTableView.dataSource = self;
-    self.leftTableView.showsVerticalScrollIndicator = NO;
-    [self.view addSubview:self.leftTableView];
-    [_leftTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"orderID"];
-    UIView *leftview = [[UIView alloc]init];
-    self.leftTableView.tableFooterView = leftview;
+//    self.leftTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, 114*WIDTH/375, HEIGHT-220-113) style:UITableViewStylePlain];
+//    self.leftTableView.delegate = self;
+//    self.leftTableView.dataSource = self;
+//    self.leftTableView.showsVerticalScrollIndicator = NO;
+//    [self.view addSubview:self.leftTableView];
+//    [_leftTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"orderID"];
+//    UIView *leftview = [[UIView alloc]init];
+//    self.leftTableView.tableFooterView = leftview;
     
-    self.rightTableView = [[UITableView alloc]initWithFrame:CGRectMake(114*WIDTH/375, 220, WIDTH -114*WIDTH/375 , HEIGHT-220-113) style:UITableViewStylePlain];
+    self.rightTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 220, WIDTH, HEIGHT-220-113) style:UITableViewStylePlain];
     self.rightTableView.delegate = self;
     self.rightTableView.dataSource = self;
     
@@ -132,24 +129,22 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.leftTableView == tableView) {
-        return self.listArr.count;
-    }
-    else
-    {
-        return self.foodArr.count;
-    }
+//    if (self.leftTableView == tableView) {
+//        return self.listArr.count;
+//    }
+
+    return self.foodArr.count;
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView == self.leftTableView) {
-        static NSString *orderID = @"orderID";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:orderID];
-        cell.textLabel.text = self.listArr[indexPath.row];
-        return cell;
-    }else if(tableView == self.rightTableView){
-        static NSString *rightID = @"rightID";
-        TakeOutRightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:rightID forIndexPath:indexPath];
+//    if (tableView == self.leftTableView) {
+//        static NSString *orderID = @"orderID";
+//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:orderID];
+//        cell.textLabel.text = self.listArr[indexPath.row];
+//        return cell;
+//    }else if(tableView == self.rightTableView){
+        TakeOutRightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"rightID" forIndexPath:indexPath];
         if (self.foodArr.count > 0) {
             MerchantInformationModel *model = self.foodArr[indexPath.row];
             [cell setTakeOutRightTableModel:model];
@@ -167,10 +162,6 @@
         [cell.jiaBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.jianBtn addTarget:self action:@selector(jianBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
-    }else
-    {
-        return nil;
-    }
 }
 #pragma mark - 加、减按钮的点击方法
 - (void)addBtnClick:(UIButton *)btn
@@ -194,10 +185,9 @@
         numlab.text = [NSString stringWithFormat:@"%@",model.gwsz];
     }
     [self.foodArr replaceObjectAtIndex:number withObject:model];
-     _k++;
     [self.selectArr addObject:model];
     NSLog(@"%@" , self.selectArr);
-    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld",self.selectArr.count];
+    [self setFoodViewTotal];
 }
 - (void)jianBtnClick:(UIButton *)btn
 {
@@ -216,101 +206,37 @@
         UILabel *numlab = [self.view viewWithTag:number+3000];
         numlab.hidden = YES;
         numlab.text = [NSString stringWithFormat:@"%@",model.gwsz];
-        
     }
     [self.foodArr replaceObjectAtIndex:number withObject:model];
-    _k--;
     if (self.selectArr.count > 0) {
         [self.selectArr removeObjectAtIndex:number];
     }
-    if (self.selectArr.count <= 0) {
-        self.foodView.orderNum.hidden = YES;
-    }
     NSLog(@"%@" , self.selectArr);
-    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld", self.selectArr.count];
-    
+    [self setFoodViewTotal];
 }
-#pragma mark - tableView 点击方法
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)setFoodViewTotal
 {
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (tableView == self.leftTableView) {
-        [self.foodArr removeAllObjects];
-        if (indexPath.row == 0) {
-            self.titleText= @"食品";
-            for (int i = 0; i < self.allFoods.count; i++) {
-                MerchantInformationModel *model = self.allFoods[i];
-                if([model.waimaishipinLeixing isEqualToString:@"0"]){
-                    [self.foodArr addObject:self.allFoods[i]];
-                }
-            }
+    self.foodView.orderNum.text = [NSString stringWithFormat:@"%ld",self.selectArr.count];
+    self.foodView.shoppingImage.image = [UIImage imageNamed:@"waimai_gouwuchelan"];
+    self.foodView.orderMoneyBtn.backgroundColor = BGcolor(65, 186, 206);
+    NSString *text = [self totalMoney:self.selectArr];
+    if (text.integerValue < self.model.qisongjia.integerValue) {
+        if (text.integerValue == 0) {
+            self.foodView.orderNum.hidden = YES;
+            self.foodView.shoppingImage.image = [UIImage imageNamed:@"waimai_gouwuchehui"];
+            [self.foodView.orderMoneyBtn setBackgroundColor:[UIColor lightGrayColor]];
+            [self.foodView.orderMoneyBtn setTitle:[NSString stringWithFormat:@"%@元起送价",self.model.qisongjia] forState:UIControlStateNormal];
+        }else{
+            NSString *str = [NSString stringWithFormat:@"%ld" , self.model.qisongjia.integerValue-text.integerValue];
+            NSLog(@"----------------%@" , str);
+            [self.foodView.orderMoneyBtn setTitle:[NSString stringWithFormat:@"还差%ld元",self.model.qisongjia.integerValue-text.integerValue] forState:UIControlStateNormal];
         }
-        if (indexPath.row == 1) {
-            self.titleText = @"饮品";
-            for (int i = 0; i < self.allFoods.count; i++) {
-                MerchantInformationModel *model = self.allFoods[i];
-                if ([model.waimaishipinLeixing isEqualToString:@"1"]){
-                [self.foodArr addObject:self.allFoods[i]];
-                }
-            }
-        }
-        if (indexPath.row == 2) {
-            self.titleText = @"其他";
-            for (int i = 0; i < self.allFoods.count; i++) {
-                MerchantInformationModel *model = self.allFoods[i];
-                if ([model.waimaishipinLeixing isEqualToString:@"2"]) {
-                    [self.foodArr addObject:self.allFoods[i]];
-                }
-            }
-        }
-        [self.rightTableView reloadData];
+    }else{
+        [self.foodView.orderMoneyBtn setTitle:@"确认下单" forState:UIControlStateNormal];
     }
+
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    if (tableView == self.rightTableView) {
-        UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH -114*WIDTH/375, 40)];
-        headView.backgroundColor = [UIColor whiteColor];
-        
-        UILabel *titleLab = [[UILabel alloc]initWithFrame:CGRectMake(headView.centerX-50, headView.centerY-10, 100, 20)];
-        titleLab.text = @"食品";
-        titleLab.textAlignment = NSTextAlignmentCenter;
-        titleLab.font = [UIFont systemFontOfSize:16];
-        titleLab.textColor = BGcolor(198, 198, 198);
-        [headView addSubview:titleLab];
-        if (self.titleText != nil) {
-            titleLab.text = self.titleText;
-        }
-        UIView *leftLine = [[UIView alloc]initWithFrame:CGRectMake(titleLab.x-40, headView.center.y, 40, 1)];
-        leftLine.backgroundColor = BGcolor(65, 187, 206);
-        [headView addSubview:leftLine];
-        
-        UIView *rightLine = [[UIView alloc]initWithFrame:CGRectMake(titleLab.x+titleLab.width, headView.centerY, 40, 1)];
-        rightLine.backgroundColor = BGcolor(65, 187, 206);
-        [headView addSubview:rightLine];
-        return headView;
-    }
-    return nil;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (tableView == self.rightTableView) {
-        return 82;
-    }
-    return 44;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if (tableView == self.rightTableView) {
-        return 40;
-    }
-    return 0;
-}
+
 #pragma mark - 添加选择菜品footView
 - (void)addFoodView
 {
@@ -330,21 +256,120 @@
 - (void)tapClickAction:(UITapGestureRecognizer *)tap
 {
     if (self.foodView.orderNum.hidden) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有点餐哦~~！" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有点餐哦~~!" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancel];
         [self presentViewController:alert animated:YES completion:nil];
     }else{
         ShoppingCartViewController *shopVC = [[ShoppingCartViewController alloc]init];
-        shopVC.navigationItem.title = self.model.shangjiaName;
         shopVC.selectArr = self.selectArr;
+        shopVC.shopModel = self.model;
         [self.navigationController pushViewController:shopVC animated:YES];
     }
+}
+#pragma mark - tableView 点击方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    if (tableView == self.leftTableView) {
+//        [self.foodArr removeAllObjects];
+//        if (indexPath.row == 0) {
+//            self.titleText= @"食品";
+//            for (int i = 0; i < self.allFoods.count; i++) {
+//                MerchantInformationModel *model = self.allFoods[i];
+//                if([model.waimaishipinLeixing isEqualToString:@"0"]){
+//                    [self.foodArr addObject:self.allFoods[i]];
+//                }
+//            }
+//        }
+//        if (indexPath.row == 1) {
+//            self.titleText = @"饮品";
+//            for (int i = 0; i < self.allFoods.count; i++) {
+//                MerchantInformationModel *model = self.allFoods[i];
+//                if ([model.waimaishipinLeixing isEqualToString:@"1"]){
+//                [self.foodArr addObject:self.allFoods[i]];
+//                }
+//            }
+//        }
+//        if (indexPath.row == 2) {
+//            self.titleText = @"其他";
+//            for (int i = 0; i < self.allFoods.count; i++) {
+//                MerchantInformationModel *model = self.allFoods[i];
+//                if ([model.waimaishipinLeixing isEqualToString:@"2"]) {
+//                    [self.foodArr addObject:self.allFoods[i]];
+//                }
+//            }
+//        }
+//        [self.rightTableView reloadData];
+//    }
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+    headView.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *titleLab = [[UILabel alloc]initWithFrame:CGRectMake(headView.centerX-50, headView.centerY-10, 100, 20)];
+    titleLab.text = @"商品";
+    titleLab.textAlignment = NSTextAlignmentCenter;
+    titleLab.font = [UIFont systemFontOfSize:16];
+    titleLab.textColor = BGcolor(198, 198, 198);
+    [headView addSubview:titleLab];
+    if (self.titleText != nil) {
+        titleLab.text = self.titleText;
+    }
+    UIView *leftLine = [[UIView alloc]initWithFrame:CGRectMake(titleLab.x-40, headView.center.y, 40, 1)];
+    leftLine.backgroundColor = BGcolor(65, 187, 206);
+    [headView addSubview:leftLine];
+    
+    UIView *rightLine = [[UIView alloc]initWithFrame:CGRectMake(titleLab.x+titleLab.width, headView.centerY, 40, 1)];
+    rightLine.backgroundColor = BGcolor(65, 187, 206);
+    [headView addSubview:rightLine];
+    return headView;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 82;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40;
 }
 
 - (void)orderMoneyBtnClick:(UIButton *)btn
 {
-    NSLog(@"123");
+    if ([self.foodView.orderMoneyBtn.titleLabel.text isEqualToString:@"确认下单"]) {
+        SubmitOrderViewController *subVC = [[SubmitOrderViewController alloc]init];
+        NSLog(@"self.model == %@" , self.model);
+        subVC.selectArr = self.selectArr;
+        subVC.shopModel = self.model;
+        NSLog(@"******%@" , self.model);
+        [self.navigationController pushViewController:subVC animated:YES];
+    }else{
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"没有达到起送价~!";
+        [hud show:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hud.hidden = YES;
+        });
+    }
+}
+
+// 计算价钱
+- (NSString *)totalMoney:(NSMutableArray *)arr
+{
+    NSInteger totalNum = 0;
+    NSString *total = [NSString string];
+    for (int i = 0; i < arr.count; i++) {
+        MerchantInformationModel *model = arr[i];
+        totalNum += model.waimaishipinJiage.integerValue;
+        total = [NSString stringWithFormat:@"%ld",totalNum];
+    }
+    return total;
 }
 
 

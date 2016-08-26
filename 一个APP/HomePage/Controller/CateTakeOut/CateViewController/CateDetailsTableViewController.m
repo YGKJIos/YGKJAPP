@@ -199,7 +199,7 @@
     order.partner = partner;
     order.sellerID = seller;
     order.outTradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
-    order.subject = model.shangjiaName; //商品标题
+    order.subject = model.tuangouName; //商品标题
     order.body = model.tuangouShuoming; //商品描述
 //    order.totalFee = [NSString stringWithFormat:@"%@",model.tuangouTejia]; //商品价格
     order.totalFee = @"0.01";
@@ -240,6 +240,7 @@
 - (NSString *)generateTradeNO
 {
     static int kNumber = 15;
+    
     NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     NSMutableString *resultStr = [[NSMutableString alloc] init];
     srand((unsigned)time(0));

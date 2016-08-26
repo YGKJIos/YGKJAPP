@@ -267,12 +267,11 @@
     order.partner = partner;
     order.sellerID = seller;
     order.outTradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
-//    order.subject = model.shangjiaName; //商品标题
-//    order.body = model.tuangouShuoming; //商品描述
-//    order.totalFee = [NSString stringWithFormat:@"%@",model.tuangouTejia]; //商品价格
-//    order.subject = model.shangjiaName; //商品标题
-//    order.body = model.tuangouShuoming; //商品描述
-//    order.totalFee = [NSString stringWithFormat:@"%@",model.tuangouTejia]; //商品价格
+    order.subject = self.shopModel.shangjiaName; //商品标题
+    order.body = self.shopModel.tuangouShuoming; //商品描述
+//    NSString *total = [self totalMoney:self.selectArr];
+//    order.totalFee = [NSString stringWithFormat:@"%@",total]; //商品价格
+    order.totalFee = [NSString stringWithFormat:@"0.01"]; //商品价格
     order.notifyURL =  @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //回调URL
     
     order.service = @"mobile.securitypay.pay";
@@ -301,6 +300,32 @@
             //【callback处理支付结果】
             NSLog(@"reslut = %@",resultDic);
             if ([resultDic[@"resultStatus"] isEqualToString:@"9000"]) {
+                
+                NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+                NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
+                NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+                NSString *url = @"waimai/shengchengwaimaidingdan.action?";
+                NSString *str = [NSString string];
+                for (int i = 0; i < self.selectArr.count; i++) {
+                    MerchantInformationModel *model = self.selectArr[i];
+                    str = [str stringByAppendingFormat:@"%@*1,",model.waimaishipinId];
+                }
+                str = [str substringFromIndex:str.length-1];
+                NSLog(@"截取字符串%@" , str);
+                NSDictionary *dicText = @{@"userId":dic[@"userId"]
+                                      ,@"shangjiaId":self.model.shangjiaId
+                                      ,@"shangpinwaimaixiangqing":str
+                                      ,@"alioayNo":order.outTradeNO
+                                      ,@"waimaidingdanBeizhu":_beizhu
+                                      ,@"waimaiSongcandizhi":self.model.shouhuoDizhi
+                                      ,@"waimaiRenshu":self.numTextF.text};
+                NSLog(@"dicText-------%@" , dicText);
+                [AFNetWorting postNetWortingWithUrlString:url params:dicText controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+                    
+                } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                    
+                }];
+                
                 ALiPaysuccessViewController *success = [[ALiPaysuccessViewController alloc] init];
                 [self.navigationController pushViewController:success animated:YES];
             }
@@ -320,6 +345,18 @@
         [resultStr appendString:oneStr];
     }
     return resultStr;
+}
+// 计算价钱
+- (NSString *)totalMoney:(NSMutableArray *)arr
+{
+    NSInteger totalNum = 0;
+    NSString *total = [NSString string];
+    for (int i = 0; i < arr.count; i++) {
+        MerchantInformationModel *model = arr[i];
+        totalNum += model.waimaishipinJiage.integerValue;
+        total = [NSString stringWithFormat:@"%ld",totalNum];
+    }
+    return total;
 }
 
 - (void)passValue:(NSString *)string

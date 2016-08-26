@@ -9,7 +9,7 @@
 #import "ShoppingCartViewController.h"
 #import "ShoppingCartTableViewCell.h"
 #import "SubmitOrderViewController.h"
-#import "MerchantInformationModel.h"
+
 
 @interface ShoppingCartViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = self.shopModel.shangjiaName;
     [self.view setBackgroundColor:[UIColor whiteColor]];
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-57) style:UITableViewStylePlain];
     tableView.dataSource = self;
@@ -84,7 +85,7 @@
     UILabel *moneyLab = [UILabel newAutoLayoutView];
     [bgView addSubview:moneyLab];
     NSString *totalMoney = [self totalMoney:self.selectArr];
-    moneyLab.text= [NSString stringWithFormat:@"应支付：%@",totalMoney];
+    moneyLab.text= [NSString stringWithFormat:@"应支付：¥%@",totalMoney];
     moneyLab.font = [UIFont systemFontOfSize:20];
     moneyLab.textColor = BGcolor(250, 83, 68);
     [moneyLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
@@ -103,9 +104,20 @@
 }
 - (void)certainBtnAction
 {
-    SubmitOrderViewController *submitVC = [[SubmitOrderViewController alloc]init];
-    submitVC.selectArr = self.selectArr;
-    [self.navigationController pushViewController:submitVC animated:YES];
+    NSString *str = [self totalMoney:self.selectArr];
+    if (str.integerValue < self.shopModel.qisongjia.integerValue) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"没有达到起送价~!";
+        [hud show:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hud.hidden = YES;
+        });
+    }else{
+        SubmitOrderViewController *submitVC = [[SubmitOrderViewController alloc]init];
+        submitVC.selectArr = self.selectArr;
+        submitVC.shopModel = self.shopModel;
+        [self.navigationController pushViewController:submitVC animated:YES];
+    }
 }
 
 #pragma mark - tableView代理方法
@@ -134,7 +146,7 @@
     for (int i = 0; i < arr.count; i++) {
         MerchantInformationModel *model = arr[i];
        totalNum += model.waimaishipinJiage.integerValue;
-        total = [NSString stringWithFormat:@"¥%ld",totalNum];
+        total = [NSString stringWithFormat:@"%ld",totalNum];
     }
     return total;
 }
