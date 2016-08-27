@@ -12,6 +12,12 @@
 
 @end
 
+@protocol firstBtnDelegate <NSObject>
+
+- (void) firstDelegate;
+
+@end
+
 @protocol twoBtnDelegate <NSObject>
 
 - (void) twoDelegate;
@@ -33,6 +39,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *numLab;
 
 @property (nonatomic, assign) id<orderDelegate>delegate;
+
+@property (nonatomic, assign) id<firstBtnDelegate>firstDelegate;
 
 @property (nonatomic, assign) id<twoBtnDelegate>twoDelegate;
 

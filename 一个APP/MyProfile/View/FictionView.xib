@@ -23,7 +23,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQN-Tc-IG3">
                     <rect key="frame" x="0.0" y="0.0" width="45" height="57"/>
-                    <state key="normal" image="wode_dfkh"/>
+                    <state key="normal" image="grzy_tgq"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBB-vD-32V">
                     <rect key="frame" x="30" y="0.0" width="15" height="18"/>
@@ -38,6 +38,6 @@
         </view>
     </objects>
     <resources>
-        <image name="wode_dfkh" width="45" height="56"/>
+        <image name="grzy_tgq" width="44" height="50"/>
     </resources>
 </document>

@@ -64,7 +64,7 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
     
 }
 
-+ (void)postNetWortingWithUrlString:(NSString *)urlString params:(NSDictionary *)params controller:(UIViewController *)controller success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
++ (void)postNetWortingWithUrlString:(NSString *)urlString params:(NSDictionary *)params controller:(UIViewController *)controller success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 
 {
 //    MBProgressHUD *progress = [MBProgressHUD showHUDAddedTo:controller.view animated:YES];

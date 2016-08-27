@@ -27,9 +27,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"超市";
     self.superMarketArr = [NSMutableArray array];
-    [self setNavigationStyle];
-  
+//    [self setNavigationStyle];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.itemSize = CGSizeMake(180*(WIDTH/375), 150);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 160);
@@ -47,7 +47,6 @@
     UINib *nib = [UINib nibWithNibName:@"SupermarketCollectionViewCell" bundle:[NSBundle mainBundle]];
     [self.collection registerNib:nib forCellWithReuseIdentifier:@"reportFilterCell"];
     [self.collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
-    
     // 刷新
     [self MJrefreshLoadData];
 }
@@ -61,13 +60,6 @@
     [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
     header.lastUpdatedTimeLabel.hidden = YES;
     self.collection.mj_header = header;
-    
-    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    // 设置文字
-    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
-    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
-    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
-    self.collection.mj_footer = footer;
     
 }
 // 下拉刷新的方法
@@ -91,16 +83,6 @@
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
         }];
-        
-        
-    });
-    
-}
-// 上拉加载的方法
-- (void)loadMoreData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.collection.mj_footer endRefreshing];
-        
     });
 }
 

@@ -30,7 +30,6 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
-    
     // 判断是不是第一次登录
     NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];

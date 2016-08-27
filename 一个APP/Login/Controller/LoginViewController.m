@@ -34,17 +34,17 @@
     self.mimaField.delegate = self;
     [self.phoneLoginBtn addTarget:self action:@selector(ClickPhoneLoginAction) forControlEvents:UIControlEventTouchUpInside];
     
-    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-    NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    self.peopleTextField.text = dic[@"userWangming"];
-    self.mimaField.text = dic[@"password"];
-    if ([dic[@"status"] isEqualToString:@"NO"]) {
-        self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
-        self.select = NO;
-        _dic = dic;
-        [self loginBtn:_dic];
-    }
+//    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+//    NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
+//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+//    self.peopleTextField.text = dic[@"userWangming"];
+//    self.mimaField.text = dic[@"password"];
+//    if ([dic[@"status"] isEqualToString:@"NO"]) {
+//        self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
+//        self.select = NO;
+//        _dic = dic;
+//        [self loginBtn:_dic];
+//    }
     
     // 1.点击收回键盘
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldShouldReturn:)];
@@ -91,7 +91,7 @@
 }
 // 登录按钮点击方法
 - (IBAction)loginBtn:(id)sender {
-
+    _dic = @{@"userWangming":self.peopleTextField.text,@"password":self.mimaField.text};
     NSString *url = @"user/wangminglogin.action?";
     [AFNetWorting postNetWortingWithUrlString:url params:_dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
         if ([@"0"isEqualToString:responseObject[@"ok"]]) {
@@ -106,16 +106,13 @@
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"登录中请稍后...";
             
-            [UserInfo shareAccount].accountDict = responseObject[@"userId"];
-            [[UserInfo shareAccount] saveToSandBox];
+//            [UserInfo shareAccount].accountDict = responseObject[@"userId"];
+//            [[UserInfo shareAccount] saveToSandBox];
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [hud hide:YES];
                 RootTabBarController *rootVC = [[RootTabBarController alloc]init];
-//                [self presentViewController:rootVC animated:YES completion:nil];
-                [self presentViewController:rootVC animated:YES completion:^{
-                    
-                }];
+                [self presentViewController:rootVC animated:YES completion:nil];
             });
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -143,7 +140,7 @@
 {
     [self.peopleTextField resignFirstResponder];
     [self.mimaField resignFirstResponder];
-    _dic = @{@"userWangming":self.peopleTextField.text,@"password":self.mimaField.text};
+//    _dic = @{@"userWangming":self.peopleTextField.text,@"password":self.mimaField.text};
     return YES;
 }
 
