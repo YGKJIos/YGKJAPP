@@ -42,12 +42,12 @@
     self.title = @"休闲娱乐";
     // 刷新数据
     [self addHeaderView];
-    [self MJrefreshLoadData];
+    [self loadNewData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.tableView.mj_header beginRefreshing];
+//    [self.tableView.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
 
@@ -73,9 +73,9 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.MarkeArr removeAllObjects];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_header endRefreshing];
+//    [self.MarkeArr removeAllObjects];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.tableView.mj_header endRefreshing];
         NSString *url = @"xiuxianyule/queryxiuxianyule.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
@@ -92,7 +92,7 @@
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
         }];
-    });
+//    });
     
 }
 // 上拉加载的方法

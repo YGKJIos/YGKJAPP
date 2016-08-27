@@ -160,7 +160,7 @@
     order.partner = partner;
     order.sellerID = seller;
     order.outTradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
-    order.subject = self.model.shangjiaName; //商品标题
+    order.subject = self.model.tuangouName; //商品标题
     order.body = self.model.tuangouShuoming; //商品描述
     order.totalFee = [NSString stringWithFormat:@"%@",self.model.tuangouTejia]; //商品价格
     order.notifyURL =  @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //回调URL

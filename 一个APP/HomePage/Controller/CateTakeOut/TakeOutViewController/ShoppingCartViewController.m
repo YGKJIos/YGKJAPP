@@ -10,6 +10,7 @@
 #import "ShoppingCartTableViewCell.h"
 #import "SubmitOrderViewController.h"
 
+
 @interface ShoppingCartViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = self.shopModel.shangjiaName;
     [self.view setBackgroundColor:[UIColor whiteColor]];
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-57) style:UITableViewStylePlain];
     tableView.dataSource = self;
@@ -47,7 +49,7 @@
     [textLabel autoSetDimensionsToSize:CGSizeMake(18, 18)];
     textLabel.layer.masksToBounds = YES;
     textLabel.layer.cornerRadius = 9;
-    textLabel.text = @"2";
+    textLabel.text = [NSString stringWithFormat:@"%ld",self.selectArr.count];
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.backgroundColor = BGcolor(250, 83, 68);
     textLabel.textColor = [UIColor whiteColor];
@@ -82,7 +84,8 @@
     
     UILabel *moneyLab = [UILabel newAutoLayoutView];
     [bgView addSubview:moneyLab];
-    moneyLab.text= @"¥15";
+    NSString *totalMoney = [self totalMoney:self.selectArr];
+    moneyLab.text= [NSString stringWithFormat:@"应支付：¥%@",totalMoney];
     moneyLab.font = [UIFont systemFontOfSize:20];
     moneyLab.textColor = BGcolor(250, 83, 68);
     [moneyLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
@@ -101,14 +104,26 @@
 }
 - (void)certainBtnAction
 {
-    SubmitOrderViewController *submitVC = [[SubmitOrderViewController alloc]init];
-    [self.navigationController pushViewController:submitVC animated:YES];
+    NSString *str = [self totalMoney:self.selectArr];
+    if (str.integerValue < self.shopModel.qisongjia.integerValue) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"没有达到起送价~!";
+        [hud show:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hud.hidden = YES;
+        });
+    }else{
+        SubmitOrderViewController *submitVC = [[SubmitOrderViewController alloc]init];
+        submitVC.selectArr = self.selectArr;
+        submitVC.shopModel = self.shopModel;
+        [self.navigationController pushViewController:submitVC animated:YES];
+    }
 }
 
 #pragma mark - tableView代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.selectArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *shopID = @"shopID";
@@ -116,8 +131,25 @@
     if (cell == nil) {
         cell = [[ShoppingCartTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:shopID];
     }
+    MerchantInformationModel *model = self.selectArr[indexPath.row];
+    cell.dishesLab.text = model.waimaishipinName;
+    cell.moneyLab.text = [NSString stringWithFormat:@"¥%@",model.waimaishipinJiage];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+// 计算价钱
+- (NSString *)totalMoney:(NSMutableArray *)arr
+{
+    NSInteger totalNum = 0;
+    NSString *total = [NSString string];
+    for (int i = 0; i < arr.count; i++) {
+        MerchantInformationModel *model = arr[i];
+       totalNum += model.waimaishipinJiage.integerValue;
+        total = [NSString stringWithFormat:@"%ld",totalNum];
+    }
+    return total;
+}
+
 
 @end

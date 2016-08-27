@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
@@ -23,11 +24,9 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglubeijing" translatesAutoresizingMaskIntoConstraints="NO" id="lcr-gK-Qhk">
                     <rect key="frame" x="-13" y="0.0" width="401" height="640"/>
-                    <animations/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhihuitongcheng" translatesAutoresizingMaskIntoConstraints="NO" id="uy1-Fz-1Yk">
                     <rect key="frame" x="70" y="68" width="235" height="90"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="235" id="JUJ-od-tIo"/>
                         <constraint firstAttribute="height" constant="90" id="dMe-VA-RNm"/>
@@ -35,21 +34,18 @@
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dengluming" translatesAutoresizingMaskIntoConstraints="NO" id="Rbr-H5-NJ0">
                     <rect key="frame" x="55" y="194" width="265" height="46"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="IMD-ak-Hqk"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglumima" translatesAutoresizingMaskIntoConstraints="NO" id="Psw-Q5-UNF">
                     <rect key="frame" x="55" y="268" width="265" height="46"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="5JV-1a-rR7"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-za-aef">
                     <rect key="frame" x="94" y="194" width="225" height="46"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="b4p-eK-dFu"/>
                     </constraints>
@@ -58,7 +54,6 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHA-aA-KS1">
                     <rect key="frame" x="76" y="342" width="76" height="30"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="76" id="cMq-HI-uWy"/>
                     </constraints>
@@ -73,7 +68,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8f-pe-zSc">
                     <rect key="frame" x="232" y="342" width="88" height="30"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="2rX-NI-9lf"/>
                         <constraint firstAttribute="width" constant="88" id="jHU-rI-Hj8"/>
@@ -88,7 +82,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPF-Bq-xVD">
                     <rect key="frame" x="54" y="396" width="265" height="40"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="IFQ-zi-54q"/>
                         <constraint firstAttribute="width" constant="265" id="xZ2-aH-IWI"/>
@@ -100,7 +93,6 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfb-ce-dEU">
                     <rect key="frame" x="139" y="474" width="97" height="22"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="97" id="Otx-TQ-WSB"/>
                         <constraint firstAttribute="height" constant="22" id="PX0-0j-jjT"/>
@@ -111,7 +103,6 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="V1.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xm-NY-29X">
                     <rect key="frame" x="172" y="567" width="30" height="21"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="4e9-jJ-nev"/>
                         <constraint firstAttribute="height" constant="21" id="5MB-ny-AbH"/>
@@ -121,14 +112,12 @@
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jizhumima_weixuan" translatesAutoresizingMaskIntoConstraints="NO" id="Cof-Tz-9Aa">
                     <rect key="frame" x="55" y="348" width="17" height="17"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="dBq-TA-vwq"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eS8-22-ElQ">
                     <rect key="frame" x="94" y="268" width="225" height="46"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="Zab-yu-K6n"/>
                     </constraints>
@@ -137,7 +126,6 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pS-VR-umR">
                     <rect key="frame" x="147" y="516" width="80" height="24"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="ZYG-cC-R6b"/>
                         <constraint firstAttribute="width" constant="80" id="xX0-D3-QH7"/>
@@ -148,7 +136,6 @@
                     </connections>
                 </button>
             </subviews>
-            <animations/>
             <constraints>
                 <constraint firstItem="Psw-Q5-UNF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="55" id="0hj-fo-3DV"/>
                 <constraint firstAttribute="trailing" secondItem="lcr-gK-Qhk" secondAttribute="trailing" constant="-13" id="1au-q5-SO7"/>

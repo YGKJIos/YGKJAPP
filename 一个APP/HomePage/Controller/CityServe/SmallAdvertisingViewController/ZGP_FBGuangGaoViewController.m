@@ -10,7 +10,7 @@
 
 @interface ZGP_FBGuangGaoViewController ()<UITextViewDelegate>
 @property (nonatomic, strong) UITextView *textField;
-@property (nonatomic, strong) UITextView *placeholderLabel;
+@property (nonatomic, strong) UILabel *uilabel;
 @end
 
 @implementation ZGP_FBGuangGaoViewController
@@ -24,6 +24,7 @@
     button.height = 40;
     button.titleLabel.font = [UIFont systemFontOfSize:16];
     [button setTitle:@"发布" forState:UIControlStateNormal];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(10, 40, 10, 0)];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(fabuguanggao) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightItme = [[UIBarButtonItem alloc]initWithCustomView:button];
@@ -33,27 +34,22 @@
 }
 - (void) creatTextField
 {
-    self.placeholderLabel = [[UITextView alloc]initWithFrame:CGRectMake(10, 10, WIDTH - 20, 300)];
-    _placeholderLabel.backgroundColor = BGcolor(255.0, 255.0, 255.0);
-    _placeholderLabel.textAlignment = NSTextAlignmentLeft;
-    self.placeholderLabel.font
-    = [UIFont fontWithName:@"Arial"size:18.0];
-    [_placeholderLabel setEditable:NO];
-    _placeholderLabel.autoresizesSubviews = UIViewAutoresizingFlexibleHeight;
-    _placeholderLabel.text = @"说点什么...";
-    _placeholderLabel.textColor = [UIColor lightGrayColor];
-    _placeholderLabel.delegate = self;
-    [self.view addSubview:_placeholderLabel];
-    
-
     self.textField = [[UITextView alloc]initWithFrame:CGRectMake(10, 10, WIDTH - 20, 300)];
-//    _textField.backgroundColor = BGcolor(245.0, 245.0, 245.0);
+    _textField.backgroundColor = BGcolor(235.0, 235.0, 235.0);
+    _textField.alpha = 1;
     _textField.textAlignment = NSTextAlignmentLeft;
     self.textField.font
-    = [UIFont fontWithName:@"Arial"size:18.0];
+    = [UIFont systemFontOfSize:18];
     _textField.autoresizesSubviews = UIViewAutoresizingFlexibleHeight;
     _textField.delegate = self;
-    [self.placeholderLabel addSubview:_textField];
+    [_textField.layer setCornerRadius:10];
+    [self.view addSubview:_textField];
+    self.uilabel = [[UILabel alloc]init];
+    _uilabel.frame =CGRectMake(10, 10, WIDTH - 20, 40);
+    _uilabel.text = @" 说点什么...";
+    _uilabel.enabled = NO;//lable必须设置为不可用
+    _uilabel.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:_uilabel];
 }
 - (void)fabuguanggao
 {
@@ -99,24 +95,13 @@
     }
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+-(void)textViewDidChange:(UITextView *)textView
 {
-    if (![text isEqualToString:@""]){
-        
-        _placeholderLabel.hidden = YES;
-        
+    if (textView.text.length == 0) {
+        _uilabel.text = @"说点什么...";
+    }else{
+        _uilabel.text = @"";
     }
-    
-    if ([text isEqualToString:@""] && range.location == 0 && range.length == 1)
-        
-    {
-        
-        _placeholderLabel.hidden = NO;
-        
-    }
-    
-    return YES;
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

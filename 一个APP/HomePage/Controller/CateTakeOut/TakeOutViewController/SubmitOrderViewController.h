@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface SubmitOrderViewController : UIViewController
+
+// 选择商品 数组
+@property (nonatomic, strong)NSMutableArray *selectArr;
+
+
+@property (nonatomic, strong)MerchantInformationModel *shopModel;
+
 
 @end

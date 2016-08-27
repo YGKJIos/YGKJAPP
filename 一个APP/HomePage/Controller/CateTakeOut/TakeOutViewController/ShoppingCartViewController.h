@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MerchantInformationModel.h"
 
 @interface ShoppingCartViewController : UIViewController
+@property (nonatomic, strong)NSMutableArray *selectArr;
+@property (nonatomic, strong)MerchantInformationModel *shopModel;
 
 @end

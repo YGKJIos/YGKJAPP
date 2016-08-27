@@ -149,7 +149,7 @@
     
     UILabel *shopNameLab = [UILabel newAutoLayoutView];
     [self.contentView addSubview:shopNameLab];
-    shopNameLab.text = @"刘记快餐";
+    shopNameLab.text = @"选择商品";
     shopNameLab.textColor = BGcolor(65, 186, 206);
     shopNameLab.font = [UIFont systemFontOfSize:14];
     [shopNameLab autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:snackImage withOffset:10 relation:NSLayoutRelationLessThanOrEqual];
@@ -198,48 +198,33 @@
 // 订单总计
 - (void)addTotalCell
 {
-    UILabel *totalText = [UILabel newAutoLayoutView];
-    [self.contentView addSubview:totalText];
-    totalText.text = @"订单总计：16";
-    totalText.textColor = BGcolor(138, 138, 138);
-    totalText.font = [UIFont systemFontOfSize:14];
-    [totalText autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
-    [totalText autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    [totalText autoSetDimensionsToSize:CGSizeMake(150, 20)];
+    self.totalText = [UILabel newAutoLayoutView];
+    [self.contentView addSubview:self.totalText];
+    self.totalText.text = @"订单总计：16";
+    self.totalText.textColor = BGcolor(138, 138, 138);
+    self.totalText.font = [UIFont systemFontOfSize:14];
+    [self.totalText autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
+    [self.totalText autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    [self.totalText autoSetDimensionsToSize:CGSizeMake(150, 20)];
     
-    UILabel *waitPayLab = [UILabel newAutoLayoutView];
-    [self.contentView addSubview:waitPayLab];
-    // 改变字的颜色
-    NSString *text = @"待支付：¥6";
-    waitPayLab.textAlignment = NSTextAlignmentRight;
-    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc]initWithString:text];
-    NSRange range = [text rangeOfString:@"¥6"];
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    dic[NSForegroundColorAttributeName] = BGcolor(250, 83, 68);
-    [attributed addAttributes:dic range:range];
-    waitPayLab.attributedText = attributed;
-    waitPayLab.font = [UIFont systemFontOfSize:14];
-    [waitPayLab autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
-    [waitPayLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    [waitPayLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
+    self.waitPayLab = [UILabel newAutoLayoutView];
+    [self.contentView addSubview:self.waitPayLab];
+    self.waitPayLab.textAlignment = NSTextAlignmentRight;
+    
+    self.waitPayLab.font = [UIFont systemFontOfSize:14];
+    [self.waitPayLab autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
+    [self.waitPayLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    [self.waitPayLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
 }
 // 确认下单
 - (void)addSurePayOrderCell
 {
-    UILabel *usePayLab = [UILabel newAutoLayoutView];
-    [self.contentView addSubview:usePayLab];
-    // 改变字的颜色
-    NSString *text = @"应支付：¥6";
-    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc]initWithString:text];
-    NSRange range = [text rangeOfString:@"¥6"];
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    dic[NSForegroundColorAttributeName] = BGcolor(250, 83, 68);
-    [attributed addAttributes:dic range:range];
-    usePayLab.attributedText = attributed;
-    usePayLab.font = [UIFont systemFontOfSize:19];
-    [usePayLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
-    [usePayLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    [usePayLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
+    self.usePayLab = [UILabel newAutoLayoutView];
+    [self.contentView addSubview:self.usePayLab];
+        self.usePayLab.font = [UIFont systemFontOfSize:19];
+    [self.usePayLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
+    [self.usePayLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    [self.usePayLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
     
     UIButton *payBtn = [UIButton newAutoLayoutView];
     [self.contentView addSubview:payBtn];
@@ -250,10 +235,50 @@
     [payBtn setTitle:@"确认下单" forState:UIControlStateNormal];
     payBtn.backgroundColor = BGcolor(65, 186, 206);
     [payBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
     self.payBtn = payBtn;
 }
+// 订单统计
+- (void)setTotalCell:(NSMutableArray *)selectArr
+{
+    self.totalText.text = [NSString stringWithFormat:@"订单总计：%ld",selectArr.count];
+    
+    // 改变字的颜色
+    NSString *totalStr = [self totalMoney:selectArr];
+    NSString *text = [NSString stringWithFormat:@"待支付：%@",totalStr];
+    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc]initWithString:text];
+    NSRange range = [text rangeOfString:totalStr];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    dic[NSForegroundColorAttributeName] = BGcolor(250, 83, 68);
+    [attributed addAttributes:dic range:range];
+    self.waitPayLab.attributedText = attributed;
+}
 
+- (void)setUsePayCell:(NSMutableArray *)selectArr
+{
+    NSString *str = [self totalMoney:selectArr];
+    // 改变字的颜色
+    NSString *text = [NSString stringWithFormat:@"应支付：%@",str];
+    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc]initWithString:text];
+    NSRange range = [text rangeOfString:str];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    dic[NSForegroundColorAttributeName] = BGcolor(250, 83, 68);
+    [attributed addAttributes:dic range:range];
+    self.usePayLab.attributedText = attributed;
+
+}
+
+// 计算价钱
+- (NSString *)totalMoney:(NSMutableArray *)arr
+{
+    NSInteger totalNum = 0;
+    NSString *total = [NSString string];
+    for (int i = 0; i < arr.count; i++) {
+        MerchantInformationModel *model = arr[i];
+        totalNum += model.waimaishipinJiage.integerValue;
+        total = [NSString stringWithFormat:@"¥%ld",totalNum];
+    }
+    return total;
+}
 
 - (void)awakeFromNib {
     // Initialization code

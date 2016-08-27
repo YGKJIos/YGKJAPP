@@ -407,8 +407,14 @@
     }
     // 生活缴费
     if (num == 1001) {
-        priceViewController *priceVC = [[priceViewController alloc] init];
-        [self.navigationController pushViewController:priceVC animated:YES];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"此功能占未开放~!";
+        [hud show:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hud.hidden = YES;
+        });
+//        priceViewController *priceVC = [[priceViewController alloc] init];
+//        [self.navigationController pushViewController:priceVC animated:YES];
     }
     // 家政服务
     if (num == 1002) {

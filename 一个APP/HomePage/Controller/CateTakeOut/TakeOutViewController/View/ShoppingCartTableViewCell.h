@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 // 购物车cell
 @interface ShoppingCartTableViewCell : UITableViewCell
 
@@ -16,5 +17,6 @@
 @property (nonatomic, strong)UIButton *addBtn;
 @property (nonatomic, strong)UIButton *reduceBtn;
 @property (nonatomic, strong)UILabel *numLab;
+
 
 @end

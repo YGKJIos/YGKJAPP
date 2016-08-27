@@ -21,7 +21,6 @@
 #import "ALiPaysuccessViewController.h" // 支付成功返回界面
 @interface SubmitOrderViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,addressInformation,passDelegate>
 
-@property (nonatomic, strong)NSArray *arr;
 @property (nonatomic, strong)UIControl *control;
 @property (nonatomic, strong)UIView *numPeopleView;
 @property (nonatomic, strong)MerchantInformationModel *model;
@@ -35,7 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"提交订单";
-    self.arr = @[@"鱼丸粗面",@"墨鱼丸粗面",@"鱼丸油面"];
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.delegate = self;
@@ -54,7 +52,8 @@
         return 2;
     }
     if (section == 3) {
-        return 4;
+        return 3;
+//        return 4;
     }
     if (section == 4) {
         return 2;
@@ -84,20 +83,21 @@
         }
         if (indexPath.row == 1) {
             MenuOrderTableViewCell *menuCell = [[MenuOrderTableViewCell alloc]init];
-            [menuCell setMenuArr:self.arr];
+            [menuCell setMenuArr:self.selectArr];
             menuCell.selectionStyle = UITableViewCellSelectionStyleNone;
             return menuCell;
             
         }
+//        if (indexPath.row == 2) {
+//            OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
+//            [cell setOrderPersonCellStyle:FavorableCell model:nil];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//            return cell;
+//        }
         if (indexPath.row == 2) {
             OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
-            [cell setOrderPersonCellStyle:FavorableCell model:nil];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            return cell;
-        }
-        if (indexPath.row == 3) {
-            OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
             [cell setOrderPersonCellStyle:TotalCell model:nil];
+            [cell setTotalCell:self.selectArr];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }
@@ -113,6 +113,7 @@
             OrderPersonTableViewCell *cell = [[OrderPersonTableViewCell alloc]init];
             [cell setOrderPersonCellStyle:SurePayOrderCell model:nil];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell setUsePayCell:self.selectArr];
             [cell.payBtn addTarget:self action:@selector(surePayOrder) forControlEvents:UIControlEventTouchUpInside];
             return cell;
         }
@@ -147,7 +148,7 @@
     }
     if (indexPath.section == 3) {
         if (indexPath.row == 1) {
-            return (self.arr.count *30);
+            return (self.selectArr.count *30);
         }
     }
     return 49;
@@ -266,12 +267,11 @@
     order.partner = partner;
     order.sellerID = seller;
     order.outTradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
-//    order.subject = model.shangjiaName; //商品标题
-//    order.body = model.tuangouShuoming; //商品描述
-//    order.totalFee = [NSString stringWithFormat:@"%@",model.tuangouTejia]; //商品价格
-//    order.subject = model.shangjiaName; //商品标题
-//    order.body = model.tuangouShuoming; //商品描述
-//    order.totalFee = [NSString stringWithFormat:@"%@",model.tuangouTejia]; //商品价格
+    order.subject = self.shopModel.shangjiaName; //商品标题
+    order.body = self.shopModel.tuangouShuoming; //商品描述
+//    NSString *total = [self totalMoney:self.selectArr];
+//    order.totalFee = [NSString stringWithFormat:@"%@",total]; //商品价格
+    order.totalFee = [NSString stringWithFormat:@"0.01"]; //商品价格
     order.notifyURL =  @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //回调URL
     
     order.service = @"mobile.securitypay.pay";
@@ -300,6 +300,32 @@
             //【callback处理支付结果】
             NSLog(@"reslut = %@",resultDic);
             if ([resultDic[@"resultStatus"] isEqualToString:@"9000"]) {
+                
+                NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+                NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
+                NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+                NSString *url = @"waimai/shengchengwaimaidingdan.action?";
+                NSString *str = [NSString string];
+                for (int i = 0; i < self.selectArr.count; i++) {
+                    MerchantInformationModel *model = self.selectArr[i];
+                    str = [str stringByAppendingFormat:@"%@*1,",model.waimaishipinId];
+                }
+                str = [str substringFromIndex:str.length-1];
+                NSLog(@"截取字符串%@" , str);
+                NSDictionary *dicText = @{@"userId":dic[@"userId"]
+                                      ,@"shangjiaId":self.model.shangjiaId
+                                      ,@"shangpinwaimaixiangqing":str
+                                      ,@"alioayNo":order.outTradeNO
+                                      ,@"waimaidingdanBeizhu":_beizhu
+                                      ,@"waimaiSongcandizhi":self.model.shouhuoDizhi
+                                      ,@"waimaiRenshu":self.numTextF.text};
+                NSLog(@"dicText-------%@" , dicText);
+                [AFNetWorting postNetWortingWithUrlString:url params:dicText controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+                    
+                } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                    
+                }];
+                
                 ALiPaysuccessViewController *success = [[ALiPaysuccessViewController alloc] init];
                 [self.navigationController pushViewController:success animated:YES];
             }
@@ -320,6 +346,19 @@
     }
     return resultStr;
 }
+// 计算价钱
+- (NSString *)totalMoney:(NSMutableArray *)arr
+{
+    NSInteger totalNum = 0;
+    NSString *total = [NSString string];
+    for (int i = 0; i < arr.count; i++) {
+        MerchantInformationModel *model = arr[i];
+        totalNum += model.waimaishipinJiage.integerValue;
+        total = [NSString stringWithFormat:@"%ld",totalNum];
+    }
+    return total;
+}
+
 - (void)passValue:(NSString *)string
 {
     _beizhu = string;

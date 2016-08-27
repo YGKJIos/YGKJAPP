@@ -19,7 +19,7 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
 }
 - (void) ZGP_SuperMarketModel:(ZGP_SuperMarketModel *)model
 {
-    NSString *imageStr = [NSString stringWithFormat:@"%@%@", bendi, model.shangjiaTouxiang];
+    NSString *imageStr = [NSString stringWithFormat:@"%@%@", headUrl, model.shangjiaTouxiang];
     [self.commodityImage sd_setImageWithURL:[NSURL URLWithString:imageStr]];
     // 商品名字
     self.describeLab.text = model.shangjiaName;

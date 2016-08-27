@@ -41,7 +41,9 @@
             }else{
                 for (NSDictionary *dic in responseObject) {
                     if ([self.shangjiajutiweizhi isEqualToString:@"7"]) {
-                        self.MarkeArr = responseObject;
+                        MarketModel *model = [[MarketModel alloc] init];
+                        [model setValuesForKeysWithDictionary:dic];
+                        [self.MarkeArr addObject:model];
                     }else if (dic[@"shangjiaJutiweizhi"] == self.shangjiajutiweizhi) {
                         MarketModel *model = [[MarketModel alloc] init];
                         [model setValuesForKeysWithDictionary:dic];
