@@ -1,44 +1,47 @@
 //
-//  groupShopTableViewController.m
+//  QorderTableViewController.m
 //  一个APP
 //
-//  Created by 远古科技 on 16/8/24.
+//  Created by 远古科技 on 16/8/25.
 //  Copyright © 2016年 llb. All rights reserved.
 //
 
-#import "groupShopTableViewController.h"
-#import "groupShopTableViewCell.h"
-#import "groupShopModel.h"
-@interface groupShopTableViewController ()
-@property (nonatomic, retain) NSMutableArray *ShopArr;
+#import "QorderTableViewController.h"
+#import "QorderTableViewCell.h"
+#import "QorderModel.h"
+@interface QorderTableViewController ()
+@property (nonatomic, retain) NSMutableArray *orderArr;
 @end
 
-@implementation groupShopTableViewController
+@implementation QorderTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"查看团购卷";
-    self.ShopArr = [[NSMutableArray alloc] init];
+    self.orderArr = [[NSMutableArray alloc] init];
     [self loadNewData];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.ShopArr removeAllObjects];
-    NSString *url = @"meishi/queryuserweishiyongtuangoujuan.action?";
+    [self.orderArr removeAllObjects];
+    NSString *url = @"waimai/userchakandingdan.action?";
     NSString *sandPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     sandPath = [sandPath stringByAppendingPathComponent:@"manager/userDic.plish"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:sandPath];
-//      dic = @{@"userId":dic[@"userId"]};
+    //          dic = @{@"userId":dic[@"userId"]};
     dic = @{@"userId":@"1"};
     
     [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray *arr = responseObject;
         for (NSDictionary *dic in arr) {
-            groupShopModel *model = [[groupShopModel alloc] init];
+            QorderModel *model = [[QorderModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
-            NSLog(@"%@", model.shangjiaName);
-            [self.ShopArr addObject:model];
+            [self.orderArr addObject:model];
         }
         [self.tableView reloadData];
         
@@ -48,41 +51,38 @@
     
 }
 
+#pragma mark - Table view data source
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Incomplete implementation, return the number of sections
+    return self.orderArr.count;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.ShopArr.count;
+#warning Incomplete implementation, return the number of rows
+    return self.orderArr.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *reuse = @"reuse";
-    groupShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+    QorderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
     if (!cell) {
-        cell = [groupShopTableViewCell createCell];
-        [cell groupShopModel:self.ShopArr[indexPath.row]];
+        cell = [QorderTableViewCell createCell];
+        [cell QorderModel:self.orderArr[indexPath.row]];
     }
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 180;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return self.ShopArr.count;
+    return 158;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 10;
 }
+
 
 @end

@@ -26,15 +26,15 @@
                 [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
                 [self.contentView addSubview:btn];
                 
-                UILabel *numLab = [[UILabel alloc]initWithFrame:CGRectMake(38, -5, 18, 18)];
-                numLab.layer.masksToBounds = YES;
-                numLab.layer.cornerRadius = 9;
-                numLab.textColor = [UIColor whiteColor];
-                numLab.font = [UIFont systemFontOfSize:11];
-                numLab.text = @"2";
-                numLab.textAlignment = NSTextAlignmentCenter;
-                numLab.backgroundColor=BGcolor(255, 135, 145);
-                [btn addSubview:numLab];
+//                UILabel *numLab = [[UILabel alloc]initWithFrame:CGRectMake(38, -5, 18, 18)];
+//                numLab.layer.masksToBounds = YES;
+//                numLab.layer.cornerRadius = 9;
+//                numLab.textColor = [UIColor whiteColor];
+//                numLab.font = [UIFont systemFontOfSize:11];
+//                numLab.text = @"2";
+//                numLab.textAlignment = NSTextAlignmentCenter;
+//                numLab.backgroundColor=BGcolor(255, 135, 145);
+//                [btn addSubview:numLab];
             }else{
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
                 btn.frame = CGRectMake(30+(WIDTH/4-5)*i, 14, 40, 50);
@@ -53,15 +53,15 @@
                 [self.contentView addSubview:btn];
                 
 //                [self addBtnRedLable:btn];
-                UILabel *numLab = [[UILabel alloc]initWithFrame:CGRectMake(25, -5, 18, 18)];
-                numLab.layer.masksToBounds = YES;
-                numLab.layer.cornerRadius = 9;
-                numLab.textColor = [UIColor whiteColor];
-                numLab.font = [UIFont systemFontOfSize:11];
-                numLab.text = @"2";
-                numLab.textAlignment = NSTextAlignmentCenter;
-                numLab.backgroundColor=BGcolor(255, 135, 145);
-                [btn addSubview:numLab];
+//                UILabel *numLab = [[UILabel alloc]initWithFrame:CGRectMake(25, -5, 18, 18)];
+//                numLab.layer.masksToBounds = YES;
+//                numLab.layer.cornerRadius = 9;
+//                numLab.textColor = [UIColor whiteColor];
+//                numLab.font = [UIFont systemFontOfSize:11];
+//                numLab.text = @"2";
+//                numLab.textAlignment = NSTextAlignmentCenter;
+//                numLab.backgroundColor=BGcolor(255, 135, 145);
+//                [btn addSubview:numLab];
             }
         }
     }
@@ -71,18 +71,18 @@
 //    [self.contentView addSubview:firstBtn];
 }
 
-- (void)addBtnRedLable:(UIButton *)btn
-{
-    UILabel *numLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
-    numLab.layer.masksToBounds = YES;
-    numLab.layer.cornerRadius = 9;
-    numLab.textColor = [UIColor whiteColor];
-    numLab.font = [UIFont systemFontOfSize:11];
-    numLab.text = @"2";
-    numLab.textAlignment = NSTextAlignmentCenter;
-    numLab.backgroundColor=BGcolor(255, 135, 145);
-    [btn addSubview:numLab];
-}
+//- (void)addBtnRedLable:(UIButton *)btn
+//{
+//    UILabel *numLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+//    numLab.layer.masksToBounds = YES;
+//    numLab.layer.cornerRadius = 9;
+//    numLab.textColor = [UIColor whiteColor];
+//    numLab.font = [UIFont systemFontOfSize:11];
+//    numLab.text = @"2";
+//    numLab.textAlignment = NSTextAlignmentCenter;
+//    numLab.backgroundColor=BGcolor(255, 135, 145);
+//    [btn addSubview:numLab];
+//}
 
 
 

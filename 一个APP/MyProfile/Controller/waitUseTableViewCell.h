@@ -9,17 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "waitUseModel.h"
 
+@protocol waitUseCellDelegate <NSObject>
+
+- (void)sandStr:(NSString *)str;
+
+@end
+
 @interface waitUseTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLab;
-@property (weak, nonatomic) IBOutlet UIImageView *waitBtn;
-@property (weak, nonatomic) IBOutlet UIImageView *lookNumBtn;
-@property (weak, nonatomic) IBOutlet UIImageView *foodImage;
-@property (weak, nonatomic) IBOutlet UILabel *timeLab;
 @property (weak, nonatomic) IBOutlet UILabel *numLab;
+@property (weak, nonatomic) IBOutlet UILabel *quanLab;
+@property (weak, nonatomic) IBOutlet UIButton *chickBtn;
 @property (weak, nonatomic) IBOutlet UILabel *priceLab;
 
 
+
+@property (nonatomic, assign) id<waitUseCellDelegate>delegate;
 
 
 + (waitUseTableViewCell *)createCell;

@@ -102,11 +102,11 @@
             });
         }else
         {
-            [self keepDataInSandBox:responseObject[@"userId"]];
+//            [self keepDataInSandBox:responseObject[@"userId"]];
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"登录中请稍后...";
             
-            [UserInfo shareAccount].accountDict = responseObject;
+            [UserInfo shareAccount].accountDict = responseObject[@"userId"];
             [[UserInfo shareAccount] saveToSandBox];
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

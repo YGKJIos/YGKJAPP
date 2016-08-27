@@ -23,10 +23,9 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
 - (void)groupShopModel:(groupShopModel *)model
 {
     self.shopMassgeLab.text = model.tuangouShuoming;
-    self.shopNumLab.text = model.usertuangoujuanYanzhengma;
-    self.shopPriceLab.text = model.tuangouTejia;
-    NSString *str = [NSString stringWithFormat:@"ssdsdsd%@", model.shangjiaName];
-    self.shopName.text = str;
+//    self.shopNumLab.text = model.usertuangoujuanYanzhengma;
+    self.shopPriceLab.text = [NSString stringWithFormat:@"¥%@", model.tuangouTejia];
+    self.shopName.text = model.shangjiaName;
 }
 
 

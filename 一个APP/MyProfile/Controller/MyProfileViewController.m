@@ -17,6 +17,8 @@
 #import "waitUseTableViewController.h"
 //#import "groupShopViewController.h"
 #import "groupShopTableViewController.h"
+#import "QorderTableViewController.h"
+#import "TKTableViewController.h"
 @interface MyProfileViewController ()<UITableViewDataSource,UITableViewDelegate,orderDelegate,twoBtnDelegate,thirdBtnDelegate,firstBtnDelegate>
 @property (nonatomic, strong)NSArray *images;
 @property (nonatomic, strong)NSArray *titles;
@@ -140,6 +142,9 @@
 
 - (void) firstDelegate
 {
+    TKTableViewController *tkVC = [[TKTableViewController alloc] init];
+    [self.navigationController pushViewController:tkVC animated:YES];
+    
     NSLog(@"点地啊你单大大你");
 }
 
@@ -154,8 +159,11 @@
 
 - (void) thirdDelegate
 {
-    GoEvaluateViewController *evaluaVC = [[GoEvaluateViewController alloc] init];
-    [self.navigationController pushViewController:evaluaVC animated:YES];
+//    GoEvaluateViewController *evaluaVC = [[GoEvaluateViewController alloc] init];
+//    [self.navigationController pushViewController:evaluaVC animated:YES];
+    QorderTableViewController *orderVC = [[QorderTableViewController alloc] init];
+    [self.navigationController pushViewController:orderVC animated:YES];
+    
     NSLog(@"ddddddddd555555555555555555555555555588");
 }
 

@@ -22,14 +22,10 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
 - (void)waitUseModel:(waitUseModel *)model
 {
     self.foodNameLab.text = model.shangjiaName;
-    
-    NSString *str = [NSString stringWithFormat:@"%@%@", headUrl, model.tuangouTouxiang];
-    [self.foodImage sd_setImageWithURL:[NSURL URLWithString:str]];
-    
-    self.timeLab.text = model.usertuangoujuanShijian;
-    
-    self.priceLab.text = [NSString stringWithFormat:@"总价:   %@",model.tuangouTejia];
+    self.quanLab.text = model.tuangouShuoming;
+    self.priceLab.text = [NSString stringWithFormat:@"¥%@",model.tuangouTejia];
 }
+
 
 
 - (void)awakeFromNib {
