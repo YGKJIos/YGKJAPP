@@ -144,8 +144,7 @@
 {
     TKTableViewController *tkVC = [[TKTableViewController alloc] init];
     [self.navigationController pushViewController:tkVC animated:YES];
-    
-    NSLog(@"点地啊你单大大你");
+
 }
 
 - (void) twoDelegate
@@ -154,7 +153,6 @@
     ;
     [self.navigationController pushViewController:useVC animated:YES];
     
-    NSLog(@"wieufgusdb oviuhQBKHBGFPUSJKBCGOIUEFJ");
 }
 
 - (void) thirdDelegate
@@ -164,12 +162,7 @@
     QorderTableViewController *orderVC = [[QorderTableViewController alloc] init];
     [self.navigationController pushViewController:orderVC animated:YES];
     
-    NSLog(@"ddddddddd555555555555555555555555555588");
 }
-
-
-
-
 
 
 - (void)didReceiveMemoryWarning {
