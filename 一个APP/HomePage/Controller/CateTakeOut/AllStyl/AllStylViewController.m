@@ -155,7 +155,6 @@
         self.ReusableView.headImage.image = [UIImage imageNamed:@"qitaheadview"];
     }
     [self.collectionView reloadData];
-    NSLog(@"点毛线");
 }
 
 - (void)creatRightCollecTionView

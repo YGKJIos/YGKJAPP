@@ -101,7 +101,7 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
         [urlString appendString:@"="];
         [urlString appendString:[NSString stringWithFormat:@"%@",[params objectForKey:key]]];
         [urlString appendString:@"&"];
-        NSLog(@"%@" , [params objectForKey:key]);
+//        NSLog(@"%@" , [params objectForKey:key]);
     }
     [urlString deleteCharactersInRange:NSMakeRange(urlString.length-1, 1)];
     NSLog(@"%@" , urlString);

@@ -37,7 +37,6 @@
         for (NSDictionary *dic in arr) {
             groupShopModel *model = [[groupShopModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
-            NSLog(@"%@", model.shangjiaName);
             [self.ShopArr addObject:model];
         }
         [self.tableView reloadData];

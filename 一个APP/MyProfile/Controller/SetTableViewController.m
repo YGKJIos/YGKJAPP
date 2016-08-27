@@ -16,6 +16,9 @@
 #import "LoginViewController.h"
 @interface SetTableViewController ()<SecondViewControllerDelete,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIScrollView *imageScroll;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImage;
+
 @end
 
 @implementation SetTableViewController
@@ -99,7 +102,9 @@
     
     if (indexPath.row == 3) {
         SetNameTableViewCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"SetNameTableViewCell" owner:nil options:nil]lastObject];
-        cell.RightLabel.text = @"2.25M";
+        NSString *path = [self getCachesPath];
+        CGFloat num = [self getCacheSizeAtPath:path];
+        cell.RightLabel.text = [NSString stringWithFormat:@"%0.2f" , num];
         cell.leftLable.text = @"清空缓存";
         cell.LeftImage.image = [UIImage imageNamed:@"shezhi_qingkonghuancun"];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
@@ -221,10 +226,14 @@
     if (indexPath.row == 3) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = @"正在清除缓存...";
+        NSString *path = [self getCachesPath];
+        [self clearCacheAtPath:path];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [hud hide:YES];
+            [tableView reloadData];
         });
-        NSLog(@"清除缓存");
+        
+        
     }
     if (indexPath.row == 4) {
         ChangePasswordViewController *passWordVC = [[ChangePasswordViewController alloc] init];
@@ -253,6 +262,52 @@
 {
     UILabel *nameLabel = (UILabel *)[self.view viewWithTag:1000];
     nameLabel.text = str;
+}
+
+
+- (NSString *)getCachesPath{
+    // 获取Caches目录路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask,YES);
+    NSString *cachesDir = [paths objectAtIndex:0];
+    NSString *filePath = [cachesDir stringByAppendingPathComponent:@"com.apress.yuanguApp"];
+    return filePath;
+}
+
+- (long long)fileSizeAtPath:(NSString*)filePath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:filePath]){
+        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
+    }
+    return 0;
+}
+
+
+- (float)getCacheSizeAtPath:(NSString*)folderPath{
+    NSFileManager* manager = [NSFileManager defaultManager];
+    if (![manager fileExistsAtPath:folderPath])return 0;
+    NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];//从前向后枚举器
+    NSString* fileName;
+    long long folderSize = 0;
+    while ((fileName = [childFilesEnumerator nextObject]) != nil){
+        NSLog(@"fileName ==== %@",fileName);
+        NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
+        NSLog(@"fileAbsolutePath ==== %@",fileAbsolutePath);
+        folderSize += [self fileSizeAtPath:fileAbsolutePath];
+    }
+    NSLog(@"folderSize ==== %lld",folderSize);
+    return folderSize/(1024.0*1024.0);
+}
+
+- (void)clearCacheAtPath:(NSString *)path{
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:path]) {
+        NSArray *childerFiles=[fileManager subpathsAtPath:path];
+        for (NSString *fileName in childerFiles) {
+            //如有需要，加入条件，过滤掉不想删除的文件
+            NSString *absolutePath=[path stringByAppendingPathComponent:fileName];
+            [fileManager removeItemAtPath:absolutePath error:nil];
+        }
+    }
 }
 
 @end

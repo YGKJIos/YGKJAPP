@@ -103,12 +103,12 @@
 // navigation 购物车
 - (void)rightItmeAction
 {
-    NSLog(@"购物车");
+//    NSLog(@"购物车");
 }
 // 超市搜索
 - (void)searchClickAction
 {
-    NSLog(@"超市搜索");
+//    NSLog(@"超市搜索");
 }
 //
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
