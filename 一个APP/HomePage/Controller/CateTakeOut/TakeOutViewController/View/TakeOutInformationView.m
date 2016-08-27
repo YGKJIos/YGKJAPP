@@ -8,6 +8,7 @@
 
 #import "TakeOutInformationView.h"
 static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
+static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation TakeOutInformationView
 
@@ -18,7 +19,7 @@ static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
 }
 - (void)setModel:(MerchantInformationModel *)model
 {
-    NSString *urlImage = [NSString stringWithFormat:@"%@%@",bendi,model.shangjiaTouxiang];
+    NSString *urlImage = [NSString stringWithFormat:@"%@%@",headUrl,model.shangjiaTouxiang];
     [self.shopImage sd_setImageWithURL:[NSURL URLWithString:urlImage] placeholderImage:nil];
     self.sendSriceLab.text = [NSString stringWithFormat:@"起送价：%@",model.qisongjia];
     self.shipFeeLab.text = [NSString stringWithFormat:@"配送费：%@",model.peisongfei];

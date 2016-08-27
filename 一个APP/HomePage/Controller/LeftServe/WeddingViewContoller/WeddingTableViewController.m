@@ -89,7 +89,7 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
     headerView.backgroundColor = [UIColor orangeColor];
     
-    NSArray *arr = @[@"xinwen",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
+    NSArray *arr = @[@"hq_guanggao",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
     ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
     scroll.frame = CGRectMake(0, 0, WIDTH, 150);
     [headerView addSubview:scroll];

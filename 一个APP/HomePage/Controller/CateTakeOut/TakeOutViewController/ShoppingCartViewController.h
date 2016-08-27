@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "MerchantInformationModel.h"
 
+//@protocol deleteSelectArrDelegate <NSObject>
+//
+//- (void)deleteSelectShiPinDelegate:(BOOL)result;
+//
+//@end
+
 @interface ShoppingCartViewController : UIViewController
 @property (nonatomic, strong)NSMutableArray *selectArr;
 @property (nonatomic, strong)MerchantInformationModel *shopModel;
+//@property (nonatomic, assign)id<deleteSelectArrDelegate>delegate;
 
 @end

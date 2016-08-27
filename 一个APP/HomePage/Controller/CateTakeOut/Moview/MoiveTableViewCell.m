@@ -13,6 +13,16 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
 
 @implementation MoiveTableViewCell
 
+- (IBAction)telephoneNumAction:(id)sender {
+    UIWebView*callWebview =[[UIWebView alloc] init];
+    NSString *phoneText = [NSString stringWithFormat:@"tel://%@",@"18845603020"];
+    NSURL *telURL =[NSURL URLWithString:phoneText];// 貌似tel:// 或者 tel: 都行
+    [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
+    
+    //记得添加到view上
+    [self.contentView addSubview:callWebview];
+}
+
 + (MoiveTableViewCell *)createMoiveCell
 {
     MoiveTableViewCell *cell = [[NSBundle mainBundle]loadNibNamed:@"MoiveTableViewCell" owner:nil options:nil].lastObject;

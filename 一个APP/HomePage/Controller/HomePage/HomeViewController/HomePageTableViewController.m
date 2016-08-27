@@ -7,7 +7,6 @@
 //
 
 #import "HomePageTableViewController.h"
-#import "SDCycleScrollView.h"  //轮播图
 #import "HomeTableViewCell.h"
 #import "TableViewHeader.h"  //table section 视图
 #import "FirstTableViewCell.h"
@@ -40,7 +39,7 @@
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate,FoodHomePushDelegate,ShopingPushDelegate>
 
-@property (nonatomic, strong)SDCycleScrollView *scrollView;
+@property (nonatomic, strong)ScrollView *scrollView;
 @property (nonatomic, retain) NSMutableArray *homeArr; // 首页model数组
 @end
 
@@ -73,14 +72,12 @@
     self.tableView.mj_header = header;
     
 }
-
 // 下拉刷新的方法
 - (void)loadNewData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"zhuye/queryzhuye.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            
             NSArray *arr = @[@"zhaopin",@"ershou",@"zhoubian",@"meishi",@"xinwen"];
             NSDictionary *rootDic = responseObject;
             if (rootDic == nil) {
@@ -98,29 +95,13 @@
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
-        
-        
+
     });
-    
 }
 - (void)addHeaderView
 {
-    UIImage *image1 = [UIImage imageNamed:@"shouye_guangg"];
-    UIImage *image2 = [UIImage imageNamed:@"shouye_haigou"];
-    UIImage *image3 = [UIImage imageNamed:@"shouye_meishitou"];
-    UIImage *image4 = [UIImage imageNamed:@"shouye_xinwen"];
-    NSArray *images = @[image1,image2,image3,image4];
-    self.scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 150) imagesGroup:images];
-    self.scrollView.delegate = self;
-    // 是否无限循环
-    self.scrollView.infiniteLoop = YES;
-    // pageControl样式
-    self.scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
-    self.scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
-    // 分页控件图标
-    self.scrollView.dotColor = [UIColor cyanColor];
-    // 循环时间间隔,默认2.0s
-    self.scrollView.autoScrollTimeInterval = 2.0;
+    NSArray *images = @[@"lb_guangg1",@"shouye_guangg",@"shouye_haigou",@"shouye_meishitou"];
+    self.scrollView = [ScrollView CreateScrollViewImages:images];
 }
 // 点击轮播图的方法
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index

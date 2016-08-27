@@ -7,50 +7,29 @@
 //
 
 #import "TakeOutRightTableCell.h"
-static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
+static NSString *bendi = @"http://139.129.209.189/shangcheng";
 @implementation TakeOutRightTableCell
-
-static NSInteger num; //点击增加 菜品份数计数
 
 - (void)setTakeOutRightTableModel:(MerchantInformationModel *)model
 {
-    NSString *url = [NSString stringWithFormat:@"%@%@",bendi,model.shangjiaTouxiang];
-    [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
-    self.sellNumLab.text = model.waimaishipinYishou;
-    self.nameLab.text = model.waimaishipinName;
-    self.pirceLab.text = [NSString stringWithFormat:@"¥%@" , model.waimaishipinJiage];
-}
-
-- (void)addBtnClickAction:(NSIndexPath *)indexPath
-{
-    num = 0;
-    [self.jiaBtn addTarget:self action:@selector(addBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.jianBtn addTarget:self action:@selector(jianBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-}
-
-#pragma mark - 加、减按钮的点击方法
-- (void)addBtnClick:(NSIndexPath *)indexPath
-{
-    ++num;
-    if (num >= 1) {
-        self.jianBtn.hidden = NO;
-        self.numberLab.hidden = NO;
-        self.numberLab.text = [NSString stringWithFormat:@"%ld",num];
-    }
-}
-- (void)jianBtnClick:(NSIndexPath *)indexPath
-{
-    if (num <= 0) {
-        return;
+    if (model.gwsz.integerValue > 0) {
+        NSString *url = [NSString stringWithFormat:@"%@%@",bendi,model.shangjiaTouxiang];
+        [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
+        self.sellNumLab.text = model.waimaishipinYishou;
+        self.nameLab.text = model.waimaishipinName;
+        self.pirceLab.text = [NSString stringWithFormat:@"¥%@" , model.waimaishipinJiage];
+        self.numberLab.text = model.gwsz;
+        
     }else{
-        --num;
-        self.numberLab.text = [NSString stringWithFormat:@"%ld",num];
-        if (num == 0) {
-            self.jianBtn.hidden = YES;
-            self.numberLab.hidden = YES;
-        }
+        NSString *url = [NSString stringWithFormat:@"%@%@",bendi,model.shangjiaTouxiang];
+        [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:nil];
+        self.sellNumLab.text = model.waimaishipinYishou;
+        self.nameLab.text = model.waimaishipinName;
+        self.pirceLab.text = [NSString stringWithFormat:@"¥%@" , model.waimaishipinJiage];
     }
+    
 }
+
 
 - (void)awakeFromNib {
     // Initialization code

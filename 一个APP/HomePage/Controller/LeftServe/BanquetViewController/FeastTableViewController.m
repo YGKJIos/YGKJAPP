@@ -75,7 +75,6 @@
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"yanhui/queryyanhui1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"responseObject - %@" , responseObject);
             NSArray *arr = responseObject;
             if (arr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];

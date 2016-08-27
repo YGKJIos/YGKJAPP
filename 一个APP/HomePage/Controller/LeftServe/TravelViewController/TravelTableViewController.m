@@ -85,41 +85,38 @@
 
 - (void)addTableHeaderView
 {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 350)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
     headerView.backgroundColor = [UIColor whiteColor];
     
-    UIImageView *fairImage = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH/3-110, 165, 11, 17)];
-    fairImage.image = [UIImage imageNamed:@"huo"];
-    
-    [headerView addSubview:fairImage];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(fairImage.origin.x+fairImage.size.width+5, 150, 100, 50)];
-    label.text = @"当季最火";
-    label.textColor = BGcolor(59, 59, 59);
-    [headerView addSubview:label];
-    
-    
-    TravelView *view1 = [[[NSBundle mainBundle]loadNibNamed:@"TravelView" owner:nil options:nil]lastObject];
-    view1.origin = CGPointMake(WIDTH/3-110, 200);
-    [headerView addSubview:view1];
-    
-    TravelView *view2 = [[[NSBundle mainBundle] loadNibNamed:@"TravelView" owner:nil options:nil]lastObject];
-    view2.origin = CGPointMake(2*WIDTH/3-110, 200);
-    [headerView addSubview:view2];
-    
-    TravelView *view3 = [[[NSBundle mainBundle] loadNibNamed:@"TravelView" owner:nil options:nil]lastObject];
-    view3.origin = CGPointMake(WIDTH-110, 200);
-    [headerView addSubview:view3];
+//    UIImageView *fairImage = [[UIImageView alloc] initWithFrame:CGRectMake(WIDTH/3-110, 165, 11, 17)];
+//    fairImage.image = [UIImage imageNamed:@"huo"];
+//    
+//    [headerView addSubview:fairImage];
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(fairImage.origin.x+fairImage.size.width+5, 150, 100, 50)];
+//    label.text = @"当季最火";
+//    label.textColor = BGcolor(59, 59, 59);
+//    [headerView addSubview:label];
+//    
+//    
+//    TravelView *view1 = [[[NSBundle mainBundle]loadNibNamed:@"TravelView" owner:nil options:nil]lastObject];
+//    view1.origin = CGPointMake(WIDTH/3-110, 200);
+//    [headerView addSubview:view1];
+//    
+//    TravelView *view2 = [[[NSBundle mainBundle] loadNibNamed:@"TravelView" owner:nil options:nil]lastObject];
+//    view2.origin = CGPointMake(2*WIDTH/3-110, 200);
+//    [headerView addSubview:view2];
+//    
+//    TravelView *view3 = [[[NSBundle mainBundle] loadNibNamed:@"TravelView" owner:nil options:nil]lastObject];
+//    view3.origin = CGPointMake(WIDTH-110, 200);
+//    [headerView addSubview:view3];
     
     
     NSArray *arr = @[@"ly_guanggao",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
     ScrollView *scroll = [ScrollView CreateScrollViewImages:arr];
     scroll.frame = CGRectMake(0, 0, WIDTH, 150);
     [headerView addSubview:scroll];
-    
     self.tableView.tableHeaderView = headerView;
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

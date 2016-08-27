@@ -200,7 +200,6 @@
 {
     self.totalText = [UILabel newAutoLayoutView];
     [self.contentView addSubview:self.totalText];
-    self.totalText.text = @"订单总计：16";
     self.totalText.textColor = BGcolor(138, 138, 138);
     self.totalText.font = [UIFont systemFontOfSize:14];
     [self.totalText autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
@@ -220,11 +219,12 @@
 - (void)addSurePayOrderCell
 {
     self.usePayLab = [UILabel newAutoLayoutView];
+    self.usePayLab.font = [UIFont systemFontOfSize:15];
     [self.contentView addSubview:self.usePayLab];
         self.usePayLab.font = [UIFont systemFontOfSize:19];
     [self.usePayLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
     [self.usePayLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
-    [self.usePayLab autoSetDimensionsToSize:CGSizeMake(120, 20)];
+    [self.usePayLab autoSetDimensionsToSize:CGSizeMake(180, 20)];
     
     UIButton *payBtn = [UIButton newAutoLayoutView];
     [self.contentView addSubview:payBtn];
@@ -270,13 +270,12 @@
 // 计算价钱
 - (NSString *)totalMoney:(NSMutableArray *)arr
 {
-    NSInteger totalNum = 0;
-    NSString *total = [NSString string];
+    CGFloat totalNum = 0;
     for (int i = 0; i < arr.count; i++) {
         MerchantInformationModel *model = arr[i];
-        totalNum += model.waimaishipinJiage.integerValue;
-        total = [NSString stringWithFormat:@"¥%ld",totalNum];
+        totalNum += model.waimaishipinJiage.floatValue;
     }
+    NSString *total = [NSString stringWithFormat:@"¥%0.2f",totalNum];
     return total;
 }
 

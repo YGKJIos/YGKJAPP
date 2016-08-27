@@ -8,6 +8,8 @@
 
 #import "HomePageViewController.h"
 #import "SearchViewController.h"
+#import <AFNetworking.h>
+#import "Singleton.h"
 #import "HomePageTableViewController.h" // 首页内容
 #import "MapViewController.h" // 恒运大厦 定位
 
@@ -37,8 +39,53 @@
     [self addChildViewController:homeTabVC];
     [self.view addSubview:homeTabVC.tableView];
     
+    [self addAFN];
     // 添加百度地图
     [self currentLocation];
+}
+#pragma mark - 网络判断
+- (void)addAFN
+{
+    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
+    
+    // 2.设置网络状态改变后的处理
+    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        // 当网络状态改变了, 就会调用这个block
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown: // 未知网络
+                NSLog(@"未知网络");
+                [self addAlterController:@"未知网络"];
+                IPDSingleton.AFNBool = YES;
+                break;
+            case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
+                NSLog(@"没有网络(断网)");
+                [self addAlterController:@"没有网络"];
+                IPDSingleton.AFNBool = NO;
+                [IPDSingleton makeShowWith:@"无网络,请检查网络设置"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"AFNsss" object:@"NO" userInfo:nil];
+                break;
+                
+            case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
+                [self addAlterController:@"您在使用蜂窝移动网络"];
+                NSLog(@"手机自带网络");
+                IPDSingleton.AFNBool = YES;
+                break;
+                
+            case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
+                NSLog(@"WIFI");
+                IPDSingleton.AFNBool = YES;
+                break;
+        }
+    }];
+    // 3.开始监控
+    [mgr startMonitoring];
+}
+- (void)addAlterController:(NSString *)message
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 // 导航栏中央搜索按键
 - (void)addNavigationView

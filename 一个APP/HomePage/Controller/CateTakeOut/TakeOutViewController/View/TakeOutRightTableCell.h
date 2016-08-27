@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *jianBtn;// 减少
 @property (weak, nonatomic) IBOutlet UILabel *numberLab;// 份数
 
-- (void)addBtnClickAction:(NSIndexPath *)indexPath;
 - (void)setTakeOutRightTableModel:(MerchantInformationModel *)model;
 
 

@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface ZGP_SuperMarketModel : NSObject
-@property (nonatomic, strong)NSString *shangjiaName;
-@property (nonatomic, strong)NSString *shangjiaTongzhi;
-@property (nonatomic, strong)NSString *shangjiaWeizhi;
-@property (nonatomic, strong)NSString *shangjiaTouxiang;
-@property (nonatomic, strong)NSString *shangjiaPingfen;
-@property (nonatomic, strong)NSString *qisongjia;
-@property (nonatomic, strong)NSString *peisongfei;
+@property (nonatomic, copy)NSString *shangjiaName;
+@property (nonatomic, copy)NSString *shangjiaTongzhi;
+@property (nonatomic, copy)NSString *shangjiaWeizhi;
+@property (nonatomic, copy)NSString *shangjiaTouxiang;
+@property (nonatomic, copy)NSString *shangjiaPingfen;
+@property (nonatomic, copy)NSString *shangjiaId;
+@property (nonatomic, copy)NSString *qisongjia;
+@property (nonatomic, copy)NSString *peisongfei;
 @end

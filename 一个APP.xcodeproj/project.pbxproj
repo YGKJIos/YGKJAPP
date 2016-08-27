@@ -31,6 +31,8 @@
 		590573F91D44B9C00033175B /* PlayerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590573F71D44B9C00033175B /* PlayerCollectionViewCell.m */; };
 		590573FA1D44B9C00033175B /* PlayerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590573F81D44B9C00033175B /* PlayerCollectionViewCell.xib */; };
 		5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5910B8931D1234D700BA1C16 /* MyProfileViewController.m */; };
+		591138C71D71847A00735754 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 591138C61D71847A00735754 /* BaseTableViewCell.m */; };
+		591138CA1D71887100735754 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 591138C91D71887100735754 /* Singleton.m */; };
 		592F298B1D3DC20A0016A550 /* CateTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F298A1D3DC20A0016A550 /* CateTypeTableViewController.m */; };
 		59366BBF1D06872300BB445A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BBE1D06872300BB445A /* BaseViewController.m */; };
 		59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59366BC41D06CB8B00BB445A /* MessageTableViewCell.m */; };
@@ -400,6 +402,10 @@
 		590573F81D44B9C00033175B /* PlayerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerCollectionViewCell.xib; sourceTree = "<group>"; };
 		5910B8921D1234D700BA1C16 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		5910B8931D1234D700BA1C16 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		591138C51D71847A00735754 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		591138C61D71847A00735754 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		591138C81D71887100735754 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		591138C91D71887100735754 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		592F29891D3DC20A0016A550 /* CateTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateTypeTableViewController.h; sourceTree = "<group>"; };
 		592F298A1D3DC20A0016A550 /* CateTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateTypeTableViewController.m; sourceTree = "<group>"; };
 		59366BBD1D06872300BB445A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -1916,6 +1922,8 @@
 				59FFB7021D051EA800071E0E /* UIView+Extension.m */,
 				59F061D71D0E409C006BEF9F /* AFNetWorting.h */,
 				59F061D81D0E409C006BEF9F /* AFNetWorting.m */,
+				591138C81D71887100735754 /* Singleton.h */,
+				591138C91D71887100735754 /* Singleton.m */,
 			);
 			name = OtherTool;
 			sourceTree = "<group>";
@@ -2237,6 +2245,8 @@
 				59FFB6FA1D050F9500071E0E /* NavigationViewController.m */,
 				59366BBD1D06872300BB445A /* BaseViewController.h */,
 				59366BBE1D06872300BB445A /* BaseViewController.m */,
+				591138C51D71847A00735754 /* BaseTableViewCell.h */,
+				591138C61D71847A00735754 /* BaseTableViewCell.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -2706,7 +2716,9 @@
 				594591251D3CAC2500FAF565 /* NewsTableViewCell.m in Sources */,
 				594590741D3CA2F500FAF565 /* SmallAdvertisingTableViewController.m in Sources */,
 				594591041D3CAA5D00FAF565 /* SupermarketViewController.m in Sources */,
+				591138CA1D71887100735754 /* Singleton.m in Sources */,
 				D845EAF31D488545009B3B52 /* SecondDetailTableViewCell.m in Sources */,
+				591138C71D71847A00735754 /* BaseTableViewCell.m in Sources */,
 				5940BC311D1A8F6900982820 /* MenuTableViewCell.m in Sources */,
 				59D07B551D6592170099C1DA /* Order.m in Sources */,
 				594591021D3CAA5D00FAF565 /* SupermarketCollectionViewCell.m in Sources */,

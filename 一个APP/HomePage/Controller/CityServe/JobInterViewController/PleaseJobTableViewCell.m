@@ -7,7 +7,8 @@
 //
 
 #import "PleaseJobTableViewCell.h"
-static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng";
+static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation PleaseJobTableViewCell
 
@@ -20,6 +21,8 @@ static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng/";
 
 - (void)JobModel:(MerchantInformationModel *)model
 {
+    NSString *url = [NSString stringWithFormat:@"%@%@",headUrl,model.shangjiaTouxiang];
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:url]];
     self.nameLab.text = model.shangjiaName;
     self.informationLab.text = model.shangjiaTongzhi;
     self.locationLab.text = model.shangjiaWeizhi;
