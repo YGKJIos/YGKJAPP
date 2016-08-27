@@ -8,6 +8,8 @@
 
 #import "sevCarTableViewCell.h"
 static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
+
 @implementation sevCarTableViewCell
 
 + (sevCarTableViewCell *) createSevCarCell
@@ -21,7 +23,7 @@ static NSString *yuming = @"http://192.168.1.88:8080/shangcheng/";
     self.nameLabel.text = model.shangjiaName;
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.placeLabel.text = model.shangjiaWeizhi;
-    [self.sevCarImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang]]];
+    [self.sevCarImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", headUrl, model.shangjiaTouxiang]]];
     self.stylLabel.text = model.shangjiaTongzhi;
 }
 

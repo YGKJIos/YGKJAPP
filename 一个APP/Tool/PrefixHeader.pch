@@ -23,7 +23,7 @@
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
 #define BGcolor(r, g, b) [UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:1];
 #define arcColor BGcolor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
-
+#define IPDSingleton [Singleton shareSingleton]
 
 #import "ZGPplaceholderImageView.h" // 无数据时占位图
 

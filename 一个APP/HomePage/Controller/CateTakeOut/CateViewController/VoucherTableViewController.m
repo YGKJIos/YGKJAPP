@@ -163,6 +163,7 @@
     order.subject = self.model.tuangouName; //商品标题
     order.body = self.model.tuangouShuoming; //商品描述
     order.totalFee = [NSString stringWithFormat:@"%@",self.model.tuangouTejia]; //商品价格
+//    order.totalFee = @"0.01";
     order.notifyURL =  @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //回调URL
     
     order.service = @"mobile.securitypay.pay";
@@ -191,8 +192,26 @@
             //【callback处理支付结果】
             NSLog(@"reslut = %@",resultDic);
             if ([resultDic[@"resultStatus"] isEqualToString:@"9000"]) {
-                ALiPaysuccessViewController *success = [[ALiPaysuccessViewController alloc] init];
-                [self.navigationController pushViewController:success animated:YES];
+                NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+                NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
+                NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+                NSString *url = @"user/addusertuangoujuan.action?";
+                NSDictionary *textDic = @{@"userId":dic[@"userId"],
+                                          @"tuangoujuanId":self.model.tuangoujuanId,
+                                          @"alipayNo":order.outTradeNO};
+                [AFNetWorting postNetWortingWithUrlString:url params:textDic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+                    if ([responseObject[@"ok"] isEqualToString:@"1"]) {
+                        ALiPaysuccessViewController *success = [[ALiPaysuccessViewController alloc] init];
+                        [self.navigationController pushViewController:success animated:YES];
+                    }else{
+                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"生成订单失败请联系客服" preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+                        [alert addAction:cancel];
+                        [self presentViewController:alert animated:YES completion:nil];
+                    }
+                } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                    
+                }];
             }
         }];
     }

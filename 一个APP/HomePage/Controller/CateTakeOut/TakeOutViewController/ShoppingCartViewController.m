@@ -12,6 +12,8 @@
 
 
 @interface ShoppingCartViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong)UILabel *textLabel;
+@property (nonatomic, strong)UITableView *tableView;
 
 @end
 
@@ -21,12 +23,12 @@
     [super viewDidLoad];
     self.navigationItem.title = self.shopModel.shangjiaName;
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-57) style:UITableViewStylePlain];
-    tableView.dataSource = self;
-    tableView.delegate = self;
-    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.view addSubview:tableView];
-    [self addHeardView:tableView];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64-57) style:UITableViewStylePlain];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:self.tableView];
+    [self addHeardView:self.tableView];
     [self addBottomView];
 }
 #pragma mark - 添加tableview 的头视图
@@ -42,36 +44,38 @@
     [shopCartImage autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:16];
     [shopCartImage autoSetDimensionsToSize:CGSizeMake(25, 25)];
     
-    UILabel *textLabel = [UILabel newAutoLayoutView];
-    [view addSubview:textLabel];
-    [textLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:43];
-    [textLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:9];
-    [textLabel autoSetDimensionsToSize:CGSizeMake(18, 18)];
-    textLabel.layer.masksToBounds = YES;
-    textLabel.layer.cornerRadius = 9;
-    textLabel.text = [NSString stringWithFormat:@"%ld",self.selectArr.count];
-    textLabel.textAlignment = NSTextAlignmentCenter;
-    textLabel.backgroundColor = BGcolor(250, 83, 68);
-    textLabel.textColor = [UIColor whiteColor];
-    textLabel.font = [UIFont systemFontOfSize:12];
+    self.textLabel = [UILabel newAutoLayoutView];
+    [view addSubview:self.textLabel];
+    [self.textLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:43];
+    [self.textLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:9];
+    [self.textLabel autoSetDimensionsToSize:CGSizeMake(18, 18)];
+    self.textLabel.layer.masksToBounds = YES;
+    self.textLabel.layer.cornerRadius = 9;
+    self.textLabel.text = [NSString stringWithFormat:@"%ld",self.selectArr.count];
+    self.textLabel.textAlignment = NSTextAlignmentCenter;
+    self.textLabel.backgroundColor = BGcolor(250, 83, 68);
+    self.textLabel.textColor = [UIColor whiteColor];
+    self.textLabel.font = [UIFont systemFontOfSize:12];
     
-    UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [view addSubview:deleteBtn];
-    [deleteBtn setBackgroundImage:[UIImage imageNamed:@"waimai_qingchu"] forState:UIControlStateNormal];
-    [deleteBtn autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
-    [deleteBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:21];
-    [deleteBtn autoSetDimensionsToSize:CGSizeMake(82, 15.5)];
-    [deleteBtn addTarget:self action:@selector(delegateBtnAction) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [view addSubview:deleteBtn];
+//    [deleteBtn setBackgroundImage:[UIImage imageNamed:@"waimai_qingchu"] forState:UIControlStateNormal];
+//    [deleteBtn autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
+//    [deleteBtn autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:21];
+//    [deleteBtn autoSetDimensionsToSize:CGSizeMake(82, 15.5)];
+//    [deleteBtn addTarget:self action:@selector(delegateBtnAction) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *boomLine = [[UIView alloc]initWithFrame:CGRectMake(0, 56, WIDTH, 1)];
     boomLine.backgroundColor = BGcolor(143, 143, 143);
     [view addSubview:boomLine];
  
 }
-- (void)delegateBtnAction
-{
-    NSLog(@"deleta");
-}
+//- (void)delegateBtnAction
+//{
+//    self.textLabel.hidden = YES;
+//    [self.delegate deleteSelectShiPinDelegate:YES];
+//    [self.tableView reloadData];
+//}
 #pragma mark - 添加bottom view
 - (void)addBottomView
 {
@@ -141,12 +145,12 @@
 // 计算价钱
 - (NSString *)totalMoney:(NSMutableArray *)arr
 {
-    NSInteger totalNum = 0;
+    CGFloat totalNum = 0;
     NSString *total = [NSString string];
     for (int i = 0; i < arr.count; i++) {
         MerchantInformationModel *model = arr[i];
-       totalNum += model.waimaishipinJiage.integerValue;
-        total = [NSString stringWithFormat:@"%ld",totalNum];
+       totalNum += model.waimaishipinJiage.floatValue;
+        total = [NSString stringWithFormat:@"%0.2f",totalNum];
     }
     return total;
 }

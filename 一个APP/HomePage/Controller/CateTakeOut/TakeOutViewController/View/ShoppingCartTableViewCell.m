@@ -21,7 +21,7 @@
         [self.contentView addSubview:self.dishesLab];
         [self.dishesLab autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:30];
         [self.dishesLab autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:13];
-        [self.dishesLab autoSetDimensionsToSize:CGSizeMake(100, 20)];
+        [self.dishesLab autoSetDimensionsToSize:CGSizeMake(200, 20)];
         
         self.moneyLab = [UILabel newAutoLayoutView];
         self.moneyLab.text = @"¥20";

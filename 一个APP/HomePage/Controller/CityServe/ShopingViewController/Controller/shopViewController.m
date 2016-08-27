@@ -70,13 +70,6 @@
     header.lastUpdatedTimeLabel.hidden = YES;
     self.collection.mj_header = header;
     
-    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    // 设置文字
-    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
-    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
-    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
-    self.collection.mj_footer = footer;
-    
 }
 // 下拉刷新的方法
 - (void)loadNewData{
@@ -103,15 +96,7 @@
         }];
         
     });
-    
 }
-// 上拉加载的方法
-- (void)loadMoreData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.collection.mj_footer endRefreshing];
-    });
-}
-
 
 #pragma mark - collection数据源代理
 

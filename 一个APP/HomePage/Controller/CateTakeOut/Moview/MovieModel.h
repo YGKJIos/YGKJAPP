@@ -22,5 +22,6 @@
 @property (nonatomic, copy) NSString *dianyingLeixing;
 @property (nonatomic, copy) NSString *dianyingRebo;
 @property (nonatomic, copy) NSString *dianyingPingfen;
+@property (nonatomic, copy) NSString *shangjiaDianhua;
 
 @end

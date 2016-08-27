@@ -18,12 +18,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *fenLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jieshaoLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *tuijianImage;
-@property (weak, nonatomic) IBOutlet UILabel *rmbLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *rmbshuLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yuanjiaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yjrmbLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *dgImage;
+
 @property (weak, nonatomic) IBOutlet UIImageView *stylImage;
+- (IBAction)telephoneNumAction:(id)sender;
 
 
 

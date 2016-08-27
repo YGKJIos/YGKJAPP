@@ -30,7 +30,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="kv8-gF-GeW" secondAttribute="bottom" id="MSb-Uv-FRO"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="67.5" y="539"/>
+            <point key="canvasLocation" x="85.5" y="409"/>
         </tableViewCell>
     </objects>
 </document>

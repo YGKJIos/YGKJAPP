@@ -8,7 +8,7 @@
 
 #import "ShopTableViewCell.h"
 
-static NSString *shangcheng = @"http://192.168.1.88:8080/shangcheng/";
+static NSString *shangcheng = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation ShopTableViewCell
 

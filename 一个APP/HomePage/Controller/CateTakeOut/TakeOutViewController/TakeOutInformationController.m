@@ -31,6 +31,7 @@
 @property (nonatomic, assign)UIButton *textBtn;
 @property (nonatomic, strong)AddFoodView *foodView;
 @property (nonatomic, strong)NSMutableArray *selectArr;
+@property (nonatomic, assign)BOOL result;
 
 @end
 
@@ -59,6 +60,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.result = NO;
     self.num = 0;
     self.view.backgroundColor = [UIColor whiteColor];
     // 收藏按钮
@@ -84,19 +86,22 @@
 {
     NSLog(@"点击收藏");
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (self.result) {
+        [self loadData];
+    }
+    [super viewWillAppear:animated];
+}
 #pragma mark - 网络请求
 - (void)loadData
 {
-    
-//    NSDictionary *dic = @{@"shangjiaId":self.model.shangjiaId};
-    NSDictionary *dic = @{@"shangjiaId":@"159"};
+    NSDictionary *dic = @{@"shangjiaId":self.model.shangjiaId};
     [AFNetWorting postNetWortingWithUrlString:@"waimai//querywaimaishipin.action?" params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
         for (NSDictionary *dic in responseObject) {
-            NSLog(@"详情*********%@" , responseObject);
             MerchantInformationModel *model = [[MerchantInformationModel alloc]init];
             [model setValuesForKeysWithDictionary:dic];
             [self.foodArr addObject:model];
-            
         }
         [self.rightTableView reloadData];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -186,7 +191,6 @@
     }
     [self.foodArr replaceObjectAtIndex:number withObject:model];
     [self.selectArr addObject:model];
-    NSLog(@"%@" , self.selectArr);
     [self setFoodViewTotal];
 }
 - (void)jianBtnClick:(UIButton *)btn
@@ -209,9 +213,8 @@
     }
     [self.foodArr replaceObjectAtIndex:number withObject:model];
     if (self.selectArr.count > 0) {
-        [self.selectArr removeObjectAtIndex:number];
+        [self.selectArr removeObjectAtIndex:model.gwsz.integerValue];
     }
-    NSLog(@"%@" , self.selectArr);
     [self setFoodViewTotal];
 }
 - (void)setFoodViewTotal
@@ -220,16 +223,14 @@
     self.foodView.shoppingImage.image = [UIImage imageNamed:@"waimai_gouwuchelan"];
     self.foodView.orderMoneyBtn.backgroundColor = BGcolor(65, 186, 206);
     NSString *text = [self totalMoney:self.selectArr];
-    if (text.integerValue < self.model.qisongjia.integerValue) {
-        if (text.integerValue == 0) {
+    if (text.floatValue < self.model.qisongjia.floatValue) {
+        if (text.floatValue == 0) {
             self.foodView.orderNum.hidden = YES;
             self.foodView.shoppingImage.image = [UIImage imageNamed:@"waimai_gouwuchehui"];
             [self.foodView.orderMoneyBtn setBackgroundColor:[UIColor lightGrayColor]];
             [self.foodView.orderMoneyBtn setTitle:[NSString stringWithFormat:@"%@元起送价",self.model.qisongjia] forState:UIControlStateNormal];
         }else{
-            NSString *str = [NSString stringWithFormat:@"%ld" , self.model.qisongjia.integerValue-text.integerValue];
-            NSLog(@"----------------%@" , str);
-            [self.foodView.orderMoneyBtn setTitle:[NSString stringWithFormat:@"还差%ld元",self.model.qisongjia.integerValue-text.integerValue] forState:UIControlStateNormal];
+            [self.foodView.orderMoneyBtn setTitle:[NSString stringWithFormat:@"还差0.2%f元",self.model.qisongjia.floatValue-text.floatValue] forState:UIControlStateNormal];
         }
     }else{
         [self.foodView.orderMoneyBtn setTitle:@"确认下单" forState:UIControlStateNormal];
@@ -256,16 +257,22 @@
 - (void)tapClickAction:(UITapGestureRecognizer *)tap
 {
     if (self.foodView.orderNum.hidden) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有点餐哦~~!" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-        [alert addAction:cancel];
-        [self presentViewController:alert animated:YES completion:nil];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"您还没有点餐哦~~!";
+        [hud show:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            hud.hidden = YES;
+        });
     }else{
         ShoppingCartViewController *shopVC = [[ShoppingCartViewController alloc]init];
         shopVC.selectArr = self.selectArr;
         shopVC.shopModel = self.model;
         [self.navigationController pushViewController:shopVC animated:YES];
     }
+}
+- (void)deleteSelectShiPinDelegate:(BOOL)result
+{
+    self.result = result;
 }
 #pragma mark - tableView 点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -344,10 +351,8 @@
 {
     if ([self.foodView.orderMoneyBtn.titleLabel.text isEqualToString:@"确认下单"]) {
         SubmitOrderViewController *subVC = [[SubmitOrderViewController alloc]init];
-        NSLog(@"self.model == %@" , self.model);
         subVC.selectArr = self.selectArr;
         subVC.shopModel = self.model;
-        NSLog(@"******%@" , self.model);
         [self.navigationController pushViewController:subVC animated:YES];
     }else{
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -362,14 +367,20 @@
 // 计算价钱
 - (NSString *)totalMoney:(NSMutableArray *)arr
 {
-    NSInteger totalNum = 0;
-    NSString *total = [NSString string];
-    for (int i = 0; i < arr.count; i++) {
-        MerchantInformationModel *model = arr[i];
-        totalNum += model.waimaishipinJiage.integerValue;
-        total = [NSString stringWithFormat:@"%ld",totalNum];
+    if (arr.count > 0) {
+        
+        CGFloat totalNum = 0;
+        NSString *total = [NSString string];
+        for (int i = 0; i < arr.count; i++) {
+            MerchantInformationModel *model = arr[i];
+            totalNum += model.waimaishipinJiage.floatValue;
+            total = [NSString stringWithFormat:@"0.2%f",totalNum];
+        }
+        return total;
+    }else
+    {
+        return @"0";
     }
-    return total;
 }
 
 

@@ -10,7 +10,6 @@
 static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
 @implementation TravelTableViewCell
 
-
 + (TravelTableViewCell *) createTravelCell
 {
     TravelTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"TravelTableViewCell" owner:nil options:nil] lastObject];

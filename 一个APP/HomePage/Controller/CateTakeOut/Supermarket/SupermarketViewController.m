@@ -154,9 +154,7 @@
         informationVC.model = self.superMarketArr[indexPath.row];
     }
     [self.navigationController pushViewController:informationVC animated:YES];
-    NSLog(@"row = %ld, section= %ld",indexPath.row,indexPath.section);
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

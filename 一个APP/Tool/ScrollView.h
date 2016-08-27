@@ -13,6 +13,6 @@
 
 + (ScrollView *)CreateScrollViewImages:(NSArray *)images;
 @property (nonatomic, strong)SDCycleScrollView *scrollView;
-- (void)setScrollImage:(NSArray *)images;
+
 
 @end
