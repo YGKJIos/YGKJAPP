@@ -248,13 +248,11 @@
 // 退出登录按钮
 - (void)clickOutBtn
 {
-
     [[UserInfo shareAccount] logoOutAccount];
-
+    
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     [self presentViewController:loginVC animated:YES completion:nil];
 
-    NSLog(@"123");
 }
 
 // 修改名字代理方法

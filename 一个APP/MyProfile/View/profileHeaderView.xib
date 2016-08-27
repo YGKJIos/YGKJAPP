@@ -17,8 +17,12 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wode_txbj" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-Sa-qam">
                     <rect key="frame" x="140" y="29" width="95" height="95"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wode_touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="OtX-42-VOm">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pingjia_yonghuming1" translatesAutoresizingMaskIntoConstraints="NO" id="OtX-42-VOm">
                     <rect key="frame" x="147" y="36" width="80" height="81"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="81" id="vOp-EU-8Yr"/>
+                        <constraint firstAttribute="width" constant="80" id="xVW-kR-VyK"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLJW" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEI-Ns-zkf">
                     <rect key="frame" x="147" y="143" width="80" height="19"/>
@@ -53,8 +57,8 @@
         </view>
     </objects>
     <resources>
+        <image name="pingjia_yonghuming1" width="40" height="40"/>
         <image name="wode_beijing" width="400" height="190"/>
-        <image name="wode_touxiang" width="80" height="81"/>
         <image name="wode_txbj" width="95" height="95"/>
     </resources>
 </document>
