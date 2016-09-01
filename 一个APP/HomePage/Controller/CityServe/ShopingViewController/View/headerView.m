@@ -22,7 +22,12 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
 {
     NSString *url = [NSString stringWithFormat:@"%@%@",headUrl,model.shangjiaTouxiang];
     [self.image sd_setImageWithURL:[NSURL URLWithString:url]];
+
     self.gradeLab.text = [NSString stringWithFormat:@"%@分",model.shangjiaPingfen];
+    if (!model.shangjiaPingfen) {
+        self.gradeLab.hidden = YES;
+        self.xingImage.hidden = YES;
+    }
 }
 
 @end

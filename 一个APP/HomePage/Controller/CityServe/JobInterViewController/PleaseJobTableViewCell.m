@@ -19,15 +19,17 @@
     return cell;
 }
 
-- (void)JobModel:(MerchantInformationModel *)model
+- (void)JobModel:(PleaseJobModel *)model
 {
     NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:url]];
     self.nameLab.text = model.shangjiaName;
-    self.informationLab.text = model.shangjiaTongzhi;
+    self.informationLab.text = model.zhaopinZhiweimiaoshu;
     self.locationLab.text = model.shangjiaWeizhi;
-    self.degreeLab.text = model.qiuzhiXueli;
-    self.yearLab.text = model.qiuzhiNianxian;
+    self.degreeLab.text = model.zhaopinXueli;
+    self.yearLab.text = model.zhaopinGongzuojingyan;
+    self.moenyLab.text = model.zhaopinXinzi;
+    self.timeLab.text = [model.zhaopinFabushijian substringToIndex:9];
     
 }
 

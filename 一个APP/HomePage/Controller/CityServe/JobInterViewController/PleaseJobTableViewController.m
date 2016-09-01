@@ -9,7 +9,7 @@
 #import "PleaseJobTableViewController.h"
 #import "detailTableViewController.h"
 #import "PleaseJobTableViewCell.h"
-#import "MerchantInformationModel.h"
+#import "PleaseJobModel.h"
 @interface PleaseJobTableViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic, retain) NSMutableArray *jobArr;
 
@@ -66,7 +66,7 @@
                 [self.view addSubview:placeholderImage];
             }else{
             for (NSDictionary *dic in arr) {
-                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
+                PleaseJobModel *model = [[PleaseJobModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.jobArr addObject:model];
             }
@@ -76,7 +76,6 @@
             
         }];
     });
-    
 }
 // 上拉加载的方法
 - (void)loadMoreData{
@@ -157,7 +156,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     detailTableViewController *detailVC = [[detailTableViewController alloc]init];
-    detailVC.model = self.jobArr[indexPath.row];
+    if (self.jobArr.count > 0) {
+        detailVC.model = self.jobArr[indexPath.row];
+    }
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

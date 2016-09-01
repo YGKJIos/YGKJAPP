@@ -36,9 +36,9 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
 + (void)getNetWortingWithUrlString:(NSString *)urlString params:(NSDictionary *)params controller:(UIViewController *)controller success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
 {
     // 加载动画
-//    MBProgressHUD *progress = [MBProgressHUD showHUDAddedTo:controller.view animated:YES];
-//    progress.backgroundColor = [UIColor grayColor];
-//    progress.alpha = 0.5;
+    MBProgressHUD *progress = [MBProgressHUD showHUDAddedTo:controller.view animated:YES];
+    progress.backgroundColor = [UIColor grayColor];
+    progress.alpha = 0.5;
     // 拼接url
     NSString *addressUrl = [NSString stringWithFormat:@"%@%@",bendiUrl,urlString];
     
@@ -48,17 +48,17 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (responseObject) {
-//            [progress removeFromSuperview];
+            [progress hide:YES];
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
             success(task, dic);
         }else
         {
-//            [progress removeFromSuperview];
+            [progress hide:YES];
             success(task,@"网络出现错误！！！");
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        [progress removeFromSuperview];
+        [progress hide:YES];
         failure(task,error);
     }];
     
@@ -67,26 +67,26 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
 + (void)postNetWortingWithUrlString:(NSString *)urlString params:(NSDictionary *)params controller:(UIViewController *)controller success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 
 {
-//    MBProgressHUD *progress = [MBProgressHUD showHUDAddedTo:controller.view animated:YES];
-//    progress.labelText = @"加载中...";
+    MBProgressHUD *progress = [MBProgressHUD showHUDAddedTo:controller.view animated:YES];
+    progress.labelText = @"加载中...";
     
     AFHTTPSessionManager *manager = [self manager];
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",bendiUrl,urlString];
     [manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        [progress hide:YES];
+        [progress hide:YES];
         // 请求成功
         if (responseObject) {
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
             success(task, dic);
         }else
         {
-//            [progress hide:YES];
+            [progress hide:YES];
             success(task,@"网络不给力啊!!!");
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        [progress hide:YES];
+        [progress hide:YES];
         // 请求失败
         failure(task, error);
     }];
