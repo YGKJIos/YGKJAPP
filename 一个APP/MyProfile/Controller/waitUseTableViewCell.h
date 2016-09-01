@@ -21,8 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *numLab;
 @property (weak, nonatomic) IBOutlet UILabel *quanLab;
-@property (weak, nonatomic) IBOutlet UIButton *chickBtn;
 @property (weak, nonatomic) IBOutlet UILabel *priceLab;
+@property (weak, nonatomic) IBOutlet UILabel *qmLab;
 
 
 

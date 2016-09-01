@@ -21,6 +21,7 @@
     self.foodNameLab.text = model.shangjiaName;
     self.quanLab.text = model.tuangouShuoming;
     self.priceLab.text = [NSString stringWithFormat:@"¥%@",model.tuangouTejia];
+    self.qmLab.text = model.usertuangoujuanYanzhengma;
 }
 
 

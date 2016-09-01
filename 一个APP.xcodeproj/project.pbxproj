@@ -271,8 +271,6 @@
 		D81CF36C1D6ECD8500FABD90 /* QorderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D81CF36A1D6ECD8500FABD90 /* QorderTableViewCell.m */; };
 		D81CF36D1D6ECD8500FABD90 /* QorderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81CF36B1D6ECD8500FABD90 /* QorderTableViewCell.xib */; };
 		D81CF3701D6ECE8400FABD90 /* QorderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81CF36F1D6ECE8400FABD90 /* QorderModel.m */; };
-		D81CF3741D6EE8F300FABD90 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81CF3721D6EE8F300FABD90 /* CodeViewController.m */; };
-		D81CF3751D6EE8F300FABD90 /* CodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D81CF3731D6EE8F300FABD90 /* CodeViewController.xib */; };
 		D83EA40D1D62A496008437E7 /* SetNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83EA40B1D62A496008437E7 /* SetNameViewController.m */; };
 		D83EA40E1D62A496008437E7 /* SetNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83EA40C1D62A496008437E7 /* SetNameViewController.xib */; };
 		D841A1901D5AD30200F64C0F /* PlaceOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D841A18E1D5AD30200F64C0F /* PlaceOrderTableViewCell.m */; };
@@ -896,9 +894,6 @@
 		D81CF36B1D6ECD8500FABD90 /* QorderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QorderTableViewCell.xib; sourceTree = "<group>"; };
 		D81CF36E1D6ECE8400FABD90 /* QorderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QorderModel.h; sourceTree = "<group>"; };
 		D81CF36F1D6ECE8400FABD90 /* QorderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QorderModel.m; sourceTree = "<group>"; };
-		D81CF3711D6EE8F300FABD90 /* CodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeViewController.h; sourceTree = "<group>"; };
-		D81CF3721D6EE8F300FABD90 /* CodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeViewController.m; sourceTree = "<group>"; };
-		D81CF3731D6EE8F300FABD90 /* CodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeViewController.xib; sourceTree = "<group>"; };
 		D83EA40A1D62A496008437E7 /* SetNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetNameViewController.h; sourceTree = "<group>"; };
 		D83EA40B1D62A496008437E7 /* SetNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetNameViewController.m; sourceTree = "<group>"; };
 		D83EA40C1D62A496008437E7 /* SetNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetNameViewController.xib; sourceTree = "<group>"; };
@@ -1186,9 +1181,6 @@
 				D84C668D1D6C13F00061F3C1 /* waitUseTableViewCell.xib */,
 				D8423A8B1D6DB005008B0360 /* waitUseModel.h */,
 				D8423A8C1D6DB005008B0360 /* waitUseModel.m */,
-				D81CF3711D6EE8F300FABD90 /* CodeViewController.h */,
-				D81CF3721D6EE8F300FABD90 /* CodeViewController.m */,
-				D81CF3731D6EE8F300FABD90 /* CodeViewController.xib */,
 				D81CF3661D6ECD6500FABD90 /* QorderTableViewController.h */,
 				D81CF3671D6ECD6500FABD90 /* QorderTableViewController.m */,
 				D81CF3691D6ECD8500FABD90 /* QorderTableViewCell.h */,
@@ -2533,7 +2525,6 @@
 				594590FA1D3CAA5D00FAF565 /* GameTableViewCell.xib in Resources */,
 				D853E4731D3C853400C1FF9D /* fotgetViewController.xib in Resources */,
 				D845EAF41D488545009B3B52 /* SecondDetailTableViewCell.xib in Resources */,
-				D81CF3751D6EE8F300FABD90 /* CodeViewController.xib in Resources */,
 				59C54C871D6AA1B2009BF605 /* AddFoodView.xib in Resources */,
 				594590081D3C8A1C00FAF565 /* TravelView.xib in Resources */,
 				59F46B931D4A0582001C6B7B /* headerView.xib in Resources */,
@@ -2837,7 +2828,6 @@
 				59458FFA1D3C8A1C00FAF565 /* TakePhotoTableViewController.m in Sources */,
 				59F7860D1D0BD9A1005A39FB /* FriendCell.m in Sources */,
 				2A821EF21D6CB375005A49A5 /* ZGPplaceholderImageView.m in Sources */,
-				D81CF3741D6EE8F300FABD90 /* CodeViewController.m in Sources */,
 				594591011D3CAA5D00FAF565 /* HeaderCollectionReusableView.m in Sources */,
 				D845EAE51D484573009B3B52 /* SecondHeaderView.m in Sources */,
 				D84C668A1D6C13BE0061F3C1 /* waitUseTableViewController.m in Sources */,

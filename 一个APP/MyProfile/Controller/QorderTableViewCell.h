@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "QorderModel.h"
+
+@protocol QorderDelegate <NSObject>
+
+
+@end
+
 @interface QorderTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *tiameLab;
@@ -18,6 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 
+
+@property (nonatomic, assign) id<QorderDelegate>delegate;
 
 + (QorderTableViewCell *)createCell;
 - (void)QorderModel:(QorderModel *)model;
