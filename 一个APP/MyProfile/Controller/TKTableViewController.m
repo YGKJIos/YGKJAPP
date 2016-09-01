@@ -22,7 +22,8 @@
     [super viewDidLoad];
     self.title = @"查看退单";
     self.TKArr = [[NSMutableArray alloc] init];
-    [self loadNewData];   
+    [self loadNewData];
+    self.tableView.tableFooterView = [[UIView alloc]init];
 }
 
 // 下拉刷新的方法
@@ -41,6 +42,10 @@
             [model setValuesForKeysWithDictionary:dic];
             [self.TKArr addObject:model];
         }
+        if (self.TKArr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:placeholderImage];
+        }
         [self.tableView reloadData];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -48,22 +53,17 @@
     }];
     
 }
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.TKArr.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.TKArr.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,7 +71,7 @@
     TKTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
     if (!cell) {
         cell = [TKTableViewCell createCell];
-        [cell TKMdel:self.TKArr[indexPath.row]];
+        [cell TKMdel:self.TKArr[indexPath.section]];
     }
    return cell;
 }

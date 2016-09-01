@@ -29,23 +29,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.select = YES;
+    self.select = NO;
     self.peopleTextField.delegate = self;
     self.mimaField.delegate = self;
     [self.phoneLoginBtn addTarget:self action:@selector(ClickPhoneLoginAction) forControlEvents:UIControlEventTouchUpInside];
-    
-//    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-//    NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
-//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-//    self.peopleTextField.text = dic[@"userWangming"];
-//    self.mimaField.text = dic[@"password"];
-//    if ([dic[@"status"] isEqualToString:@"NO"]) {
-//        self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
-//        self.select = NO;
-//        _dic = dic;
-//        [self loginBtn:_dic];
-//    }
-    
     // 1.点击收回键盘
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldShouldReturn:)];
     [self.view addGestureRecognizer:tap];
@@ -106,13 +93,12 @@
             });
         }else
         {
+            self.select = NO;
             [self keepDataInSandBox:responseObject[@"userId"]];
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"登录中请稍后...";
-            
-//            [UserInfo shareAccount].accountDict = responseObject;
-//            [[UserInfo shareAccount] saveToSandBox];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [hud hide:YES];
                 RootTabBarController *rootVC = [[RootTabBarController alloc]init];
                 [self presentViewController:rootVC animated:YES completion:nil];
@@ -143,7 +129,6 @@
 {
     [self.peopleTextField resignFirstResponder];
     [self.mimaField resignFirstResponder];
-//    _dic = @{@"userWangming":self.peopleTextField.text,@"password":self.mimaField.text};
     return YES;
 }
 

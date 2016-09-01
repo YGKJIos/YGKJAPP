@@ -52,7 +52,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHA-aA-KS1">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHA-aA-KS1">
                     <rect key="frame" x="76" y="342" width="76" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="76" id="cMq-HI-uWy"/>
@@ -110,7 +110,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jizhumima_weixuan" translatesAutoresizingMaskIntoConstraints="NO" id="Cof-Tz-9Aa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="jizhumima_xuanzhong" translatesAutoresizingMaskIntoConstraints="NO" id="Cof-Tz-9Aa">
                     <rect key="frame" x="55" y="348" width="17" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="dBq-TA-vwq"/>
@@ -185,7 +185,7 @@
         <image name="denglubeijing" width="400" height="640"/>
         <image name="denglumima" width="264" height="46"/>
         <image name="dengluming" width="264" height="46"/>
-        <image name="jizhumima_weixuan" width="17" height="17"/>
+        <image name="jizhumima_xuanzhong" width="21" height="19"/>
         <image name="zhihuitongcheng" width="234" height="90"/>
         <image name="zhucezhanghu" width="80" height="24"/>
     </resources>

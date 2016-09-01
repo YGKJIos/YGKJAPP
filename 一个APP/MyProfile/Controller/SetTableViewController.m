@@ -12,12 +12,13 @@
 #import "SetFooterView.h"
 #import "SetNameViewController.h"
 #import "EditingAddressViewController.h"
-#import "ChangePasswordViewController.h"
+#import "LoginViewController.h"
+#import "fotgetViewController.h"
 #import "LoginViewController.h"
 @interface SetTableViewController ()<SecondViewControllerDelete,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *imageScroll;
-@property (weak, nonatomic) IBOutlet UIImageView *photoImage;
+//@property (weak, nonatomic) IBOutlet UIScrollView *imageScroll;
+//@property (weak, nonatomic) IBOutlet UIImageView *photoImage;
 
 @end
 
@@ -185,8 +186,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 75;
@@ -216,7 +215,6 @@
         NSLog(@"修改昵称");
     }
     if (indexPath.row == 2) {
-        NSLog(@"修改收货地址");
         EditingAddressViewController *editingVC = [[EditingAddressViewController alloc] init];
         [self.navigationController pushViewController:editingVC animated:YES];
     }
@@ -236,9 +234,8 @@
         
     }
     if (indexPath.row == 4) {
-        ChangePasswordViewController *passWordVC = [[ChangePasswordViewController alloc] init];
-        [self.navigationController pushViewController:passWordVC animated:YES];
-        NSLog(@"修改密码");
+        fotgetViewController *passWordVC = [[fotgetViewController alloc] init];
+        [self presentViewController:passWordVC animated:YES completion:nil];
     }
 //    if (indexPath.row == 6) {
 //        NSLog(@"修改安全");
@@ -257,6 +254,24 @@
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     [self presentViewController:loginVC animated:YES completion:nil];
 
+}
+- (void)passwordDelegate:(NSString *)passworde
+{
+    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
+    //    NSLog(@"%@" , path);
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSString *dicPass = dic[@"password"];
+    if (passworde != dicPass) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您的密码已经修改，请重新登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            LoginViewController *login = [[LoginViewController alloc]init];
+            [self presentViewController:login animated:YES completion:nil];
+        }];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }
 }
 
 // 修改名字代理方法
@@ -291,12 +306,9 @@
     NSString* fileName;
     long long folderSize = 0;
     while ((fileName = [childFilesEnumerator nextObject]) != nil){
-        NSLog(@"fileName ==== %@",fileName);
         NSString* fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
-        NSLog(@"fileAbsolutePath ==== %@",fileAbsolutePath);
         folderSize += [self fileSizeAtPath:fileAbsolutePath];
     }
-    NSLog(@"folderSize ==== %lld",folderSize);
     return folderSize/(1024.0*1024.0);
 }
 

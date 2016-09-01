@@ -10,11 +10,6 @@
 #import "waitUseModel.h"
 #import "BaseTableViewCell.h"
 
-@protocol waitUseCellDelegate <NSObject>
-
-- (void)sandStr:(NSString *)str;
-
-@end
 
 @interface waitUseTableViewCell : BaseTableViewCell
 
@@ -23,10 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *quanLab;
 @property (weak, nonatomic) IBOutlet UILabel *priceLab;
 @property (weak, nonatomic) IBOutlet UILabel *qmLab;
-
-
-
-@property (nonatomic, assign) id<waitUseCellDelegate>delegate;
 
 
 + (waitUseTableViewCell *)createCell;

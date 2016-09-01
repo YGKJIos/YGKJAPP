@@ -33,6 +33,7 @@
     // 判断是不是第一次登录
     NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
+//    NSLog(@"%@" , path);
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     if (dic == nil) {
         LoginViewController *rootvc = [[LoginViewController alloc] init];

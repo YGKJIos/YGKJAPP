@@ -96,8 +96,7 @@
     // 给拼车label添加点击手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     [self.carPoolingLabel addGestureRecognizer:tap];
-    
-    
+
 }
 // 手势点击方法
 - (void)tap:(UITapGestureRecognizer *)tap
@@ -110,6 +109,7 @@
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     
     [param setObject:dic[@"userId"] forKey:@"userId"];
+
     NSString *url = @"dache/userdache.action?";
     if (self.addressField.text.length != 0 && self.destinatioField.text.length != 0 ) {
         [AFNetWorting postNetWortingWithUrlString:url params:param controller:self success:^(NSURLSessionDataTask *task, id responseObject) {

@@ -12,7 +12,7 @@
 #import "Singleton.h"
 #import "HomePageTableViewController.h" // 首页内容
 #import "MapViewController.h" // 恒运大厦 定位
-
+#import "UserInfo.h"
 #import "CBAutoScrollLabel.h" /*< 跑马灯 **/
 @interface HomePageViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
 {
