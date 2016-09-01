@@ -37,6 +37,7 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
 {
     // 加载动画
     MBProgressHUD *progress = [MBProgressHUD showHUDAddedTo:controller.view animated:YES];
+    progress.labelText = @"加载中...";
     progress.backgroundColor = [UIColor grayColor];
     progress.alpha = 0.5;
     // 拼接url
@@ -48,9 +49,11 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (responseObject) {
-            [progress hide:YES];
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-            success(task, dic);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [progress hide:YES];
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+                success(task, dic);
+            });
         }else
         {
             [progress hide:YES];
@@ -69,17 +72,21 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
 {
     MBProgressHUD *progress = [MBProgressHUD showHUDAddedTo:controller.view animated:YES];
     progress.labelText = @"加载中...";
+    progress.backgroundColor = [UIColor grayColor];
+    progress.alpha = 0.5;
     
     AFHTTPSessionManager *manager = [self manager];
     NSString *urlStr = [NSString stringWithFormat:@"%@%@",bendiUrl,urlString];
     [manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [progress hide:YES];
         // 请求成功
         if (responseObject) {
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-            success(task, dic);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [progress hide:YES];
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+                success(task, dic);
+            });
         }else
         {
             [progress hide:YES];
@@ -91,23 +98,5 @@ static NSString *headerUrl = @"http://192.168.1.88:8080/shangcheng/";  // 本地
         failure(task, error);
     }];
 }
-
-- (NSString *)montageUrl:(NSDictionary *)params urlstr:(NSString *)url
-{
-    NSMutableString *urlString = [[NSMutableString alloc]initWithFormat:@"%@",url];
-    for(NSString *key in params.allKeys)
-    {
-        [urlString appendString:key];
-        [urlString appendString:@"="];
-        [urlString appendString:[NSString stringWithFormat:@"%@",[params objectForKey:key]]];
-        [urlString appendString:@"&"];
-//        NSLog(@"%@" , [params objectForKey:key]);
-    }
-    [urlString deleteCharactersInRange:NSMakeRange(urlString.length-1, 1)];
-    NSLog(@"%@" , urlString);
-    return urlString;
-    
-}
-
 
 @end
