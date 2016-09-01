@@ -245,8 +245,12 @@
 // 退出登录按钮
 - (void)clickOutBtn
 {
-    [[UserInfo shareAccount] logoOutAccount];
-    
+    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager"];
+    [manager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    NSString *dicPath = [path stringByAppendingPathComponent:@"userDic.plish"];
+    [manager removeItemAtPath:dicPath error:nil];
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     [self presentViewController:loginVC animated:YES completion:nil];
 

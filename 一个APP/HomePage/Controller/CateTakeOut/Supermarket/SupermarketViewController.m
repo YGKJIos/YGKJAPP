@@ -68,7 +68,26 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collection.mj_header endRefreshing];
         NSString *url = @"chaoshi/querychaoshi.action";
-        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+//        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+//            NSArray *arr = responseObject;
+//            if (arr.count == 0) {
+//                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+//                [self.view addSubview:placeholderImage];
+//            }else{
+//                for (NSDictionary *dic in arr) {
+//                    ZGP_SuperMarketModel *model = [[ZGP_SuperMarketModel alloc] init];
+//                    [model setValuesForKeysWithDictionary:dic];
+//                    [self.superMarketArr addObject:model];
+//                }
+//                [self.collection reloadData];
+//            }
+//        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        }];
+//    });
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic setObject:[[UserInfo shareAccount].accountDict objectForKey:@"jingweidu"] forKey:@"userWeizhi"];
+        [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            
             NSArray *arr = responseObject;
             if (arr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
@@ -76,14 +95,17 @@
             }else{
                 for (NSDictionary *dic in arr) {
                     ZGP_SuperMarketModel *model = [[ZGP_SuperMarketModel alloc] init];
-                    [model setValuesForKeysWithDictionary:dic];
-                    [self.superMarketArr addObject:model];
+                                        [model setValuesForKeysWithDictionary:dic];
+                                        [self.superMarketArr addObject:model];
+                    
                 }
                 [self.collection reloadData];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
         }];
     });
+
 }
 
 - (void)setNavigationStyle

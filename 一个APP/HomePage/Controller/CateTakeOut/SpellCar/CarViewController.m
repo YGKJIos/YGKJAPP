@@ -104,9 +104,12 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setObject:self.addressField.text forKey:@"congnalai"];
     [param setObject:self.destinatioField.text forKey:@"daonaqu"];
-#warning 暂时未登陆 值为nil 随便设置一个值代替 防止 crash
-    [param setObject:[UserInfo shareAccount].accountDict forKey:@"userId"]; // 暂时未登陆 值为nil
-//    [param setObject:@"aaa" forKey:@"userId"];
+    NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    [param setObject:dic[@"userId"] forKey:@"userId"];
+
     NSString *url = @"dache/userdache.action?";
     if (self.addressField.text.length != 0 && self.destinatioField.text.length != 0 ) {
         [AFNetWorting postNetWortingWithUrlString:url params:param controller:self success:^(NSURLSessionDataTask *task, id responseObject) {

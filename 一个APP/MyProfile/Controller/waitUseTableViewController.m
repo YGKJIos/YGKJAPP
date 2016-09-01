@@ -31,8 +31,7 @@
     NSString *sandPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     sandPath = [sandPath stringByAppendingPathComponent:@"manager/userDic.plish"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:sandPath];
-//          dic = @{@"userId":dic[@"userId"]};
-    dic = @{@"userId":@"1"};
+    dic = @{@"userId":dic[@"userId"]};
     
     [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray *arr = responseObject;
