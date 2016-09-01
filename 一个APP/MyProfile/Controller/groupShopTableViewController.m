@@ -56,7 +56,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.ShopArr.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,7 +64,7 @@
     groupShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
     if (!cell) {
         cell = [groupShopTableViewCell createCell];
-        [cell groupShopModel:self.ShopArr[indexPath.row]];
+        [cell groupShopModel:self.ShopArr[indexPath.section]];
     }
     return cell;
 }

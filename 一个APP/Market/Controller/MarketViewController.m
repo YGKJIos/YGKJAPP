@@ -50,13 +50,6 @@
     header.lastUpdatedTimeLabel.hidden = YES;
     _tableView.mj_header = header;
     
-    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    // 设置文字
-    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
-    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
-    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
-    self.tableView.mj_footer = footer;
-    
 }
 // 下拉刷新的方法
 - (void)loadNewData{
@@ -83,28 +76,6 @@
         
     });
     
-}
-// 上拉加载的方法
-- (void)loadMoreData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_footer endRefreshing];
-        NSString *url = @"shangjia/queryshangjia.action";
-        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSArray *arr = responseObject;
-            if (arr.count == 0) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
-                [self.view addSubview:placeholderImage];
-            }else{
-            for (NSDictionary *dic in arr) {
-                ShopModel *model = [[ShopModel alloc] init];
-                [model setValuesForKeysWithDictionary:dic];
-                [self.MarkeArr addObject:model];
-            }
-            [self.tableView reloadData];
-            }
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        }];
-    });
 }
 
 #pragma mark - 添加tableview和headerView

@@ -64,7 +64,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.waitUseArr.count;
+    return 1;
 }
 
 
@@ -73,18 +73,10 @@
     waitUseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
     if (!cell) {
         cell = [waitUseTableViewCell createCell];
-        [cell waitUseModel:self.waitUseArr[indexPath.row]];
+        [cell waitUseModel:self.waitUseArr[indexPath.section]];
     }
     return cell;
 }
-
-- (void)action:(UIButton *)btn
-{
-    
-
-}
-
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
