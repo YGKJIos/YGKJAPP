@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,12 +11,6 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="187"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiangqingguanggao" translatesAutoresizingMaskIntoConstraints="NO" id="CfO-1s-pt3">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="138"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="138" id="3dm-Kl-Mt7"/>
-                    </constraints>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xing" translatesAutoresizingMaskIntoConstraints="NO" id="81f-yP-3oD">
                     <rect key="frame" x="26" y="157" width="62" height="10"/>
                     <constraints>
@@ -47,6 +41,12 @@
                     <rect key="frame" x="370" y="151" width="7" height="22"/>
                     <state key="normal" image="jiantou"/>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerzhanweitu" translatesAutoresizingMaskIntoConstraints="NO" id="CfO-1s-pt3">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="138"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="138" id="3dm-Kl-Mt7"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -72,8 +72,8 @@
         </view>
     </objects>
     <resources>
+        <image name="headerzhanweitu" width="400" height="140"/>
         <image name="jiantou" width="7" height="14"/>
-        <image name="xiangqingguanggao" width="400" height="187"/>
         <image name="xing" width="62" height="9"/>
     </resources>
 </document>

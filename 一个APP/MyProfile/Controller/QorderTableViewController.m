@@ -95,8 +95,6 @@
         
         if ([responseObject[@"ok"] isEqualToString:@"0"]) {
             [self HUDLabelText:@"退款失败"];
-            
-
         }
         if ([responseObject[@"ok"] isEqualToString:@"1"]) {
             [self HUDLabelText:@"退款成功详情请联系客服"];
