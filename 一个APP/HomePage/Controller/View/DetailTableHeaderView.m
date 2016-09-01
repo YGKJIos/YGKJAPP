@@ -20,8 +20,13 @@
 }
 - (void)setHeaderModel:(MerchantInformationModel *)model
 {
-    NSString *str = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
-    [self.shopHeadImage sd_setImageWithURL:[NSURL URLWithString:str]];
+    self.shopHeadImage.image = [UIImage imageNamed:@"headerzhanweitu"];
+
+    if (!model.shangjiaTouxiang) {
+        NSString *str = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
+        [self.shopHeadImage sd_setImageWithURL:[NSURL URLWithString:str]];
+    }
+    
     self.shopName.text = model.shangjiaName;
     self.grade.text = [NSString stringWithFormat:@"%@分",model.shangjiaPingfen];
     self.addressLab.text = model.shangjiaWeizhi;

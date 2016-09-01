@@ -38,10 +38,13 @@
         LoginViewController *rootvc = [[LoginViewController alloc] init];
         self.window.rootViewController = rootvc;
     }else{
-    
+        // 如果userId 不为空
+        
         RootTabBarController *rootTabBar = [[RootTabBarController alloc]init];
         self.window.rootViewController = rootTabBar;
         rootTabBar.tabBar.translucent = NO;
+        // 如果为空
+        
     }
     
     [self.window makeKeyAndVisible];

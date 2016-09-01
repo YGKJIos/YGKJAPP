@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.passWordField.delegate = self;
     self.surePassWordField.delegate = self;
+    self.title = @"更改密码";
     // 手势
     // 1.点击
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];

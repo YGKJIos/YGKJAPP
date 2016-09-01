@@ -64,24 +64,26 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"waimai/querywaimai1.action";
-        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic setObject:[[UserInfo shareAccount].accountDict objectForKey:@"jingweidu"] forKey:@"userWeizhi"];
+        [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            
             NSArray *arr = responseObject;
             if (arr.count == 0) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
                 [self.view addSubview:placeholderImage];
             }else{
-            
-            for (NSDictionary *dic in arr) {
-                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
-                [model setValuesForKeysWithDictionary:dic];
-                [self.takeOutArr addObject:model];
-            }
-            [self.tableView reloadData];
+                for (NSDictionary *dic in arr) {
+                    MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
+                                    [model setValuesForKeysWithDictionary:dic];
+                                    [self.takeOutArr addObject:model];
+
+                }
+                [self.tableView reloadData];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
-        
     });
 }
 // 上拉加载的方法

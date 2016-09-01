@@ -56,9 +56,13 @@
     if (self.select == YES) {
         
         self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
+        // 保存userId
+        
     } else if (self.select == NO)
     {
         self.selectImage.image = [UIImage imageNamed:@"jizhumima_weixuan"];
+        // 清除userId
+        
     }
     self.select = !self.select;
 }
@@ -106,9 +110,8 @@
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"登录中请稍后...";
             
-//            [UserInfo shareAccount].accountDict = responseObject[@"userId"];
+//            [UserInfo shareAccount].accountDict = responseObject;
 //            [[UserInfo shareAccount] saveToSandBox];
-            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [hud hide:YES];
                 RootTabBarController *rootVC = [[RootTabBarController alloc]init];

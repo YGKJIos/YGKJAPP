@@ -150,7 +150,7 @@
     _locService.delegate = self;
     self.geocodesearch = [[BMKGeoCodeSearch alloc] init]; // 编码服务的初始化(就是获取经纬度,或者获取地理位置服务)
     self.geocodesearch.delegate = self;
-//    NSLog(@"定位的经度:%f,定位的纬度:%f",_locService.userLocation.location.coordinate.longitude,_locService.userLocation.location.coordinate.latitude);
+    NSLog(@"定位的经度:%f,定位的纬度:%f",_locService.userLocation.location.coordinate.longitude,_locService.userLocation.location.coordinate.latitude);
 //    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 //    button.frame = CGRectMake(0, 0, 60, 40);
 //    [button setTitle:@"获取地址" forState:UIControlStateNormal];
@@ -192,6 +192,14 @@
         BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
         item.coordinate = result.location;
         item.title = result.address;
+        
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        NSInteger latitude = result.location.latitude;
+        NSInteger longitude = result.location.longitude;
+        [dic setValue:[NSString stringWithFormat:@"%ld*%ld",latitude,longitude] forKey:@"jingweidu"];
+        
+        [UserInfo shareAccount].accountDict = dic;
+        [[UserInfo shareAccount] saveToSandBox];
         NSString* titleStr;
         
         titleStr = @"当前您的位置";
@@ -215,12 +223,15 @@
     _mapView.centerCoordinate = userLocation.location.coordinate;
     _mapView.zoomLevel = 18;
 //    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [_mapView viewWillAppear];
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     _locService.delegate = self;
+    // 添加百度地图
+    [self currentLocation];
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
