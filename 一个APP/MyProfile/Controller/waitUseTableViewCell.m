@@ -24,6 +24,7 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
     self.foodNameLab.text = model.shangjiaName;
     self.quanLab.text = model.tuangouShuoming;
     self.priceLab.text = [NSString stringWithFormat:@"¥%@",model.tuangouTejia];
+    self.qmLab.text = model.usertuangoujuanYanzhengma;
 }
 
 

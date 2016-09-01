@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"查看退单";
     self.TKArr = [[NSMutableArray alloc] init];
     [self loadNewData];   
 }
@@ -31,7 +32,6 @@
     NSString *sandPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     sandPath = [sandPath stringByAppendingPathComponent:@"manager/userDic.plish"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:sandPath];
-//          dic = @{@"userId":dic[@"userId"]};
     dic = @{@"userId":@"1"};
     
     [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -59,12 +59,10 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return self.TKArr.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return self.TKArr.count;
 }
 

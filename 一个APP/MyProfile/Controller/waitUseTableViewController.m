@@ -9,7 +9,6 @@
 #import "waitUseTableViewController.h"
 #import "waitUseTableViewCell.h"
 #import "waitUseModel.h"
-#import "CodeViewController.h"
 @interface waitUseTableViewController ()<waitUseCellDelegate>
 
 @property (nonatomic, retain) NSMutableArray *waitUseArr;
@@ -74,8 +73,6 @@
     waitUseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
     if (!cell) {
         cell = [waitUseTableViewCell createCell];
-        cell.delegate = self;
-        [cell.chickBtn addTarget:self action:@selector(action:) forControlEvents:UIControlEventTouchUpInside];
         [cell waitUseModel:self.waitUseArr[indexPath.row]];
     }
     return cell;
@@ -83,9 +80,8 @@
 
 - (void)action:(UIButton *)btn
 {
-    CodeViewController *codeVC = [[CodeViewController alloc] init];
-    [self.navigationController pushViewController:codeVC animated:YES];
     
+
 }
 
 
