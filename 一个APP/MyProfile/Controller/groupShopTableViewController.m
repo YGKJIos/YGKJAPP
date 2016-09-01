@@ -20,6 +20,9 @@
     self.title = @"查看团购卷";
     self.ShopArr = [[NSMutableArray alloc] init];
     [self loadNewData];
+    
+    self.tableView.tableFooterView = [[UIView alloc]init];
+    
 }
 
 // 下拉刷新的方法
@@ -39,6 +42,10 @@
             [model setValuesForKeysWithDictionary:dic];
             [self.ShopArr addObject:model];
         }
+        if (self.ShopArr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:placeholderImage];
+        }
         [self.tableView reloadData];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -46,8 +53,6 @@
     }];
     
 }
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

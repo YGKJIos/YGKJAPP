@@ -9,8 +9,7 @@
 #import "waitUseTableViewController.h"
 #import "waitUseTableViewCell.h"
 #import "waitUseModel.h"
-@interface waitUseTableViewController ()<waitUseCellDelegate>
-
+@interface waitUseTableViewController ()
 @property (nonatomic, retain) NSMutableArray *waitUseArr;
 
 @end
@@ -22,8 +21,8 @@
     self.title = @"待使用";
     self.waitUseArr = [[NSMutableArray alloc] init];
     [self loadNewData];
+    self.tableView.tableFooterView = [[UIView alloc]init];
 }
-
 
 // 下拉刷新的方法
 - (void)loadNewData{
@@ -41,6 +40,10 @@
             waitUseModel *model = [[waitUseModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.waitUseArr addObject:model];
+        }
+        if (self.waitUseArr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:placeholderImage];
         }
         [self.tableView reloadData];
         

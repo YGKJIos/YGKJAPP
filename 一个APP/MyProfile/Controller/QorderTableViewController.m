@@ -20,6 +20,7 @@
     self.title = @"查看订单";
     self.orderArr = [[NSMutableArray alloc] init];
     [self loadNewData];
+    self.tableView.tableFooterView = [[UIView alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +43,10 @@
             QorderModel *model = [[QorderModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.orderArr addObject:model];
+        }
+        if (self.orderArr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:placeholderImage];
         }
         [self.tableView reloadData];
         
@@ -82,7 +87,6 @@
             NSDictionary *dic = @{@"waimaidingdanId":model.waimaidingdanId};
             NSString *url = @"waimai/usertuidan.action?";
             [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-                NSLog(@"退款-----%@" , responseObject);
                 if ([responseObject[@"ok"] isEqualToString:@"0"]) {
                     [self HUDLabelText:@"退款失败"];
                 }
@@ -95,9 +99,7 @@
                 }
                 [self.tableView reloadData];
             } failure:^(NSURLSessionDataTask *task, NSError *error) {
-                
             }];
-            
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
         [alert addAction:cancel];
@@ -111,7 +113,6 @@
             NSDictionary *dic = @{@"waimaidingdanId":model.waimaidingdanId};
             NSString *url = @"waimai/userqueren.action?";
             [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-                NSLog(@"收货-----%@" , responseObject);
                 if ([responseObject[@"ok"] isEqualToString:@"0"]) {
                     [self HUDLabelText:@"确认收货失败"];
                 }
@@ -134,7 +135,6 @@
         [alert addAction:action];
         [self presentViewController:alert animated:YES completion:nil];
     }
-    
 }
 
 - (void)HUDLabelText:(NSString *)text

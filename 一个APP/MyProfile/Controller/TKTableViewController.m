@@ -22,7 +22,8 @@
     [super viewDidLoad];
     self.title = @"查看退单";
     self.TKArr = [[NSMutableArray alloc] init];
-    [self loadNewData];   
+    [self loadNewData];
+    self.tableView.tableFooterView = [[UIView alloc]init];
 }
 
 // 下拉刷新的方法
@@ -40,6 +41,10 @@
             TKModel *model = [[TKModel alloc] init];
             [model setValuesForKeysWithDictionary:dic];
             [self.TKArr addObject:model];
+        }
+        if (self.TKArr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:placeholderImage];
         }
         [self.tableView reloadData];
         
