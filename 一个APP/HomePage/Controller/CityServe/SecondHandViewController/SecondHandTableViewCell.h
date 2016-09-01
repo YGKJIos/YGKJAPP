@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MerchantInformationModel.h"
-@interface SecondHandTableViewCell : UITableViewCell
+#import "BaseTableViewCell.h"
+
+@interface SecondHandTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *SecondHandImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *niceImage;

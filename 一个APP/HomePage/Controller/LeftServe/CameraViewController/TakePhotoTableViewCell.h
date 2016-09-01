@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoModel.h"
-@interface TakePhotoTableViewCell : UITableViewCell
+#import "BaseTableViewCell.h"
+@interface TakePhotoTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *childImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;

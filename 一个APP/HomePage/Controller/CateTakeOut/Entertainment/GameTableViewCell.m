@@ -8,7 +8,7 @@
 
 #import "GameTableViewCell.h"
 
-static NSString *game = @"http://139.129.209.189:8080/shangcheng/";
+//static NSString *game = @"http://139.129.209.189:8080/shangcheng/";
 @implementation GameTableViewCell
 
 
@@ -21,7 +21,7 @@ static NSString *game = @"http://139.129.209.189:8080/shangcheng/";
 
 - (void) GameModel:(GameModel *)model
 {
-    [self.placeImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", game, model.shangjiaTouxiang]]];
+    [self.placeImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang]]];
     self.nameLabel.text = model.shangjiaName;
     self.piceLabel.text = [NSString stringWithFormat:@"¥%@", model.shangjiaJiage];
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];

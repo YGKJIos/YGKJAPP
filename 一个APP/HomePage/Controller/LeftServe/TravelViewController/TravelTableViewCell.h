@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TravelModel.h"
-@interface TravelTableViewCell : UITableViewCell
+#import "BaseTableViewCell.h"
+@interface TravelTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *travelImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MerchantInformationModel.h"
-@interface sevCarTableViewCell : UITableViewCell
+#import "BaseTableViewCell.h"
+@interface sevCarTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *sevCarImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;

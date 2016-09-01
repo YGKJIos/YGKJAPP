@@ -130,6 +130,7 @@
 		594591261D3CAC2500FAF565 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594591221D3CAC2500FAF565 /* NewsTableViewCell.xib */; };
 		594591271D3CAC2500FAF565 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594591241D3CAC2500FAF565 /* NewsTableViewController.m */; };
 		59471B2D1D507A6500D358FC /* SeeAllEvaluateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59471B2C1D507A6500D358FC /* SeeAllEvaluateTableViewController.m */; };
+		5947D94E1D73D08C005CBE85 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5947D94D1D73D08C005CBE85 /* BaseCollectionViewCell.m */; };
 		5970C4501D531628001731A3 /* PhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5970C44E1D531628001731A3 /* PhoneLoginViewController.m */; };
 		5970C4511D531628001731A3 /* PhoneLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5970C44F1D531628001731A3 /* PhoneLoginViewController.xib */; };
 		59C54C861D6AA1B2009BF605 /* AddFoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C54C731D6AA1B2009BF605 /* AddFoodView.m */; };
@@ -577,6 +578,8 @@
 		594591241D3CAC2500FAF565 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
 		59471B2B1D507A6500D358FC /* SeeAllEvaluateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeAllEvaluateTableViewController.h; sourceTree = "<group>"; };
 		59471B2C1D507A6500D358FC /* SeeAllEvaluateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeAllEvaluateTableViewController.m; sourceTree = "<group>"; };
+		5947D94C1D73D08C005CBE85 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
+		5947D94D1D73D08C005CBE85 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
 		5970C44D1D531628001731A3 /* PhoneLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginViewController.h; sourceTree = "<group>"; };
 		5970C44E1D531628001731A3 /* PhoneLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginViewController.m; sourceTree = "<group>"; };
 		5970C44F1D531628001731A3 /* PhoneLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneLoginViewController.xib; sourceTree = "<group>"; };
@@ -2247,6 +2250,8 @@
 				59366BBE1D06872300BB445A /* BaseViewController.m */,
 				591138C51D71847A00735754 /* BaseTableViewCell.h */,
 				591138C61D71847A00735754 /* BaseTableViewCell.m */,
+				5947D94C1D73D08C005CBE85 /* BaseCollectionViewCell.h */,
+				5947D94D1D73D08C005CBE85 /* BaseCollectionViewCell.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -2424,6 +2429,7 @@
 				TargetAttributes = {
 					59FFB6A01D0501F000071E0E = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = UHVNVL6K2K;
 					};
 					59FFB6B91D0501F000071E0E = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -2688,6 +2694,7 @@
 				D8552ABE1D444EB100C74C49 /* carWashTableViewController.m in Sources */,
 				594590031D3C8A1C00FAF565 /* TravelModel.m in Sources */,
 				593C8EF91D6DA05700104229 /* SucceedPayViewController.m in Sources */,
+				5947D94E1D73D08C005CBE85 /* BaseCollectionViewCell.m in Sources */,
 				59D07B591D6592170099C1DA /* MD5DataSigner.m in Sources */,
 				594590F41D3CAA5D00FAF565 /* AllStylCollectionReusableView.m in Sources */,
 				594590931D3CA75D00FAF565 /* MarketViewController.m in Sources */,
@@ -2981,8 +2988,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Weilong Shan (4G4NB5G22B)";
-				ENABLE_BITCODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/一个APP/Tool",
@@ -3028,8 +3036,9 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apress.yuanguApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuanguApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -3041,8 +3050,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Weilong Shan (4G4NB5G22B)";
-				ENABLE_BITCODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/一个APP/Tool",
@@ -3088,8 +3098,9 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.apress.yuanguApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuanguApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

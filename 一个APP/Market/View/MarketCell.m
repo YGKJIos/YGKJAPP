@@ -9,8 +9,8 @@
 #import "MarketCell.h"
 #define Xwidth self.shopNameLab.frame.origin.x + self.shopNameLab.frame.size.width
 #define Xheight (self.shopNameLab.frame.origin.y + self.shopNameLab.frame.size.height ) /2
-static NSString *bendi = @"http://192.168.1.88:8080/shangcheng/";
-static NSString *hearUrl = @"http://139.129.209.189:8080/shangcheng/";
+//static NSString *bendi = @"http://192.168.1.88:8080/shangcheng/";
+//static NSString *hearUrl = @"http://139.129.209.189:8080/shangcheng/";
 
 @implementation MarketCell
 +(MarketCell *)cellCreaterNibLoad
@@ -32,7 +32,7 @@ static NSString *hearUrl = @"http://139.129.209.189:8080/shangcheng/";
     self.priceLab.text = priceStr;
     NSString *distanceStr = [NSString stringWithFormat:@"%@m",model.shangjiaJuli];
     self.distanceLab.text = distanceStr;
-    NSString *str = [NSString stringWithFormat:@"%@%@", hearUrl, model.shangjiaTouxiang];
+    NSString *str = [NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang];
     [self.shopImage sd_setImageWithURL:[NSURL URLWithString:str]];
     self.gradeLab.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.upPriceLab.text = [NSString stringWithFormat:@"原价:%@", model.meishiYuanjia];

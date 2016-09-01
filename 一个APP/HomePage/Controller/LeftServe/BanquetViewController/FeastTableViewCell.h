@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MerchantInformationModel.h"
+#import "BaseTableViewCell.h"
 
-@interface FeastTableViewCell : UITableViewCell
+@interface FeastTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *feastImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeModel.h"
+#import "BaseTableViewCell.h"
 
 @protocol pushviewcontrollerThridDelegate <NSObject>
 
@@ -23,7 +24,7 @@ typedef  enum{
     secondCellStyle
 }HomeTaleViewCellStyle;
 
-@interface ThridTableViewCell : UITableViewCell
+@interface ThridTableViewCell : BaseTableViewCell
 
 
 @property (nonatomic, weak) id<pushviewcontrollerThridDelegate> delegte;

@@ -18,7 +18,7 @@
 
 - (void)setmodel:(MerchantInformationModel *)model
 {
-    NSString *str = [NSString stringWithFormat:@"http://139.129.209.189:8080/shangcheng%@",model.tuangouTouxiang];
+    NSString *str = [NSString stringWithFormat:@"%@%@",serverAddress, model.tuangouTouxiang];
     [self.TGHeadImage sd_setImageWithURL:[NSURL URLWithString:str]];
     self.TGname.text = model.tuangouName;
     self.TGspecialMoney.text = [NSString stringWithFormat:@"¥%@",model.tuangouTejia];

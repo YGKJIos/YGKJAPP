@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "waitUseModel.h"
+#import "BaseTableViewCell.h"
 
 @protocol waitUseCellDelegate <NSObject>
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface waitUseTableViewCell : UITableViewCell
+@interface waitUseTableViewCell : BaseTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLab;
 @property (weak, nonatomic) IBOutlet UILabel *numLab;

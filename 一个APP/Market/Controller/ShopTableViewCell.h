@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ShopModel.h"
+#import "BaseTableViewCell.h"
 
-@interface ShopTableViewCell : UITableViewCell
+@interface ShopTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *shopImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;

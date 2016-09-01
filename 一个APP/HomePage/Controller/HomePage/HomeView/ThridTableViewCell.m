@@ -9,8 +9,8 @@
 #import "ThridTableViewCell.h"
 #import "HomeModelView.h"
 
-static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
-static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
+//static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
+//static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
 @interface ThridTableViewCell ()
 @property (nonatomic, strong)UIImageView *posterImage;
 
@@ -177,7 +177,7 @@ static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
         NSArray *titles = @[model.xinwenName1, model.xinwenName2];
         for (int i = 0; i < titles.count; i++) {
             HomeModelView *view = [self.contentView viewWithTag:2000+i];
-            NSString *url = [NSString stringWithFormat:@"%@%@",headerUrl,arr[i]];
+            NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,arr[i]];
             [view.imageV sd_setImageWithURL:[NSURL URLWithString:url]];
             view.titleLab.text = titles[i];
         }
@@ -192,7 +192,7 @@ static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
         
         for (int i = 0; i < images.count; i++) {
             HomeModelView *view = (HomeModelView *)[self.contentView viewWithTag:3000+i];
-            NSString *urlStr = [NSString stringWithFormat:@"%@%@",headerUrl,images[i]];
+            NSString *urlStr = [NSString stringWithFormat:@"%@%@",serverAddress,images[i]];
             [view.travelImage sd_setImageWithURL:[NSURL URLWithString:urlStr]];
             view.travelImage.opaque = YES;
             view.travelNameLab.text = names[i];
@@ -219,13 +219,13 @@ static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
     if (self.style == secondCellStyle) {
         
         HomeModelView *liftView = (HomeModelView *)[self.contentView viewWithTag:5000];
-        NSString *leftUrl = [NSString stringWithFormat:@"%@%@", headerUrl,model.ershouTupian1];
+        NSString *leftUrl = [NSString stringWithFormat:@"%@%@", serverAddress,model.ershouTupian1];
         [liftView.secondImage sd_setImageWithURL:[NSURL URLWithString:leftUrl]];
         liftView.secondName.text = model.ershouName1;
         liftView.secondMoney.text = model.ershouJiage1;
         
         HomeModelView *rightView = (HomeModelView *)[self.contentView viewWithTag:5001];
-        NSString *rightUrl = [NSString stringWithFormat:@"%@%@",headerUrl,model.ershouTupian2];
+        NSString *rightUrl = [NSString stringWithFormat:@"%@%@",serverAddress,model.ershouTupian2];
         [rightView.secondImage sd_setImageWithURL:[NSURL URLWithString:rightUrl]];
         rightView.secondName.text = model.ershouName2;
         rightView.secondMoney.text = model.ershouJiage2;

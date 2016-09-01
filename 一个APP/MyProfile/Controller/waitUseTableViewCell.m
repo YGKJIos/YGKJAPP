@@ -8,9 +8,6 @@
 
 #import "waitUseTableViewCell.h"
 
-static NSString *bendi = @"http://192.168.1.88:8080/shangcheng/";
-static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
-
 @implementation waitUseTableViewCell
 
 + (waitUseTableViewCell *)createCell

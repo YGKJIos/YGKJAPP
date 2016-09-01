@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MovieModel.h"
+#import "BaseTableViewCell.h"
 
 
-@interface MoiveTableViewCell : UITableViewCell
+@interface MoiveTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *movieImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabe;
 @property (weak, nonatomic) IBOutlet UIImageView *xingImage;

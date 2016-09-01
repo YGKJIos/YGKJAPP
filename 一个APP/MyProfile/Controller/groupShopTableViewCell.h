@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "groupShopModel.h"
-@interface groupShopTableViewCell : UITableViewCell
+#import "BaseTableViewCell.h"
+@interface groupShopTableViewCell : BaseTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *shopMassgeLab;
 @property (weak, nonatomic) IBOutlet UILabel *shopPriceLab;
