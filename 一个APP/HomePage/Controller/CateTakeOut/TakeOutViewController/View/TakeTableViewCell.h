@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MerchantInformationModel.h"
+#import "BaseTableViewCell.h"
 
-@interface TakeTableViewCell : UITableViewCell
+@interface TakeTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *foodImageView; // 店铺图片
 @property (weak, nonatomic) IBOutlet UILabel *shopName; //店铺名称
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab; //起送价

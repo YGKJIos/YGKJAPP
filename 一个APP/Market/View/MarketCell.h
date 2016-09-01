@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MarketModel.h"
+#import "BaseTableViewCell.h"
 
-@interface MarketCell : UITableViewCell
+@interface MarketCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *shopImage;  // 商户图片
 @property (weak, nonatomic) IBOutlet UILabel *shopNameLab; // 商户名字
 @property (weak, nonatomic) IBOutlet UILabel *favorableLab;//

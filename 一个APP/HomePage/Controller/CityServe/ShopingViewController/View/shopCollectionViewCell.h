@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ShopServeModel.h"
+#import "BaseCollectionViewCell.h"
 
-@interface shopCollectionViewCell : UICollectionViewCell
+@interface shopCollectionViewCell : BaseCollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *dazheImage;
 @property (weak, nonatomic) IBOutlet UIImageView *shopImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

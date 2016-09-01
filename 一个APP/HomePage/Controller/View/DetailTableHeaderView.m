@@ -8,7 +8,7 @@
 
 #import "DetailTableHeaderView.h"
 
-static NSString *url = @"http://139.129.209.189:8080/shangcheng";
+//static NSString *url = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation DetailTableHeaderView
 
@@ -20,7 +20,7 @@ static NSString *url = @"http://139.129.209.189:8080/shangcheng";
 }
 - (void)setHeaderModel:(MerchantInformationModel *)model
 {
-    NSString *str = [NSString stringWithFormat:@"%@%@",url,model.shangjiaTouxiang];
+    NSString *str = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
     [self.shopHeadImage sd_setImageWithURL:[NSURL URLWithString:str]];
     self.shopName.text = model.shangjiaName;
     self.grade.text = [NSString stringWithFormat:@"%@分",model.shangjiaPingfen];

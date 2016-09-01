@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MerchantInformationModel.h"
+#import "BaseTableViewCell.h"
 
-@interface voucherTableViewCell : UITableViewCell
+@interface voucherTableViewCell : BaseTableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *TGHeadImage;
 @property (weak, nonatomic) IBOutlet UILabel *TGname;

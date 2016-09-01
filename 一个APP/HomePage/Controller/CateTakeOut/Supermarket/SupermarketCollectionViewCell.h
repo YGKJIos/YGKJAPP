@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ZGP_SuperMarketModel.h"
-@interface SupermarketCollectionViewCell : UICollectionViewCell
+#import "BaseCollectionViewCell.h"
+@interface SupermarketCollectionViewCell :BaseCollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *commodityImage;
 @property (weak, nonatomic) IBOutlet UILabel *describeLab;
 @property (weak, nonatomic) IBOutlet UILabel *qualityLab;

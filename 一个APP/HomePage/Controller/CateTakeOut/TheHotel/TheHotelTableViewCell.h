@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TheHotelModel.h"
-@interface TheHotelTableViewCell : UITableViewCell
+#import "BaseTableViewCell.h"
+@interface TheHotelTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *hotelImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *starImage;

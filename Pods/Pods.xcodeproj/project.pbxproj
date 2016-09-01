@@ -1201,6 +1201,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDE62AA206E6123E7A4F15878C651FAD /* AFNetworking.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1382,6 +1383,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDE62AA206E6123E7A4F15878C651FAD /* AFNetworking.xcconfig */;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

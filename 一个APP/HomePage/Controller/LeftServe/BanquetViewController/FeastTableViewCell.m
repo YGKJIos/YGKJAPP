@@ -8,7 +8,7 @@
 
 #import "FeastTableViewCell.h"
 
-static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
+//static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation FeastTableViewCell
 
@@ -21,7 +21,7 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
 - (void)setModel:(MerchantInformationModel *)model
 {
     if (model != nil) {
-        NSString *url = [NSString stringWithFormat:@"%@%@" , headUrl,model.shangjiaTouxiang];
+        NSString *url = [NSString stringWithFormat:@"%@%@" , serverAddress,model.shangjiaTouxiang];
         [self.feastImage sd_setImageWithURL:[NSURL URLWithString:url]];
         
         self.nameLabel.text = model.shangjiaName;

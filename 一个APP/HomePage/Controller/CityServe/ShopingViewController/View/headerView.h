@@ -14,6 +14,7 @@
 // 评分
 @property (weak, nonatomic) IBOutlet UILabel *gradeLab;
 @property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UIImageView *xingImage;
 
 + (headerView *)greateHeaderView;
 - (void)setModel:(MerchantInformationModel *)model;

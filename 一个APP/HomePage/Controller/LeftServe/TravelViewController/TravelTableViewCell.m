@@ -7,7 +7,7 @@
 //
 
 #import "TravelTableViewCell.h"
-static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
+//static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
 @implementation TravelTableViewCell
 
 + (TravelTableViewCell *) createTravelCell
@@ -19,7 +19,7 @@ static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
 - (void)TravelModel:(TravelModel *)model
 {
     self.nameLabel.text = model.shangjiaName;
-    [self.travelImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang]]];
+    [self.travelImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang]]];
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.placeLabel.text = model.shangjiaWeizhi;
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@", model.shangjiaJiage];

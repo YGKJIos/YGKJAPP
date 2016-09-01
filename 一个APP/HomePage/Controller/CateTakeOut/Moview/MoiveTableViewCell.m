@@ -8,8 +8,8 @@
 
 #import "MoiveTableViewCell.h"
 
-static NSString *bendi = @"http://192.168.1.88:8080/shangcheng/";
-static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
+//static NSString *bendi = @"http://192.168.1.88:8080/shangcheng/";
+//static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
 
 @implementation MoiveTableViewCell
 
@@ -32,15 +32,15 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
 
 - (void) MovieModel:(MovieModel *)model
 {
-    NSString *imageStr = [NSString stringWithFormat:@"%@%@", headUrl, model.dianyingTupian];
+    NSString *imageStr = [NSString stringWithFormat:@"%@%@", serverAddress, model.dianyingTupian];
     [self.movieImage sd_setImageWithURL:[NSURL URLWithString:imageStr]];
     // 电影名称
     self.nameLabe.text = model.dianyingName;
     // 电影介绍
     self.jieshaoLabel.text = model.dianyingJianjie;
-    NSString *stylStr = [NSString stringWithFormat:@"%@%@", headUrl, model.dianyingLeixing];
+    NSString *stylStr = [NSString stringWithFormat:@"%@%@", serverAddress, model.dianyingLeixing];
     [self.stylImage sd_setImageWithURL:[NSURL URLWithString:stylStr]];
-    NSString *tuijianStr= [NSString stringWithFormat:@"%@%@", headUrl, model.dianyingRebo];
+    NSString *tuijianStr= [NSString stringWithFormat:@"%@%@", serverAddress, model.dianyingRebo];
     [self.tuijianImage sd_setImageWithURL:[NSURL URLWithString:tuijianStr]];
     // 特价
     self.rmbshuLabel.text = [NSString stringWithFormat:@"¥%@", model.dianyingTejia];
@@ -49,8 +49,6 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng/";
     
     self.numLabel.text = model.dianyingPingfen;
 }
-
-
 
 
 - (void)awakeFromNib {

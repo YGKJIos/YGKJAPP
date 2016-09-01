@@ -98,7 +98,6 @@
     [searchBtn setBackgroundImage:[UIImage imageNamed:@"chaoshi_sousuo"] forState:UIControlStateNormal];
     searchBtn.adjustsImageWhenHighlighted = NO;
     self.navigationItem.titleView = searchBtn;
-    
 }
 // 显示当前位置信息btn
 - (void) creatLocationBtn
@@ -128,7 +127,6 @@
     _autoScrollLabel.textColor = [UIColor whiteColor];
     [button addSubview: _autoScrollLabel];
     
-    NSLog(@"lable : %@",_autoScrollLabel.text);
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = item;
 }
@@ -140,7 +138,6 @@
 }
 - (void)dingwei
 {
-    NSLog(@"恒运大厦定位");
     MapViewController *map = [[MapViewController alloc] init];
     [self.navigationController pushViewController:map animated:YES];
 }

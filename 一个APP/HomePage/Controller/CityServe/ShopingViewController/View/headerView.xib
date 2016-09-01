@@ -66,6 +66,7 @@
             <connections>
                 <outlet property="gradeLab" destination="Fbh-Wb-Eii" id="rRa-2Y-Xrf"/>
                 <outlet property="image" destination="CfO-1s-pt3" id="YtX-QS-3n9"/>
+                <outlet property="xingImage" destination="81f-yP-3oD" id="R77-AT-FWi"/>
             </connections>
             <point key="canvasLocation" x="443" y="243.5"/>
         </view>

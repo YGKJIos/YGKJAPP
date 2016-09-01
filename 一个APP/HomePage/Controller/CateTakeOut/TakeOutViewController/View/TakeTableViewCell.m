@@ -8,7 +8,7 @@
 
 #import "TakeTableViewCell.h"
 
-static NSString *beforeUrl = @"http://139.129.209.189:8080/shangcheng/";
+//static NSString *beforeUrl = @"http://139.129.209.189:8080/shangcheng/";
 
 @implementation TakeTableViewCell
 
@@ -23,7 +23,7 @@ static NSString *beforeUrl = @"http://139.129.209.189:8080/shangcheng/";
 - (void)setTakeOutModel:(MerchantInformationModel *)model
 {
     if (model) {
-        NSString *url = [NSString stringWithFormat:@"%@%@",beforeUrl,model.shangjiaTouxiang];
+        NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
         [self.foodImageView sd_setImageWithURL:[NSURL URLWithString:url]];
         self.shopName.text = model.shangjiaName;
         self.gradeLab.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];

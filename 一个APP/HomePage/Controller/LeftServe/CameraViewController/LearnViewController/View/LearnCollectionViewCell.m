@@ -7,13 +7,13 @@
 //
 
 #import "LearnCollectionViewCell.h"
-static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
+//static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
 @implementation LearnCollectionViewCell
 
 
 - (void)LearnModel:(LearnModel *)model
 {
-    [self.learnImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang]]];
+    [self.learnImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang]]];
     self.TongzhiLabel.text = model.shangjiaTongzhi;
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.placeLabel.text = model.shangjiaWeizhi;

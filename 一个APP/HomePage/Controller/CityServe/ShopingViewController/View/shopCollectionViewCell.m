@@ -7,7 +7,7 @@
 //
 
 #import "shopCollectionViewCell.h"
-static NSString *hearUrl = @"http://139.129.209.189:8080/shangcheng";
+//static NSString *hearUrl = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation shopCollectionViewCell
 
@@ -17,7 +17,7 @@ static NSString *hearUrl = @"http://139.129.209.189:8080/shangcheng";
     self.jieshaoLabel.text = model.shangjiaTongzhi;
     self.placeLabel.text = model.shangjiaWeizhi;
     
-    NSString *url = [NSString stringWithFormat:@"%@%@",hearUrl,model.shangjiaTouxiang];
+    NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
     [self.shopImage sd_setImageWithURL:[NSURL URLWithString:url]];
     
 }

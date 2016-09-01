@@ -10,8 +10,8 @@
 #import "FoodHomeCell.h"
 #import "HomeModelView.h"
 
-static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
-static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
+//static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
+//static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
 @implementation FoodHomeCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -44,7 +44,7 @@ static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测�
     for (int i = 0; i < 4; i++) {
         HomeModelView *view = [self.contentView viewWithTag:1000+i];
         view.foodTitleLab.text = nameArr[i];
-        NSString *url = [NSString stringWithFormat:@"%@%@",headerUrl,tupianArr[i]];
+        NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,tupianArr[i]];
         [view.foodImage sd_setImageWithURL:[NSURL URLWithString:url]];
         view.foodName.text = jieshaoArr[i];
         view.moneyLab.text = [NSString stringWithFormat:@"%@",tejiaArr[i]];

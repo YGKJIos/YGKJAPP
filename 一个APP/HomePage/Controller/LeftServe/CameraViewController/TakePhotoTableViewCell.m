@@ -7,7 +7,7 @@
 //
 
 #import "TakePhotoTableViewCell.h"
-static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
+//static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
 @implementation TakePhotoTableViewCell
 
 
@@ -22,7 +22,7 @@ static NSString *yuming = @"http://139.129.209.189:8080/shangcheng/";
 - (void)PhotoModel:(PhotoModel *)model
 {
     self.nameLabel.text = model.shangjiaName;
-    [self.childImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", yuming, model.shangjiaTouxiang]]];
+    [self.childImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang]]];
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.placeLabel.text = model.shangjiaWeizhi;
     self.writingLabel.text = model.shangjiaTongzhi;

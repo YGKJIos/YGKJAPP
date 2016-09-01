@@ -23,10 +23,10 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2U-0d-vhP">
-                        <rect key="frame" x="56" y="29" width="77" height="21"/>
+                        <rect key="frame" x="56" y="29" width="135" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="2GM-pU-A0D"/>
-                            <constraint firstAttribute="width" constant="77" id="3Ll-fd-AEU"/>
+                            <constraint firstAttribute="width" constant="135" id="3Ll-fd-AEU"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>

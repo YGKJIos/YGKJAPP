@@ -7,13 +7,13 @@
 //
 
 #import "GroupPurchaseView.h"
-static NSString *url = @"http://139.129.209.189:8080/shangcheng";
+//static NSString *url = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation GroupPurchaseView
 
 -(void)setModel:(MerchantInformationModel *)model
 {
-    NSString *imageURl = [NSString stringWithFormat:@"%@%@",url,model.tuangouTouxiang];
+    NSString *imageURl = [NSString stringWithFormat:@"%@%@",serverAddress,model.tuangouTouxiang];
     [self.foodImage sd_setImageWithURL:[NSURL URLWithString:imageURl]];
     // 特价
     NSString *TEmoney = [NSString stringWithFormat:@"¥%@",model.tuangouTejia];

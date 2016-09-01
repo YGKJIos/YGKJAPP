@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MerchantInformationModel.h"
+#import "BaseTableViewCell.h"
 
 @interface GroupPurchaseView : UIView
 

@@ -7,8 +7,8 @@
 //
 
 #import "PleaseJobTableViewCell.h"
-static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng";
-static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
+//static NSString *bendiyuming = @"http://192.168.1.88:8080/shangcheng";
+//static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation PleaseJobTableViewCell
 
@@ -19,15 +19,17 @@ static NSString *headUrl = @"http://139.129.209.189:8080/shangcheng";
     return cell;
 }
 
-- (void)JobModel:(MerchantInformationModel *)model
+- (void)JobModel:(PleaseJobModel *)model
 {
-    NSString *url = [NSString stringWithFormat:@"%@%@",headUrl,model.shangjiaTouxiang];
+    NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:url]];
     self.nameLab.text = model.shangjiaName;
-    self.informationLab.text = model.shangjiaTongzhi;
+    self.informationLab.text = model.zhaopinZhiweimiaoshu;
     self.locationLab.text = model.shangjiaWeizhi;
-    self.degreeLab.text = model.qiuzhiXueli;
-    self.yearLab.text = model.qiuzhiNianxian;
+    self.degreeLab.text = model.zhaopinXueli;
+    self.yearLab.text = model.zhaopinGongzuojingyan;
+    self.moenyLab.text = model.zhaopinXinzi;
+    self.timeLab.text = [model.zhaopinFabushijian substringToIndex:9];
     
 }
 
