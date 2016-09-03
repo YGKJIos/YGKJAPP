@@ -21,7 +21,6 @@
         CGFloat wid = (WIDTH -(WIDTH -30)) / 3;
         CGFloat boundsWid = 35 * WIDTH/375;
         for (int i = 0; i < 4; i++) {
-//            HomeModelView *view = [HomeModelView foodModelStyleView];
             HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil].firstObject;
             view.frame = CGRectMake((boundsWid+i*(71+wid))* WIDTH/375, 17,0,0);
             view.tag = 1000+i;

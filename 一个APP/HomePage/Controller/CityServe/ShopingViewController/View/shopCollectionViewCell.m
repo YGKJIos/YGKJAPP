@@ -18,8 +18,7 @@
     self.placeLabel.text = model.shangjiaWeizhi;
     
     NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
-    [self.shopImage sd_setImageWithURL:[NSURL URLWithString:url]];
-    
+    [self.shopImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
 }
 
 - (void)awakeFromNib {

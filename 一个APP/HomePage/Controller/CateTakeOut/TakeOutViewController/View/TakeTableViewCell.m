@@ -24,7 +24,7 @@
 {
     if (model) {
         NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
-        [self.foodImageView sd_setImageWithURL:[NSURL URLWithString:url]];
+        [self.foodImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
         self.shopName.text = model.shangjiaName;
         self.gradeLab.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
         self.moneyLab.text = model.qisongjia;

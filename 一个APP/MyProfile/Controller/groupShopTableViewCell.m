@@ -23,7 +23,6 @@
 - (void)groupShopModel:(groupShopModel *)model
 {
     self.shopMassgeLab.text = model.tuangouShuoming;
-//    self.shopNumLab.text = model.usertuangoujuanYanzhengma;
     self.shopPriceLab.text = [NSString stringWithFormat:@"¥%@", model.tuangouTejia];
     self.shopName.text = model.shangjiaName;
 }

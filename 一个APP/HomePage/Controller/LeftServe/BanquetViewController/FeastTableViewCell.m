@@ -22,8 +22,7 @@
 {
     if (model != nil) {
         NSString *url = [NSString stringWithFormat:@"%@%@" , serverAddress,model.shangjiaTouxiang];
-        [self.feastImage sd_setImageWithURL:[NSURL URLWithString:url]];
-        
+        [self.feastImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
         self.nameLabel.text = model.shangjiaName;
         self.numlabel.text = model.shangjiaPingfen;
         self.introduceLabel.text = model.shangjiaTongzhi;

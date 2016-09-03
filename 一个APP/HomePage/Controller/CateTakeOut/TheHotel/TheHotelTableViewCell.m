@@ -22,7 +22,7 @@
 - (void)TheHotelModel:(TheHotelModel *) model
 {
     NSString *imageStr = [NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang];
-    [self.hotelImage sd_setImageWithURL:[NSURL URLWithString:imageStr]];
+    [self.hotelImage sd_setImageWithURL:[NSURL URLWithString:imageStr] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
     self.nameLabel.text = model.shangjiaName;
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@", model.shangjiaJiage];
