@@ -12,7 +12,6 @@
 
 - (void)showViewWith:(NSString *)string;
 
-
 @end
 
 @interface Singleton : NSObject
@@ -24,11 +23,6 @@
 @property (nonatomic, assign)BOOL AFNBool;
 @property (nonatomic, assign)BOOL thirdBool;
 - (void)makeShowWith:(NSString *)string;
-
-
-
-
-
 
 
 

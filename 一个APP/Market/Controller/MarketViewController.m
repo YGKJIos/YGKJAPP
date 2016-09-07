@@ -88,7 +88,6 @@
     _tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_tableView];
     
-    
     // tabelViewheaderView  设置
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 150)];
     _tableView.tableHeaderView = headerView;

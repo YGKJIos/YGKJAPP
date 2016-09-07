@@ -19,4 +19,5 @@
 +(void)saveSearchWord:(NSString *)word;
 +(NSArray *)getSearchWord;
 +(void)clearSearchWord;
+
 @end
