@@ -23,7 +23,8 @@ static NSString *headUrl = @"139.129.209.189:8080/shangcheng";
     self.nameLabel.text = model.shangjiaName;
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.placeLabel.text = model.shangjiaWeizhi;
-    [self.weddingImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", headUrl, model.shangjiaTouxiang]]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@", headUrl, model.shangjiaTouxiang];
+    [self.weddingImage sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
     self.piceLabel.text = [NSString stringWithFormat:@"%@折起", model.shangjiaZhekou];
 }
 

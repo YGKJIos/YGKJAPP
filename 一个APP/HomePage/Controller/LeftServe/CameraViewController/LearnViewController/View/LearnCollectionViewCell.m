@@ -13,7 +13,8 @@
 
 - (void)LearnModel:(LearnModel *)model
 {
-    [self.learnImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang]]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang];
+    [self.learnImage sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
     self.TongzhiLabel.text = model.shangjiaTongzhi;
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.placeLabel.text = model.shangjiaWeizhi;

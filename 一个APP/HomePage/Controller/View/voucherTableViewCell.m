@@ -19,7 +19,7 @@
 - (void)setmodel:(MerchantInformationModel *)model
 {
     NSString *str = [NSString stringWithFormat:@"%@%@",serverAddress, model.tuangouTouxiang];
-    [self.TGHeadImage sd_setImageWithURL:[NSURL URLWithString:str]];
+    [self.TGHeadImage sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
     self.TGname.text = model.tuangouName;
     self.TGspecialMoney.text = [NSString stringWithFormat:@"¥%@",model.tuangouTejia];
     self.TGOriginalMoney.text = [NSString stringWithFormat:@"原价%@",model.tuangouYuanjia];

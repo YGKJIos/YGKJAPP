@@ -8,7 +8,6 @@
 
 #import "CateViewController.h"
 #import "CateTypeTableViewController.h"// 自助餐，火锅。。。
-//#import "MerchantFoodTableViewController.h" // 商家美食
 #import "CateDetailsTableViewController.h"
 #import "SDCycleScrollView.h"
 

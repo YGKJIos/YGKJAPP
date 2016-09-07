@@ -22,7 +22,7 @@
 - (void)JobModel:(PleaseJobModel *)model
 {
     NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
-    [self.headImage sd_setImageWithURL:[NSURL URLWithString:url]];
+    [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
     self.nameLab.text = model.shangjiaName;
     self.informationLab.text = model.zhaopinZhiweimiaoshu;
     self.locationLab.text = model.shangjiaWeizhi;

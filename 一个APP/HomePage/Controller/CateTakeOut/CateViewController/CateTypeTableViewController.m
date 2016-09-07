@@ -7,7 +7,6 @@
 //
 
 #import "CateTypeTableViewController.h"
-//#import "MerchantFoodTableViewController.h"
 #import "CateDetailsTableViewController.h"
 #import "MarketCell.h"
 #import "MarketModel.h"

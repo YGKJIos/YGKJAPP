@@ -21,8 +21,9 @@
 
 - (void) HouseModel:(MerchantInformationModel *)model
 {
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang];
+    [self.huoseImage sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
     self.houseNameLabel.text = model.shangjiaName;
-    [self.huoseImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang]]];
     self.sevLabel.text = [NSString stringWithFormat:@"服务范围：%@", model.fuwuFanwei];
     self.projectLabel.text = [NSString stringWithFormat:@"服务项目：%@", model.fuwuXiangmu];
     self.introduceLabel.text = [NSString stringWithFormat:@"详情介绍：%@", model.shangjiaTongzhi];

@@ -25,7 +25,8 @@
     self.introduceLabel.text = model.shangjiaTongzhi;
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@", model.ershouJiage];
     self.dayLabel.text = [NSString stringWithFormat:@"%@/%@m",model.ershouShijian,model.shangjiaJuli];
-    [self.SecondHandImage sd_setImageWithURL:[NSURL  URLWithString:[NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang]]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang];
+    [self.SecondHandImage sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
 }
 
 

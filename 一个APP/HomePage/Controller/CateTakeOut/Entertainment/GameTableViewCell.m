@@ -21,7 +21,8 @@
 
 - (void) GameModel:(GameModel *)model
 {
-    [self.placeImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang]]];
+    NSString *imageUrl = [NSString stringWithFormat:@"%@%@",serverAddress, model.shangjiaTouxiang];
+    [self.placeImage sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
     self.nameLabel.text = model.shangjiaName;
     self.piceLabel.text = [NSString stringWithFormat:@"¥%@", model.shangjiaJiage];
     self.numLabel.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];

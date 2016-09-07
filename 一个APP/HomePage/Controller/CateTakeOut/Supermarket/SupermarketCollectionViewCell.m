@@ -20,7 +20,7 @@
 - (void) ZGP_SuperMarketModel:(ZGP_SuperMarketModel *)model
 {
     NSString *imageStr = [NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang];
-    [self.commodityImage sd_setImageWithURL:[NSURL URLWithString:imageStr]];
+    [self.commodityImage sd_setImageWithURL:[NSURL URLWithString:imageStr] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
     // 商品名字
     self.describeLab.text = model.shangjiaName;
     // 商品重量
