@@ -55,7 +55,6 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uR-yX-dJm">
                         <rect key="frame" x="275" y="48" width="25" height="25"/>
-                        <color key="backgroundColor" red="0.96078431369999995" green="0.68627450980000004" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="UFo-3u-FXV"/>
                             <constraint firstAttribute="width" constant="25" id="bJM-kC-O4C"/>

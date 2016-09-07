@@ -344,7 +344,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 40;
+    return 0;
 }
 
 - (void)orderMoneyBtnClick:(UIButton *)btn

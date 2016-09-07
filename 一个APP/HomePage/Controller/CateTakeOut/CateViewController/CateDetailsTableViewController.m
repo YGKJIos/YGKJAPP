@@ -53,7 +53,7 @@ static NSString *notifyURL = @"http://139.129.209.189:8080/shangcheng/notify_url
     [super viewDidLoad];
     [self loadData];
     self.navigationItem.title = @"商家详情";
-    self.tableView.backgroundColor = BGcolor(205, 205, 205);
+    self.tableView.backgroundColor = BGcolor(225, 225, 225);
     self.navigationItem.rightBarButtonItem = nil;
     [self.tableView setShowsVerticalScrollIndicator:NO];
 }

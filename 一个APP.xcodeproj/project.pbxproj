@@ -2003,9 +2003,9 @@
 			isa = PBXGroup;
 			children = (
 				59FE11031D406E8A00E8257B /* MerchantHeadView.h */,
-				59FE11041D406E8A00E8257B /* MerchantHeadView.m */,
 				59FE11061D406EB900E8257B /* MerchantHeadView.xib */,
 				59FE11081D40A82700E8257B /* FavorableWayTableViewCell.h */,
+				59FE11041D406E8A00E8257B /* MerchantHeadView.m */,
 				59FE11091D40A82700E8257B /* FavorableWayTableViewCell.m */,
 				59FE110B1D40B08600E8257B /* MerchantFoodTableViewCell.h */,
 				59FE110C1D40B08600E8257B /* MerchantFoodTableViewCell.m */,

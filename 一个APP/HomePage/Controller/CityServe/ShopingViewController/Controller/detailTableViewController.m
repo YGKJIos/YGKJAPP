@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = self.model.shangjiaName;
-    self.tableView.backgroundColor = BGcolor(205, 205, 205);
+    self.tableView.backgroundColor = BGcolor(225, 225, 225);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +56,8 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         cell.contentLab.text = self.model.shangjiaTongzhi;
+        cell.contentLab.textColor = BGcolor(175, 175, 175);
+        cell.contentLab.numberOfLines = 0;
         return cell;
     }
 //    if (indexPath.section == 2) {
@@ -77,7 +79,7 @@
         return 130;
     }
     if (indexPath.section == 1) {
-        return 140;
+        return 240;
     }
 //    if (indexPath.section == 2) {
 //        return 240;

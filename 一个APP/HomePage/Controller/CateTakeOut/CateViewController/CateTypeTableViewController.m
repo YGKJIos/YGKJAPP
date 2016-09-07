@@ -47,7 +47,7 @@
                         MarketModel *model = [[MarketModel alloc] init];
                         [model setValuesForKeysWithDictionary:dic];
                         [self.MarkeArr addObject:model];
-//                        [_fenleiArr addObject:dic];
+//                      [_fenleiArr addObject:dic];
                     }
                 }
                 if (self.MarkeArr.count == 0) {
@@ -95,7 +95,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 115;
+    return 100;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

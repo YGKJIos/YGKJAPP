@@ -31,9 +31,9 @@
     self.superMarketArr = [NSMutableArray array];
 //    [self setNavigationStyle];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(180*(WIDTH/375), 150);
+    flowLayout.itemSize = CGSizeMake(180*(WIDTH/375), 130);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 160);
-    flowLayout.sectionInset = UIEdgeInsetsMake(8, 3, 8, 3);
+    flowLayout.sectionInset = UIEdgeInsetsMake(0, 3, 8, 3);
     flowLayout.minimumInteritemSpacing = 8;
     flowLayout.minimumLineSpacing = 8;
     
@@ -64,7 +64,7 @@
 }
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.superMarketArr removeAllObjects];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collection.mj_header endRefreshing];
         NSString *url = @"chaoshi/querychaoshi.action";
@@ -87,7 +87,7 @@
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         [dic setObject:[[UserInfo shareAccount].accountDict objectForKey:@"jingweidu"] forKey:@"userWeizhi"];
         [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            
+            [self.superMarketArr removeAllObjects];
             NSArray *arr = responseObject;
             if (arr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];

@@ -21,14 +21,14 @@
 
 -(void)marketModel:(MarketModel *)model
 {
-    for (int i = 0; i < 5; i++) {
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake((Xwidth +5) +(i * 10), Xheight+10, 10, 10)];
-        imageView.image = [UIImage imageNamed:@"xinghuang"];
-        [self.contentView addSubview:imageView];
-    }
+//    for (int i = 0; i < 5; i++) {
+//        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake((Xwidth +5) +(i * 10), Xheight+10, 10, 10)];
+//        imageView.image = [UIImage imageNamed:@"xinghuang"];
+//        [self.contentView addSubview:imageView];
+//    }
     self.shopNameLab.text = model.shangjiaName;
     self.favorableLab.text = model.shangjiaTongzhi;
-    NSString *priceStr = [NSString stringWithFormat:@"%@¥", model.meishiTejia];
+    NSString *priceStr = [NSString stringWithFormat:@"¥%@", model.meishiTejia];
     self.priceLab.text = priceStr;
     NSString *distanceStr = [NSString stringWithFormat:@"%@m",model.shangjiaJuli];
     self.distanceLab.text = distanceStr;

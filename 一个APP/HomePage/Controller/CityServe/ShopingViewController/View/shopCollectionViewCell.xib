@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -42,15 +42,8 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gouwu_08" translatesAutoresizingMaskIntoConstraints="NO" id="BPd-3I-t2A">
                         <rect key="frame" x="0.0" y="0.0" width="48" height="15"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="gouwu_13" translatesAutoresizingMaskIntoConstraints="NO" id="Ivc-fE-2et">
-                        <rect key="frame" x="76.5" y="236" width="9" height="10"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="10" id="Kma-Q9-lDL"/>
-                            <constraint firstAttribute="width" constant="9" id="p0I-Fs-Nn4"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太平桥百盛三楼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-a5-ISS">
-                        <rect key="frame" x="87.5" y="236" width="74.5" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太平桥百盛三楼" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-a5-ISS">
+                        <rect key="frame" x="79" y="238" width="75" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="srj-5M-asu"/>
                         </constraints>
@@ -65,25 +58,22 @@
             <constraints>
                 <constraint firstItem="MvG-Va-tb9" firstAttribute="top" secondItem="gc9-Aj-tqh" secondAttribute="bottom" constant="-3" id="0uX-qh-snX"/>
                 <constraint firstItem="aVr-zO-Hyd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9ML-IC-CTk"/>
-                <constraint firstItem="Saq-a5-ISS" firstAttribute="top" secondItem="MvG-Va-tb9" secondAttribute="bottom" constant="7" id="JAq-U0-BW1"/>
-                <constraint firstItem="Ivc-fE-2et" firstAttribute="top" secondItem="MvG-Va-tb9" secondAttribute="bottom" constant="7" id="K8a-kt-71x"/>
+                <constraint firstItem="Saq-a5-ISS" firstAttribute="top" secondItem="MvG-Va-tb9" secondAttribute="bottom" constant="9" id="JAq-U0-BW1"/>
                 <constraint firstAttribute="trailing" secondItem="gc9-Aj-tqh" secondAttribute="trailing" id="L96-Ar-MH6"/>
-                <constraint firstItem="Saq-a5-ISS" firstAttribute="leading" secondItem="Ivc-fE-2et" secondAttribute="trailing" constant="2" id="Wdi-IW-Gd8"/>
                 <constraint firstItem="aVr-zO-Hyd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="k8L-vz-D9F"/>
                 <constraint firstItem="gc9-Aj-tqh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mxm-CG-Eef"/>
                 <constraint firstItem="MvG-Va-tb9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pm1-FA-ruB"/>
                 <constraint firstAttribute="trailing" secondItem="MvG-Va-tb9" secondAttribute="trailing" id="pvu-18-jEI"/>
                 <constraint firstAttribute="trailing" secondItem="aVr-zO-Hyd" secondAttribute="trailing" id="scR-1V-HAb"/>
                 <constraint firstItem="gc9-Aj-tqh" firstAttribute="top" secondItem="aVr-zO-Hyd" secondAttribute="bottom" constant="2" id="twU-ec-whL"/>
-                <constraint firstItem="Ivc-fE-2et" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="y1C-R1-HLk"/>
-                <constraint firstAttribute="trailing" secondItem="Saq-a5-ISS" secondAttribute="trailing" id="zls-m8-uNs"/>
+                <constraint firstItem="Saq-a5-ISS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="79" id="zN7-Wx-sIb"/>
+                <constraint firstAttribute="trailing" secondItem="Saq-a5-ISS" secondAttribute="trailing" constant="8" id="zls-m8-uNs"/>
             </constraints>
             <size key="customSize" width="162" height="256"/>
             <connections>
                 <outlet property="dazheImage" destination="BPd-3I-t2A" id="yqO-3k-p3M"/>
                 <outlet property="jieshaoLabel" destination="MvG-Va-tb9" id="DuW-qx-WCB"/>
                 <outlet property="nameLabel" destination="gc9-Aj-tqh" id="g34-bg-hvT"/>
-                <outlet property="placeImage" destination="Ivc-fE-2et" id="EU6-xY-2sO"/>
                 <outlet property="placeLabel" destination="Saq-a5-ISS" id="2eP-IA-uTI"/>
                 <outlet property="shopImage" destination="aVr-zO-Hyd" id="U7y-ca-YcW"/>
             </connections>
@@ -93,6 +83,5 @@
     <resources>
         <image name="gouwu_05" width="162" height="171"/>
         <image name="gouwu_08" width="48" height="15"/>
-        <image name="gouwu_13" width="8" height="10"/>
     </resources>
 </document>

@@ -24,8 +24,7 @@
     // 商品名字
     self.describeLab.text = model.shangjiaName;
     // 商品重量
-    self.qualityLab.text = @"500g";
-    self.moneyLab.text = model.qisongjia;
+    self.moneyLab.text = [NSString stringWithFormat:@"起送价:%@", model.qisongjia];
   
 }
 

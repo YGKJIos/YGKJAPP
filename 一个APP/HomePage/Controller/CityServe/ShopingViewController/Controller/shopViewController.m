@@ -34,7 +34,7 @@
     self.navigationItem.title = @"本地购物";
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(165*(WIDTH/375), 256*HEIGHT/667);
+    flowLayout.itemSize = CGSizeMake(165*(WIDTH/375), 256*HEIGHT/667 - 20);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 150);
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 15, 20, 15);
     flowLayout.minimumLineSpacing = 10;
