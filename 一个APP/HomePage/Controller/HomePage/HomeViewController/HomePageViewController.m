@@ -150,7 +150,6 @@
     _locService.delegate = self;
     self.geocodesearch = [[BMKGeoCodeSearch alloc] init]; // 编码服务的初始化(就是获取经纬度,或者获取地理位置服务)
     self.geocodesearch.delegate = self;
-    NSLog(@"定位的经度:%f,定位的纬度:%f",_locService.userLocation.location.coordinate.longitude,_locService.userLocation.location.coordinate.latitude);
 //    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 //    button.frame = CGRectMake(0, 0, 60, 40);
 //    [button setTitle:@"获取地址" forState:UIControlStateNormal];
@@ -178,11 +177,11 @@
     BOOL flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];//发送反编码请求.并返回是否成功
     if(flag)
     {
-        NSLog(@"反geo检索发送成功");
+//        NSLog(@"反geo检索发送成功");
     }
     else
     {
-        NSLog(@"反geo检索发送失败");
+//        NSLog(@"反geo检索发送失败");
     }
     
 }

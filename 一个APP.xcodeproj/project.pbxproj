@@ -1907,6 +1907,8 @@
 		59EAD96E1D20C2A3003DF636 /* OtherTool */ = {
 			isa = PBXGroup;
 			children = (
+				2A821EEF1D6CB375005A49A5 /* ZGPplaceholderImageView.h */,
+				2A821EF01D6CB375005A49A5 /* ZGPplaceholderImageView.m */,
 				59FFB6E81D0506F800071E0E /* PrefixHeader.pch */,
 				59ED1C111D05B5E100405D17 /* UIBarButtonItem+Extension.h */,
 				59ED1C121D05B5E100405D17 /* UIBarButtonItem+Extension.m */,
@@ -2215,8 +2217,6 @@
 			children = (
 				2A821EED1D6CB375005A49A5 /* UserInfo.h */,
 				2A821EEE1D6CB375005A49A5 /* UserInfo.m */,
-				2A821EEF1D6CB375005A49A5 /* ZGPplaceholderImageView.h */,
-				2A821EF01D6CB375005A49A5 /* ZGPplaceholderImageView.m */,
 				2A821EFD1D6CB414005A49A5 /* CBAutoScrollLabel */,
 				D842DF291D224642008A54B7 /* DOPDropDownMenu - Enhanced */,
 				59EAD96E1D20C2A3003DF636 /* OtherTool */,
@@ -2974,7 +2974,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Liu Chen (UHVNVL6K2K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3036,7 +3036,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Liu Chen (UHVNVL6K2K)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
