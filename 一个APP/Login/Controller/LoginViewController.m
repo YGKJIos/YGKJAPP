@@ -13,7 +13,6 @@
 #import "PhoneLoginViewController.h"
 #import "UserInfo.h"
 @interface LoginViewController ()<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *selectImage;
 @property (weak, nonatomic) IBOutlet UIButton *remaberBtn;
 @property (weak, nonatomic) IBOutlet UITextField *peopleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mimaField;
@@ -42,12 +41,12 @@
 - (IBAction)remaberBtn:(id)sender {
     if (self.select == YES) {
         
-        self.selectImage.image = [UIImage imageNamed:@"jizhumima_xuanzhong"];
+        [self.remaberBtn setImage:[UIImage imageNamed:@"jizhumima_xuanzhong"] forState:UIControlStateNormal];;
         // 保存userId
         
     } else if (self.select == NO)
     {
-        self.selectImage.image = [UIImage imageNamed:@"jizhumima_weixuan"];
+        [self.remaberBtn setImage:[UIImage imageNamed:@"jizhumima_weixuan"] forState:UIControlStateNormal];
         // 清除userId
         
     }
@@ -87,7 +86,7 @@
     [AFNetWorting postNetWortingWithUrlString:url params:_dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
         if ([@"0"isEqualToString:responseObject[@"ok"]]) {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"登录失败!";
+            hud.labelText = @"用户名或密码错误!";
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [hud hide:YES];
             });

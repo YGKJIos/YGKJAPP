@@ -5,6 +5,17 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "cap-insets" : {
+          "right" : 8,
+          "left" : 67
+        }
+      },
       "idiom" : "universal",
       "filename" : "login_phone.png",
       "scale" : "2x"

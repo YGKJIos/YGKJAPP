@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tuijianmaField;
 @property (nonatomic, copy)NSString *testStr;
 @property (nonatomic ,strong)NSTimer *timer;
+@property (nonatomic, strong)UIButton *codeBtn;
 @end
 
 @implementation postViewController
@@ -31,44 +32,30 @@
     self.zcyanzhengmaField.delegate = self;
     self.tuijianmaField.delegate = self;
     // 1.点击
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldShouldReturn:)];
     [self.view addGestureRecognizer:tap];
 }
-
-// 触摸屏幕键盘回弹
-- (void)tapAction:(UITapGestureRecognizer *)tap{
-    
-    [self.yonghuField resignFirstResponder];
-    [self.zcPhoneField resignFirstResponder];
-    [self.zcyanzhengmaField resignFirstResponder];
-    [self.zcquerenField resignFirstResponder];
-    [self.zcshurumimaFielf resignFirstResponder];
-    [self.tuijianmaField resignFirstResponder];
-}
-
 
 // 返回按钮
 - (IBAction)postBtn:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
-    
 }
 
 // 确认注册按钮
 - (IBAction)secceedBtn:(id)sender {
 
-    if ([self.testStr isEqualToString:self.zcyanzhengmaField.text]) {
+    if ([self.testStr isEqualToString:self.zcyanzhengmaField.text] && [self.zcshurumimaFielf.text isEqualToString:self.zcquerenField.text]) {
         NSString *urlStr = @"user/zhuce.action?";
         NSDictionary *dic = @{@"userName":self.zcPhoneField.text,@"password":self.zcshurumimaFielf.text,@"userWangming":self.yonghuField.text};
         [AFNetWorting postNetWortingWithUrlString:urlStr params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             if ([@"0"isEqualToString:responseObject[@"ok"]]) {
+                [self addMBProgressText:@"注册失败"];
+            }
+            if ([@"1" isEqualToString:responseObject[@"ok"]]) {
                 MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                hud.labelText = @"注册失败!";
-            }else
-            {
-                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                hud.labelText = @"验证中请稍后...";
+                hud.labelText = @"注册成功";
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     self.testStr = responseObject[@"Contrnt"];
                     postsucceedViewController *succeedVC = [[postsucceedViewController alloc] init];
@@ -78,14 +65,29 @@
                     }];
                 });
             }
+            if ([@"2" isEqualToString:responseObject[@"ok"]]) {
+                [self addMBProgressText:@"手机号已注册"];
+            }
+            if ([@"3" isEqualToString:responseObject[@"ok"]]) {
+                
+                [self addMBProgressText:@"用户名已重复"];
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
     }else
     {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"注册失败!";
+        [self addMBProgressText:@"验证码或密码错误"];
     }
+}
+
+- (void)addMBProgressText:(NSString *)text
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = text;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [hud hide:YES];
+    });
 }
 
 // 回收键盘
@@ -97,59 +99,77 @@
     [self.zcyanzhengmaField resignFirstResponder];
     [self.zcPhoneField resignFirstResponder];
     [self.tuijianmaField resignFirstResponder];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.view.y = 0;
+    }];
     return YES;
 }
-
+// 获取验证码的点击方法
 - (IBAction)testBtn:(id)sender {
-    UIButton *btn = sender;
-    btn.selected = NO;
-    btn.tag = 1000;
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(cilckTestBtnAction) userInfo:nil repeats:YES];
-    
-    NSString *url = @"user/yanzhengma.action?";
-    NSDictionary *dic = @{@"mobile":self.zcPhoneField.text};
-    [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-        if ([@"0"isEqualToString:responseObject[@"ok"]]) {
-            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"获取验证码失败!";
-        }else
-        {
-            self.testStr = responseObject[@"Contrnt"];
-        }
-
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-    }];
+    if (self.zcPhoneField.text.length == 11 && self.yonghuField.text.length > 0) {
+        self.codeBtn = sender;
+        // 验证码计时
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(cilckTestBtnAction) userInfo:nil repeats:YES];
+        NSString *url = @"user/yanzhengma.action?";
+        NSDictionary *dic = @{@"mobile":self.zcPhoneField.text};
+        [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            if ([@"0"isEqualToString:responseObject[@"ok"]]) {
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.labelText = @"获取验证码失败!";
+            }else
+            {
+                self.testStr = responseObject[@"Contrnt"];
+                // 关闭 交互
+                self.zcPhoneField.userInteractionEnabled = NO;
+                self.yonghuField.userInteractionEnabled = NO;
+            }
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }];
+    }else if (_zcPhoneField.text.length < 11 && _zcPhoneField.text.length > 0)
+    {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"手机号输入有误";
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [hud hide:YES];
+        });
+    }else{
+        [self addMBProgressText:@"请先输入电话号和用户名"];
+    }
 }
 
 static NSInteger num = 60;
 - (void)cilckTestBtnAction
 {
-    UIButton *btn = (UIButton *)[self.view viewWithTag:1000];
-    
     if (num <= 60 && num > 0) {
-        [btn setUserInteractionEnabled:NO];
-        [btn setBackgroundColor:[UIColor grayColor]];
-        [btn setTitleColor:[UIColor colorWithRed:198/255. green:198/255. blue:198/255. alpha:1] forState:UIControlStateNormal];
-        [btn setTitle:@"60s" forState:UIControlStateNormal];
-        NSString *title = [NSString stringWithFormat:@"重新获取(%ld)",num--];
-        [btn setTitle:title forState:UIControlStateNormal];
+        self.codeBtn.enabled = NO;
+        [self.codeBtn setBackgroundColor:[UIColor grayColor]];
+        [self.codeBtn setTitleColor:[UIColor colorWithRed:198/255. green:198/255. blue:198/255. alpha:1] forState:UIControlStateNormal];
+        NSString *title = [NSString stringWithFormat:@"重新获取(%lds)",num--];
+        [self.codeBtn setTitle:title forState:UIControlStateDisabled];
     }else if (num == 0)
     {
-        [btn setUserInteractionEnabled:YES];
-        [btn setBackgroundColor:[UIColor whiteColor]];
-        [btn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        self.codeBtn.enabled = YES;
+        [self.codeBtn setBackgroundColor:[UIColor whiteColor]];
+        [self.codeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
         UIColor *color = [UIColor colorWithRed:96/255. green:197 /255. blue:214/255. alpha:1];
-        [btn setTitleColor:color forState:UIControlStateNormal];
+        [self.codeBtn setTitleColor:color forState:UIControlStateNormal];
         num = 60;
         [_timer setFireDate:[NSDate distantFuture]];
         
     }
     
 }
-
-
-
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if (textField == self.zcyanzhengmaField) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.view.y = -120;
+        }];
+    }
+    return YES;
+}
 
 
 @end

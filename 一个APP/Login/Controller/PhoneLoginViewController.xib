@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -25,21 +25,24 @@
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhihuitongcheng" translatesAutoresizingMaskIntoConstraints="NO" id="6bZ-e4-KLt">
                             <rect key="frame" x="70" y="60" width="235" height="90"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="235" id="aND-Jn-X4S"/>
+                            </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_phone" translatesAutoresizingMaskIntoConstraints="NO" id="HeL-bb-AtY">
-                            <rect key="frame" x="50" y="227" width="240" height="38"/>
+                            <rect key="frame" x="50" y="227" width="215" height="38"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_test" translatesAutoresizingMaskIntoConstraints="NO" id="CSm-qA-1B4">
-                            <rect key="frame" x="50" y="308" width="274" height="38"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yanzhengma" translatesAutoresizingMaskIntoConstraints="NO" id="CSm-qA-1B4">
+                            <rect key="frame" x="50" y="308" width="289" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="38" id="TbC-Lr-rQC"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXh-dY-qoF">
-                            <rect key="frame" x="239" y="227" width="90" height="38"/>
+                            <rect key="frame" x="239" y="226" width="100" height="38"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="90" id="M3J-JQ-vXq"/>
+                                <constraint firstAttribute="width" constant="100" id="M3J-JQ-vXq"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="获取验证码">
@@ -50,9 +53,9 @@
                             </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-NY-HnI">
-                            <rect key="frame" x="86" y="308" width="238" height="38"/>
+                            <rect key="frame" x="91" y="308" width="248" height="38"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ba-bL-V3L">
                             <rect key="frame" x="50" y="406" width="274" height="40"/>
@@ -84,12 +87,12 @@
                             </constraints>
                         </view>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9cc-O6-Pll">
-                            <rect key="frame" x="86" y="227" width="151" height="38"/>
+                            <rect key="frame" x="91" y="227" width="146" height="38"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="38" id="lY2-yR-Vm3"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                     </subviews>
                     <constraints>
@@ -97,31 +100,30 @@
                         <constraint firstItem="6bZ-e4-KLt" firstAttribute="top" secondItem="re8-3L-3x5" secondAttribute="top" constant="60" id="5br-hU-fzD"/>
                         <constraint firstItem="CSm-qA-1B4" firstAttribute="leading" secondItem="0ba-bL-V3L" secondAttribute="leading" id="8SI-TH-iVw"/>
                         <constraint firstItem="HeL-bb-AtY" firstAttribute="leading" secondItem="re8-3L-3x5" secondAttribute="leading" constant="50" id="9Z3-md-3Va"/>
+                        <constraint firstItem="6bZ-e4-KLt" firstAttribute="centerX" secondItem="re8-3L-3x5" secondAttribute="centerX" id="Aph-wW-sOY"/>
                         <constraint firstItem="HeL-bb-AtY" firstAttribute="top" secondItem="9cc-O6-Pll" secondAttribute="top" id="B3T-yl-piv"/>
                         <constraint firstItem="HeL-bb-AtY" firstAttribute="bottom" secondItem="9cc-O6-Pll" secondAttribute="bottom" id="DD9-8f-2W3"/>
-                        <constraint firstAttribute="trailing" secondItem="HeL-bb-AtY" secondAttribute="trailing" constant="85" id="Gas-zF-VQU"/>
+                        <constraint firstAttribute="trailing" secondItem="HeL-bb-AtY" secondAttribute="trailing" constant="110" id="Gas-zF-VQU"/>
                         <constraint firstItem="2nl-7I-OrJ" firstAttribute="top" secondItem="0ba-bL-V3L" secondAttribute="bottom" constant="48" id="IqE-bk-gx4"/>
-                        <constraint firstItem="9cc-O6-Pll" firstAttribute="bottom" secondItem="OXh-dY-qoF" secondAttribute="bottom" id="JEM-Wq-pqx"/>
-                        <constraint firstItem="9cc-O6-Pll" firstAttribute="top" secondItem="OXh-dY-qoF" secondAttribute="top" id="L4O-lR-dUI"/>
+                        <constraint firstItem="9cc-O6-Pll" firstAttribute="bottom" secondItem="OXh-dY-qoF" secondAttribute="bottom" constant="1" id="JEM-Wq-pqx"/>
+                        <constraint firstItem="9cc-O6-Pll" firstAttribute="top" secondItem="OXh-dY-qoF" secondAttribute="top" constant="1" id="L4O-lR-dUI"/>
                         <constraint firstItem="CSm-qA-1B4" firstAttribute="top" secondItem="jQn-NY-HnI" secondAttribute="top" id="Mij-jt-8Z7"/>
-                        <constraint firstItem="6bZ-e4-KLt" firstAttribute="centerX" secondItem="CSm-qA-1B4" secondAttribute="centerX" id="Mlg-K7-Kc1"/>
                         <constraint firstItem="CfL-lY-wyc" firstAttribute="leading" secondItem="re8-3L-3x5" secondAttribute="leading" id="P3H-E6-Oxv"/>
                         <constraint firstItem="e6N-qX-XPM" firstAttribute="top" secondItem="2nl-7I-OrJ" secondAttribute="bottom" constant="2" id="PBA-Vk-sNE"/>
-                        <constraint firstAttribute="trailing" secondItem="OXh-dY-qoF" secondAttribute="trailing" constant="46" id="RN9-Mj-Azd"/>
+                        <constraint firstAttribute="trailing" secondItem="OXh-dY-qoF" secondAttribute="trailing" constant="36" id="RN9-Mj-Azd"/>
                         <constraint firstItem="0ba-bL-V3L" firstAttribute="top" secondItem="CSm-qA-1B4" secondAttribute="bottom" constant="60" id="S6q-rp-pQz"/>
                         <constraint firstItem="OXh-dY-qoF" firstAttribute="leading" secondItem="9cc-O6-Pll" secondAttribute="trailing" constant="2" id="UrR-ta-VAZ"/>
                         <constraint firstItem="jQn-NY-HnI" firstAttribute="top" secondItem="9cc-O6-Pll" secondAttribute="bottom" constant="43" id="Vsl-8A-EL8"/>
                         <constraint firstItem="HeL-bb-AtY" firstAttribute="leading" secondItem="CSm-qA-1B4" secondAttribute="leading" id="ayt-st-Ytf"/>
                         <constraint firstItem="9cc-O6-Pll" firstAttribute="leading" secondItem="jQn-NY-HnI" secondAttribute="leading" id="bTk-8Y-MHT"/>
                         <constraint firstItem="2nl-7I-OrJ" firstAttribute="centerX" secondItem="e6N-qX-XPM" secondAttribute="centerX" id="btK-Aa-xEO"/>
-                        <constraint firstItem="6bZ-e4-KLt" firstAttribute="leading" secondItem="re8-3L-3x5" secondAttribute="leading" constant="70" id="eNl-DU-HU9"/>
                         <constraint firstItem="0ba-bL-V3L" firstAttribute="centerX" secondItem="2nl-7I-OrJ" secondAttribute="centerX" id="fRX-J9-lFS"/>
                         <constraint firstItem="CfL-lY-wyc" firstAttribute="centerY" secondItem="re8-3L-3x5" secondAttribute="centerY" id="fYy-Es-tii"/>
-                        <constraint firstItem="CSm-qA-1B4" firstAttribute="trailing" secondItem="0ba-bL-V3L" secondAttribute="trailing" id="fuk-st-ifg"/>
-                        <constraint firstItem="9cc-O6-Pll" firstAttribute="leading" secondItem="re8-3L-3x5" secondAttribute="leading" constant="86" id="gHq-tu-JKV"/>
+                        <constraint firstItem="CSm-qA-1B4" firstAttribute="trailing" secondItem="0ba-bL-V3L" secondAttribute="trailing" constant="15" id="fuk-st-ifg"/>
+                        <constraint firstItem="9cc-O6-Pll" firstAttribute="leading" secondItem="re8-3L-3x5" secondAttribute="leading" constant="91" id="gHq-tu-JKV"/>
                         <constraint firstAttribute="bottom" secondItem="CfL-lY-wyc" secondAttribute="bottom" id="hx8-5T-fhC"/>
                         <constraint firstItem="CSm-qA-1B4" firstAttribute="trailing" secondItem="jQn-NY-HnI" secondAttribute="trailing" id="iQG-p3-LZj"/>
-                        <constraint firstItem="CSm-qA-1B4" firstAttribute="centerX" secondItem="re8-3L-3x5" secondAttribute="centerX" id="lhi-Uo-r4O"/>
+                        <constraint firstItem="CSm-qA-1B4" firstAttribute="centerX" secondItem="re8-3L-3x5" secondAttribute="centerX" constant="7" id="lhi-Uo-r4O"/>
                         <constraint firstItem="CfL-lY-wyc" firstAttribute="centerX" secondItem="2nl-7I-OrJ" secondAttribute="centerX" id="qD9-7c-I6l"/>
                         <constraint firstItem="CfL-lY-wyc" firstAttribute="top" secondItem="re8-3L-3x5" secondAttribute="top" id="rj7-PT-7eK"/>
                         <constraint firstAttribute="trailing" secondItem="CfL-lY-wyc" secondAttribute="trailing" id="wYy-3S-tLH"/>
@@ -143,8 +145,8 @@
     <resources>
         <image name="denglu" width="265" height="40"/>
         <image name="denglubeijing" width="400" height="640"/>
-        <image name="login_phone" width="265" height="46"/>
-        <image name="login_test" width="264" height="46"/>
+        <image name="login_phone" width="38" height="46"/>
+        <image name="yanzhengma" width="338" height="46"/>
         <image name="zhihuitongcheng" width="234" height="90"/>
     </resources>
 </document>

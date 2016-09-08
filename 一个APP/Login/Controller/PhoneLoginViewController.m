@@ -15,7 +15,9 @@
 - (IBAction)loginBtn:(id)sender; // 登录按钮
 - (IBAction)obtainTestBtn:(id)sender; // 获取验证码
 - (IBAction)userLoginBtn:(id)sender; // 跳回用户名登录
-@property (nonnull, strong) NSTimer *timer;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong)UIButton *codeBtn;
+@property (nonatomic, copy)NSString *code;
 
 @end
 
@@ -29,7 +31,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(textFieldShouldReturn:)];
     [self.view addGestureRecognizer:tap];
 }
-
+// 回收键盘
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.phoneText resignFirstResponder];
@@ -37,75 +39,130 @@
     return YES;
 }
 
-
+// 登录点击事件
 - (IBAction)loginBtn:(id)sender {
-    
     NSString *url = @"user/shoujihaologin.action?";
     NSDictionary *dic = @{@"userName":self.phoneText.text};
+    /**
+     *  调用网络请求
+     *  URL 网络路径
+     *  dic  拼接字段
+     *  result  判断登录或者验证码 1为登录  0为验证码
+     */
     [self afnetWoting:url params:dic result:1];
-    
 }
-
+// 获取验证码
 - (IBAction)obtainTestBtn:(id)sender {
-    
-    UIButton *btn = sender;
-    btn.selected = NO;
-    btn.tag = 1000;
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(cilckTestBtnAction) userInfo:nil repeats:YES];
-    
-    NSString *url = @"user/yanzhengma.action?";
-    NSDictionary *dic = @{@"mobile":self.phoneText.text};
-    [self afnetWoting:url params:dic result:0];
+    if (_phoneText.text.length == 11) {
+        
+        self.codeBtn = sender;
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(phoneCilckTestBtnAction) userInfo:nil repeats:YES];
+        
+        NSString *url = @"user/yanzhengma.action?";
+        NSDictionary *dic = @{@"mobile":self.phoneText.text};
+        /**
+         *  调用网络请求
+         *  URL 网络路径
+         *  dic  拼接字段
+         *  result  判断登录或者验证码 1为登录  0为验证码
+         */
+        [self afnetWoting:url params:dic result:0];
+    }else if (_phoneText.text.length < 11 && _phoneText.text.length > 0)
+    {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"手机号输入有误";
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [hud hide:YES];
+        });
+    }else{
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"请输入手机号";
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [hud hide:YES];
+        });
+    }
 }
 
 static NSInteger num = 60;
-- (void)cilckTestBtnAction
+- (void)phoneCilckTestBtnAction
 {
-    UIButton *btn = (UIButton *)[self.view viewWithTag:1000];
-  
-        if (num <= 60 && num > 0) {
-            [btn setUserInteractionEnabled:NO];
-            [btn setBackgroundColor:[UIColor grayColor]];
-            [btn setTitleColor:[UIColor colorWithRed:198/255. green:198/255. blue:198/255. alpha:1] forState:UIControlStateNormal];
-            [btn setTitle:@"60s" forState:UIControlStateNormal];
-            NSString *title = [NSString stringWithFormat:@"重新获取(%ld)",num--];
-            [btn setTitle:title forState:UIControlStateNormal];
-        }else if (num == 0)
-        {
-            [btn setUserInteractionEnabled:YES];
-            [btn setBackgroundColor:[UIColor whiteColor]];
-            [btn setTitle:@"获取验证码" forState:UIControlStateNormal];
-            UIColor *color = [UIColor colorWithRed:96/255. green:197 /255. blue:214/255. alpha:1];
-            [btn setTitleColor:color forState:UIControlStateNormal];
-            num = 60;
-            [_timer setFireDate:[NSDate distantFuture]];
-            
-        }
-    
+    if (num <= 60 && num > 0) {
+        self.codeBtn.enabled = NO;
+        [self.codeBtn setBackgroundColor:[UIColor grayColor]];
+        [self.codeBtn setTitleColor:[UIColor colorWithRed:198/255. green:198/255. blue:198/255. alpha:1] forState:UIControlStateNormal];
+        NSString *title = [NSString stringWithFormat:@"重新获取(%lds)",num--];
+        [self.codeBtn setTitle:title forState:UIControlStateDisabled];
+    }else if (num == 0)
+    {
+        [self.codeBtn setBackgroundColor:[UIColor whiteColor]];
+        UIColor *color = [UIColor colorWithRed:96/255. green:197 /255. blue:214/255. alpha:1];
+        [self.codeBtn setTitleColor:color forState:UIControlStateNormal];
+        self.codeBtn.enabled = YES;
+        [self.codeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        num = 60;
+        [_timer setFireDate:[NSDate distantFuture]];
+    }
 }
 
 - (IBAction)userLoginBtn:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+// 验证请求 和 登录请求
 - (void)afnetWoting:(NSString *)url params:(NSDictionary *)dic result:(NSInteger)result
 {
     [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
         if ([@"1" isEqualToString:responseObject[@"ok"]]) {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"请稍等";
+            hud.labelText = @"请稍等···";
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 if (result == 0) {
                     [hud hide:YES];
+                    self.code = responseObject[@"Contrnt"];
+                    [self.phoneText setUserInteractionEnabled:NO];
                 }else
                 {
-                    RootTabBarController *rootVC = [[RootTabBarController alloc]init];
-                    [self presentViewController:rootVC animated:YES completion:nil];
+                    if ([self.code isEqualToString:self.testField.text]) {
+                        [hud hide:YES];
+                        RootTabBarController *rootVC = [[RootTabBarController alloc]init];
+                        [self presentViewController:rootVC animated:YES completion:nil];
+                    }else
+                    {
+                        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                        hud.labelText = @"验证码输入错误";
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [hud hide:YES];
+                        });
+                    }
                 }
             });
+        }else
+        {
+            if (result == 0) {
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.labelText = @"验证码获取失败";
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [hud hide:YES];
+                });
+                
+            }else{
+                if (![self.code isEqualToString:self.testField.text]) {
+                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    hud.labelText = @"验证码输入错误";
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [hud hide:YES];
+                    });
+                }else
+                {
+                    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    hud.labelText = @"手机号未注册，请返回注册";
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [hud hide:YES];
+                    });
+                }
+            }
         }
-        
+
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
