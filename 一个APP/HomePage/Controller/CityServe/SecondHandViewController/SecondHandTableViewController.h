@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SecondHandTableViewController : UITableViewController
-
+@property (nonatomic, strong) NSString *number;
 @end

@@ -14,4 +14,5 @@
 @property (nonatomic, strong)NSString *guanggaoNeirong;
 @property (nonatomic, strong)NSArray *talkImgArray;
 @property (nonatomic, assign)NSInteger h;
+@property (nonatomic, strong) NSString *guanggaoShijian;
 @end

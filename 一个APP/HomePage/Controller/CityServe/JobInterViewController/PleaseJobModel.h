@@ -9,6 +9,7 @@
 #import "MerchantInformationModel.h"
 
 @interface PleaseJobModel : MerchantInformationModel
+
 @property (nonatomic, copy)NSString *zhaopinxinxiId;
 @property (nonatomic, copy)NSString *zhaopinZhiwei;
 @property (nonatomic, copy)NSString *zhaopinXinzi;
@@ -17,6 +18,7 @@
 @property (nonatomic, copy)NSString *zhaopinFuli;
 @property (nonatomic, copy)NSString *zhaopinZhiweimiaoshu;
 @property (nonatomic, copy)NSString *zhaopinFabushijian;
-
+@property (nonatomic, strong) NSString *zhaopinShijian;
+@property (nonatomic, strong) NSString *zhaopinGongsijianjie;
 
 @end

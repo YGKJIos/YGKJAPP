@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *moneyLab; //起送价
 @property (weak, nonatomic) IBOutlet UILabel *sendLab; // 配送费
 @property (weak, nonatomic) IBOutlet UILabel *salesLab; // 商家通知
-@property (weak, nonatomic) IBOutlet UILabel *gradeLab;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 
 + (TakeTableViewCell *)CreateTakeOutCell;

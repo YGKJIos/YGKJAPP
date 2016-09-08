@@ -30,7 +30,7 @@
     
     _userName = [[UILabel alloc] initWithFrame:CGRectMake(_headImageView.frame.size.width  + 30, 0, [UIScreen mainScreen].bounds.size.width - 70, 60)];
     [topView addSubview:_userName];
-    _userName.font = [UIFont systemFontOfSize:10];
+    _userName.font = [UIFont systemFontOfSize:15];
     
     _phoneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _phoneBtn.origin = CGPointMake(WIDTH-54, topView.size.height/2 - 14);
@@ -41,8 +41,14 @@
     
     _contLab = [[UILabel alloc] initWithFrame:CGRectMake(30, topView.frame.size.height + topView.frame.origin.y, [UIScreen mainScreen].bounds.size.width - 50, 20)];
     [self.contentView addSubview:_contLab];
-    _contLab.font = [UIFont systemFontOfSize:12];
+    _contLab.font = [UIFont systemFontOfSize:13];
     _contLab.numberOfLines = 0;
+    // 发布时间
+    self.fabushijian = [[UILabel alloc] initWithFrame:CGRectMake(0, _contLab.frame.origin.y + _contLab.frame.size.height , WIDTH - 20, 10)];
+    _fabushijian.font = [UIFont systemFontOfSize:10];
+    _fabushijian.textColor = [UIColor lightGrayColor];
+    _fabushijian.textAlignment = NSTextAlignmentRight;
+    [self.contentView addSubview:_fabushijian];
     
     _imgView = [[UIView alloc] initWithFrame:CGRectMake(0, _contLab.frame.size.height + _contLab.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width, 100)];
     [self.contentView addSubview:_imgView];
@@ -69,6 +75,8 @@
     _contLab.frame = f;
     _contLab.text = model.guanggaoNeirong;
     
+    // 发布时间
+    _fabushijian.text = model.guanggaoShijian;
     CGRect imgf = _imgView.frame;
     imgf.origin.y = _contLab.frame.size.height + _contLab.frame.origin.y + 10;
     _imgView.frame = imgf;

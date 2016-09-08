@@ -58,6 +58,12 @@
         cell.contentLab.text = self.model.shangjiaTongzhi;
         cell.contentLab.textColor = BGcolor(175, 175, 175);
         cell.contentLab.numberOfLines = 0;
+        if ([self.num isEqualToString:@"1003"]) {
+            cell.nameLab.text = @"商品介绍";
+        }else if ([self.num isEqualToString:@"1004"]){
+            cell.nameLab.text = @"招聘说明";
+        }
+        
         return cell;
     }
 //    if (indexPath.section == 2) {

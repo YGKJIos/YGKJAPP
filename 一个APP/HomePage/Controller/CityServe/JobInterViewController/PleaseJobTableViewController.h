@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PleaseJobTableViewController : UITableViewController
-
+@property (nonatomic, strong) NSString *number;
 @end

@@ -60,13 +60,13 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.takeOutArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"waimai/querywaimai1.action";
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         [dic setObject:[[UserInfo shareAccount].accountDict objectForKey:@"jingweidu"] forKey:@"userWeizhi"];
         [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            [self.takeOutArr removeAllObjects];
             
             NSArray *arr = responseObject;
             if (arr.count == 0) {

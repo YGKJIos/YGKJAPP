@@ -12,13 +12,9 @@
 @interface TheHotelTableViewCell : BaseTableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *hotelImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *starImage;
-@property (weak, nonatomic) IBOutlet UILabel *numLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *tehuiImage;
-@property (weak, nonatomic) IBOutlet UIImageView *tuanImage;
-@property (weak, nonatomic) IBOutlet UIImageView *dingImage;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tongzhiLab;
 
 
 

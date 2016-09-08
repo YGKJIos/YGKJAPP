@@ -70,11 +70,11 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"yanhui/queryyanhui1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            [self.MarkeArr removeAllObjects];
             NSArray *arr = responseObject;
             if (arr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];

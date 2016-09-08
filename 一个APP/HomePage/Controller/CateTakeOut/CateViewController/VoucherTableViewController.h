@@ -10,7 +10,7 @@
 #import "MerchantInformationModel.h"
 
 @interface VoucherTableViewController : UITableViewController
-@property (nonatomic, strong)MerchantInformationModel *model;
+@property (nonatomic, strong)MerchantInformationModel *model; // 传详情的model
 @property (nonatomic, strong)NSMutableArray *shopArr;
-
+@property (nonatomic, strong) NSString *num;
 @end

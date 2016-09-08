@@ -12,5 +12,7 @@
 @interface detailTableViewController : UITableViewController
 
 @property (nonatomic, strong)MerchantInformationModel *model;
+@property (nonatomic, strong) NSString *num;
+
 
 @end

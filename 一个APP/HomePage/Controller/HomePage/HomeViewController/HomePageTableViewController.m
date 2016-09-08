@@ -405,11 +405,13 @@
     // 二手置换
     if (num == 1003) {
         SecondHandTableViewController *secondVC = [[SecondHandTableViewController alloc]init];
+        secondVC.number = [NSString stringWithFormat:@"%ld",num];
         [self.navigationController pushViewController:secondVC animated:YES];
     }
     // 求职招聘
     if (num == 1004) {
         PleaseJobTableViewController *pleaseVC = [[PleaseJobTableViewController alloc]init];
+        pleaseVC.number = [NSString stringWithFormat:@"%ld",num];
         [self.navigationController pushViewController:pleaseVC animated:YES];
     }
     // 小广告栏
@@ -449,6 +451,7 @@
     // 学习培训
     if (num == 1004) {
         LearnViewController *learnVc = [[LearnViewController alloc]init];
+        learnVc.number = [NSString stringWithFormat:@"%ld", num];
         [self.navigationController pushViewController:learnVc animated:YES];
     }
     // 宴会服务

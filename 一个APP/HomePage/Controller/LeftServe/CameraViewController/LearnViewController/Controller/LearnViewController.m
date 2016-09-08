@@ -71,11 +71,11 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.MarkeArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.collection.mj_header endRefreshing];
         NSString *url = @"peixun/querypeixun1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            [self.MarkeArr removeAllObjects];
             NSArray *arr = responseObject;
             if (arr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
@@ -125,6 +125,7 @@
     LearnDetailsTableViewController *learnDetailVC = [[LearnDetailsTableViewController alloc]init];
     learnDetailVC.navigationItem.title = @"学习详情";
     learnDetailVC.shopID = [self.MarkeArr[indexPath.row] shangjiaId];
+    learnDetailVC.Num = self.number;
     [self.navigationController pushViewController:learnDetailVC animated:YES];
 }
 

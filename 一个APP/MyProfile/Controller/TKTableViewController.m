@@ -28,7 +28,6 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.TKArr removeAllObjects];
     NSString *url = @"waimai/userchakandingdan.action?";
     NSString *sandPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     sandPath = [sandPath stringByAppendingPathComponent:@"manager/userDic.plish"];
@@ -36,6 +35,7 @@
     dic = @{@"userId":dic[@"userId"]};
     
     [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self.TKArr removeAllObjects];
         NSArray *arr = responseObject;
         for (NSDictionary *dic in arr) {
             TKModel *model = [[TKModel alloc] init];

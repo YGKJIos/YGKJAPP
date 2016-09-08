@@ -30,7 +30,6 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.orderArr removeAllObjects];
     NSString *url = @"waimai/userchakandingdan.action?";
     NSString *sandPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     sandPath = [sandPath stringByAppendingPathComponent:@"manager/userDic.plish"];
@@ -38,6 +37,7 @@
     dic = @{@"userId":dic[@"userId"]};
     
     [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self.orderArr removeAllObjects];
         NSArray *arr = responseObject;
         for (NSDictionary *dic in arr) {
             QorderModel *model = [[QorderModel alloc] init];

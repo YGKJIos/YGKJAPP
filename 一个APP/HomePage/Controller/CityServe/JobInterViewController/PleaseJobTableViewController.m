@@ -10,6 +10,7 @@
 #import "detailTableViewController.h"
 #import "PleaseJobTableViewCell.h"
 #import "PleaseJobModel.h"
+#import "ZGP_AddDetailsViewController.h"
 @interface PleaseJobTableViewController ()<SDCycleScrollViewDelegate>
 @property (nonatomic, retain) NSMutableArray *jobArr;
 
@@ -55,11 +56,11 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.jobArr removeAllObjects];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
         NSString *url = @"qiuzhizhaopin/queryqiuzhizhaopin.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+            [self.jobArr removeAllObjects];
             NSArray *arr = responseObject;
             if (arr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
@@ -155,7 +156,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    detailTableViewController *detailVC = [[detailTableViewController alloc]init];
+    ZGP_AddDetailsViewController *detailVC = [[ZGP_AddDetailsViewController alloc]init];
+    
     if (self.jobArr.count > 0) {
         detailVC.model = self.jobArr[indexPath.row];
     }

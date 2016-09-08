@@ -11,5 +11,5 @@
 @interface LearnDetailsTableViewController : UITableViewController
 
 @property (nonatomic, copy)NSString *shopID;
-
+@property (nonatomic, strong) NSString *Num;  // 
 @end

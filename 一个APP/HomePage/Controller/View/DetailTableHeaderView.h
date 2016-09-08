@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *shopHeadImage;
 @property (weak, nonatomic) IBOutlet UILabel *shopName;
-@property (weak, nonatomic) IBOutlet UILabel *grade;
 @property (weak, nonatomic) IBOutlet UILabel *addressLab;
 @property (nonatomic, copy) NSString *telephoneNum;
 

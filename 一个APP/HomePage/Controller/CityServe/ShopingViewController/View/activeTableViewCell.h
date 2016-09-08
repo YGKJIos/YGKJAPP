@@ -11,6 +11,9 @@
 @interface activeTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *contentLab;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLab;
+
 + (activeTableViewCell *) greateCell;
 
 @end
