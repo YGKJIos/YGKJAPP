@@ -31,7 +31,7 @@
     
     self.foodArr = [NSMutableArray arrayWithObjects:@"鱼丸",@"粗面",@"油面",@"鱼丸",@"鱼丸", nil];
     
-    self.tableView.backgroundColor = BGcolor(198, 198, 198);
+    self.tableView.backgroundColor = BGcolor(225 , 225, 225);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
      self.navigationItem.rightBarButtonItem = nil;
@@ -46,7 +46,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -54,25 +54,25 @@
     if (section == 0) {
         return 0;
     }
-    if (section == 3) {
+    if (section == 2) {
         return 2;
     }
     return 1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.section == 1) {
+//        StarEvaluateTotalTableViewCell *cell = [StarEvaluateTotalTableViewCell greateCell];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        cell.evaluateLab.text = [self.shopArr[0] shangjiaPingfen];
+//        return cell;
+//    }
     if (indexPath.section == 1) {
-        StarEvaluateTotalTableViewCell *cell = [StarEvaluateTotalTableViewCell greateCell];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.evaluateLab.text = [self.shopArr[0] shangjiaPingfen];
-        return cell;
-    }
-    if (indexPath.section == 2) {
         ShopIntroduceTableViewCell *shopCell = [[NSBundle mainBundle]loadNibNamed:@"ShopIntroduceTableViewCell" owner:nil options:nil].lastObject;
         shopCell.selectionStyle = UITableViewCellSelectionStyleNone;
         [shopCell setShopInformationModel:self.shopArr[0]];
         return shopCell;
     }
-    if (indexPath.section == 3) {
+    if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             TitleCellTableViewCell *titleCell = [TitleCellTableViewCell createSectionTitleCellNib];
             [titleCell setTitleImage:@"djq_taocanjieshao2" titleLab:@"套餐介绍"];
@@ -82,8 +82,9 @@
             
             UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuse"];
             cell.textLabel.numberOfLines = 0;
+            cell.textLabel.textColor = BGcolor(175, 175, 175);
             cell.textLabel.font = [UIFont systemFontOfSize:13];
-            cell.textLabel.text = self.model.tuangouShuoming;
+            cell.textLabel.text = [NSString stringWithFormat:@"  %@", self.model.tuangouShuoming];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
             
@@ -118,11 +119,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1) {
-        return 46;
-    }else if (indexPath.section == 2){
+    if (indexPath.section == 1){
         return 132;
-    }else if (indexPath.section == 3)
+    }else if (indexPath.section == 2)
     {
         if (indexPath.row == 0) {
             return 44;

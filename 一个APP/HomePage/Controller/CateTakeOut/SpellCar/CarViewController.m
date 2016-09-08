@@ -11,7 +11,7 @@
 #import "UserInfo.h"
 
 
-@interface CarViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
+@interface CarViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,UITextFieldDelegate>
 
 @property (nonatomic, retain) UIImageView *mapImage; //
 
@@ -63,7 +63,8 @@
     
     self.addressField = [[UITextField alloc] initWithFrame:CGRectMake(70, 30, WIDTH - 80, 30)];
     self.addressField.backgroundColor = [UIColor whiteColor];
-    self.addressField.placeholder = @"花园商网";
+    self.addressField.placeholder = @"在这里输入您的起始点";
+    self.addressField.delegate = self;
     [self.carView addSubview:self.addressField];
     
     
@@ -79,7 +80,7 @@
     
     self.destinatioField = [[UITextField alloc] initWithFrame:CGRectMake(70, 85, WIDTH - 80, 30)];
     self.destinatioField.placeholder = @"在这里输入您的目的地";
-    
+    self.destinatioField.delegate = self;
     [self.carView addSubview:self.destinatioField];
     
     self.carPoolingLabel = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH/2-100, 150, 200, 50)];
@@ -96,7 +97,21 @@
     // 给拼车label添加点击手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     [self.carPoolingLabel addGestureRecognizer:tap];
-
+    // 回收键盘
+    UITapGestureRecognizer *tapjianpan = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textFieldShouldReturn:)];
+    [self.view addGestureRecognizer:tapjianpan];
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.view.frame = CGRectMake(0, -150, WIDTH, HEIGHT);
+}
+// 点击 键盘回弹
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.addressField resignFirstResponder];
+    [self.destinatioField resignFirstResponder];
+    self.view.frame = CGRectMake(0, 0, WIDTH, HEIGHT);
+    return YES;
 }
 // 手势点击方法
 - (void)tap:(UITapGestureRecognizer *)tap

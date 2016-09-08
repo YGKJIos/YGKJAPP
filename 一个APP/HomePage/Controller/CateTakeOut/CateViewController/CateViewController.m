@@ -147,7 +147,7 @@
             num++;
             CGFloat wid = (WIDTH -220) / 4;
             CGFloat boundsWid = 30 * WIDTH/375;
-            _btnview.frame = CGRectMake((boundsWid+j*(50+wid)), 170+i*(67+20), 50*WIDTH/375, 67*HEIGHT/667);
+            _btnview.frame = CGRectMake((boundsWid+j*(50+wid)), 170+i*(67+20), 50*WIDTH/375, 67*HEIGHT/667 - 5);
             [self.bgView addSubview:_btnview];
             _k ++;
 
@@ -188,7 +188,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 108;
+    return 115;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

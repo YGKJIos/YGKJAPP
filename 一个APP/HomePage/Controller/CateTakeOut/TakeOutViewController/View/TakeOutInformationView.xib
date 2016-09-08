@@ -51,9 +51,12 @@
                     <color key="textColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XyT-J3-6Fh">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XyT-J3-6Fh">
                     <rect key="frame" x="0.0" y="219" width="375" height="1"/>
                     <color key="backgroundColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="JeG-EO-fHv"/>
+                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4n-7n-Gy0">
                     <rect key="frame" x="0.0" y="182" width="375" height="32"/>
@@ -102,6 +105,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Wia-x3-XMK" secondAttribute="trailing" id="0h6-N7-NdH"/>
                 <constraint firstItem="YFC-zF-Puh" firstAttribute="top" secondItem="Wia-x3-XMK" secondAttribute="bottom" constant="42" id="4VR-jg-iVf"/>
+                <constraint firstAttribute="trailing" secondItem="XyT-J3-6Fh" secondAttribute="trailing" id="AO4-1f-s8J"/>
                 <constraint firstItem="i0S-Q4-Fq9" firstAttribute="top" secondItem="Wia-x3-XMK" secondAttribute="bottom" constant="12" id="DwQ-sN-Dil"/>
                 <constraint firstItem="Wia-x3-XMK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FwK-x5-E67"/>
                 <constraint firstAttribute="trailing" secondItem="YFC-zF-Puh" secondAttribute="trailing" id="H08-JB-f4r"/>
@@ -113,12 +117,14 @@
                 <constraint firstItem="Wia-x3-XMK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hPn-Sn-rZ4"/>
                 <constraint firstItem="YFC-zF-Puh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hyr-L9-DNy"/>
                 <constraint firstItem="a46-oN-kHc" firstAttribute="top" secondItem="Wia-x3-XMK" secondAttribute="bottom" constant="74" id="jEc-Wa-TN4"/>
+                <constraint firstItem="XyT-J3-6Fh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lij-QQ-fkn"/>
                 <constraint firstItem="ZNR-i5-ApL" firstAttribute="leading" secondItem="WfN-El-w8z" secondAttribute="trailing" constant="8" id="obD-o3-c0t"/>
                 <constraint firstItem="ZNR-i5-ApL" firstAttribute="top" secondItem="Wia-x3-XMK" secondAttribute="bottom" constant="11" id="okq-xg-sgE"/>
                 <constraint firstAttribute="trailing" secondItem="A4n-7n-Gy0" secondAttribute="trailing" id="pNa-qe-CPZ"/>
                 <constraint firstItem="WfN-El-w8z" firstAttribute="top" secondItem="Wia-x3-XMK" secondAttribute="bottom" constant="12" id="soj-0X-IRp"/>
                 <constraint firstAttribute="trailing" secondItem="WfN-El-w8z" secondAttribute="trailing" constant="209" id="t1q-Yp-DCf"/>
                 <constraint firstItem="BQm-0t-GzD" firstAttribute="top" secondItem="Wia-x3-XMK" secondAttribute="bottom" constant="11" id="v4h-wJ-WWM"/>
+                <constraint firstItem="XyT-J3-6Fh" firstAttribute="top" secondItem="a46-oN-kHc" secondAttribute="bottom" id="xZD-jg-xKj"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
