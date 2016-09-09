@@ -72,6 +72,7 @@
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 3; j++) {
             HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(wid+j*(98+wid), 15+i*(95+15), 95, 90)];
+
             [view ordinaryModelStyle];
             view.tag = 1000+(num++);
             [view setUserInteractionEnabled:YES];

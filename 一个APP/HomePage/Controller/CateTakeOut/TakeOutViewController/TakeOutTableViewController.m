@@ -67,7 +67,6 @@
         [dic setObject:[[UserInfo shareAccount].accountDict objectForKey:@"jingweidu"] forKey:@"userWeizhi"];
         [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             [self.takeOutArr removeAllObjects];
-            
             NSArray *arr = responseObject;
             if (arr.count == 0) {
                 ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
@@ -75,9 +74,8 @@
             }else{
                 for (NSDictionary *dic in arr) {
                     MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
-                                    [model setValuesForKeysWithDictionary:dic];
-                                    [self.takeOutArr addObject:model];
-
+                        [model setValuesForKeysWithDictionary:dic];
+                        [self.takeOutArr addObject:model];
                 }
                 [self.tableView reloadData];
             }
@@ -148,6 +146,8 @@
     if (self.takeOutArr.count > 0) {
         informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
         informationVC.model = self.takeOutArr[indexPath.row];
+        // 单例配送费
+        SingTotal.peisongMoney = [self.takeOutArr[indexPath.row] peisongfei].floatValue;
     }
     [self.navigationController pushViewController:informationVC animated:YES];
 }

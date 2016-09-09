@@ -281,9 +281,8 @@
     order.outTradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
     order.subject = self.shopModel.shangjiaName; //商品标题
     order.body = self.shopModel.shangjiaTongzhi; //商品描述
-        NSString *total = [self totalMoney:self.selectArr];
-        order.totalFee = [NSString stringWithFormat:@"%@",total]; //商品价格
-//    order.totalFee = [NSString stringWithFormat:@"0.01"]; //商品价格
+//        NSString *total = ;
+        order.totalFee = [NSString stringWithFormat:@"%@",SingTotal.TotalMoney]; //商品价格
     order.notifyURL =  @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //回调URL
     
     order.service = @"mobile.securitypay.pay";
@@ -365,18 +364,6 @@
         [resultStr appendString:oneStr];
     }
     return resultStr;
-}
-// 计算价钱
-- (NSString *)totalMoney:(NSMutableArray *)arr
-{
-    CGFloat totalNum = 0;
-    NSString *total = [NSString string];
-    for (int i = 0; i < arr.count; i++) {
-        MerchantInformationModel *model = arr[i];
-        totalNum += model.waimaishipinJiage.integerValue;
-        total = [NSString stringWithFormat:@"%0.2f",totalNum];
-    }
-    return total;
 }
 
 - (void)passValue:(NSString *)string

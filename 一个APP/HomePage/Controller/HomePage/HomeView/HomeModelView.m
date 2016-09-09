@@ -66,6 +66,13 @@ static NSString *headUrl = @"http://192.168.1.88:8080/shangcheng/";
     self.titleLab.font = [UIFont systemFontOfSize:12];
     [self addSubview:self.titleLab];
 
+//    self.titleLab = [[UILabel alloc]initWithFrame:CGRectMake(0, imageView.height, imageView.width, 20)];
+//    self.titleLab.textAlignment = NSTextAlignmentCenter;
+//    self.titleLab.textColor = BGcolor(109, 109, 109);
+//    self.titleLab.font = [UIFont systemFontOfSize:12];
+//    [self addSubview:self.titleLab];
+
+
 }
 - (void)setModelImageViewName:(NSString *)image title:(NSString *)title
 {

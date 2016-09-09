@@ -10,7 +10,6 @@
 #import "ShoppingCartTableViewCell.h"
 #import "SubmitOrderViewController.h"
 
-
 @interface ShoppingCartViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)UILabel *textLabel;
 @property (nonatomic, strong)UITableView *tableView;
@@ -88,8 +87,7 @@
     
     UILabel *moneyLab = [UILabel newAutoLayoutView];
     [bgView addSubview:moneyLab];
-    NSString *totalMoney = [self totalMoney:self.selectArr];
-    moneyLab.text= [NSString stringWithFormat:@"应支付：¥%@",totalMoney];
+    moneyLab.text= [NSString stringWithFormat:@"应支付：¥%@",SingTotal.TotalMoney];
     moneyLab.font = [UIFont systemFontOfSize:20];
     moneyLab.textColor = BGcolor(250, 83, 68);
     [moneyLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
@@ -109,7 +107,7 @@
 - (void)certainBtnAction
 {
     NSString *str = [self totalMoney:self.selectArr];
-    if (str.integerValue < self.shopModel.qisongjia.integerValue) {
+    if (str.floatValue < self.shopModel.qisongjia.floatValue) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = @"没有达到起送价~!";
         [hud show:YES];
@@ -127,7 +125,7 @@
 #pragma mark - tableView代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.selectArr.count;
+    return self.selectArr.count+1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *shopID = @"shopID";
@@ -135,10 +133,19 @@
     if (cell == nil) {
         cell = [[ShoppingCartTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:shopID];
     }
-    MerchantInformationModel *model = self.selectArr[indexPath.row];
-    cell.dishesLab.text = model.waimaishipinName;
-    cell.moneyLab.text = [NSString stringWithFormat:@"¥%@",model.waimaishipinJiage];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    // 选择的商品
+    if (indexPath.row < self.selectArr.count) {
+        MerchantInformationModel *model = self.selectArr[indexPath.row];
+        cell.dishesLab.text = model.waimaishipinName;
+        cell.moneyLab.text = [NSString stringWithFormat:@"¥%@",model.waimaishipinJiage];
+    }
+    // 配送费
+    if (indexPath.row == self.selectArr.count) {
+        cell.dishesLab.text = @"配送费";
+        cell.moneyLab.text = [NSString stringWithFormat:@"¥%0.f",SingTotal.peisongMoney];
+    }
+    
     return cell;
 }
 
@@ -150,8 +157,8 @@
     for (int i = 0; i < arr.count; i++) {
         MerchantInformationModel *model = arr[i];
        totalNum += model.waimaishipinJiage.floatValue;
-        total = [NSString stringWithFormat:@"%0.2f",totalNum];
     }
+    total = [NSString stringWithFormat:@"%0.2f",totalNum];
     return total;
 }
 

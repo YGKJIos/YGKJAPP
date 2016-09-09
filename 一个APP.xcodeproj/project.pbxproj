@@ -150,6 +150,7 @@
 		59C781B61D459E9200BA18CA /* ProgramTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C781B41D459E9200BA18CA /* ProgramTableViewCell.xib */; };
 		59C781BD1D45FAEF00BA18CA /* MerchantInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C781BC1D45FAEF00BA18CA /* MerchantInformationModel.m */; };
 		59C781C01D4621BC00BA18CA /* CateDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C781BF1D4621BC00BA18CA /* CateDetailsTableViewController.m */; };
+		59C8820A1D824603005FC09E /* SingletonTotalMoney.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C882091D824603005FC09E /* SingletonTotalMoney.m */; };
 		59CA72301D5DABAA00B0D343 /* GameTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CA722F1D5DABAA00B0D343 /* GameTypeTableViewController.m */; };
 		59CAF3FD1D4310B200F1A576 /* FoodIntroduceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CAF3FB1D4310B200F1A576 /* FoodIntroduceTableViewCell.m */; };
 		59CAF3FE1D4310B200F1A576 /* FoodIntroduceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CAF3FC1D4310B200F1A576 /* FoodIntroduceTableViewCell.xib */; };
@@ -611,6 +612,8 @@
 		59C781BC1D45FAEF00BA18CA /* MerchantInformationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantInformationModel.m; sourceTree = "<group>"; };
 		59C781BE1D4621BC00BA18CA /* CateDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateDetailsTableViewController.h; sourceTree = "<group>"; };
 		59C781BF1D4621BC00BA18CA /* CateDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateDetailsTableViewController.m; sourceTree = "<group>"; };
+		59C882081D824603005FC09E /* SingletonTotalMoney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonTotalMoney.h; sourceTree = "<group>"; };
+		59C882091D824603005FC09E /* SingletonTotalMoney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonTotalMoney.m; sourceTree = "<group>"; };
 		59CA722E1D5DABAA00B0D343 /* GameTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeTableViewController.h; sourceTree = "<group>"; };
 		59CA722F1D5DABAA00B0D343 /* GameTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeTableViewController.m; sourceTree = "<group>"; };
 		59CAF3FA1D4310B200F1A576 /* FoodIntroduceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodIntroduceTableViewCell.h; sourceTree = "<group>"; };
@@ -1650,6 +1653,7 @@
 		594590C11D3CAA5D00FAF565 /* TakeOutViewController */ = {
 			isa = PBXGroup;
 			children = (
+				59C882071D8245E5005FC09E /* TakeOutTool */,
 				594590C51D3CAA5D00FAF565 /* AddressAndMOdificationViewController.h */,
 				594590C61D3CAA5D00FAF565 /* AddressAndMOdificationViewController.m */,
 				594590C71D3CAA5D00FAF565 /* AddressAndMOdificationViewController.xib */,
@@ -1670,17 +1674,9 @@
 				D80148F71D3CD79C00334EDB /* payViewController.h */,
 				D80148F81D3CD79C00334EDB /* payViewController.m */,
 				D80148F91D3CD79C00334EDB /* payViewController.xib */,
-				594590CF1D3CAA5D00FAF565 /* Model */,
 				59C54C711D6AA1B2009BF605 /* View */,
 			);
 			path = TakeOutViewController;
-			sourceTree = "<group>";
-		};
-		594590CF1D3CAA5D00FAF565 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		594590EC1D3CAA5D00FAF565 /* TheHotel */ = {
@@ -1743,6 +1739,15 @@
 				59C781BC1D45FAEF00BA18CA /* MerchantInformationModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		59C882071D8245E5005FC09E /* TakeOutTool */ = {
+			isa = PBXGroup;
+			children = (
+				59C882081D824603005FC09E /* SingletonTotalMoney.h */,
+				59C882091D824603005FC09E /* SingletonTotalMoney.m */,
+			);
+			name = TakeOutTool;
 			sourceTree = "<group>";
 		};
 		59D07AF01D6592170099C1DA /* AliPay */ = {
@@ -2752,6 +2757,7 @@
 				594590671D3CA1D400FAF565 /* HomePageTableViewController.m in Sources */,
 				59CAF40D1D4363F400F1A576 /* ErrorInformationView.m in Sources */,
 				D841A1901D5AD30200F64C0F /* PlaceOrderTableViewCell.m in Sources */,
+				59C8820A1D824603005FC09E /* SingletonTotalMoney.m in Sources */,
 				594591121D3CAA5D00FAF565 /* TakeOutInformationController.m in Sources */,
 				D83EA40D1D62A496008437E7 /* SetNameViewController.m in Sources */,
 				59F46B9F1D4A070B001C6B7B /* ShopServeModel.m in Sources */,

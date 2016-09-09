@@ -206,10 +206,19 @@
     [self.totalText autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
     [self.totalText autoSetDimensionsToSize:CGSizeMake(150, 20)];
     
+    UILabel *peisongLB = [UILabel newAutoLayoutView];
+    [self.contentView addSubview:peisongLB];
+    peisongLB.textColor = BGcolor(138, 138, 138);
+    peisongLB.font = [UIFont systemFontOfSize:14];
+    peisongLB.textAlignment = NSTextAlignmentCenter;
+    peisongLB.text = [NSString stringWithFormat:@"配送费：¥%0.f",SingTotal.peisongMoney];
+    [peisongLB autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [peisongLB autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
+    [peisongLB autoSetDimensionsToSize:CGSizeMake(100, 20)];
+    
     self.waitPayLab = [UILabel newAutoLayoutView];
     [self.contentView addSubview:self.waitPayLab];
     self.waitPayLab.textAlignment = NSTextAlignmentRight;
-    
     self.waitPayLab.font = [UIFont systemFontOfSize:14];
     [self.waitPayLab autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:30];
     [self.waitPayLab autoAlignAxisToSuperviewAxis:ALAxisHorizontal];
@@ -241,42 +250,28 @@
 - (void)setTotalCell:(NSMutableArray *)selectArr
 {
     self.totalText.text = [NSString stringWithFormat:@"订单总计：%ld",selectArr.count];
-    
     // 改变字的颜色
-    NSString *totalStr = [self totalMoney:selectArr];
-    NSString *text = [NSString stringWithFormat:@"待支付：%@",totalStr];
+    NSString *text = [NSString stringWithFormat:@"待支付：%@",SingTotal.TotalMoney];
     NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc]initWithString:text];
-    NSRange range = [text rangeOfString:totalStr];
+    NSRange range = [text rangeOfString:SingTotal.TotalMoney];
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[NSForegroundColorAttributeName] = BGcolor(250, 83, 68);
     [attributed addAttributes:dic range:range];
     self.waitPayLab.attributedText = attributed;
 }
 
+// 应支付方法
 - (void)setUsePayCell:(NSMutableArray *)selectArr
 {
-    NSString *str = [self totalMoney:selectArr];
     // 改变字的颜色
-    NSString *text = [NSString stringWithFormat:@"应支付：%@",str];
+    NSString *text = [NSString stringWithFormat:@"应支付：%@",SingTotal.TotalMoney];
     NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc]initWithString:text];
-    NSRange range = [text rangeOfString:str];
+    NSRange range = [text rangeOfString:SingTotal.TotalMoney];
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[NSForegroundColorAttributeName] = BGcolor(250, 83, 68);
     [attributed addAttributes:dic range:range];
     self.usePayLab.attributedText = attributed;
 
-}
-
-// 计算价钱
-- (NSString *)totalMoney:(NSMutableArray *)arr
-{
-    CGFloat totalNum = 0;
-    for (int i = 0; i < arr.count; i++) {
-        MerchantInformationModel *model = arr[i];
-        totalNum += model.waimaishipinJiage.floatValue;
-    }
-    NSString *total = [NSString stringWithFormat:@"¥%0.2f",totalNum];
-    return total;
 }
 
 - (void)awakeFromNib {
