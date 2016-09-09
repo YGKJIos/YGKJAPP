@@ -23,12 +23,12 @@
 {
     NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
-    self.nameLab.text = model.shangjiaName;
-    self.informationLab.text = model.zhaopinZhiweimiaoshu;
+    self.nameLab.text = model.zhaopinZhiweimiaoshu;
+    self.informationLab.text = model.shangjiaName;
     self.locationLab.text = model.shangjiaWeizhi;
     self.degreeLab.text = model.zhaopinXueli;
     self.yearLab.text = model.zhaopinGongzuojingyan;
-    self.moenyLab.text = model.zhaopinXinzi;
+    self.moenyLab.text = [NSString stringWithFormat:@"¥%@",model.zhaopinXinzi];
     self.timeLab.text = [model.zhaopinFabushijian substringToIndex:9];
     
 }

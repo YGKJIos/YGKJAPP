@@ -17,6 +17,7 @@
 @property (nonatomic, strong)UILabel *contLab;
 @property (nonatomic, strong)UIView *imgView;
 
+@property (nonatomic, strong) UILabel *fabushijian;
 - (void)setDataForCellWithModel:(SmallAdvertisingCell *)model;
 
 @end

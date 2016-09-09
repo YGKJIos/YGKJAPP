@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *fuliImage2;
 @property (weak, nonatomic) IBOutlet UIImageView *fuliImage3;
 
+
 + (PleaseJobTableViewCell *)createJobCell;
 
 - (void) JobModel:(PleaseJobModel *)model;

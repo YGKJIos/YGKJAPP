@@ -28,7 +28,6 @@
     }
     
     self.shopName.text = model.shangjiaName;
-    self.grade.text = [NSString stringWithFormat:@"%@分",model.shangjiaPingfen];
     self.addressLab.text = model.shangjiaWeizhi;
     self.telephoneNum = model.shangjiaDianhua;
 }

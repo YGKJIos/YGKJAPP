@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString *shangjiaPingfen;
 @property (nonatomic, retain) NSString *shangjiabinguanId;
 @property (nonatomic, retain) NSString *shangjiaWeizhi;
-
+@property (nonatomic, retain) NSString *shangjiaTongzhi;
 
 
 

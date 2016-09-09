@@ -104,6 +104,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 团购券
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            return 44;
+        }else
+        {
+            return 94;
+        }
+    }
     if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             return 40;
@@ -173,20 +181,22 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
         if (indexPath.row == 1) {
-            PlayerVoteViewController *playerVC = [[PlayerVoteViewController alloc]init];
+            VoucherTableViewController *playerVC = [[VoucherTableViewController alloc]init];
+            playerVC.num = self.Num;
+            playerVC.model = self.TGArr[indexPath.row-1];
             [self.navigationController pushViewController:playerVC animated:YES];
         }
-        if (indexPath.row == 2) {
-            ProgramVoteViewController *programVC = [[ProgramVoteViewController alloc]init];
-            [self.navigationController pushViewController:programVC animated:YES];
-        }
+//        if (indexPath.row == 2) {
+//            ProgramVoteViewController *programVC = [[ProgramVoteViewController alloc]init];
+//            [self.navigationController pushViewController:programVC animated:YES];
+//        }
     }
-    if (indexPath.section == 1) {
-        if (indexPath.row >0 && indexPath.row < 4) {
-            VoucherTableViewController *voucher = [[VoucherTableViewController alloc]init];
-            [self.navigationController pushViewController:voucher animated:YES];
-        }
-    }
+//    if (indexPath.section == 1) {
+//        if (indexPath.row >0 && indexPath.row < 4) {
+//            VoucherTableViewController *voucher = [[VoucherTableViewController alloc]init];
+//            [self.navigationController pushViewController:voucher animated:YES];
+//        }
+//    }
     // 报错
 //    if (indexPath.section == 3) {
 //        ErrorInformationView *errorView = [[ErrorInformationView alloc]initWithFrame:self.view.frame];

@@ -291,6 +291,8 @@
 		D845EAF91D4891E5009B3B52 /* SecondFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D845EAF81D4891E5009B3B52 /* SecondFooterView.xib */; };
 		D84696781D472EFD004C0DE4 /* MoviewDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84696771D472EFD004C0DE4 /* MoviewDetailTableViewController.m */; };
 		D8471E821D55BC880035462B /* AppraiseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8471E811D55BC880035462B /* AppraiseTableViewController.m */; };
+		D848D27D1D8141BF00D2093B /* ZGP_AddDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D848D27B1D8141BF00D2093B /* ZGP_AddDetailsViewController.m */; };
+		D848D27E1D8141BF00D2093B /* ZGP_AddDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D848D27C1D8141BF00D2093B /* ZGP_AddDetailsViewController.xib */; };
 		D849239D1D4AF8AC002ED1FF /* SetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D849239B1D4AF8AC002ED1FF /* SetTableViewCell.m */; };
 		D849239E1D4AF8AC002ED1FF /* SetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D849239C1D4AF8AC002ED1FF /* SetTableViewCell.xib */; };
 		D84923A21D4B27C5002ED1FF /* SetNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D84923A01D4B27C5002ED1FF /* SetNameTableViewCell.m */; };
@@ -924,6 +926,9 @@
 		D84696771D472EFD004C0DE4 /* MoviewDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviewDetailTableViewController.m; sourceTree = "<group>"; };
 		D8471E801D55BC880035462B /* AppraiseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppraiseTableViewController.h; sourceTree = "<group>"; };
 		D8471E811D55BC880035462B /* AppraiseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppraiseTableViewController.m; sourceTree = "<group>"; };
+		D848D27A1D8141BF00D2093B /* ZGP_AddDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGP_AddDetailsViewController.h; sourceTree = "<group>"; };
+		D848D27B1D8141BF00D2093B /* ZGP_AddDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGP_AddDetailsViewController.m; sourceTree = "<group>"; };
+		D848D27C1D8141BF00D2093B /* ZGP_AddDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZGP_AddDetailsViewController.xib; sourceTree = "<group>"; };
 		D849239A1D4AF8AC002ED1FF /* SetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewCell.h; sourceTree = "<group>"; };
 		D849239B1D4AF8AC002ED1FF /* SetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewCell.m; sourceTree = "<group>"; };
 		D849239C1D4AF8AC002ED1FF /* SetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetTableViewCell.xib; sourceTree = "<group>"; };
@@ -1358,6 +1363,9 @@
 				594590171D3C9FAD00FAF565 /* PleaseJobTableViewController.m */,
 				59DFAD881D77C06A00103A2B /* PleaseJobModel.h */,
 				59DFAD891D77C06A00103A2B /* PleaseJobModel.m */,
+				D848D27A1D8141BF00D2093B /* ZGP_AddDetailsViewController.h */,
+				D848D27B1D8141BF00D2093B /* ZGP_AddDetailsViewController.m */,
+				D848D27C1D8141BF00D2093B /* ZGP_AddDetailsViewController.xib */,
 			);
 			path = JobInterViewController;
 			sourceTree = "<group>";
@@ -2521,6 +2529,7 @@
 				594590081D3C8A1C00FAF565 /* TravelView.xib in Resources */,
 				59F46B931D4A0582001C6B7B /* headerView.xib in Resources */,
 				59F2650C1D3F07BC002F9D56 /* gasViewController.xib in Resources */,
+				D848D27E1D8141BF00D2093B /* ZGP_AddDetailsViewController.xib in Resources */,
 				594591261D3CAC2500FAF565 /* NewsTableViewCell.xib in Resources */,
 				594590611D3CA1D400FAF565 /* HomeModelView.xib in Resources */,
 				D86B7D6F1D5C165C00380F49 /* PlaceOrderFootView.xib in Resources */,
@@ -2635,6 +2644,7 @@
 				D849239D1D4AF8AC002ED1FF /* SetTableViewCell.m in Sources */,
 				59C54C8C1D6AA1B2009BF605 /* TakeOutInformationView.m in Sources */,
 				59D096FA1D139E6C00039C87 /* TADotView.m in Sources */,
+				D848D27D1D8141BF00D2093B /* ZGP_AddDetailsViewController.m in Sources */,
 				59458FFC1D3C8A1C00FAF565 /* sevCarTableViewCell.m in Sources */,
 				D84696781D472EFD004C0DE4 /* MoviewDetailTableViewController.m in Sources */,
 				D842DF2F1D224642008A54B7 /* DOPDropDownMenu.m in Sources */,

@@ -26,10 +26,8 @@
         NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
         [self.foodImageView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
         self.shopName.text = model.shangjiaName;
-        self.gradeLab.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
         self.moneyLab.text = model.qisongjia;
         self.salesLab.text = model.shangjiaTongzhi;
-        
         NSString *sendStr = [NSString stringWithFormat:@"¥%@ 配送费",model.peisongfei];
         NSMutableDictionary *strDic = [NSMutableDictionary dictionaryWithObject:[UIFont systemFontOfSize:15] forKey:NSFontAttributeName];
         NSMutableAttributedString *str = [[NSMutableAttributedString alloc]initWithString:sendStr];

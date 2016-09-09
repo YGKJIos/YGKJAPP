@@ -27,7 +27,6 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-    [self.ShopArr removeAllObjects];
     NSString *url = @"meishi/queryuserweishiyongtuangoujuan.action?";
     NSString *sandPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     sandPath = [sandPath stringByAppendingPathComponent:@"manager/userDic.plish"];
@@ -35,6 +34,7 @@
     dic = @{@"userId":dic[@"userId"]};
     
     [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self.ShopArr removeAllObjects];
         NSArray *arr = responseObject;
         for (NSDictionary *dic in arr) {
             groupShopModel *model = [[groupShopModel alloc] init];

@@ -110,11 +110,18 @@
 //            return foodCell;
 //        }
     }
-    
+    if ([self.num isEqualToString:@"1004"]) {
+        static NSString *reuse = @"reuse";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuse];
+        }
+        return cell;
+    }else{
     ConsumePromptTableViewCell *consumeCell = [[NSBundle mainBundle]loadNibNamed:@"ConsumePromptTableViewCell" owner:nil options:nil].lastObject;
     consumeCell.selectionStyle = UITableViewCellSelectionStyleNone;
     return consumeCell;
-    
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

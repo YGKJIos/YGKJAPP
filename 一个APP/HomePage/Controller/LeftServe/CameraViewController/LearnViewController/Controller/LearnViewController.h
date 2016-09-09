@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LearnViewController : UIViewController
-
+@property (nonatomic , strong)NSString *number;
 @end

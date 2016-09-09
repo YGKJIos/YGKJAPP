@@ -67,6 +67,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLab" destination="LgX-iy-cvm" id="yWM-dm-Wov"/>
+                <outlet property="nameLab" destination="Yqu-Kl-CuK" id="ZWo-Sr-vow"/>
             </connections>
             <point key="canvasLocation" x="281.5" y="336.5"/>
         </tableViewCell>
