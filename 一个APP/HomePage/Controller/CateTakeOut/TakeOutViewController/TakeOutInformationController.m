@@ -21,12 +21,10 @@
 //@property (nonatomic, strong)UITableView *leftTableView;
 @property (nonatomic, strong)UITableView *rightTableView;
 @property (nonatomic, strong)NSMutableArray *listArr; // 左边菜品
-//@property (nonatomic, strong)NSMutableArray *allFoods; // 右边全部食品
 @property (nonatomic, strong)NSMutableArray *foodArr;// 显示菜品信息
 @property (nonatomic, strong)UIButton *jianBtn; // 减少按钮
 @property (nonatomic, strong)UIButton *jiaBtn; // 增加按钮
 @property (nonatomic, strong)UILabel *numLab; // 显示份数的lab
-@property (nonatomic, assign)NSInteger num; //点击增加 菜品份数计数
 @property (nonatomic, copy)NSString *titleText; // 右边tableView  sectionView
 @property (nonatomic, assign)UIButton *textBtn;
 @property (nonatomic, strong)AddFoodView *foodView;
@@ -44,13 +42,6 @@
     }
     return _foodArr;
 }
-//-(NSMutableArray *)allFoods
-//{
-//    if (!_allFoods) {
-//        self.allFoods = [[NSMutableArray alloc]init];
-//    }
-//    return _allFoods;
-//}
 -(NSMutableArray *)selectArr
 {
     if (!_selectArr) {
@@ -61,7 +52,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.result = NO;
-    self.num = 0;
     self.view.backgroundColor = [UIColor whiteColor];
     // 收藏按钮
 //    UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBarButtonItemClickItme) image:@"wode_sctb" highImage:@"wode_sctb"];
@@ -139,7 +129,6 @@
 //    }
 
     return self.foodArr.count;
-    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -235,7 +224,6 @@
     }else{
         [self.foodView.orderMoneyBtn setTitle:@"确认下单" forState:UIControlStateNormal];
     }
-
 }
 
 #pragma mark - 添加选择菜品footView
@@ -265,7 +253,10 @@
         });
     }else{
         ShoppingCartViewController *shopVC = [[ShoppingCartViewController alloc]init];
+       
+        // 选择菜品的数组
         shopVC.selectArr = self.selectArr;
+        
         shopVC.shopModel = self.model;
         [self.navigationController pushViewController:shopVC animated:YES];
     }
@@ -277,7 +268,6 @@
 #pragma mark - tableView 点击方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    if (tableView == self.leftTableView) {
 //        [self.foodArr removeAllObjects];
@@ -368,13 +358,15 @@
 - (NSString *)totalMoney:(NSMutableArray *)arr
 {
     if (arr.count > 0) {
-        
         CGFloat totalNum = 0;
         NSString *total = [NSString string];
         for (int i = 0; i < arr.count; i++) {
             MerchantInformationModel *model = arr[i];
             totalNum += model.waimaishipinJiage.floatValue;
-            total = [NSString stringWithFormat:@"0.2%f",totalNum];
+        }
+        if (!SingTotal.peisong) {
+            total = [NSString stringWithFormat:@"%0.2f",totalNum+SingTotal.peisongMoney];
+            SingTotal.TotalMoney = total;
         }
         return total;
     }else

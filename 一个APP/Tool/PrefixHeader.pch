@@ -15,18 +15,21 @@
 #import <MJRefresh.h>
 #import <MBProgressHUD.h>
 #import <PureLayout.h>
+#import "SingletonTotalMoney.h"
 #import <UIImageView+WebCache.h>
 #import "UIView+Extension.h"
 #import "UIBarButtonItem+Extension.h"
 #import "UserInfo.h"
 #define WIDTH [UIScreen mainScreen].bounds.size.width
 #define HEIGHT [UIScreen mainScreen].bounds.size.height
-#define BGcolor(r, g, b) [UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:1];
+#define BGcolor(r, g, b) [UIColor colorWithRed:(r)/255. green:(g)/255. blue:(b)/255. alpha:1]
 #define arcColor BGcolor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
 #define IPDSingleton [Singleton shareSingleton]
 
-#import "ZGPplaceholderImageView.h" // 无数据时占位图
+#define SingTotal [SingletonTotalMoney Singleton]
 
+#import "ZGPplaceholderImageView.h" // 无数据时占位图
 
 
 #import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件

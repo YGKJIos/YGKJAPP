@@ -11,6 +11,7 @@
 #import "HeaderCollectionReusableView.h"
 #import "SearchView.h"
 #import "ZGP_SuperMarketModel.h"
+#import "MerchantInformationModel.h"
 #import "TakeOutInformationController.h"
 @interface SupermarketViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic, strong)UIButton *searchBtn;
@@ -156,6 +157,8 @@
     if (self.superMarketArr.count > 0) {
         informationVC.navigationItem.title = [self.superMarketArr[indexPath.row] shangjiaName];
         informationVC.model = self.superMarketArr[indexPath.row];
+        // 单例配送费
+        SingTotal.peisongMoney = [self.superMarketArr[indexPath.row] peisongfei].floatValue;
     }
     [self.navigationController pushViewController:informationVC animated:YES];
 }
