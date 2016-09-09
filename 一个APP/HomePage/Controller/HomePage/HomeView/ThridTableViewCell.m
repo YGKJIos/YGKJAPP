@@ -68,11 +68,10 @@
 - (void)lifeServeStyle
 {
     int num = 0;
-    CGFloat wid = (WIDTH -(WIDTH-10)) / 3 * WIDTH/375;
-    CGFloat boundsWid = 30 * WIDTH/375;
+    CGFloat wid = (WIDTH -(107*3)) / 4;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 3; j++) {
-            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake((boundsWid+j*(107+wid))*WIDTH/375, 25+i*(95+15)*HEIGHT/667, 107*WIDTH/375, 95*HEIGHT/667)];
+            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(wid+j*(107+wid), 15+i*(95+15), 107, 95)];
             [view ordinaryModelStyle];
             view.tag = 1000+(num++);
             [view setUserInteractionEnabled:YES];
@@ -82,7 +81,7 @@
             [view addGestureRecognizer:tap];
         }
     }
-    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 250*HEIGHT/667, WIDTH, 120)];
+    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 235, WIDTH, 120*HEIGHT/667)];
     [self.contentView addSubview:self.posterImage];
 }
 // 时事新闻

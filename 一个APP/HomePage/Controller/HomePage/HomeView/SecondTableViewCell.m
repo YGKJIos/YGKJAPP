@@ -15,11 +15,10 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         int num = 0;
-        CGFloat wid = (WIDTH -200) / 3;
-        CGFloat boundsWid = 58 * WIDTH/375;
+        CGFloat wid = (WIDTH -(51*3)) /4;
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 3; j++) {
-                UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(boundsWid+j*(51+wid), 25+i*(58+20), 51* WIDTH/375, 58*HEIGHT/667)];
+                UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(wid+j*(51+wid), 20+i*(58+20), 51* WIDTH/375, 58*HEIGHT/667)];
                 imageView.tag = 1000+(num++);
                 [imageView setUserInteractionEnabled:YES];
                 [self.contentView addSubview:imageView];
