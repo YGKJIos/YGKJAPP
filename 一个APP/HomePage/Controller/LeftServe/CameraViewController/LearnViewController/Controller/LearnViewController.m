@@ -23,7 +23,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"学习培训";
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(165*(WIDTH/375), 185);
+    flowLayout.itemSize = CGSizeMake((WIDTH -(15*3))/2, 185);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 150);
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 15, 20, 15);
     flowLayout.minimumLineSpacing = 10;
@@ -45,7 +45,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.collection.mj_header beginRefreshing];
+    
     [super viewWillAppear:animated];
 }
 
@@ -59,6 +59,7 @@
     [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
     header.lastUpdatedTimeLabel.hidden = YES;
     self.collection.mj_header = header;
+    [self.collection.mj_header beginRefreshing];
     
     MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     // 设置文字

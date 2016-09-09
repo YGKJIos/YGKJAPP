@@ -29,11 +29,12 @@
     [self addTableHeaderView];
     self.HotelArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
+    [self.tableView.mj_header beginRefreshing];
     
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.tableView.mj_header beginRefreshing];
+   
     [super viewWillAppear:animated];
 }
 
@@ -82,12 +83,12 @@
     
 }
 // 上拉加载的方法
-- (void)loadMoreData{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView.mj_footer endRefreshing];
-        NSLog(@"MJ-上啦加载");
-    });
-}
+//- (void)loadMoreData{
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.tableView.mj_footer endRefreshing];
+//        NSLog(@"MJ-上啦加载");
+//    });
+//}
 
 - (void)addTableHeaderView
 {

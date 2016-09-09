@@ -52,11 +52,12 @@
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     self.homeArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.tableView.mj_header beginRefreshing];
+    
     [super viewWillAppear:animated];
 }
 
@@ -128,8 +129,11 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 2) {
+        return 180;
+    }
     if (indexPath.section == 3) {
-        return 385;
+        return 370;
     }
     if (indexPath.section == 5) {
         return 160;
@@ -144,66 +148,6 @@
         return 142;
     }
     return 200;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        [self addHeaderView];
-        return self.scrollView;
-    }
-    if (section == 2) {
-        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        [view setTitleLabText:@"同城服务"];
-        return view;
-    }
-    if (section == 3) {
-        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        [view setTitleLabText:@"生活服务"];
-        return view;
-    }
-    if (section == 4) {
-        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        [view setTitleLabText:@"时事新闻"];
-        return view;
-    }
-    if (section == 5) {
-        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        [view setTitleLabText:@"美食精选"];
-        return view;
-    }
-    if (section == 6) {
-        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        [view setTitleLabText:@"嗨购专场"];
-        return view;
-    }
-    if (section == 7) {
-        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        [view setTitleLabText:@"畅游周边"];
-        return view;
-    }
-    if (section == 8) {
-        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        [view setTitleLabText:@"热门招聘"];
-        return view;
-    }
-    if (section == 9) {
-        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
-        [view setTitleLabText:@"二手置换"];
-        return view;
-    }
-    return nil;
- 
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return 150;
-    }
-    if (section == 1) {
-        return 0;
-    }
-    return 40;
 }
 
 #pragma mark - tableViewCell
@@ -226,7 +170,6 @@
             [cell cellStyle:lifeServeCellStyle];
             cell.delegte = self;
         }
-        
         [cell setThridCellHomeModel:nil];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -334,6 +277,67 @@
     
     return cell;
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        [self addHeaderView];
+        return self.scrollView;
+    }
+    if (section == 2) {
+        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+        [view setTitleLabText:@"同城服务"];
+        return view;
+    }
+    if (section == 3) {
+        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+        [view setTitleLabText:@"生活服务"];
+        return view;
+    }
+    if (section == 4) {
+        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+        [view setTitleLabText:@"时事新闻"];
+        return view;
+    }
+    if (section == 5) {
+        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+        [view setTitleLabText:@"美食精选"];
+        return view;
+    }
+    if (section == 6) {
+        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+        [view setTitleLabText:@"嗨购专场"];
+        return view;
+    }
+    if (section == 7) {
+        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+        [view setTitleLabText:@"畅游周边"];
+        return view;
+    }
+    if (section == 8) {
+        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+        [view setTitleLabText:@"热门招聘"];
+        return view;
+    }
+    if (section == 9) {
+        TableViewHeader *view = [[TableViewHeader alloc]initWithFrame:CGRectMake(0, 0, WIDTH, 40)];
+        [view setTitleLabText:@"二手置换"];
+        return view;
+    }
+    return nil;
+    
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 150;
+    }
+    if (section == 1) {
+        return 0;
+    }
+    return 40;
+}
+
 #pragma mark - tableView 第一个模块跳转
 - (void)pushViewControllerNum:(NSInteger)num
 {

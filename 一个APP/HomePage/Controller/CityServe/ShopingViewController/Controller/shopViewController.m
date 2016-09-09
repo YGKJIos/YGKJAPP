@@ -34,7 +34,7 @@
     self.navigationItem.title = @"本地购物";
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(165*(WIDTH/375), 256*HEIGHT/667 - 20);
+    flowLayout.itemSize = CGSizeMake((WIDTH-(15*3))/2, 256);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 150);
     flowLayout.sectionInset = UIEdgeInsetsMake(20, 15, 20, 15);
     flowLayout.minimumLineSpacing = 10;
@@ -52,11 +52,12 @@
     [self.collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
     
     [self MJrefreshLoadData];
+    [self.collection.mj_header beginRefreshing];
   
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.collection.mj_header beginRefreshing];
+    
     [super viewWillAppear:animated];
 }
 #pragma mark - MJ刷新

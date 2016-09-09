@@ -46,7 +46,7 @@ typedef enum
 @property (weak, nonatomic) IBOutlet UILabel *distanceLab;
 
 /**
- *  热门招聘
+ *  热门招聘/Users/yg///Users/yg/Desktop/YGKJAPP/一个APP/HomePage/Controller/HomePage/HomeView/HomeModelView.xibUsers/yg/Desktop/YGKJAPP/一个APP/HomePage/Controller/HomePage/HomeView/HomeModelView.xibDesktop/YGKJAPP/一个APP/HomePage/Controller/HomePage/HomeView/HomeModelView.xib
  */
 @property (weak, nonatomic) IBOutlet UILabel *invitePost; //邀请岗位
 @property (weak, nonatomic) IBOutlet UILabel *companyName; // 公司名称

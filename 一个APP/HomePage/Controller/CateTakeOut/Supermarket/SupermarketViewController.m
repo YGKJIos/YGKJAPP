@@ -22,7 +22,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.collection.mj_header beginRefreshing];
+    
     [super viewWillAppear:animated];
 }
 - (void)viewDidLoad {
@@ -31,11 +31,11 @@
     self.superMarketArr = [NSMutableArray array];
 //    [self setNavigationStyle];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize = CGSizeMake(180*(WIDTH/375), 130);
+    flowLayout.itemSize = CGSizeMake((WIDTH - (15*3))/2, 130);
     flowLayout.headerReferenceSize = CGSizeMake(WIDTH, 160);
-    flowLayout.sectionInset = UIEdgeInsetsMake(0, 3, 8, 3);
+    flowLayout.sectionInset = UIEdgeInsetsMake(0, 15, 8, 15);
     flowLayout.minimumInteritemSpacing = 8;
-    flowLayout.minimumLineSpacing = 8;
+//    flowLayout.minimumLineSpacing = 8;
     
     self.collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-64) collectionViewLayout:flowLayout];
     self.collection.backgroundColor = BGcolor(226, 226, 226);
@@ -49,6 +49,7 @@
     [self.collection registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headID"];
     // 刷新
     [self MJrefreshLoadData];
+    [self.collection.mj_header beginRefreshing];
 }
 #pragma mark - MJ刷新
 - (void)MJrefreshLoadData

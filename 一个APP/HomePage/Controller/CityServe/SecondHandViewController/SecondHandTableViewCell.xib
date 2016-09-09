@@ -32,13 +32,6 @@
                         <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xin" translatesAutoresizingMaskIntoConstraints="NO" id="CXj-8f-8nd">
-                        <rect key="frame" x="258" y="23" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Z6k-OY-wf3"/>
-                            <constraint firstAttribute="width" constant="20" id="a1e-mw-3wZ"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大型游戏代练工作室倒闭, 出售未开封60余套, 至强i5i7全新......" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRd-ar-Af5">
                         <rect key="frame" x="128" y="46" width="159" height="27"/>
                         <constraints>
@@ -83,10 +76,8 @@
                     <constraint firstItem="m4N-oh-yT8" firstAttribute="leading" secondItem="Dgq-Vr-F7N" secondAttribute="trailing" constant="8" id="4mi-QN-vSQ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="rCQ-ZS-8MR" secondAttribute="trailing" constant="32" id="4rA-Nz-GQu"/>
                     <constraint firstItem="Dgq-Vr-F7N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="17" id="DUM-Ig-3Km"/>
-                    <constraint firstItem="CXj-8f-8nd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="MUX-Zn-VlK"/>
                     <constraint firstItem="Diy-eb-Pmu" firstAttribute="top" secondItem="VRd-ar-Af5" secondAttribute="bottom" constant="4" id="NMh-uM-3f7"/>
                     <constraint firstItem="m4N-oh-yT8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="QMf-iD-75h"/>
-                    <constraint firstItem="CXj-8f-8nd" firstAttribute="leading" secondItem="m4N-oh-yT8" secondAttribute="trailing" constant="-1" id="aFt-Sa-xs7"/>
                     <constraint firstItem="Lci-Wr-Xen" firstAttribute="top" secondItem="rCQ-ZS-8MR" secondAttribute="bottom" constant="8" id="k8v-gD-Dxj"/>
                     <constraint firstItem="Diy-eb-Pmu" firstAttribute="leading" secondItem="Dgq-Vr-F7N" secondAttribute="trailing" constant="8" id="qYr-tf-HN2"/>
                     <constraint firstItem="Dgq-Vr-F7N" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="rKl-Hf-wFs"/>
@@ -99,7 +90,6 @@
                 <outlet property="dayLabel" destination="Diy-eb-Pmu" id="vyR-S5-CrX"/>
                 <outlet property="introduceLabel" destination="VRd-ar-Af5" id="U5v-U9-3PZ"/>
                 <outlet property="nameLabel" destination="m4N-oh-yT8" id="IiQ-ha-jTU"/>
-                <outlet property="niceImage" destination="CXj-8f-8nd" id="oLc-5w-jHv"/>
                 <outlet property="phoneImage" destination="rCQ-ZS-8MR" id="Bkx-Gu-OGV"/>
                 <outlet property="priceLabel" destination="Lci-Wr-Xen" id="xyl-IR-DFr"/>
             </connections>
@@ -109,6 +99,5 @@
     <resources>
         <image name="dianhua" width="24" height="28"/>
         <image name="eszh_tupian" width="95" height="69"/>
-        <image name="xin" width="20" height="20"/>
     </resources>
 </document>

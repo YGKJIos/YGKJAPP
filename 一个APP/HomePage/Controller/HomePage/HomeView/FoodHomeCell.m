@@ -18,11 +18,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        CGFloat wid = (WIDTH -(WIDTH -30)) / 3;
-        CGFloat boundsWid = 35 * WIDTH/375;
+        CGFloat wid = (WIDTH -(WIDTH - 56)) / 3;
+        CGFloat boundsWid = 18 * WIDTH/375;
         for (int i = 0; i < 4; i++) {
             HomeModelView *view = [[NSBundle mainBundle]loadNibNamed:@"HomeModelView" owner:nil options:nil].firstObject;
-            view.frame = CGRectMake((boundsWid+i*(71+wid))* WIDTH/375, 17,0,0);
+            view.frame = CGRectMake((boundsWid+i*(71+wid))* WIDTH/375, 17,65,40);
             view.tag = 1000+i;
             [self.contentView addSubview:view];
             

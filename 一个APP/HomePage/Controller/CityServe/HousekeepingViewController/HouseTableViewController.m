@@ -28,7 +28,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.tableView.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
 
@@ -49,6 +48,7 @@
     [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
     [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
     self.tableView.mj_footer = footer;
+    [self.tableView.mj_header beginRefreshing];
     
 }
 

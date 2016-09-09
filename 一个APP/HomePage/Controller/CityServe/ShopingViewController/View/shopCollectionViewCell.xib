@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="夏季商品全部五折，购物满500，立减50满1000立减120......" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvG-Va-tb9">
-                        <rect key="frame" x="0.0" y="197" width="162" height="32"/>
+                        <rect key="frame" x="0.0" y="200" width="162" height="32"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="Dqt-uk-JZV"/>
@@ -43,7 +43,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="48" height="15"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="太平桥百盛三楼" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Saq-a5-ISS">
-                        <rect key="frame" x="79" y="238" width="75" height="10"/>
+                        <rect key="frame" x="79" y="241" width="75" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="srj-5M-asu"/>
                         </constraints>
@@ -56,7 +56,7 @@
             </view>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="MvG-Va-tb9" firstAttribute="top" secondItem="gc9-Aj-tqh" secondAttribute="bottom" constant="-3" id="0uX-qh-snX"/>
+                <constraint firstItem="MvG-Va-tb9" firstAttribute="top" secondItem="gc9-Aj-tqh" secondAttribute="bottom" id="0uX-qh-snX"/>
                 <constraint firstItem="aVr-zO-Hyd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9ML-IC-CTk"/>
                 <constraint firstItem="Saq-a5-ISS" firstAttribute="top" secondItem="MvG-Va-tb9" secondAttribute="bottom" constant="9" id="JAq-U0-BW1"/>
                 <constraint firstAttribute="trailing" secondItem="gc9-Aj-tqh" secondAttribute="trailing" id="L96-Ar-MH6"/>

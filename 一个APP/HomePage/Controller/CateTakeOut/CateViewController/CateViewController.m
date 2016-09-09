@@ -41,8 +41,8 @@
     [super viewDidLoad];
 #pragma mark - 数据请求
     [self MJrefreshLoadData];
+    [self.tableView.mj_header beginRefreshing];
     self.navigationItem.title = @"美食";
-
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(navigationLeftBtnAction) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
@@ -55,7 +55,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.tableView.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
 
@@ -70,12 +69,12 @@
     header.lastUpdatedTimeLabel.hidden = YES;
     self.tableView.mj_header = header;
     
-    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    // 设置文字
-    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
-    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
-    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
-    self.tableView.mj_footer = footer;
+//    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+//    // 设置文字
+//    [footer setTitle:@"上拉加载更多数据" forState:MJRefreshStateIdle];
+//    [footer setTitle:@"加载更多数据..." forState:MJRefreshStateRefreshing];
+//    [footer setTitle:@"松开加载更多数据" forState:MJRefreshStatePulling];
+//    self.tableView.mj_footer = footer;
     
 }
 

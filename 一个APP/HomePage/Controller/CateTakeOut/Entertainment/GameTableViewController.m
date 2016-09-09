@@ -42,12 +42,13 @@
     self.title = @"休闲娱乐";
     // 刷新数据
     [self addHeaderView];
-    [self loadNewData];
+    [self MJrefreshLoadData];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    [self.tableView.mj_header beginRefreshing];
+    
     [super viewWillAppear:animated];
 }
 
@@ -73,26 +74,24 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-//    [self.MarkeArr removeAllObjects];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.tableView.mj_header endRefreshing];
-        NSString *url = @"xiuxianyule/queryxiuxianyule.action";
-        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSArray *arr = responseObject;
-            if (arr.count == 0) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
-                [self.view addSubview:placeholderImage];
-            }else{
-            for (NSDictionary *dic in arr) {
-                MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
-                [model setValuesForKeysWithDictionary:dic];
-                [self.MarkeArr addObject:model];
-            }
-            [self.tableView reloadData];
-            }
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        }];
-//    });
+    NSString *url = @"xiuxianyule/queryxiuxianyule.action";
+    [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self.tableView.mj_header endRefreshing];
+        NSArray *arr = responseObject;
+        if (arr.count == 0) {
+            ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+            [self.view addSubview:placeholderImage];
+        }else{
+        for (NSDictionary *dic in arr) {
+            MerchantInformationModel *model = [[MerchantInformationModel alloc] init];
+            [model setValuesForKeysWithDictionary:dic];
+            [self.MarkeArr addObject:model];
+        }
+        [self.tableView reloadData];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    }];
+
     
 }
 // 上拉加载的方法

@@ -44,7 +44,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.tableView.mj_header beginRefreshing];
+    
     [super viewWillAppear:animated];
 }
 
@@ -58,6 +58,7 @@
     [header setTitle:@"松开刷新数据" forState:MJRefreshStatePulling];
     header.lastUpdatedTimeLabel.hidden = YES;
     self.tableView.mj_header = header;
+    [self.tableView.mj_header beginRefreshing];
     
     MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     // 设置文字

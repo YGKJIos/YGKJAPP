@@ -51,8 +51,8 @@
 }
 // 周边畅游
 - (void)travelStyle{
-    CGFloat wid = (WIDTH -315) / 3;
-    CGFloat boundsWid = 35 * WIDTH/375;
+    CGFloat wid = (WIDTH - 300) / 3;
+    CGFloat boundsWid = 23 * WIDTH/375;
     for (int i = 0; i < 3; i++) {
         HomeModelView *view = [HomeModelView travelModelStyleView];
         view.frame = CGRectMake(boundsWid+i*(90+wid), 10,90, 102);
@@ -68,11 +68,10 @@
 - (void)lifeServeStyle
 {
     int num = 0;
-    CGFloat wid = (WIDTH -(WIDTH-10)) / 3 * WIDTH/375;
-    CGFloat boundsWid = 30 * WIDTH/375;
+    CGFloat wid = (WIDTH -(95*3)) / 4 * WIDTH / 375;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 3; j++) {
-            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake((boundsWid+j*(107+wid))*WIDTH/375, 25+i*(95+15)*HEIGHT/667, 107*WIDTH/375, 95*HEIGHT/667)];
+            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(wid+j*(98+wid), 15+i*(95+15), 95, 90)];
             [view ordinaryModelStyle];
             view.tag = 1000+(num++);
             [view setUserInteractionEnabled:YES];
@@ -82,13 +81,13 @@
             [view addGestureRecognizer:tap];
         }
     }
-    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 250*HEIGHT/667, WIDTH, 120)];
+    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 235, WIDTH, 120*HEIGHT/667)];
     [self.contentView addSubview:self.posterImage];
 }
 // 时事新闻
 - (void)newStyle
 {
-    HomeModelView *leftView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2-160*WIDTH/375, 10, 140*WIDTH/375, 100*HEIGHT/667)];
+    HomeModelView *leftView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2 -165*WIDTH/375, 10, 150*WIDTH/375, 90*HEIGHT/667)];
     [leftView ordinaryModelStyle];
     leftView.tag = 2000;
     [leftView setUserInteractionEnabled:YES];
@@ -97,7 +96,7 @@
     UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
     [leftView addGestureRecognizer:leftTap];
     
-    HomeModelView *rightView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2+20*WIDTH/375, 10, 140*WIDTH/375, 100*HEIGHT/667)];
+    HomeModelView *rightView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2+15*WIDTH/375, 10, 150*WIDTH/375, 90*HEIGHT/667)];
     [rightView ordinaryModelStyle];
     rightView.tag = 2001;
     [rightView setUserInteractionEnabled:YES];
@@ -138,12 +137,12 @@
 - (void)secondStyle{
     HomeModelView *leftView = [HomeModelView secondHandModelStyle];
     leftView.tag = 5000;
-    leftView.origin = CGPointMake(WIDTH/2-180, 10);
+    leftView.origin = CGPointMake(WIDTH/2-165, 10);
     [self.contentView addSubview:leftView];
     
     HomeModelView *rightView = [HomeModelView secondHandModelStyle];
     rightView.tag = 5001;
-    rightView.origin = CGPointMake(leftView.x+leftView.width+20, 10);
+    rightView.origin = CGPointMake(leftView.x+leftView.width- 10, 10);
     
     UITapGestureRecognizer *liftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
     [leftView addGestureRecognizer:liftTap];

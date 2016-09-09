@@ -66,7 +66,7 @@
 // 创建左边的菜单
 - (void)creatLeftTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, self.view.size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 100, self.view.size.height - 64) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor whiteColor];
     
     self.tableView.dataSource = self;

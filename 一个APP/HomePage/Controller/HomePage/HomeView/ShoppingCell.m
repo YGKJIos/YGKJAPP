@@ -36,7 +36,7 @@
         UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
         [self.leftImage addGestureRecognizer:leftTap];
         
-        self.rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(self.leftImage.x+self.leftImage.width+35*WIDTH/375, 10, 121*WIDTH/375, 51)];
+        self.rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(self.leftImage.x+self.leftImage.width+ 50*WIDTH/375, 10, 121*WIDTH/375, 51)];
         [self.rightImage setUserInteractionEnabled:YES];
         self.rightImage.image = [UIImage imageNamed:@"shouye_ppmz"];
         [bgView addSubview:self.rightImage];
@@ -46,7 +46,7 @@
         CGFloat wid = (WIDTH -332) / 3;
         CGFloat boundsWid = 25 * WIDTH/375;
         for (int i = 0; i < 4; i++) {
-            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(boundsWid+(70+wid)*i, bgView.y+bgView.height+10, 70*WIDTH/375, 110*HEIGHT/667)];
+            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(boundsWid+(75+wid)*i, bgView.y+bgView.height+10, 75*WIDTH/375, 100*HEIGHT/667)];
             [view ordinaryModelStyle];
             view.tag = 1000+i;
             [self.contentView addSubview:view];

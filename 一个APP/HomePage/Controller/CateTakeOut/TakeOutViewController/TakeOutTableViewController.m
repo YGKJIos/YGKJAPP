@@ -33,10 +33,10 @@
     self.tableView.showsVerticalScrollIndicator = NO;
 #pragma mark - 数据请求
     [self MJrefreshLoadData];
+    [self.tableView.mj_header beginRefreshing];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.tableView.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
 #pragma mark - MJ刷新
