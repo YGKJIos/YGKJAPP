@@ -65,7 +65,6 @@
         if (shopArr.count != 0)
         {
             MerchantInformationModel *model = [[MerchantInformationModel alloc]init];
-            
             [model setValuesForKeysWithDictionary:shopArr[0]];
             [self.dataArr addObject:model];
         }
@@ -183,6 +182,7 @@
         if (indexPath.row == 1) {
             VoucherTableViewController *playerVC = [[VoucherTableViewController alloc]init];
             playerVC.num = self.Num;
+            playerVC.shopArr = self.dataArr;
             playerVC.model = self.TGArr[indexPath.row-1];
             [self.navigationController pushViewController:playerVC animated:YES];
         }

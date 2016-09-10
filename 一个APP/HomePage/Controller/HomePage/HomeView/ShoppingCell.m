@@ -9,7 +9,6 @@
 // 嗨购专场 的cell
 #import "ShoppingCell.h"
 #import "HomeModelView.h"
-
 @interface ShoppingCell ()
 
 @property (nonatomic, strong)UIImageView *leftImage;
@@ -24,29 +23,31 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
-        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(25* WIDTH/375, 5, WIDTH-(50* WIDTH/375), 70)];
+        CGFloat wid = (WIDTH -(4 * 70)) / 5;
+        UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(wid, 10, WIDTH - wid*2, 70* HEIGHT / 667)];
         bgView.backgroundColor = BGcolor(173, 224, 231);
         [self.contentView addSubview:bgView];
         
-        self.leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(WIDTH/2-171*WIDTH/375, 10, 121*WIDTH/375, 51)];
-        [self.leftImage setUserInteractionEnabled:YES];
-        self.leftImage.image = [UIImage imageNamed:@"shouye_xpfs"];
+        self.leftImage = [UIImageView newAutoLayoutView];
         [bgView addSubview:self.leftImage];
+        self.leftImage.userInteractionEnabled = YES;
+        [self.leftImage autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:20* WIDTH/375];
+        [self.leftImage autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
+        [self.leftImage autoSetDimensionsToSize:CGSizeMake(121* WIDTH/375, 51*HEIGHT/667)];
         UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
         [self.leftImage addGestureRecognizer:leftTap];
         
-        self.rightImage = [[UIImageView alloc]initWithFrame:CGRectMake(self.leftImage.x+self.leftImage.width+ 50*WIDTH/375, 10, 121*WIDTH/375, 51)];
-        [self.rightImage setUserInteractionEnabled:YES];
-        self.rightImage.image = [UIImage imageNamed:@"shouye_ppmz"];
+        self.rightImage = [UIImageView newAutoLayoutView];
+        self.rightImage.userInteractionEnabled = YES;
         [bgView addSubview:self.rightImage];
+        [self.rightImage autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:20* WIDTH/375];
+        [self.rightImage autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
+        [self.rightImage autoSetDimensionsToSize:CGSizeMake(121*WIDTH/375, 51*HEIGHT/667)];
         UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
         [self.rightImage addGestureRecognizer:rightTap];
         
-        CGFloat wid = (WIDTH -332) / 3;
-        CGFloat boundsWid = 25 * WIDTH/375;
         for (int i = 0; i < 4; i++) {
-            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(boundsWid+(75+wid)*i, bgView.y+bgView.height+10, 75*WIDTH/375, 100*HEIGHT/667)];
+            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(wid + i * (70 + wid), bgView.y + bgView.height + 15, 70, 100)];
             [view ordinaryModelStyle];
             view.tag = 1000+i;
             [self.contentView addSubview:view];
@@ -54,11 +55,12 @@
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClickAction)];
             [view addGestureRecognizer:tap];
         }
+        self.imgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.imgBtn.backgroundColor = arcColor;
+        self.imgBtn.frame = CGRectMake(0, 215, WIDTH, 120);
+        [self.contentView addSubview:self.imgBtn];
     }
-    self.imgBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.imgBtn.backgroundColor = arcColor;
-    self.imgBtn.frame = CGRectMake(0, 200, WIDTH, 120);
-    [self.contentView addSubview:self.imgBtn];
+    
     return self;
 }
 

@@ -18,12 +18,7 @@
 {
     NSInteger _k;
 }
-@property (nonatomic, strong) NSArray *classifys;
-@property (nonatomic, strong) NSArray *cates;
-@property (nonatomic, strong) NSArray *movices;
-@property (nonatomic, strong) NSArray *hostels;
-@property (nonatomic, strong) NSArray *areas;
-@property (nonatomic, strong) NSArray *sorts;
+@property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSMutableArray *MarkeArr;
 
 @end
@@ -111,7 +106,7 @@
     
     //图片数组
     NSArray *images = @[@"xiuxian_zhuoyou",@"xiuxian_kafei",@"xiuxian_anmo",@"xiuxian_ktv",@"xiuxian_yundong",@"xiuxian_dianying",@"xiuxian_xiyu",@"xiuxian_quanbu"];
-    NSArray *titles = @[@"桌游电玩",@"酒吧咖啡",@"足疗按摩",@"KTV",@"运动健身",@"4D/5D电影",@"沐浴汗蒸",@"其他娱乐"];
+    self.titles = @[@"桌游电玩",@"酒吧咖啡",@"足疗按摩",@"KTV",@"运动健身",@"4D/5D电影",@"沐浴汗蒸",@"其他娱乐"];
     NSInteger num = 0;
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 2; j++) {
@@ -119,7 +114,7 @@
             view.delegate = self;
             view.frame = CGRectMake(30+(40+WIDTH/
                                         4-40)*i,scroll.height+ 10+(40+40)*j, 40, 40);
-            [view setImages:images[num] names:titles[num]tag: 100 + _k];
+            [view setImages:images[num] names:self.titles[num]tag: 100 + _k];
             num++;
             [headerView addSubview:view];
             _k ++;
@@ -131,6 +126,7 @@
 {
     GameTypeTableViewController *typeVC = [[GameTypeTableViewController alloc]init];
     typeVC.shangjiajutiweizhi = [NSString stringWithFormat:@"%ld", btn.tag - 100];
+    typeVC.navigationItem.title = self.titles[btn.tag-100];
     [self.navigationController pushViewController:typeVC animated:YES];
 }
 

@@ -132,7 +132,9 @@
     if (cell == nil) {
         cell = [TakeTableViewCell CreateTakeOutCell];
     }
-    [cell setTakeOutModel:self.takeOutArr[indexPath.row]];
+    if (self.takeOutArr.count != 0) {
+        [cell setTakeOutModel:self.takeOutArr[indexPath.row]];
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

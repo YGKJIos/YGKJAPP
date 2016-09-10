@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meishi_lijian" translatesAutoresizingMaskIntoConstraints="NO" id="gEW-uD-PF1">
@@ -36,8 +36,8 @@
                         <color key="textColor" red="0.80784313725490198" green="0.80392156862745101" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥24/位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW2-Qu-41n">
-                        <rect key="frame" x="324" y="52" width="36" height="14"/>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥24/位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zW2-Qu-41n">
+                        <rect key="frame" x="316" y="52" width="36" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.78823529411764703" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -48,8 +48,8 @@
                         <color key="textColor" red="0.78823529411764703" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="234m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8y-t6-IdD">
-                        <rect key="frame" x="294" y="81" width="68" height="16"/>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="234m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8y-t6-IdD">
+                        <rect key="frame" x="289" y="78" width="68" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="9ce-Kk-B3M"/>
                             <constraint firstAttribute="width" constant="68" id="FSA-Eb-VLP"/>
@@ -85,7 +85,7 @@
                     <constraint firstItem="zW2-Qu-41n" firstAttribute="top" secondItem="gEW-uD-PF1" secondAttribute="bottom" constant="22" id="ejt-xj-6vV"/>
                     <constraint firstItem="ooU-ra-DYi" firstAttribute="top" secondItem="G1R-Ac-owe" secondAttribute="bottom" constant="7" id="l9R-SJ-pEH"/>
                     <constraint firstItem="paj-eh-JLd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="n3d-du-WPW"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="zW2-Qu-41n" secondAttribute="trailing" constant="7" id="oV2-hf-nir"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zW2-Qu-41n" secondAttribute="trailing" constant="15" id="oV2-hf-nir"/>
                     <constraint firstItem="ooU-ra-DYi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="roY-7P-b3o"/>
                     <constraint firstItem="gEW-uD-PF1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="sPk-Xd-vcA"/>
                     <constraint firstItem="paj-eh-JLd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="vkQ-sY-QSL"/>

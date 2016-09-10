@@ -27,12 +27,12 @@ typedef enum
 /**
  *  美食
  */
-@property (weak, nonatomic) IBOutlet UILabel *foodTitleLab;
-@property (weak, nonatomic) IBOutlet UIImageView *foodImage;
-@property (weak, nonatomic) IBOutlet UILabel *foodName;
-@property (weak, nonatomic) IBOutlet UILabel *moneyLab;
-@property (weak, nonatomic) IBOutlet UILabel *textLab;
-@property (weak, nonatomic) IBOutlet UILabel *costLab; // 原价钱
+@property (strong, nonatomic)  UILabel *foodTitleLab;
+@property (strong, nonatomic)  UIImageView *foodImage;
+@property (strong, nonatomic)  UILabel *foodName;
+@property (strong, nonatomic)  UILabel *moneyLab;
+@property (strong, nonatomic)  UILabel *textLab;
+@property (strong, nonatomic)  UILabel *costLab; // 原价钱
 
 
 /**
@@ -61,7 +61,7 @@ typedef enum
 @property (weak, nonatomic) IBOutlet UILabel *secondMoney;
 
 
-+ (HomeModelView *)foodModelStyleView;  //美食View
+- (void)foodModelStyleView;  //美食View
 
 + (HomeModelView *)travelModelStyleView; // 旅游View
 

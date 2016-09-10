@@ -57,7 +57,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
     [super viewWillAppear:animated];
 }
 
@@ -129,27 +128,29 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 2) {
+    if (indexPath.section == 2) { // 同城服务
         return 180;
     }
-    if (indexPath.section == 3) {
+    if (indexPath.section == 3) { //生活服务
         return 370;
     }
-    if (indexPath.section == 5) {
-        return 160;
+    if (indexPath.section == 4) { // 时事新闻
+        return 230;
     }
-    if (indexPath.section == 6) {
-        return 340;
+    if (indexPath.section == 5) { // 美食精品
+        return 144;
     }
-    if (indexPath.section == 7) {
+    if (indexPath.section == 6) { // 嗨购专场
+        return 345;
+    }
+    if (indexPath.section == 7) { // 畅游周边
         return 110;
     }
-    if (indexPath.section == 9) {
-        return 142;
+    if (indexPath.section == 9) { // 二手置换
+        return 130;
     }
     return 200;
 }
-
 #pragma mark - tableViewCell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
