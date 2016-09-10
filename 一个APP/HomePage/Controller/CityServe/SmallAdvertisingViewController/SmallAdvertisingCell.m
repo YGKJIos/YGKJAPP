@@ -28,7 +28,7 @@
     _headImageView.layer.cornerRadius = 20;
     _headImageView.layer.masksToBounds = YES;
     
-    _userName = [[UILabel alloc] initWithFrame:CGRectMake(_headImageView.frame.size.width  + 30, 0, [UIScreen mainScreen].bounds.size.width - 70, 60)];
+    _userName = [[UILabel alloc] initWithFrame:CGRectMake(_headImageView.frame.size.width  + 15, 0, [UIScreen mainScreen].bounds.size.width - 70, 60)];
     [topView addSubview:_userName];
     _userName.font = [UIFont systemFontOfSize:15];
     
@@ -39,7 +39,7 @@
     [_phoneBtn addTarget:self action:@selector(phoneBtnClickAction) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:_phoneBtn];
     
-    _contLab = [[UILabel alloc] initWithFrame:CGRectMake(30, topView.frame.size.height + topView.frame.origin.y, [UIScreen mainScreen].bounds.size.width - 50, 20)];
+    _contLab = [[UILabel alloc] initWithFrame:CGRectMake(30, topView.frame.size.height + topView.frame.origin.y, [UIScreen mainScreen].bounds.size.width - 30, 20)];
     [self.contentView addSubview:_contLab];
     _contLab.font = [UIFont systemFontOfSize:13];
     _contLab.numberOfLines = 0;

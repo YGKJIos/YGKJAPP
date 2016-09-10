@@ -31,8 +31,14 @@
 
 @property (nonatomic, retain) UILabel *carPoolingLabel; // 拼车label
 
-@property (nonatomic, strong)BMKMapView *mapView;
-@property (nonatomic, strong)BMKLocationService *locService;
+@property (nonatomic, strong) BMKMapView *mapView;
+@property (nonatomic, strong) BMKLocationService *locService;
+@property (nonatomic, strong) UIButton *shortBtn; // 短途按钮
+@property (nonatomic, strong) UIButton *longBtn; // 长途按钮
+@property (nonatomic, strong) UILabel *longLab;
+@property (nonatomic, strong) UILabel *shortLab;
+@property (nonatomic, copy) NSString  *num; // 短途为1 , 长途为2
+
 @end
 
 @implementation CarViewController
@@ -40,6 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"拼车";
+    self.num = @"1";
     [self createMap];
 }
 - (void)createMap
@@ -56,34 +63,36 @@
     self.carView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.carView];
     
-    self.addressImage = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 17, 17)];
+    self.addressImage = [[UIImageView alloc] initWithFrame:CGRectMake(40, 60, 17, 17)];
     self.addressImage.image = [UIImage imageNamed:@"pc_chufa_tus"];
     [self.carView addSubview:self.addressImage];
     
     
-    self.addressField = [[UITextField alloc] initWithFrame:CGRectMake(70, 30, WIDTH - 80, 30)];
+    self.addressField = [[UITextField alloc] initWithFrame:CGRectMake(70, 55, WIDTH - 80, 30)];
     self.addressField.backgroundColor = [UIColor whiteColor];
     self.addressField.placeholder = @"在这里输入您的起始点";
+    self.addressField.textColor = BGcolor(95, 95, 95);
     self.addressField.delegate = self;
     [self.carView addSubview:self.addressField];
     
     
-    self.lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 70, WIDTH - 85, 1)];
+    self.lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 90, WIDTH - 85, 1)];
     self.lineLabel.backgroundColor = [UIColor blackColor];
     [self.carView addSubview:self.lineLabel];
     
     
-    self.destinatioImage = [[UIImageView alloc] initWithFrame:CGRectMake(40, 90, 19, 19)];
+    self.destinatioImage = [[UIImageView alloc] initWithFrame:CGRectMake(40, 110, 19, 19)];
     self.destinatioImage.image = [UIImage imageNamed:@"pc_daoda_tus"];
     
     [self.carView addSubview:self.destinatioImage];
     
-    self.destinatioField = [[UITextField alloc] initWithFrame:CGRectMake(70, 85, WIDTH - 80, 30)];
+    self.destinatioField = [[UITextField alloc] initWithFrame:CGRectMake(70, 105, WIDTH - 80, 30)];
     self.destinatioField.placeholder = @"在这里输入您的目的地";
+    self.destinatioField.textColor = BGcolor(95, 95, 95);
     self.destinatioField.delegate = self;
     [self.carView addSubview:self.destinatioField];
     
-    self.carPoolingLabel = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH/2-100, 150, 200, 50)];
+    self.carPoolingLabel = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH/2-100, 170, 200, 50)];
     
     self.carPoolingLabel.backgroundColor = BGcolor(85, 198, 216);
     self.carPoolingLabel.text = @"开始拼车";
@@ -93,7 +102,31 @@
     self.carPoolingLabel.userInteractionEnabled = YES;// 用户交互打开
     [self.carView addSubview:self.carPoolingLabel];
     
+    // 短途按钮
+    self.longBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.longBtn.frame = CGRectMake(WIDTH/2 - 100, 15, 20, 20);
+    self.longBtn.backgroundColor = [UIColor clearColor];
+    [self.longBtn setImage:[UIImage imageNamed:@"tijiaodingdan_lijianxuanzhong"] forState:UIControlStateNormal];
+    [self.longBtn addTarget:self action:@selector(Action:) forControlEvents:UIControlEventTouchUpInside];
+    [self.carView addSubview:self.longBtn];
+    self.longLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH/2 - 75, 15, 40, 20)];
+    self.longLab.text = @"短途";
+    self.longLab.textColor = BGcolor(95, 95, 95);
+    [self.carView addSubview:self.longLab];
     
+    
+    // 长途按钮
+    self.shortBtn = [[UIButton alloc] initWithFrame:CGRectMake(WIDTH/2 + 40, 15, 20, 20)];
+    self.shortBtn.backgroundColor = [UIColor clearColor];
+    [self.shortBtn setImage:[UIImage imageNamed:@"tijiaodingdan_lijianmeixuan"]forState:UIControlStateNormal];
+    [self.shortBtn addTarget:self action:@selector(Action2:) forControlEvents:UIControlEventTouchUpInside];
+    [self.carView addSubview:self.shortBtn];
+    self.shortLab = [[UILabel alloc] initWithFrame:CGRectMake(WIDTH/2 + 65, 15, 40, 20)];
+    self.shortLab.text = @"长途";
+    self.shortLab.textColor = BGcolor(95, 95, 95);
+    [self.carView addSubview:self.shortLab];
+    
+
     // 给拼车label添加点击手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     [self.carPoolingLabel addGestureRecognizer:tap];
@@ -105,6 +138,25 @@
 {
     self.view.frame = CGRectMake(0, -150, WIDTH, HEIGHT);
 }
+
+// 长途按钮点击方法
+- (void)Action:(UIButton *)btn
+{
+        [self.shortBtn setImage:[UIImage imageNamed:@"tijiaodingdan_lijianmeixuan"] forState:UIControlStateNormal];
+    
+        [self.longBtn setImage:[UIImage imageNamed:@"tijiaodingdan_lijianxuanzhong"] forState:UIControlStateNormal];
+        self.num = @"1";
+}
+
+// 短途按钮点击方法
+- (void)Action2:(UIButton *)btn
+{
+        [self.shortBtn setImage:[UIImage imageNamed:@"tijiaodingdan_lijianxuanzhong"] forState:UIControlStateNormal];
+        [self.longBtn setImage:[UIImage imageNamed:@"tijiaodingdan_lijianmeixuan"] forState:UIControlStateNormal];
+        self.num = @"2";
+}
+
+
 // 点击 键盘回弹
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -116,13 +168,15 @@
 // 手势点击方法
 - (void)tap:(UITapGestureRecognizer *)tap
 {
+    
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setObject:self.addressField.text forKey:@"congnalai"];
     [param setObject:self.destinatioField.text forKey:@"daonaqu"];
+    [param setObject:self.num forKey:@"dacheLucheng"];
     NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    
+
     [param setObject:dic[@"userId"] forKey:@"userId"];
 
     NSString *url = @"dache/userdache.action?";
