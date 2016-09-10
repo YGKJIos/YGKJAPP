@@ -158,9 +158,8 @@
 //    [button addTarget:self action:@selector(onClickReverseGeocode) forControlEvents:UIControlEventTouchUpInside];
 //    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
 //    self.navigationItem.rightBarButtonItem = item;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+
     [self onClickReverseGeocode];
-    });
 }
 -(void)onClickReverseGeocode  //发送反编码请求的.
 {
@@ -177,11 +176,11 @@
     BOOL flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];//发送反编码请求.并返回是否成功
     if(flag)
     {
-//        NSLog(@"反geo检索发送成功");
+        NSLog(@"反geo检索发送成功");
     }
     else
     {
-//        NSLog(@"反geo检索发送失败");
+        NSLog(@"反geo检索发送失败");
     }
     
 }
@@ -193,6 +192,7 @@
         item.title = result.address;
         
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+
         NSInteger latitude = result.location.latitude;
         NSInteger longitude = result.location.longitude;
         [dic setValue:[NSString stringWithFormat:@"%ld*%ld",latitude,longitude] forKey:@"jingweidu"];
@@ -203,9 +203,7 @@
         
         titleStr = @"当前您的位置";
         showmeg = [NSString stringWithFormat:@"%@",item.title];
-        
-//        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
-//        [myAlertView show];
+        // 创建定位按键
         [self creatLocationBtn];
     }
 }
@@ -230,7 +228,7 @@
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     _locService.delegate = self;
     // 添加百度地图
-    [self currentLocation];
+    [self creatLocationBtn];
 }
 -(void)viewWillDisappear:(BOOL)animated
 {

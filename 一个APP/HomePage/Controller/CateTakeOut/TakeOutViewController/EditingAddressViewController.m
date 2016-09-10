@@ -158,6 +158,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self.delegate selectAddressInformation:self.listArr[indexPath.section]];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

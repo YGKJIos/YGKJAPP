@@ -60,18 +60,16 @@
 
 // 下拉刷新的方法
 - (void)loadNewData{
-//    [self.MarkeArr removeAllObjects];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.tableView.mj_header endRefreshing];
+        [self.MarkeArr removeAllObjects];
         NSString *url = @"xiuxianyule/queryxiuxianyule.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             NSArray *arr = responseObject;
             if (arr.count == 0) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-113)];
                 [self.view addSubview:placeholderImage];
             }else{
                 for (NSDictionary *dic in responseObject) {
-                    if (dic[@"shangjiaJutiweizhi"] == self.shangjiajutiweizhi) {
+                    if ([dic[@"shangjiaJutiweizhi"] isEqualToString:self.shangjiajutiweizhi]) {
                         [_fenLeiArr addObject:dic];
                     }
                 }
@@ -79,19 +77,16 @@
                     ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
                     [self.view addSubview:placeholderImage];
                 }else{
-            for (NSDictionary *dic in _fenLeiArr) {
-                GameModel *model = [[GameModel alloc] init];
-                [model setValuesForKeysWithDictionary:dic];
-                [self.MarkeArr addObject:model];
-            }
+                    for (NSDictionary *dic in _fenLeiArr) {
+                        GameModel *model = [[GameModel alloc] init];
+                        [model setValuesForKeysWithDictionary:dic];
+                        [self.MarkeArr addObject:model];
+                    }
                 }
             [self.tableView reloadData];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
         }];
-        
-        
-//    });
     
 }
 // 上拉加载的方法

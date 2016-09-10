@@ -7,9 +7,7 @@
 //
 
 #import "MarketViewController.h"
-#import "ShopTableViewCell.h"
-#import "ShopModel.h"
-
+#import "MarketCell.h"
 #import "CateDetailsTableViewController.h"
 #import "MarketModel.h"
 
@@ -33,10 +31,10 @@
     [self addTableViewAndHeaderView];
     // 添加刷新
     [self MJrefreshLoadData];
+    [_tableView.mj_header beginRefreshing];
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    [_tableView.mj_header beginRefreshing];
     [super viewWillAppear:animated];
 }
 #pragma mark - MJ刷新
@@ -55,16 +53,16 @@
 - (void)loadNewData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
-        NSString *url = @"shangjia/queryshangjia.action";
+        NSString *url = @"meishi/querymeishi1.action";
         [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             [self.MarkeArr removeAllObjects];
             NSArray *arr = responseObject;
             if (arr.count == 0) {
-                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:self.view.frame];
+                ZGPplaceholderImageView *placeholderImage = [[ZGPplaceholderImageView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-113)];
                 [self.view addSubview:placeholderImage];
             }else{
             for (NSDictionary *dic in arr) {
-                ShopModel *model = [[ShopModel alloc] init];
+                MarketModel *model = [[MarketModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
                 [self.MarkeArr addObject:model];
             }
@@ -108,15 +106,16 @@
     return self.MarkeArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *marketCellID = @"marketCellID";
-    ShopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:marketCellID];
+    
+    static NSString *cateCell = @"cateID";
+    MarketCell *cell = [tableView dequeueReusableCellWithIdentifier:cateCell];
     if (cell == nil) {
-        cell = [ShopTableViewCell createShopCell];
+        cell = [[NSBundle mainBundle]loadNibNamed:@"MarketCell" owner:nil options:nil].lastObject;
     }
-    if (self.MarkeArr != nil) {
-        [cell ShopModel:self.MarkeArr[indexPath.row]];
+    if (self.MarkeArr.count != 0) {
+        
+        [cell marketModel:self.MarkeArr[indexPath.row]];
     }
-   
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

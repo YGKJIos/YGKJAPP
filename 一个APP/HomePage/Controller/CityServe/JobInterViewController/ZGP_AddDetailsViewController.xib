@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -104,8 +104,8 @@
                     <color key="textColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="员工旅游 通勤补助 五险一金" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYI-ix-SYB">
-                    <rect key="frame" x="78" y="94" width="164" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="员工旅游 通勤补助 五险一金" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYI-ix-SYB">
+                    <rect key="frame" x="78" y="94" width="224" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -257,6 +257,7 @@
                 <constraint firstItem="RX0-XC-ePx" firstAttribute="leading" secondItem="9rp-5w-26I" secondAttribute="leading" constant="-6" id="jlR-XU-DWw"/>
                 <constraint firstItem="eLG-0h-zXX" firstAttribute="top" secondItem="URU-GQ-dKG" secondAttribute="bottom" constant="9" id="jvX-zK-Pt7"/>
                 <constraint firstItem="RX0-XC-ePx" firstAttribute="top" secondItem="f4e-bT-B41" secondAttribute="bottom" constant="21" id="lY2-S0-uBG"/>
+                <constraint firstAttribute="trailing" secondItem="uYI-ix-SYB" secondAttribute="trailing" constant="18" id="nts-hC-dQ7"/>
                 <constraint firstAttribute="trailing" secondItem="D6p-i4-4ew" secondAttribute="trailing" constant="18" id="oFA-K8-QeX"/>
                 <constraint firstItem="mRc-a5-nbn" firstAttribute="top" secondItem="cdS-Xs-lcO" secondAttribute="bottom" constant="8" symbolic="YES" id="pcJ-sD-WK5"/>
                 <constraint firstItem="zYi-Et-PWq" firstAttribute="top" secondItem="BYF-Os-lDF" secondAttribute="bottom" constant="18" id="q0K-dS-kSj"/>
@@ -265,6 +266,7 @@
                 <constraint firstItem="sJe-bs-Wdl" firstAttribute="top" secondItem="BDf-c9-sl2" secondAttribute="bottom" constant="13" id="qjL-bm-hSY"/>
                 <constraint firstItem="mRc-a5-nbn" firstAttribute="leading" secondItem="VJ3-EP-Rak" secondAttribute="trailing" constant="7" id="qz5-cc-LPh"/>
                 <constraint firstItem="VJ3-EP-Rak" firstAttribute="top" secondItem="OsP-Ks-ny8" secondAttribute="top" constant="72" id="rOG-nC-8Hg"/>
+                <constraint firstAttribute="trailing" secondItem="uYI-ix-SYB" secondAttribute="trailing" constant="78" id="rRg-NU-7Bk"/>
                 <constraint firstItem="eLG-0h-zXX" firstAttribute="top" secondItem="RX0-XC-ePx" secondAttribute="bottom" constant="8" symbolic="YES" id="rbe-WN-nUA"/>
                 <constraint firstItem="0RI-bf-NdS" firstAttribute="leading" secondItem="kVf-H8-Lal" secondAttribute="trailing" constant="8" id="tX1-B7-FPW"/>
                 <constraint firstItem="f4e-bT-B41" firstAttribute="top" secondItem="p4T-x2-NaN" secondAttribute="top" id="thS-YV-n9K"/>
@@ -277,6 +279,11 @@
                 <constraint firstItem="FHb-WG-Fdp" firstAttribute="trailing" secondItem="9zi-TR-Xh8" secondAttribute="trailing" id="z9M-Hx-iuv"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="rRg-NU-7Bk"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="271" y="168"/>
         </view>
     </objects>

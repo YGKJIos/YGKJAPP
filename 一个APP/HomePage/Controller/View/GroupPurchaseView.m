@@ -13,8 +13,10 @@
 
 -(void)setModel:(MerchantInformationModel *)model
 {
-    NSString *imageURl = [NSString stringWithFormat:@"%@%@",serverAddress,model.tuangouTouxiang];
-    [self.foodImage sd_setImageWithURL:[NSURL URLWithString:imageURl]];
+//    NSString *imageURl = [NSString stringWithFormat:@"%@%@",serverAddress,model.tuangouTouxiang];
+//    [self.foodImage sd_setImageWithURL:[NSURL URLWithString:imageURl]];
+    
+    self.foodImage.image = [UIImage imageNamed:@"binguandatu_tus"];
     // 特价
     NSString *TEmoney = [NSString stringWithFormat:@"¥%@",model.tuangouTejia];
     self.TEMoney.text = TEmoney;

@@ -9,8 +9,6 @@
 #import "ThridTableViewCell.h"
 #import "HomeModelView.h"
 
-//static NSString *headerUrl = @"http://139.129.209.189:8080/shangcheng/";  //测试服务器 IP地址
-//static NSString *bendi = @"http://192.168.1.88:8080/shangcheng";
 @interface ThridTableViewCell ()
 @property (nonatomic, strong)UIImageView *posterImage;
 
@@ -22,7 +20,6 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
     }
     return self;
 }
@@ -51,11 +48,10 @@
 }
 // 周边畅游
 - (void)travelStyle{
-    CGFloat wid = (WIDTH - 300) / 3;
-    CGFloat boundsWid = 23 * WIDTH/375;
+    CGFloat wid = (WIDTH -(3 * 90)) / 4;
     for (int i = 0; i < 3; i++) {
         HomeModelView *view = [HomeModelView travelModelStyleView];
-        view.frame = CGRectMake(boundsWid+i*(90+wid), 10,90, 102);
+        view.frame = CGRectMake((wid+i*(90+wid)), 10 ,90 , 102 );
         [view setUserInteractionEnabled:YES];
         view.tag = 3000+i;
         [self.contentView addSubview:view];
@@ -68,11 +64,10 @@
 - (void)lifeServeStyle
 {
     int num = 0;
-    CGFloat wid = (WIDTH -(95*3)) / 4 * WIDTH / 375;
+    CGFloat wid = (WIDTH -((107*WIDTH/375)*3)) / 4;
     for (int i = 0; i < 2; i++) {
         for (int j = 0; j < 3; j++) {
-            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(wid+j*(98+wid), 15+i*(95+15), 95, 90)];
-
+            HomeModelView *view = [[HomeModelView alloc]initWithFrame:CGRectMake(wid+j*(107*WIDTH/375+wid), 10+i*120, 107*WIDTH/375, 95*HEIGHT/667)];
             [view ordinaryModelStyle];
             view.tag = 1000+(num++);
             [view setUserInteractionEnabled:YES];
@@ -80,15 +75,18 @@
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
             [view addGestureRecognizer:tap];
+            
         }
     }
-    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 235, WIDTH, 120*HEIGHT/667)];
+    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 245, WIDTH, 120)];
     [self.contentView addSubview:self.posterImage];
+    
 }
 // 时事新闻
 - (void)newStyle
 {
-    HomeModelView *leftView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2 -165*WIDTH/375, 10, 150*WIDTH/375, 90*HEIGHT/667)];
+    CGFloat wid = (WIDTH - 140 *2)/3;
+    HomeModelView *leftView = [[HomeModelView alloc]initWithFrame:CGRectMake(wid, 10, 140, 90)];
     [leftView ordinaryModelStyle];
     leftView.tag = 2000;
     [leftView setUserInteractionEnabled:YES];
@@ -97,7 +95,7 @@
     UITapGestureRecognizer *leftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
     [leftView addGestureRecognizer:leftTap];
     
-    HomeModelView *rightView = [[HomeModelView alloc]initWithFrame:CGRectMake(WIDTH/2+15*WIDTH/375, 10, 150*WIDTH/375, 90*HEIGHT/667)];
+    HomeModelView *rightView = [[HomeModelView alloc]initWithFrame:CGRectMake(wid*2+140, 10, 140, 90)];
     [rightView ordinaryModelStyle];
     rightView.tag = 2001;
     [rightView setUserInteractionEnabled:YES];
@@ -106,7 +104,7 @@
     UITapGestureRecognizer *rightTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
     [rightView addGestureRecognizer:rightTap];
     
-    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 116, WIDTH, 120)];
+    self.posterImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 135, WIDTH, 106)];
     [self.contentView addSubview:self.posterImage];
 }
 // 热门招聘
@@ -138,13 +136,13 @@
 - (void)secondStyle{
     HomeModelView *leftView = [HomeModelView secondHandModelStyle];
     leftView.tag = 5000;
-    leftView.origin = CGPointMake(WIDTH/2-165, 10);
+    CGFloat wid = ((375 -(2 * 170)) / 3 * WIDTH / 375);
+    leftView.frame = CGRectMake(wid, 10 * HEIGHT / 667, 170 * WIDTH / 375, 110 * HEIGHT / 667);
     [self.contentView addSubview:leftView];
     
     HomeModelView *rightView = [HomeModelView secondHandModelStyle];
     rightView.tag = 5001;
-    rightView.origin = CGPointMake(leftView.x+leftView.width- 10, 10);
-    
+    rightView.frame = CGRectMake(leftView.x+leftView.width +wid, 10 * HEIGHT / 667, 170 * WIDTH / 375, 110 * HEIGHT / 667);
     UITapGestureRecognizer *liftTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(thridTapImageViewAction:)];
     [leftView addGestureRecognizer:liftTap];
     
@@ -178,7 +176,7 @@
         for (int i = 0; i < titles.count; i++) {
             HomeModelView *view = [self.contentView viewWithTag:2000+i];
             NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,arr[i]];
-            [view.imageV sd_setImageWithURL:[NSURL URLWithString:url]];
+            [view.imageV sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanweitouxiang"]];
             view.titleLab.text = titles[i];
         }
         self.posterImage.image = [UIImage imageNamed:[arr lastObject]];
@@ -193,7 +191,7 @@
         for (int i = 0; i < images.count; i++) {
             HomeModelView *view = (HomeModelView *)[self.contentView viewWithTag:3000+i];
             NSString *urlStr = [NSString stringWithFormat:@"%@%@",serverAddress,images[i]];
-            [view.travelImage sd_setImageWithURL:[NSURL URLWithString:urlStr]];
+            [view.travelImage sd_setImageWithURL:[NSURL URLWithString:urlStr] placeholderImage:[UIImage imageNamed:@"zhanweitouxiang"]];
             view.travelImage.opaque = YES;
             view.travelNameLab.text = names[i];
             view.travelMoneyLab.text = [NSString stringWithFormat:@"%@",jiage[i]];
@@ -220,13 +218,13 @@
         
         HomeModelView *liftView = (HomeModelView *)[self.contentView viewWithTag:5000];
         NSString *leftUrl = [NSString stringWithFormat:@"%@%@", serverAddress,model.ershouTupian1];
-        [liftView.secondImage sd_setImageWithURL:[NSURL URLWithString:leftUrl]];
+        [liftView.secondImage sd_setImageWithURL:[NSURL URLWithString:leftUrl] placeholderImage:[UIImage imageNamed:@"zhanweitouxiang"]];
         liftView.secondName.text = model.ershouName1;
         liftView.secondMoney.text = model.ershouJiage1;
         
         HomeModelView *rightView = (HomeModelView *)[self.contentView viewWithTag:5001];
         NSString *rightUrl = [NSString stringWithFormat:@"%@%@",serverAddress,model.ershouTupian2];
-        [rightView.secondImage sd_setImageWithURL:[NSURL URLWithString:rightUrl]];
+        [rightView.secondImage sd_setImageWithURL:[NSURL URLWithString:rightUrl] placeholderImage:[UIImage imageNamed:@"zhanweitouxiang"]];
         rightView.secondName.text = model.ershouName2;
         rightView.secondMoney.text = model.ershouJiage2;
     }

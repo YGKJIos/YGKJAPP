@@ -139,7 +139,12 @@
         return 60;
     }else
     {
-        return 536;
+        if ([self.num isEqualToString:@"1004"]) {
+            return 0;
+        }else
+        {
+            return 536;
+        }
     }
 }
 

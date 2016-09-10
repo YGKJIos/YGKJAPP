@@ -28,7 +28,8 @@
         numLab.backgroundColor = BGcolor(250, 83, 48);
         [self addSubview:numLab];
         
-        UILabel *orderLab = [[UILabel alloc]initWithFrame:CGRectMake(shopImage.x+shopImage.width+10, 14.5, WIDTH - 145, 20)];
+        UILabel *orderLab = [[UILabel alloc]initWithFrame:CGRectMake(shopImage.x+shopImage.width, 14.5, WIDTH - 145, 20)];
+        orderLab.font = [UIFont systemFontOfSize:14];
         orderLab.textColor = BGcolor(143, 143, 143);
         orderLab.text = @"查看您选择的菜品";
         [self addSubview:orderLab];

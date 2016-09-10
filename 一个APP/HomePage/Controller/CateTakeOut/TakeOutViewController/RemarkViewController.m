@@ -35,17 +35,29 @@
     UIBarButtonItem *leftItem = [UIBarButtonItem itemWithTarget:self action:@selector(fanhui) image:@"meishi_fanghui" highImage:@"meishi_fanghui"];
     self.navigationItem.leftBarButtonItem = leftItem;
     
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.width = 40;
+    rightBtn.height = 40;
+    [rightBtn setTitle:@"完成" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(chenggong) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
-- (void)fanhui
+- (void)chenggong
 {
     [self.delegate passValue:_remarkText.text];
     [self.navigationController popViewControllerAnimated:YES];
-    NSLog(@"fahui");
+}
+- (void)fanhui
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
