@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -23,18 +23,8 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMY-AE-ON3">
-                    <rect key="frame" x="344" y="156" width="27" height="29"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="27" id="3Ur-1m-qdG"/>
-                    </constraints>
-                    <state key="normal" image="xiangqing_33"/>
-                    <connections>
-                        <action selector="phoneBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="a6k-ip-hfU"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南岗区果戈里大街290号 (儿童公园对面)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYw-el-i0j">
-                    <rect key="frame" x="51" y="177" width="284" height="13"/>
+                    <rect key="frame" x="51" y="177" width="286" height="13"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -45,18 +35,28 @@
                         <constraint firstAttribute="width" constant="16" id="5Co-9B-8Ob"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZa-L2-6vY">
+                    <rect key="frame" x="345" y="161" width="27" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="27" id="qE3-NG-BKP"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="xiangqing_33"/>
+                    <connections>
+                        <action selector="phoneBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="eux-D8-gyS"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="xMY-AE-ON3" firstAttribute="top" secondItem="KDa-Am-o0h" secondAttribute="bottom" constant="16" id="0ds-2A-dcR"/>
+                <constraint firstItem="PZa-L2-6vY" firstAttribute="top" secondItem="KDa-Am-o0h" secondAttribute="bottom" constant="21" id="4Ra-wT-fx0"/>
                 <constraint firstItem="v8j-vd-we6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="28" id="4UA-JT-Lkz"/>
                 <constraint firstItem="KDa-Am-o0h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7bY-WP-r1h"/>
                 <constraint firstAttribute="trailing" secondItem="KDa-Am-o0h" secondAttribute="trailing" id="9uz-CB-5zL"/>
                 <constraint firstAttribute="bottom" secondItem="ynR-Nj-p6k" secondAttribute="bottom" constant="16" id="DFw-0q-Qgn"/>
                 <constraint firstItem="v8j-vd-we6" firstAttribute="leading" secondItem="ynR-Nj-p6k" secondAttribute="leading" id="J3l-Ny-gih"/>
-                <constraint firstAttribute="trailing" secondItem="xMY-AE-ON3" secondAttribute="trailing" constant="29" id="Knj-RE-pxN"/>
-                <constraint firstItem="xMY-AE-ON3" firstAttribute="leading" secondItem="TYw-el-i0j" secondAttribute="trailing" constant="9" id="QJs-Ow-Ymr"/>
+                <constraint firstAttribute="trailing" secondItem="PZa-L2-6vY" secondAttribute="trailing" constant="28" id="YGn-Zj-7rb"/>
                 <constraint firstItem="ynR-Nj-p6k" firstAttribute="centerY" secondItem="TYw-el-i0j" secondAttribute="centerY" id="alp-aZ-TPm"/>
+                <constraint firstItem="PZa-L2-6vY" firstAttribute="leading" secondItem="TYw-el-i0j" secondAttribute="trailing" constant="8" id="bVk-84-vEg"/>
                 <constraint firstItem="TYw-el-i0j" firstAttribute="leading" secondItem="ynR-Nj-p6k" secondAttribute="trailing" constant="7" id="hR4-I9-UvL"/>
                 <constraint firstItem="ynR-Nj-p6k" firstAttribute="top" secondItem="v8j-vd-we6" secondAttribute="bottom" constant="8" symbolic="YES" id="rAI-j4-9LI"/>
                 <constraint firstItem="TYw-el-i0j" firstAttribute="top" secondItem="v8j-vd-we6" secondAttribute="bottom" constant="11" id="vBl-Pb-IIV"/>
