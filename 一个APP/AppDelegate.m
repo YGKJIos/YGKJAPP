@@ -7,12 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import "JPUSHService.h"
 #import "LoginViewController.h"
 #import "RootTabBarController.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "TakeOutInformationController.h"
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
 
 @interface AppDelegate ()
+@property (nonatomic, strong)NSDictionary *userDic;
 
 @end
 
@@ -30,12 +35,16 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
+    
     // 判断是不是第一次登录
     NSString *sandBoxPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSString *path = [sandBoxPath stringByAppendingPathComponent:@"manager/userDic.plish"];
-//    NSLog(@"%@" , path);
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    if (dic == nil) {
+    
+    self.userDic = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    [self JPushSever:launchOptions]; // 极光推送
+    
+    if (self.userDic == nil) {
         LoginViewController *rootvc = [[LoginViewController alloc] init];
         self.window.rootViewController = rootvc;
     }else{
@@ -45,13 +54,71 @@
         self.window.rootViewController = rootTabBar;
         rootTabBar.tabBar.translucent = NO;
         // 如果为空
-        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kJPFNetworkDidLoginNotification object:self userInfo:self.userDic];
     }
     
     [self.window makeKeyAndVisible];
     return YES;
 }
+- (void)JPushSever:(NSDictionary *)launchOptions
+{
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+        JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+        entity.types = UNAuthorizationOptionAlert|UNAuthorizationOptionBadge|UNAuthorizationOptionSound;
+        [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+#endif
+    } else if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        //可以添加自定义categories
+        [JPUSHService registerForRemoteNotificationTypes:(UIUserNotificationTypeBadge |UIUserNotificationTypeSound |UIUserNotificationTypeAlert) categories:nil];
+    } else {
+        //categories 必须为nil
+        [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |               UIRemoteNotificationTypeSound |UIRemoteNotificationTypeAlert) categories:nil];
+    }
+    //如不需要使用IDFA，advertisingIdentifier 可为nil
+    [JPUSHService setupWithOption:launchOptions appKey:appKey
+                          channel:nil
+                 apsForProduction:NO
+            advertisingIdentifier:nil];
+    
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self selector:@selector(networkDidLogin:) name:kJPFNetworkDidLoginNotification object:nil];
 
+}
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+- (void)networkDidLogin:(NSNotification *)noti
+{
+    NSString *aliasStr = [NSString stringWithFormat:@"user%@",noti.userInfo[@"userId"]];
+    [JPUSHService setTags:nil alias:aliasStr fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+        NSLog(@"/////%d****%@******%@",iResCode,iTags,iAlias);
+    }];
+}
+// iOS 10 Support
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    // Required
+    NSDictionary * userInfo = notification.request.content.userInfo; if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [JPUSHService handleRemoteNotification:userInfo]; }
+    completionHandler(UNNotificationPresentationOptionAlert); //                    Badge Sound Alert
+}
+// iOS 10 Support
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+    // Required
+    NSDictionary * userInfo = response.notification.request.content.userInfo; if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
+    completionHandler(); //
+}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler: (void (^)(UIBackgroundFetchResult))completionHandler {
+        // Required, iOS 7 Support
+        [JPUSHService handleRemoteNotification:userInfo]; completionHandler(UIBackgroundFetchResultNewData);
+    }
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+        // Required,For systems with less than or equal to iOS6
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -65,6 +132,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

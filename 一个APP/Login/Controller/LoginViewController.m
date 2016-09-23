@@ -12,6 +12,7 @@
 #import "postViewController.h"
 #import "PhoneLoginViewController.h"
 #import "UserInfo.h"
+#import "JPUSHService.h"
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *remaberBtn;
 @property (weak, nonatomic) IBOutlet UITextField *peopleTextField;
@@ -102,6 +103,8 @@
                 RootTabBarController *rootVC = [[RootTabBarController alloc]init];
                 [self presentViewController:rootVC animated:YES completion:nil];
             });
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:kJPFNetworkDidLoginNotification object:nil userInfo:responseObject];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
