@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+static NSString *appKey = @"506b17dafc827fdf8bbe1cff";
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     BMKMapManager* _mapManager; 

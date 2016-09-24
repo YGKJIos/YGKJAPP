@@ -20,8 +20,6 @@
         [arr addObject:image];
     }
     view.scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 150) imagesGroup:arr];
-//    view.scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, WIDTH, 150) imageURLStringsGroup:images];
-//    view.scrollView.imageURLStringsGroup = images;
     // 是否无限循环
     view.scrollView.infiniteLoop = YES;
     // pageControl样式

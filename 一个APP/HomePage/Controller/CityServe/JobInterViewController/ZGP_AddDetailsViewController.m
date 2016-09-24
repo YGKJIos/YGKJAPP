@@ -64,8 +64,10 @@
     NSURL *telURL =[NSURL URLWithString:phoneText];// 貌似tel:// 或者 tel: 都行
     [callWebview loadRequest:[NSURLRequest requestWithURL:telURL]];
 
-    NSMutableString *str = [NSMutableString stringWithFormat:@"telprompt://%@" , self.telephoneNum];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    if (self.telephoneNum) {
+        NSMutableString *str = [NSMutableString stringWithFormat:@"telprompt://%@" , self.telephoneNum];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }
     
     //记得添加到view上
     [self.view addSubview:callWebview];

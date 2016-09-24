@@ -138,6 +138,11 @@
 		5947D94E1D73D08C005CBE85 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5947D94D1D73D08C005CBE85 /* BaseCollectionViewCell.m */; };
 		5970C4501D531628001731A3 /* PhoneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5970C44E1D531628001731A3 /* PhoneLoginViewController.m */; };
 		5970C4511D531628001731A3 /* PhoneLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5970C44F1D531628001731A3 /* PhoneLoginViewController.xib */; };
+		599EDDFC1D93A7B60050C6C6 /* jpush-ios-2.1.9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 599EDDFA1D93A7B60050C6C6 /* jpush-ios-2.1.9.a */; };
+		599EDDFE1D93B9A90050C6C6 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599EDDFD1D93B9A90050C6C6 /* CoreFoundation.framework */; };
+		599EDDFF1D93B9B40050C6C6 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7E9FA1D62B616004E6DB2 /* CoreTelephony.framework */; };
+		599EDE001D93B9BC0050C6C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7E9F81D62B60D004E6DB2 /* SystemConfiguration.framework */; };
+		599EDE011D93B9C70050C6C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59F7EA001D62B661004E6DB2 /* CoreGraphics.framework */; };
 		59C54C861D6AA1B2009BF605 /* AddFoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C54C731D6AA1B2009BF605 /* AddFoodView.m */; };
 		59C54C871D6AA1B2009BF605 /* AddFoodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C54C741D6AA1B2009BF605 /* AddFoodView.xib */; };
 		59C54C881D6AA1B2009BF605 /* DeliverAdressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C54C761D6AA1B2009BF605 /* DeliverAdressTableViewCell.m */; };
@@ -604,6 +609,11 @@
 		5970C44D1D531628001731A3 /* PhoneLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginViewController.h; sourceTree = "<group>"; };
 		5970C44E1D531628001731A3 /* PhoneLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginViewController.m; sourceTree = "<group>"; };
 		5970C44F1D531628001731A3 /* PhoneLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneLoginViewController.xib; sourceTree = "<group>"; };
+		59923A9E1D94D470000CA970 /* 一个APP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "一个APP.entitlements"; sourceTree = "<group>"; };
+		599EDDFA1D93A7B60050C6C6 /* jpush-ios-2.1.9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.9.a"; sourceTree = "<group>"; };
+		599EDDFB1D93A7B60050C6C6 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		599EDDFD1D93B9A90050C6C6 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		599EDE021D93BA0A0050C6C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		59C54C721D6AA1B2009BF605 /* AddFoodView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodView.h; sourceTree = "<group>"; };
 		59C54C731D6AA1B2009BF605 /* AddFoodView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodView.m; sourceTree = "<group>"; };
 		59C54C741D6AA1B2009BF605 /* AddFoodView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFoodView.xib; sourceTree = "<group>"; };
@@ -1043,22 +1053,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF3FD651D6D98520092C894 /* Security.framework in Frameworks */,
+				59F7EA031D62B668004E6DB2 /* UIKit.framework in Frameworks */,
+				59F7EA051D62B673004E6DB2 /* Foundation.framework in Frameworks */,
+				599EDE011D93B9C70050C6C6 /* CoreGraphics.framework in Frameworks */,
+				599EDE001D93B9BC0050C6C6 /* SystemConfiguration.framework in Frameworks */,
+				599EDDFF1D93B9B40050C6C6 /* CoreTelephony.framework in Frameworks */,
+				599EDDFE1D93B9A90050C6C6 /* CoreFoundation.framework in Frameworks */,
 				2AF3FD691D6D988A0092C894 /* libstdc++.6.0.9.tbd in Frameworks */,
 				2A248B331D958E5300ABBEF3 /* libWeChatSDK.a in Frameworks */,
 				2AF3FD671D6D98760092C894 /* libsqlite3.0.tbd in Frameworks */,
-				2AF3FD651D6D98520092C894 /* Security.framework in Frameworks */,
 				2AF3FD631D6D982C0092C894 /* OpenGLES.framework in Frameworks */,
 				2AF3FD611D6D98130092C894 /* CoreLocation.framework in Frameworks */,
 				59F7EA091D62B68D004E6DB2 /* CoreMotion.framework in Frameworks */,
 				59F7EA071D62B680004E6DB2 /* CFNetwork.framework in Frameworks */,
-				59F7EA051D62B673004E6DB2 /* Foundation.framework in Frameworks */,
-				59F7EA031D62B668004E6DB2 /* UIKit.framework in Frameworks */,
 				59D07B611D65936C0099C1DA /* libssl.a in Frameworks */,
 				59D07B601D65936C0099C1DA /* libcrypto.a in Frameworks */,
 				59F7E9FF1D62B62F004E6DB2 /* CoreText.framework in Frameworks */,
 				59F7E9F71D62B5A4004E6DB2 /* libz.tbd in Frameworks */,
 				59D07B541D6592170099C1DA /* AlipaySDK.framework in Frameworks */,
 				59F7E9F51D62B58E004E6DB2 /* libc++.tbd in Frameworks */,
+				599EDDFC1D93A7B60050C6C6 /* jpush-ios-2.1.9.a in Frameworks */,
 				7FE543E11CE4C2BEAB34EAE2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1776,6 +1791,15 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		599EDDF91D93A7B60050C6C6 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				599EDDFA1D93A7B60050C6C6 /* jpush-ios-2.1.9.a */,
+				599EDDFB1D93A7B60050C6C6 /* JPUSHService.h */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		59C54C711D6AA1B2009BF605 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -2121,7 +2145,7 @@
 				59FFB6C81D0501F000071E0E /* 一个APPUITests */,
 				59FFB6A21D0501F000071E0E /* Products */,
 				96D0A561490DF395314366EC /* Pods */,
-				66BB4DA9F33A197E033F81D2 /* Frameworks */,
+				66BB4DA9F33A197E033F81D2 /* APPFrameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2138,6 +2162,7 @@
 		59FFB6A31D0501F000071E0E /* 一个APP */ = {
 			isa = PBXGroup;
 			children = (
+				59923A9E1D94D470000CA970 /* 一个APP.entitlements */,
 				D853E4611D3C853400C1FF9D /* Login */,
 				59FFB6F51D0507F600071E0E /* Main */,
 				5910B88A1D1234D700BA1C16 /* HomePage */,
@@ -2300,6 +2325,7 @@
 		59FFB6E71D0506A200071E0E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				599EDDF91D93A7B60050C6C6 /* Lib */,
 				2A821EED1D6CB375005A49A5 /* UserInfo.h */,
 				2A821EEE1D6CB375005A49A5 /* UserInfo.m */,
 				2A821EFD1D6CB414005A49A5 /* CBAutoScrollLabel */,
@@ -2330,9 +2356,11 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		66BB4DA9F33A197E033F81D2 /* Frameworks */ = {
+		66BB4DA9F33A197E033F81D2 /* APPFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				599EDE021D93BA0A0050C6C6 /* UserNotifications.framework */,
+				599EDDFD1D93B9A90050C6C6 /* CoreFoundation.framework */,
 				2AF3FD681D6D98890092C894 /* libstdc++.6.0.9.tbd */,
 				2AF3FD661D6D98760092C894 /* libsqlite3.0.tbd */,
 				2AF3FD641D6D98520092C894 /* Security.framework */,
@@ -2351,7 +2379,7 @@
 				59F7E9F41D62B58E004E6DB2 /* libc++.tbd */,
 				7014F046F0ED2BE18E38917F /* libPods.a */,
 			);
-			name = Frameworks;
+			name = APPFrameworks;
 			sourceTree = "<group>";
 		};
 		96D0A561490DF395314366EC /* Pods */ = {
@@ -2503,7 +2531,12 @@
 				TargetAttributes = {
 					59FFB6A01D0501F000071E0E = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = EG4PFU3MJ4;
+						DevelopmentTeam = UHVNVL6K2K;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					59FFB6B91D0501F000071E0E = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -3070,8 +3103,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = "一个APP/一个APP.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Liu Chen (TX3BD26AXK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = UHVNVL6K2K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3092,12 +3127,13 @@
 					"$(SRCROOT)/一个APP/AliPay",
 				);
 				INFOPLIST_FILE = "一个APP/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/一个APP/AliPay",
 					"$(PROJECT_DIR)/一个APP/微信支付/SDKExport",
+					"$(PROJECT_DIR)/一个APP/Tool/Lib",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (
@@ -3133,8 +3169,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = "一个APP/一个APP.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Liu Chen (TX3BD26AXK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = UHVNVL6K2K;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3155,12 +3193,13 @@
 					"$(SRCROOT)/一个APP/AliPay",
 				);
 				INFOPLIST_FILE = "一个APP/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/一个APP/AliPay",
 					"$(PROJECT_DIR)/一个APP/微信支付/SDKExport",
+					"$(PROJECT_DIR)/一个APP/Tool/Lib",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (

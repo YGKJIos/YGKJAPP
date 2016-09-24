@@ -8,10 +8,16 @@
 
 #import "DetailTableHeaderView.h"
 
-//static NSString *url = @"http://139.129.209.189:8080/shangcheng";
+static NSString *url = @"http://139.129.209.189:8080/shangcheng";
 
 @implementation DetailTableHeaderView
 
+
+- (IBAction)phoneBtn:(id)sender {
+    NSLog(@"%@",self.telephoneNum);
+    NSMutableString *str = [NSMutableString stringWithFormat:@"telprompt://%@" , self.telephoneNum];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+}
 
 + (DetailTableHeaderView *)greateHeaderView
 {
@@ -23,18 +29,15 @@
     self.shopHeadImage.image = [UIImage imageNamed:@"headerzhanweitu"];
 
     if (!model.shangjiaTouxiang) {
-        NSString *str = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
+        NSString *str = [NSString stringWithFormat:@"%@%@",url,model.shangjiaTouxiang];
         [self.shopHeadImage sd_setImageWithURL:[NSURL URLWithString:str]];
     }
     
     self.shopName.text = model.shangjiaName;
     self.addressLab.text = model.shangjiaWeizhi;
     self.telephoneNum = model.shangjiaDianhua;
+    
+    
 }
 
-- (IBAction)phoneBtn:(id)sender {
-    
-    NSMutableString *str = [NSMutableString stringWithFormat:@"telprompt://%@" , self.telephoneNum];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
-}
 @end

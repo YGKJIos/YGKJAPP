@@ -33,7 +33,7 @@
     NSString *distanceStr = [NSString stringWithFormat:@"%@m",model.shangjiaJuli];
     self.distanceLab.text = distanceStr;
     NSString *str = [NSString stringWithFormat:@"%@%@", serverAddress, model.shangjiaTouxiang];
-    [self.shopImage sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
+    [self.shopImage sd_setImageWithURL:[NSURL URLWithString:str] placeholderImage:[UIImage imageNamed:@"zhanweitouxiang"]];
     self.gradeLab.text = [NSString stringWithFormat:@"%@分", model.shangjiaPingfen];
     self.upPriceLab.text = [NSString stringWithFormat:@"原价:%@", model.meishiYuanjia];
     

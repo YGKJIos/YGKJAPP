@@ -101,7 +101,7 @@
 }
 - (void)addHeaderView
 {
-    NSArray *images = @[@"lb_guangg1",@"shouye_guangg",@"shouye_haigou",@"shouye_meishitou"];
+    NSArray *images = @[@"lb_guangg1.jpg",@"shouye_haigou",@"shouye_meishitou",@"shouye_xinwen"];
     self.scrollView = [ScrollView CreateScrollViewImages:images];
 }
 // 点击轮播图的方法
