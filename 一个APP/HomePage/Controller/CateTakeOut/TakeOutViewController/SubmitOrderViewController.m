@@ -19,6 +19,8 @@
 #import "Order.h"
 #import "DataSigner.h"
 #import "ALiPaysuccessViewController.h" // 支付成功返回界面
+#import "PayMentTableViewController.h"
+
 @interface SubmitOrderViewController ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,addressInformation,passDelegate>
 
 @property (nonatomic, strong)UIControl *control;
@@ -261,9 +263,19 @@
             hud.hidden = YES;
         });
     }else{
-        [self CreateOrder];
+        [self choosePaymethod];
         }
     
+}
+// 统一跳转到选择支付方式界面
+- (void)choosePaymethod
+{
+    PayMentTableViewController *pay = [[PayMentTableViewController alloc]init];
+    
+    pay.str = self.shangjiaNameStr;
+    pay.str1 = SingTotal.TotalMoney;
+    pay.shuoming = self.shopModel.shangjiaTongzhi;
+    [self.navigationController pushViewController:pay animated:YES];
 }
 // 生成订单
 - (void)CreateOrder
@@ -271,8 +283,8 @@
     /*
      *点击获取prodcut实例并初始化订单信息
      */
-    NSString *partner = @"2088421498633042";
-    NSString *seller = @"yuangukeji2016@163.com";
+    NSString *partner    = @"2088421498633042";
+    NSString *seller     = @"yuangukeji2016@163.com";
     NSString *privateKey = @"MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBANtBtnXen67rs2qolD3ibUkuL5pJaxPhEl96I0ckPq0U0BoPHud/1sq8aDwwxTxBLN1cr9OsgRX8k0rhbgPuQj6Ma1qsSYL7hspXxFyiTMKe/QCZVK3iEE8v7prR+GS+IO3j/PxrXVg+9OzlzflwLUwhS7KXw4fMrr7/LKg19ZqfAgMBAAECgYEAixqu0ytR7h1V8CZSHs0H/vTReLZ5u9wA1xhbR2hkZ1UcDlxnhAIkWO2dyAo9KFRFTY/fcZExOKzNGiXZsZ644V9PZYiU4iHSEI2zOZegnxQvYIFKhV+itfJl2z8AtHWlLfzxPCwULhYpAC9FW9bm0DtWmXkTOqVeGd/KNI+5fkkCQQD1fnKlSx8I6MGhVpMGzGDzFiS0Nv4ns5uB9W/Yxf3sHXFKhLhlvuyLyGJrbtnAwfNya0spimIwA50pSXpekEX9AkEA5KPRcAXK97uHmkyRp2hgm4cTvyuldQvubbbiYK1XQnRCft09Mrdi2aqut1cuPRlgyOQIGSkcGhsNQnb+OVP3ywJBAOopotFnxkKJQajTG4rwh8lW5cvAaM0V1M8xfW4X7Qy7SMT7s6fZZWgvyzEOm0XxunT5Qshs5xtFVzN6ku6AT0ECQCSOBHgylObStrV2tHrdd0SmbgPMiKGUDMTBzqPCUwcu60q5OIWZSFagsVpit+PQ4OZ9fsX3CqUp2g7cU3z67c0CQQDNaUEAOB42Ybe6hBKcQChIoxkXxWIUwrQ19ObW/MMOTrvSyE7UsRa9ezdx2xQGUcwOq8AvGOnLgiziuOblJ51I";
     
     Order *order = [[Order alloc] init];

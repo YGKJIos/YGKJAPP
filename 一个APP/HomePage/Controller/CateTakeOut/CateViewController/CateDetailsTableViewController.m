@@ -23,6 +23,7 @@
 #import "Order.h"
 #import "DataSigner.h"
 #import "ALiPaysuccessViewController.h" // 支付成功返回界面
+#import "PayMentTableViewController.h" // 支付订单界面
 
 static NSString *notifyURL = @"http://139.129.209.189:8080/shangcheng/notify_url.jsp"; //支付宝回调地址
 @interface CateDetailsTableViewController ()
@@ -145,7 +146,7 @@ static NSString *notifyURL = @"http://139.129.209.189:8080/shangcheng/notify_url
             voucherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuse];
             cell = [voucherTableViewCell greateCell];
             cell.payBtn.tag = 1000+indexPath.row;
-            [cell.payBtn addTarget:self action:@selector(payOrderClick:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.payBtn addTarget:self action:@selector(choosePaymethod:) forControlEvents:UIControlEventTouchUpInside];
             if (self.TGArr.count != 0) {
                 
                 MerchantInformationModel *model = self.TGArr[indexPath.row-1];
@@ -185,7 +186,16 @@ static NSString *notifyURL = @"http://139.129.209.189:8080/shangcheng/notify_url
 //    return erorrCell;
     return nil;
 }
-
+// 统一跳转到选择支付方式界面
+- (void)choosePaymethod:(UIButton *)btn;
+{
+    PayMentTableViewController *pay = [[PayMentTableViewController alloc]init];
+    MerchantInformationModel *model = self.TGArr[btn.tag - 1000 - 1];
+    pay.str = model.tuangouName;
+    pay.str1 = model.tuangouTejia;
+    pay.shuoming = model.tuangouShuoming;
+    [self.navigationController pushViewController:pay animated:YES];
+}
 - (void)payOrderClick:(UIButton *)sender
 {
     /*

@@ -11,7 +11,6 @@
 #import "RootTabBarController.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "TakeOutInformationController.h"
-
 @interface AppDelegate ()
 
 @end

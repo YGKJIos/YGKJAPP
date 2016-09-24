@@ -146,7 +146,7 @@
 {
     TakeOutInformationController *informationVC = [[TakeOutInformationController alloc]init];
     if (self.takeOutArr.count > 0) {
-        informationVC.navigationItem.title = [self.takeOutArr[indexPath.row] shangjiaName];
+        informationVC.titleStr = [self.takeOutArr[indexPath.row] shangjiaName];
         informationVC.model = self.takeOutArr[indexPath.row];
         // 单例配送费
         SingTotal.peisongMoney = [self.takeOutArr[indexPath.row] peisongfei].floatValue;

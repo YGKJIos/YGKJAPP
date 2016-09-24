@@ -12,27 +12,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCc-10-c8s">
-                    <rect key="frame" x="44" y="39" width="251" height="56"/>
+                    <rect key="frame" x="53" y="48" width="233" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="56" id="ze5-Cu-bO4"/>
+                        <constraint firstAttribute="height" constant="44" id="hDY-Yb-GC1"/>
+                        <constraint firstAttribute="width" constant="233" id="sFT-J3-crf"/>
                     </constraints>
-                    <state key="normal" image="zhifudingdananniu"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="确认支付" backgroundImage="zf_qrzf"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="RCc-10-c8s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="44" id="Q17-v7-jo0"/>
-                <constraint firstAttribute="trailing" secondItem="RCc-10-c8s" secondAttribute="trailing" constant="44" id="es8-jf-E42"/>
-                <constraint firstItem="RCc-10-c8s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="39" id="hzc-ep-hvp"/>
+                <constraint firstItem="RCc-10-c8s" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VtZ-Kn-GVo"/>
+                <constraint firstItem="RCc-10-c8s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="48" id="X4A-ws-rSn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="payBtn" destination="RCc-10-c8s" id="AjY-Tz-zZC"/>
             </connections>
-            <point key="canvasLocation" x="293.5" y="380.5"/>
+            <point key="canvasLocation" x="496.5" y="620.5"/>
         </view>
     </objects>
     <resources>
-        <image name="zhifudingdananniu" width="251" height="56"/>
+        <image name="zf_qrzf" width="233" height="50"/>
     </resources>
 </document>

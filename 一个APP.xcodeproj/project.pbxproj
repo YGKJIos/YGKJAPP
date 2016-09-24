@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2A0676B91D6EEC770010353F /* ALiPaysuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0676B81D6EEC770010353F /* ALiPaysuccessViewController.m */; };
+		2A248B301D958E5300ABBEF3 /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A248B241D958E5300ABBEF3 /* ApiXml.mm */; };
+		2A248B311D958E5300ABBEF3 /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A248B261D958E5300ABBEF3 /* payRequsestHandler.mm */; };
+		2A248B321D958E5300ABBEF3 /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2A248B281D958E5300ABBEF3 /* WXUtil.mm */; };
+		2A248B331D958E5300ABBEF3 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A248B2A1D958E5300ABBEF3 /* libWeChatSDK.a */; };
+		2A248B341D958E5300ABBEF3 /* weixinObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A248B2F1D958E5300ABBEF3 /* weixinObject.m */; };
 		2A821EEC1D6CB359005A49A5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A821EEB1D6CB359005A49A5 /* MapViewController.m */; };
 		2A821EF11D6CB375005A49A5 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A821EEE1D6CB375005A49A5 /* UserInfo.m */; };
 		2A821EF21D6CB375005A49A5 /* ZGPplaceholderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A821EF01D6CB375005A49A5 /* ZGPplaceholderImageView.m */; };
@@ -272,6 +277,10 @@
 		D81CF3701D6ECE8400FABD90 /* QorderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D81CF36F1D6ECE8400FABD90 /* QorderModel.m */; };
 		D83EA40D1D62A496008437E7 /* SetNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83EA40B1D62A496008437E7 /* SetNameViewController.m */; };
 		D83EA40E1D62A496008437E7 /* SetNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83EA40C1D62A496008437E7 /* SetNameViewController.xib */; };
+		D83F884A1D90FF7F00990DF7 /* MovieShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83F88491D90FF7F00990DF7 /* MovieShopTableViewController.m */; };
+		D83F884E1D9101B500990DF7 /* MovieShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83F884C1D9101B500990DF7 /* MovieShopTableViewCell.m */; };
+		D83F884F1D9101B500990DF7 /* MovieShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83F884D1D9101B500990DF7 /* MovieShopTableViewCell.xib */; };
+		D83F88521D912F2700990DF7 /* MovieShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D83F88511D912F2700990DF7 /* MovieShopModel.m */; };
 		D841A1901D5AD30200F64C0F /* PlaceOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D841A18E1D5AD30200F64C0F /* PlaceOrderTableViewCell.m */; };
 		D841A1911D5AD30200F64C0F /* PlaceOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D841A18F1D5AD30200F64C0F /* PlaceOrderTableViewCell.xib */; };
 		D8423A811D6D6DC7008B0360 /* groupShopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8423A801D6D6DC7008B0360 /* groupShopTableViewController.m */; };
@@ -364,6 +373,18 @@
 /* Begin PBXFileReference section */
 		2A0676B71D6EEC770010353F /* ALiPaysuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALiPaysuccessViewController.h; sourceTree = "<group>"; };
 		2A0676B81D6EEC770010353F /* ALiPaysuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALiPaysuccessViewController.m; sourceTree = "<group>"; };
+		2A248B231D958E5300ABBEF3 /* ApiXml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiXml.h; sourceTree = "<group>"; };
+		2A248B241D958E5300ABBEF3 /* ApiXml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApiXml.mm; sourceTree = "<group>"; };
+		2A248B251D958E5300ABBEF3 /* payRequsestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = payRequsestHandler.h; sourceTree = "<group>"; };
+		2A248B261D958E5300ABBEF3 /* payRequsestHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = payRequsestHandler.mm; sourceTree = "<group>"; };
+		2A248B271D958E5300ABBEF3 /* WXUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXUtil.h; sourceTree = "<group>"; };
+		2A248B281D958E5300ABBEF3 /* WXUtil.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WXUtil.mm; sourceTree = "<group>"; };
+		2A248B2A1D958E5300ABBEF3 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		2A248B2B1D958E5300ABBEF3 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		2A248B2C1D958E5300ABBEF3 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		2A248B2D1D958E5300ABBEF3 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		2A248B2E1D958E5300ABBEF3 /* weixinObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weixinObject.h; sourceTree = "<group>"; };
+		2A248B2F1D958E5300ABBEF3 /* weixinObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weixinObject.m; sourceTree = "<group>"; };
 		2A821EEA1D6CB359005A49A5 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		2A821EEB1D6CB359005A49A5 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		2A821EED1D6CB375005A49A5 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
@@ -897,6 +918,13 @@
 		D83EA40A1D62A496008437E7 /* SetNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetNameViewController.h; sourceTree = "<group>"; };
 		D83EA40B1D62A496008437E7 /* SetNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetNameViewController.m; sourceTree = "<group>"; };
 		D83EA40C1D62A496008437E7 /* SetNameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetNameViewController.xib; sourceTree = "<group>"; };
+		D83F88481D90FF7F00990DF7 /* MovieShopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieShopTableViewController.h; sourceTree = "<group>"; };
+		D83F88491D90FF7F00990DF7 /* MovieShopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieShopTableViewController.m; sourceTree = "<group>"; };
+		D83F884B1D9101B500990DF7 /* MovieShopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieShopTableViewCell.h; sourceTree = "<group>"; };
+		D83F884C1D9101B500990DF7 /* MovieShopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieShopTableViewCell.m; sourceTree = "<group>"; };
+		D83F884D1D9101B500990DF7 /* MovieShopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieShopTableViewCell.xib; sourceTree = "<group>"; };
+		D83F88501D912F2700990DF7 /* MovieShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieShopModel.h; sourceTree = "<group>"; };
+		D83F88511D912F2700990DF7 /* MovieShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieShopModel.m; sourceTree = "<group>"; };
 		D841A18D1D5AD30200F64C0F /* PlaceOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOrderTableViewCell.h; sourceTree = "<group>"; };
 		D841A18E1D5AD30200F64C0F /* PlaceOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOrderTableViewCell.m; sourceTree = "<group>"; };
 		D841A18F1D5AD30200F64C0F /* PlaceOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceOrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -1016,6 +1044,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AF3FD691D6D988A0092C894 /* libstdc++.6.0.9.tbd in Frameworks */,
+				2A248B331D958E5300ABBEF3 /* libWeChatSDK.a in Frameworks */,
 				2AF3FD671D6D98760092C894 /* libsqlite3.0.tbd in Frameworks */,
 				2AF3FD651D6D98520092C894 /* Security.framework in Frameworks */,
 				2AF3FD631D6D982C0092C894 /* OpenGLES.framework in Frameworks */,
@@ -1051,6 +1080,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A248B211D958E5300ABBEF3 /* 微信支付 */ = {
+			isa = PBXGroup;
+			children = (
+				2A248B221D958E5300ABBEF3 /* lib */,
+				2A248B291D958E5300ABBEF3 /* SDKExport */,
+				2A248B2E1D958E5300ABBEF3 /* weixinObject.h */,
+				2A248B2F1D958E5300ABBEF3 /* weixinObject.m */,
+			);
+			path = "微信支付";
+			sourceTree = "<group>";
+		};
+		2A248B221D958E5300ABBEF3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2A248B231D958E5300ABBEF3 /* ApiXml.h */,
+				2A248B241D958E5300ABBEF3 /* ApiXml.mm */,
+				2A248B251D958E5300ABBEF3 /* payRequsestHandler.h */,
+				2A248B261D958E5300ABBEF3 /* payRequsestHandler.mm */,
+				2A248B271D958E5300ABBEF3 /* WXUtil.h */,
+				2A248B281D958E5300ABBEF3 /* WXUtil.mm */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		2A248B291D958E5300ABBEF3 /* SDKExport */ = {
+			isa = PBXGroup;
+			children = (
+				2A248B2A1D958E5300ABBEF3 /* libWeChatSDK.a */,
+				2A248B2B1D958E5300ABBEF3 /* WechatAuthSDK.h */,
+				2A248B2C1D958E5300ABBEF3 /* WXApi.h */,
+				2A248B2D1D958E5300ABBEF3 /* WXApiObject.h */,
+			);
+			path = SDKExport;
+			sourceTree = "<group>";
+		};
 		2A821EFD1D6CB414005A49A5 /* CBAutoScrollLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1621,6 +1685,13 @@
 				594590B51D3CAA5D00FAF565 /* MovieTableViewController.m */,
 				D84696761D472EFD004C0DE4 /* MoviewDetailTableViewController.h */,
 				D84696771D472EFD004C0DE4 /* MoviewDetailTableViewController.m */,
+				D83F88481D90FF7F00990DF7 /* MovieShopTableViewController.h */,
+				D83F88491D90FF7F00990DF7 /* MovieShopTableViewController.m */,
+				D83F88501D912F2700990DF7 /* MovieShopModel.h */,
+				D83F88511D912F2700990DF7 /* MovieShopModel.m */,
+				D83F884B1D9101B500990DF7 /* MovieShopTableViewCell.h */,
+				D83F884C1D9101B500990DF7 /* MovieShopTableViewCell.m */,
+				D83F884D1D9101B500990DF7 /* MovieShopTableViewCell.xib */,
 			);
 			path = Moview;
 			sourceTree = "<group>";
@@ -2077,6 +2148,7 @@
 				594590811D3CA75D00FAF565 /* Market */,
 				59FFB6E31D05066F00071E0E /* Message */,
 				59D07AF01D6592170099C1DA /* AliPay */,
+				2A248B211D958E5300ABBEF3 /* 微信支付 */,
 				59FFB6B21D0501F000071E0E /* LaunchScreen.storyboard */,
 				59FFB6B51D0501F000071E0E /* Info.plist */,
 				59FFB6FC1D05187D00071E0E /* Assets.xcassets */,
@@ -2471,6 +2543,7 @@
 				D853E4751D3C853400C1FF9D /* LoginViewController.xib in Resources */,
 				D853E4771D3C853400C1FF9D /* postsucceedViewController.xib in Resources */,
 				59F46B971D4A0582001C6B7B /* shopCollectionViewCell.xib in Resources */,
+				D83F884F1D9101B500990DF7 /* MovieShopTableViewCell.xib in Resources */,
 				59FE11071D406EB900E8257B /* MerchantHeadView.xib in Resources */,
 				D86B7D771D5C50EE00380F49 /* PaymentTableViewCell.xib in Resources */,
 				5945911D1D3CAA5D00FAF565 /* TheHotelTableViewCell.xib in Resources */,
@@ -2660,6 +2733,7 @@
 				D85DA0D41D7032D300D84275 /* TKTableViewCell.m in Sources */,
 				59FE110E1D40B08600E8257B /* MerchantFoodTableViewCell.m in Sources */,
 				D84923A61D4B36A2002ED1FF /* SetFooterView.m in Sources */,
+				D83F884A1D90FF7F00990DF7 /* MovieShopTableViewController.m in Sources */,
 				5945905E1D3CA1D400FAF565 /* FirstTableViewCell.m in Sources */,
 				59366BC61D06CB8B00BB445A /* MessageTableViewCell.m in Sources */,
 				59C54C8E1D6AA1B2009BF605 /* TakeOutRightTableCell.m in Sources */,
@@ -2669,6 +2743,7 @@
 				594590061D3C8A1C00FAF565 /* TravelTableViewController.m in Sources */,
 				594591181D3CAA5D00FAF565 /* TypeTakeOutTableViewController.m in Sources */,
 				D84C66931D6C62AC0061F3C1 /* groupShopViewController.m in Sources */,
+				2A248B341D958E5300ABBEF3 /* weixinObject.m in Sources */,
 				D845EAF71D4891BC009B3B52 /* SecondFooterView.m in Sources */,
 				594590FF1D3CAA5D00FAF565 /* MovieTableViewController.m in Sources */,
 				59D07B571D6592170099C1DA /* DataSigner.m in Sources */,
@@ -2678,6 +2753,7 @@
 				59EAD9711D20C2E4003DF636 /* ImageAndLabView.m in Sources */,
 				5910B8971D1234D700BA1C16 /* MyProfileViewController.m in Sources */,
 				594590381D3C9FAD00FAF565 /* priceViewController.m in Sources */,
+				2A248B311D958E5300ABBEF3 /* payRequsestHandler.mm in Sources */,
 				2A821EFB1D6CB3C8005A49A5 /* ZGP_SuperMarketModel.m in Sources */,
 				5945905F1D3CA1D400FAF565 /* FoodHomeCell.m in Sources */,
 				59EEFC2A1D46FB55009DAFB5 /* GroupPurchaseView.m in Sources */,
@@ -2781,6 +2857,7 @@
 				59EC739F1D0946F6009062D9 /* MessageModel.m in Sources */,
 				594590961D3CA75D00FAF565 /* ShopTableViewCell.m in Sources */,
 				5940BC2B1D1A552900982820 /* FictionTableViewCell.m in Sources */,
+				2A248B321D958E5300ABBEF3 /* WXUtil.mm in Sources */,
 				59FFB6EB1D05074300071E0E /* AddressBookController.m in Sources */,
 				59F061D91D0E409C006BEF9F /* AFNetWorting.m in Sources */,
 				59F46B901D4A0582001C6B7B /* activeTableViewCell.m in Sources */,
@@ -2797,6 +2874,7 @@
 				D853E4781D3C853400C1FF9D /* postViewController.m in Sources */,
 				D84C668E1D6C13F00061F3C1 /* waitUseTableViewCell.m in Sources */,
 				5970C4501D531628001731A3 /* PhoneLoginViewController.m in Sources */,
+				D83F884E1D9101B500990DF7 /* MovieShopTableViewCell.m in Sources */,
 				59EEFC2F1D46FB55009DAFB5 /* StarEvaluateTotalTableViewCell.m in Sources */,
 				59366BBF1D06872300BB445A /* BaseViewController.m in Sources */,
 				592F298B1D3DC20A0016A550 /* CateTypeTableViewController.m in Sources */,
@@ -2822,6 +2900,7 @@
 				D874A8441D6A92CF00EF44E4 /* GoEvaluateViewController.m in Sources */,
 				59EEFC2C1D46FB55009DAFB5 /* ShopIntroduceTableViewCell.m in Sources */,
 				59EEFC2E1D46FB55009DAFB5 /* ShowAllAndErorrCell.m in Sources */,
+				2A248B301D958E5300ABBEF3 /* ApiXml.mm in Sources */,
 				D853E4741D3C853400C1FF9D /* LoginViewController.m in Sources */,
 				D85DA0D01D7031C400D84275 /* TKTableViewController.m in Sources */,
 				D853E47A1D3C853400C1FF9D /* succeedViewController.m in Sources */,
@@ -2834,6 +2913,7 @@
 				59458FFA1D3C8A1C00FAF565 /* TakePhotoTableViewController.m in Sources */,
 				59F7860D1D0BD9A1005A39FB /* FriendCell.m in Sources */,
 				2A821EF21D6CB375005A49A5 /* ZGPplaceholderImageView.m in Sources */,
+				D83F88521D912F2700990DF7 /* MovieShopModel.m in Sources */,
 				594591011D3CAA5D00FAF565 /* HeaderCollectionReusableView.m in Sources */,
 				D845EAE51D484573009B3B52 /* SecondHeaderView.m in Sources */,
 				D84C668A1D6C13BE0061F3C1 /* waitUseTableViewController.m in Sources */,
@@ -3017,6 +3097,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/一个APP/AliPay",
+					"$(PROJECT_DIR)/一个APP/微信支付/SDKExport",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (
@@ -3079,6 +3160,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/一个APP/AliPay",
+					"$(PROJECT_DIR)/一个APP/微信支付/SDKExport",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (

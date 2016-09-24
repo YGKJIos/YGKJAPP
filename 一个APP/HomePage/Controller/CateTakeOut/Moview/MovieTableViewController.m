@@ -11,6 +11,7 @@
 #import "MovieModel.h"
 #import "MoviewDetailTableViewController.h"
 #import "CateDetailsTableViewController.h"
+#import "PayMentTableViewController.h"
 
 @interface MovieTableViewController ()
 @property (nonatomic, retain) NSMutableArray *MovieArr;
@@ -24,7 +25,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"电影";
     self.navigationItem.rightBarButtonItem = nil;
-    [self addTableHeaderView];
+//    [self addTableHeaderView];
     self.MovieArr = [[NSMutableArray alloc] init];
     [self MJrefreshLoadData];
    
@@ -41,14 +42,14 @@
     header.lastUpdatedTimeLabel.hidden = YES;
     self.tableView.mj_header = header;
     [self.tableView.mj_header beginRefreshing];
-    
 }
 // 下拉刷新的方法
 - (void)loadNewData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView.mj_header endRefreshing];
-        NSString *url = @"dianying/querydianying1.action";
-        [AFNetWorting getNetWortingWithUrlString:url params:nil controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSString *url = @"dianying/querydianyingxiangqing.action?";
+        NSDictionary *dic = @{@"shangjiaId":self.str};
+        [AFNetWorting postNetWortingWithUrlString:url params:dic controller:self success:^(NSURLSessionDataTask *task, id responseObject) {
             [self.MovieArr removeAllObjects];
             NSArray *arr = responseObject;
             if (arr.count == 0) {
@@ -96,6 +97,7 @@
     MoiveTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if (cell == nil) {
         cell = [MoiveTableViewCell createMoiveCell];
+//        cell.nameLabe
     }
     if (self.MovieArr.count > 0) {
         [cell MovieModel:self.MovieArr[indexPath.row]];
@@ -105,16 +107,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 151;
+    return 158;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//     CateDetailsTableViewController *detailVC = [[CateDetailsTableViewController alloc] init];
-//    detailVC.navigationItem.title = @"电影详情";
-//    detailVC.shopID = [self.MovieArr[indexPath.row] shangjiaId];
-//    [self.navigationController pushViewController:detailVC animated:YES];
+
+    PayMentTableViewController *payVC = [[PayMentTableViewController alloc] init];
+    payVC.str = [self.MovieArr[indexPath.row] tuangouName];
+    payVC.str1 = [self.MovieArr[indexPath.row] tuangouTejia];
+    [self.navigationController pushViewController:payVC animated:YES];
 }
 
 @end

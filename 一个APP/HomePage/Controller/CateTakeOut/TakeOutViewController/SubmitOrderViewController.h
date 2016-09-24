@@ -17,5 +17,5 @@
 
 @property (nonatomic, strong)MerchantInformationModel *shopModel;
 
-
+@property (nonatomic, strong)NSString *shangjiaNameStr;
 @end

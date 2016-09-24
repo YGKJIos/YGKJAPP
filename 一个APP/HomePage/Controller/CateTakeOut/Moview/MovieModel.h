@@ -10,8 +10,8 @@
 
 @interface MovieModel : NSObject
 
-
-@property (nonatomic, copy) NSString *shangjiaId;
+// 旧
+//@property (nonatomic, copy) NSString *shangjiaId;
 @property (nonatomic, copy) NSString *dianyingName;
 @property (nonatomic, copy) NSString *dianyingJianjie;
 @property (nonatomic, copy) NSString *dianyingXiaoguo;
@@ -23,5 +23,19 @@
 @property (nonatomic, copy) NSString *dianyingRebo;
 @property (nonatomic, copy) NSString *dianyingPingfen;
 @property (nonatomic, copy) NSString *shangjiaDianhua;
+
+
+// 新
+@property (nonatomic, copy) NSString *shangjiaLeixing;
+@property (nonatomic, copy) NSString *shangjiaId;
+@property (nonatomic, copy) NSString *tuangoujuanId;
+@property (nonatomic, copy) NSString *tuangouName;
+@property (nonatomic, copy) NSString *tuangouTejia;
+@property (nonatomic, copy) NSString *tuangouShuoming;
+@property (nonatomic, copy) NSString *tuangouTouxiang;
+@property (nonatomic, copy) NSString *tuangouYuanjia;
+@property (nonatomic, copy) NSString *tuangouLeixing;
+
+
 
 @end

@@ -53,6 +53,8 @@
     [super viewDidLoad];
     self.result = NO;
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.navigationItem.title = self.titleStr;
     // 收藏按钮
 //    UIBarButtonItem *rightItme = [UIBarButtonItem itemWithTarget:self action:@selector(rightBarButtonItemClickItme) image:@"wode_sctb" highImage:@"wode_sctb"];
     //    self.listArr = [NSMutableArray arrayWithObjects:@"食品",@"饮品",@"其他" ,nil];
@@ -341,6 +343,7 @@
 {
     if ([self.foodView.orderMoneyBtn.titleLabel.text isEqualToString:@"确认下单"]) {
         SubmitOrderViewController *subVC = [[SubmitOrderViewController alloc]init];
+        subVC.shangjiaNameStr = self.titleStr;
         subVC.selectArr = self.selectArr;
         subVC.shopModel = self.model;
         [self.navigationController pushViewController:subVC animated:YES];

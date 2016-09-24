@@ -36,6 +36,7 @@
 #import "priceViewController.h" // 生活缴费
 #import "shopViewController.h" // 本地购物
 #import "HomeModel.h" // 首页model
+#import "MovieShopTableViewController.h" // 电影
 
 @interface HomePageTableViewController ()<SDCycleScrollViewDelegate,pushViewControllerDelegate,pushViewControllerSecondDelegate, pushviewcontrollerThridDelegate,FoodHomePushDelegate,ShopingPushDelegate>
 
@@ -369,7 +370,7 @@
     }
     // 电影
     if (num == 1005) {
-        MovieTableViewController *movieVC = [[MovieTableViewController alloc]init];
+        MovieShopTableViewController *movieVC = [[MovieShopTableViewController alloc]init];
         [self.navigationController pushViewController:movieVC animated:YES];
     }
     // 休闲娱乐

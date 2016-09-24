@@ -14,7 +14,7 @@
 {
     if (model.gwsz.integerValue > 0) {
         NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
-        [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
+        [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanweitouxiang"]];
         self.sellNumLab.text = model.waimaishipinYishou;
         self.nameLab.text = model.waimaishipinName;
         self.pirceLab.text = [NSString stringWithFormat:@"¥%@" , model.waimaishipinJiage];
@@ -22,7 +22,7 @@
         
     }else{
         NSString *url = [NSString stringWithFormat:@"%@%@",serverAddress,model.shangjiaTouxiang];
-        [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanwei"]];
+        [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"zhanweitouxiang"]];
         self.sellNumLab.text = model.waimaishipinYishou;
         self.nameLab.text = model.waimaishipinName;
         self.pirceLab.text = [NSString stringWithFormat:@"¥%@" , model.waimaishipinJiage];

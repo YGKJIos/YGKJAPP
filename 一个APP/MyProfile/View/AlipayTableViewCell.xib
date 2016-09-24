@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -15,18 +15,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="408" height="73"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-5d-vSA">
-                        <rect key="frame" x="90" y="30" width="85" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="ZkK-dd-583"/>
-                            <constraint firstAttribute="width" constant="85" id="jA1-bX-FuB"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPT-U0-gUC">
                         <rect key="frame" x="358" y="27" width="27" height="27"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="27" id="Mfi-cS-IHL"/>
                             <constraint firstAttribute="height" constant="27" id="m8q-5h-I9d"/>
@@ -35,23 +26,39 @@
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhifudingdan_06" translatesAutoresizingMaskIntoConstraints="NO" id="m3K-Cd-NZr">
                         <rect key="frame" x="30" y="25" width="31" height="31"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="31" id="Kfz-JF-nz5"/>
                             <constraint firstAttribute="height" constant="31" id="ZZS-fv-UjF"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKK-5d-vSA">
+                        <rect key="frame" x="75" y="30" width="85" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ZkK-dd-583"/>
+                            <constraint firstAttribute="width" constant="85" id="jA1-bX-FuB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="aKK-5d-vSA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="22" id="67A-j1-uef"/>
-                    <constraint firstItem="aKK-5d-vSA" firstAttribute="leading" secondItem="m3K-Cd-NZr" secondAttribute="trailing" constant="29" id="AyM-OB-iLD"/>
+                    <constraint firstItem="aKK-5d-vSA" firstAttribute="leading" secondItem="m3K-Cd-NZr" secondAttribute="trailing" constant="14" id="AyM-OB-iLD"/>
                     <constraint firstItem="aPT-U0-gUC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="19" id="hhn-Ie-1P4"/>
                     <constraint firstItem="m3K-Cd-NZr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="17" id="hlJ-sI-Ek4"/>
                     <constraint firstAttribute="trailingMargin" secondItem="aPT-U0-gUC" secondAttribute="trailing" constant="15" id="mUj-Cn-1Ek"/>
                     <constraint firstItem="m3K-Cd-NZr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="22" id="sfw-t4-C2j"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
+                <outlet property="payNameLab" destination="aKK-5d-vSA" id="WL7-zU-4ro"/>
                 <outlet property="selectBtn" destination="aPT-U0-gUC" id="TDL-Y5-V1r"/>
+                <outlet property="weixinImage" destination="m3K-Cd-NZr" id="6P6-iV-mVf"/>
             </connections>
             <point key="canvasLocation" x="411" y="322"/>
         </tableViewCell>

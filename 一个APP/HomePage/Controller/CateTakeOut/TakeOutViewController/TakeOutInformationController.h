@@ -13,4 +13,5 @@
 
 @property (nonatomic, strong)MerchantInformationModel *model;
 
+@property (nonatomic, strong)NSString *titleStr;
 @end

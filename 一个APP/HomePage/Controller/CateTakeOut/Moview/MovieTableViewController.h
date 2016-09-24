@@ -10,4 +10,6 @@
 
 @interface MovieTableViewController : UITableViewController
 
+@property (nonatomic, retain) NSString *str;
+
 @end

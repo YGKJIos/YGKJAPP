@@ -18,6 +18,7 @@
 #import "Order.h"
 #import "DataSigner.h"
 #import "ALiPaysuccessViewController.h" // 支付成功返回界面
+#import "PayMentTableViewController.h"
 @interface VoucherTableViewController ()
 @property (nonatomic, strong)NSMutableArray *foodArr;
 
@@ -154,11 +155,21 @@
         GroupPurchaseView *groupView = [[NSBundle mainBundle]loadNibNamed:@"GroupPurchaseView" owner:nil options:nil].lastObject;
         groupView.frame = CGRectMake(0, 0, WIDTH, 255);
         [groupView setModel:self.model];
-        [groupView.panicBuyBtn addTarget:self action:@selector(payOrderClick) forControlEvents:UIControlEventTouchUpInside];
+        [groupView.panicBuyBtn addTarget:self action:@selector(choosePaymethod:) forControlEvents:UIControlEventTouchUpInside];
         groupView.backgroundColor = [UIColor whiteColor];
         return groupView;
     }
     return nil;
+}
+// 统一跳转到选择支付方式界面
+- (void)choosePaymethod:(UIButton *)btn;
+{
+    PayMentTableViewController *pay = [[PayMentTableViewController alloc]init];
+
+    pay.str = self.model.tuangouName;
+    pay.str1 = self.model.tuangouTejia;
+    pay.shuoming = self.model.tuangouShuoming;
+    [self.navigationController pushViewController:pay animated:YES];
 }
 - (void)payOrderClick
 {

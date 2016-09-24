@@ -32,22 +32,23 @@
 
 - (void) MovieModel:(MovieModel *)model
 {
-    NSString *imageStr = [NSString stringWithFormat:@"%@%@", serverAddress, model.dianyingTupian];
+    NSString *imageStr = [NSString stringWithFormat:@"%@%@", serverAddress, model.tuangouTouxiang];
     [self.movieImage sd_setImageWithURL:[NSURL URLWithString:imageStr]];
     // 电影名称
-    self.nameLabe.text = model.dianyingName;
+    self.nameLabe.text = model.tuangouName;
     // 电影介绍
-    self.jieshaoLabel.text = model.dianyingJianjie;
+    self.jieshaoLabel.text = [NSString stringWithFormat:@"时间:%@", model.tuangouShuoming];
     NSString *stylStr = [NSString stringWithFormat:@"%@%@", serverAddress, model.dianyingLeixing];
     [self.stylImage sd_setImageWithURL:[NSURL URLWithString:stylStr]];
     NSString *tuijianStr= [NSString stringWithFormat:@"%@%@", serverAddress, model.dianyingRebo];
     [self.tuijianImage sd_setImageWithURL:[NSURL URLWithString:tuijianStr]];
     // 特价
-    self.rmbshuLabel.text = [NSString stringWithFormat:@"¥%@", model.dianyingTejia];
+    self.rmbshuLabel.text = [NSString stringWithFormat:@"¥%@", model.tuangouTejia];
+    self.timeLab.text = [NSString stringWithFormat:@"剩余票数:%@", model.tuangouLeixing];
     // 原价
-    self.yjrmbLabel.text = [NSString stringWithFormat:@"¥%@", model.dianyingYuanjia];
-    
+    self.yjrmbLabel.text = [NSString stringWithFormat:@"¥%@", model.tuangouYuanjia];
     self.numLabel.text = model.dianyingPingfen;
+
 }
 
 

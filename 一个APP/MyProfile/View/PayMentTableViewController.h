@@ -10,4 +10,8 @@
 
 @interface PayMentTableViewController : UITableViewController
 
+
+@property (nonatomic, copy) NSString *str; // 接收name
+@property (nonatomic, copy) NSString *str1; // 接收价格
+@property (nonatomic, strong) NSString *shuoming;
 @end

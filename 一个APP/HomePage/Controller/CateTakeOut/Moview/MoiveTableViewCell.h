@@ -25,6 +25,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *yjrmbLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *stylImage;
+@property (weak, nonatomic) IBOutlet UILabel *piaoLab;
+@property (weak, nonatomic) IBOutlet UILabel *timeLab;
+
+
+
+
+
+
+
 - (IBAction)telephoneNumAction:(id)sender;
 
 

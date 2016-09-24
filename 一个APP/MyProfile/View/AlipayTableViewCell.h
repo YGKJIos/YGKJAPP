@@ -16,6 +16,8 @@
 
 @interface AlipayTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *selectBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *weixinImage;
+@property (weak, nonatomic) IBOutlet UILabel *payNameLab;
 
 
 + (AlipayTableViewCell *)createCell;

@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="210"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerzhanweitu" translatesAutoresizingMaskIntoConstraints="NO" id="KDa-Am-o0h">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="headerzhanweitu" translatesAutoresizingMaskIntoConstraints="NO" id="KDa-Am-o0h">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="140"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="展邦洗车美容生活馆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8j-vd-we6">
